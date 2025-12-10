@@ -1,6 +1,6 @@
 import { Card, CardContent, Button } from '../ui';
-import type { DatiImmobile } from '../../types';
-import { COEFFICIENTI, COEFFICIENTE_TERRENI } from '../../lib/calculations/constants';
+import type { DatiImmobile } from '@lib';
+import { COEFFICIENTI, COEFFICIENTE_TERRENI } from '@lib';
 
 interface ListaImmobiliProps {
   immobili: DatiImmobile[];

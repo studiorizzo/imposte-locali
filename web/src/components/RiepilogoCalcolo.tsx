@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardContent, Button } from './ui';
-import type { RiepilogoIMU, RisultatoCalcoloImmobile } from '../types';
+import type { RiepilogoIMU, RisultatoCalcoloImmobile } from '@lib';
 
 interface RiepilogoCalcoloProps {
   riepilogo: RiepilogoIMU;

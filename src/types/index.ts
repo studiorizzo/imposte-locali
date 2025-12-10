@@ -126,11 +126,26 @@ export interface ConfigurazioneComune {
     abitazionePrincipale: number;  // Default 0.50%
     fabbricatiRurali: number;      // Default 0.10%
     terreniAgricoli: number;       // Default 0.76%
-    gruppD: number;                // Default 0.86% (min 0.76%)
+    gruppoD: number;               // Default 0.86% (min 0.76%)
     altriFabbricati: number;       // Default 0.86%
     areeFabbricabili: number;      // Default 0.86%
   };
 
   // Maggiorazione TASI (max 0.08%)
   maggiorazioneTasi?: number;
+}
+
+// Dati contribuente (per UI)
+export interface Contribuente {
+  nome: string;
+  codiceFiscale: string;
+  anno: number;
+  codiceComune?: string;
+  comuneResidenza?: string;
+}
+
+// Step del wizard (per UI)
+export interface WizardStep {
+  id: string;
+  title: string;
 }

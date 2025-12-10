@@ -48,6 +48,9 @@ export const ALIQUOTE_BASE = {
   areeFabbricabili: 0.86,       // c. 754
 };
 
+// Alias per compatibilità
+export const ALIQUOTE_BASE_2025 = ALIQUOTE_BASE;
+
 // Aliquote massime
 export const ALIQUOTE_MAX = {
   abitazionePrincipale: 0.60,   // c. 748
