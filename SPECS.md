@@ -4,7 +4,7 @@
 >
 > **Ultimo aggiornamento**: 10 Dicembre 2025
 >
-> **Stato**: Analisi documentazione normativa in corso - 29 funzionalità identificate
+> **Stato**: Analisi documentazione normativa in corso - 34 funzionalità identificate
 
 ---
 
@@ -43,6 +43,22 @@
 | Dossier IMU 2025 | `aggiornamenti/dossier_imu_2025.md` | ✅ Analizzato |
 | Guida Calcolo IMU 2025 | `aggiornamenti/imu-2025-come-calcolare-e-pagare-l-imposta.md` | ✅ Analizzato |
 | IMU Base imponibile e aliquote | `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` | ✅ Analizzato |
+| Novità IMU Bilancio 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` | ✅ Analizzato |
+| IMU Dichiarazione | `aggiornamenti/IMU - Dichiarazione/imu_dichiarazione.md` | ✅ Analizzato |
+| D.M. 29/07/2022 Dichiarazione IMU | `aggiornamenti/IMU - Dichiarazione/decreto_mef_29072022_dichiarazione_imu.md` | ✅ Analizzato (superato da D.M. 24/04/2024) |
+
+### 1.3 Strumenti Metodologici
+
+| Documento | Posizione | Note |
+|-----------|-----------|------|
+| Check List Acconto IMU 2025 | `aggiornamenti/IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2025.md` | ✅ Riferimento per UI/UX |
+| Check List Acconto IMU 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2024.md` | Versione precedente |
+
+> **Utilizzo checklist**: Queste checklist definiscono la **sequenza logica di raccolta dati** e le **verifiche da effettuare** per ogni immobile. Costituiscono un riferimento fondamentale per:
+> - Progettazione del flusso wizard dell'app
+> - Definizione dei campi obbligatori/opzionali
+> - Ordine delle domande all'utente
+> - Validazione completezza dati inseriti
 
 ---
 
@@ -815,7 +831,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 
 ### 6.11 Gestione Aliquote e Mancata Pubblicazione
 
-**Fonte:** L. 160/2019 art. 1 comma 767; Circ. MEF 1/DF 2020 par. 4
+**Fonte:** L. 160/2019 art. 1 comma 767; Circ. MEF 1/DF 2020 par. 4; **Art. 1, c. 74, L. 213/2023**
 
 **Regola:**
 ```
@@ -825,12 +841,17 @@ ALTRIMENTI:
    Usa aliquote anno precedente
 ```
 
+**Proroga automatica termini (dal 2024 - art. 1, c. 74, L. 213/2023):**
+- Se 14 ottobre o 28 ottobre cadono di **sabato o domenica** → proroga al **primo giorno lavorativo successivo**
+- Regola permanente (non limitata a singolo anno)
+
 **Importo minimo:** €12 (se comune non delibera diversamente)
 
 **Funzionalità:**
 - Campo "Aliquote definitive" (SI/NO)
 - Se NO: usa aliquote precedenti o base
 - Verifica importo minimo versamento
+- Calcolo automatico proroga weekend per termini 14/28 ottobre
 
 ### 6.12 IMPI - Piattaforme Marine (Art. 38 D.L. 124/2019)
 
@@ -866,7 +887,7 @@ ALTRIMENTI:
 
 ### 6.14 Gestione Enti Non Commerciali (ENC) - Regime Speciale
 
-**Fonte:** L. 160/2019 art. 1 cc. 759, 770; Circ. MEF 2/DF 16/7/2024
+**Fonte:** L. 160/2019 art. 1 cc. 759, 770; Circ. MEF 2/DF 16/7/2024; **Art. 1, c. 71, L. 213/2023 (Bilancio 2024)**
 
 **Caratteristiche distintive:**
 
@@ -882,9 +903,19 @@ ALTRIMENTI:
 - Se uso promiscuo: esenzione proporzionale alla superficie non commerciale
 - Accatastamento autonomo parti commerciali se superficie > percentuale regolamentare
 
+**Interpretazione autentica L. 213/2023 (Bilancio 2024):**
+
+| Termine | Interpretazione (art. 1, c. 71) |
+|---------|--------------------------------|
+| **"Posseduti"** | Include immobili in **comodato** a ENC/trust/OICR se: (1) comodatario funzionalmente/strutturalmente collegato al concedente, (2) attività non commerciali svolte nell'immobile |
+| **"Utilizzati"** | Strumentali alle attività anche **senza esercizio attuale**, purché non cessazione definitiva della strumentalità |
+
+**Giurisprudenza:** Cass. 8073/2019 - Esenzione riconosciuta per immobile in comodato tra enti con "compenetrazione" e "medesima architettura strutturale"
+
 **Funzionalità:**
 - Tipologia soggetto "Ente Non Commerciale"
 - Campo "Uso promiscuo" con % superficie non commerciale
+- Campo "Immobile in comodato a ENC collegato"
 - Calcolo automatico tre rate
 - Alert dichiarazione specifica
 
@@ -1092,6 +1123,107 @@ Per fabbricati in corso di:
 - Campo note per documentazione valore dichiarato
 - Alert se valore < valore comunale predeterminato
 
+### 6.28 Esenzioni IMU per Eventi Sismici
+
+**Fonte:** Art. 1, c. 422, L. 213/2023 (Bilancio 2024); D.L. 189/2016
+
+**Esenzioni prorogate per sisma 2016-2017 (Italia Centrale):**
+- Fabbricati distrutti o inagibili (ordinanza sindacale di sgombero entro 31/12/2018)
+- Esenzione IMU dal 16/12/2016 fino a ricostruzione/agibilità, **max 31/12/2024**
+- Esenzione IRPEF/IRES sui redditi dei fabbricati fino a ricostruzione, **max anno 2023**
+- Esenzione imposta di bollo e registro fino al **31/12/2024**
+
+**Regioni interessate:**
+- Abruzzo (Allegati 1, 2, 2-bis D.L. 189/2016)
+- Lazio (Allegati 1, 2)
+- Marche (Allegati 1, 2)
+- Umbria (Allegati 1, 2)
+
+**Esenzione sisma Umbertide 9/3/2023 (art. 1, c. 560, L. 213/2023):**
+- Fabbricati abitativi distrutti o con ordinanza di sgombero
+- Esenzione per anno 2024 o fino a ricostruzione/agibilità
+
+**Funzionalità app:**
+- Flag "Immobile zona sismica" con selezione evento
+- Verifica comune in allegati D.L. 189/2016
+- Calcolo automatico esenzione per periodo
+
+### 6.29 ILIA - Imposta Locale Immobiliare Autonoma (Friuli Venezia Giulia)
+
+**Fonte:** Art. 1, c. 528, L. 213/2023; L.R. FVG 17/2022
+
+**Ambito:** Regione Friuli Venezia Giulia (dal 2023)
+
+**Caratteristiche:**
+- ILIA **sostituisce** IMU e IRPEF/addizionali per redditi fondiari di immobili non locati
+- Disciplina analoga a IMU nazionale (art. 8, c. 1, D.Lgs. 23/2011)
+- Deducibilità IMU strumentali si applica anche a ILIA
+
+**Funzionalità app:**
+- Rilevamento automatico comune FVG → calcolo ILIA invece di IMU
+- Alert specifico per contribuenti FVG
+
+### 6.30 Mappatura Checklist → Campi App (Riferimento UI/UX)
+
+**Fonte:** Check List Acconto IMU 2025 (Wolters Kluwer OneFiscale)
+
+Questa mappatura definisce la corrispondenza tra le voci della checklist professionale e i campi dell'applicazione, utile per la progettazione del wizard di inserimento dati.
+
+#### Step 1: Dati Immobile
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Tipo di immobile | `tipoImmobile` | Select | ✅ |
+| Percentuale di possesso | `percentualePossesso` | Number (0-100) | ✅ |
+| Mesi di possesso | `mesiPossesso` | Number (1-12) | ✅ |
+| Immobile cat. D privo di rendita | `gruppoD_noRendita` | Boolean | Se cat. D |
+| Imbullonati | `verificaImbullonati` | Boolean | Se cat. D |
+
+#### Step 2: Abitazione Principale
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Categoria lusso (A/1, A/8, A/9) | `categoriaLusso` | Boolean | Se abit. princ. |
+| Pertinenze | `pertinenze[]` | Array | Opzionale |
+| Coniugi residenza diversa | `coniugiResidenzaDiversa` | Boolean | Opzionale |
+| Assimilazione | `tipoAssimilazione` | Select | Se applicabile |
+
+#### Step 3: Riduzioni e Agevolazioni
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Comodato genitori/figli | `comodatoParenti` | Boolean | Opzionale |
+| Canone concordato | `canoneLocazione` | Select | Se locato |
+| Interesse storico/artistico | `interesseStorico` | Boolean | Opzionale |
+| Inagibile/inabitabile | `inagibile` | Boolean | Opzionale |
+| Occupato abusivamente | `occupatoAbusivamente` | Boolean | Opzionale |
+
+#### Step 4: Terreni (se applicabile)
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| CD/IAP | `coltivatoreDiretto` | Boolean | Se terreno |
+| Isole minori | `isolaMinore` | Boolean (auto) | Auto da comune |
+| Proprietà collettiva | `proprietaCollettiva` | Boolean | Se terreno |
+| Comune montano (Circ. 9/1993) | `comuneMontano` | Select (auto) | Auto da comune |
+
+#### Step 5: Aliquote e Versamento
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Aliquota applicata | `aliquota` | Number | ✅ |
+| Comune | `codiceComune` | Select | ✅ |
+| Anno imposta | `annoImposta` | Number | ✅ |
+| Importo minimo | `importoMinimo` | Number | Default 12 |
+
+#### Validazioni da Implementare
+
+1. **Pertinenze**: Max 3 (una per categoria C/2, C/6, C/7)
+2. **Comodato**: Verifica requisiti (stesso comune, unico immobile, contratto registrato)
+3. **Canone concordato**: Riduzione 75% automatica
+4. **CD/IAP**: Esenzione totale terreni
+5. **Categoria lusso**: Detrazione €200 applicabile
+
 ### 6.23 Sintesi Nuove Funzionalità vs Excel 2022
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
@@ -1125,6 +1257,11 @@ Per fabbricati in corso di:
 | **Deducibilità IMU 100%** | ❌ | ✅ Info dichiarazione redditi | Media |
 | **Valutazione aree (parametri obbligatori)** | ❌ | ✅ Checklist + alert | Media |
 | **Coefficienti Gruppo D non catastati** | ❌ | ✅ Tabella completa 2025 | Bassa |
+| **Esenzioni sisma 2016-2017** | ❌ | ✅ Flag + verifica comune | Bassa |
+| **ILIA Friuli VG** | ❌ | ✅ Rilevamento automatico | Bassa |
+| **ENC comodato collegato** | ❌ | ✅ Interpretazione L. 213/2023 | Bassa |
+| **Proroga termini weekend** | ❌ | ✅ Calcolo automatico | Bassa |
+| **Checklist professionale integrata** | ❌ | ✅ Mappatura UI/UX | Alta |
 
 ### 6.24 Adempimenti IMU - Scadenze e Sanzioni
 
@@ -1151,6 +1288,76 @@ Per fabbricati in corso di:
 | 29 settembre | Dichiarazione tardiva (+90gg) | Sanzione ridotta 1/10 |
 
 **Occupazione abusiva:** Dichiarazione **solo telematica** (art. 1, c. 759, lett. g-bis).
+
+#### Quando è obbligatoria la dichiarazione
+
+**Fonte:** Art. 1, c. 769, L. 160/2019; D.M. 24/4/2024; Circ. MEF 1/DF/2020
+
+**Obbligo sussiste per:**
+- Immobili che godono di **riduzioni** dell'imposta
+- Immobili per cui il comune **non ha le informazioni** necessarie
+- **Variazioni di soggettività passiva** (sia chi cessa sia chi inizia)
+
+**Efficacia pluriennale:** La dichiarazione ha effetto anche per gli anni successivi, fino a nuova variazione.
+
+#### Esonero dalla dichiarazione (casi in cui NON è dovuta)
+
+| Caso | Motivazione | Riferimento |
+|------|-------------|-------------|
+| Atti con MUI | Informazioni acquisite tramite Modello Unico Informatico (notai) | Art. 1, c. 769 |
+| Regolamento comunale | Procedure specifiche previste dal comune per agevolazioni | Regolamento locale |
+
+**MUI (Modello Unico Informatico):** Per compravendite, donazioni, successioni gestite tramite notaio con procedure telematiche, il comune acquisisce automaticamente i dati - nessuna dichiarazione necessaria.
+
+#### Modalità di presentazione dichiarazione
+
+| Modalità | Descrizione | Note |
+|----------|-------------|------|
+| **Cartacea** - consegna | Direttamente al comune (rilascio ricevuta) | |
+| **Cartacea** - posta | Raccomandata senza A/R con dicitura "Dichiarazione IMU IMPi" | Data = consegna ufficio postale |
+| **PEC** | Posta elettronica certificata | |
+| **Telematica** | Fisconline / Entratel (diretto o tramite intermediario) | Obbligatoria per occupazione abusiva |
+
+**Intermediari abilitati:** Art. 3, c. 3, D.P.R. 322/1998 (commercialisti, CAF, etc.).
+
+#### Tipologie di dichiarazione (D.M. 24/04/2024)
+
+| Tipo | Utilizzo |
+|------|----------|
+| **Nuova** | Prima dichiarazione per l'immobile |
+| **Sostitutiva** | Sostituisce integralmente una precedente |
+| **Multipla** | Per più immobili nello stesso comune |
+
+**Immobile su più comuni:** Dichiarazione al comune con **superficie prevalente** dell'immobile.
+
+**Variazione circoscrizioni territoriali:** Dichiarazione al comune dove l'immobile risulta ubicato al **1° gennaio** dell'anno d'imposta.
+
+#### Modelli dichiarativi vigenti (D.M. 24/04/2024)
+
+| Modello | Destinatari | Sostituisce |
+|---------|-------------|-------------|
+| **IMU/IMPi** | Tutti i soggetti passivi | D.M. 29/07/2022 |
+| **IMU ENC** | Enti non commerciali (art. 1, c. 759, lett. g) | D.M. 4/05/2023 |
+
+**IMU ENC:** Deve essere utilizzato dagli ENC per **tutti gli immobili posseduti**, non solo per quelli con attività meritevoli ex art. 7, c. 1, lett. i), D.Lgs. 504/1992.
+
+#### Dichiarazione obbligatoria a pena di decadenza
+
+**Fonte:** Art. 1, c. 769, L. 160/2019; Cass. 37385/2022; Cass. 32115/2024
+
+> ⚠️ **IMPORTANTE:** Il mancato adempimento dell'obbligo dichiarativo determina **decadenza dal beneficio** (Cass. 37385/2022).
+
+| Fattispecie | Riferimento | Note |
+|-------------|-------------|------|
+| **Alloggi sociali** adibiti ad abitazione principale | Art. 1, c. 741, lett. c), n. 3 | Assimilazione ex lege |
+| **Forze Armate/Polizia/VV.FF.** - immobile senza dimora e residenza | Art. 1, c. 741, lett. c), n. 5 | Non richiesti requisiti ordinari |
+| **Beni-merce** - fabbricati destinati vendita impresa costruttrice | Art. 1, c. 751, terzo periodo | Esenzione dal 2022 |
+
+**Beni-merce (Cass. 32115/2024):** L'art. 1, c. 769, L. 160/2019 non ha abrogato l'art. 2, c. 5-bis, D.L. 102/2013; l'esenzione è subordinata alla dichiarazione **a pena di decadenza**.
+
+#### Conservazione dati e termini accertamento
+
+**Periodo conservazione:** Fino al **31 dicembre del 5° anno successivo** a quello in cui la dichiarazione deve essere presentata (art. 1, c. 161, L. 296/2006).
 
 #### Sanzioni
 
@@ -1435,6 +1642,26 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta sezione 6.27: Valutazione aree fabbricabili - parametri obbligatori (Cass. 27067/2024) |
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 27067/2024, 9529/2023, 11445/2018 (valutazione aree) |
 | 2025-12-10 | Aggiornate funzionalità totali: **29** (da 26) |
+| 2025-12-10 | **Analisi "Novità IMU Bilancio 2024"** (Pratica Fiscale e Professionale) |
+| 2025-12-10 | Aggiunta interpretazione autentica ENC "posseduti/utilizzati" (art. 1, c. 71, L. 213/2023) |
+| 2025-12-10 | Aggiunta proroga automatica termini pubblicazione weekend (art. 1, c. 74, L. 213/2023) |
+| 2025-12-10 | Aggiunta sezione 6.28: Esenzioni IMU eventi sismici 2016-2017 |
+| 2025-12-10 | Aggiunta sezione 6.29: ILIA Friuli Venezia Giulia |
+| 2025-12-10 | Aggiunta giurisprudenza: Cass. 8073/2019 (ENC comodato) |
+| 2025-12-10 | Aggiornate funzionalità totali: **33** (da 29) |
+| 2025-12-10 | **Conversione PDF Strumenti utili**: Check List Acconto IMU 2024/2025 |
+| 2025-12-10 | Aggiunta sezione 1.3: Strumenti Metodologici (checklist come riferimento UI/UX) |
+| 2025-12-10 | Aggiunta sezione 6.30: Mappatura Checklist → Campi App |
+| 2025-12-10 | Aggiornate funzionalità totali: **34** (da 33) |
+| 2025-12-10 | **Analisi "IMU - Dichiarazione"** (Wolters Kluwer OneFiscale) |
+| 2025-12-10 | Espansa sezione 6.24: obbligo/esonero dichiarazione, modalità presentazione, MUI |
+| 2025-12-10 | Aggiunti riferimenti: Ris. MEF 4/DF 2017, 3/DF 2015, Circ. 2/DF 2015 |
+| 2025-12-10 | **Analisi D.M. 29/07/2022** - Modello dichiarazione IMU/IMPi (superato da D.M. 24/04/2024) |
+| 2025-12-10 | Aggiunte tipologie dichiarazione (nuova/sostitutiva/multipla), regole multi-comune, conservazione dati |
+| 2025-12-10 | **Integrazione D.M. 24/04/2024** - Modelli vigenti IMU/IMPi e IMU ENC |
+| 2025-12-10 | Aggiunta sezione "Dichiarazione obbligatoria a pena di decadenza" (alloggi sociali, Forze Armate, beni-merce) |
+| 2025-12-10 | Aggiunto D.M. 4/05/2023 (modello IMU ENC superato) e D.L. 102/2013 art. 2, c. 5-bis |
+| 2025-12-10 | Integrata giurisprudenza Cass. 37385/2022 e 32115/2024 sulla decadenza |
 
 ---
 
@@ -1456,7 +1683,10 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | L. 208/2015, art. 1, c. 10 | Abolizione scaglioni CD/IAP | - |
 | L. 431/1998, art. 2, c. 3 | Canone concordato | - |
 | D.M. 22/4/2008 | Definizione alloggi sociali | - |
-| D.M. 24/4/2024 | Modello dichiarazione IMU | - |
+| **D.M. 24/4/2024** | **Modello IMU/IMPi e IMU ENC (vigente)** | - |
+| D.M. 4/5/2023 | Modello IMU ENC precedente (superato) | - |
+| D.M. 29/7/2022 | Modello IMU/IMPi precedente (superato) | `decreto_mef_29072022_dichiarazione_imu.md` |
+| **D.L. 102/2013, art. 2, c. 5-bis** | Beni-merce: dichiarazione a pena decadenza | - |
 | D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
 | **L. 126/2020, art. 78-bis** | CD/IAP pensionati con attività agricola | - |
 | **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
@@ -1464,6 +1694,13 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **D.L. 84/2025, art. 6-bis** | ENC attività sportive semplificazione | - |
 | **L. 108/2025, art. 6** | Proroga delibere Prospetto IMU al 15/9/2025 | - |
 | **D.M. MEF 14/3/2025** | Coefficienti fabbricati gruppo D non catastati | - |
+| **L. 213/2023 (Bilancio 2024)** | Novità IMU 2024 (ENC, termini, sisma) | - |
+| **L. 213/2023, art. 1, c. 71** | Interpretazione "posseduti/utilizzati" ENC | - |
+| **L. 213/2023, art. 1, c. 74** | Proroga automatica termini 14/28 ottobre weekend | - |
+| **L. 213/2023, art. 1, c. 422** | Proroga esenzioni sisma 2016-2017 | - |
+| **L. 213/2023, art. 1, c. 528** | ILIA Friuli VG sostituisce IMU | - |
+| **D.L. 189/2016** | Elenco comuni colpiti da sisma 2016-2017 | - |
+| **L.R. FVG 17/2022** | Istituzione ILIA Friuli Venezia Giulia | - |
 
 ### 9.2 Circolari e Risoluzioni MEF
 
@@ -1475,6 +1712,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | Ris. 5/DF 11/6/2021 | Pensionati esteri | - |
 | Circ. 2/DF 16/7/2024 | Enti non commerciali | - |
 | **Ris. 2/DF 10/3/2020** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva | - |
+| **Ris. 4/DF 2017** | Dichiarazione IMU - chiarimenti | - |
+| **Ris. 3/DF 2015** | Dichiarazione IMU - modalità | - |
+| **Circ. 2/DF 2015** | Dichiarazione IMU - obblighi | - |
 
 ### 9.3 Giurisprudenza
 
@@ -1508,6 +1748,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 27067/2024** | Aree fabbricabili: valore venale da parametri tassativi art. 5, c. 5, D.Lgs. 504/1992 |
 | **Cass. 9529/2023** | Aree fabbricabili: conferma parametri tassativi per valutazione |
 | **Cass. 11445/2018** | Aree fabbricabili: parametri vincolanti D.Lgs. 504/1992 |
+| **Cass. 8073/2019** | ENC comodato: esenzione se "compenetrazione" tra enti |
 
 > ⚠️ **CONFLITTO GIURISPRUDENZIALE NON RISOLTO** (Leasing immobiliare):
 > - **Cass. 13793/2019**: Dopo risoluzione anticipata, IMU in capo al **LOCATORE** (società di leasing)
