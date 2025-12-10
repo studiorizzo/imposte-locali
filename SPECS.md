@@ -4,7 +4,7 @@
 >
 > **Ultimo aggiornamento**: 10 Dicembre 2025
 >
-> **Stato**: Analisi documentazione normativa in corso - 33 funzionalità identificate
+> **Stato**: Analisi documentazione normativa in corso - 34 funzionalità identificate
 
 ---
 
@@ -44,6 +44,19 @@
 | Guida Calcolo IMU 2025 | `aggiornamenti/imu-2025-come-calcolare-e-pagare-l-imposta.md` | ✅ Analizzato |
 | IMU Base imponibile e aliquote | `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` | ✅ Analizzato |
 | Novità IMU Bilancio 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` | ✅ Analizzato |
+
+### 1.3 Strumenti Metodologici
+
+| Documento | Posizione | Note |
+|-----------|-----------|------|
+| Check List Acconto IMU 2025 | `aggiornamenti/IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2025.md` | ✅ Riferimento per UI/UX |
+| Check List Acconto IMU 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2024.md` | Versione precedente |
+
+> **Utilizzo checklist**: Queste checklist definiscono la **sequenza logica di raccolta dati** e le **verifiche da effettuare** per ogni immobile. Costituiscono un riferimento fondamentale per:
+> - Progettazione del flusso wizard dell'app
+> - Definizione dei campi obbligatori/opzionali
+> - Ordine delle domande all'utente
+> - Validazione completezza dati inseriti
 
 ---
 
@@ -1148,6 +1161,67 @@ Per fabbricati in corso di:
 - Rilevamento automatico comune FVG → calcolo ILIA invece di IMU
 - Alert specifico per contribuenti FVG
 
+### 6.30 Mappatura Checklist → Campi App (Riferimento UI/UX)
+
+**Fonte:** Check List Acconto IMU 2025 (Wolters Kluwer OneFiscale)
+
+Questa mappatura definisce la corrispondenza tra le voci della checklist professionale e i campi dell'applicazione, utile per la progettazione del wizard di inserimento dati.
+
+#### Step 1: Dati Immobile
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Tipo di immobile | `tipoImmobile` | Select | ✅ |
+| Percentuale di possesso | `percentualePossesso` | Number (0-100) | ✅ |
+| Mesi di possesso | `mesiPossesso` | Number (1-12) | ✅ |
+| Immobile cat. D privo di rendita | `gruppoD_noRendita` | Boolean | Se cat. D |
+| Imbullonati | `verificaImbullonati` | Boolean | Se cat. D |
+
+#### Step 2: Abitazione Principale
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Categoria lusso (A/1, A/8, A/9) | `categoriaLusso` | Boolean | Se abit. princ. |
+| Pertinenze | `pertinenze[]` | Array | Opzionale |
+| Coniugi residenza diversa | `coniugiResidenzaDiversa` | Boolean | Opzionale |
+| Assimilazione | `tipoAssimilazione` | Select | Se applicabile |
+
+#### Step 3: Riduzioni e Agevolazioni
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Comodato genitori/figli | `comodatoParenti` | Boolean | Opzionale |
+| Canone concordato | `canoneLocazione` | Select | Se locato |
+| Interesse storico/artistico | `interesseStorico` | Boolean | Opzionale |
+| Inagibile/inabitabile | `inagibile` | Boolean | Opzionale |
+| Occupato abusivamente | `occupatoAbusivamente` | Boolean | Opzionale |
+
+#### Step 4: Terreni (se applicabile)
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| CD/IAP | `coltivatoreDiretto` | Boolean | Se terreno |
+| Isole minori | `isolaMinore` | Boolean (auto) | Auto da comune |
+| Proprietà collettiva | `proprietaCollettiva` | Boolean | Se terreno |
+| Comune montano (Circ. 9/1993) | `comuneMontano` | Select (auto) | Auto da comune |
+
+#### Step 5: Aliquote e Versamento
+
+| Checklist | Campo App | Tipo | Obbligatorio |
+|-----------|-----------|------|--------------|
+| Aliquota applicata | `aliquota` | Number | ✅ |
+| Comune | `codiceComune` | Select | ✅ |
+| Anno imposta | `annoImposta` | Number | ✅ |
+| Importo minimo | `importoMinimo` | Number | Default 12 |
+
+#### Validazioni da Implementare
+
+1. **Pertinenze**: Max 3 (una per categoria C/2, C/6, C/7)
+2. **Comodato**: Verifica requisiti (stesso comune, unico immobile, contratto registrato)
+3. **Canone concordato**: Riduzione 75% automatica
+4. **CD/IAP**: Esenzione totale terreni
+5. **Categoria lusso**: Detrazione €200 applicabile
+
 ### 6.23 Sintesi Nuove Funzionalità vs Excel 2022
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
@@ -1185,6 +1259,7 @@ Per fabbricati in corso di:
 | **ILIA Friuli VG** | ❌ | ✅ Rilevamento automatico | Bassa |
 | **ENC comodato collegato** | ❌ | ✅ Interpretazione L. 213/2023 | Bassa |
 | **Proroga termini weekend** | ❌ | ✅ Calcolo automatico | Bassa |
+| **Checklist professionale integrata** | ❌ | ✅ Mappatura UI/UX | Alta |
 
 ### 6.24 Adempimenti IMU - Scadenze e Sanzioni
 
@@ -1502,6 +1577,10 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta sezione 6.29: ILIA Friuli Venezia Giulia |
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 8073/2019 (ENC comodato) |
 | 2025-12-10 | Aggiornate funzionalità totali: **33** (da 29) |
+| 2025-12-10 | **Conversione PDF Strumenti utili**: Check List Acconto IMU 2024/2025 |
+| 2025-12-10 | Aggiunta sezione 1.3: Strumenti Metodologici (checklist come riferimento UI/UX) |
+| 2025-12-10 | Aggiunta sezione 6.30: Mappatura Checklist → Campi App |
+| 2025-12-10 | Aggiornate funzionalità totali: **34** (da 33) |
 
 ---
 
