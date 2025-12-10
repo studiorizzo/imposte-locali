@@ -390,6 +390,7 @@ D21 = IF(G21>0,IF(C5=5,3930,""),"")  → Gruppo D (COMUNE eccedenza)
 | 3918 | IMU - Altri fabbricati - COMUNE |
 | 3925 | IMU - Immobili gruppo D - STATO |
 | 3930 | IMU - Immobili gruppo D - COMUNE (incremento) |
+| **3939** | **IMU - Fabbricati beni merce (impresa costruttrice) - COMUNE** |
 
 ---
 
@@ -1017,6 +1018,51 @@ Per fabbricati in corso di:
 | Contitolarità terreni individuale | ❌ | ✅ | Media |
 | Fabbricati in costruzione | ❌ | ✅ Area fabbricabile | Media |
 | Soggetti passivi casi particolari | ❌ | ✅ Fallimento/multiproprietà/condominio | Bassa |
+| Adempimenti completi (scadenze/sanzioni) | ❌ Parziale | ✅ Completo | Alta |
+
+### 6.24 Adempimenti IMU - Scadenze e Sanzioni
+
+**Fonte:** Art. 1, cc. 762-769, L. 160/2019; Decreto 24 aprile 2024
+
+#### Scadenze versamento
+
+| Scadenza | Adempimento | Note |
+|----------|-------------|------|
+| **16 giugno** | Versamento acconto (I rata) | Calcolato su aliquote anno precedente |
+| **16 dicembre** | Versamento saldo (II rata) | Calcolato su aliquote pubblicate entro 28/10 |
+| 16 giugno | Unica soluzione (facoltativa) | Importo annuo intero |
+
+**Non residenti:** Possono versare in unica soluzione entro 16/12 con interessi **3%** sulla I rata.
+
+**Versamento:** Non rateizzabile. Modalità: F24, bollettino postale, PagoPA.
+
+#### Scadenze dichiarazione
+
+| Scadenza | Adempimento | Note |
+|----------|-------------|------|
+| **30 giugno** anno successivo | Dichiarazione IMU ordinaria | Solo se variazioni rilevanti |
+| **30 giugno** anno successivo | Dichiarazione IMU ENC | **Annuale obbligatoria** |
+| 29 settembre | Dichiarazione tardiva (+90gg) | Sanzione ridotta 1/10 |
+
+**Occupazione abusiva:** Dichiarazione **solo telematica** (art. 1, c. 759, lett. g-bis).
+
+#### Sanzioni
+
+| Violazione | Sanzione |
+|------------|----------|
+| Omessa dichiarazione | **100%-200%** tributo (min. €50) |
+| Dichiarazione infedele | **50%-100%** maggiore imposta |
+| Errori formali | **€50-€250** |
+| Omesso/insufficiente versamento | **30%** tributo |
+
+**Ravvedimento operoso:** Applicabile (riduzioni sanzioni in base ai tempi).
+
+#### Funzionalità app
+
+- Calendario scadenze con alert
+- Calcolo ravvedimento operoso
+- Generazione codici tributo F24
+- Alert dichiarazione obbligatoria per fattispecie specifiche
 
 ---
 
@@ -1195,6 +1241,10 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | **Conversione PDF base**: ambito applicazione, presupposto oggettivo, presupposto soggettivo |
 | 2025-12-10 | Aggiunta sezione 6.22: Soggetti passivi casi particolari (fallimento, multiproprietà, condominio) |
 | 2025-12-10 | Aggiornate funzionalità totali: **22** (da 21) |
+| 2025-12-10 | **Conversione PDF Adempimenti**: dichiarazione IMU, dichiarazione ENC, versamento acconto, versamento saldo |
+| 2025-12-10 | Aggiunta sezione 6.24: Adempimenti IMU (scadenze, sanzioni, ravvedimento) |
+| 2025-12-10 | Aggiunto codice tributo 3939 (beni merce impresa costruttrice) |
+| 2025-12-10 | Aggiornate funzionalità totali: **23** (da 22) |
 
 ---
 
