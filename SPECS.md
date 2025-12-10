@@ -931,7 +931,7 @@ Si considerano **coltivatori diretti e IAP** anche i **pensionati** che:
 
 ### 6.20 Contitolarità Terreni dal 2020 - Esenzione Individuale
 
-**Fonte:** Art. 1, comma 743, L. n. 160/2019
+**Fonte:** Art. 1, comma 743, L. n. 160/2019; Ris. MEF 2/DF del 10 marzo 2020
 
 **Regola dal 01/01/2020:**
 In caso di **contitolarità** di terreni:
@@ -941,10 +941,17 @@ In caso di **contitolarità** di terreni:
 
 **Prima del 2020:** L'agevolazione si estendeva a tutti i comproprietari
 
+**ECCEZIONE IMPORTANTE (Ris. MEF 2/DF 2020):**
+Per le **aree fabbricabili con utilizzo agro-silvo-pastorale** da CD/IAP:
+- La *fictio iuris* di non edificabilità ha carattere **OGGETTIVO**
+- Si estende a **TUTTI i comproprietari** (anche senza qualifica CD/IAP)
+- Cass. 15566/2010: "la destinazione del fondo a scopo agricolo integra una situazione incompatibile con lo sfruttamento edilizio"
+
 **Funzionalità:**
 - Gestione quote possesso per terreni agricoli
 - Verifica requisiti CD/IAP per singola quota
 - Calcolo IMU separato per contitolari senza requisiti
+- **Flag "Area fabbricabile con utilizzo agro-silvo-pastorale"** → esenzione a tutti
 
 ### 6.21 Fabbricati in Corso di Costruzione/Ristrutturazione
 
@@ -1324,6 +1331,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiornate funzionalità totali: **26** (da 23) |
 | 2025-12-10 | **Conversione gruppo 1 (3 PDF)**: deducibilità IMU strumentali, Cass. 13793/2019 leasing |
 | 2025-12-10 | **Conversione gruppo 2 (3 PDF)**: trustee soggetto passivo, deducibilità piena, Cass. 19166/2019 (⚠️ CONFLITTO con 13793/2019) |
+| 2025-12-10 | **Conversione gruppo 3 (3 PDF)**: IMPI piattaforme marine, deducibilità 100% 2022, Ris. MEF 2/DF 2020 (fictio iuris aree fabbricabili) |
 
 ---
 
@@ -1361,6 +1369,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | Ris. 4/DF 16/11/2023 | Fabbricati collabenti F/2 | - |
 | Ris. 5/DF 11/6/2021 | Pensionati esteri | - |
 | Circ. 2/DF 16/7/2024 | Enti non commerciali | - |
+| **Ris. 2/DF 10/3/2020** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva | - |
 
 ### 9.3 Giurisprudenza
 
@@ -1390,6 +1399,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 11432/2022** | Cumulo sanzioni - regime continuazione per violazioni pluriennali ICI/IMU |
 | **Cass. 13793/2019** | Leasing risolto: IMU su locatore dalla risoluzione (non dalla riconsegna) |
 | **Cass. 19166/2019** | ⚠️ **CONFLITTO** - Leasing risolto: IMU su locatario fino alla riconsegna materiale |
+| **Cass. 15566/2010** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva per tutti i contitolari |
 
 > ⚠️ **CONFLITTO GIURISPRUDENZIALE NON RISOLTO** (Leasing immobiliare):
 > - **Cass. 13793/2019**: Dopo risoluzione anticipata, IMU in capo al **LOCATORE** (società di leasing)
