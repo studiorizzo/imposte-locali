@@ -966,7 +966,32 @@ Per fabbricati in corso di:
 - Campo data inizio lavori, data fine prevista
 - Calcolo IMU su valore area
 
-### 6.22 Sintesi Nuove Funzionalità vs Excel 2022
+### 6.22 Soggetti Passivi - Casi Particolari (Art. 1 c. 768 L. 160/2019)
+
+**Fonte:** Art. 1, comma 768, L. 160/2019; Circ. MEF 1/DF 2020
+
+**Casi speciali di soggettività passiva:**
+
+| Fattispecie | Soggetto passivo/obbligato | Note |
+|-------------|---------------------------|------|
+| **Fallimento/liquidazione coatta** | Curatore fallimentare / Commissario liquidatore | Versamento entro 3 mesi dal decreto di trasferimento |
+| **Multiproprietà (proprietà turnaria)** | Amministratore della multiproprietà | Se azionaria: società proprietaria |
+| **Parti comuni condominiali** | Amministratore di condominio | Per beni comuni censibili accatastati autonomamente |
+| **Cooperative prop. divisa** | Cooperativa | Fino alla data di assegnazione al socio |
+| **Cooperative prop. indivisa** | Sempre la cooperativa | - |
+| **ATER/IACP con patto riscatto** | NON l'assegnatario | Soggetto passivo resta l'ente |
+| **Immobili in eredità** | Eredi | Pro quota |
+| **Coniuge superstite** | Coniuge superstite | Unico soggetto passivo (art. 540 c.c.) |
+| **Immobili in leasing** | Locatario | Dalla stipula alla risoluzione formale |
+| **Misure conservative giudiziarie** | Custode/amministratore giudiziario | Se disposto dal giudice |
+
+**Funzionalità app:**
+- Tipologia soggetto con casi particolari
+- Gestione fallimento con data decreto trasferimento
+- Gestione multiproprietà/condominio
+- Alert scadenza versamento 3 mesi (fallimento)
+
+### 6.23 Sintesi Nuove Funzionalità vs Excel 2022
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
 |--------------|------------|----------|----------|
@@ -991,6 +1016,7 @@ Per fabbricati in corso di:
 | CD/IAP pensionati | ❌ | ✅ | Media |
 | Contitolarità terreni individuale | ❌ | ✅ | Media |
 | Fabbricati in costruzione | ❌ | ✅ Area fabbricabile | Media |
+| Soggetti passivi casi particolari | ❌ | ✅ Fallimento/multiproprietà/condominio | Bassa |
 
 ---
 
@@ -1166,6 +1192,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 34813/2022, CTR Lombardia 894/2024, Cass. 16550/2019, 15988/2020 |
 | 2025-12-10 | Aggiunte funzionalità 6.16-6.21: Trust, IMU/IRPEF 50%, coniugi contigui, CD/IAP pensionati, contitolarità, fabbricati in costruzione |
 | 2025-12-10 | Aggiornate funzionalità totali: **21** (da 16) |
+| 2025-12-10 | **Conversione PDF base**: ambito applicazione, presupposto oggettivo, presupposto soggettivo |
+| 2025-12-10 | Aggiunta sezione 6.22: Soggetti passivi casi particolari (fallimento, multiproprietà, condominio) |
+| 2025-12-10 | Aggiornate funzionalità totali: **22** (da 21) |
 
 ---
 
