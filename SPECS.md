@@ -1323,6 +1323,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 18554/2022, 23682/2019, 16467/2022, 11432/2022 |
 | 2025-12-10 | Aggiornate funzionalità totali: **26** (da 23) |
 | 2025-12-10 | **Conversione gruppo 1 (3 PDF)**: deducibilità IMU strumentali, Cass. 13793/2019 leasing |
+| 2025-12-10 | **Conversione gruppo 2 (3 PDF)**: trustee soggetto passivo, deducibilità piena, Cass. 19166/2019 (⚠️ CONFLITTO con 13793/2019) |
 
 ---
 
@@ -1388,6 +1389,12 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 16467/2022** | Termini decadenza - 5° anno omesso versamento, 6° anno omessa dichiarazione |
 | **Cass. 11432/2022** | Cumulo sanzioni - regime continuazione per violazioni pluriennali ICI/IMU |
 | **Cass. 13793/2019** | Leasing risolto: IMU su locatore dalla risoluzione (non dalla riconsegna) |
+| **Cass. 19166/2019** | ⚠️ **CONFLITTO** - Leasing risolto: IMU su locatario fino alla riconsegna materiale |
+
+> ⚠️ **CONFLITTO GIURISPRUDENZIALE NON RISOLTO** (Leasing immobiliare):
+> - **Cass. 13793/2019**: Dopo risoluzione anticipata, IMU in capo al **LOCATORE** (società di leasing)
+> - **Cass. 19166/2019**: Dopo risoluzione, IMU sul **LOCATARIO** fino alla riconsegna materiale
+> - Le Sezioni Unite non si sono ancora pronunciate. L'app deve **segnalare entrambe le interpretazioni**.
 
 ---
 
