@@ -1245,6 +1245,8 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta sezione 6.24: Adempimenti IMU (scadenze, sanzioni, ravvedimento) |
 | 2025-12-10 | Aggiunto codice tributo 3939 (beni merce impresa costruttrice) |
 | 2025-12-10 | Aggiornate funzionalità totali: **23** (da 22) |
+| 2025-12-10 | **Conversione PDF Articoli operativi**: CGT Taranto 674/2023, Corte Cost. 60/2024, Cass. 1919/2025 |
+| 2025-12-10 | Aggiunta giurisprudenza: Cass. 1919/2025 (fabbricati rurali D/10 - conta catasto) |
 
 ---
 
@@ -1299,6 +1301,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **CTR Lombardia 894/2024** | Unità adiacenti coniugi - doppia esenzione |
 | **Cass. 16550/2019** | Trust - trustee soggetto passivo IMU |
 | **Cass. 15988/2020** | Trust - conferma trustee come proprietario |
+| **Cass. 1919/2025** | Fabbricati rurali D/10 - conta catasto, non qualifica possessore |
 
 ---
 
