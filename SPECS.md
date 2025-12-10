@@ -1320,7 +1320,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 **Intermediari abilitati:** Art. 3, c. 3, D.P.R. 322/1998 (commercialisti, CAF, etc.).
 
-#### Tipologie di dichiarazione (D.M. 29/07/2022, art. 6)
+#### Tipologie di dichiarazione (D.M. 24/04/2024)
 
 | Tipo | Utilizzo |
 |------|----------|
@@ -1332,11 +1332,32 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 **Variazione circoscrizioni territoriali:** Dichiarazione al comune dove l'immobile risulta ubicato al **1° gennaio** dell'anno d'imposta.
 
-#### Conservazione dati e termini accertamento (Art. 8 D.M. 29/07/2022)
+#### Modelli dichiarativi vigenti (D.M. 24/04/2024)
+
+| Modello | Destinatari | Sostituisce |
+|---------|-------------|-------------|
+| **IMU/IMPi** | Tutti i soggetti passivi | D.M. 29/07/2022 |
+| **IMU ENC** | Enti non commerciali (art. 1, c. 759, lett. g) | D.M. 4/05/2023 |
+
+**IMU ENC:** Deve essere utilizzato dagli ENC per **tutti gli immobili posseduti**, non solo per quelli con attività meritevoli ex art. 7, c. 1, lett. i), D.Lgs. 504/1992.
+
+#### Dichiarazione obbligatoria a pena di decadenza
+
+**Fonte:** Art. 1, c. 769, L. 160/2019; Cass. 37385/2022; Cass. 32115/2024
+
+> ⚠️ **IMPORTANTE:** Il mancato adempimento dell'obbligo dichiarativo determina **decadenza dal beneficio** (Cass. 37385/2022).
+
+| Fattispecie | Riferimento | Note |
+|-------------|-------------|------|
+| **Alloggi sociali** adibiti ad abitazione principale | Art. 1, c. 741, lett. c), n. 3 | Assimilazione ex lege |
+| **Forze Armate/Polizia/VV.FF.** - immobile senza dimora e residenza | Art. 1, c. 741, lett. c), n. 5 | Non richiesti requisiti ordinari |
+| **Beni-merce** - fabbricati destinati vendita impresa costruttrice | Art. 1, c. 751, terzo periodo | Esenzione dal 2022 |
+
+**Beni-merce (Cass. 32115/2024):** L'art. 1, c. 769, L. 160/2019 non ha abrogato l'art. 2, c. 5-bis, D.L. 102/2013; l'esenzione è subordinata alla dichiarazione **a pena di decadenza**.
+
+#### Conservazione dati e termini accertamento
 
 **Periodo conservazione:** Fino al **31 dicembre del 5° anno successivo** a quello in cui la dichiarazione deve essere presentata (art. 1, c. 161, L. 296/2006).
-
-> **Nota:** Il D.M. 29/07/2022 è stato **superato** dal **D.M. 24/04/2024** per l'approvazione dei modelli dichiarativi IMU/IMPi e IMU ENC attualmente in vigore.
 
 #### Sanzioni
 
@@ -1637,6 +1658,10 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunti riferimenti: Ris. MEF 4/DF 2017, 3/DF 2015, Circ. 2/DF 2015 |
 | 2025-12-10 | **Analisi D.M. 29/07/2022** - Modello dichiarazione IMU/IMPi (superato da D.M. 24/04/2024) |
 | 2025-12-10 | Aggiunte tipologie dichiarazione (nuova/sostitutiva/multipla), regole multi-comune, conservazione dati |
+| 2025-12-10 | **Integrazione D.M. 24/04/2024** - Modelli vigenti IMU/IMPi e IMU ENC |
+| 2025-12-10 | Aggiunta sezione "Dichiarazione obbligatoria a pena di decadenza" (alloggi sociali, Forze Armate, beni-merce) |
+| 2025-12-10 | Aggiunto D.M. 4/05/2023 (modello IMU ENC superato) e D.L. 102/2013 art. 2, c. 5-bis |
+| 2025-12-10 | Integrata giurisprudenza Cass. 37385/2022 e 32115/2024 sulla decadenza |
 
 ---
 
@@ -1658,8 +1683,10 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | L. 208/2015, art. 1, c. 10 | Abolizione scaglioni CD/IAP | - |
 | L. 431/1998, art. 2, c. 3 | Canone concordato | - |
 | D.M. 22/4/2008 | Definizione alloggi sociali | - |
-| D.M. 24/4/2024 | Modello dichiarazione IMU (vigente) | - |
-| **D.M. 29/7/2022** | Modello dichiarazione IMU/IMPi (superato) | `decreto_mef_29072022_dichiarazione_imu.md` |
+| **D.M. 24/4/2024** | **Modello IMU/IMPi e IMU ENC (vigente)** | - |
+| D.M. 4/5/2023 | Modello IMU ENC precedente (superato) | - |
+| D.M. 29/7/2022 | Modello IMU/IMPi precedente (superato) | `decreto_mef_29072022_dichiarazione_imu.md` |
+| **D.L. 102/2013, art. 2, c. 5-bis** | Beni-merce: dichiarazione a pena decadenza | - |
 | D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
 | **L. 126/2020, art. 78-bis** | CD/IAP pensionati con attività agricola | - |
 | **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
