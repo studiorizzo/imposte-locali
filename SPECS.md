@@ -4,7 +4,7 @@
 >
 > **Ultimo aggiornamento**: 10 Dicembre 2025
 >
-> **Stato**: Analisi documentazione normativa completata - Nuove funzionalità identificate
+> **Stato**: Analisi documentazione normativa in corso - 29 funzionalità identificate
 
 ---
 
@@ -42,6 +42,7 @@
 |-----------|-----------|-------|
 | Dossier IMU 2025 | `aggiornamenti/dossier_imu_2025.md` | ✅ Analizzato |
 | Guida Calcolo IMU 2025 | `aggiornamenti/imu-2025-come-calcolare-e-pagare-l-imposta.md` | ✅ Analizzato |
+| IMU Base imponibile e aliquote | `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` | ✅ Analizzato |
 
 ---
 
@@ -415,6 +416,35 @@ D21 = IF(G21>0,IF(C5=5,3930,""),"")  → Gruppo D (COMUNE eccedenza)
 | C/3, C/4, C/5 | 140 | |
 | D/1 - D/10 (escluso D/5) | 65 | |
 | D/5 | 80 | |
+
+### 3.2.1 Coefficienti Fabbricati Gruppo D Non Iscritti in Catasto (DM 14/3/2025)
+
+**Ambito di applicazione:** Fabbricati classificabili nel gruppo catastale D che siano:
+- Non iscritti in catasto con attribuzione di rendita
+- Interamente posseduti da imprese
+- Distintamente contabilizzati
+
+**Formula:** Valore = Costo contabilizzato × Coefficiente (per anno di formazione)
+
+| Anno | Coefficiente | Anno | Coefficiente | Anno | Coefficiente |
+|------|--------------|------|--------------|------|--------------|
+| 2025 | 1,00 | 2010 | 1,32 | 1995 | 2,04 |
+| 2024 | 1,00 | 2009 | 1,34 | 1994 | 2,11 |
+| 2023 | 1,02 | 2008 | 1,39 | 1993 | 2,15 |
+| 2022 | 1,14 | 2007 | 1,44 | 1992 | 2,17 |
+| 2021 | 1,19 | 2006 | 1,48 | 1991 | 2,21 |
+| 2020 | 1,19 | 2005 | 1,52 | 1990 | 2,32 |
+| 2019 | 1,20 | 2004 | 1,61 | 1989 | 2,42 |
+| 2018 | 1,22 | 2003 | 1,66 | 1988 | 2,53 |
+| 2017 | 1,22 | 2002 | 1,72 | 1987 | 2,74 |
+| 2016 | 1,23 | 2001 | 1,76 | 1986 | 2,95 |
+| 2015 | 1,23 | 2000 | 1,82 | 1985 | 3,16 |
+| 2014 | 1,23 | 1999 | 1,85 | 1984 | 3,37 |
+| 2013 | 1,24 | 1998 | 1,87 | 1983 | 3,58 |
+| 2012 | 1,27 | 1997 | 1,92 | 1982 | 3,79 |
+| 2011 | 1,30 | 1996 | 1,98 | | |
+
+> **Fonte:** D.M. MEF 14 marzo 2025; art. 1, comma 746, L. 160/2019; art. 5, comma 3, D.Lgs. 504/1992
 
 ### 3.3 Aliquote Base 2025
 
@@ -821,10 +851,18 @@ ALTRIMENTI:
 - I Comuni sono obbligati ad utilizzare il **Prospetto delle aliquote** ministeriale
 - Struttura predefinita con fattispecie codificate
 - Possibilità di diversificare aliquote per fattispecie specifiche
+- Obbligo decorre dall'anno di imposta 2025 (art. 6-ter, comma 1, D.L. n. 132/2023)
+
+**Proroga 2025 (Art. 6, L. 108/2025 - D.L. 84/2025 "Decreto Fiscale"):**
+- Comuni che **non** hanno adottato la delibera entro il 28/02/2025 → possono approvare entro **15 settembre 2025**
+- Comuni che hanno adottato delibera entro 28/02/2025 **senza** Prospetto → possono sanare entro **15 settembre 2025**
+- Sono **valide** le delibere adottate tra 1/03/2025 e 18/06/2025 (data entrata in vigore D.L. 84/2025)
+- Delibera senza Prospetto = **non idonea** a produrre effetti costitutivi
 
 **Impatto app:**
 - Possibile integrazione con il portale MEF per aliquote ufficiali
 - Validazione automatica delle aliquote inserite
+- Alert per scadenza 15/09/2025 (proroga)
 
 ### 6.14 Gestione Enti Non Commerciali (ENC) - Regime Speciale
 
@@ -999,6 +1037,61 @@ Per fabbricati in corso di:
 - Gestione multiproprietà/condominio
 - Alert scadenza versamento 3 mesi (fallimento)
 
+### 6.26 Deducibilità IMU Immobili Strumentali
+
+**Fonte:** Art. 1, cc. 772-773, L. 160/2019; Circ. Agenzia Entrate 10/E del 14/5/2014
+
+**Evoluzione storica deducibilità:**
+
+| Periodo | Percentuale Deducibile |
+|---------|------------------------|
+| 2012 | 0% (Corte Cost.: incostituzionale) |
+| 2013 | 30% |
+| 2014-2018 | 20% |
+| 2019 | 50% |
+| 2020-2021 | 60% |
+| **Dal 2022** | **100%** |
+
+**Immobili ammessi:**
+- Immobili strumentali **per natura** (non suscettibili di diversa destinazione)
+- Immobili strumentali **per destinazione** (utilizzo effettivo)
+- Per lavoratori autonomi: solo se uso **esclusivo** per attività
+
+**Immobili esclusi:**
+- Fabbricati uso promiscuo (Circ. 10/E/2014)
+- Immobili patrimonio
+- Immobili merce (beni destinati alla vendita)
+
+**Note operative:**
+- Deduzione per **cassa** (anno del pagamento, non competenza)
+- Si deduce l'IMU **effettivamente versata**
+- Interessi e sanzioni **non deducibili**
+- **Indeducibile da IRAP** (espressa previsione c. 772)
+- Si applica anche a IMI (Bolzano) e IMIS (Trento)
+
+**Funzionalità app:**
+- Alert per contribuenti con immobili strumentali
+- Info per dichiarazione redditi (deduzione integrale)
+
+### 6.27 Valutazione Aree Fabbricabili - Parametri Obbligatori (Cass. 27067/2024)
+
+**Fonte:** Cass. 18/10/2024 n. 27067; art. 5, c. 5, D.Lgs. 504/1992
+
+**Principio:** Il valore venale delle aree fabbricabili deve essere determinato in base ai **parametri tassativi** previsti dalla legge:
+
+1. **Zona territoriale** di ubicazione
+2. **Indice di edificabilità**
+3. **Destinazione d'uso** consentita
+4. **Oneri** per eventuali lavori di adattamento del terreno
+5. **Prezzi medi** di mercato per aree analoghe
+
+**Giurisprudenza conforme:** Cass. 9529/2023; Cass. 11445/2018
+
+**Funzionalità app:**
+- Checklist parametri per valutazione aree
+- Campo note per documentazione valore dichiarato
+- Alert se valore < valore comunale predeterminato
+
 ### 6.23 Sintesi Nuove Funzionalità vs Excel 2022
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
@@ -1029,6 +1122,9 @@ Per fabbricati in corso di:
 | **Società di persone NO agevolazioni** | ❌ | ✅ Alert automatico | Media |
 | **Termini decadenza accertamento** | ❌ | ✅ Calcolo automatico | Media |
 | **Cumulo sanzioni pluriennali** | ❌ | ✅ Info regime continuazione | Bassa |
+| **Deducibilità IMU 100%** | ❌ | ✅ Info dichiarazione redditi | Media |
+| **Valutazione aree (parametri obbligatori)** | ❌ | ✅ Checklist + alert | Media |
+| **Coefficienti Gruppo D non catastati** | ❌ | ✅ Tabella completa 2025 | Bassa |
 
 ### 6.24 Adempimenti IMU - Scadenze e Sanzioni
 
@@ -1332,6 +1428,13 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | **Conversione gruppo 1 (3 PDF)**: deducibilità IMU strumentali, Cass. 13793/2019 leasing |
 | 2025-12-10 | **Conversione gruppo 2 (3 PDF)**: trustee soggetto passivo, deducibilità piena, Cass. 19166/2019 (⚠️ CONFLITTO con 13793/2019) |
 | 2025-12-10 | **Conversione gruppo 3 (3 PDF)**: IMPI piattaforme marine, deducibilità 100% 2022, Ris. MEF 2/DF 2020 (fictio iuris aree fabbricabili) |
+| 2025-12-10 | **Analisi documento "IMU – Base imponibile e aliquote"** (Wolters Kluwer OneFiscale) |
+| 2025-12-10 | Aggiunta tabella coefficienti 2025 fabbricati Gruppo D non catastati (DM 14/3/2025) |
+| 2025-12-10 | Aggiornata sezione Prospetto Aliquote con proroga art. 6 L. 108/2025 (deadline 15/9/2025) |
+| 2025-12-10 | Aggiunta sezione 6.26: Deducibilità IMU 100% dal 2022 per immobili strumentali |
+| 2025-12-10 | Aggiunta sezione 6.27: Valutazione aree fabbricabili - parametri obbligatori (Cass. 27067/2024) |
+| 2025-12-10 | Aggiunta giurisprudenza: Cass. 27067/2024, 9529/2023, 11445/2018 (valutazione aree) |
+| 2025-12-10 | Aggiornate funzionalità totali: **29** (da 26) |
 
 ---
 
@@ -1359,6 +1462,8 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
 | **D.M. 6/9/2024** | Proroga prospetto aliquote al 2025 | - |
 | **D.L. 84/2025, art. 6-bis** | ENC attività sportive semplificazione | - |
+| **L. 108/2025, art. 6** | Proroga delibere Prospetto IMU al 15/9/2025 | - |
+| **D.M. MEF 14/3/2025** | Coefficienti fabbricati gruppo D non catastati | - |
 
 ### 9.2 Circolari e Risoluzioni MEF
 
@@ -1400,6 +1505,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 13793/2019** | Leasing risolto: IMU su locatore dalla risoluzione (non dalla riconsegna) |
 | **Cass. 19166/2019** | ⚠️ **CONFLITTO** - Leasing risolto: IMU su locatario fino alla riconsegna materiale |
 | **Cass. 15566/2010** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva per tutti i contitolari |
+| **Cass. 27067/2024** | Aree fabbricabili: valore venale da parametri tassativi art. 5, c. 5, D.Lgs. 504/1992 |
+| **Cass. 9529/2023** | Aree fabbricabili: conferma parametri tassativi per valutazione |
+| **Cass. 11445/2018** | Aree fabbricabili: parametri vincolanti D.Lgs. 504/1992 |
 
 > ⚠️ **CONFLITTO GIURISPRUDENZIALE NON RISOLTO** (Leasing immobiliare):
 > - **Cass. 13793/2019**: Dopo risoluzione anticipata, IMU in capo al **LOCATORE** (società di leasing)
