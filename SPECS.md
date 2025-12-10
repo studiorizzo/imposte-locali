@@ -812,7 +812,56 @@ ALTRIMENTI:
 
 **Funzionalità:** Da valutare se includere (fattispecie molto specifica)
 
-### 6.13 Sintesi Nuove Funzionalità vs Excel 2022
+### 6.13 Prospetto Aliquote Obbligatorio 2025 (D.M. 7/7/2023 e D.M. 6/9/2024)
+
+**Fonte:** D.M. 7 luglio 2023 (definizione prospetto), D.M. 6 settembre 2024 (proroga al 2025)
+
+**Novità dal 2025:**
+- I Comuni sono obbligati ad utilizzare il **Prospetto delle aliquote** ministeriale
+- Struttura predefinita con fattispecie codificate
+- Possibilità di diversificare aliquote per fattispecie specifiche
+
+**Impatto app:**
+- Possibile integrazione con il portale MEF per aliquote ufficiali
+- Validazione automatica delle aliquote inserite
+
+### 6.14 Gestione Enti Non Commerciali (ENC) - Regime Speciale
+
+**Fonte:** L. 160/2019 art. 1 cc. 759, 770; Circ. MEF 2/DF 16/7/2024
+
+**Caratteristiche distintive:**
+
+| Elemento | Regime ordinario | Regime ENC |
+|----------|------------------|------------|
+| Rate versamento | 2 (16/6 e 16/12) | **3** (16/6, 16/6, 16/12) |
+| Dichiarazione | Ordinaria (30/6 anno successivo) | **Annuale specifica** entro 30/6 anno successivo |
+| Esenzioni | Generali | Con requisiti soggettivi + oggettivi |
+| Proporzione uso | N/A | Calcolo proporzionale per attività miste |
+
+**Esenzione ENC (art. 1, c. 759 L. 160/2019):**
+- Destinazione esclusiva ad attività non commerciali
+- Se uso promiscuo: esenzione proporzionale alla superficie non commerciale
+- Accatastamento autonomo parti commerciali se superficie > percentuale regolamentare
+
+**Funzionalità:**
+- Tipologia soggetto "Ente Non Commerciale"
+- Campo "Uso promiscuo" con % superficie non commerciale
+- Calcolo automatico tre rate
+- Alert dichiarazione specifica
+
+### 6.15 Semplificazione ENC Attività Sportive (Art. 6-bis D.L. 84/2025)
+
+**Fonte:** Art. 6-bis D.L. 84/2025
+
+**Novità 2025:**
+- Semplificazione per ENC che svolgono **attività sportive dilettantistiche**
+- Allineamento con riforma sport (D.Lgs. 36/2021)
+
+**Funzionalità:**
+- Flag "Attività sportiva dilettantistica" per ENC
+- Regime semplificato calcolo esenzione
+
+### 6.16 Sintesi Nuove Funzionalità vs Excel 2022
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
 |--------------|------------|----------|----------|
@@ -828,6 +877,9 @@ ALTRIMENTI:
 | Pensionati esteri 50% | ❌ | ✅ | Media |
 | Alert dichiarazione | ❌ | ✅ | Bassa |
 | Importo minimo €12 | ❌ | ✅ | Bassa |
+| Prospetto aliquote obbligatorio | ❌ | ✅ Integrazione | Media |
+| ENC regime 3 rate | ❌ | ✅ | Bassa |
+| ENC attività sportive | ❌ | ✅ Semplificato | Bassa |
 
 ---
 
@@ -995,6 +1047,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Creazione markdown da PDF: art-1-comma-758, art-13, art-9, comma-639, D.Lgs. 504/92, Circ. MEF |
 | 2025-12-10 | **Identificazione 13 nuove funzionalità** per l'app rispetto a Excel 2022 |
 | 2025-12-10 | Aggiunta sezione 6 "Nuove Funzionalità App 2025" |
+| 2025-12-10 | **Integrazione documenti FEDELE**: prospetto aliquote 2025, ENC 3 rate, attività sportive |
+| 2025-12-10 | Aggiunta Cass. 18940/2025 (occupazione abusiva retroattiva) |
+| 2025-12-10 | Aggiornate funzionalità totali: **16** (da 13) |
 
 ---
 
@@ -1018,6 +1073,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | D.M. 22/4/2008 | Definizione alloggi sociali | - |
 | D.M. 24/4/2024 | Modello dichiarazione IMU | - |
 | D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
+| **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
+| **D.M. 6/9/2024** | Proroga prospetto aliquote al 2025 | - |
+| **D.L. 84/2025, art. 6-bis** | ENC attività sportive semplificazione | - |
 
 ### 9.2 Circolari e Risoluzioni MEF
 
@@ -1039,6 +1097,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | Cass. 37385/2022 | Dichiarazione a pena decadenza |
 | Cass. 32115/2024 | Beni merce - dichiarazione obbligatoria |
 | Cass. 9620/2025 | Coniugi - doppia esenzione |
+| **Cass. 18940/2025** | Occupazione abusiva - esenzione retroattiva |
 | CTR Abruzzo 8/2022 | Locazione parziale - mantiene esenzione |
 
 ---
@@ -1048,8 +1107,8 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 ### Domande aperte
 
 1. Gestione ILIA (Friuli-Venezia Giulia), IMIS (Trentino), IMI (Alto Adige)?
-2. Implementare prospetto aliquote obbligatorio dal 2025?
-3. Gestione enti non commerciali (IMU/ENC)?
+2. ~~Implementare prospetto aliquote obbligatorio dal 2025?~~ → **Risolto**: Aggiunto in 6.13
+3. ~~Gestione enti non commerciali (IMU/ENC)?~~ → **Risolto**: Aggiunto in 6.14-6.15
 
 ---
 
