@@ -861,7 +861,112 @@ ALTRIMENTI:
 - Flag "Attività sportiva dilettantistica" per ENC
 - Regime semplificato calcolo esenzione
 
-### 6.16 Sintesi Nuove Funzionalità vs Excel 2022
+### 6.16 Trust e Trustee come Soggetto Passivo (Cass. 16550/2019, 15988/2020)
+
+**Fonte:** Cass. 20 giugno 2019, n. 16550; Cass. 27 luglio 2020, n. 15988
+
+**Principio:**
+- Per immobili vincolati in **trust**, il soggetto passivo IMU è il **trustee**
+- Il trust è privo di personalità giuridica
+- I beni sono trasferiti fiduciariamente al trustee
+- Non viola il principio di segregazione patrimoniale
+
+**Funzionalità:**
+- Tipologia soggetto "Trust"
+- Campo "Trustee" come soggetto passivo
+- Info: segregazione patrimoniale mantenuta
+
+### 6.17 Rapporto IMU/IRPEF per Immobili Non Locati (Art. 9 c. 9 D.Lgs. 23/2011)
+
+**Fonte:** Art. 9, comma 9, D.Lgs. n. 23/2011 (non abrogato)
+
+**Regola:**
+
+| Situazione | Comune | IMU | IRPEF |
+|------------|--------|-----|-------|
+| Immobile non locato | **Diverso** da abitaz. princ. | ✅ | ❌ No |
+| Immobile non locato | **Stesso** abitaz. princ. | ✅ | ✅ **50%** reddito |
+| Immobile locato | Qualsiasi | ✅ | ✅ 100% (o cedolare) |
+
+**Funzionalità:**
+- Alert "Reddito fondiario 50% IRPEF" se immobile non locato stesso comune
+- Info per dichiarazione redditi
+
+### 6.18 Coniugi con Doppia Abitazione Principale - Dettagli
+
+**Fonte:** Corte Cost. 209/2022; Cass. 9620/2025; Cass. 34813/2022
+
+**Casistiche chiarite:**
+
+| Situazione | Esenzione |
+|------------|-----------|
+| Coniugi in due abitazioni **stesso comune** | ✅ Entrambi esenti |
+| Coniugi in due abitazioni **comuni diversi** | ✅ Entrambi esenti |
+| Unità **contigue** formanti unica abitazione | ✅ Esenti (Cass. 34813/2022) |
+| Coniugi proprietari esclusivi unità adiacenti | ✅ Entrambi esenti (CTR Lombardia 894/2024) |
+
+**Art. 5-decies D.L. 146/2021:** Dichiarato **incostituzionale**
+
+**Funzionalità:**
+- Rimozione limitazione "un solo immobile per nucleo"
+- Gestione immobili contigui
+- Alert informativo post Corte Cost. 209/2022
+
+### 6.19 CD/IAP Pensionati (Art. 78-bis L. 126/2020)
+
+**Fonte:** Art. 78-bis L. 13 ottobre 2020, n. 126 (D.L. Agosto)
+
+**Novità:**
+Si considerano **coltivatori diretti e IAP** anche i **pensionati** che:
+- Continuano a svolgere attività in agricoltura
+- Mantengono l'iscrizione nella gestione previdenziale agricola
+
+**Effetto:** Beneficiano delle agevolazioni IMU per terreni agricoli (esenzione)
+
+**Funzionalità:**
+- Flag "Pensionato con attività agricola"
+- Verifica mantenimento iscrizione previdenza agricola
+- Applicazione esenzione terreni
+
+### 6.20 Contitolarità Terreni dal 2020 - Esenzione Individuale
+
+**Fonte:** Art. 1, comma 743, L. n. 160/2019
+
+**Regola dal 01/01/2020:**
+In caso di **contitolarità** di terreni:
+- L'esenzione CD/IAP spetta **solo al contitolare con requisiti**
+- Non si estende più agli altri comproprietari
+- Ogni soggetto ha **autonoma obbligazione tributaria**
+
+**Prima del 2020:** L'agevolazione si estendeva a tutti i comproprietari
+
+**Funzionalità:**
+- Gestione quote possesso per terreni agricoli
+- Verifica requisiti CD/IAP per singola quota
+- Calcolo IMU separato per contitolari senza requisiti
+
+### 6.21 Fabbricati in Corso di Costruzione/Ristrutturazione
+
+**Fonte:** Art. 1, comma 746, L. 160/2019
+
+**Regola:**
+Per fabbricati in corso di:
+- costruzione
+- ricostruzione (previa demolizione)
+- recupero edilizio (restauro, ristrutturazione edilizia/urbanistica)
+
+**L'IMU si applica sull'area fabbricabile**, non sul fabbricato in corso d'opera.
+
+**Durata:** Fino a ultimazione lavori o utilizzo (se anteriore)
+
+**Eccezione:** Manutenzione ordinaria/straordinaria → IMU sul fabbricato
+
+**Funzionalità:**
+- Flag "In costruzione/ristrutturazione"
+- Campo data inizio lavori, data fine prevista
+- Calcolo IMU su valore area
+
+### 6.22 Sintesi Nuove Funzionalità vs Excel 2022
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
 |--------------|------------|----------|----------|
@@ -880,6 +985,12 @@ ALTRIMENTI:
 | Prospetto aliquote obbligatorio | ❌ | ✅ Integrazione | Media |
 | ENC regime 3 rate | ❌ | ✅ | Bassa |
 | ENC attività sportive | ❌ | ✅ Semplificato | Bassa |
+| Trust/Trustee soggetto passivo | ❌ | ✅ | Bassa |
+| IMU/IRPEF 50% stesso comune | ❌ | ✅ Alert | Media |
+| Immobili contigui coniugi | ❌ | ✅ | Media |
+| CD/IAP pensionati | ❌ | ✅ | Media |
+| Contitolarità terreni individuale | ❌ | ✅ | Media |
+| Fabbricati in costruzione | ❌ | ✅ Area fabbricabile | Media |
 
 ---
 
@@ -1050,6 +1161,11 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | **Integrazione documenti FEDELE**: prospetto aliquote 2025, ENC 3 rate, attività sportive |
 | 2025-12-10 | Aggiunta Cass. 18940/2025 (occupazione abusiva retroattiva) |
 | 2025-12-10 | Aggiornate funzionalità totali: **16** (da 13) |
+| 2025-12-10 | **Conversione PDF Approfondimenti**: coniugi, aree fabbricabili, fabbricati, pertinenze, terreni |
+| 2025-12-10 | **Conversione PDF Casi particolari**: trust/trustee, immobili non locati IMU/IRPEF |
+| 2025-12-10 | Aggiunta giurisprudenza: Cass. 34813/2022, CTR Lombardia 894/2024, Cass. 16550/2019, 15988/2020 |
+| 2025-12-10 | Aggiunte funzionalità 6.16-6.21: Trust, IMU/IRPEF 50%, coniugi contigui, CD/IAP pensionati, contitolarità, fabbricati in costruzione |
+| 2025-12-10 | Aggiornate funzionalità totali: **21** (da 16) |
 
 ---
 
@@ -1073,6 +1189,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | D.M. 22/4/2008 | Definizione alloggi sociali | - |
 | D.M. 24/4/2024 | Modello dichiarazione IMU | - |
 | D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
+| **L. 126/2020, art. 78-bis** | CD/IAP pensionati con attività agricola | - |
 | **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
 | **D.M. 6/9/2024** | Proroga prospetto aliquote al 2025 | - |
 | **D.L. 84/2025, art. 6-bis** | ENC attività sportive semplificazione | - |
@@ -1096,9 +1213,13 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | Cass. 23680/2020 | Alloggi sociali - no dichiarazione |
 | Cass. 37385/2022 | Dichiarazione a pena decadenza |
 | Cass. 32115/2024 | Beni merce - dichiarazione obbligatoria |
-| Cass. 9620/2025 | Coniugi - doppia esenzione |
+| Cass. 9620/2025 | Coniugi - doppia esenzione stesso comune |
 | **Cass. 18940/2025** | Occupazione abusiva - esenzione retroattiva |
 | CTR Abruzzo 8/2022 | Locazione parziale - mantiene esenzione |
+| **Cass. 34813/2022** | Immobili contigui formanti unica abitazione |
+| **CTR Lombardia 894/2024** | Unità adiacenti coniugi - doppia esenzione |
+| **Cass. 16550/2019** | Trust - trustee soggetto passivo IMU |
+| **Cass. 15988/2020** | Trust - conferma trustee come proprietario |
 
 ---
 
