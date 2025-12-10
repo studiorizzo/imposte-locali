@@ -4,7 +4,7 @@
 >
 > **Ultimo aggiornamento**: 10 Dicembre 2025
 >
-> **Stato**: Analisi iniziale completata, in attesa di ulteriore documentazione 2025
+> **Stato**: Analisi documentazione normativa completata - Nuove funzionalità identificate
 
 ---
 
@@ -15,9 +15,10 @@
 3. [Normativa IMU 2025](#3-normativa-imu-2025)
 4. [Tabella Confronto 2022 vs 2025](#4-tabella-confronto-2022-vs-2025)
 5. [Modifiche Necessarie](#5-modifiche-necessarie)
-6. [Specifiche Validate](#6-specifiche-validate)
-7. [Changelog](#7-changelog)
-8. [Riferimenti Normativi](#8-riferimenti-normativi)
+6. [Nuove Funzionalità App 2025](#6-nuove-funzionalità-app-2025)
+7. [Specifiche Validate](#7-specifiche-validate)
+8. [Changelog](#8-changelog)
+9. [Riferimenti Normativi](#9-riferimenti-normativi)
 
 ---
 
@@ -614,9 +615,225 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ---
 
-## 6. SPECIFICHE VALIDATE
+## 6. NUOVE FUNZIONALITÀ APP 2025
 
-### 6.1 Formule Confermate
+> Funzionalità aggiuntive rispetto all'Excel originale 2022, basate sulla documentazione normativa analizzata.
+
+### 6.1 Gestione Occupazione Abusiva (Corte Cost. 60/2024)
+
+**Fonte:** D.Lgs. 23/2011 art. 9 comma 1, come integrato da Corte Cost. 60/2024
+
+**Funzionalità:**
+- Flag "Immobile occupato abusivamente" per ciascun immobile
+- Campo data presentazione denuncia/azione giudiziaria
+- Calcolo automatico esenzione dal periodo in cui sussistono le condizioni
+
+**Logica:**
+```
+SE occupato_abusivamente = SI E denuncia_presentata = SI:
+   IMU = 0 (per il periodo)
+```
+
+**Note:** L'esenzione ha efficacia retroattiva. Reati rilevanti:
+- Art. 614 comma 2 c.p. (violazione di domicilio aggravata)
+- Art. 633 c.p. (invasione di terreni o edifici)
+
+### 6.2 Gestione Abitazione Principale Post Corte Cost. 209/2022
+
+**Fonte:** D.L. 201/2011 art. 13 comma 2, come modificato da Corte Cost. 209/2022
+
+**Novità normativa:**
+- Eliminato riferimento al "nucleo familiare"
+- È sufficiente che il **solo possessore** dimori e risieda nell'immobile
+- Coniugi/conviventi possono avere **due abitazioni principali** in comuni diversi
+
+**Funzionalità:**
+- Rimozione campo "nucleo familiare residente"
+- Verifica solo dimora + residenza del possessore
+- Alert informativo per coniugi con immobili in comuni diversi
+
+### 6.3 Gestione Casa Familiare Estesa (Circ. MEF 1/DF 2020)
+
+**Fonte:** L. 160/2019 art. 1 comma 741 lett. c) n. 4
+
+**Novità rispetto a Excel 2022:**
+- Include anche coppie **non sposate** con figli
+- La "casa familiare" è definita dal **provvedimento del Giudice**
+- Si prescinde dalla proprietà (può essere anche di terzi)
+- Non rilevanti residenza e dimora dell'assegnatario
+
+**Funzionalità:**
+- Campo "Assegnazione giudiziale casa familiare" (SI/NO)
+- Se SI → assimilazione ad abitazione principale → esenzione
+
+### 6.4 Gestione Pertinenze Fiscali (Circ. MEF 1/DF 2020, par. 8)
+
+**Fonte:** L. 160/2019 art. 1 comma 741 lett. a)
+
+**Novità:** Dal 01/01/2020 la nozione di pertinenza è **esclusivamente fiscale**, non più civilistica (artt. 817 ss. c.c.)
+
+**Regola:**
+| Situazione | Trattamento |
+|------------|-------------|
+| Area accatastata unitariamente (graffatura) | **Pertinenza** del fabbricato |
+| Area NON accatastata unitariamente | **Area fabbricabile** autonoma |
+
+**Funzionalità:**
+- Campo "Accatastamento unitario" per aree adiacenti a fabbricati
+- Se NO → area soggetta autonomamente come edificabile
+
+### 6.5 Gestione Leasing Immobiliare (Circ. MEF 1/DF 2020, par. 9)
+
+**Fonte:** L. 160/2019 art. 1 comma 743
+
+**Chiarimento MEF:**
+- Soggetto passivo = **locatario** dalla data della stipula
+- Fine soggettività = **scadenza contratto** (NON riconsegna del bene)
+
+**Differenza con TASI (abolita):**
+- TASI: soggettività fino alla riconsegna (verbale di consegna)
+- IMU: soggettività fino a fine contratto
+
+**Funzionalità:**
+- Campo "Immobile in leasing" (SI/NO)
+- Se SI: data stipula contratto, data fine contratto
+- Calcolo automatico mesi di possesso
+
+### 6.6 Gestione IACP/ERP Migliorata (Circ. MEF 1/DF 2020, par. 3)
+
+**Fonte:** L. 160/2019 art. 1 comma 749 e comma 754
+
+**Chiarimenti MEF:**
+
+| Tipo immobile | Trattamento |
+|---------------|-------------|
+| Alloggi IACP/ERP regolarmente assegnati | Detrazione €200, aliquota ordinaria |
+| Alloggi IACP/ERP sfitti | Possibilità azzeramento aliquota (c. 754) |
+| Alloggi sociali (DM 22/04/2008) | **Esenti** se adibiti ad abitazione principale |
+
+**ATTENZIONE:** Alloggi IACP non sono automaticamente "alloggi sociali". L'esenzione vale solo se conformi al DM 22/04/2008.
+
+**Funzionalità:**
+- Tipologia "IACP/ERP" con sottotipologie
+- Campo "Alloggio sociale DM 22/04/2008" (SI/NO)
+- Logica detrazione/esenzione automatica
+
+### 6.7 Esenzioni Terreni Agricoli Complete (L. 160/2019 c. 758)
+
+**Fonte:** Art. 1 comma 758 L. 160/2019
+
+**Esenzioni totali:**
+1. Terreni posseduti e condotti da **CD/IAP** (qualunque ubicazione)
+2. Terreni nelle **isole minori** (Allegato A L. 448/2001)
+3. Terreni a **proprietà collettiva** indivisibile/inusucapibile
+4. Terreni in **zone montane/collinari** (elenco ISTAT)
+
+**Funzionalità:**
+- Flag per ciascuna tipologia di esenzione
+- Verifica automatica tramite codice catastale comune (per zone montane/isole)
+
+### 6.8 Esenzioni Storiche D.Lgs. 504/1992 art. 7
+
+**Fonte:** D.Lgs. 504/1992 art. 7 (ancora vigente per rinvio)
+
+**Esenzioni da implementare:**
+
+| Lettera | Descrizione | Implementazione |
+|---------|-------------|-----------------|
+| a) | Enti pubblici (Stato, Regioni, ecc.) | Flag tipologia soggetto |
+| b) | Categorie E/1 - E/9 | Automatico da categoria |
+| c) | Fabbricati usi culturali (art. 5-bis DPR 601/73) | Flag |
+| d) | Fabbricati culto | Flag |
+| e) | Fabbricati Santa Sede | Flag |
+| f) | Stati esteri / Org. internazionali | Flag |
+| g) | Inagibili recuperati per attività L. 104/92 | Flag + periodo |
+| h) | Terreni montani/collinari | Automatico da comune |
+| i) | Enti non commerciali (ENC) | Flag + verifica modalità |
+
+### 6.9 Gestione Pensionati Esteri/AIRE (L. 178/2020)
+
+**Fonte:** L. 178/2020 art. 1 comma 48; L. 160/2019 art. 1 comma 741
+
+**Requisiti per riduzione 50%:**
+- Cittadino italiano residente all'estero
+- Iscritto AIRE
+- Pensionato nel Paese di residenza
+- **Un solo immobile** in Italia
+- Non locato né in comodato
+
+**Funzionalità:**
+- Flag "Pensionato estero AIRE" (SI/NO)
+- Verifica unicità immobile
+- Riduzione automatica 50% base imponibile
+
+### 6.10 Alert Obbligo Dichiarazione IMU
+
+**Fonte:** L. 160/2019 art. 1 comma 769
+
+**Termine:** 30 giugno anno successivo
+
+**Casi con obbligo dichiarativo:**
+- Inizio possesso
+- Variazioni rilevanti
+- Beni merce (Cass. 32115/2024)
+- Comodato a parenti (prima dichiarazione)
+
+**Funzionalità:**
+- Alert automatico se presenti fattispecie con obbligo
+- Indicazione scadenza presentazione
+
+### 6.11 Gestione Aliquote e Mancata Pubblicazione
+
+**Fonte:** L. 160/2019 art. 1 comma 767; Circ. MEF 1/DF 2020 par. 4
+
+**Regola:**
+```
+SE delibera_pubblicata_entro_28_ottobre = SI:
+   Usa aliquote anno corrente
+ALTRIMENTI:
+   Usa aliquote anno precedente
+```
+
+**Importo minimo:** €12 (se comune non delibera diversamente)
+
+**Funzionalità:**
+- Campo "Aliquote definitive" (SI/NO)
+- Se NO: usa aliquote precedenti o base
+- Verifica importo minimo versamento
+
+### 6.12 IMPI - Piattaforme Marine (Art. 38 D.L. 124/2019)
+
+**Fonte:** Art. 38 D.L. 124/2019
+
+**Caratteristiche:**
+- Imposta sulle piattaforme marine
+- Aliquota fissa (comuni NON possono variare)
+- Versamento unica soluzione 16 dicembre
+
+**Funzionalità:** Da valutare se includere (fattispecie molto specifica)
+
+### 6.13 Sintesi Nuove Funzionalità vs Excel 2022
+
+| Funzionalità | Excel 2022 | App 2025 | Priorità |
+|--------------|------------|----------|----------|
+| Occupazione abusiva | ❌ | ✅ Esenzione | Alta |
+| Abitazione princ. coniugi separati | ❌ Nucleo fam. | ✅ Solo possessore | Alta |
+| Casa familiare coppie non sposate | ❌ | ✅ | Media |
+| Pertinenze fiscali (graffatura) | ❌ Civilistiche | ✅ Fiscali | Media |
+| Leasing (fine contratto) | ❌ | ✅ | Media |
+| IACP vs Alloggi sociali | ❌ Confusi | ✅ Distinti | Media |
+| Terreni isole minori | ❌ | ✅ Esenti | Bassa |
+| Terreni proprietà collettiva | ❌ | ✅ Esenti | Bassa |
+| Esenzioni cat. E/1-E/9 | ❌ | ✅ Automatiche | Bassa |
+| Pensionati esteri 50% | ❌ | ✅ | Media |
+| Alert dichiarazione | ❌ | ✅ | Bassa |
+| Importo minimo €12 | ❌ | ✅ | Bassa |
+
+---
+
+## 7. SPECIFICHE VALIDATE
+
+### 7.1 Formule Confermate
 
 #### Base Imponibile Fabbricati
 ```
@@ -654,7 +871,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 ```
 ✅ **VALIDATA** - Art. 1, c. 760, L. 160/2019
 
-### 6.2 Coefficienti Validati
+### 7.2 Coefficienti Validati
 
 | Categoria | Coefficiente | Fonte | Stato |
 |-----------|--------------|-------|-------|
@@ -668,7 +885,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | D (no D/5, D/10) | 65 | c. 745 | ✅ |
 | D/5 | 80 | c. 745 | ✅ |
 
-### 6.3 Aliquote Base Validate
+### 7.3 Aliquote Base Validate
 
 | Fattispecie | Aliquota Base | Fonte | Stato |
 |-------------|---------------|-------|-------|
@@ -679,7 +896,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | Altri fabbricati | 0,86% | c. 754 | ✅ |
 | Aree fabbricabili | 0,86% | c. 754 | ✅ |
 
-### 6.4 Esempi Pratici di Calcolo
+### 7.4 Esempi Pratici di Calcolo
 
 #### Esempio 1: Appartamento A/2
 
@@ -761,7 +978,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 
 ---
 
-## 7. CHANGELOG
+## 8. CHANGELOG
 
 | Data | Modifica |
 |------|----------|
@@ -773,34 +990,46 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | **Estrazione completa formule Excel** da file .xlsm (1556 formule) |
 | 2025-12-10 | Documentazione formule per Terreni, Fabbricati rurali, Abitazione principale, Altri fabbricati, Aree fabbricabili |
 | 2025-12-10 | Mappatura codici tributo F24 |
+| 2025-12-10 | **Analisi normativa completa**: D.L. 201/2011 art. 13, D.Lgs. 23/2011 art. 9, D.Lgs. 504/1992 art. 7 |
+| 2025-12-10 | **Analisi Circolare MEF 1/DF 2020** - chiarimenti applicativi |
+| 2025-12-10 | Creazione markdown da PDF: art-1-comma-758, art-13, art-9, comma-639, D.Lgs. 504/92, Circ. MEF |
+| 2025-12-10 | **Identificazione 13 nuove funzionalità** per l'app rispetto a Excel 2022 |
+| 2025-12-10 | Aggiunta sezione 6 "Nuove Funzionalità App 2025" |
 
 ---
 
-## 8. RIFERIMENTI NORMATIVI
+## 9. RIFERIMENTI NORMATIVI
 
-### 8.1 Leggi e Decreti
+### 9.1 Leggi e Decreti
 
-| Norma | Contenuto |
-|-------|-----------|
-| L. 160/2019, art. 1, cc. 739-783 | Disciplina IMU dal 2020 |
-| L. 197/2022, art. 1, c. 81 | Esenzione occupazione abusiva |
-| L. 197/2022, art. 1, cc. 834-835 | ILIA Friuli-Venezia Giulia |
-| L. 178/2020, art. 1, c. 48 | Riduzione pensionati esteri |
-| L. 431/1998, art. 2, c. 3 | Canone concordato |
-| D.M. 22/4/2008 | Definizione alloggi sociali |
-| D.M. 24/4/2024 | Modello dichiarazione IMU |
+| Norma | Contenuto | Markdown |
+|-------|-----------|----------|
+| **L. 160/2019, art. 1, cc. 739-783** | **Disciplina IMU dal 2020** | - |
+| L. 160/2019, art. 1, c. 758 | Esenzioni terreni agricoli | `art-1-comma-758.md` |
+| D.L. 201/2011, art. 13 | IMU sperimentale 2012-2019 (ABROGATO) | `decreto-legge-201-2011-art-13.md` |
+| D.Lgs. 23/2011, art. 9 | Federalismo fiscale - Soggetti passivi | `decreto-legislativo-23-2011-art-9.md` |
+| D.Lgs. 504/1992, art. 7 | Esenzioni ICI/IMU | `decreto-legislativo-504-1992-art-7.md` |
+| L. 147/2013, c. 639 | Istituzione IUC (parzialmente abrogata) | `legge-147-2013-comma-639.md` |
+| L. 197/2022, art. 1, c. 81 | Esenzione occupazione abusiva | - |
+| L. 197/2022, art. 1, cc. 834-835 | ILIA Friuli-Venezia Giulia | - |
+| L. 178/2020, art. 1, c. 48 | Riduzione pensionati esteri | - |
+| L. 208/2015, art. 1, c. 10 | Abolizione scaglioni CD/IAP | - |
+| L. 431/1998, art. 2, c. 3 | Canone concordato | - |
+| D.M. 22/4/2008 | Definizione alloggi sociali | - |
+| D.M. 24/4/2024 | Modello dichiarazione IMU | - |
+| D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
 
-### 8.2 Circolari e Risoluzioni MEF
+### 9.2 Circolari e Risoluzioni MEF
 
-| Documento | Contenuto |
-|-----------|-----------|
-| Circ. 1/DF 18/3/2020 | Aree pertinenziali (par. 8) |
-| Ris. 2/DF 20/3/2023 | Alloggi sociali liberati |
-| Ris. 4/DF 16/11/2023 | Fabbricati collabenti F/2 |
-| Ris. 5/DF 11/6/2021 | Pensionati esteri |
-| Circ. 2/DF 16/7/2024 | Enti non commerciali |
+| Documento | Contenuto | Markdown |
+|-----------|-----------|----------|
+| **Circ. 1/DF 18/3/2020** | **Chiarimenti applicativi nuova IMU** | `circolare-mef-1-df-2020.md` |
+| Ris. 2/DF 20/3/2023 | Alloggi sociali liberati | - |
+| Ris. 4/DF 16/11/2023 | Fabbricati collabenti F/2 | - |
+| Ris. 5/DF 11/6/2021 | Pensionati esteri | - |
+| Circ. 2/DF 16/7/2024 | Enti non commerciali | - |
 
-### 8.3 Giurisprudenza
+### 9.3 Giurisprudenza
 
 | Pronuncia | Contenuto |
 |-----------|-----------|
