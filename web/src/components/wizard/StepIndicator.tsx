@@ -1,4 +1,4 @@
-import type { WizardStep } from '../../types';
+import type { WizardStep } from '@lib';
 
 interface StepIndicatorProps {
   steps: WizardStep[];

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button } from '../ui';
-import type { DatiImmobile, TipoImmobile, CategoriaCatastale } from '../../types';
-import { COEFFICIENTI, ALIQUOTE_BASE_2025 } from '../../lib/calculations/constants';
+import type { DatiImmobile, TipoImmobile, CategoriaCatastale } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_BASE_2025 } from '@lib';
 
 interface ImmobileFormProps {
   onAdd: (immobile: DatiImmobile) => void;

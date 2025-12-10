@@ -1,5 +1,5 @@
 import { Input, Card, CardHeader, CardContent } from '../ui';
-import type { Contribuente } from '../../types';
+import type { Contribuente } from '@lib';
 
 interface ContribuenteFormProps {
   data: Contribuente;

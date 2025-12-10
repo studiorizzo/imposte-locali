@@ -3,8 +3,8 @@ import { Header, Footer } from './components/layout';
 import { StepIndicator, WizardNavigation } from './components/wizard';
 import { ContribuenteForm, ImmobileForm, ListaImmobili } from './components/forms';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
-import { calcolaRiepilogoIMU } from './lib/calculations/calcolo';
-import type { Contribuente, DatiImmobile, RiepilogoIMU, WizardStep } from './types';
+import { calcolaRiepilogoIMU } from '@lib';
+import type { Contribuente, DatiImmobile, RiepilogoIMU, WizardStep } from '@lib';
 import './index.css';
 
 const WIZARD_STEPS: WizardStep[] = [
