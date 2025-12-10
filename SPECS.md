@@ -45,6 +45,7 @@
 | IMU Base imponibile e aliquote | `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` | ✅ Analizzato |
 | Novità IMU Bilancio 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` | ✅ Analizzato |
 | IMU Dichiarazione | `aggiornamenti/IMU - Dichiarazione/imu_dichiarazione.md` | ✅ Analizzato |
+| D.M. 29/07/2022 Dichiarazione IMU | `aggiornamenti/IMU - Dichiarazione/decreto_mef_29072022_dichiarazione_imu.md` | ✅ Analizzato (superato da D.M. 24/04/2024) |
 
 ### 1.3 Strumenti Metodologici
 
@@ -1319,6 +1320,24 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 **Intermediari abilitati:** Art. 3, c. 3, D.P.R. 322/1998 (commercialisti, CAF, etc.).
 
+#### Tipologie di dichiarazione (D.M. 29/07/2022, art. 6)
+
+| Tipo | Utilizzo |
+|------|----------|
+| **Nuova** | Prima dichiarazione per l'immobile |
+| **Sostitutiva** | Sostituisce integralmente una precedente |
+| **Multipla** | Per più immobili nello stesso comune |
+
+**Immobile su più comuni:** Dichiarazione al comune con **superficie prevalente** dell'immobile.
+
+**Variazione circoscrizioni territoriali:** Dichiarazione al comune dove l'immobile risulta ubicato al **1° gennaio** dell'anno d'imposta.
+
+#### Conservazione dati e termini accertamento (Art. 8 D.M. 29/07/2022)
+
+**Periodo conservazione:** Fino al **31 dicembre del 5° anno successivo** a quello in cui la dichiarazione deve essere presentata (art. 1, c. 161, L. 296/2006).
+
+> **Nota:** Il D.M. 29/07/2022 è stato **superato** dal **D.M. 24/04/2024** per l'approvazione dei modelli dichiarativi IMU/IMPi e IMU ENC attualmente in vigore.
+
 #### Sanzioni
 
 | Violazione | Sanzione |
@@ -1616,6 +1635,8 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | **Analisi "IMU - Dichiarazione"** (Wolters Kluwer OneFiscale) |
 | 2025-12-10 | Espansa sezione 6.24: obbligo/esonero dichiarazione, modalità presentazione, MUI |
 | 2025-12-10 | Aggiunti riferimenti: Ris. MEF 4/DF 2017, 3/DF 2015, Circ. 2/DF 2015 |
+| 2025-12-10 | **Analisi D.M. 29/07/2022** - Modello dichiarazione IMU/IMPi (superato da D.M. 24/04/2024) |
+| 2025-12-10 | Aggiunte tipologie dichiarazione (nuova/sostitutiva/multipla), regole multi-comune, conservazione dati |
 
 ---
 
@@ -1637,7 +1658,8 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | L. 208/2015, art. 1, c. 10 | Abolizione scaglioni CD/IAP | - |
 | L. 431/1998, art. 2, c. 3 | Canone concordato | - |
 | D.M. 22/4/2008 | Definizione alloggi sociali | - |
-| D.M. 24/4/2024 | Modello dichiarazione IMU | - |
+| D.M. 24/4/2024 | Modello dichiarazione IMU (vigente) | - |
+| **D.M. 29/7/2022** | Modello dichiarazione IMU/IMPi (superato) | `decreto_mef_29072022_dichiarazione_imu.md` |
 | D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
 | **L. 126/2020, art. 78-bis** | CD/IAP pensionati con attività agricola | - |
 | **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
