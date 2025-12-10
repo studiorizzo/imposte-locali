@@ -1322,6 +1322,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta sezione Termini decadenza accertamento (5° vs 6° anno) e Cumulo sanzioni pluriennali |
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 18554/2022, 23682/2019, 16467/2022, 11432/2022 |
 | 2025-12-10 | Aggiornate funzionalità totali: **26** (da 23) |
+| 2025-12-10 | **Conversione gruppo 1 (3 PDF)**: deducibilità IMU strumentali, Cass. 13793/2019 leasing |
 
 ---
 
@@ -1386,6 +1387,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 23682/2019** | Società semplici - socio è mero detentore, non soggetto passivo |
 | **Cass. 16467/2022** | Termini decadenza - 5° anno omesso versamento, 6° anno omessa dichiarazione |
 | **Cass. 11432/2022** | Cumulo sanzioni - regime continuazione per violazioni pluriennali ICI/IMU |
+| **Cass. 13793/2019** | Leasing risolto: IMU su locatore dalla risoluzione (non dalla riconsegna) |
 
 ---
 
