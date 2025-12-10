@@ -1019,6 +1019,9 @@ Per fabbricati in corso di:
 | Fabbricati in costruzione | ❌ | ✅ Area fabbricabile | Media |
 | Soggetti passivi casi particolari | ❌ | ✅ Fallimento/multiproprietà/condominio | Bassa |
 | Adempimenti completi (scadenze/sanzioni) | ❌ Parziale | ✅ Completo | Alta |
+| **Società di persone NO agevolazioni** | ❌ | ✅ Alert automatico | Media |
+| **Termini decadenza accertamento** | ❌ | ✅ Calcolo automatico | Media |
+| **Cumulo sanzioni pluriennali** | ❌ | ✅ Info regime continuazione | Bassa |
 
 ### 6.24 Adempimenti IMU - Scadenze e Sanzioni
 
@@ -1057,12 +1060,77 @@ Per fabbricati in corso di:
 
 **Ravvedimento operoso:** Applicabile (riduzioni sanzioni in base ai tempi).
 
+#### Cumulo sanzioni per violazioni pluriennali (Art. 12 D.Lgs. 472/1997)
+
+**Fonte:** Cass. 11432/2022; Art. 12, c. 5, D.Lgs. n. 472/1997
+
+**Principio:** In caso di omesso versamento ICI/IMU per più annualità successive con identici accertamenti, si applica il **regime della continuazione attenuata**:
+
+| Tipo cumulo | Applicazione | Sanzione |
+|-------------|--------------|----------|
+| **Continuazione** (c. 5) | Violazioni stessa indole in periodi diversi | Sanzione base **aumentata da metà a triplo** |
+| Concorso formale/materiale (c. 1) | Una azione viola più norme | Sanzione più grave **aumentata da 1/4 al doppio** |
+| Progressione (c. 2) | Violazioni pregiudicanti liquidazione | Sanzione più grave aumentata |
+
+**Caratteristiche regime continuazione:**
+- **Obbligatorio** (non facoltativo per l'Ente)
+- **Irrilevanza elemento psicologico** (non richiesta "medesima risoluzione")
+- **Irrilevanza elemento temporale** (non limitata allo stesso periodo d'imposta)
+
+#### Termini di decadenza accertamento (L. 296/2006, art. 1, c. 161)
+
+**Fonte:** Cass. 16467/2022; L. 296/2006, art. 1, comma 161
+
+**Regola generale:** Notifica avviso accertamento entro **31 dicembre del 5° anno successivo**.
+
+**Dies a quo differenti:**
+
+| Fattispecie | Dies a quo | Termine decadenza |
+|-------------|------------|-------------------|
+| Dichiarazione presentata + omesso versamento | Termine pagamento imposta | 31/12 del **5° anno** successivo all'anno d'imposta |
+| Omessa dichiarazione | Termine presentazione dichiarazione | 31/12 del **5° anno** successivo = **6° anno** dall'anno d'imposta |
+
+**Esempio pratico:**
+- Anno d'imposta: **2019**
+- Dichiarazione IMU da presentare entro: **30/6/2020**
+- Termine decadenza omessa dichiarazione: **31/12/2025** (5° anno da 2020)
+- Termine decadenza omesso versamento: **31/12/2024** (5° anno da 2019)
+
 #### Funzionalità app
 
 - Calendario scadenze con alert
 - Calcolo ravvedimento operoso
 - Generazione codici tributo F24
 - Alert dichiarazione obbligatoria per fattispecie specifiche
+- **Calcolo termine decadenza accertamento**
+- **Info regime cumulo sanzioni per violazioni pluriennali**
+
+### 6.25 Società di Persone - Esclusione Agevolazioni Abitazione Principale
+
+**Fonte:** Cass. 18554/2022; Cass. 23682/2019
+
+**Principio:** Le agevolazioni IMU per l'abitazione principale (esenzione, aliquota ridotta, detrazione) **NON si applicano** agli immobili posseduti da **società di persone**, comprese le società semplici di mero godimento.
+
+**Motivazione giuridica:**
+- La società (anche semplice) è **soggetto autonomo** diverso dalle persone fisiche che la compongono
+- Il socio è **mero detentore** dell'immobile, non soggetto passivo IMU
+- Il possesso è in capo alla società (persona giuridica), non al socio (persona fisica)
+- Le norme agevolative richiedono interpretazione **stretta** (art. 14 disp. gen.)
+
+**Schema:**
+
+| Soggetto | Posizione | Agevolazioni abitazione principale |
+|----------|-----------|-----------------------------------|
+| **Società di persone** | Soggetto passivo IMU | ❌ **NO** agevolazioni |
+| **Socio** | Mero detentore/utilizzatore | ❌ **NO** - non è soggetto passivo |
+| **Persona fisica** proprietaria | Soggetto passivo IMU | ✅ **SÌ** - se ricorrono requisiti |
+
+**Art. 2248 c.c. non applicabile:** La disciplina sulla comunione non si applica, essendo la società un soggetto giuridico distinto.
+
+**Funzionalità app:**
+- Tipologia soggetto "Società di persone" (s.s., s.n.c., s.a.s.)
+- Alert automatico: "Agevolazioni abitazione principale non applicabili"
+- Calcolo IMU con aliquota ordinaria (non ridotta)
 
 ---
 
@@ -1249,6 +1317,11 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 1919/2025 (fabbricati rurali D/10 - conta catasto) |
 | 2025-12-10 | **Conversione 12 PDF Articoli operativi**: decreto semplificazioni, dichiarazione IMU 2021-2022, ENC, coniugi, stabilimenti balneari |
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 35123/2022, 2747/2023, 7769/2023, 11443/2023, CGT Firenze 137/2023 |
+| 2025-12-10 | **Conversione ultimi 9 PDF Articoli operativi**: ruralità D/10, coniugi comuni diversi, esenzioni sisma, nullità cartella, cumulo sanzioni |
+| 2025-12-10 | Aggiunta sezione 6.25: Società di persone - Esclusione agevolazioni abitazione principale |
+| 2025-12-10 | Aggiunta sezione Termini decadenza accertamento (5° vs 6° anno) e Cumulo sanzioni pluriennali |
+| 2025-12-10 | Aggiunta giurisprudenza: Cass. 18554/2022, 23682/2019, 16467/2022, 11432/2022 |
+| 2025-12-10 | Aggiornate funzionalità totali: **26** (da 23) |
 
 ---
 
@@ -1309,6 +1382,10 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 7769/2023** | Stabilimenti balneari precari - soggetti a IMU se capacità reddituale |
 | **CGT Firenze 137/2023** | Occupazione abusiva - esenzione 2023 irretroattiva |
 | **Cass. 11443/2023** | Aree fabbricabili - no obbligo dichiarazione oscillazioni valore |
+| **Cass. 18554/2022** | Società di persone - NO agevolazioni abitazione principale |
+| **Cass. 23682/2019** | Società semplici - socio è mero detentore, non soggetto passivo |
+| **Cass. 16467/2022** | Termini decadenza - 5° anno omesso versamento, 6° anno omessa dichiarazione |
+| **Cass. 11432/2022** | Cumulo sanzioni - regime continuazione per violazioni pluriennali ICI/IMU |
 
 ---
 
