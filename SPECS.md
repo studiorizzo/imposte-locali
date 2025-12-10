@@ -17,6 +17,7 @@
 5. [Modifiche Necessarie](#5-modifiche-necessarie)
 6. [Specifiche Validate](#6-specifiche-validate)
 7. [Changelog](#7-changelog)
+8. [Riferimenti Normativi](#8-riferimenti-normativi)
 
 ---
 
@@ -39,6 +40,7 @@
 | Documento | Posizione | Stato |
 |-----------|-----------|-------|
 | Dossier IMU 2025 | `aggiornamenti/dossier_imu_2025.md` | ✅ Analizzato |
+| Guida Calcolo IMU 2025 | `aggiornamenti/imu-2025-come-calcolare-e-pagare-l-imposta.md` | ✅ Analizzato |
 
 ---
 
@@ -295,6 +297,70 @@
 | Gruppo D | 0,76% | Eccedenza |
 | Tutto il resto | 0% | 100% |
 
+### 3.8 Soggetti Passivi (art. 1, c. 743)
+
+| Soggetto | Condizione |
+|----------|------------|
+| Proprietario | - |
+| Titolare diritto reale | Usufrutto, uso, abitazione, enfiteusi, superficie |
+| Concessionario | Aree demaniali |
+| **Locatario leasing** | Dalla stipula, per tutta la durata (anche immobili da costruire) |
+| Genitore assegnatario | Casa familiare con diritto di abitazione |
+
+**Contitolarità**: In presenza di più soggetti passivi sullo stesso immobile:
+- Ognuno ha **autonoma obbligazione tributaria**
+- Si considera la singola quota di possesso
+- Esenzioni/agevolazioni applicate **individualmente**
+
+### 3.9 Regola del Mese (art. 1, c. 761)
+
+L'imposta è proporzionale ai mesi di possesso:
+
+| Situazione | Conteggio |
+|------------|-----------|
+| Possesso > metà giorni del mese | **Mese intero** |
+| Giorno di trasferimento | A carico dell'**acquirente** |
+| Giorni possesso uguali (cedente = acquirente) | Mese intero all'**acquirente** |
+
+### 3.10 Immobili Assimilati ad Abitazione Principale (art. 1, c. 741, lett. c)
+
+| Fattispecie | Note |
+|-------------|------|
+| Cooperative edilizie a proprietà indivisa | Abitazione principale soci assegnatari |
+| Cooperative edilizie per studenti universitari | Anche **senza residenza** anagrafica |
+| Alloggi sociali (D.M. 22/4/2008) | Con residenza e dimora dell'assegnatario |
+| Casa familiare assegnata a genitore affidatario | Con diritto di abitazione |
+| Immobile Forze armate/polizia | 1 solo immobile, non locato |
+| Anziani/disabili in istituto | **Facoltà** del Comune (se non locato) |
+
+**Alloggi sociali liberati** (Ris. 2/DF del 20/3/2023):
+- Esenzione valida durante operazioni amministrative/tecniche per riassegnazione
+- Periodo congruo indicativo: **4-6 mesi**
+- Non richiesta dichiarazione IMU (Cass. 23680/2020)
+
+**Locazione parziale abitazione principale** (CTR Abruzzo 8/2022):
+- **Mantiene esenzione** anche se parte dell'immobile è locata
+
+### 3.11 Aree Pertinenziali (Circ. 1/DF del 18/3/2020, par. 8)
+
+| Situazione | Trattamento |
+|------------|-------------|
+| Accatastate unitariamente al fabbricato (anche "graffatura") | **Pertinenza** |
+| Non accatastate unitariamente | **Area fabbricabile** (soggetta autonomamente) |
+
+### 3.12 Valori Venali Aree Fabbricabili (art. 1, c. 777, lett. d)
+
+I Comuni possono determinare **valori venali per zone omogenee**.
+
+**Effetto**: Se il contribuente versa su valore ≥ valore predeterminato dal Comune → **limitazione potere di accertamento**.
+
+### 3.13 Aliquote per il Saldo
+
+| Situazione | Aliquote da applicare |
+|------------|----------------------|
+| Delibera comunale pubblicata **entro 28 ottobre** | Aliquote nuove anno corrente |
+| Delibera **non pubblicata** entro 28 ottobre | Aliquote anno precedente |
+
 ---
 
 ## 4. TABELLA CONFRONTO 2022 vs 2025
@@ -449,6 +515,86 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | Altri fabbricati | 0,86% | c. 754 | ✅ |
 | Aree fabbricabili | 0,86% | c. 754 | ✅ |
 
+### 6.4 Esempi Pratici di Calcolo
+
+#### Esempio 1: Appartamento A/2
+
+```
+DATI INPUT:
+- Rendita catastale: € 1.000
+- Categoria: A/2
+- Aliquota comunale: 1,06%
+- Possesso: 100%
+- Mesi: 12
+
+CALCOLO:
+1. Rivalutazione:     1.000 × 1,05 = € 1.050
+2. Base imponibile:   1.050 × 160 = € 168.000
+3. IMU annua:         168.000 × 1,06% = € 1.780,80
+4. Acconto (16/6):    € 890,40
+5. Saldo (16/12):     € 890,40
+
+CODICE TRIBUTO F24: 3918 (altri fabbricati - COMUNE)
+```
+
+#### Esempio 2: Fabbricato D/1 (con quota Stato)
+
+```
+DATI INPUT:
+- Rendita catastale: € 5.000
+- Categoria: D/1
+- Aliquota comunale totale: 1,06%
+- Possesso: 100%
+- Mesi: 12
+
+CALCOLO:
+1. Rivalutazione:     5.000 × 1,05 = € 5.250
+2. Base imponibile:   5.250 × 65 = € 341.250
+3. Quota STATO:       341.250 × 0,76% = € 2.593,50 → Codice 3925
+4. Quota COMUNE:      341.250 × 0,30% = € 1.023,75 → Codice 3930
+   (dove 0,30% = 1,06% - 0,76%)
+5. IMU totale:        € 3.617,25
+```
+
+#### Esempio 3: Immobile a Canone Concordato
+
+```
+DATI INPUT:
+- Base imponibile: € 168.000
+- Aliquota comunale: 1,06%
+- Tipo contratto: Canone concordato (L. 431/1998)
+
+CALCOLO CORRETTO:
+Riduzione 25% si applica all'ALIQUOTA, non alla base:
+
+IMU = 168.000 × (1,06% × 0,75)
+IMU = 168.000 × 0,795%
+IMU = € 1.335,60
+
+⚠️ ERRORE COMUNE DA EVITARE:
+NON fare: (168.000 × 0,75) × 1,06% = 126.000 × 1,06%
+```
+
+#### Esempio 4: Terreno Agricolo (non CD/IAP)
+
+```
+DATI INPUT:
+- Reddito dominicale: € 500
+- Aliquota comunale: 0,86%
+- Possesso: 50%
+- Mesi: 12
+
+CALCOLO:
+1. Rivalutazione:     500 × 1,25 = € 625
+2. Base imponibile:   625 × 135 = € 84.375
+3. Quota possesso:    84.375 × 50% = € 42.187,50
+4. IMU annua:         42.187,50 × 0,86% = € 362,81
+
+CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
+
+⚠️ Se CD/IAP: ESENTE (IMU = €0)
+```
+
 ---
 
 ## 7. CHANGELOG
@@ -459,14 +605,49 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | 2025-12-10 | Analisi completa Excel 2022 |
 | 2025-12-10 | Confronto con dossier IMU 2025 |
 | 2025-12-10 | Identificazione differenze critiche |
+| 2025-12-10 | Integrazione guida calcolo IMU 2025 (soggetti passivi, regola mese, esempi) |
+
+---
+
+## 8. RIFERIMENTI NORMATIVI
+
+### 8.1 Leggi e Decreti
+
+| Norma | Contenuto |
+|-------|-----------|
+| L. 160/2019, art. 1, cc. 739-783 | Disciplina IMU dal 2020 |
+| L. 197/2022, art. 1, c. 81 | Esenzione occupazione abusiva |
+| L. 197/2022, art. 1, cc. 834-835 | ILIA Friuli-Venezia Giulia |
+| L. 178/2020, art. 1, c. 48 | Riduzione pensionati esteri |
+| L. 431/1998, art. 2, c. 3 | Canone concordato |
+| D.M. 22/4/2008 | Definizione alloggi sociali |
+| D.M. 24/4/2024 | Modello dichiarazione IMU |
+
+### 8.2 Circolari e Risoluzioni MEF
+
+| Documento | Contenuto |
+|-----------|-----------|
+| Circ. 1/DF 18/3/2020 | Aree pertinenziali (par. 8) |
+| Ris. 2/DF 20/3/2023 | Alloggi sociali liberati |
+| Ris. 4/DF 16/11/2023 | Fabbricati collabenti F/2 |
+| Ris. 5/DF 11/6/2021 | Pensionati esteri |
+| Circ. 2/DF 16/7/2024 | Enti non commerciali |
+
+### 8.3 Giurisprudenza
+
+| Pronuncia | Contenuto |
+|-----------|-----------|
+| Corte Cost. 209/2022 | Abitazione principale - eliminato nucleo familiare |
+| Corte Cost. 60/2024 | Occupazione abusiva retroattiva |
+| Cass. 23680/2020 | Alloggi sociali - no dichiarazione |
+| Cass. 37385/2022 | Dichiarazione a pena decadenza |
+| Cass. 32115/2024 | Beni merce - dichiarazione obbligatoria |
+| Cass. 9620/2025 | Coniugi - doppia esenzione |
+| CTR Abruzzo 8/2022 | Locazione parziale - mantiene esenzione |
 
 ---
 
 ## NOTE
-
-### Documenti in attesa di analisi
-
-_Aggiungere qui i riferimenti a documenti aggiuntivi man mano che vengono caricati in `aggiornamenti/`_
 
 ### Domande aperte
 
