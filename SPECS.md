@@ -44,6 +44,7 @@
 | Guida Calcolo IMU 2025 | `aggiornamenti/imu-2025-come-calcolare-e-pagare-l-imposta.md` | ✅ Analizzato |
 | IMU Base imponibile e aliquote | `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` | ✅ Analizzato |
 | Novità IMU Bilancio 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` | ✅ Analizzato |
+| IMU Dichiarazione | `aggiornamenti/IMU - Dichiarazione/imu_dichiarazione.md` | ✅ Analizzato |
 
 ### 1.3 Strumenti Metodologici
 
@@ -1287,6 +1288,37 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 **Occupazione abusiva:** Dichiarazione **solo telematica** (art. 1, c. 759, lett. g-bis).
 
+#### Quando è obbligatoria la dichiarazione
+
+**Fonte:** Art. 1, c. 769, L. 160/2019; D.M. 24/4/2024; Circ. MEF 1/DF/2020
+
+**Obbligo sussiste per:**
+- Immobili che godono di **riduzioni** dell'imposta
+- Immobili per cui il comune **non ha le informazioni** necessarie
+- **Variazioni di soggettività passiva** (sia chi cessa sia chi inizia)
+
+**Efficacia pluriennale:** La dichiarazione ha effetto anche per gli anni successivi, fino a nuova variazione.
+
+#### Esonero dalla dichiarazione (casi in cui NON è dovuta)
+
+| Caso | Motivazione | Riferimento |
+|------|-------------|-------------|
+| Atti con MUI | Informazioni acquisite tramite Modello Unico Informatico (notai) | Art. 1, c. 769 |
+| Regolamento comunale | Procedure specifiche previste dal comune per agevolazioni | Regolamento locale |
+
+**MUI (Modello Unico Informatico):** Per compravendite, donazioni, successioni gestite tramite notaio con procedure telematiche, il comune acquisisce automaticamente i dati - nessuna dichiarazione necessaria.
+
+#### Modalità di presentazione dichiarazione
+
+| Modalità | Descrizione | Note |
+|----------|-------------|------|
+| **Cartacea** - consegna | Direttamente al comune (rilascio ricevuta) | |
+| **Cartacea** - posta | Raccomandata senza A/R con dicitura "Dichiarazione IMU IMPi" | Data = consegna ufficio postale |
+| **PEC** | Posta elettronica certificata | |
+| **Telematica** | Fisconline / Entratel (diretto o tramite intermediario) | Obbligatoria per occupazione abusiva |
+
+**Intermediari abilitati:** Art. 3, c. 3, D.P.R. 322/1998 (commercialisti, CAF, etc.).
+
 #### Sanzioni
 
 | Violazione | Sanzione |
@@ -1581,6 +1613,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta sezione 1.3: Strumenti Metodologici (checklist come riferimento UI/UX) |
 | 2025-12-10 | Aggiunta sezione 6.30: Mappatura Checklist → Campi App |
 | 2025-12-10 | Aggiornate funzionalità totali: **34** (da 33) |
+| 2025-12-10 | **Analisi "IMU - Dichiarazione"** (Wolters Kluwer OneFiscale) |
+| 2025-12-10 | Espansa sezione 6.24: obbligo/esonero dichiarazione, modalità presentazione, MUI |
+| 2025-12-10 | Aggiunti riferimenti: Ris. MEF 4/DF 2017, 3/DF 2015, Circ. 2/DF 2015 |
 
 ---
 
@@ -1628,6 +1663,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | Ris. 5/DF 11/6/2021 | Pensionati esteri | - |
 | Circ. 2/DF 16/7/2024 | Enti non commerciali | - |
 | **Ris. 2/DF 10/3/2020** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva | - |
+| **Ris. 4/DF 2017** | Dichiarazione IMU - chiarimenti | - |
+| **Ris. 3/DF 2015** | Dichiarazione IMU - modalità | - |
+| **Circ. 2/DF 2015** | Dichiarazione IMU - obblighi | - |
 
 ### 9.3 Giurisprudenza
 
