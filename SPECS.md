@@ -1247,6 +1247,8 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiornate funzionalità totali: **23** (da 22) |
 | 2025-12-10 | **Conversione PDF Articoli operativi**: CGT Taranto 674/2023, Corte Cost. 60/2024, Cass. 1919/2025 |
 | 2025-12-10 | Aggiunta giurisprudenza: Cass. 1919/2025 (fabbricati rurali D/10 - conta catasto) |
+| 2025-12-10 | **Conversione 12 PDF Articoli operativi**: decreto semplificazioni, dichiarazione IMU 2021-2022, ENC, coniugi, stabilimenti balneari |
+| 2025-12-10 | Aggiunta giurisprudenza: Cass. 35123/2022, 2747/2023, 7769/2023, 11443/2023, CGT Firenze 137/2023 |
 
 ---
 
@@ -1302,6 +1304,11 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 16550/2019** | Trust - trustee soggetto passivo IMU |
 | **Cass. 15988/2020** | Trust - conferma trustee come proprietario |
 | **Cass. 1919/2025** | Fabbricati rurali D/10 - conta catasto, non qualifica possessore |
+| **Cass. 35123/2022** | Scuole paritarie ENC - esenzione solo se gratuità o corrispettivo simbolico |
+| **Cass. 2747/2023** | Coniugi abitazione principale - onere prova dimora abituale al Comune |
+| **Cass. 7769/2023** | Stabilimenti balneari precari - soggetti a IMU se capacità reddituale |
+| **CGT Firenze 137/2023** | Occupazione abusiva - esenzione 2023 irretroattiva |
+| **Cass. 11443/2023** | Aree fabbricabili - no obbligo dichiarazione oscillazioni valore |
 
 ---
 
