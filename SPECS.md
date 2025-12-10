@@ -94,9 +94,9 @@
 | 25.500,01 | 32.000 | 75% | A8:C8 |
 | 32.000,01 | ∞ | 100% | A9:C9 |
 
-### 2.4 Foglio "Terreni" - Struttura Colonne
+### 2.4 Foglio "Terreni" - Struttura Colonne e Formule
 
-#### Sezione 1: Calcolo con Rate
+#### Campi Input
 
 | Col | Campo | Tipo | Note |
 |-----|-------|------|------|
@@ -108,43 +108,93 @@
 | F | Reddito dominicale | INPUT | € |
 | G | Aliquota 1° rata (%) | INPUT | % |
 | H | Aliquota saldo (%) | INPUT | % |
-| I | Coefficiente rivalutazione | CALC | 1.25 × 135 = 168.75 |
-| J | Valore IMU NO riduzione | CALC | F × I × C/100 × (D+E)/12 |
-| K | Valore IMU SI riduzione | CALC | Applicazione scaglioni |
-| L | Valore IMU finale | CALC | Basato su flag CD/IAP |
-| M | IMU 1° rata | CALC | |
-| N | IMU 1° acconto comune | CALC | |
-| O | IMU 1° acconto Stato | CALC | ⚠️ Quota Stato abolita |
-| P | IMU con aliq deliberata | CALC | |
-| Q | IMU saldo comune | CALC | |
-| R | IMU 2014 | CALC | Riferimento storico |
-| S | IMU a saldo | CALC | |
-| T | Totale IMU | CALC | |
-| U-V | Conteggio fabbricati | CALC | Per F24 |
-| W | Eccedenza su aliquota base | CALC | |
 
-**Flag globale**: E3 = Coltivatore diretto/IAP (1=SI)
+**Flag globale**: E3 = Coltivatore diretto/IAP (0=NO, 1=SI, 2=CD/IAP con riduzione)
 
-### 2.5 Foglio "Fabbricati rurali" - Struttura Colonne
+#### Formule Estratte (Riga 6 come esempio)
+
+```excel
+I6 = IF($E$3=0,0,IF(F6>0,IF($E$3=1,135,75),0))
+     → Coefficiente: 135 per NON CD/IAP(1), 75 per riduzione(2)
+
+J6 = ROUND(IF(F6=0,0,(F6*C6/100)*1.25*I6),2)
+     → Base imponibile: (Reddito_Dom × %possesso/100) × 1.25 × Coefficiente
+
+K6 = IF($E$3=2,'Riduzione terreni'!D13,0)
+     → Valore ridotto per CD/IAP scaglionato (OBSOLETO)
+
+L6 = IF($E$3=1,J6,IF($E$3=2,K6,0))
+     → Base finale: J6 se SI(1), K6 se riduzione(2), 0 se NO(0)
+
+M6 = ROUND((L6*(G6/100)*(D6/12)),2)
+     → IMU 1° rata: Base × Aliquota% × Mesi_1_sem/12
+
+N6 = IF(M6>0,M6/2,0)
+     → Acconto: IMU_1_rata / 2
+
+O6 = M6-N6
+     → Saldo 1° rata: IMU_1_rata - Acconto
+
+P6 = ROUND(IF(L6>0,(L6*(H6/100)*(E6/12)),0),2)
+     → IMU periodo dicembre: Base × Aliq_saldo% × Mesi_2_sem/12
+
+R6 = ROUND(IF(L6>0,(L6*(H6/100)*((D6+E6)/12)),0),2)
+     → IMU annuale: Base × Aliq_saldo% × Mesi_totali/12
+
+S6 = IF(R6>M6,R6-M6,0)
+     → Conguaglio: max(0, IMU_annuale - IMU_1_rata)
+
+T6 = M6+S6
+     → Totale IMU: IMU_1_rata + Conguaglio
+
+U6 = IF(M6>0,1,0)  → Flag: 1° rata dovuta
+V6 = IF(S6>0,1,0)  → Flag: saldo dovuto
+W6 = IF(AND($E$3=2,H6>0.76),T6-M37,0)  → Eccedenza su 0.76%
+```
+
+> ⚠️ **IMU 2025**: Sistema CD/IAP con riduzione scaglionata (E3=2) è **ABOLITO**.
+> I terreni CD/IAP sono ora completamente **ESENTI** (IMU = 0)
+
+### 2.5 Foglio "Fabbricati rurali" - Struttura e Formule
+
+#### Campi Input
 
 | Col | Campo | Tipo |
 |-----|-------|------|
 | A | Numero | AUTO |
-| B | Ubicazione/estremi catastali | INPUT |
+| B | Ubicazione/estremi | INPUT |
 | C | % possesso | INPUT |
 | D | Mesi 1° semestre | INPUT |
 | E | Mesi 2° semestre | INPUT |
 | F | Rendita catastale | INPUT |
 | G | Aliquota 1° rata (%) | INPUT |
 | H | Aliquota saldo (%) | INPUT |
-| I | Coefficiente rivalutazione | INPUT/CALC |
-| J | Valore IMU | CALC |
-| K | IMU 1° rata | CALC |
-| L | IMU dovuta aliq deliberata | CALC |
-| M | IMU a saldo | CALC |
-| N | Totale IMU | CALC |
-| O-P | Conteggio fabbricati | CALC |
-| Q | Eccedenza su aliquota base | CALC |
+| I | Coefficiente | INPUT |
+
+#### Formule Estratte (Riga 5 come esempio)
+
+```excel
+J5 = ROUND(IF(F5=0,0,(F5*C5/100)*1.05*I5),2)
+     → Base imponibile: (Rendita × %possesso/100) × 1.05 × Coefficiente
+
+K5 = ROUND((J5*(G5/100)*(D5/12)),2)
+     → IMU 1° rata: Base × Aliquota% × Mesi_1_sem/12
+
+L5 = IF(J5>0,ROUND(J5*H5/100*((D5+E5)/12),2),0)
+     → IMU annuale: Base × Aliq_saldo% × Mesi_totali/12
+
+M5 = ROUND(IF(L5-K5>0,L5-K5,0),2)
+     → Saldo: max(0, IMU_annuale - IMU_1_rata)
+
+N5 = K5+M5
+     → Totale IMU
+
+O5 = IF(K5>0,1,0)  → Flag: 1° rata dovuta
+P5 = IF(M5>0,1,0)  → Flag: saldo dovuto
+Q5 = IF(H5>0.2,N5-M20,0)  → Eccedenza su aliquota base 0.20%
+```
+
+> **IMU 2025**: Aliquota base fabbricati rurali: **0,10%** (era 0,20%)
 
 ### 2.6 Foglio "Abitazione principale" - Struttura
 
@@ -170,40 +220,110 @@
 | 15 | Pertinenza C/6 |
 | 16 | Pertinenza C/7 |
 
-#### Calcolo Detrazioni (OBSOLETO)
+#### Formule Estratte
 
-- Riga 18: Detrazione teorica (base + figli) → **ABOLIRE calcolo figli**
-- Riga 19: Detrazione rateizzata
-- Riga 20: Detrazione spettante
-- Riga 21: IMU al netto detrazione
-- Riga 24: "Calcolo detrazione figli" → **DA RIMUOVERE**
+```excel
+// DETRAZIONE FIGLI (ABOLITA nel 2025!)
+C8 = IF(OR(Home!D9=2012,Home!D9=2013),
+        IF(C4=1,50,IF(C4=2,100,IF(C4=3,150,IF(C4=4,200,
+        IF(C4=5,250,IF(C4=6,300,IF(C4=7,350,400))))))),0)
+     → €50 per figlio, max €400 - **ABOLITA DAL 2014**
 
-### 2.7 Foglio "Altri fabbricati" - Struttura
+// CALCOLO IMMOBILE (Riga 13 - Abitazione principale)
+J13 = IF(G13>0,160,0)
+      → Coefficiente: 160 per abitazione principale
+
+K13 = ROUND(IF(G13=0,0,(G13*D13/100)*1.05*J13),2)
+      → Base imponibile: (Rendita × %possesso/100) × 1.05 × 160
+
+L13 = ROUND((K13*(H13/100)*(E13/12)),2)
+      → IMU 1° rata: Base × Aliquota% × Mesi/12
+
+N13 = IF(K13>0,ROUND(K13*(I13/100)*((E13+F13)/12),2),0)
+      → IMU annuale: Base × Aliq_saldo% × Mesi_totali/12
+
+O13 = IF(N13-L13>0,N13-L13,0)
+      → Saldo: max(0, IMU_annuale - IMU_1_rata)
+
+P13 = L13+O13
+      → Totale IMU
+```
+
+> ⚠️ **IMU 2025**:
+> - Detrazione figli **ABOLITA** - Mantenere solo detrazione base €200
+> - Aliquota base: **0,50%** (era 0,40%)
+> - Pertinenze max 1 per categoria (C/2, C/6, C/7)
+
+### 2.7 Foglio "Altri fabbricati" - Struttura e Formule
+
+#### Campi Input
 
 | Col | Campo | Tipo | Note |
 |-----|-------|------|------|
 | A | Numero | AUTO | |
 | B | Ubicazione/estremi | INPUT | |
-| C | Tipologia | INPUT | Categoria catastale |
-| D | Storico/inagibile | INPUT | SI/NO → riduzione 50% |
-| E | Comodato parenti | INPUT | SI/NO → riduzione 50% |
-| F | Canone concordato | INPUT | SI/NO → riduzione 25% aliquota |
+| C | Tipologia | INPUT | 1=A, 2=C345, 3=B, 4=A10/D5, 5=D, 6=C1 |
+| D | Storico/inagibile | INPUT | 1=NO, 2=SI → riduzione 50% |
+| E | Comodato parenti | INPUT | 1=NO, 2=SI → riduzione 50% |
+| F | Canone concordato | INPUT | 1=NO, 2=SI → riduzione 25% aliquota |
 | G | % possesso | INPUT | |
 | H | Mesi 1° semestre | INPUT | |
 | I | Mesi 2° semestre | INPUT | |
 | J | Rendita catastale | INPUT | |
 | K | Aliquota 1° rata | INPUT | |
 | L | Aliquota saldo | INPUT | |
-| M | Coefficiente | CALC | Basato su tipologia |
-| N | Valore IMU (no riduzione) | CALC | |
-| O | Valore IMU | CALC | Con riduzioni |
-| P | IMU 1° rata | CALC | |
-| Q-R | IMU acconto Comune/Stato | CALC | ⚠️ Quota Stato da rivedere |
-| S-T | IMU saldo Comune/Stato | CALC | |
-| U-V | IMU anno / 2° rata | CALC | |
-| W | Totale IMU | CALC | |
 
-### 2.8 Foglio "Aree fabbricabili" - Struttura
+#### Formule Estratte (Riga 5)
+
+```excel
+// COEFFICIENTE per categoria
+M5 = IF(J5>0,IF(C5=0,0,IF(C5=1,160,IF(C5=2,140,IF(C5=3,140,
+        IF(C5=4,80,IF(C5=5,65,IF(C5=6,55,0))))))),0)
+     → Tipologia: 1→160, 2→140, 3→140, 4→80, 5(D)→65, 6→55
+
+// BASE IMPONIBILE
+N5 = ROUND(IF(J5=0,0,(J5*G5/100)*1.05*M5),2)
+     → (Rendita × %possesso/100) × 1.05 × Coefficiente
+
+// RIDUZIONE BASE (storico/inagibile E comodato)
+O5 = IF(AND(D5=1,E5=1),N5,
+        IF(AND(D5=2,E5=1),N5/2,
+        IF(AND(D5=1,E5=2),N5/2,
+        IF(AND(D5=2,E5=2),N5/4,0))))
+     → Base ridotta: 100%, 50%, 50%, o 25%
+
+// IMU 1° RATA con riduzione canone concordato
+P5 = ROUND(IF(F5=2,((O5*(K5/100)*(H5/6)))*0.75,
+               ((O5*(K5/100)*(H5/12)))),2)
+     → Se canone concordato: aliquota × 0.75
+
+// QUOTA STATO (solo categoria D = tipologia 5)
+Q5 = IF(C5=5,IF(K5>0.76,P5-R5,0),0)
+     → Eccedenza su 0.76% (per 1° rata)
+
+R5 = IF(C5=5,IF(K5>0.76,(O5*(0.76/100)*(H5/12)),P5),0)
+     → Quota stato: Base × 0.76% × Mesi/12
+
+// CONGUAGLIO DICEMBRE
+U5 = ROUND(IF(F5=2,((O5*(L5/100)*((H5+I5)/12)))*0.75,
+               ((O5*(L5/100)*((H5+I5)/12)))),2)
+     → IMU annuale con aliquota dicembre
+
+V5 = IF(U5-P5>0,U5-P5,0)
+     → Saldo: max(0, annuale - 1°rata)
+
+W5 = P5+V5
+     → Totale IMU
+```
+
+> ⚠️ **IMU 2025**:
+> - Quota Stato (0,76%) **SOLO per gruppo D** (tipologia 5) - CORRETTO
+> - Aliquota base: **0,86%** (era 0,76%)
+> - Aggiungere riduzione pensionati esteri (50% base)
+
+### 2.8 Foglio "Aree fabbricabili" - Struttura e Formule
+
+#### Campi Input
 
 | Col | Campo | Tipo |
 |-----|-------|------|
@@ -215,16 +335,60 @@
 | F | Valore area | INPUT |
 | G | Aliquota 1° rata | INPUT |
 | H | Aliquota saldo | INPUT |
-| I | Valore IMU | CALC |
-| J-P | IMU rate e quote | CALC |
-| Q | Totale IMU | CALC |
 
-### 2.9 Foglio "Riepilogo"
+#### Formule Estratte (Riga 5)
 
-**Riferimenti temporali nel foglio** (da aggiornare):
-- "entro il 16/1/2014"
-- "17 SETTEMBRE 2012"
-- "ENTRO IL 16/01/2014"
+```excel
+// BASE IMPONIBILE (valore venale)
+I5 = ROUND(IF(F5=0,0,(F5*C5/100)),2)
+     → Valore × %possesso/100
+
+// IMU 1° RATA
+J5 = ROUND((I5*(D5/12)*(G5/100)),2)
+     → Base × Mesi_1_sem/12 × Aliquota%
+
+K5 = IF(J5>0,J5/2,0)
+     → Acconto: IMU/2
+
+L5 = J5-K5
+     → Saldo 1° rata
+
+// IMU ANNUALE
+O5 = ROUND(IF(I5>0,(I5*(H5/100)*((D5+E5)/12)),0),2)
+     → Base × Aliq_saldo% × Mesi_totali/12
+
+P5 = IF(O5>J5,O5-J5,0)
+     → Conguaglio: max(0, annuale - 1°rata)
+
+Q5 = J5+P5
+     → Totale IMU
+```
+
+> **IMU 2025**: Aliquota base: **0,86%** - Nessuna quota Stato
+
+### 2.9 Foglio "Riepilogo" - Codici Tributo F24
+
+```excel
+// CODICI TRIBUTO
+D10 = IF(OR(G10>0,H10>0),3912,"")  → Abitazione principale
+D16 = IF(OR(G16>0,H16>0),3914,"")  → Terreni
+D17 = IF(OR(G17>0,H17>0),3913,"")  → Fabbricati rurali
+D18 = IF(G18>0,3916,"")            → Aree fabbricabili
+D19 = IF(G19>0,3918,"")            → Altri fabbricati (COMUNE)
+D20 = IF(G20>0,IF(C5=5,3925,""),"")  → Gruppo D (STATO)
+D21 = IF(G21>0,IF(C5=5,3930,""),"")  → Gruppo D (COMUNE eccedenza)
+```
+
+**Codici Tributo F24 Validati**:
+| Codice | Descrizione |
+|--------|-------------|
+| 3912 | IMU - Abitazione principale e pertinenze - COMUNE |
+| 3913 | IMU - Fabbricati rurali strumentali - COMUNE |
+| 3914 | IMU - Terreni - COMUNE |
+| 3916 | IMU - Aree fabbricabili - COMUNE |
+| 3918 | IMU - Altri fabbricati - COMUNE |
+| 3925 | IMU - Immobili gruppo D - STATO |
+| 3930 | IMU - Immobili gruppo D - COMUNE (incremento) |
 
 ---
 
@@ -606,6 +770,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Confronto con dossier IMU 2025 |
 | 2025-12-10 | Identificazione differenze critiche |
 | 2025-12-10 | Integrazione guida calcolo IMU 2025 (soggetti passivi, regola mese, esempi) |
+| 2025-12-10 | **Estrazione completa formule Excel** da file .xlsm (1556 formule) |
+| 2025-12-10 | Documentazione formule per Terreni, Fabbricati rurali, Abitazione principale, Altri fabbricati, Aree fabbricabili |
+| 2025-12-10 | Mappatura codici tributo F24 |
 
 ---
 
