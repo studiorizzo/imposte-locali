@@ -46,6 +46,9 @@
 | Novità IMU Bilancio 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` | ✅ Analizzato |
 | IMU Dichiarazione | `aggiornamenti/IMU - Dichiarazione/imu_dichiarazione.md` | ✅ Analizzato |
 | **D.M. 24/04/2024 Dichiarazione IMU** | `aggiornamenti/IMU - Dichiarazione/decreto_mef_24042024_dichiarazione_imu.md` | ✅ Analizzato (vigente) |
+| Specifiche tecniche IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md` | ✅ Analizzato |
+| Istruzioni modello IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` | Da analizzare |
+| Modello IMU/IMPi (PDF) | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Modello_2024_Definitivo.pdf` | Riferimento visivo |
 
 ### 1.3 Strumenti Metodologici
 
@@ -1433,6 +1436,92 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 - **Calcolo termine decadenza accertamento**
 - **Info regime cumulo sanzioni per violazioni pluriennali**
 
+#### Specifiche tecniche trasmissione telematica (D.M. 24/04/2024)
+
+**Fonte:** `2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md`
+
+**Struttura file:**
+- Record a lunghezza fissa: **1.900 caratteri**
+- Limite dimensionale: **3 MB compressi**
+- Tipi record: A (testa), B (frontespizio), C (contitolari), D (immobili IMU), E (IMPi), Z (coda)
+
+**Tipologie dichiarazione (Record A, campo 6):**
+
+| Codice | Tipo | Uso |
+|--------|------|-----|
+| **N** | Nuova | Prima dichiarazione per anno/comune/contribuente |
+| **S** | Sostitutiva | Integrazione/rettifica (sostituisce integralmente) |
+| **M** | Multipla | Invii frazionati (oltre 3 MB) |
+
+**Codici Caratteristiche immobile (Record D, campo 9):**
+
+| Codice | Tipologia | Mapping app |
+|--------|-----------|-------------|
+| **1** | Terreno | Terreni agricoli |
+| **2** | Area fabbricabile | Aree edificabili |
+| **3** | Fabbricato (valore da rendita) | Fabbricati ordinari |
+| **4** | Fabbricato (valore da scritture contabili) | Gruppo D non catastati |
+| **5** | Abitazione principale | Abitazione A/1, A/8, A/9 |
+| **6** | Pertinenza | C/2, C/6, C/7 (max 1 per tipo) |
+| **7** | Beni merce | Imprese costruttrici |
+
+**Codici Equiparazione abitazione principale (Record D, campo 25):**
+
+| Codice | Fattispecie |
+|--------|-------------|
+| **1** | Alloggio sociale |
+| **2** | Alloggio di servizio (Forze Armate, Polizia, VV.FF.) |
+
+**Codici Riduzioni (Record D, campo 26):**
+
+| Codice | Riduzione | % |
+|--------|-----------|---|
+| **0** | Nessuna | - |
+| **1** | Immobile storico/artistico | 50% |
+| **2** | Inagibile/inabitabile | 50% |
+| **3** | Comodato a parenti 1° grado | 50% |
+| **4** | Pensionato estero (AIRE) | 50%/62,5% |
+| **5** | Altre riduzioni | Variabile |
+
+**Codici Esenzione (Record D, campo 27):**
+
+| Codice | Esenzione |
+|--------|-----------|
+| **0** | Nessuna esenzione |
+| **1** | Immobili occupati abusivamente (art. 614 c.2 / 633 c.p.) |
+| **2** | Quadro temporaneo Aiuti di Stato |
+| **3** | Altre esenzioni |
+
+**Codici Carica dichiarante (Record B, campo 31):**
+
+| Codice | Carica |
+|--------|--------|
+| **1** | Rappresentante legale / socio amministratore |
+| **2** | Tutore minore/inabilitato/interdetto |
+| **3** | Curatore fallimentare |
+| **4** | Commissario liquidatore |
+| **5** | Custode giudiziario |
+| **6** | Rappresentante fiscale non residente |
+| **7** | Erede |
+| **8** | Liquidatore (volontaria) |
+| **9** | Cessionario/incorporante/beneficiario |
+| **10** | Tutore istituzionale |
+| **11** | Liquidatore (ditta individuale ante liquidazione) |
+| **12** | Amministratore condominio |
+
+**Dati occupazione abusiva (Record D, campi 36-38):**
+
+| Campo | Contenuto | Note |
+|-------|-----------|------|
+| Tipo (36) | 1 = art. 614 c.2 o 633 c.p.; 2 = altra denuncia | Obbligatorio se esenzione = 1 |
+| Autorità (37) | Denominazione autorità giudiziaria | Obbligatorio se esenzione = 1 |
+| Data (38) | Data denuncia/provvedimento (GGMMAAAA) | Obbligatorio se esenzione = 1 |
+
+**Funzionalità app (aggiuntive):**
+- Validazione input secondo formati specifiche (CF, date, percentuali)
+- Generazione file telematico conforme a specifiche
+- Mapping automatico campi app → record D
+
 ### 6.25 Società di Persone - Esclusione Agevolazioni Abitazione Principale
 
 **Fonte:** Cass. 18554/2022; Cass. 23682/2019
@@ -1684,6 +1773,11 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-11 | Eliminato D.M. 29/07/2022 (superato), sostituito con D.M. 24/04/2024 |
 | 2025-12-11 | Aggiunti dettagli artt. 1-9 D.M.: modelli, presentazione, termini, trattamento dati |
 | 2025-12-11 | Tabella novità D.M. 24/04/2024: occupazione abusiva telematica, interpretazione ENC |
+| 2025-12-11 | **Analisi Specifiche tecniche IMU/IMPi** - Trasmissione telematica D.M. 24/04/2024 |
+| 2025-12-11 | Aggiunta sezione "Specifiche tecniche trasmissione telematica" in 6.24 |
+| 2025-12-11 | Tabelle codici: Caratteristiche immobile, Riduzioni, Esenzioni, Equiparazioni, Cariche dichiarante |
+| 2025-12-11 | Mapping campi app → record D dichiarazione telematica |
+| 2025-12-11 | Aggiunti allegati D.M. 24/04/2024 alla lista documenti |
 
 ---
 
