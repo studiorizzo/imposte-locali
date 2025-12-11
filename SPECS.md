@@ -342,6 +342,7 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 | Alert dichiarazione | ❌ | ✅ | Bassa |
 | Importo minimo €12 | ❌ | ✅ | Bassa |
 | Prospetto aliquote obbligatorio | ❌ | ✅ Integrazione | Media |
+| IMPI Piattaforme Marine | ❌ | ⚠️ Da valutare | Bassa |
 | ENC regime 3 rate | ❌ | ✅ | Bassa |
 | ENC attività sportive | ❌ | ✅ Semplificato | Bassa |
 | Trust/Trustee soggetto passivo | ❌ | ✅ | Bassa |
@@ -357,7 +358,7 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 | Cumulo sanzioni pluriennali | ❌ | ✅ Info regime continuazione | Bassa |
 | Deducibilità IMU 100% | ❌ | ✅ Info dichiarazione redditi | Media |
 | Valutazione aree (parametri obbligatori) | ❌ | ✅ Checklist + alert | Media |
-| Coefficienti Gruppo D non catastati | ❌ | ✅ Tabella completa 2025 | Bassa |
+| Coefficienti Gruppo D non catastati | ❌ | ⏳ Tabella in 2.2.1 (non impl.) | Bassa |
 | Esenzioni sisma 2016-2017 | ❌ | ✅ Flag + verifica comune | Bassa |
 | ILIA Friuli VG | ❌ | ✅ Rilevamento automatico | Bassa |
 | ENC comodato collegato | ❌ | ✅ Interpretazione L. 213/2023 | Bassa |
@@ -1605,9 +1606,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 ### Domande aperte
 
-1. Gestione ILIA (Friuli-Venezia Giulia), IMIS (Trentino), IMI (Alto Adige)?
-2. ~~Implementare prospetto aliquote obbligatorio dal 2025?~~ → **Risolto**: Aggiunto in 6.13
-3. ~~Gestione enti non commerciali (IMU/ENC)?~~ → **Risolto**: Aggiunto in 6.14-6.15
+1. Gestione IMIS (Trentino) e IMI (Alto Adige)? (ILIA Friuli-VG già in 3.26)
 
 ---
 
