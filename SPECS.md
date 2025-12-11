@@ -327,11 +327,11 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ### Indice Funzionalità
 
-> **Legenda:** ✅ Implementato nel codice | ⏳ Solo documentato | ⚠️ Da valutare
+> **Legenda:** ✅ Implementato | 🔶 Parziale (solo flag) | ⏳ Solo documentato | ⚠️ Da valutare
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
 |--------------|------------|----------|----------|
-| Occupazione abusiva | ❌ | ✅ Flag esenzione | Alta |
+| Occupazione abusiva | ❌ | 🔶 Solo flag esenzione | Alta |
 | Abitazione princ. coniugi separati | ❌ Nucleo fam. | ⏳ Da implementare | Alta |
 | Casa familiare coppie non sposate | ❌ | ⏳ Da implementare | Media |
 | Pertinenze fiscali (graffatura) | ❌ Civilistiche | ⏳ Da implementare | Media |
@@ -340,7 +340,7 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 | Terreni isole minori | ❌ | ⏳ Da implementare | Bassa |
 | Terreni proprietà collettiva | ❌ | ⏳ Da implementare | Bassa |
 | Esenzioni cat. E/1-E/9 | ❌ | ⏳ Da implementare | Bassa |
-| Pensionati esteri 50% | ❌ | ✅ Riduzione 50% | Media |
+| Pensionati esteri 50% | ❌ | 🔶 Solo flag riduzione | Media |
 | Alert dichiarazione | ❌ | ⏳ Da implementare | Bassa |
 | Importo minimo €12 | ❌ | ⏳ Costante definita | Bassa |
 | Prospetto aliquote obbligatorio | ❌ | ⏳ Da implementare | Media |
@@ -367,7 +367,7 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 | Proroga termini weekend | ❌ | ⏳ Da implementare | Bassa |
 | Checklist professionale | ❌ | ⏳ Solo mappatura | Alta |
 
-**Stato implementazione:** ✅ 2 | ⏳ 32 | ⚠️ 1
+**Stato implementazione:** 🔶 2 parziali | ⏳ 32 da fare | ⚠️ 1 da valutare
 
 ### 3.1 Gestione Occupazione Abusiva (Corte Cost. 60/2024)
 
