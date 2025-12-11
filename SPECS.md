@@ -47,7 +47,7 @@
 | IMU Dichiarazione | `aggiornamenti/IMU - Dichiarazione/imu_dichiarazione.md` | ✅ Analizzato |
 | **D.M. 24/04/2024 Dichiarazione IMU** | `aggiornamenti/IMU - Dichiarazione/decreto_mef_24042024_dichiarazione_imu.md` | ✅ Analizzato (vigente) |
 | Specifiche tecniche IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md` | ✅ Analizzato |
-| Istruzioni modello IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` | Da analizzare |
+| Istruzioni modello IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` | ✅ Analizzato |
 | Modello IMU/IMPi (PDF) | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Modello_2024_Definitivo.pdf` | Riferimento visivo |
 
 ### 1.3 Strumenti Metodologici
@@ -1376,6 +1376,82 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 **Beni-merce (Cass. 32115/2024):** L'art. 1, c. 769, L. 160/2019 non ha abrogato l'art. 2, c. 5-bis, D.L. 102/2013; l'esenzione è subordinata alla dichiarazione **a pena di decadenza**.
 
+#### Casistiche obbligo dichiarativo (Istruzioni D.M. 24/04/2024)
+
+**Fonte:** `IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md`
+
+**Principio generale:** Obbligo dichiarativo sorge quando:
+1. Variazioni rispetto a dichiarazioni già presentate
+2. Variazioni non conoscibili dal comune
+
+**A) Immobili con RIDUZIONI:**
+
+| Fattispecie | Riduzione | Obbligo |
+|-------------|-----------|---------|
+| Storico/artistico (art. 10 D.Lgs. 42/2004) | 50% base | Acquisto **e** perdita |
+| Inagibile/inabitabile + non utilizzato | 50% base | Solo **perdita** diritto |
+| Comodato parenti 1° grado (contratto registrato) | 50% base | Sempre |
+| Pensionati esteri AIRE | 50% (37.5% nel 2022) | Sempre |
+| **Canone concordato L. 431/1998** | 75% imposta | **NO obbligo** (info disponibile via Puntofisco) |
+
+**B) Comune NON in possesso informazioni:**
+
+| Fattispecie | Note |
+|-------------|------|
+| Locazione finanziaria (leasing) | Soggetto passivo = locatario dalla stipula |
+| Concessione aree demaniali | Soggetto passivo = concessionario |
+| Aree fabbricabili | Valore non in banca dati catastale |
+| Terreno agricolo → area fabbricabile | Variazione destinazione |
+| Demolizione fabbricato → area edificabile | Fino ultimazione/utilizzo |
+| Cooperativa edilizia a proprietà indivisa | Assegnazione socio / variazione destinazione |
+| IACP/Enti edilizia residenziale | Concessione in locazione |
+| Fabbricati usi culturali (art. 5-bis DPR 601/73) | Esenzione |
+| Terreni CD/IAP | Esenzione (anche aree fabbricabili coltivate) |
+| Acquisto/perdita esenzione | Variazione status |
+| Fabbricati gruppo D non catastati | Valore da scritture contabili |
+| Riunione usufrutto non dichiarata | Non risulta in catasto |
+| Estinzione diritto (abitazione, uso, enfiteusi, superficie) | Se non dichiarata/MUI |
+| Parti comuni (art. 1117 n. 2 c.c.) | Bene comune censibile - dichiarazione amministratore |
+| Multiproprietà (D.Lgs. 427/1998) | Dichiarazione amministratore |
+| Fusione/incorporazione/scissione | Persone giuridiche |
+| Acquisto/cessazione diritto reale per legge | Es. usufrutto legale genitori |
+
+**C) Modalità presentazione:**
+
+| Modalità | Dettaglio |
+|----------|-----------|
+| **Cartacea** | Consegna diretta (con ricevuta) / Raccomandata s.r.r. / PEC |
+| **Telematica** | Fisconline / Entratel (diretto o tramite intermediario) |
+| **Solo telematica** | Occupazione abusiva (art. 1, c. 759, lett. g-bis) |
+
+**Termine:** 30 giugno anno successivo. Efficacia **pluriennale** (salvo variazioni).
+
+#### Compilazione Quadro A - Campi per l'app
+
+**Fonte:** Istruzioni D.M. 24/04/2024, pagg. 14-18
+
+| Campo | Contenuto | Note app |
+|-------|-----------|----------|
+| **1** | Caratteristiche (1-7) | Già mappato in specifiche tecniche |
+| **2** | Ubicazione | Via, civico, scala, piano, interno |
+| **3-6** | Dati catastali | Sezione, foglio, particella, subalterno |
+| **7** | Categoria/Qualità | Fabbricati: categoria; Terreni: qualità |
+| **8** | Classe | Fabbricati o redditività terreni |
+| **8a** | Tipo catasto | T=terreni, U=urbano |
+| **11** | Valore | **Intero** (indipendente da quota possesso) |
+| **12** | Quota possesso | Percentuale |
+| **13** | Detrazione abitazione principale | Proporzionale al periodo |
+| **13a** | Equiparazione | 1=alloggio sociale, 2=Forze Armate |
+| **14** | Riduzioni | 0-5 (già mappato) |
+| **15** | Esenzioni | 0-3 (già mappato) |
+| **16/17** | Acquisto/Cessione | Barrare campo appropriato |
+| **18** | Altro | Circostanze non contemplate |
+| **20** | Data | Inizio/termine possesso o variazione |
+| **21** | Inizio/Termine agevolazione | I=inizio, T=termine |
+| **22-24** | Occupazione abusiva | Tipo, autorità, data denuncia |
+
+**Regola compilazione multipla:** Se più vicende stesso immobile in date diverse → più quadri con stesso "Progressivo Immobile" ma numeri d'ordine crescenti.
+
 #### Conservazione dati e termini accertamento
 
 **Periodo conservazione:** Fino al **31 dicembre del 5° anno successivo** a quello in cui la dichiarazione deve essere presentata (art. 1, c. 161, L. 296/2006).
@@ -1778,6 +1854,11 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-11 | Tabelle codici: Caratteristiche immobile, Riduzioni, Esenzioni, Equiparazioni, Cariche dichiarante |
 | 2025-12-11 | Mapping campi app → record D dichiarazione telematica |
 | 2025-12-11 | Aggiunti allegati D.M. 24/04/2024 alla lista documenti |
+| 2025-12-11 | **Analisi Istruzioni modello IMU/IMPi** - Casistiche obbligo dichiarativo |
+| 2025-12-11 | Aggiunta sezione "Casistiche obbligo dichiarativo" con riduzioni, comune senza info |
+| 2025-12-11 | Tabella compilazione Quadro A - mapping campi dichiarazione |
+| 2025-12-11 | Canone concordato: NO obbligo dichiarativo (info via Puntofisco) |
+| 2025-12-11 | Regole compilazione multipla per più vicende stesso immobile |
 
 ---
 
