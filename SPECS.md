@@ -11,11 +11,9 @@
 ## INDICE
 
 1. [Fonte Dati](#1-fonte-dati)
-2. [Normativa IMU 2025](#2-normativa-imu-2025)
-3. [Modifiche Necessarie](#3-modifiche-necessarie-rispetto-a-excel-2022)
-4. [Funzionalità App 2025](#4-funzionalità-app-2025)
-5. [Specifiche Validate](#5-specifiche-validate)
-6. [Changelog](#6-changelog)
+2. [Normativa IMU Aggiornata](#2-normativa-imu-aggiornata)
+3. [Funzionalità](#3-funzionalità)
+4. [Changelog](#4-changelog)
 
 ---
 
@@ -159,7 +157,7 @@
 
 ---
 
-## 2. NORMATIVA IMU 2025
+## 2. NORMATIVA IMU AGGIORNATA
 
 ### 2.1 Base Giuridica
 
@@ -323,36 +321,11 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ---
 
-## 3. MODIFICHE NECESSARIE (rispetto a Excel 2022)
-
-> **Stato complessivo:** 9/10 implementate (90%)
-
-### 3.1 Priorità ALTA (🔴) - ✅ COMPLETATE
-
-1. ✅ **Rimuovere detrazione figli** → Solo `DETRAZIONE_ABITAZIONE_PRINCIPALE = 200`
-2. ✅ **Terreni CD/IAP → esenzione** → Flag `terrenoCdIap` in `Esenzioni`
-3. ✅ **Quota Stato solo gruppo D** → `calcolaQuoteGruppoD()` con `QUOTA_STATO_GRUPPO_D = 0.76`
-4. ✅ **Riferimento L. 160/2019** → Commenti e documentazione aggiornati
-
-### 3.2 Priorità MEDIA (🟡) - ✅ COMPLETATE
-
-5. ✅ **Aliquote base aggiornate** → `ALIQUOTE_BASE` (0.50%, 0.10%, 0.86%)
-6. ✅ **Coefficiente A/11** → `'A/11': 160` in `COEFFICIENTI`
-7. ✅ **Riferimenti temporali dinamici** → Parametro `anno` nelle funzioni
-
-### 3.3 Priorità BASSA (🟢) - 2/3 COMPLETATE
-
-8. ✅ **Nuove esenzioni** → `beneMerce`, `occupatoAbusivamente`, `collabente` in `Esenzioni`
-9. ✅ **Pensionati esteri** → `pensionatoEstero` in `Riduzioni` (riduzione 50%)
-10. ⏳ **Alert obbligo dichiarativo** → **DA IMPLEMENTARE** (casistiche in sezione 4.29)
-
----
-
-## 4. FUNZIONALITÀ APP 2025
+## 3. FUNZIONALITÀ
 
 > Funzionalità aggiuntive rispetto all'Excel originale 2022, basate sulla documentazione normativa analizzata.
 
-### 4.1 Gestione Occupazione Abusiva (Corte Cost. 60/2024)
+### 3.1 Gestione Occupazione Abusiva (Corte Cost. 60/2024)
 
 **Fonte:** D.Lgs. 23/2011 art. 9 comma 1, come integrato da Corte Cost. 60/2024
 
@@ -371,7 +344,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Art. 614 comma 2 c.p. (violazione di domicilio aggravata)
 - Art. 633 c.p. (invasione di terreni o edifici)
 
-### 4.2 Gestione Abitazione Principale Post Corte Cost. 209/2022
+### 3.2 Gestione Abitazione Principale Post Corte Cost. 209/2022
 
 **Fonte:** D.L. 201/2011 art. 13 comma 2, come modificato da Corte Cost. 209/2022
 
@@ -385,7 +358,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Verifica solo dimora + residenza del possessore
 - Alert informativo per coniugi con immobili in comuni diversi
 
-### 4.3 Gestione Casa Familiare Estesa (Circ. MEF 1/DF 2020)
+### 3.3 Gestione Casa Familiare Estesa (Circ. MEF 1/DF 2020)
 
 **Fonte:** L. 160/2019 art. 1 comma 741 lett. c) n. 4
 
@@ -399,7 +372,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Campo "Assegnazione giudiziale casa familiare" (SI/NO)
 - Se SI → assimilazione ad abitazione principale → esenzione
 
-### 4.4 Gestione Pertinenze Fiscali (Circ. MEF 1/DF 2020, par. 8)
+### 3.4 Gestione Pertinenze Fiscali (Circ. MEF 1/DF 2020, par. 8)
 
 **Fonte:** L. 160/2019 art. 1 comma 741 lett. a)
 
@@ -415,7 +388,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Campo "Accatastamento unitario" per aree adiacenti a fabbricati
 - Se NO → area soggetta autonomamente come edificabile
 
-### 4.5 Gestione Leasing Immobiliare (Circ. MEF 1/DF 2020, par. 9)
+### 3.5 Gestione Leasing Immobiliare (Circ. MEF 1/DF 2020, par. 9)
 
 **Fonte:** L. 160/2019 art. 1 comma 743
 
@@ -432,7 +405,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Se SI: data stipula contratto, data fine contratto
 - Calcolo automatico mesi di possesso
 
-### 4.6 Gestione IACP/ERP Migliorata (Circ. MEF 1/DF 2020, par. 3)
+### 3.6 Gestione IACP/ERP Migliorata (Circ. MEF 1/DF 2020, par. 3)
 
 **Fonte:** L. 160/2019 art. 1 comma 749 e comma 754
 
@@ -451,7 +424,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Campo "Alloggio sociale DM 22/04/2008" (SI/NO)
 - Logica detrazione/esenzione automatica
 
-### 4.7 Esenzioni Terreni Agricoli Complete (L. 160/2019 c. 758)
+### 3.7 Esenzioni Terreni Agricoli Complete (L. 160/2019 c. 758)
 
 **Fonte:** Art. 1 comma 758 L. 160/2019
 
@@ -465,7 +438,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Flag per ciascuna tipologia di esenzione
 - Verifica automatica tramite codice catastale comune (per zone montane/isole)
 
-### 4.8 Esenzioni Storiche D.Lgs. 504/1992 art. 7
+### 3.8 Esenzioni Storiche D.Lgs. 504/1992 art. 7
 
 **Fonte:** D.Lgs. 504/1992 art. 7 (ancora vigente per rinvio)
 
@@ -483,7 +456,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 | h) | Terreni montani/collinari | Automatico da comune |
 | i) | Enti non commerciali (ENC) | Flag + verifica modalità |
 
-### 4.9 Gestione Pensionati Esteri/AIRE (L. 178/2020)
+### 3.9 Gestione Pensionati Esteri/AIRE (L. 178/2020)
 
 **Fonte:** L. 178/2020 art. 1 comma 48; L. 160/2019 art. 1 comma 741
 
@@ -499,7 +472,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Verifica unicità immobile
 - Riduzione automatica 50% base imponibile
 
-### 4.10 Alert Obbligo Dichiarazione IMU
+### 3.10 Alert Obbligo Dichiarazione IMU
 
 **Fonte:** L. 160/2019 art. 1 comma 769
 
@@ -515,7 +488,7 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 - Alert automatico se presenti fattispecie con obbligo
 - Indicazione scadenza presentazione
 
-### 4.11 Gestione Aliquote e Mancata Pubblicazione
+### 3.11 Gestione Aliquote e Mancata Pubblicazione
 
 **Fonte:** L. 160/2019 art. 1 comma 767; Circ. MEF 1/DF 2020 par. 4; **Art. 1, c. 74, L. 213/2023**
 
@@ -539,7 +512,7 @@ ALTRIMENTI:
 - Verifica importo minimo versamento
 - Calcolo automatico proroga weekend per termini 14/28 ottobre
 
-### 4.12 IMPI - Piattaforme Marine (Art. 38 D.L. 124/2019)
+### 3.12 IMPI - Piattaforme Marine (Art. 38 D.L. 124/2019)
 
 **Fonte:** Art. 38 D.L. 124/2019
 
@@ -550,7 +523,7 @@ ALTRIMENTI:
 
 **Funzionalità:** Da valutare se includere (fattispecie molto specifica)
 
-### 4.13 Prospetto Aliquote Obbligatorio 2025 (D.M. 7/7/2023 e D.M. 6/9/2024)
+### 3.13 Prospetto Aliquote Obbligatorio 2025 (D.M. 7/7/2023 e D.M. 6/9/2024)
 
 **Fonte:** D.M. 7 luglio 2023 (definizione prospetto), D.M. 6 settembre 2024 (proroga al 2025)
 
@@ -571,7 +544,7 @@ ALTRIMENTI:
 - Validazione automatica delle aliquote inserite
 - Alert per scadenza 15/09/2025 (proroga)
 
-### 4.14 Gestione Enti Non Commerciali (ENC) - Regime Speciale
+### 3.14 Gestione Enti Non Commerciali (ENC) - Regime Speciale
 
 **Fonte:** L. 160/2019 art. 1 cc. 759, 770; Circ. MEF 2/DF 16/7/2024; **Art. 1, c. 71, L. 213/2023 (Bilancio 2024)**
 
@@ -605,7 +578,7 @@ ALTRIMENTI:
 - Calcolo automatico tre rate
 - Alert dichiarazione specifica
 
-### 4.15 Semplificazione ENC Attività Sportive (Art. 6-bis D.L. 84/2025)
+### 3.15 Semplificazione ENC Attività Sportive (Art. 6-bis D.L. 84/2025)
 
 **Fonte:** Art. 6-bis D.L. 84/2025
 
@@ -617,7 +590,7 @@ ALTRIMENTI:
 - Flag "Attività sportiva dilettantistica" per ENC
 - Regime semplificato calcolo esenzione
 
-### 4.16 Trust e Trustee come Soggetto Passivo (Cass. 16550/2019, 15988/2020)
+### 3.16 Trust e Trustee come Soggetto Passivo (Cass. 16550/2019, 15988/2020)
 
 **Fonte:** Cass. 20 giugno 2019, n. 16550; Cass. 27 luglio 2020, n. 15988
 
@@ -632,7 +605,7 @@ ALTRIMENTI:
 - Campo "Trustee" come soggetto passivo
 - Info: segregazione patrimoniale mantenuta
 
-### 4.17 Rapporto IMU/IRPEF per Immobili Non Locati (Art. 9 c. 9 D.Lgs. 23/2011)
+### 3.17 Rapporto IMU/IRPEF per Immobili Non Locati (Art. 9 c. 9 D.Lgs. 23/2011)
 
 **Fonte:** Art. 9, comma 9, D.Lgs. n. 23/2011 (non abrogato)
 
@@ -648,7 +621,7 @@ ALTRIMENTI:
 - Alert "Reddito fondiario 50% IRPEF" se immobile non locato stesso comune
 - Info per dichiarazione redditi
 
-### 4.18 Coniugi con Doppia Abitazione Principale - Dettagli
+### 3.18 Coniugi con Doppia Abitazione Principale - Dettagli
 
 **Fonte:** Corte Cost. 209/2022; Cass. 9620/2025; Cass. 34813/2022
 
@@ -668,7 +641,7 @@ ALTRIMENTI:
 - Gestione immobili contigui
 - Alert informativo post Corte Cost. 209/2022
 
-### 4.19 CD/IAP Pensionati (Art. 78-bis L. 126/2020)
+### 3.19 CD/IAP Pensionati (Art. 78-bis L. 126/2020)
 
 **Fonte:** Art. 78-bis L. 13 ottobre 2020, n. 126 (D.L. Agosto)
 
@@ -684,7 +657,7 @@ Si considerano **coltivatori diretti e IAP** anche i **pensionati** che:
 - Verifica mantenimento iscrizione previdenza agricola
 - Applicazione esenzione terreni
 
-### 4.20 Contitolarità Terreni dal 2020 - Esenzione Individuale
+### 3.20 Contitolarità Terreni dal 2020 - Esenzione Individuale
 
 **Fonte:** Art. 1, comma 743, L. n. 160/2019; Ris. MEF 2/DF del 10 marzo 2020
 
@@ -708,7 +681,7 @@ Per le **aree fabbricabili con utilizzo agro-silvo-pastorale** da CD/IAP:
 - Calcolo IMU separato per contitolari senza requisiti
 - **Flag "Area fabbricabile con utilizzo agro-silvo-pastorale"** → esenzione a tutti
 
-### 4.21 Fabbricati in Corso di Costruzione/Ristrutturazione
+### 3.21 Fabbricati in Corso di Costruzione/Ristrutturazione
 
 **Fonte:** Art. 1, comma 746, L. 160/2019
 
@@ -729,7 +702,7 @@ Per fabbricati in corso di:
 - Campo data inizio lavori, data fine prevista
 - Calcolo IMU su valore area
 
-### 4.22 Soggetti Passivi - Casi Particolari (Art. 1 c. 768 L. 160/2019)
+### 3.22 Soggetti Passivi - Casi Particolari (Art. 1 c. 768 L. 160/2019)
 
 **Fonte:** Art. 1, comma 768, L. 160/2019; Circ. MEF 1/DF 2020
 
@@ -754,7 +727,7 @@ Per fabbricati in corso di:
 - Gestione multiproprietà/condominio
 - Alert scadenza versamento 3 mesi (fallimento)
 
-### 4.23 Deducibilità IMU Immobili Strumentali
+### 3.23 Deducibilità IMU Immobili Strumentali
 
 **Fonte:** Art. 1, cc. 772-773, L. 160/2019; Circ. Agenzia Entrate 10/E del 14/5/2014
 
@@ -790,7 +763,7 @@ Per fabbricati in corso di:
 - Alert per contribuenti con immobili strumentali
 - Info per dichiarazione redditi (deduzione integrale)
 
-### 4.24 Valutazione Aree Fabbricabili - Parametri Obbligatori (Cass. 27067/2024)
+### 3.24 Valutazione Aree Fabbricabili - Parametri Obbligatori (Cass. 27067/2024)
 
 **Fonte:** Cass. 18/10/2024 n. 27067; art. 5, c. 5, D.Lgs. 504/1992
 
@@ -809,7 +782,7 @@ Per fabbricati in corso di:
 - Campo note per documentazione valore dichiarato
 - Alert se valore < valore comunale predeterminato
 
-### 4.25 Esenzioni IMU per Eventi Sismici
+### 3.25 Esenzioni IMU per Eventi Sismici
 
 **Fonte:** Art. 1, c. 422, L. 213/2023 (Bilancio 2024); D.L. 189/2016
 
@@ -834,7 +807,7 @@ Per fabbricati in corso di:
 - Verifica comune in allegati D.L. 189/2016
 - Calcolo automatico esenzione per periodo
 
-### 4.26 ILIA - Imposta Locale Immobiliare Autonoma (Friuli Venezia Giulia)
+### 3.26 ILIA - Imposta Locale Immobiliare Autonoma (Friuli Venezia Giulia)
 
 **Fonte:** Art. 1, c. 528, L. 213/2023; L.R. FVG 17/2022
 
@@ -849,7 +822,7 @@ Per fabbricati in corso di:
 - Rilevamento automatico comune FVG → calcolo ILIA invece di IMU
 - Alert specifico per contribuenti FVG
 
-### 4.27 Mappatura Checklist → Campi App (Riferimento UI/UX)
+### 3.27 Mappatura Checklist → Campi App (Riferimento UI/UX)
 
 **Fonte:** Check List Acconto IMU 2025 (Wolters Kluwer OneFiscale)
 
@@ -910,7 +883,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 4. **CD/IAP**: Esenzione totale terreni
 5. **Categoria lusso**: Detrazione €200 applicabile
 
-### 4.28 Sintesi Nuove Funzionalità vs Excel 2022
+### 3.28 Sintesi Nuove Funzionalità vs Excel 2022
 
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
 |--------------|------------|----------|----------|
@@ -949,7 +922,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 | **Proroga termini weekend** | ❌ | ✅ Calcolo automatico | Bassa |
 | **Checklist professionale integrata** | ❌ | ✅ Mappatura UI/UX | Alta |
 
-### 4.29 Adempimenti IMU - Scadenze e Sanzioni
+### 3.29 Adempimenti IMU - Scadenze e Sanzioni
 
 **Fonte:** Art. 1, cc. 762-769, L. 160/2019; Decreto 24 aprile 2024
 
@@ -1489,7 +1462,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 - Generazione file telematico conforme a specifiche
 - Mapping automatico campi app → record D
 
-### 4.30 Società di Persone - Esclusione Agevolazioni Abitazione Principale
+### 3.30 Società di Persone - Esclusione Agevolazioni Abitazione Principale
 
 **Fonte:** Cass. 18554/2022; Cass. 23682/2019
 
@@ -1518,154 +1491,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 ---
 
-## 5. SPECIFICHE VALIDATE
-
-### 5.1 Formule Confermate
-
-#### Base Imponibile Fabbricati
-```
-BASE_IMPONIBILE = RENDITA_CATASTALE × 1.05 × COEFFICIENTE
-```
-✅ **VALIDATA** - Confermata in art. 1, c. 745, L. 160/2019
-
-#### Base Imponibile Terreni Agricoli
-```
-BASE_IMPONIBILE = REDDITO_DOMINICALE × 1.25 × 135
-```
-✅ **VALIDATA** - Confermata in art. 1, c. 746, L. 160/2019
-
-#### Base Imponibile Aree Fabbricabili
-```
-BASE_IMPONIBILE = VALORE_VENALE
-```
-✅ **VALIDATA** - Confermata in art. 1, c. 746, L. 160/2019
-
-#### Calcolo IMU
-```
-IMU = BASE_IMPONIBILE × (% POSSESSO / 100) × (MESI / 12) × (ALIQUOTA / 100)
-```
-✅ **VALIDATA** - Formula standard
-
-#### Detrazione Abitazione Principale
-```
-DETRAZIONE = €200 × (% POSSESSO / 100)
-```
-⚠️ **PARZIALMENTE VALIDATA** - La formula per figli è ABOLITA
-
-#### Riduzione Canone Concordato
-```
-ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
-```
-✅ **VALIDATA** - Art. 1, c. 760, L. 160/2019
-
-### 5.2 Coefficienti Validati
-
-| Categoria | Coefficiente | Fonte | Stato |
-|-----------|--------------|-------|-------|
-| A/1 - A/9 | 160 | c. 745 | ✅ |
-| A/10 | 80 | c. 745 | ✅ |
-| A/11 | 160 | c. 745 | ✅ (DA AGGIUNGERE) |
-| B/1 - B/8 | 140 | c. 745 | ✅ |
-| C/1 | 55 | c. 745 | ✅ |
-| C/2, C/6, C/7 | 160 | c. 745 | ✅ |
-| C/3, C/4, C/5 | 140 | c. 745 | ✅ |
-| D (no D/5, D/10) | 65 | c. 745 | ✅ |
-| D/5 | 80 | c. 745 | ✅ |
-
-### 5.3 Aliquote Base Validate
-
-| Fattispecie | Aliquota Base | Fonte | Stato |
-|-------------|---------------|-------|-------|
-| Abitazione princ. | 0,50% | c. 748 | ✅ |
-| Fabbricati rurali | 0,10% | c. 750 | ✅ |
-| Terreni agricoli | 0,76% | c. 752 | ✅ |
-| Gruppo D | 0,86% | c. 753 | ✅ |
-| Altri fabbricati | 0,86% | c. 754 | ✅ |
-| Aree fabbricabili | 0,86% | c. 754 | ✅ |
-
-### 5.4 Esempi Pratici di Calcolo
-
-#### Esempio 1: Appartamento A/2
-
-```
-DATI INPUT:
-- Rendita catastale: € 1.000
-- Categoria: A/2
-- Aliquota comunale: 1,06%
-- Possesso: 100%
-- Mesi: 12
-
-CALCOLO:
-1. Rivalutazione:     1.000 × 1,05 = € 1.050
-2. Base imponibile:   1.050 × 160 = € 168.000
-3. IMU annua:         168.000 × 1,06% = € 1.780,80
-4. Acconto (16/6):    € 890,40
-5. Saldo (16/12):     € 890,40
-
-CODICE TRIBUTO F24: 3918 (altri fabbricati - COMUNE)
-```
-
-#### Esempio 2: Fabbricato D/1 (con quota Stato)
-
-```
-DATI INPUT:
-- Rendita catastale: € 5.000
-- Categoria: D/1
-- Aliquota comunale totale: 1,06%
-- Possesso: 100%
-- Mesi: 12
-
-CALCOLO:
-1. Rivalutazione:     5.000 × 1,05 = € 5.250
-2. Base imponibile:   5.250 × 65 = € 341.250
-3. Quota STATO:       341.250 × 0,76% = € 2.593,50 → Codice 3925
-4. Quota COMUNE:      341.250 × 0,30% = € 1.023,75 → Codice 3930
-   (dove 0,30% = 1,06% - 0,76%)
-5. IMU totale:        € 3.617,25
-```
-
-#### Esempio 3: Immobile a Canone Concordato
-
-```
-DATI INPUT:
-- Base imponibile: € 168.000
-- Aliquota comunale: 1,06%
-- Tipo contratto: Canone concordato (L. 431/1998)
-
-CALCOLO CORRETTO:
-Riduzione 25% si applica all'ALIQUOTA, non alla base:
-
-IMU = 168.000 × (1,06% × 0,75)
-IMU = 168.000 × 0,795%
-IMU = € 1.335,60
-
-⚠️ ERRORE COMUNE DA EVITARE:
-NON fare: (168.000 × 0,75) × 1,06% = 126.000 × 1,06%
-```
-
-#### Esempio 4: Terreno Agricolo (non CD/IAP)
-
-```
-DATI INPUT:
-- Reddito dominicale: € 500
-- Aliquota comunale: 0,86%
-- Possesso: 50%
-- Mesi: 12
-
-CALCOLO:
-1. Rivalutazione:     500 × 1,25 = € 625
-2. Base imponibile:   625 × 135 = € 84.375
-3. Quota possesso:    84.375 × 50% = € 42.187,50
-4. IMU annua:         42.187,50 × 0,86% = € 362,81
-
-CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
-
-⚠️ Se CD/IAP: ESENTE (IMU = €0)
-```
-
----
-
-## 6. CHANGELOG
+## 4. CHANGELOG
 
 | Data | Modifica |
 |------|----------|
