@@ -1,0 +1,31 @@
+{
+  "id_prospetto": 12653,
+  "comune": "ROSETO VALFORTORE",
+  "codice_catastale": "H568",
+  "provincia": "FG",
+  "anno": 2026,
+  "delibera": {
+    "numero": "41",
+    "data": "19/11/2025",
+    "organo": "Consiglio comunale"
+  },
+  "comune_fusione": false,
+  "aliquote": {
+    "abitazione_principale_lusso": 0.5,
+    "assimilazione_anziani_disabili": true,
+    "fabbricati_rurali_strumentali": 0.0,
+    "fabbricati_gruppo_d": 0.96,
+    "terreni_agricoli": null,
+    "aree_fabbricabili": 0.96,
+    "altri_fabbricati": 0.96
+  },
+  "esenzioni_legge": {
+    "terreni_agricoli": "Esenti ai sensi dell'art. 1, comma 758, della legge 27 dicembre 2019, n. 160"
+  },
+  "aliquote_speciali": [],
+  "esenzioni_comunali": [],
+  "note": "Comune montano - terreni agricoli esenti per legge",
+  "file_sorgente": "12653_DIMUNIC-13fg26h568d.pdf",
+  "data_generazione_prospetto": "04/12/2025",
+  "data_estrazione": "2025-12-11"
+}

@@ -1,0 +1,38 @@
+{
+  "id_prospetto": 12899,
+  "comune": "CASSANO DELLE MURGE",
+  "codice_catastale": "B998",
+  "provincia": "BA",
+  "anno": 2026,
+  "delibera": {
+    "numero": "45",
+    "data": "17/11/2025",
+    "organo": "Consiglio comunale"
+  },
+  "comune_fusione": false,
+  "aliquote": {
+    "abitazione_principale_lusso": 0.6,
+    "assimilazione_anziani_disabili": true,
+    "fabbricati_rurali_strumentali": 0.1,
+    "fabbricati_gruppo_d": 1.06,
+    "terreni_agricoli": null,
+    "aree_fabbricabili": 1.06,
+    "altri_fabbricati": 1.06
+  },
+  "esenzioni_legge": {
+    "terreni_agricoli": "Esenti ai sensi dell'art. 1, comma 758, della legge 27 dicembre 2019, n. 160"
+  },
+  "aliquote_speciali": [],
+  "esenzioni_comunali": [
+    {
+      "tipo": "onlus_terzo_settore",
+      "riferimento_normativo": "D.Lgs. n. 117/2017",
+      "descrizione": "Immobili di proprietà di ONLUS o enti del terzo settore",
+      "condizioni": "L'esenzione si applica a condizione che gli enti del terzo Settore dimostrino di essere in regola con l'iscrizione nel RUNTS (Registro Unico Nazionale degli Enti del Terzo Settore), di aver effettuato i relativi adempimenti imposti dalla specifica normativa di settore e fino al verificarsi di una causa di decadenza dai benefici fiscali"
+    }
+  ],
+  "note": "Comune montano - terreni agricoli esenti per legge",
+  "file_sorgente": "12899_DIMUNIC-13ba26b998d.pdf",
+  "data_generazione_prospetto": "04/12/2025",
+  "data_estrazione": "2025-12-11"
+}

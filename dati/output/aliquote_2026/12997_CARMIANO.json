@@ -1,0 +1,28 @@
+{
+  "id_prospetto": 12997,
+  "comune": "CARMIANO",
+  "codice_catastale": "B792",
+  "provincia": "LE",
+  "anno": 2026,
+  "delibera": {
+    "numero": "39",
+    "data": "26/11/2025",
+    "organo": "Consiglio comunale"
+  },
+  "comune_fusione": false,
+  "aliquote": {
+    "abitazione_principale_lusso": 0.6,
+    "assimilazione_anziani_disabili": true,
+    "fabbricati_rurali_strumentali": 0.1,
+    "fabbricati_gruppo_d": 0.76,
+    "terreni_agricoli": 1.06,
+    "aree_fabbricabili": 1.06,
+    "altri_fabbricati": 1.06
+  },
+  "aliquote_speciali": [],
+  "esenzioni_comunali": [],
+  "note": null,
+  "file_sorgente": "12997_DIMUNIC-13le26b792d.pdf",
+  "data_generazione_prospetto": "02/12/2025",
+  "data_estrazione": "2025-12-11"
+}
