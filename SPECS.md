@@ -327,43 +327,47 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ### Indice Funzionalità
 
+> **Legenda:** ✅ Implementato nel codice | ⏳ Solo documentato | ⚠️ Da valutare
+
 | Funzionalità | Excel 2022 | App 2025 | Priorità |
 |--------------|------------|----------|----------|
-| Occupazione abusiva | ❌ | ✅ Esenzione | Alta |
-| Abitazione princ. coniugi separati | ❌ Nucleo fam. | ✅ Solo possessore | Alta |
-| Casa familiare coppie non sposate | ❌ | ✅ | Media |
-| Pertinenze fiscali (graffatura) | ❌ Civilistiche | ✅ Fiscali | Media |
-| Leasing (fine contratto) | ❌ | ✅ | Media |
-| IACP vs Alloggi sociali | ❌ Confusi | ✅ Distinti | Media |
-| Terreni isole minori | ❌ | ✅ Esenti | Bassa |
-| Terreni proprietà collettiva | ❌ | ✅ Esenti | Bassa |
-| Esenzioni cat. E/1-E/9 | ❌ | ✅ Automatiche | Bassa |
-| Pensionati esteri 50% | ❌ | ✅ | Media |
-| Alert dichiarazione | ❌ | ✅ | Bassa |
-| Importo minimo €12 | ❌ | ✅ | Bassa |
-| Prospetto aliquote obbligatorio | ❌ | ✅ Integrazione | Media |
+| Occupazione abusiva | ❌ | ✅ Flag esenzione | Alta |
+| Abitazione princ. coniugi separati | ❌ Nucleo fam. | ⏳ Da implementare | Alta |
+| Casa familiare coppie non sposate | ❌ | ⏳ Da implementare | Media |
+| Pertinenze fiscali (graffatura) | ❌ Civilistiche | ⏳ Da implementare | Media |
+| Leasing (fine contratto) | ❌ | ⏳ Da implementare | Media |
+| IACP vs Alloggi sociali | ❌ Confusi | ⏳ Da implementare | Media |
+| Terreni isole minori | ❌ | ⏳ Da implementare | Bassa |
+| Terreni proprietà collettiva | ❌ | ⏳ Da implementare | Bassa |
+| Esenzioni cat. E/1-E/9 | ❌ | ⏳ Da implementare | Bassa |
+| Pensionati esteri 50% | ❌ | ✅ Riduzione 50% | Media |
+| Alert dichiarazione | ❌ | ⏳ Da implementare | Bassa |
+| Importo minimo €12 | ❌ | ⏳ Costante definita | Bassa |
+| Prospetto aliquote obbligatorio | ❌ | ⏳ Da implementare | Media |
 | IMPI Piattaforme Marine | ❌ | ⚠️ Da valutare | Bassa |
-| ENC regime 3 rate | ❌ | ✅ | Bassa |
-| ENC attività sportive | ❌ | ✅ Semplificato | Bassa |
-| Trust/Trustee soggetto passivo | ❌ | ✅ | Bassa |
-| IMU/IRPEF 50% stesso comune | ❌ | ✅ Alert | Media |
-| Immobili contigui coniugi | ❌ | ✅ | Media |
-| CD/IAP pensionati | ❌ | ✅ | Media |
-| Contitolarità terreni individuale | ❌ | ✅ | Media |
-| Fabbricati in costruzione | ❌ | ✅ Area fabbricabile | Media |
-| Soggetti passivi casi particolari | ❌ | ✅ Fallimento/multiproprietà/condominio | Bassa |
-| Adempimenti completi (scadenze/sanzioni) | ❌ Parziale | ✅ Completo | Alta |
-| Società di persone NO agevolazioni | ❌ | ✅ Alert automatico | Media |
-| Termini decadenza accertamento | ❌ | ✅ Calcolo automatico | Media |
-| Cumulo sanzioni pluriennali | ❌ | ✅ Info regime continuazione | Bassa |
-| Deducibilità IMU 100% | ❌ | ✅ Info dichiarazione redditi | Media |
-| Valutazione aree (parametri obbligatori) | ❌ | ✅ Checklist + alert | Media |
-| Coefficienti Gruppo D non catastati | ❌ | ⏳ Tabella in 2.2.1 (non impl.) | Bassa |
-| Esenzioni sisma 2016-2017 | ❌ | ✅ Flag + verifica comune | Bassa |
-| ILIA Friuli VG | ❌ | ✅ Rilevamento automatico | Bassa |
-| ENC comodato collegato | ❌ | ✅ Interpretazione L. 213/2023 | Bassa |
-| Proroga termini weekend | ❌ | ✅ Calcolo automatico | Bassa |
-| Checklist professionale integrata | ❌ | ✅ Mappatura UI/UX | Alta |
+| ENC regime 3 rate | ❌ | ⏳ Da implementare | Bassa |
+| ENC attività sportive | ❌ | ⏳ Da implementare | Bassa |
+| Trust/Trustee soggetto passivo | ❌ | ⏳ Da implementare | Bassa |
+| IMU/IRPEF 50% stesso comune | ❌ | ⏳ Da implementare | Media |
+| Immobili contigui coniugi | ❌ | ⏳ Da implementare | Media |
+| CD/IAP pensionati | ❌ | ⏳ Da implementare | Media |
+| Contitolarità terreni individuale | ❌ | ⏳ Da implementare | Media |
+| Fabbricati in costruzione | ❌ | ⏳ Da implementare | Media |
+| Soggetti passivi casi particolari | ❌ | ⏳ Da implementare | Bassa |
+| Adempimenti (scadenze/sanzioni) | ❌ Parziale | ⏳ Solo date scadenza | Alta |
+| Società di persone NO agevolazioni | ❌ | ⏳ Da implementare | Media |
+| Termini decadenza accertamento | ❌ | ⏳ Da implementare | Media |
+| Cumulo sanzioni pluriennali | ❌ | ⏳ Da implementare | Bassa |
+| Deducibilità IMU 100% | ❌ | ⏳ Info (non calcolo) | Media |
+| Valutazione aree (parametri) | ❌ | ⏳ Da implementare | Media |
+| Coefficienti Gruppo D non catastati | ❌ | ⏳ Tabella in 2.2.1 | Bassa |
+| Esenzioni sisma 2016-2017 | ❌ | ⏳ Da implementare | Bassa |
+| ILIA Friuli VG | ❌ | ⏳ Da implementare | Bassa |
+| ENC comodato collegato | ❌ | ⏳ Da implementare | Bassa |
+| Proroga termini weekend | ❌ | ⏳ Da implementare | Bassa |
+| Checklist professionale | ❌ | ⏳ Solo mappatura | Alta |
+
+**Stato implementazione:** ✅ 2 | ⏳ 32 | ⚠️ 1
 
 ### 3.1 Gestione Occupazione Abusiva (Corte Cost. 60/2024)
 
