@@ -583,22 +583,25 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ## 4. TABELLA CONFRONTO 2022 vs 2025
 
-### 4.1 Differenze Critiche
+### 4.1 Differenze Critiche (Excel 2022 → App 2025)
 
-| Elemento | Excel 2022 | IMU 2025 | Impatto |
-|----------|------------|----------|---------|
-| **Normativa base** | D.L. 201/2011 | L. 160/2019 | 🔴 CRITICO |
-| **Aliquota abitaz. princ.** | 0,40% | 0,50% | 🟡 AGGIORNARE |
-| **Aliquota fabbr. rurali** | 0,20% | 0,10% | 🟡 AGGIORNARE |
-| **Aliquota altri/aree** | 0,76% | 0,86% | 🟡 AGGIORNARE |
-| **Detrazione figli** | €50/figlio (max €400) | ABOLITA | 🔴 RIMUOVERE |
-| **Terreni CD/IAP** | Riduzione scaglioni | ESENZIONE totale | 🔴 RIMUOVERE |
-| **Quota Stato generica** | 0,38% | Solo gruppo D | 🔴 RIMUOVERE |
-| **Coefficiente A/11** | Non presente | 160 | 🟡 AGGIUNGERE |
-| **Beni merce** | Non gestiti | Esenti | 🟢 AGGIUNGERE |
-| **Occupati abusivamente** | Non gestiti | Esenti | 🟢 AGGIUNGERE |
-| **F/2 collabenti** | Non gestiti | Esclusi | 🟢 AGGIUNGERE |
-| **Pensionati esteri** | Non gestiti | Riduzione 50% | 🟢 AGGIUNGERE |
+| Elemento | Excel 2022 | IMU 2025 | Stato |
+|----------|------------|----------|-------|
+| **Normativa base** | D.L. 201/2011 | L. 160/2019 | ✅ Implementato |
+| **Aliquota abitaz. princ.** | 0,40% | 0,50% | ✅ Implementato |
+| **Aliquota fabbr. rurali** | 0,20% | 0,10% | ✅ Implementato |
+| **Aliquota altri/aree** | 0,76% | 0,86% | ✅ Implementato |
+| **Detrazione figli** | €50/figlio (max €400) | ABOLITA | ✅ Rimosso |
+| **Terreni CD/IAP** | Riduzione scaglioni | ESENZIONE totale | ✅ Implementato |
+| **Quota Stato generica** | 0,38% | Solo gruppo D (0,76%) | ✅ Implementato |
+| **Coefficiente A/11** | Non presente | 160 | ✅ Implementato |
+| **Beni merce** | Non gestiti | Esenti (dal 2022) | ✅ Implementato |
+| **Occupati abusivamente** | Non gestiti | Esenti (dal 2023) | ✅ Implementato |
+| **F/2 collabenti** | Non gestiti | Esclusi | ✅ Implementato |
+| **Pensionati esteri** | Non gestiti | Riduzione 50% | ✅ Implementato |
+| **Alert obbligo dichiarativo** | Non presente | Da implementare | ⏳ Pendente |
+
+> **Riferimento codice:** `src/utils/constants.ts`, `src/utils/calcolo.ts`, `src/types/index.ts`
 
 ### 4.2 Elementi Confermati/Validi
 
@@ -617,54 +620,28 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ---
 
-## 5. MODIFICHE NECESSARIE
+## 5. MODIFICHE NECESSARIE (rispetto a Excel 2022)
 
-### 5.1 Priorità ALTA (🔴)
+> **Stato complessivo:** 9/10 implementate (90%)
 
-1. **Rimuovere detrazione figli**
-   - Eliminare campo "Numero figli < 26 anni"
-   - Eliminare campo "% spettanza detrazione figli"
-   - Eliminare campo "Detrazione per figli massima"
-   - Eliminare sezione "Calcolo detrazione figli"
-   - Mantenere solo detrazione base €200
+### 5.1 Priorità ALTA (🔴) - ✅ COMPLETATE
 
-2. **Rimuovere sistema riduzione terreni CD/IAP**
-   - Eliminare foglio "Riduzione terreni"
-   - Sostituire con flag "CD/IAP" → se SI, ESENZIONE totale
+1. ✅ **Rimuovere detrazione figli** → Solo `DETRAZIONE_ABITAZIONE_PRINCIPALE = 200`
+2. ✅ **Terreni CD/IAP → esenzione** → Flag `terrenoCdIap` in `Esenzioni`
+3. ✅ **Quota Stato solo gruppo D** → `calcolaQuoteGruppoD()` con `QUOTA_STATO_GRUPPO_D = 0.76`
+4. ✅ **Riferimento L. 160/2019** → Commenti e documentazione aggiornati
 
-3. **Rimuovere quota Stato generica**
-   - Mantenere quota Stato solo per gruppo D (0,76%)
-   - Rimuovere colonne "IMU Stato" da tutti i fogli tranne gruppo D
+### 5.2 Priorità MEDIA (🟡) - ✅ COMPLETATE
 
-4. **Aggiornare riferimento normativo**
-   - Da "D.L. 201/2011" a "L. 160/2019"
+5. ✅ **Aliquote base aggiornate** → `ALIQUOTE_BASE` (0.50%, 0.10%, 0.86%)
+6. ✅ **Coefficiente A/11** → `'A/11': 160` in `COEFFICIENTI`
+7. ✅ **Riferimenti temporali dinamici** → Parametro `anno` nelle funzioni
 
-### 5.2 Priorità MEDIA (🟡)
+### 5.3 Priorità BASSA (🟢) - 2/3 COMPLETATE
 
-5. **Aggiornare aliquote base**
-   - Abitazione principale: 0,40% → 0,50%
-   - Fabbricati rurali: 0,20% → 0,10%
-   - Altri fabbricati/aree: 0,76% → 0,86%
-
-6. **Aggiungere coefficiente A/11**
-   - Categoria A/11: coefficiente 160
-
-7. **Aggiornare riferimenti temporali**
-   - Rimuovere date fisse (2012, 2013, 2014)
-   - Usare "anno corrente" e "anno successivo"
-
-### 5.3 Priorità BASSA (🟢)
-
-8. **Aggiungere nuove esenzioni**
-   - Beni merce (flag)
-   - Immobili occupati abusivamente (flag)
-   - Fabbricati F/2 (esclusione automatica)
-
-9. **Aggiungere nuove riduzioni**
-   - Pensionati esteri (flag → riduzione 50% base)
-
-10. **Gestione dichiarazione IMU**
-    - Alert per casi con obbligo dichiarativo
+8. ✅ **Nuove esenzioni** → `beneMerce`, `occupatoAbusivamente`, `collabente` in `Esenzioni`
+9. ✅ **Pensionati esteri** → `pensionatoEstero` in `Riduzioni` (riduzione 50%)
+10. ⏳ **Alert obbligo dichiarativo** → **DA IMPLEMENTARE** (casistiche in sezione 6.24)
 
 ---
 
@@ -2087,6 +2064,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-11 | Calcolo attività didattica: Cm vs Cms (esenzione se Cm < Cms) |
 | 2025-12-11 | Calcolo altre attività: Cenc vs Cm (simbolicità < 50% mercato) |
 | 2025-12-11 | Comodato/immobili strutturali: codici 1-2 (art. 1, c. 71, L. 213/2023) |
+| 2025-12-11 | **Aggiornamento sezioni 4.1 e 5** - Stato implementazione vs codice sorgente |
+| 2025-12-11 | Sezione 4.1: 12/13 differenze critiche implementate (alert dichiarativo pendente) |
+| 2025-12-11 | Sezione 5: 9/10 modifiche completate (90%), riferimenti a file sorgente |
 
 ---
 
