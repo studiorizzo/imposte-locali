@@ -11,14 +11,13 @@
 ## INDICE
 
 1. [Fonte Dati](#1-fonte-dati)
-2. [Analisi Excel Originale 2022](#2-analisi-excel-originale-2022)
+2. [Analisi Excel Originale 2022](#2-analisi-excel-originale-2022) *(→ documento esterno)*
 3. [Normativa IMU 2025](#3-normativa-imu-2025)
-4. [Tabella Confronto 2022 vs 2025](#4-tabella-confronto-2022-vs-2025)
-5. [Modifiche Necessarie](#5-modifiche-necessarie)
-6. [Nuove Funzionalità App 2025](#6-nuove-funzionalità-app-2025)
-7. [Specifiche Validate](#7-specifiche-validate)
-8. [Changelog](#8-changelog)
-9. [Riferimenti Normativi](#9-riferimenti-normativi)
+4. [Modifiche Necessarie](#4-modifiche-necessarie)
+5. [Funzionalità App 2025](#5-funzionalità-app-2025)
+6. [Specifiche Validate](#6-specifiche-validate)
+7. [Changelog](#7-changelog)
+8. [Riferimenti Normativi](#8-riferimenti-normativi)
 
 ---
 
@@ -251,63 +250,24 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ---
 
-## 4. TABELLA CONFRONTO 2022 vs 2025
-
-### 4.1 Differenze Critiche (Excel 2022 → App 2025)
-
-| Elemento | Excel 2022 | IMU 2025 | Stato |
-|----------|------------|----------|-------|
-| **Normativa base** | D.L. 201/2011 | L. 160/2019 | ✅ Implementato |
-| **Aliquota abitaz. princ.** | 0,40% | 0,50% | ✅ Implementato |
-| **Aliquota fabbr. rurali** | 0,20% | 0,10% | ✅ Implementato |
-| **Aliquota altri/aree** | 0,76% | 0,86% | ✅ Implementato |
-| **Detrazione figli** | €50/figlio (max €400) | ABOLITA | ✅ Rimosso |
-| **Terreni CD/IAP** | Riduzione scaglioni | ESENZIONE totale | ✅ Implementato |
-| **Quota Stato generica** | 0,38% | Solo gruppo D (0,76%) | ✅ Implementato |
-| **Coefficiente A/11** | Non presente | 160 | ✅ Implementato |
-| **Beni merce** | Non gestiti | Esenti (dal 2022) | ✅ Implementato |
-| **Occupati abusivamente** | Non gestiti | Esenti (dal 2023) | ✅ Implementato |
-| **F/2 collabenti** | Non gestiti | Esclusi | ✅ Implementato |
-| **Pensionati esteri** | Non gestiti | Riduzione 50% | ✅ Implementato |
-| **Alert obbligo dichiarativo** | Non presente | Da implementare | ⏳ Pendente |
-
-> **Riferimento codice:** `src/utils/constants.ts`, `src/utils/calcolo.ts`, `src/types/index.ts`
-
-### 4.2 Elementi Confermati/Validi
-
-| Elemento | Stato |
-|----------|-------|
-| Formula base imponibile fabbricati: R × 1.05 × C | ✅ VALIDO |
-| Formula base imponibile terreni: RD × 1.25 × 135 | ✅ VALIDO |
-| Coefficienti A/1-A/10, B, C, D | ✅ VALIDO |
-| Riduzione 50% storico/artistico | ✅ VALIDO |
-| Riduzione 50% inagibile/inabitabile | ✅ VALIDO |
-| Riduzione 50% comodato parenti | ✅ VALIDO |
-| Riduzione 25% canone concordato | ✅ VALIDO |
-| Detrazione base €200 | ✅ VALIDO |
-| Pertinenze C/2, C/6, C/7 (max 1 per cat.) | ✅ VALIDO |
-| Scadenze 16/06 e 16/12 | ✅ VALIDO |
-
----
-
-## 5. MODIFICHE NECESSARIE (rispetto a Excel 2022)
+## 4. MODIFICHE NECESSARIE (rispetto a Excel 2022)
 
 > **Stato complessivo:** 9/10 implementate (90%)
 
-### 5.1 Priorità ALTA (🔴) - ✅ COMPLETATE
+### 4.1 Priorità ALTA (🔴) - ✅ COMPLETATE
 
 1. ✅ **Rimuovere detrazione figli** → Solo `DETRAZIONE_ABITAZIONE_PRINCIPALE = 200`
 2. ✅ **Terreni CD/IAP → esenzione** → Flag `terrenoCdIap` in `Esenzioni`
 3. ✅ **Quota Stato solo gruppo D** → `calcolaQuoteGruppoD()` con `QUOTA_STATO_GRUPPO_D = 0.76`
 4. ✅ **Riferimento L. 160/2019** → Commenti e documentazione aggiornati
 
-### 5.2 Priorità MEDIA (🟡) - ✅ COMPLETATE
+### 4.2 Priorità MEDIA (🟡) - ✅ COMPLETATE
 
 5. ✅ **Aliquote base aggiornate** → `ALIQUOTE_BASE` (0.50%, 0.10%, 0.86%)
 6. ✅ **Coefficiente A/11** → `'A/11': 160` in `COEFFICIENTI`
 7. ✅ **Riferimenti temporali dinamici** → Parametro `anno` nelle funzioni
 
-### 5.3 Priorità BASSA (🟢) - 2/3 COMPLETATE
+### 4.3 Priorità BASSA (🟢) - 2/3 COMPLETATE
 
 8. ✅ **Nuove esenzioni** → `beneMerce`, `occupatoAbusivamente`, `collabente` in `Esenzioni`
 9. ✅ **Pensionati esteri** → `pensionatoEstero` in `Riduzioni` (riduzione 50%)
@@ -315,7 +275,7 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ---
 
-## 6. NUOVE FUNZIONALITÀ APP 2025
+## 5. FUNZIONALITÀ APP 2025
 
 > Funzionalità aggiuntive rispetto all'Excel originale 2022, basate sulla documentazione normativa analizzata.
 
@@ -1485,9 +1445,9 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 ---
 
-## 7. SPECIFICHE VALIDATE
+## 6. SPECIFICHE VALIDATE
 
-### 7.1 Formule Confermate
+### 6.1 Formule Confermate
 
 #### Base Imponibile Fabbricati
 ```
@@ -1525,7 +1485,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 ```
 ✅ **VALIDATA** - Art. 1, c. 760, L. 160/2019
 
-### 7.2 Coefficienti Validati
+### 6.2 Coefficienti Validati
 
 | Categoria | Coefficiente | Fonte | Stato |
 |-----------|--------------|-------|-------|
@@ -1539,7 +1499,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | D (no D/5, D/10) | 65 | c. 745 | ✅ |
 | D/5 | 80 | c. 745 | ✅ |
 
-### 7.3 Aliquote Base Validate
+### 6.3 Aliquote Base Validate
 
 | Fattispecie | Aliquota Base | Fonte | Stato |
 |-------------|---------------|-------|-------|
@@ -1550,7 +1510,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | Altri fabbricati | 0,86% | c. 754 | ✅ |
 | Aree fabbricabili | 0,86% | c. 754 | ✅ |
 
-### 7.4 Esempi Pratici di Calcolo
+### 6.4 Esempi Pratici di Calcolo
 
 #### Esempio 1: Appartamento A/2
 
@@ -1632,7 +1592,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 
 ---
 
-## 8. CHANGELOG
+## 7. CHANGELOG
 
 | Data | Modifica |
 |------|----------|
@@ -1742,9 +1702,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 
 ---
 
-## 9. RIFERIMENTI NORMATIVI
+## 8. RIFERIMENTI NORMATIVI
 
-### 9.1 Leggi e Decreti
+### 8.1 Leggi e Decreti
 
 | Norma | Contenuto | Markdown |
 |-------|-----------|----------|
@@ -1782,7 +1742,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **D.L. 189/2016** | Elenco comuni colpiti da sisma 2016-2017 | - |
 | **L.R. FVG 17/2022** | Istituzione ILIA Friuli Venezia Giulia | - |
 
-### 9.2 Circolari e Risoluzioni MEF
+### 8.2 Circolari e Risoluzioni MEF
 
 | Documento | Contenuto | Markdown |
 |-----------|-----------|----------|
@@ -1796,7 +1756,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Ris. 3/DF 2015** | Dichiarazione IMU - modalità | - |
 | **Circ. 2/DF 2015** | Dichiarazione IMU - obblighi | - |
 
-### 9.3 Giurisprudenza
+### 8.3 Giurisprudenza
 
 | Pronuncia | Contenuto |
 |-----------|-----------|

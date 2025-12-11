@@ -373,6 +373,39 @@ D21 = IF(G21>0,IF(C5=5,3930,""),"")  → Gruppo D (COMUNE eccedenza)
 
 ---
 
-## Note sulla Migrazione a IMU 2025
+## 10. Migrazione a IMU 2025
 
-Le principali differenze tra Excel 2022 e normativa IMU 2025 sono documentate in [SPECS.md](../SPECS.md), sezione 4.
+### 10.1 Differenze Critiche (Excel 2022 → App 2025)
+
+| Elemento | Excel 2022 | IMU 2025 | Stato |
+|----------|------------|----------|-------|
+| **Normativa base** | D.L. 201/2011 | L. 160/2019 | ✅ Implementato |
+| **Aliquota abitaz. princ.** | 0,40% | 0,50% | ✅ Implementato |
+| **Aliquota fabbr. rurali** | 0,20% | 0,10% | ✅ Implementato |
+| **Aliquota altri/aree** | 0,76% | 0,86% | ✅ Implementato |
+| **Detrazione figli** | €50/figlio (max €400) | ABOLITA | ✅ Rimosso |
+| **Terreni CD/IAP** | Riduzione scaglioni | ESENZIONE totale | ✅ Implementato |
+| **Quota Stato generica** | 0,38% | Solo gruppo D (0,76%) | ✅ Implementato |
+| **Coefficiente A/11** | Non presente | 160 | ✅ Implementato |
+| **Beni merce** | Non gestiti | Esenti (dal 2022) | ✅ Implementato |
+| **Occupati abusivamente** | Non gestiti | Esenti (dal 2023) | ✅ Implementato |
+| **F/2 collabenti** | Non gestiti | Esclusi | ✅ Implementato |
+| **Pensionati esteri** | Non gestiti | Riduzione 50% | ✅ Implementato |
+| **Alert obbligo dichiarativo** | Non presente | Da implementare | ⏳ Pendente |
+
+> **Riferimento codice:** `src/utils/constants.ts`, `src/utils/calcolo.ts`, `src/types/index.ts`
+
+### 10.2 Elementi Confermati/Validi
+
+| Elemento | Stato |
+|----------|-------|
+| Formula base imponibile fabbricati: R × 1.05 × C | ✅ VALIDO |
+| Formula base imponibile terreni: RD × 1.25 × 135 | ✅ VALIDO |
+| Coefficienti A/1-A/10, B, C, D | ✅ VALIDO |
+| Riduzione 50% storico/artistico | ✅ VALIDO |
+| Riduzione 50% inagibile/inabitabile | ✅ VALIDO |
+| Riduzione 50% comodato parenti | ✅ VALIDO |
+| Riduzione 25% canone concordato | ✅ VALIDO |
+| Detrazione base €200 | ✅ VALIDO |
+| Pertinenze C/2, C/6, C/7 (max 1 per cat.) | ✅ VALIDO |
+| Scadenze 16/06 e 16/12 | ✅ VALIDO |
