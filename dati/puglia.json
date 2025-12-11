@@ -1,0 +1,4998 @@
+[
+  {
+    "comune": "Acquaviva delle Fonti",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A048",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "09/03/2023",
+        "data_pubblicazione": "19/04/2023",
+        "file_delibera": "169153_DIMUNIC-13ba23a048d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "89",
+        "data_delibera": "19/12/2023",
+        "data_pubblicazione": "14/02/2024",
+        "file_delibera": "181107_DIMUNIC-13ba24a048d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Adelfia",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A055",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "30/03/2023",
+        "data_pubblicazione": "12/04/2023",
+        "file_delibera": "168856_DIMUNIC-13ba23a055d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "23",
+        "data_delibera": "28/11/2023",
+        "data_pubblicazione": "31/01/2024",
+        "file_delibera": "180529_DIMUNIC-13ba24a055d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Alberobello",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A149",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "17/04/2023",
+        "data_pubblicazione": "07/06/2023",
+        "file_delibera": "171744_DIMUNIC-13ba23a149d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "2",
+        "data_delibera": "09/01/2024",
+        "data_pubblicazione": "29/02/2024",
+        "file_delibera": "181650_DIMUNIC-13ba24a149d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Altamura",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A225",
+    "delibere": {
+      "2023": {
+        "numero": "50",
+        "data_delibera": "10/03/2023",
+        "data_pubblicazione": "09/05/2023",
+        "file_delibera": "170122_DIMUNIC-13ba23a225d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "7",
+        "data_delibera": "14/03/2024",
+        "data_pubblicazione": "28/05/2024",
+        "file_delibera": "184168_DIMUNIC-13ba24a225d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Bari",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A662",
+    "delibere": {}
+  },
+  {
+    "comune": "Binetto",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A874",
+    "delibere": {
+      "2023": {
+        "numero": "17",
+        "data_delibera": "07/06/2023",
+        "data_pubblicazione": "25/09/2023",
+        "file_delibera": "175137_DIMUNIC-13ba23a874d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "07/03/2024",
+        "data_pubblicazione": "25/09/2024",
+        "file_delibera": "187327_DIMUNIC-13ba24a874d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Bitetto",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A892",
+    "delibere": {
+      "2023": {
+        "numero": "9",
+        "data_delibera": "30/03/2023",
+        "data_pubblicazione": "19/05/2023",
+        "file_delibera": "170743_DIMUNIC-13ba23a892d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "38",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "22/02/2024",
+        "file_delibera": "181369_DIMUNIC-13ba24a892d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Bitonto",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A893",
+    "delibere": {
+      "2023": {
+        "numero": "75",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "05/07/2023",
+        "file_delibera": "172658_DIMUNIC-13ba23a893d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "213",
+        "data_delibera": "19/12/2023",
+        "data_pubblicazione": "24/09/2024",
+        "file_delibera": "187273_DIMUNIC-13ba24a893d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Bitritto",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "A894",
+    "delibere": {}
+  },
+  {
+    "comune": "Capurso",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "B716",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "20/03/2023",
+        "data_pubblicazione": "12/04/2023",
+        "file_delibera": "168709_DIMUNIC-13ba23b716d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "14",
+        "data_delibera": "30/04/2024",
+        "data_pubblicazione": "03/05/2024",
+        "file_delibera": "183496_DIMUNIC-13ba24b716d.pdf",
+        "note": "DELIBERA ADOTTATA IN VIA DI AUTOTUTELA "
+      }
+    }
+  },
+  {
+    "comune": "Casamassima",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "B923",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "03/10/2023",
+        "file_delibera": "175584_DIMUNIC-13ba23b923d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "7",
+        "data_delibera": "30/01/2024",
+        "data_pubblicazione": "03/10/2024",
+        "file_delibera": "187725_DIMUNIC-13ba24b923d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cassano delle Murge",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "B998",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "30/03/2023",
+        "data_pubblicazione": "31/07/2023",
+        "file_delibera": "173499_DIMUNIC-13ba23b998d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "49",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "10/07/2024",
+        "file_delibera": "185649_DIMUNIC-13ba24b998d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Castellana Grotte",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "C134",
+    "delibere": {
+      "2023": {
+        "numero": "48",
+        "data_delibera": "06/12/2022",
+        "data_pubblicazione": "10/01/2023",
+        "file_delibera": "165678_DIMUNIC-13ba23c134d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "46",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "02/05/2024",
+        "file_delibera": "183424_DIMUNIC-13ba24c134d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cellamare",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "C436",
+    "delibere": {
+      "2023": {
+        "numero": "40",
+        "data_delibera": "28/09/2023",
+        "data_pubblicazione": "11/10/2023",
+        "file_delibera": "176127_DIMUNIC-13ba23c436d.pdf",
+        "note": "DELIBERA ADOTTATA IN VIA DI AUTOTUTELA "
+      },
+      "2024": {
+        "numero": "47",
+        "data_delibera": "23/11/2023",
+        "data_pubblicazione": "28/05/2024",
+        "file_delibera": "184486_DIMUNIC-13ba24c436d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Conversano",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "C975",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "10/01/2023",
+        "data_pubblicazione": "21/09/2023",
+        "file_delibera": "175064_DIMUNIC-13ba23c975d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Corato",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "C983",
+    "delibere": {
+      "2023": {
+        "numero": "31",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "03/07/2023",
+        "file_delibera": "172789_DIMUNIC-13ba23c983d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "05/03/2024",
+        "data_pubblicazione": "08/04/2024",
+        "file_delibera": "182736_DIMUNIC-13ba24c983d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Gioia del Colle",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "E038",
+    "delibere": {
+      "2023": {
+        "numero": "43",
+        "data_delibera": "20/04/2023",
+        "data_pubblicazione": "05/05/2023",
+        "file_delibera": "169822_DIMUNIC-13ba23e038d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "10",
+        "data_delibera": "22/02/2024",
+        "data_pubblicazione": "04/03/2024",
+        "file_delibera": "181705_DIMUNIC-13ba24e038d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Giovinazzo",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "E047",
+    "delibere": {
+      "2023": {
+        "numero": "25",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "08/06/2023",
+        "file_delibera": "171726_DIMUNIC-13ba23e047d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "74",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "15/01/2024",
+        "file_delibera": "179353_DIMUNIC-13ba24e047d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Gravina in Puglia",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "E155",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "17/08/2023",
+        "file_delibera": "174024_DIMUNIC-13ba23e155d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Grumo Appula",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "E223",
+    "delibere": {
+      "2023": {
+        "numero": "19",
+        "data_delibera": "13/04/2023",
+        "data_pubblicazione": "13/09/2023",
+        "file_delibera": "174684_DIMUNIC-13ba23e223d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "15",
+        "data_delibera": "11/04/2024",
+        "data_pubblicazione": "02/09/2024",
+        "file_delibera": "186551_DIMUNIC-13ba24e223d.pdf",
+        "note": "COMUNE CON DELIBERA DI DISSESTO"
+      }
+    }
+  },
+  {
+    "comune": "Locorotondo",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "E645",
+    "delibere": {
+      "2023": {
+        "numero": "35",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "17/08/2023",
+        "file_delibera": "173876_DIMUNIC-13ba23e645d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "110",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "26/02/2024",
+        "file_delibera": "181467_DIMUNIC-13ba24e645d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Modugno",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "F262",
+    "delibere": {}
+  },
+  {
+    "comune": "Mola di Bari",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "F280",
+    "delibere": {}
+  },
+  {
+    "comune": "Molfetta",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "F284",
+    "delibere": {
+      "2023": {
+        "numero": "21",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "30/06/2023",
+        "file_delibera": "172770_DIMUNIC-13ba23f284d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "53",
+        "data_delibera": "18/12/2023",
+        "data_pubblicazione": "23/12/2024",
+        "file_delibera": "190353_DIMUNIC-13ba24f284d.pdf",
+        "note": "ERRATA CORRIGE"
+      }
+    }
+  },
+  {
+    "comune": "Monopoli",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "F376",
+    "delibere": {
+      "2023": {
+        "numero": "67",
+        "data_delibera": "20/12/2022",
+        "data_pubblicazione": "25/09/2023",
+        "file_delibera": "175057_DIMUNIC-13ba23f376d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "68",
+        "data_delibera": "19/12/2023",
+        "data_pubblicazione": "17/09/2024",
+        "file_delibera": "187088_DIMUNIC-13ba24f376d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Noci",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "F915",
+    "delibere": {
+      "2024": {
+        "numero": "41",
+        "data_delibera": "22/12/2023",
+        "data_pubblicazione": "12/06/2024",
+        "file_delibera": "184800_DIMUNIC-13ba24f915d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Noicattaro",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "F923",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "07/07/2023",
+        "file_delibera": "172989_DIMUNIC-13ba23f923d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "12/02/2024",
+        "data_pubblicazione": "14/05/2024",
+        "file_delibera": "183687_DIMUNIC-13ba24f923d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Palo del Colle",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "G291",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "04/05/2023",
+        "data_pubblicazione": "05/06/2023",
+        "file_delibera": "171610_DIMUNIC-13ba23g291d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "42",
+        "data_delibera": "22/12/2023",
+        "data_pubblicazione": "03/05/2024",
+        "file_delibera": "183464_DIMUNIC-13ba24g291d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Poggiorsini",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "G769",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "17/04/2023",
+        "data_pubblicazione": "03/05/2023",
+        "file_delibera": "169772_DIMUNIC-13ba23g769d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "38",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "09/01/2024",
+        "file_delibera": "179042_DIMUNIC-13ba24g769d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Polignano a Mare",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "G787",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "17/07/2023",
+        "file_delibera": "173229_DIMUNIC-13ba23g787d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "18/03/2024",
+        "data_pubblicazione": "06/06/2024",
+        "file_delibera": "184418_DIMUNIC-13ba24g787d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Putignano",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "H096",
+    "delibere": {
+      "2023": {
+        "numero": "51",
+        "data_delibera": "09/11/2022",
+        "data_pubblicazione": "05/06/2023",
+        "file_delibera": "171620_DIMUNIC-13ba23h096d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "59",
+        "data_delibera": "09/11/2023",
+        "data_pubblicazione": "06/06/2024",
+        "file_delibera": "184545_DIMUNIC-13ba24h096d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Rutigliano",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "H643",
+    "delibere": {}
+  },
+  {
+    "comune": "Ruvo di Puglia",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "H645",
+    "delibere": {
+      "2023": {
+        "numero": "32",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "24/05/2023",
+        "file_delibera": "169907_DIMUNIC-13ba23h645d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "90",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "12/01/2024",
+        "file_delibera": "179391_DIMUNIC-13ba24h645d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Sammichele di Bari",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "H749",
+    "delibere": {
+      "2024": {
+        "numero": "62",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "12/06/2024",
+        "file_delibera": "185060_DIMUNIC-13ba24h749d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Sannicandro di Bari",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "I053",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "10/07/2023",
+        "file_delibera": "172147_DIMUNIC-13ba23i053d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "8",
+        "data_delibera": "12/04/2024",
+        "data_pubblicazione": "09/10/2024",
+        "file_delibera": "187769_DIMUNIC-13ba24i053d.pdf",
+        "note": "COMUNE CON DELIBERA DI PREDISSESTO"
+      }
+    }
+  },
+  {
+    "comune": "Santeramo in Colle",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "I330",
+    "delibere": {}
+  },
+  {
+    "comune": "Terlizzi",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "L109",
+    "delibere": {
+      "2023": {
+        "numero": "40",
+        "data_delibera": "04/05/2023",
+        "data_pubblicazione": "30/06/2023",
+        "file_delibera": "172795_DIMUNIC-13ba23l109d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "14/03/2024",
+        "data_pubblicazione": "19/03/2024",
+        "file_delibera": "182148_DIMUNIC-13ba24l109d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Toritto",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "L220",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "28/03/2023",
+        "data_pubblicazione": "14/08/2023",
+        "file_delibera": "173965_DIMUNIC-13ba23l220d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "60",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "29/04/2025",
+        "file_delibera": "192688_DIMUNIC-13ba24l220d.pdf",
+        "note": "INEFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      }
+    }
+  },
+  {
+    "comune": "Triggiano",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "L425",
+    "delibere": {}
+  },
+  {
+    "comune": "Turi",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "L472",
+    "delibere": {
+      "2023": {
+        "numero": "24",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "13/07/2023",
+        "file_delibera": "173156_DIMUNIC-13ba23l472d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "8",
+        "data_delibera": "26/01/2024",
+        "data_pubblicazione": "19/08/2024",
+        "file_delibera": "186305_DIMUNIC-13ba24l472d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Valenzano",
+    "regione": "Puglia",
+    "provincia": "Bari",
+    "sigla_provincia": "BA",
+    "codice_catastale": "L571",
+    "delibere": {
+      "2023": {
+        "numero": "9",
+        "data_delibera": "03/04/2023",
+        "data_pubblicazione": "07/04/2023",
+        "file_delibera": "168723_DIMUNIC-13ba23l571d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "10",
+        "data_delibera": "16/02/2024",
+        "data_pubblicazione": "23/07/2024",
+        "file_delibera": "185897_DIMUNIC-13ba24l571d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Brindisi",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "B180",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "30/03/2023",
+        "data_pubblicazione": "11/05/2023",
+        "file_delibera": "170276_DIMUNIC-13br23b180d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "113",
+        "data_delibera": "21/12/2023",
+        "data_pubblicazione": "16/08/2024",
+        "file_delibera": "186343_DIMUNIC-13br24b180d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Carovigno",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "B809",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "12/01/2023",
+        "data_pubblicazione": "16/01/2023",
+        "file_delibera": "166004_DIMUNIC-13br23b809d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "36",
+        "data_delibera": "20/11/2023",
+        "data_pubblicazione": "10/01/2024",
+        "file_delibera": "178564_DIMUNIC-13br24b809d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Ceglie Messapica",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "C424",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "06/06/2023",
+        "data_pubblicazione": "14/06/2023",
+        "file_delibera": "172125_DIMUNIC-13br23c424d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "08/01/2024",
+        "data_pubblicazione": "11/01/2024",
+        "file_delibera": "179249_DIMUNIC-13br24c424d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cellino San Marco",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "C448",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "25/05/2023",
+        "data_pubblicazione": "25/08/2023",
+        "file_delibera": "174176_DIMUNIC-13br23c448d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "55",
+        "data_delibera": "21/12/2023",
+        "data_pubblicazione": "14/02/2024",
+        "file_delibera": "181172_DIMUNIC-13br24c448d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cisternino",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "C741",
+    "delibere": {
+      "2023": {
+        "numero": "27",
+        "data_delibera": "18/07/2023",
+        "data_pubblicazione": "24/07/2023",
+        "file_delibera": "173365_DIMUNIC-13br23c741d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "7",
+        "data_delibera": "06/03/2024",
+        "data_pubblicazione": "26/03/2024",
+        "file_delibera": "182451_DIMUNIC-13br24c741d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Erchie",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "D422",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "07/11/2023",
+        "file_delibera": "177083_DIMUNIC-13br23d422d.pdf",
+        "note": "EFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      },
+      "2024": {
+        "numero": "48",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "23/09/2024",
+        "file_delibera": "187252_DIMUNIC-13br24d422d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Fasano",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "D508",
+    "delibere": {
+      "2024": {
+        "numero": "113",
+        "data_delibera": "16/11/2023",
+        "data_pubblicazione": "15/05/2024",
+        "file_delibera": "184001_DIMUNIC-13br24d508d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Francavilla Fontana",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "D761",
+    "delibere": {
+      "2023": {
+        "numero": "29",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "24/07/2023",
+        "file_delibera": "173248_DIMUNIC-13br23d761d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Latiano",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "E471",
+    "delibere": {
+      "2024": {
+        "numero": "8",
+        "data_delibera": "14/03/2024",
+        "data_pubblicazione": "20/03/2024",
+        "file_delibera": "182254_DIMUNIC-13br24e471d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Mesagne",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "F152",
+    "delibere": {
+      "2023": {
+        "numero": "27",
+        "data_delibera": "05/06/2023",
+        "data_pubblicazione": "19/06/2023",
+        "file_delibera": "172126_DIMUNIC-13br23f152d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "85",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "25/03/2024",
+        "file_delibera": "182438_DIMUNIC-13br24f152d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Oria",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "G098",
+    "delibere": {
+      "2023": {
+        "numero": "22",
+        "data_delibera": "09/05/2023",
+        "data_pubblicazione": "14/06/2023",
+        "file_delibera": "172143_DIMUNIC-13br23g098d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "93",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "09/10/2024",
+        "file_delibera": "188326_DIMUNIC-13br24g098d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Ostuni",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "G187",
+    "delibere": {
+      "2023": {
+        "numero": "77",
+        "data_delibera": "30/03/2023",
+        "data_pubblicazione": "11/04/2023",
+        "file_delibera": "168728_DIMUNIC-13br23g187d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "37",
+        "data_delibera": "22/12/2023",
+        "data_pubblicazione": "22/07/2024",
+        "file_delibera": "185152_DIMUNIC-13br24g187d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Donaci",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "H822",
+    "delibere": {
+      "2023": {
+        "numero": "53",
+        "data_delibera": "21/12/2022",
+        "data_pubblicazione": "02/10/2023",
+        "file_delibera": "175048_DIMUNIC-13br23h822d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "56",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "10/10/2024",
+        "file_delibera": "188366_DIMUNIC-13br24h822d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Michele Salentino",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "I045",
+    "delibere": {
+      "2023": {
+        "numero": "3",
+        "data_delibera": "27/03/2023",
+        "data_pubblicazione": "02/10/2023",
+        "file_delibera": "175239_DIMUNIC-13br23i045d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "57",
+        "data_delibera": "19/12/2023",
+        "data_pubblicazione": "11/10/2024",
+        "file_delibera": "187723_DIMUNIC-13br24i045d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Pancrazio Salentino",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "I066",
+    "delibere": {
+      "2023": {
+        "numero": "1",
+        "data_delibera": "06/04/2023",
+        "data_pubblicazione": "24/05/2023",
+        "file_delibera": "169944_DIMUNIC-13br23i066d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "53",
+        "data_delibera": "21/12/2023",
+        "data_pubblicazione": "09/08/2024",
+        "file_delibera": "186175_DIMUNIC-13br24i066d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Pietro Vernotico",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "I119",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "05/04/2023",
+        "data_pubblicazione": "09/06/2023",
+        "file_delibera": "171161_DIMUNIC-13br23i119d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "79",
+        "data_delibera": "22/12/2023",
+        "data_pubblicazione": "19/09/2024",
+        "file_delibera": "187113_DIMUNIC-13br24i119d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Vito dei Normanni",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "I396",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "30/03/2023",
+        "data_pubblicazione": "05/04/2023",
+        "file_delibera": "168498_DIMUNIC-13br23i396d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "46",
+        "data_delibera": "28/11/2023",
+        "data_pubblicazione": "18/01/2024",
+        "file_delibera": "179778_DIMUNIC-13br24i396d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Torchiarolo",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "L213",
+    "delibere": {
+      "2023": {
+        "numero": "12",
+        "data_delibera": "04/05/2023",
+        "data_pubblicazione": "07/06/2023",
+        "file_delibera": "171092_DIMUNIC-13br23l213d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "2",
+        "data_delibera": "21/02/2024",
+        "data_pubblicazione": "15/04/2024",
+        "file_delibera": "182991_DIMUNIC-13br24l213d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Torre Santa Susanna",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "L280",
+    "delibere": {
+      "2023": {
+        "numero": "3",
+        "data_delibera": "20/01/2023",
+        "data_pubblicazione": "05/10/2023",
+        "file_delibera": "175771_DIMUNIC-13br23l280d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "62",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "07/10/2024",
+        "file_delibera": "188165_DIMUNIC-13br24l280d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Villa Castelli",
+    "regione": "Puglia",
+    "provincia": "Brindisi",
+    "sigla_provincia": "BR",
+    "codice_catastale": "L920",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "25/05/2023",
+        "data_pubblicazione": "05/06/2023",
+        "file_delibera": "171532_DIMUNIC-13br23l920d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "22",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "14/10/2024",
+        "file_delibera": "188790_DIMUNIC-13br24l920d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Andria",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "A285",
+    "delibere": {
+      "2023": {
+        "numero": "15",
+        "data_delibera": "28/03/2023",
+        "data_pubblicazione": "07/08/2023",
+        "file_delibera": "173718_DIMUNIC-13bt23a285d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "95",
+        "data_delibera": "12/12/2023",
+        "data_pubblicazione": "12/06/2024",
+        "file_delibera": "185065_DIMUNIC-13bt24a285d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Barletta",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "A669",
+    "delibere": {
+      "2023": {
+        "numero": "34",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "25/07/2023",
+        "file_delibera": "173411_DIMUNIC-13bt23a669d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "110",
+        "data_delibera": "20/12/2023",
+        "data_pubblicazione": "28/05/2024",
+        "file_delibera": "184450_DIMUNIC-13bt24a669d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Bisceglie",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "A883",
+    "delibere": {
+      "2023": {
+        "numero": "21",
+        "data_delibera": "29/03/2023",
+        "data_pubblicazione": "14/07/2023",
+        "file_delibera": "173192_DIMUNIC-13bt23a883d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "128",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "16/02/2024",
+        "file_delibera": "181266_DIMUNIC-13bt24a883d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Canosa di Puglia",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "B619",
+    "delibere": {
+      "2023": {
+        "numero": "68",
+        "data_delibera": "30/11/2022",
+        "data_pubblicazione": "30/01/2023",
+        "file_delibera": "166492_DIMUNIC-13bt23b619d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "72",
+        "data_delibera": "13/12/2023",
+        "data_pubblicazione": "28/12/2023",
+        "file_delibera": "178465_DIMUNIC-13bt24b619d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Margherita di Savoia",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "E946",
+    "delibere": {
+      "2023": {
+        "numero": "55",
+        "data_delibera": "21/12/2022",
+        "data_pubblicazione": "25/01/2023",
+        "file_delibera": "166343_DIMUNIC-13bt23e946d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "52",
+        "data_delibera": "22/12/2023",
+        "data_pubblicazione": "01/08/2024",
+        "file_delibera": "186095_DIMUNIC-13bt24e946d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Minervino Murge",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "F220",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "21/06/2023",
+        "file_delibera": "172436_DIMUNIC-13bt23f220d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "62",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "28/05/2024",
+        "file_delibera": "184478_DIMUNIC-13bt24f220d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Ferdinando di Puglia",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "H839",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "09/06/2023",
+        "file_delibera": "171142_DIMUNIC-13bt23h839d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "14/03/2024",
+        "data_pubblicazione": "14/05/2024",
+        "file_delibera": "183838_DIMUNIC-13bt24h839d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Spinazzola",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "I907",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "09/02/2023",
+        "data_pubblicazione": "13/03/2023",
+        "file_delibera": "167767_DIMUNIC-13bt23i907d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "54",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "16/05/2024",
+        "file_delibera": "184063_DIMUNIC-13bt24i907d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Trani",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "L328",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "07/03/2023",
+        "data_pubblicazione": "19/04/2023",
+        "file_delibera": "169189_DIMUNIC-13bt23l328d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "105",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "19/01/2024",
+        "file_delibera": "179747_DIMUNIC-13bt24l328d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Trinitapoli",
+    "regione": "Puglia",
+    "provincia": "Barletta-Andria-Trani",
+    "sigla_provincia": "BT",
+    "codice_catastale": "B915",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "28/02/2023",
+        "data_pubblicazione": "05/04/2023",
+        "file_delibera": "168624_DIMUNIC-13bt23b915d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "2",
+        "data_delibera": "01/03/2024",
+        "data_pubblicazione": "27/03/2024",
+        "file_delibera": "182485_DIMUNIC-13bt24b915d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Accadia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "A015",
+    "delibere": {
+      "2023": {
+        "numero": "3",
+        "data_delibera": "15/03/2023",
+        "data_pubblicazione": "26/07/2023",
+        "file_delibera": "173439_DIMUNIC-13fg23a015d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Alberona",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "A150",
+    "delibere": {
+      "2023": {
+        "numero": "16",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "05/07/2023",
+        "file_delibera": "172651_DIMUNIC-13fg23a150d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Anzano di Puglia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "A320",
+    "delibere": {}
+  },
+  {
+    "comune": "Apricena",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "A339",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "11/05/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176373_DIMUNIC-13fg23a339d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "40",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "15/04/2024",
+        "file_delibera": "182940_DIMUNIC-13fg24a339d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Ascoli Satriano",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "A463",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "15/02/2023",
+        "data_pubblicazione": "02/03/2023",
+        "file_delibera": "167387_DIMUNIC-13fg23a463d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "43",
+        "data_delibera": "21/12/2023",
+        "data_pubblicazione": "19/02/2024",
+        "file_delibera": "181225_DIMUNIC-13fg24a463d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Biccari",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "A854",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "15/05/2023",
+        "data_pubblicazione": "25/09/2023",
+        "file_delibera": "175168_DIMUNIC-13fg23a854d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "36",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "04/09/2024",
+        "file_delibera": "186711_DIMUNIC-13fg24a854d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Bovino",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B104",
+    "delibere": {}
+  },
+  {
+    "comune": "Cagnano Varano",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B357",
+    "delibere": {
+      "2023": {
+        "numero": "9",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176140_DIMUNIC-13fg23b357d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "14/03/2024",
+        "data_pubblicazione": "08/10/2024",
+        "file_delibera": "188306_DIMUNIC-13fg24b357d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Candela",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B584",
+    "delibere": {
+      "2023": {
+        "numero": "17",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "03/07/2023",
+        "file_delibera": "172807_DIMUNIC-13fg23b584d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "05/03/2024",
+        "data_pubblicazione": "09/04/2024",
+        "file_delibera": "182838_DIMUNIC-13fg24b584d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Carapelle",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B724",
+    "delibere": {
+      "2024": {
+        "numero": "5",
+        "data_delibera": "29/04/2024",
+        "data_pubblicazione": "15/05/2024",
+        "file_delibera": "184035_DIMUNIC-13fg24b724d.pdf",
+        "note": "DELIBERA ADOTTATA IN VIA DI AUTOTUTELA "
+      }
+    }
+  },
+  {
+    "comune": "Carlantino",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B784",
+    "delibere": {
+      "2023": {
+        "numero": "2",
+        "data_delibera": "07/04/2023",
+        "data_pubblicazione": "30/10/2023",
+        "file_delibera": "176720_DIMUNIC-13fg23b784d.pdf",
+        "note": "COMUNE CON DELIBERA DI PREDISSESTO"
+      },
+      "2024": {
+        "numero": "34",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "27/09/2024",
+        "file_delibera": "187399_DIMUNIC-13fg24b784d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Carpino",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B829",
+    "delibere": {
+      "2024": {
+        "numero": "8",
+        "data_delibera": "13/03/2024",
+        "data_pubblicazione": "04/06/2024",
+        "file_delibera": "184744_DIMUNIC-13fg24b829d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Casalnuovo Monterotaro",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B904",
+    "delibere": {
+      "2023": {
+        "numero": "3",
+        "data_delibera": "16/03/2023",
+        "data_pubblicazione": "21/04/2023",
+        "file_delibera": "169341_DIMUNIC-13fg23b904d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "55",
+        "data_delibera": "22/11/2023",
+        "data_pubblicazione": "11/01/2024",
+        "file_delibera": "179173_DIMUNIC-13fg24b904d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Casalvecchio di Puglia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "B917",
+    "delibere": {
+      "2023": {
+        "numero": "2",
+        "data_delibera": "09/03/2023",
+        "data_pubblicazione": "14/02/2025",
+        "file_delibera": "191482_DIMUNIC-13fg23b917d.pdf",
+        "note": "INEFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      },
+      "2024": {
+        "numero": "34",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "14/02/2025",
+        "file_delibera": "191483_DIMUNIC-13fg24b917d.pdf",
+        "note": "INEFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      }
+    }
+  },
+  {
+    "comune": "Castelluccio Valmaggiore",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "C202",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "27/03/2023",
+        "data_pubblicazione": "20/04/2023",
+        "file_delibera": "169257_DIMUNIC-13fg23c202d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "02",
+        "data_delibera": "26/02/2024",
+        "data_pubblicazione": "29/03/2024",
+        "file_delibera": "182597_DIMUNIC-13fg24c202d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Castelluccio dei Sauri",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "C198",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "14/09/2023",
+        "file_delibera": "174745_DIMUNIC-13fg23c198d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "2",
+        "data_delibera": "31/01/2024",
+        "data_pubblicazione": "13/09/2024",
+        "file_delibera": "186968_DIMUNIC-13fg24c198d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Castelnuovo della Daunia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "C222",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176364_DIMUNIC-13fg23c222d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "46",
+        "data_delibera": "20/12/2023",
+        "data_pubblicazione": "08/10/2024",
+        "file_delibera": "188282_DIMUNIC-13fg24c222d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Celenza Valfortore",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "C429",
+    "delibere": {}
+  },
+  {
+    "comune": "Celle di San Vito",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "C442",
+    "delibere": {
+      "2024": {
+        "numero": "35",
+        "data_delibera": "24/11/2023",
+        "data_pubblicazione": "27/09/2024",
+        "file_delibera": "187441_DIMUNIC-13fg24c442d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cerignola",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "C514",
+    "delibere": {
+      "2023": {
+        "numero": "35",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "06/07/2023",
+        "file_delibera": "172966_DIMUNIC-13fg23c514d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "98",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "13/03/2024",
+        "file_delibera": "182051_DIMUNIC-13fg24c514d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Chieuti",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "C633",
+    "delibere": {
+      "2023": {
+        "numero": "55",
+        "data_delibera": "30/12/2022",
+        "data_pubblicazione": "05/07/2023",
+        "file_delibera": "172946_DIMUNIC-13fg23c633d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "67",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "16/07/2024",
+        "file_delibera": "185763_DIMUNIC-13fg24c633d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Deliceto",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "D269",
+    "delibere": {}
+  },
+  {
+    "comune": "Faeto",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "D459",
+    "delibere": {
+      "2023": {
+        "numero": "19",
+        "data_delibera": "18/08/2023",
+        "data_pubblicazione": "02/11/2023",
+        "file_delibera": "176863_DIMUNIC-13fg23d459d.pdf",
+        "note": "EFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "08/04/2024",
+        "data_pubblicazione": "14/10/2024",
+        "file_delibera": "188713_DIMUNIC-13fg24d459d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Foggia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "D643",
+    "delibere": {
+      "2023": {
+        "numero": "31",
+        "data_delibera": "21/03/2023",
+        "data_pubblicazione": "17/04/2023",
+        "file_delibera": "169067_DIMUNIC-13fg23d643d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "12",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "09/01/2024",
+        "file_delibera": "178970_DIMUNIC-13fg24d643d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Ischitella",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "E332",
+    "delibere": {}
+  },
+  {
+    "comune": "Isole Tremiti",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "E363",
+    "delibere": {}
+  },
+  {
+    "comune": "Lesina",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "E549",
+    "delibere": {
+      "2024": {
+        "numero": "67",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "20/06/2024",
+        "file_delibera": "185305_DIMUNIC-13fg24e549d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Lucera",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "E716",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "20/03/2023",
+        "data_pubblicazione": "31/05/2023",
+        "file_delibera": "171264_DIMUNIC-13fg23e716d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "83",
+        "data_delibera": "21/12/2023",
+        "data_pubblicazione": "10/09/2024",
+        "file_delibera": "186844_DIMUNIC-13fg24e716d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Manfredonia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "E885",
+    "delibere": {
+      "2023": {
+        "numero": "25",
+        "data_delibera": "31/03/2023",
+        "data_pubblicazione": "12/04/2023",
+        "file_delibera": "168811_DIMUNIC-13fg23e885d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "14",
+        "data_delibera": "22/12/2023",
+        "data_pubblicazione": "24/05/2024",
+        "file_delibera": "184358_DIMUNIC-13fg24e885d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Mattinata",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "F059",
+    "delibere": {
+      "2023": {
+        "numero": "22",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "15/05/2023",
+        "file_delibera": "170338_DIMUNIC-13fg23f059d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "53",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "23/01/2024",
+        "file_delibera": "180111_DIMUNIC-13fg24f059d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Monte Sant'Angelo",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "F631",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "17/03/2023",
+        "data_pubblicazione": "11/04/2023",
+        "file_delibera": "168818_DIMUNIC-13fg23f631d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "10/01/2024",
+        "data_pubblicazione": "18/01/2024",
+        "file_delibera": "179772_DIMUNIC-13fg24f631d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Monteleone di Puglia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "F538",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "11/10/2024",
+        "file_delibera": "188645_DIMUNIC-13fg23f538d.pdf",
+        "note": "INEFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      },
+      "2024": {
+        "numero": "7",
+        "data_delibera": "12/04/2024",
+        "data_pubblicazione": "11/10/2024",
+        "file_delibera": "188644_DIMUNIC-13fg24f538d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Motta Montecorvino",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "F777",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "05/06/2023",
+        "file_delibera": "171531_DIMUNIC-13fg23f777d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "42",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "06/08/2024",
+        "file_delibera": "186150_DIMUNIC-13fg24f777d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Ordona",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "M266",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "26/04/2023",
+        "data_pubblicazione": "09/06/2023",
+        "file_delibera": "171976_DIMUNIC-13fg23m266d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "32",
+        "data_delibera": "28/11/2023",
+        "data_pubblicazione": "04/01/2024",
+        "file_delibera": "178778_DIMUNIC-13fg24m266d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Orsara di Puglia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "G125",
+    "delibere": {}
+  },
+  {
+    "comune": "Orta Nova",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "G131",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "18/04/2023",
+        "data_pubblicazione": "08/06/2023",
+        "file_delibera": "171892_DIMUNIC-13fg23g131d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "08/03/2024",
+        "data_pubblicazione": "26/09/2024",
+        "file_delibera": "187376_DIMUNIC-13fg24g131d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Panni",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "G312",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "12/04/2023",
+        "data_pubblicazione": "05/05/2023",
+        "file_delibera": "169954_DIMUNIC-13fg23g312d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "56",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "29/02/2024",
+        "file_delibera": "181628_DIMUNIC-13fg24g312d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Peschici",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "G487",
+    "delibere": {}
+  },
+  {
+    "comune": "Pietramontecorvino",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "G604",
+    "delibere": {}
+  },
+  {
+    "comune": "Poggio Imperiale",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "G761",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "15/05/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176476_DIMUNIC-13fg23g761d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "1",
+        "data_delibera": "27/03/2024",
+        "data_pubblicazione": "01/10/2024",
+        "file_delibera": "187437_DIMUNIC-13fg24g761d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Rignano Garganico",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "H287",
+    "delibere": {
+      "2024": {
+        "numero": "6",
+        "data_delibera": "10/04/2024",
+        "data_pubblicazione": "31/05/2024",
+        "file_delibera": "184254_DIMUNIC-13fg24h287d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Rocchetta Sant'Antonio",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "H467",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "28/07/2023",
+        "data_pubblicazione": "30/08/2023",
+        "file_delibera": "174265_DIMUNIC-13fg23h467d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "15/03/2024",
+        "data_pubblicazione": "15/04/2024",
+        "file_delibera": "182953_DIMUNIC-13fg24h467d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Rodi Garganico",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "H480",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "08/05/2023",
+        "file_delibera": "169966_DIMUNIC-13fg23h480d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "59",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "24/01/2024",
+        "file_delibera": "180203_DIMUNIC-13fg24h480d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Roseto Valfortore",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "H568",
+    "delibere": {
+      "2023": {
+        "numero": "16",
+        "data_delibera": "26/04/2023",
+        "data_pubblicazione": "07/06/2023",
+        "file_delibera": "170953_DIMUNIC-13fg23h568d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "48",
+        "data_delibera": "18/12/2023",
+        "data_pubblicazione": "01/10/2024",
+        "file_delibera": "187453_DIMUNIC-13fg24h568d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Giovanni Rotondo",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "H926",
+    "delibere": {}
+  },
+  {
+    "comune": "San Marco in Lamis",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "H985",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "20/04/2023",
+        "data_pubblicazione": "12/10/2023",
+        "file_delibera": "176152_DIMUNIC-13fg23h985d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "26/02/2024",
+        "data_pubblicazione": "07/10/2024",
+        "file_delibera": "188110_DIMUNIC-13fg24h985d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Marco la Catola",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "H986",
+    "delibere": {}
+  },
+  {
+    "comune": "San Nicandro Garganico",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "I054",
+    "delibere": {}
+  },
+  {
+    "comune": "San Paolo di Civitate",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "I072",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "12/05/2023",
+        "file_delibera": "169847_DIMUNIC-13fg23i072d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "47",
+        "data_delibera": "30/12/2023",
+        "data_pubblicazione": "22/01/2024",
+        "file_delibera": "180011_DIMUNIC-13fg24i072d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Severo",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "I158",
+    "delibere": {
+      "2023": {
+        "numero": "39",
+        "data_delibera": "19/05/2023",
+        "data_pubblicazione": "09/08/2023",
+        "file_delibera": "173243_DIMUNIC-13fg23i158d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "9",
+        "data_delibera": "19/04/2024",
+        "data_pubblicazione": "05/06/2024",
+        "file_delibera": "184406_DIMUNIC-13fg24i158d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Sant'Agata di Puglia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "I193",
+    "delibere": {}
+  },
+  {
+    "comune": "Serracapriola",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "I641",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "26/01/2023",
+        "data_pubblicazione": "02/02/2023",
+        "file_delibera": "166465_DIMUNIC-13fg23i641d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "42",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "09/01/2024",
+        "file_delibera": "179004_DIMUNIC-13fg24i641d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Stornara",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "I962",
+    "delibere": {
+      "2024": {
+        "numero": "6",
+        "data_delibera": "08/04/2024",
+        "data_pubblicazione": "04/10/2024",
+        "file_delibera": "188055_DIMUNIC-13fg24i962d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Stornarella",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "I963",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "06/06/2023",
+        "data_pubblicazione": "15/06/2023",
+        "file_delibera": "172184_DIMUNIC-13fg23i963d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "27",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "23/07/2025",
+        "file_delibera": "193983_DIMUNIC-13fg24i963d.pdf",
+        "note": "INEFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      }
+    }
+  },
+  {
+    "comune": "Torremaggiore",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "L273",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "29/03/2023",
+        "data_pubblicazione": "04/05/2023",
+        "file_delibera": "169854_DIMUNIC-13fg23l273d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "67",
+        "data_delibera": "13/12/2023",
+        "data_pubblicazione": "02/02/2024",
+        "file_delibera": "180685_DIMUNIC-13fg24l273d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Troia",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "L447",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "18/05/2023",
+        "data_pubblicazione": "07/06/2023",
+        "file_delibera": "171768_DIMUNIC-13fg23l447d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "10",
+        "data_delibera": "06/03/2024",
+        "data_pubblicazione": "30/04/2024",
+        "file_delibera": "183394_DIMUNIC-13fg24l447d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Vico del Gargano",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "L842",
+    "delibere": {
+      "2023": {
+        "numero": "53",
+        "data_delibera": "08/11/2022",
+        "data_pubblicazione": "02/01/2023",
+        "file_delibera": "165636_DIMUNIC-13fg23l842d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "55",
+        "data_delibera": "27/11/2023",
+        "data_pubblicazione": "03/01/2024",
+        "file_delibera": "178734_DIMUNIC-13fg24l842d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Vieste",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "L858",
+    "delibere": {
+      "2024": {
+        "numero": "59",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "12/01/2024",
+        "file_delibera": "179364_DIMUNIC-13fg24l858d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Volturara Appula",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "M131",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "29/04/2023",
+        "data_pubblicazione": "02/10/2023",
+        "file_delibera": "175503_DIMUNIC-13fg23m131d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "38",
+        "data_delibera": "27/11/2023",
+        "data_pubblicazione": "29/10/2024",
+        "file_delibera": "189136_DIMUNIC-13fg24m131d.pdf",
+        "note": "EFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      }
+    }
+  },
+  {
+    "comune": "Volturino",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "M132",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "06/04/2023",
+        "data_pubblicazione": "04/05/2023",
+        "file_delibera": "169774_DIMUNIC-13fg23m132d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "41",
+        "data_delibera": "21/12/2023",
+        "data_pubblicazione": "13/06/2024",
+        "file_delibera": "185094_DIMUNIC-13fg24m132d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Zapponeta",
+    "regione": "Puglia",
+    "provincia": "Foggia",
+    "sigla_provincia": "FG",
+    "codice_catastale": "M267",
+    "delibere": {}
+  },
+  {
+    "comune": "Alessano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "A184",
+    "delibere": {
+      "2023": {
+        "numero": "12",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "11/08/2023",
+        "file_delibera": "173907_DIMUNIC-13le23a184d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "6",
+        "data_delibera": "09/02/2024",
+        "data_pubblicazione": "05/08/2024",
+        "file_delibera": "186103_DIMUNIC-13le24a184d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Alezio",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "A185",
+    "delibere": {
+      "2024": {
+        "numero": "50",
+        "data_delibera": "21/12/2023",
+        "data_pubblicazione": "12/06/2024",
+        "file_delibera": "185061_DIMUNIC-13le24a185d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Alliste",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "A208",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "16/06/2023",
+        "file_delibera": "172221_DIMUNIC-13le23a208d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "02/01/2024",
+        "data_pubblicazione": "14/08/2024",
+        "file_delibera": "186293_DIMUNIC-13le24a208d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Andrano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "A281",
+    "delibere": {}
+  },
+  {
+    "comune": "Aradeo",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "A350",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "18/04/2023",
+        "data_pubblicazione": "09/05/2023",
+        "file_delibera": "169819_DIMUNIC-13le23a350d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "74",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "05/02/2024",
+        "file_delibera": "180763_DIMUNIC-13le24a350d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Arnesano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "A425",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "13/04/2023",
+        "data_pubblicazione": "06/09/2023",
+        "file_delibera": "174431_DIMUNIC-13le23a425d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "37",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "17/09/2024",
+        "file_delibera": "187039_DIMUNIC-13le24a425d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Bagnolo del Salento",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "A572",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "12/06/2023",
+        "file_delibera": "172019_DIMUNIC-13le23a572d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "34",
+        "data_delibera": "20/12/2023",
+        "data_pubblicazione": "06/05/2024",
+        "file_delibera": "183568_DIMUNIC-13le24a572d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Botrugno",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B086",
+    "delibere": {
+      "2023": {
+        "numero": "35",
+        "data_delibera": "15/05/2023",
+        "data_pubblicazione": "11/09/2023",
+        "file_delibera": "174396_DIMUNIC-13le23b086d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Calimera",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B413",
+    "delibere": {}
+  },
+  {
+    "comune": "Campi Salentina",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B506",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "11/05/2023",
+        "file_delibera": "170247_DIMUNIC-13le23b506d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "46",
+        "data_delibera": "30/12/2023",
+        "data_pubblicazione": "22/01/2024",
+        "file_delibera": "180023_DIMUNIC-13le24b506d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cannole",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B616",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "02/05/2023",
+        "data_pubblicazione": "10/05/2023",
+        "file_delibera": "170171_DIMUNIC-13le23b616d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "41",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "09/10/2024",
+        "file_delibera": "188441_DIMUNIC-13le24b616d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Caprarica di Lecce",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B690",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "09/05/2023",
+        "data_pubblicazione": "12/10/2023",
+        "file_delibera": "176227_DIMUNIC-13le23b690d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "20/02/2024",
+        "data_pubblicazione": "14/06/2024",
+        "file_delibera": "185062_DIMUNIC-13le24b690d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Carmiano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B792",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "23/05/2023",
+        "data_pubblicazione": "06/06/2023",
+        "file_delibera": "171600_DIMUNIC-13le23b792d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "44",
+        "data_delibera": "18/12/2023",
+        "data_pubblicazione": "21/08/2024",
+        "file_delibera": "186447_DIMUNIC-13le24b792d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Carpignano Salentino",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B822",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "04/05/2023",
+        "data_pubblicazione": "25/08/2023",
+        "file_delibera": "174145_DIMUNIC-13le23b822d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "21/02/2024",
+        "data_pubblicazione": "26/09/2024",
+        "file_delibera": "187383_DIMUNIC-13le24b822d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Casarano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "B936",
+    "delibere": {}
+  },
+  {
+    "comune": "Castri di Lecce",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "C334",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "12/04/2023",
+        "data_pubblicazione": "17/05/2023",
+        "file_delibera": "170637_DIMUNIC-13le23c334d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "26",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "26/08/2024",
+        "file_delibera": "186528_DIMUNIC-13le24c334d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Castrignano de' Greci",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "C335",
+    "delibere": {
+      "2024": {
+        "numero": "5",
+        "data_delibera": "20/02/2024",
+        "data_pubblicazione": "09/10/2024",
+        "file_delibera": "188367_DIMUNIC-13le24c335d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Castrignano del Capo",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "C336",
+    "delibere": {
+      "2023": {
+        "numero": "17",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "31/07/2023",
+        "file_delibera": "173503_DIMUNIC-13le23c336d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "26/01/2024",
+        "data_pubblicazione": "11/10/2024",
+        "file_delibera": "188672_DIMUNIC-13le24c336d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Castro",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "M261",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "27/03/2023",
+        "data_pubblicazione": "07/06/2024",
+        "file_delibera": "184881_DIMUNIC-13le23m261d.pdf",
+        "note": "INEFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      },
+      "2024": {
+        "numero": "49",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "07/06/2024",
+        "file_delibera": "184884_DIMUNIC-13le24m261d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cavallino",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "C377",
+    "delibere": {
+      "2024": {
+        "numero": "49",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "13/08/2024",
+        "file_delibera": "186230_DIMUNIC-13le24c377d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Collepasso",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "C865",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "04/04/2023",
+        "data_pubblicazione": "11/10/2023",
+        "file_delibera": "176215_DIMUNIC-13le23c865d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "78",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "24/06/2024",
+        "file_delibera": "185351_DIMUNIC-13le24c865d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Copertino",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "C978",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "24/05/2023",
+        "data_pubblicazione": "04/07/2023",
+        "file_delibera": "172920_DIMUNIC-13le23c978d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "2",
+        "data_delibera": "04/04/2024",
+        "data_pubblicazione": "02/09/2024",
+        "file_delibera": "186553_DIMUNIC-13le24c978d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Corigliano d'Otranto",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D006",
+    "delibere": {
+      "2023": {
+        "numero": "12",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "09/10/2023",
+        "file_delibera": "175980_DIMUNIC-13le23d006d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "35",
+        "data_delibera": "14/12/2023",
+        "data_pubblicazione": "07/10/2024",
+        "file_delibera": "188039_DIMUNIC-13le24d006d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Corsano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D044",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "20/06/2023",
+        "file_delibera": "172215_DIMUNIC-13le23d044d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "31",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "31/07/2024",
+        "file_delibera": "186060_DIMUNIC-13le24d044d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cursi",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D223",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176528_DIMUNIC-13le23d223d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "35",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "14/10/2024",
+        "file_delibera": "188706_DIMUNIC-13le24d223d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Cutrofiano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D237",
+    "delibere": {
+      "2023": {
+        "numero": "19",
+        "data_delibera": "25/05/2023",
+        "data_pubblicazione": "19/09/2023",
+        "file_delibera": "174925_DIMUNIC-13le23d237d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "9",
+        "data_delibera": "08/03/2024",
+        "data_pubblicazione": "24/09/2024",
+        "file_delibera": "187306_DIMUNIC-13le24d237d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Diso",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D305",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "19/09/2023",
+        "file_delibera": "174941_DIMUNIC-13le23d305d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "15/03/2024",
+        "data_pubblicazione": "17/06/2024",
+        "file_delibera": "185197_DIMUNIC-13le24d305d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Gagliano del Capo",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D851",
+    "delibere": {}
+  },
+  {
+    "comune": "Galatina",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D862",
+    "delibere": {
+      "2023": {
+        "numero": "33",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "20/06/2023",
+        "file_delibera": "172323_DIMUNIC-13le23d862d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "74",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "22/01/2024",
+        "file_delibera": "179872_DIMUNIC-13le24d862d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Galatone",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D863",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "23/03/2023",
+        "data_pubblicazione": "29/03/2023",
+        "file_delibera": "168318_DIMUNIC-13le23d863d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "48",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "29/01/2024",
+        "file_delibera": "180448_DIMUNIC-13le24d863d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Gallipoli",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "D883",
+    "delibere": {
+      "2023": {
+        "numero": "27",
+        "data_delibera": "05/04/2023",
+        "data_pubblicazione": "02/10/2023",
+        "file_delibera": "175412_DIMUNIC-13le23d883d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "73",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "16/09/2024",
+        "file_delibera": "187007_DIMUNIC-13le24d883d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Giuggianello",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E053",
+    "delibere": {}
+  },
+  {
+    "comune": "Giurdignano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E061",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "21/03/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176423_DIMUNIC-13le23e061d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "45",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "14/10/2024",
+        "file_delibera": "188795_DIMUNIC-13le24e061d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Guagnano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E227",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "13/06/2023",
+        "file_delibera": "172040_DIMUNIC-13le23e227d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "26/01/2024",
+        "data_pubblicazione": "25/03/2024",
+        "file_delibera": "182333_DIMUNIC-13le24e227d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Lecce",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E506",
+    "delibere": {
+      "2024": {
+        "numero": "252",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "04/11/2024",
+        "file_delibera": "189065_DIMUNIC-13le24e506d.pdf",
+        "note": "COMUNE CON DELIBERA DI PREDISSESTO"
+      }
+    }
+  },
+  {
+    "comune": "Lequile",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E538",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "10/05/2023",
+        "data_pubblicazione": "07/09/2023",
+        "file_delibera": "174504_DIMUNIC-13le23e538d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "41",
+        "data_delibera": "30/12/2023",
+        "data_pubblicazione": "17/09/2024",
+        "file_delibera": "187038_DIMUNIC-13le24e538d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Leverano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E563",
+    "delibere": {
+      "2023": {
+        "numero": "63",
+        "data_delibera": "19/12/2022",
+        "data_pubblicazione": "12/04/2023",
+        "file_delibera": "168691_DIMUNIC-13le23e563d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "67",
+        "data_delibera": "27/12/2023",
+        "data_pubblicazione": "17/01/2024",
+        "file_delibera": "179634_DIMUNIC-13le24e563d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Lizzanello",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E629",
+    "delibere": {}
+  },
+  {
+    "comune": "Maglie",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E815",
+    "delibere": {
+      "2023": {
+        "numero": "15",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "19/07/2023",
+        "file_delibera": "173263_DIMUNIC-13le23e815d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "50",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "12/08/2024",
+        "file_delibera": "186233_DIMUNIC-13le24e815d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Martano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E979",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "09/10/2023",
+        "file_delibera": "175811_DIMUNIC-13le23e979d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "48",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "06/09/2024",
+        "file_delibera": "186756_DIMUNIC-13le24e979d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Martignano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "E984",
+    "delibere": {}
+  },
+  {
+    "comune": "Matino",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F054",
+    "delibere": {
+      "2023": {
+        "numero": "81",
+        "data_delibera": "30/12/2022",
+        "data_pubblicazione": "08/05/2023",
+        "file_delibera": "170031_DIMUNIC-13le23f054d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "78",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "13/03/2024",
+        "file_delibera": "182052_DIMUNIC-13le24f054d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Melendugno",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F101",
+    "delibere": {}
+  },
+  {
+    "comune": "Melissano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F109",
+    "delibere": {
+      "2023": {
+        "numero": "16",
+        "data_delibera": "18/07/2023",
+        "data_pubblicazione": "16/10/2023",
+        "file_delibera": "176522_DIMUNIC-13le23f109d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "6",
+        "data_delibera": "18/03/2024",
+        "data_pubblicazione": "08/10/2024",
+        "file_delibera": "188284_DIMUNIC-13le24f109d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Melpignano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F117",
+    "delibere": {
+      "2023": {
+        "numero": "15",
+        "data_delibera": "26/04/2023",
+        "data_pubblicazione": "03/07/2023",
+        "file_delibera": "172507_DIMUNIC-13le23f117d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "49",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "15/05/2024",
+        "file_delibera": "184040_DIMUNIC-13le24f117d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Miggiano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F194",
+    "delibere": {
+      "2023": {
+        "numero": "12",
+        "data_delibera": "26/05/2023",
+        "data_pubblicazione": "16/08/2023",
+        "file_delibera": "173465_DIMUNIC-13le23f194d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "45",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "02/09/2024",
+        "file_delibera": "186664_DIMUNIC-13le24f194d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Minervino di Lecce",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F221",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "29/04/2023",
+        "data_pubblicazione": "08/06/2023",
+        "file_delibera": "171713_DIMUNIC-13le23f221d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "31",
+        "data_delibera": "18/12/2023",
+        "data_pubblicazione": "11/03/2024",
+        "file_delibera": "181946_DIMUNIC-13le24f221d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Monteroni di Lecce",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F604",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "14/03/2023",
+        "data_pubblicazione": "19/05/2023",
+        "file_delibera": "170773_DIMUNIC-13le23f604d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "170",
+        "data_delibera": "04/12/2023",
+        "data_pubblicazione": "30/05/2024",
+        "file_delibera": "184583_DIMUNIC-13le24f604d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Montesano Salentino",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F623",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "22/03/2023",
+        "data_pubblicazione": "12/05/2023",
+        "file_delibera": "170353_DIMUNIC-13le23f623d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "40",
+        "data_delibera": "15/12/2023",
+        "data_pubblicazione": "13/02/2024",
+        "file_delibera": "181084_DIMUNIC-13le24f623d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Morciano di Leuca",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F716",
+    "delibere": {}
+  },
+  {
+    "comune": "Muro Leccese",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F816",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "04/09/2023",
+        "file_delibera": "174283_DIMUNIC-13le23f816d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "60",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "20/09/2024",
+        "file_delibera": "187046_DIMUNIC-13le24f816d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Nardò",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F842",
+    "delibere": {
+      "2023": {
+        "numero": "23",
+        "data_delibera": "23/06/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176517_DIMUNIC-13le23f842d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "12/04/2024",
+        "data_pubblicazione": "07/10/2024",
+        "file_delibera": "188175_DIMUNIC-13le24f842d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Neviano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F881",
+    "delibere": {
+      "2023": {
+        "numero": "26",
+        "data_delibera": "28/07/2023",
+        "data_pubblicazione": "11/09/2023",
+        "file_delibera": "174516_DIMUNIC-13le23f881d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "46",
+        "data_delibera": "22/12/2023",
+        "data_pubblicazione": "22/03/2024",
+        "file_delibera": "182260_DIMUNIC-13le24f881d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Nociglia",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F916",
+    "delibere": {
+      "2023": {
+        "numero": "81",
+        "data_delibera": "11/07/2023",
+        "data_pubblicazione": "03/08/2023",
+        "file_delibera": "173686_DIMUNIC-13le23f916d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Novoli",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "F970",
+    "delibere": {
+      "2023": {
+        "numero": "55",
+        "data_delibera": "29/12/2022",
+        "data_pubblicazione": "06/02/2023",
+        "file_delibera": "166773_DIMUNIC-13le23f970d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "51",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "09/02/2024",
+        "file_delibera": "180955_DIMUNIC-13le24f970d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Ortelle",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "G136",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "21/06/2023",
+        "file_delibera": "172463_DIMUNIC-13le23g136d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "7",
+        "data_delibera": "25/03/2024",
+        "data_pubblicazione": "06/11/2024",
+        "file_delibera": "189343_DIMUNIC-13le24g136d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Otranto",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "G188",
+    "delibere": {
+      "2023": {
+        "numero": "19",
+        "data_delibera": "12/05/2023",
+        "data_pubblicazione": "12/07/2023",
+        "file_delibera": "173116_DIMUNIC-13le23g188d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "2",
+        "data_delibera": "02/01/2024",
+        "data_pubblicazione": "12/06/2024",
+        "file_delibera": "184868_DIMUNIC-13le24g188d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Palmariggi",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "G285",
+    "delibere": {
+      "2023": {
+        "numero": "12",
+        "data_delibera": "23/03/2023",
+        "data_pubblicazione": "13/10/2023",
+        "file_delibera": "176425_DIMUNIC-13le23g285d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "38",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "14/10/2024",
+        "file_delibera": "188796_DIMUNIC-13le24g285d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Parabita",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "G325",
+    "delibere": {
+      "2023": {
+        "numero": "64",
+        "data_delibera": "20/07/2023",
+        "data_pubblicazione": "11/10/2023",
+        "file_delibera": "176146_DIMUNIC-13le23g325d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "95",
+        "data_delibera": "28/11/2023",
+        "data_pubblicazione": "07/10/2024",
+        "file_delibera": "188160_DIMUNIC-13le24g325d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Patù",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "G378",
+    "delibere": {}
+  },
+  {
+    "comune": "Poggiardo",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "G751",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "17/05/2023",
+        "data_pubblicazione": "12/09/2023",
+        "file_delibera": "174645_DIMUNIC-13le23g751d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "1",
+        "data_delibera": "11/03/2024",
+        "data_pubblicazione": "09/10/2024",
+        "file_delibera": "188285_DIMUNIC-13le24g751d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Porto Cesareo",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "M263",
+    "delibere": {
+      "2023": {
+        "numero": "22",
+        "data_delibera": "28/04/2023",
+        "data_pubblicazione": "14/07/2023",
+        "file_delibera": "172388_DIMUNIC-13le23m263d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "69",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "09/10/2024",
+        "file_delibera": "188269_DIMUNIC-13le24m263d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Presicce-Acquarica",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "M428",
+    "delibere": {
+      "2023": {
+        "numero": "13",
+        "data_delibera": "19/05/2023",
+        "data_pubblicazione": "14/07/2023",
+        "file_delibera": "173193_DIMUNIC-13le23m428d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "73",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "27/03/2024",
+        "file_delibera": "182489_DIMUNIC-13le24m428d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Racale",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "H147",
+    "delibere": {}
+  },
+  {
+    "comune": "Ruffano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "H632",
+    "delibere": {
+      "2023": {
+        "numero": "22",
+        "data_delibera": "18/07/2023",
+        "data_pubblicazione": "06/09/2023",
+        "file_delibera": "174150_DIMUNIC-13le23h632d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Salice Salentino",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "H708",
+    "delibere": {}
+  },
+  {
+    "comune": "Salve",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "H729",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "22/03/2023",
+        "data_pubblicazione": "03/05/2023",
+        "file_delibera": "169461_DIMUNIC-13le23h729d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "6",
+        "data_delibera": "12/03/2024",
+        "data_pubblicazione": "29/04/2024",
+        "file_delibera": "183348_DIMUNIC-13le24h729d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Cassiano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "M264",
+    "delibere": {}
+  },
+  {
+    "comune": "San Cesario di Lecce",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "H793",
+    "delibere": {}
+  },
+  {
+    "comune": "San Donato di Lecce",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "H826",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "04/07/2023",
+        "data_pubblicazione": "03/08/2023",
+        "file_delibera": "173063_DIMUNIC-13le23h826d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "37",
+        "data_delibera": "19/12/2023",
+        "data_pubblicazione": "08/01/2024",
+        "file_delibera": "178854_DIMUNIC-13le24h826d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Pietro in Lama",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I115",
+    "delibere": {}
+  },
+  {
+    "comune": "Sanarica",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "H757",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "20/07/2023",
+        "file_delibera": "172677_DIMUNIC-13le23h757d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "35",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "19/09/2024",
+        "file_delibera": "187047_DIMUNIC-13le24h757d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Sannicola",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I059",
+    "delibere": {
+      "2024": {
+        "numero": "3",
+        "data_delibera": "30/01/2024",
+        "data_pubblicazione": "07/02/2024",
+        "file_delibera": "180868_DIMUNIC-13le24i059d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Santa Cesarea Terme",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I172",
+    "delibere": {
+      "2023": {
+        "numero": "9",
+        "data_delibera": "22/03/2023",
+        "data_pubblicazione": "09/06/2023",
+        "file_delibera": "171417_DIMUNIC-13le23i172d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "8",
+        "data_delibera": "30/01/2024",
+        "data_pubblicazione": "01/03/2024",
+        "file_delibera": "181669_DIMUNIC-13le24i172d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Scorrano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I549",
+    "delibere": {}
+  },
+  {
+    "comune": "Seclì",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I559",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "15/03/2023",
+        "data_pubblicazione": "24/03/2023",
+        "file_delibera": "168016_DIMUNIC-13le23i559d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "38",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "08/01/2024",
+        "file_delibera": "178895_DIMUNIC-13le24i559d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Sogliano Cavour",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I780",
+    "delibere": {
+      "2023": {
+        "numero": "9",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "14/07/2023",
+        "file_delibera": "172451_DIMUNIC-13le23i780d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "21/02/2024",
+        "data_pubblicazione": "13/06/2024",
+        "file_delibera": "185123_DIMUNIC-13le24i780d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Soleto",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I800",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "24/03/2023",
+        "data_pubblicazione": "14/07/2023",
+        "file_delibera": "172499_DIMUNIC-13le23i800d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "45",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "07/10/2024",
+        "file_delibera": "188115_DIMUNIC-13le24i800d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Specchia",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I887",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "01/06/2023",
+        "data_pubblicazione": "19/09/2023",
+        "file_delibera": "174952_DIMUNIC-13le23i887d.pdf",
+        "note": "IMU - VALORI AREE FABBRICABILI"
+      }
+    }
+  },
+  {
+    "comune": "Spongano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I923",
+    "delibere": {}
+  },
+  {
+    "comune": "Squinzano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I930",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "09/02/2023",
+        "data_pubblicazione": "21/03/2023",
+        "file_delibera": "168068_DIMUNIC-13le23i930d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "16",
+        "data_delibera": "07/03/2024",
+        "data_pubblicazione": "06/08/2024",
+        "file_delibera": "186149_DIMUNIC-13le24i930d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Sternatia",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "I950",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "28/07/2023",
+        "data_pubblicazione": "04/10/2023",
+        "file_delibera": "175628_DIMUNIC-13le23i950d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "08/04/2024",
+        "data_pubblicazione": "09/05/2024",
+        "file_delibera": "183732_DIMUNIC-13le24i950d.pdf",
+        "note": "COMUNE CON DELIBERA DI PREDISSESTO"
+      }
+    }
+  },
+  {
+    "comune": "Supersano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L008",
+    "delibere": {
+      "2023": {
+        "numero": "3",
+        "data_delibera": "16/03/2023",
+        "data_pubblicazione": "03/04/2023",
+        "file_delibera": "168502_DIMUNIC-13le23l008d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "43",
+        "data_delibera": "14/12/2023",
+        "data_pubblicazione": "07/10/2024",
+        "file_delibera": "188152_DIMUNIC-13le24l008d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Surano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L010",
+    "delibere": {
+      "2023": {
+        "numero": "12",
+        "data_delibera": "19/06/2023",
+        "data_pubblicazione": "12/10/2023",
+        "file_delibera": "176310_DIMUNIC-13le23l010d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "36",
+        "data_delibera": "30/12/2023",
+        "data_pubblicazione": "11/10/2024",
+        "file_delibera": "188712_DIMUNIC-13le24l010d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Surbo",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L011",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "14/03/2023",
+        "data_pubblicazione": "12/04/2023",
+        "file_delibera": "168803_DIMUNIC-13le23l011d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "96",
+        "data_delibera": "14/12/2023",
+        "data_pubblicazione": "02/01/2024",
+        "file_delibera": "178691_DIMUNIC-13le24l011d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Taurisano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L064",
+    "delibere": {}
+  },
+  {
+    "comune": "Taviano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L074",
+    "delibere": {
+      "2023": {
+        "numero": "36",
+        "data_delibera": "13/06/2023",
+        "data_pubblicazione": "14/02/2024",
+        "file_delibera": "181153_DIMUNIC-13le23l074d.pdf",
+        "note": "INEFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      },
+      "2024": {
+        "numero": "9",
+        "data_delibera": "02/04/2024",
+        "data_pubblicazione": "11/10/2024",
+        "file_delibera": "188633_DIMUNIC-13le24l074d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Tiggiano",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L166",
+    "delibere": {
+      "2023": {
+        "numero": "21",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "19/09/2023",
+        "file_delibera": "174908_DIMUNIC-13le23l166d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "8",
+        "data_delibera": "15/04/2024",
+        "data_pubblicazione": "11/09/2024",
+        "file_delibera": "186894_DIMUNIC-13le24l166d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Trepuzzi",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L383",
+    "delibere": {}
+  },
+  {
+    "comune": "Tricase",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L419",
+    "delibere": {
+      "2024": {
+        "numero": "70",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "11/03/2024",
+        "file_delibera": "181992_DIMUNIC-13le24l419d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Tuglie",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L462",
+    "delibere": {}
+  },
+  {
+    "comune": "Ugento",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L484",
+    "delibere": {}
+  },
+  {
+    "comune": "Uggiano la Chiesa",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L485",
+    "delibere": {
+      "2023": {
+        "numero": "7",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "31/07/2023",
+        "file_delibera": "173604_DIMUNIC-13le23l485d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "38",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "12/03/2024",
+        "file_delibera": "182035_DIMUNIC-13le24l485d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Veglie",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L711",
+    "delibere": {}
+  },
+  {
+    "comune": "Vernole",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "L776",
+    "delibere": {
+      "2023": {
+        "numero": "3",
+        "data_delibera": "24/02/2023",
+        "data_pubblicazione": "06/06/2023",
+        "file_delibera": "171588_DIMUNIC-13le23l776d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "25",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "26/08/2024",
+        "file_delibera": "186526_DIMUNIC-13le24l776d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Zollino",
+    "regione": "Puglia",
+    "provincia": "Lecce",
+    "sigla_provincia": "LE",
+    "codice_catastale": "M187",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "26/04/2023",
+        "data_pubblicazione": "06/06/2023",
+        "file_delibera": "171592_DIMUNIC-13le23m187d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "30",
+        "data_delibera": "30/12/2023",
+        "data_pubblicazione": "26/08/2024",
+        "file_delibera": "186527_DIMUNIC-13le24m187d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Avetrana",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "A514",
+    "delibere": {
+      "2023": {
+        "numero": "11",
+        "data_delibera": "27/07/2023",
+        "data_pubblicazione": "25/09/2023",
+        "file_delibera": "175090_DIMUNIC-13ta23a514d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "04/04/2024",
+        "data_pubblicazione": "04/10/2024",
+        "file_delibera": "187967_DIMUNIC-13ta24a514d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Carosino",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "B808",
+    "delibere": {
+      "2023": {
+        "numero": "5",
+        "data_delibera": "24/04/2023",
+        "data_pubblicazione": "24/05/2023",
+        "file_delibera": "170889_DIMUNIC-13ta23b808d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "3",
+        "data_delibera": "02/03/2024",
+        "data_pubblicazione": "21/03/2024",
+        "file_delibera": "182250_DIMUNIC-13ta24b808d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Castellaneta",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "C136",
+    "delibere": {}
+  },
+  {
+    "comune": "Crispiano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "D171",
+    "delibere": {
+      "2023": {
+        "numero": "77",
+        "data_delibera": "30/12/2022",
+        "data_pubblicazione": "19/01/2023",
+        "file_delibera": "166155_DIMUNIC-13ta23d171d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "81",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "29/05/2024",
+        "file_delibera": "184530_DIMUNIC-13ta24d171d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Faggiano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "D463",
+    "delibere": {
+      "2023": {
+        "numero": "22",
+        "data_delibera": "04/07/2023",
+        "data_pubblicazione": "28/07/2023",
+        "file_delibera": "173505_DIMUNIC-13ta23d463d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "10",
+        "data_delibera": "04/04/2024",
+        "data_pubblicazione": "29/10/2024",
+        "file_delibera": "189087_DIMUNIC-13ta24d463d.pdf",
+        "note": "INAPPLICABILE PER IL 2024 (ADOTTATA OLTRE TERMINE BILANCIO)"
+      }
+    }
+  },
+  {
+    "comune": "Fragagnano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "D754",
+    "delibere": {
+      "2023": {
+        "numero": "6",
+        "data_delibera": "04/05/2023",
+        "data_pubblicazione": "26/07/2023",
+        "file_delibera": "173468_DIMUNIC-13ta23d754d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "46",
+        "data_delibera": "21/11/2023",
+        "data_pubblicazione": "11/06/2024",
+        "file_delibera": "184860_DIMUNIC-13ta24d754d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Ginosa",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E036",
+    "delibere": {
+      "2023": {
+        "numero": "44",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "03/07/2023",
+        "file_delibera": "172628_DIMUNIC-13ta23e036d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "110",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "22/01/2024",
+        "file_delibera": "179968_DIMUNIC-13ta24e036d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Grottaglie",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E205",
+    "delibere": {}
+  },
+  {
+    "comune": "Laterza",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E469",
+    "delibere": {
+      "2023": {
+        "numero": "8",
+        "data_delibera": "23/03/2023",
+        "data_pubblicazione": "15/05/2023",
+        "file_delibera": "170312_DIMUNIC-13ta23e469d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "4",
+        "data_delibera": "15/01/2024",
+        "data_pubblicazione": "24/09/2024",
+        "file_delibera": "187303_DIMUNIC-13ta24e469d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Leporano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E537",
+    "delibere": {
+      "2023": {
+        "numero": "C.C. N. 16",
+        "data_delibera": "18/05/2023",
+        "data_pubblicazione": "13/06/2023",
+        "file_delibera": "172022_DIMUNIC-13ta23e537d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "45",
+        "data_delibera": "27/11/2023",
+        "data_pubblicazione": "17/01/2024",
+        "file_delibera": "179651_DIMUNIC-13ta24e537d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Lizzano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E630",
+    "delibere": {
+      "2023": {
+        "numero": "10",
+        "data_delibera": "10/02/2023",
+        "data_pubblicazione": "27/02/2023",
+        "file_delibera": "167239_DIMUNIC-13ta23e630d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "81",
+        "data_delibera": "28/11/2023",
+        "data_pubblicazione": "25/01/2024",
+        "file_delibera": "180073_DIMUNIC-13ta24e630d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Manduria",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E882",
+    "delibere": {
+      "2023": {
+        "numero": "37",
+        "data_delibera": "04/04/2023",
+        "data_pubblicazione": "12/04/2023",
+        "file_delibera": "168725_DIMUNIC-13ta23e882d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "130",
+        "data_delibera": "20/12/2023",
+        "data_pubblicazione": "19/09/2024",
+        "file_delibera": "187149_DIMUNIC-13ta24e882d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Martina Franca",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E986",
+    "delibere": {
+      "2024": {
+        "numero": "7",
+        "data_delibera": "20/02/2024",
+        "data_pubblicazione": "14/03/2024",
+        "file_delibera": "182072_DIMUNIC-13ta24e986d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Maruggio",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "E995",
+    "delibere": {
+      "2023": {
+        "numero": "19",
+        "data_delibera": "12/05/2023",
+        "data_pubblicazione": "13/06/2023",
+        "file_delibera": "171860_DIMUNIC-13ta23e995d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "58",
+        "data_delibera": "07/12/2023",
+        "data_pubblicazione": "07/03/2024",
+        "file_delibera": "181883_DIMUNIC-13ta24e995d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Massafra",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "F027",
+    "delibere": {
+      "2023": {
+        "numero": "38",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "23/05/2023",
+        "file_delibera": "170887_DIMUNIC-13ta23f027d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "163",
+        "data_delibera": "20/12/2023",
+        "data_pubblicazione": "17/01/2024",
+        "file_delibera": "179674_DIMUNIC-13ta24f027d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Monteiasi",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "F531",
+    "delibere": {
+      "2023": {
+        "numero": "30",
+        "data_delibera": "18/07/2023",
+        "data_pubblicazione": "28/08/2023",
+        "file_delibera": "174219_DIMUNIC-13ta23f531d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "9",
+        "data_delibera": "15/03/2024",
+        "data_pubblicazione": "17/04/2024",
+        "file_delibera": "183055_DIMUNIC-13ta24f531d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Montemesola",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "F563",
+    "delibere": {
+      "2023": {
+        "numero": "4",
+        "data_delibera": "10/05/2023",
+        "data_pubblicazione": "23/05/2023",
+        "file_delibera": "170957_DIMUNIC-13ta23f563d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "60",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "27/03/2024",
+        "file_delibera": "182523_DIMUNIC-13ta24f563d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Monteparano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "F587",
+    "delibere": {}
+  },
+  {
+    "comune": "Mottola",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "F784",
+    "delibere": {
+      "2024": {
+        "numero": "72",
+        "data_delibera": "28/12/2023",
+        "data_pubblicazione": "06/02/2024",
+        "file_delibera": "180817_DIMUNIC-13ta24f784d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Palagianello",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "G251",
+    "delibere": {
+      "2023": {
+        "numero": "23",
+        "data_delibera": "31/05/2023",
+        "data_pubblicazione": "27/07/2023",
+        "file_delibera": "173496_DIMUNIC-13ta23g251d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "10",
+        "data_delibera": "15/03/2024",
+        "data_pubblicazione": "12/04/2024",
+        "file_delibera": "182916_DIMUNIC-13ta24g251d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Palagiano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "G252",
+    "delibere": {
+      "2023": {
+        "numero": "15",
+        "data_delibera": "19/04/2023",
+        "data_pubblicazione": "12/05/2023",
+        "file_delibera": "170393_DIMUNIC-13ta23g252d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "94",
+        "data_delibera": "29/12/2023",
+        "data_pubblicazione": "11/01/2024",
+        "file_delibera": "179319_DIMUNIC-13ta24g252d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Pulsano",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "H090",
+    "delibere": {
+      "2023": {
+        "numero": "58",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "17/05/2023",
+        "file_delibera": "170612_DIMUNIC-13ta23h090d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "89",
+        "data_delibera": "11/12/2023",
+        "data_pubblicazione": "25/01/2024",
+        "file_delibera": "179713_DIMUNIC-13ta24h090d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Roccaforzata",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "H409",
+    "delibere": {
+      "2023": {
+        "numero": "20",
+        "data_delibera": "12/04/2023",
+        "data_pubblicazione": "14/04/2023",
+        "file_delibera": "169001_DIMUNIC-13ta23h409d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Giorgio Ionico",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "H882",
+    "delibere": {
+      "2023": {
+        "numero": "14",
+        "data_delibera": "27/04/2023",
+        "data_pubblicazione": "07/06/2023",
+        "file_delibera": "171017_DIMUNIC-13ta23h882d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "35",
+        "data_delibera": "29/11/2023",
+        "data_pubblicazione": "08/03/2024",
+        "file_delibera": "181908_DIMUNIC-13ta24h882d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "San Marzano di San Giuseppe",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "I018",
+    "delibere": {}
+  },
+  {
+    "comune": "Sava",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "I467",
+    "delibere": {
+      "2023": {
+        "numero": "17",
+        "data_delibera": "29/05/2023",
+        "data_pubblicazione": "07/11/2023",
+        "file_delibera": "176789_DIMUNIC-13ta23i467d.pdf",
+        "note": "EFFICACE EX ART.  1, COMMA 72, L. n. 213/2023"
+      },
+      "2024": {
+        "numero": "5",
+        "data_delibera": "08/03/2024",
+        "data_pubblicazione": "10/06/2024",
+        "file_delibera": "184931_DIMUNIC-13ta24i467d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Statte",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "M298",
+    "delibere": {
+      "2024": {
+        "numero": "69",
+        "data_delibera": "09/11/2023",
+        "data_pubblicazione": "10/09/2024",
+        "file_delibera": "186859_DIMUNIC-13ta24m298d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Taranto",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "L049",
+    "delibere": {
+      "2023": {
+        "numero": "53",
+        "data_delibera": "24/03/2023",
+        "data_pubblicazione": "15/05/2023",
+        "file_delibera": "170314_DIMUNIC-13ta23l049d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "249",
+        "data_delibera": "19/12/2023",
+        "data_pubblicazione": "10/05/2024",
+        "file_delibera": "183746_DIMUNIC-13ta24l049d.pdf",
+        "note": null
+      }
+    }
+  },
+  {
+    "comune": "Torricella",
+    "regione": "Puglia",
+    "provincia": "Taranto",
+    "sigla_provincia": "TA",
+    "codice_catastale": "L294",
+    "delibere": {
+      "2023": {
+        "numero": "17",
+        "data_delibera": "30/05/2023",
+        "data_pubblicazione": "05/06/2023",
+        "file_delibera": "171528_DIMUNIC-13ta23l294d.pdf",
+        "note": null
+      },
+      "2024": {
+        "numero": "49",
+        "data_delibera": "30/11/2023",
+        "data_pubblicazione": "03/01/2024",
+        "file_delibera": "178732_DIMUNIC-13ta24l294d.pdf",
+        "note": null
+      }
+    }
+  }
+]
