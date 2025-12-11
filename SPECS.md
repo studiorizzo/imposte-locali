@@ -16,7 +16,6 @@
 4. [Funzionalità App 2025](#4-funzionalità-app-2025)
 5. [Specifiche Validate](#5-specifiche-validate)
 6. [Changelog](#6-changelog)
-7. [Riferimenti Normativi](#7-riferimenti-normativi)
 
 ---
 
@@ -64,6 +63,99 @@
 > - Definizione dei campi obbligatori/opzionali
 > - Ordine delle domande all'utente
 > - Validazione completezza dati inseriti
+
+### 1.4 Leggi e Decreti
+
+| Norma | Contenuto | Markdown |
+|-------|-----------|----------|
+| **L. 160/2019, art. 1, cc. 739-783** | **Disciplina IMU dal 2020** | - |
+| L. 160/2019, art. 1, c. 758 | Esenzioni terreni agricoli | `art-1-comma-758.md` |
+| D.L. 201/2011, art. 13 | IMU sperimentale 2012-2019 (ABROGATO) | `decreto-legge-201-2011-art-13.md` |
+| D.Lgs. 23/2011, art. 9 | Federalismo fiscale - Soggetti passivi | `decreto-legislativo-23-2011-art-9.md` |
+| D.Lgs. 504/1992, art. 7 | Esenzioni ICI/IMU | `decreto-legislativo-504-1992-art-7.md` |
+| L. 147/2013, c. 639 | Istituzione IUC (parzialmente abrogata) | `legge-147-2013-comma-639.md` |
+| L. 197/2022, art. 1, c. 81 | Esenzione occupazione abusiva | - |
+| L. 197/2022, art. 1, cc. 834-835 | ILIA Friuli-Venezia Giulia | - |
+| L. 178/2020, art. 1, c. 48 | Riduzione pensionati esteri | - |
+| L. 208/2015, art. 1, c. 10 | Abolizione scaglioni CD/IAP | - |
+| L. 431/1998, art. 2, c. 3 | Canone concordato | - |
+| D.M. 22/4/2008 | Definizione alloggi sociali | - |
+| **D.M. 24/4/2024** | **Modello IMU/IMPi e IMU ENC (vigente)** | `decreto_mef_24042024_dichiarazione_imu.md` |
+| D.M. 4/5/2023 | Modello IMU ENC precedente (superato) | - |
+| D.M. 29/7/2022 | Modello IMU/IMPi precedente (superato) | - |
+| **D.L. 102/2013, art. 2, c. 5-bis** | Beni-merce: dichiarazione a pena decadenza | - |
+| D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
+| **L. 126/2020, art. 78-bis** | CD/IAP pensionati con attività agricola | - |
+| **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
+| **D.M. 6/9/2024** | Proroga prospetto aliquote al 2025 | - |
+| **D.L. 84/2025, art. 6-bis** | ENC attività sportive semplificazione | - |
+| **D.M. 19/11/2012, n. 200** | Regolamento esenzione ENC - requisiti generali e di settore | - |
+| **D.L. 1/2012, art. 91-bis** | Esenzione IMU enti non commerciali | - |
+| **D.M. 18/7/2024** | Approvazione modello IMU ENC (sostituisce D.M. 4/5/2023) | - |
+| **L. 108/2025, art. 6** | Proroga delibere Prospetto IMU al 15/9/2025 | - |
+| **D.M. MEF 14/3/2025** | Coefficienti fabbricati gruppo D non catastati | - |
+| **L. 213/2023 (Bilancio 2024)** | Novità IMU 2024 (ENC, termini, sisma) | - |
+| **L. 213/2023, art. 1, c. 71** | Interpretazione "posseduti/utilizzati" ENC | - |
+| **L. 213/2023, art. 1, c. 74** | Proroga automatica termini 14/28 ottobre weekend | - |
+| **L. 213/2023, art. 1, c. 422** | Proroga esenzioni sisma 2016-2017 | - |
+| **L. 213/2023, art. 1, c. 528** | ILIA Friuli VG sostituisce IMU | - |
+| **D.L. 189/2016** | Elenco comuni colpiti da sisma 2016-2017 | - |
+| **L.R. FVG 17/2022** | Istituzione ILIA Friuli Venezia Giulia | - |
+
+### 1.5 Circolari e Risoluzioni MEF
+
+| Documento | Contenuto | Markdown |
+|-----------|-----------|----------|
+| **Circ. 1/DF 18/3/2020** | **Chiarimenti applicativi nuova IMU** | `circolare-mef-1-df-2020.md` |
+| Ris. 2/DF 20/3/2023 | Alloggi sociali liberati | - |
+| Ris. 4/DF 16/11/2023 | Fabbricati collabenti F/2 | - |
+| Ris. 5/DF 11/6/2021 | Pensionati esteri | - |
+| Circ. 2/DF 16/7/2024 | Enti non commerciali | - |
+| **Ris. 2/DF 10/3/2020** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva | - |
+| **Ris. 4/DF 2017** | Dichiarazione IMU - chiarimenti | - |
+| **Ris. 3/DF 2015** | Dichiarazione IMU - modalità | - |
+| **Circ. 2/DF 2015** | Dichiarazione IMU - obblighi | - |
+
+### 1.6 Giurisprudenza
+
+| Pronuncia | Contenuto |
+|-----------|-----------|
+| Corte Cost. 209/2022 | Abitazione principale - eliminato nucleo familiare |
+| Corte Cost. 60/2024 | Occupazione abusiva retroattiva |
+| Cass. 23680/2020 | Alloggi sociali - no dichiarazione |
+| Cass. 37385/2022 | Dichiarazione a pena decadenza |
+| Cass. 32115/2024 | Beni merce - dichiarazione obbligatoria |
+| Cass. 9620/2025 | Coniugi - doppia esenzione stesso comune |
+| **Cass. 18940/2025** | Occupazione abusiva - esenzione retroattiva |
+| CTR Abruzzo 8/2022 | Locazione parziale - mantiene esenzione |
+| **Cass. 34813/2022** | Immobili contigui formanti unica abitazione |
+| **CTR Lombardia 894/2024** | Unità adiacenti coniugi - doppia esenzione |
+| **Cass. 16550/2019** | Trust - trustee soggetto passivo IMU |
+| **Cass. 15988/2020** | Trust - conferma trustee come proprietario |
+| **Cass. 1919/2025** | Fabbricati rurali D/10 - conta catasto, non qualifica possessore |
+| **Cass. 35123/2022** | Scuole paritarie ENC - esenzione solo se gratuità o corrispettivo simbolico |
+| **Cass. 2747/2023** | Coniugi abitazione principale - onere prova dimora abituale al Comune |
+| **Cass. 7769/2023** | Stabilimenti balneari precari - soggetti a IMU se capacità reddituale |
+| **CGT Firenze 137/2023** | Occupazione abusiva - esenzione 2023 irretroattiva |
+| **Cass. 11443/2023** | Aree fabbricabili - no obbligo dichiarazione oscillazioni valore |
+| **Cass. 18554/2022** | Società di persone - NO agevolazioni abitazione principale |
+| **Cass. 23682/2019** | Società semplici - socio è mero detentore, non soggetto passivo |
+| **Cass. 16467/2022** | Termini decadenza - 5° anno omesso versamento, 6° anno omessa dichiarazione |
+| **Cass. 11432/2022** | Cumulo sanzioni - regime continuazione per violazioni pluriennali ICI/IMU |
+| **Cass. 13793/2019** | Leasing risolto: IMU su locatore dalla risoluzione (non dalla riconsegna) |
+| **Cass. 19166/2019** | ⚠️ **CONFLITTO** - Leasing risolto: IMU su locatario fino alla riconsegna materiale |
+| **Cass. 15566/2010** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva per tutti i contitolari |
+| **Cass. 27067/2024** | Aree fabbricabili: valore venale da parametri tassativi art. 5, c. 5, D.Lgs. 504/1992 |
+| **Cass. 9529/2023** | Aree fabbricabili: conferma parametri tassativi per valutazione |
+| **Cass. 11445/2018** | Aree fabbricabili: parametri vincolanti D.Lgs. 504/1992 |
+| **Cass. 8073/2019** | ENC comodato: esenzione se "compenetrazione" tra enti |
+| **Cass. 27761/2023** | ENC collegamento funzionale: Università + ESU = esenzione IMU |
+| **CGUE C-261/23 P (5/9/2024)** | Annulla decisione Commissione 2055/2016 - fine obbligo recupero ICI 2006-2011 |
+
+> ⚠️ **CONFLITTO GIURISPRUDENZIALE NON RISOLTO** (Leasing immobiliare):
+> - **Cass. 13793/2019**: Dopo risoluzione anticipata, IMU in capo al **LOCATORE** (società di leasing)
+> - **Cass. 19166/2019**: Dopo risoluzione, IMU sul **LOCATARIO** fino alla riconsegna materiale
+> - Le Sezioni Unite non si sono ancora pronunciate. L'app deve **segnalare entrambe le interpretazioni**.
 
 ---
 
@@ -1680,103 +1772,6 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-11 | Sezione 5: 9/10 modifiche completate (90%), riferimenti a file sorgente |
 | 2025-12-11 | **Riorganizzazione documento** - Sezione 2 (analisi Excel) spostata in `docs/EXCEL_2022_ANALISI.md` |
 | 2025-12-11 | SPECS.md ridotto da 2170 a 1850 righe (-15%) per migliorare navigabilità |
-
----
-
-## 7. RIFERIMENTI NORMATIVI
-
-### 7.1 Leggi e Decreti
-
-| Norma | Contenuto | Markdown |
-|-------|-----------|----------|
-| **L. 160/2019, art. 1, cc. 739-783** | **Disciplina IMU dal 2020** | - |
-| L. 160/2019, art. 1, c. 758 | Esenzioni terreni agricoli | `art-1-comma-758.md` |
-| D.L. 201/2011, art. 13 | IMU sperimentale 2012-2019 (ABROGATO) | `decreto-legge-201-2011-art-13.md` |
-| D.Lgs. 23/2011, art. 9 | Federalismo fiscale - Soggetti passivi | `decreto-legislativo-23-2011-art-9.md` |
-| D.Lgs. 504/1992, art. 7 | Esenzioni ICI/IMU | `decreto-legislativo-504-1992-art-7.md` |
-| L. 147/2013, c. 639 | Istituzione IUC (parzialmente abrogata) | `legge-147-2013-comma-639.md` |
-| L. 197/2022, art. 1, c. 81 | Esenzione occupazione abusiva | - |
-| L. 197/2022, art. 1, cc. 834-835 | ILIA Friuli-Venezia Giulia | - |
-| L. 178/2020, art. 1, c. 48 | Riduzione pensionati esteri | - |
-| L. 208/2015, art. 1, c. 10 | Abolizione scaglioni CD/IAP | - |
-| L. 431/1998, art. 2, c. 3 | Canone concordato | - |
-| D.M. 22/4/2008 | Definizione alloggi sociali | - |
-| **D.M. 24/4/2024** | **Modello IMU/IMPi e IMU ENC (vigente)** | `decreto_mef_24042024_dichiarazione_imu.md` |
-| D.M. 4/5/2023 | Modello IMU ENC precedente (superato) | - |
-| D.M. 29/7/2022 | Modello IMU/IMPi precedente (superato) | - |
-| **D.L. 102/2013, art. 2, c. 5-bis** | Beni-merce: dichiarazione a pena decadenza | - |
-| D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
-| **L. 126/2020, art. 78-bis** | CD/IAP pensionati con attività agricola | - |
-| **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
-| **D.M. 6/9/2024** | Proroga prospetto aliquote al 2025 | - |
-| **D.L. 84/2025, art. 6-bis** | ENC attività sportive semplificazione | - |
-| **D.M. 19/11/2012, n. 200** | Regolamento esenzione ENC - requisiti generali e di settore | - |
-| **D.L. 1/2012, art. 91-bis** | Esenzione IMU enti non commerciali | - |
-| **D.M. 18/7/2024** | Approvazione modello IMU ENC (sostituisce D.M. 4/5/2023) | - |
-| **L. 108/2025, art. 6** | Proroga delibere Prospetto IMU al 15/9/2025 | - |
-| **D.M. MEF 14/3/2025** | Coefficienti fabbricati gruppo D non catastati | - |
-| **L. 213/2023 (Bilancio 2024)** | Novità IMU 2024 (ENC, termini, sisma) | - |
-| **L. 213/2023, art. 1, c. 71** | Interpretazione "posseduti/utilizzati" ENC | - |
-| **L. 213/2023, art. 1, c. 74** | Proroga automatica termini 14/28 ottobre weekend | - |
-| **L. 213/2023, art. 1, c. 422** | Proroga esenzioni sisma 2016-2017 | - |
-| **L. 213/2023, art. 1, c. 528** | ILIA Friuli VG sostituisce IMU | - |
-| **D.L. 189/2016** | Elenco comuni colpiti da sisma 2016-2017 | - |
-| **L.R. FVG 17/2022** | Istituzione ILIA Friuli Venezia Giulia | - |
-
-### 7.2 Circolari e Risoluzioni MEF
-
-| Documento | Contenuto | Markdown |
-|-----------|-----------|----------|
-| **Circ. 1/DF 18/3/2020** | **Chiarimenti applicativi nuova IMU** | `circolare-mef-1-df-2020.md` |
-| Ris. 2/DF 20/3/2023 | Alloggi sociali liberati | - |
-| Ris. 4/DF 16/11/2023 | Fabbricati collabenti F/2 | - |
-| Ris. 5/DF 11/6/2021 | Pensionati esteri | - |
-| Circ. 2/DF 16/7/2024 | Enti non commerciali | - |
-| **Ris. 2/DF 10/3/2020** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva | - |
-| **Ris. 4/DF 2017** | Dichiarazione IMU - chiarimenti | - |
-| **Ris. 3/DF 2015** | Dichiarazione IMU - modalità | - |
-| **Circ. 2/DF 2015** | Dichiarazione IMU - obblighi | - |
-
-### 7.3 Giurisprudenza
-
-| Pronuncia | Contenuto |
-|-----------|-----------|
-| Corte Cost. 209/2022 | Abitazione principale - eliminato nucleo familiare |
-| Corte Cost. 60/2024 | Occupazione abusiva retroattiva |
-| Cass. 23680/2020 | Alloggi sociali - no dichiarazione |
-| Cass. 37385/2022 | Dichiarazione a pena decadenza |
-| Cass. 32115/2024 | Beni merce - dichiarazione obbligatoria |
-| Cass. 9620/2025 | Coniugi - doppia esenzione stesso comune |
-| **Cass. 18940/2025** | Occupazione abusiva - esenzione retroattiva |
-| CTR Abruzzo 8/2022 | Locazione parziale - mantiene esenzione |
-| **Cass. 34813/2022** | Immobili contigui formanti unica abitazione |
-| **CTR Lombardia 894/2024** | Unità adiacenti coniugi - doppia esenzione |
-| **Cass. 16550/2019** | Trust - trustee soggetto passivo IMU |
-| **Cass. 15988/2020** | Trust - conferma trustee come proprietario |
-| **Cass. 1919/2025** | Fabbricati rurali D/10 - conta catasto, non qualifica possessore |
-| **Cass. 35123/2022** | Scuole paritarie ENC - esenzione solo se gratuità o corrispettivo simbolico |
-| **Cass. 2747/2023** | Coniugi abitazione principale - onere prova dimora abituale al Comune |
-| **Cass. 7769/2023** | Stabilimenti balneari precari - soggetti a IMU se capacità reddituale |
-| **CGT Firenze 137/2023** | Occupazione abusiva - esenzione 2023 irretroattiva |
-| **Cass. 11443/2023** | Aree fabbricabili - no obbligo dichiarazione oscillazioni valore |
-| **Cass. 18554/2022** | Società di persone - NO agevolazioni abitazione principale |
-| **Cass. 23682/2019** | Società semplici - socio è mero detentore, non soggetto passivo |
-| **Cass. 16467/2022** | Termini decadenza - 5° anno omesso versamento, 6° anno omessa dichiarazione |
-| **Cass. 11432/2022** | Cumulo sanzioni - regime continuazione per violazioni pluriennali ICI/IMU |
-| **Cass. 13793/2019** | Leasing risolto: IMU su locatore dalla risoluzione (non dalla riconsegna) |
-| **Cass. 19166/2019** | ⚠️ **CONFLITTO** - Leasing risolto: IMU su locatario fino alla riconsegna materiale |
-| **Cass. 15566/2010** | Aree fabbricabili agro-silvo-pastorale: fictio iuris oggettiva per tutti i contitolari |
-| **Cass. 27067/2024** | Aree fabbricabili: valore venale da parametri tassativi art. 5, c. 5, D.Lgs. 504/1992 |
-| **Cass. 9529/2023** | Aree fabbricabili: conferma parametri tassativi per valutazione |
-| **Cass. 11445/2018** | Aree fabbricabili: parametri vincolanti D.Lgs. 504/1992 |
-| **Cass. 8073/2019** | ENC comodato: esenzione se "compenetrazione" tra enti |
-| **Cass. 27761/2023** | ENC collegamento funzionale: Università + ESU = esenzione IMU |
-| **CGUE C-261/23 P (5/9/2024)** | Annulla decisione Commissione 2055/2016 - fine obbligo recupero ICI 2006-2011 |
-
-> ⚠️ **CONFLITTO GIURISPRUDENZIALE NON RISOLTO** (Leasing immobiliare):
-> - **Cass. 13793/2019**: Dopo risoluzione anticipata, IMU in capo al **LOCATORE** (società di leasing)
-> - **Cass. 19166/2019**: Dopo risoluzione, IMU sul **LOCATARIO** fino alla riconsegna materiale
-> - Le Sezioni Unite non si sono ancora pronunciate. L'app deve **segnalare entrambe le interpretazioni**.
 
 ---
 
