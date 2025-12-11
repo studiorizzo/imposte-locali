@@ -45,7 +45,7 @@
 | IMU Base imponibile e aliquote | `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` | ✅ Analizzato |
 | Novità IMU Bilancio 2024 | `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` | ✅ Analizzato |
 | IMU Dichiarazione | `aggiornamenti/IMU - Dichiarazione/imu_dichiarazione.md` | ✅ Analizzato |
-| D.M. 29/07/2022 Dichiarazione IMU | `aggiornamenti/IMU - Dichiarazione/decreto_mef_29072022_dichiarazione_imu.md` | ✅ Analizzato (superato da D.M. 24/04/2024) |
+| **D.M. 24/04/2024 Dichiarazione IMU** | `aggiornamenti/IMU - Dichiarazione/decreto_mef_24042024_dichiarazione_imu.md` | ✅ Analizzato (vigente) |
 
 ### 1.3 Strumenti Metodologici
 
@@ -1334,12 +1334,30 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 #### Modelli dichiarativi vigenti (D.M. 24/04/2024)
 
-| Modello | Destinatari | Sostituisce |
-|---------|-------------|-------------|
-| **IMU/IMPi** | Tutti i soggetti passivi | D.M. 29/07/2022 |
-| **IMU ENC** | Enti non commerciali (art. 1, c. 759, lett. g) | D.M. 4/05/2023 |
+**Fonte:** D.M. MEF 24/04/2024 (Id: 19253) - Testo completo in `decreto_mef_24042024_dichiarazione_imu.md`
 
-**IMU ENC:** Deve essere utilizzato dagli ENC per **tutti gli immobili posseduti**, non solo per quelli con attività meritevoli ex art. 7, c. 1, lett. i), D.Lgs. 504/1992.
+| Modello | Destinatari | Sostituisce | Modalità |
+|---------|-------------|-------------|----------|
+| **IMU/IMPi** | Tutti i soggetti passivi | D.M. 29/07/2022 | Cartacea o telematica |
+| **IMU ENC** | Enti non commerciali (art. 1, c. 759, lett. g) | D.M. 4/05/2023 | **Solo telematica** |
+
+**IMU ENC (art. 7 D.M.):**
+- Deve essere utilizzato per **tutti gli immobili posseduti** (non solo quelli con attività meritevoli)
+- Presentazione **esclusivamente telematica** (Fisconline/Entratel)
+- Dichiarazione **annuale** (non pluriennale come IMU/IMPi)
+
+**Novità D.M. 24/04/2024 rispetto a D.M. 29/07/2022:**
+
+| Novità | Riferimento | Dettaglio |
+|--------|-------------|-----------|
+| **Occupazione abusiva** | Art. 1, c. 759, lett. g-bis, L. 160/2019 | Esenzione per immobili con denuncia ex artt. 614 c.2 o 633 c.p. - **obbligo telematico** |
+| **Interpretazione ENC** | Art. 1, c. 71, L. 213/2023 | "Posseduti" include comodato a ente collegato; "utilizzati" anche senza esercizio attuale |
+
+**Trattamento dati (art. 9 D.M.):**
+- **Titolare trattamento:** MEF (acquisizione, trasmissione, conservazione, messa a disposizione)
+- **Comuni:** Titolari dal momento della disponibilità della dichiarazione
+- **Responsabile:** Sogei S.p.A. (gestione sistema informativo)
+- **Base giuridica:** Art. 1, cc. 769-770, L. 160/2019; Reg. UE 2016/679 art. 6
 
 #### Dichiarazione obbligatoria a pena di decadenza
 
@@ -1662,6 +1680,10 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-10 | Aggiunta sezione "Dichiarazione obbligatoria a pena di decadenza" (alloggi sociali, Forze Armate, beni-merce) |
 | 2025-12-10 | Aggiunto D.M. 4/05/2023 (modello IMU ENC superato) e D.L. 102/2013 art. 2, c. 5-bis |
 | 2025-12-10 | Integrata giurisprudenza Cass. 37385/2022 e 32115/2024 sulla decadenza |
+| 2025-12-11 | **Analisi completa D.M. 24/04/2024** - Testo integrale decreto vigente |
+| 2025-12-11 | Eliminato D.M. 29/07/2022 (superato), sostituito con D.M. 24/04/2024 |
+| 2025-12-11 | Aggiunti dettagli artt. 1-9 D.M.: modelli, presentazione, termini, trattamento dati |
+| 2025-12-11 | Tabella novità D.M. 24/04/2024: occupazione abusiva telematica, interpretazione ENC |
 
 ---
 
@@ -1683,9 +1705,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | L. 208/2015, art. 1, c. 10 | Abolizione scaglioni CD/IAP | - |
 | L. 431/1998, art. 2, c. 3 | Canone concordato | - |
 | D.M. 22/4/2008 | Definizione alloggi sociali | - |
-| **D.M. 24/4/2024** | **Modello IMU/IMPi e IMU ENC (vigente)** | - |
+| **D.M. 24/4/2024** | **Modello IMU/IMPi e IMU ENC (vigente)** | `decreto_mef_24042024_dichiarazione_imu.md` |
 | D.M. 4/5/2023 | Modello IMU ENC precedente (superato) | - |
-| D.M. 29/7/2022 | Modello IMU/IMPi precedente (superato) | `decreto_mef_29072022_dichiarazione_imu.md` |
+| D.M. 29/7/2022 | Modello IMU/IMPi precedente (superato) | - |
 | **D.L. 102/2013, art. 2, c. 5-bis** | Beni-merce: dichiarazione a pena decadenza | - |
 | D.L. 124/2019, art. 38 | IMPI - Piattaforme marine | - |
 | **L. 126/2020, art. 78-bis** | CD/IAP pensionati con attività agricola | - |
