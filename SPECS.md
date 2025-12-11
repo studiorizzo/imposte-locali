@@ -325,6 +325,45 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 > Funzionalità aggiuntive rispetto all'Excel originale 2022, basate sulla documentazione normativa analizzata.
 
+### Indice Funzionalità
+
+| Funzionalità | Excel 2022 | App 2025 | Priorità |
+|--------------|------------|----------|----------|
+| Occupazione abusiva | ❌ | ✅ Esenzione | Alta |
+| Abitazione princ. coniugi separati | ❌ Nucleo fam. | ✅ Solo possessore | Alta |
+| Casa familiare coppie non sposate | ❌ | ✅ | Media |
+| Pertinenze fiscali (graffatura) | ❌ Civilistiche | ✅ Fiscali | Media |
+| Leasing (fine contratto) | ❌ | ✅ | Media |
+| IACP vs Alloggi sociali | ❌ Confusi | ✅ Distinti | Media |
+| Terreni isole minori | ❌ | ✅ Esenti | Bassa |
+| Terreni proprietà collettiva | ❌ | ✅ Esenti | Bassa |
+| Esenzioni cat. E/1-E/9 | ❌ | ✅ Automatiche | Bassa |
+| Pensionati esteri 50% | ❌ | ✅ | Media |
+| Alert dichiarazione | ❌ | ✅ | Bassa |
+| Importo minimo €12 | ❌ | ✅ | Bassa |
+| Prospetto aliquote obbligatorio | ❌ | ✅ Integrazione | Media |
+| ENC regime 3 rate | ❌ | ✅ | Bassa |
+| ENC attività sportive | ❌ | ✅ Semplificato | Bassa |
+| Trust/Trustee soggetto passivo | ❌ | ✅ | Bassa |
+| IMU/IRPEF 50% stesso comune | ❌ | ✅ Alert | Media |
+| Immobili contigui coniugi | ❌ | ✅ | Media |
+| CD/IAP pensionati | ❌ | ✅ | Media |
+| Contitolarità terreni individuale | ❌ | ✅ | Media |
+| Fabbricati in costruzione | ❌ | ✅ Area fabbricabile | Media |
+| Soggetti passivi casi particolari | ❌ | ✅ Fallimento/multiproprietà/condominio | Bassa |
+| Adempimenti completi (scadenze/sanzioni) | ❌ Parziale | ✅ Completo | Alta |
+| Società di persone NO agevolazioni | ❌ | ✅ Alert automatico | Media |
+| Termini decadenza accertamento | ❌ | ✅ Calcolo automatico | Media |
+| Cumulo sanzioni pluriennali | ❌ | ✅ Info regime continuazione | Bassa |
+| Deducibilità IMU 100% | ❌ | ✅ Info dichiarazione redditi | Media |
+| Valutazione aree (parametri obbligatori) | ❌ | ✅ Checklist + alert | Media |
+| Coefficienti Gruppo D non catastati | ❌ | ✅ Tabella completa 2025 | Bassa |
+| Esenzioni sisma 2016-2017 | ❌ | ✅ Flag + verifica comune | Bassa |
+| ILIA Friuli VG | ❌ | ✅ Rilevamento automatico | Bassa |
+| ENC comodato collegato | ❌ | ✅ Interpretazione L. 213/2023 | Bassa |
+| Proroga termini weekend | ❌ | ✅ Calcolo automatico | Bassa |
+| Checklist professionale integrata | ❌ | ✅ Mappatura UI/UX | Alta |
+
 ### 3.1 Gestione Occupazione Abusiva (Corte Cost. 60/2024)
 
 **Fonte:** D.Lgs. 23/2011 art. 9 comma 1, come integrato da Corte Cost. 60/2024
@@ -883,46 +922,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 4. **CD/IAP**: Esenzione totale terreni
 5. **Categoria lusso**: Detrazione €200 applicabile
 
-### 3.28 Sintesi Nuove Funzionalità vs Excel 2022
-
-| Funzionalità | Excel 2022 | App 2025 | Priorità |
-|--------------|------------|----------|----------|
-| Occupazione abusiva | ❌ | ✅ Esenzione | Alta |
-| Abitazione princ. coniugi separati | ❌ Nucleo fam. | ✅ Solo possessore | Alta |
-| Casa familiare coppie non sposate | ❌ | ✅ | Media |
-| Pertinenze fiscali (graffatura) | ❌ Civilistiche | ✅ Fiscali | Media |
-| Leasing (fine contratto) | ❌ | ✅ | Media |
-| IACP vs Alloggi sociali | ❌ Confusi | ✅ Distinti | Media |
-| Terreni isole minori | ❌ | ✅ Esenti | Bassa |
-| Terreni proprietà collettiva | ❌ | ✅ Esenti | Bassa |
-| Esenzioni cat. E/1-E/9 | ❌ | ✅ Automatiche | Bassa |
-| Pensionati esteri 50% | ❌ | ✅ | Media |
-| Alert dichiarazione | ❌ | ✅ | Bassa |
-| Importo minimo €12 | ❌ | ✅ | Bassa |
-| Prospetto aliquote obbligatorio | ❌ | ✅ Integrazione | Media |
-| ENC regime 3 rate | ❌ | ✅ | Bassa |
-| ENC attività sportive | ❌ | ✅ Semplificato | Bassa |
-| Trust/Trustee soggetto passivo | ❌ | ✅ | Bassa |
-| IMU/IRPEF 50% stesso comune | ❌ | ✅ Alert | Media |
-| Immobili contigui coniugi | ❌ | ✅ | Media |
-| CD/IAP pensionati | ❌ | ✅ | Media |
-| Contitolarità terreni individuale | ❌ | ✅ | Media |
-| Fabbricati in costruzione | ❌ | ✅ Area fabbricabile | Media |
-| Soggetti passivi casi particolari | ❌ | ✅ Fallimento/multiproprietà/condominio | Bassa |
-| Adempimenti completi (scadenze/sanzioni) | ❌ Parziale | ✅ Completo | Alta |
-| **Società di persone NO agevolazioni** | ❌ | ✅ Alert automatico | Media |
-| **Termini decadenza accertamento** | ❌ | ✅ Calcolo automatico | Media |
-| **Cumulo sanzioni pluriennali** | ❌ | ✅ Info regime continuazione | Bassa |
-| **Deducibilità IMU 100%** | ❌ | ✅ Info dichiarazione redditi | Media |
-| **Valutazione aree (parametri obbligatori)** | ❌ | ✅ Checklist + alert | Media |
-| **Coefficienti Gruppo D non catastati** | ❌ | ✅ Tabella completa 2025 | Bassa |
-| **Esenzioni sisma 2016-2017** | ❌ | ✅ Flag + verifica comune | Bassa |
-| **ILIA Friuli VG** | ❌ | ✅ Rilevamento automatico | Bassa |
-| **ENC comodato collegato** | ❌ | ✅ Interpretazione L. 213/2023 | Bassa |
-| **Proroga termini weekend** | ❌ | ✅ Calcolo automatico | Bassa |
-| **Checklist professionale integrata** | ❌ | ✅ Mappatura UI/UX | Alta |
-
-### 3.29 Adempimenti IMU - Scadenze e Sanzioni
+### 3.28 Adempimenti IMU - Scadenze e Sanzioni
 
 **Fonte:** Art. 1, cc. 762-769, L. 160/2019; Decreto 24 aprile 2024
 
@@ -1462,7 +1462,7 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 - Generazione file telematico conforme a specifiche
 - Mapping automatico campi app → record D
 
-### 3.30 Società di Persone - Esclusione Agevolazioni Abitazione Principale
+### 3.29 Società di Persone - Esclusione Agevolazioni Abitazione Principale
 
 **Fonte:** Cass. 18554/2022; Cass. 23682/2019
 
