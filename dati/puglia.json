@@ -2316,19 +2316,19 @@
       "data_pubblicazione": "03/12/2025",
       "file_delibera": "12997_DIMUNIC-13le26b792d.pdf",
       "note": null,
-      "comune_fusione": false
-    },
-    "aliquote": {
-      "abitazionePrincipale": 0.6,
-      "fabbricatiRurali": 0.1,
-      "terreniAgricoli": 1.06,
-      "gruppoD": 0.76,
-      "altriFabbricati": 1.06,
-      "areeFabbricabili": 1.06
-    },
-    "assimilazioneAnzianiDisabili": true,
-    "aliquoteSpeciali": [],
-    "esenzioniComunali": []
+      "comune_fusione": false,
+      "aliquote": {
+        "abitazionePrincipale": 0.6,
+        "fabbricatiRurali": 0.1,
+        "terreniAgricoli": 1.06,
+        "gruppoD": 0.76,
+        "altriFabbricati": 1.06,
+        "areeFabbricabili": 1.06
+      },
+      "assimilazioneAnzianiDisabili": true,
+      "aliquoteSpeciali": [],
+      "esenzioniComunali": []
+    }
   },
   {
     "comune": "Carpignano Salentino",
