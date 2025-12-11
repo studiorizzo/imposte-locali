@@ -347,6 +347,15 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ### 3.1 PRESUPPOSTI
 
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/presupposto-soggettivo-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/presupposto-oggettivo-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/ambito-di-applicazione-e-territorialita-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Casi particolari/trustee-soggetto-passivo-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-abitazioni-coniugi.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
+
 #### 3.1.1 Presupposto Soggettivo (Chi Paga)
 
 **Fonte:** Art. 1, c. 743, L. 160/2019; Circ. MEF 1/DF 2020
@@ -461,6 +470,15 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 ---
 
 ### 3.2 BASE IMPONIBILE
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-fabbricati.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-area-fabbricabile.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-pertinenze.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-terreni-agricoli.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
 
 #### 3.2.1 Fabbricati (Rendita × Coefficiente)
 
@@ -584,6 +602,17 @@ Se il contribuente versa su valore ≥ valore predeterminato → limitazione pot
 ---
 
 ### 3.3 ESENZIONI
+
+> **Fonti documentali:**
+> - `aggiornamenti/dossier_imu_2025.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-terreni-agricoli.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/decreto-legislativo-504-1992-art-7.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-abitazioni-coniugi.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Articoli operativi/imu-esenzione-abitazione-principale-coniugi-corte-cost-209-2022.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Articoli operativi/imu-immobili-occupati-abusivamente-corte-cost-60-2024.md`
+> - `aggiornamenti/IMU - Dichiarazione/IMU_ENC_Istr_24-Definitivo.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
 
 #### 3.3.1 Abitazione Principale
 
@@ -778,6 +807,12 @@ Semplificazione per ENC con attività sportive dilettantistiche (D.Lgs. 36/2021)
 
 ### 3.4 RIDUZIONI
 
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-versamento-acconto.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
+> - `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md`
+
 #### 3.4.1 Riduzioni Base Imponibile (50%)
 
 **Fonte:** Art. 1, cc. 747-750, L. 160/2019
@@ -818,6 +853,12 @@ Semplificazione per ENC con attività sportive dilettantistiche (D.Lgs. 36/2021)
 ---
 
 ### 3.5 ALIQUOTE E DETRAZIONI
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
+> - `aggiornamenti/dossier_imu_2025.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md`
 
 #### 3.5.1 Aliquote Base e Comunali
 
@@ -876,6 +917,12 @@ Semplificazione per ENC con attività sportive dilettantistiche (D.Lgs. 36/2021)
 
 ### 3.6 CALCOLO
 
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2025.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-versamento-acconto.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-versamento-saldo.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
+
 #### 3.6.1 Formula Generale
 
 ```
@@ -908,6 +955,13 @@ IMU = (Base imponibile × Riduzione%) × Aliquota × (Mesi / 12) × (Quota / 100
 ---
 
 ### 3.7 IMPOSTE SOSTITUTIVE/REGIONALI
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/Articoli operativi/i10188722_IMPI_piattaforme_marine.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md`
+> - `aggiornamenti/dossier_imu_2025.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/ambito-di-applicazione-e-territorialita-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
 
 #### 3.7.1 IMPI (Piattaforme Marine)
 
@@ -946,6 +1000,20 @@ Imposta municipale immobiliare della Provincia autonoma di Bolzano.
 ---
 
 ### 3.8 ADEMPIMENTI
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU - Dichiarazione/imu_dichiarazione.md`
+> - `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md`
+> - `aggiornamenti/IMU - Dichiarazione/IMU_ENC_Istr_24-Definitivo.md`
+> - `aggiornamenti/IMU - Dichiarazione/decreto_mef_24042024_dichiarazione_imu.md`
+> - `aggiornamenti/IMU - Dichiarazione/2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md`
+> - `aggiornamenti/IMU - Dichiarazione/2024_ENC_SpecificheTecniche_2024.04.24.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-versamento-acconto.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-versamento-saldo.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-dichiarazione.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-dichiarazione-enc.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2025.md`
+> - `aggiornamenti/dossier_imu_2025.md`
 
 #### 3.8.1 Versamento
 
@@ -1080,6 +1148,13 @@ Per omesso versamento pluriennale: **regime continuazione attenuata**.
 ---
 
 ### 3.9 RAPPORTO ALTRE IMPOSTE
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/Casi particolari/imu-beni-immobili-uso-abitativo-non-locati.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Articoli operativi/i9907756_imu_immobili_strumentali_deducibile.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Articoli operativi/i10046086_piena_deducibilita_imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Articoli operativi/i10128098_deducibilita_imu_2022_100.md`
 
 #### 3.9.1 IMU/IRPEF
 
@@ -1299,6 +1374,7 @@ Per omesso versamento pluriennale: **regime continuazione attenuata**.
 | 2025-12-11 | **RISTRUTTURAZIONE SEZIONE 3** - Nuova organizzazione per flusso logico calcolo IMU |
 | 2025-12-11 | Da 29 sottosezioni disperse → 9 sezioni logiche (Presupposti → Base → Esenzioni → Riduzioni → Aliquote → Calcolo → Regionali → Adempimenti → Rapporti) |
 | 2025-12-11 | ENC distribuito nelle sezioni pertinenti (non regime separato) - IMIS/IMI aggiunti come voci complete |
+| 2025-12-11 | **Aggiunta mappatura fonti documentali** a tutte le sezioni 3.x (riferimenti a cartella `aggiornamenti/`) |
 
 ---
 
