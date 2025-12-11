@@ -373,12 +373,6 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 **Fonte:** D.Lgs. 23/2011 art. 9 comma 1, come integrato da Corte Cost. 60/2024
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Esenzione occupazione abusiva)
-- `IMU – Base imponibile e aliquote/Articoli operativi/corte_costituzionale_60_2024.md`
-- `IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` (par. Occupazione abusiva)
-- `IMU - Dichiarazione/2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md` (campi 36-38)
-
 **Funzionalità:**
 - Flag "Immobile occupato abusivamente" per ciascun immobile
 - Campo data presentazione denuncia/azione giudiziaria
@@ -398,12 +392,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 
 **Fonte:** D.L. 201/2011 art. 13 comma 2, come modificato da Corte Cost. 209/2022
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Abitazione principale)
-- `IMU – Base imponibile e aliquote/Approfondimenti/coniugi_imu_trattamento_fiscale.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/coniugi_diversa_residenza.md`
-- `dossier_imu_2025.md` (par. Abitazione principale)
-
 **Novità normativa:**
 - Eliminato riferimento al "nucleo familiare"
 - È sufficiente che il **solo possessore** dimori e risieda nell'immobile
@@ -418,10 +406,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 
 **Fonte:** L. 160/2019 art. 1 comma 741 lett. c) n. 4
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Casa familiare)
-- `circolare-mef-1-df-2020.md` (par. 3)
-
 **Novità rispetto a Excel 2022:**
 - Include anche coppie **non sposate** con figli
 - La "casa familiare" è definita dal **provvedimento del Giudice**
@@ -435,11 +419,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 ### 3.4 Gestione Pertinenze Fiscali (Circ. MEF 1/DF 2020, par. 8)
 
 **Fonte:** L. 160/2019 art. 1 comma 741 lett. a)
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Pertinenze)
-- `IMU – Base imponibile e aliquote/Approfondimenti/pertinenze_imu.md`
-- `circolare-mef-1-df-2020.md` (par. 8)
 
 **Novità:** Dal 01/01/2020 la nozione di pertinenza è **esclusivamente fiscale**, non più civilistica (artt. 817 ss. c.c.)
 
@@ -457,12 +436,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 
 **Fonte:** L. 160/2019 art. 1 comma 743
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Leasing)
-- `IMU – Base imponibile e aliquote/Articoli operativi/cassazione_13793_2019_leasing.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/cassazione_19166_2019_leasing.md`
-- `circolare-mef-1-df-2020.md` (par. 9)
-
 **Chiarimento MEF:**
 - Soggetto passivo = **locatario** dalla data della stipula
 - Fine soggettività = **scadenza contratto** (NON riconsegna del bene)
@@ -479,11 +452,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 ### 3.6 Gestione IACP/ERP Migliorata (Circ. MEF 1/DF 2020, par. 3)
 
 **Fonte:** L. 160/2019 art. 1 comma 749 e comma 754
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. IACP/Alloggi sociali)
-- `circolare-mef-1-df-2020.md` (par. 3)
-- `dossier_imu_2025.md` (par. Alloggi sociali)
 
 **Chiarimenti MEF:**
 
@@ -504,12 +472,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 
 **Fonte:** Art. 1 comma 758 L. 160/2019
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Terreni agricoli)
-- `IMU – Base imponibile e aliquote/Approfondimenti/terreni_imu.md`
-- `dossier_imu_2025.md` (par. Esenzioni terreni)
-- `art-1-comma-758.md`
-
 **Esenzioni totali:**
 1. Terreni posseduti e condotti da **CD/IAP** (qualunque ubicazione)
 2. Terreni nelle **isole minori** (Allegato A L. 448/2001)
@@ -523,10 +485,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 ### 3.8 Esenzioni Storiche D.Lgs. 504/1992 art. 7
 
 **Fonte:** D.Lgs. 504/1992 art. 7 (ancora vigente per rinvio)
-
-**Documentazione aggiornamenti/:**
-- `decreto-legislativo-504-1992-art-7.md`
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Esenzioni)
 
 **Esenzioni da implementare:**
 
@@ -546,11 +504,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 
 **Fonte:** L. 178/2020 art. 1 comma 48; L. 160/2019 art. 1 comma 741
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Pensionati esteri)
-- `IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` (riduzione pensionato estero)
-- `dossier_imu_2025.md` (par. Riduzioni)
-
 **Requisiti per riduzione 50%:**
 - Cittadino italiano residente all'estero
 - Iscritto AIRE
@@ -567,11 +520,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 
 **Fonte:** L. 160/2019 art. 1 comma 769
 
-**Documentazione aggiornamenti/:**
-- `IMU - Dichiarazione/imu_dichiarazione.md`
-- `IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md`
-- `IMU - Dichiarazione/decreto_mef_24042024_dichiarazione_imu.md`
-
 **Termine:** 30 giugno anno successivo
 
 **Casi con obbligo dichiarativo:**
@@ -587,12 +535,6 @@ SE occupato_abusivamente = SI E denuncia_presentata = SI:
 ### 3.11 Gestione Aliquote e Mancata Pubblicazione
 
 **Fonte:** L. 160/2019 art. 1 comma 767; Circ. MEF 1/DF 2020 par. 4; **Art. 1, c. 74, L. 213/2023**
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Aliquote)
-- `IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md`
-- `circolare-mef-1-df-2020.md` (par. 4)
-- `dossier_imu_2025.md` (par. Aliquote)
 
 **Regola:**
 ```
@@ -618,11 +560,6 @@ ALTRIMENTI:
 
 **Fonte:** Art. 38 D.L. 124/2019
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Articoli operativi/impi_piattaforme_marine.md`
-- `IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` (sezione IMPi)
-- `IMU - Dichiarazione/2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md` (record E)
-
 **Caratteristiche:**
 - Imposta sulle piattaforme marine
 - Aliquota fissa (comuni NON possono variare)
@@ -633,10 +570,6 @@ ALTRIMENTI:
 ### 3.13 Prospetto Aliquote Obbligatorio 2025 (D.M. 7/7/2023 e D.M. 6/9/2024)
 
 **Fonte:** D.M. 7 luglio 2023 (definizione prospetto), D.M. 6 settembre 2024 (proroga al 2025)
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Prospetto aliquote)
-- `dossier_imu_2025.md` (par. Prospetto aliquote obbligatorio)
 
 **Novità dal 2025:**
 - I Comuni sono obbligati ad utilizzare il **Prospetto delle aliquote** ministeriale
@@ -658,13 +591,6 @@ ALTRIMENTI:
 ### 3.14 Gestione Enti Non Commerciali (ENC) - Regime Speciale
 
 **Fonte:** L. 160/2019 art. 1 cc. 759, 770; Circ. MEF 2/DF 16/7/2024; **Art. 1, c. 71, L. 213/2023 (Bilancio 2024)**
-
-**Documentazione aggiornamenti/:**
-- `IMU - Dichiarazione/IMU_ENC_Istr_24-Definitivo.md`
-- `IMU - Dichiarazione/2024_ENC_SpecificheTecniche_2024.04.24.md`
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. ENC)
-- `IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` (ENC)
-- `IMU – Base imponibile e aliquote/Articoli operativi/imu_enti_non_commerciali.md`
 
 **Caratteristiche distintive:**
 
@@ -700,10 +626,6 @@ ALTRIMENTI:
 
 **Fonte:** Art. 6-bis D.L. 84/2025
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Articoli operativi/enc_attivita_sportive.md`
-- `dossier_imu_2025.md` (par. ENC sportive)
-
 **Novità 2025:**
 - Semplificazione per ENC che svolgono **attività sportive dilettantistiche**
 - Allineamento con riforma sport (D.Lgs. 36/2021)
@@ -715,10 +637,6 @@ ALTRIMENTI:
 ### 3.16 Trust e Trustee come Soggetto Passivo (Cass. 16550/2019, 15988/2020)
 
 **Fonte:** Cass. 20 giugno 2019, n. 16550; Cass. 27 luglio 2020, n. 15988
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Casi particolari/trust_trustee_soggetto_passivo.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/trustee_soggetto_passivo.md`
 
 **Principio:**
 - Per immobili vincolati in **trust**, il soggetto passivo IMU è il **trustee**
@@ -735,10 +653,6 @@ ALTRIMENTI:
 
 **Fonte:** Art. 9, comma 9, D.Lgs. n. 23/2011 (non abrogato)
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Casi particolari/immobili_non_locati_imu_irpef.md`
-- `decreto-legislativo-23-2011-art-9.md`
-
 **Regola:**
 
 | Situazione | Comune | IMU | IRPEF |
@@ -754,11 +668,6 @@ ALTRIMENTI:
 ### 3.18 Coniugi con Doppia Abitazione Principale - Dettagli
 
 **Fonte:** Corte Cost. 209/2022; Cass. 9620/2025; Cass. 34813/2022
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Approfondimenti/coniugi_imu_trattamento_fiscale.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/coniugi_diversa_residenza.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/coniugi_comuni_diversi.md`
 
 **Casistiche chiarite:**
 
@@ -780,10 +689,6 @@ ALTRIMENTI:
 
 **Fonte:** Art. 78-bis L. 13 ottobre 2020, n. 126 (D.L. Agosto)
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. CD/IAP pensionati)
-- `IMU – Base imponibile e aliquote/Approfondimenti/terreni_imu.md` (CD/IAP)
-
 **Novità:**
 Si considerano **coltivatori diretti e IAP** anche i **pensionati** che:
 - Continuano a svolgere attività in agricoltura
@@ -799,11 +704,6 @@ Si considerano **coltivatori diretti e IAP** anche i **pensionati** che:
 ### 3.20 Contitolarità Terreni dal 2020 - Esenzione Individuale
 
 **Fonte:** Art. 1, comma 743, L. n. 160/2019; Ris. MEF 2/DF del 10 marzo 2020
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Approfondimenti/terreni_imu.md` (par. Contitolarità)
-- `IMU – Base imponibile e aliquote/Articoli operativi/risoluzione_mef_2df_2020.md`
-- `dossier_imu_2025.md` (par. Contitolarità)
 
 **Regola dal 01/01/2020:**
 In caso di **contitolarità** di terreni:
@@ -829,10 +729,6 @@ Per le **aree fabbricabili con utilizzo agro-silvo-pastorale** da CD/IAP:
 
 **Fonte:** Art. 1, comma 746, L. 160/2019
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Approfondimenti/fabbricati_imu.md` (par. In costruzione)
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Fabbricati in costruzione)
-
 **Regola:**
 Per fabbricati in corso di:
 - costruzione
@@ -853,11 +749,6 @@ Per fabbricati in corso di:
 ### 3.22 Soggetti Passivi - Casi Particolari (Art. 1 c. 768 L. 160/2019)
 
 **Fonte:** Art. 1, comma 768, L. 160/2019; Circ. MEF 1/DF 2020
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Base/presupposto_soggettivo_imu.md`
-- `circolare-mef-1-df-2020.md` (par. soggetti passivi)
-- `IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` (codici carica)
 
 **Casi speciali di soggettività passiva:**
 
@@ -883,11 +774,6 @@ Per fabbricati in corso di:
 ### 3.23 Deducibilità IMU Immobili Strumentali
 
 **Fonte:** Art. 1, cc. 772-773, L. 160/2019; Circ. Agenzia Entrate 10/E del 14/5/2014
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Articoli operativi/deducibilita_imu_strumentali.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/deducibilita_piena_imu.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/deducibilita_100_2022.md`
 
 **Evoluzione storica deducibilità:**
 
@@ -925,10 +811,6 @@ Per fabbricati in corso di:
 
 **Fonte:** Cass. 18/10/2024 n. 27067; art. 5, c. 5, D.Lgs. 504/1992
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Approfondimenti/aree_fabbricabili_imu.md`
-- `IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md` (par. Aree fabbricabili)
-
 **Principio:** Il valore venale delle aree fabbricabili deve essere determinato in base ai **parametri tassativi** previsti dalla legge:
 
 1. **Zona territoriale** di ubicazione
@@ -947,10 +829,6 @@ Per fabbricati in corso di:
 ### 3.25 Esenzioni IMU per Eventi Sismici
 
 **Fonte:** Art. 1, c. 422, L. 213/2023 (Bilancio 2024); D.L. 189/2016
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` (par. Sisma)
-- `IMU – Base imponibile e aliquote/Articoli operativi/esenzioni_sisma_2016.md`
 
 **Esenzioni prorogate per sisma 2016-2017 (Italia Centrale):**
 - Fabbricati distrutti o inagibili (ordinanza sindacale di sgombero entro 31/12/2018)
@@ -977,9 +855,6 @@ Per fabbricati in corso di:
 
 **Fonte:** Art. 1, c. 528, L. 213/2023; L.R. FVG 17/2022
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md` (par. ILIA FVG)
-
 **Ambito:** Regione Friuli Venezia Giulia (dal 2023)
 
 **Caratteristiche:**
@@ -994,10 +869,6 @@ Per fabbricati in corso di:
 ### 3.27 Mappatura Checklist → Campi App (Riferimento UI/UX)
 
 **Fonte:** Check List Acconto IMU 2025 (Wolters Kluwer OneFiscale)
-
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2025.md`
-- `IMU – Base imponibile e aliquote/Strumenti utili/checklist_acconto_imu_2024.md`
 
 Questa mappatura definisce la corrispondenza tra le voci della checklist professionale e i campi dell'applicazione, utile per la progettazione del wizard di inserimento dati.
 
@@ -1059,16 +930,6 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 ### 3.28 Adempimenti IMU - Scadenze e Sanzioni
 
 **Fonte:** Art. 1, cc. 762-769, L. 160/2019; Decreto 24 aprile 2024
-
-**Documentazione aggiornamenti/:**
-- `IMU - Dichiarazione/imu_dichiarazione.md`
-- `IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md`
-- `IMU - Dichiarazione/decreto_mef_24042024_dichiarazione_imu.md`
-- `IMU - Dichiarazione/2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md`
-- `IMU - Dichiarazione/IMU_ENC_Istr_24-Definitivo.md`
-- `IMU - Dichiarazione/2024_ENC_SpecificheTecniche_2024.04.24.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/cumulo_sanzioni_pluriennali.md`
-- `IMU – Base imponibile e aliquote/Articoli operativi/nullita_cartella.md`
 
 #### Scadenze versamento
 
@@ -1610,9 +1471,6 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 **Fonte:** Cass. 18554/2022; Cass. 23682/2019
 
-**Documentazione aggiornamenti/:**
-- `IMU – Base imponibile e aliquote/Articoli operativi/societa_persone_no_agevolazioni.md`
-
 **Principio:** Le agevolazioni IMU per l'abitazione principale (esenzione, aliquota ridotta, detrazione) **NON si applicano** agli immobili posseduti da **società di persone**, comprese le società semplici di mero godimento.
 
 **Motivazione giuridica:**
@@ -1740,7 +1598,6 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 | 2025-12-11 | Calcolo attività didattica: Cm vs Cms (esenzione se Cm < Cms) |
 | 2025-12-11 | Calcolo altre attività: Cenc vs Cm (simbolicità < 50% mercato) |
 | 2025-12-11 | Comodato/immobili strutturali: codici 1-2 (art. 1, c. 71, L. 213/2023) |
-| 2025-12-11 | **Aggiunta fonti documentali** - Mappatura documenti aggiornamenti/ per ogni funzionalità (3.1-3.29) |
 | 2025-12-11 | **Aggiornamento sezioni 4.1 e 5** - Stato implementazione vs codice sorgente |
 | 2025-12-11 | Sezione 4.1: 12/13 differenze critiche implementate (alert dichiarativo pendente) |
 | 2025-12-11 | Sezione 5: 9/10 modifiche completate (90%), riferimenti a file sorgente |
