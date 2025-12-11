@@ -12,7 +12,7 @@
 
 1. [Fonte Dati](#1-fonte-dati)
 2. [Normativa IMU 2025](#2-normativa-imu-2025)
-3. [Modifiche Necessarie](#3-modifiche-necessarie)
+3. [Modifiche Necessarie](#3-modifiche-necessarie-rispetto-a-excel-2022)
 4. [Funzionalità App 2025](#4-funzionalità-app-2025)
 5. [Specifiche Validate](#5-specifiche-validate)
 6. [Changelog](#6-changelog)
