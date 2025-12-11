@@ -159,14 +159,51 @@
 
 ## 2. NORMATIVA IMU AGGIORNATA
 
+> Normativa IMU vigente dal 2020, con aggiornamenti 2025.
+>
+> **Struttura:** Base giuridica → Coefficienti → Aliquote → Esenzioni → Riduzioni → Detrazioni → Soggetti → Calcolo
+
+### Indice Sezione 2
+
+| Sezione | Contenuto | Stato |
+|---------|-----------|-------|
+| **2.1** | Base giuridica | — |
+| **2.2** | Coefficienti moltiplicatori | ✅ |
+| **2.2.1** | Coefficienti D non catastati | ⏳ |
+| **2.3** | Aliquote base 2025 | ✅ |
+| **2.4** | Esenzioni 2025 | 🔶 |
+| **2.5** | Riduzioni 2025 | 🔶 |
+| **2.6** | Detrazioni 2025 | ✅ |
+| **2.7** | Quote Stato/Comune | ✅ |
+| **2.8** | Soggetti passivi | ⏳ |
+| **2.9** | Regola del mese | ✅ |
+| **2.10** | Immobili assimilati | ⏳ |
+| **2.11** | Aree pertinenziali | ⏳ |
+| **2.12** | Valori venali aree fabbricabili | 🔶 |
+| **2.13** | Aliquote per il saldo | ✅ |
+
+> **Legenda:** ✅ Implementato | 🔶 Parziale | ⏳ Da implementare | — Non applicabile
+
+---
+
 ### 2.1 Base Giuridica
+
+> **Fonti documentali:**
+> - `aggiornamenti/dossier_imu_2025.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
 
 | Norma | Stato |
 |-------|-------|
 | Art. 1, L. 27/12/2019, n. 160 | **VIGENTE** dal 01/01/2020 |
 | Art. 13, D.L. 06/12/2011, n. 201 | ABROGATA |
 
+---
+
 ### 2.2 Coefficienti Moltiplicatori (2025)
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
 
 | Categorie | Coefficiente | Note |
 |-----------|--------------|------|
@@ -179,7 +216,12 @@
 | D/1 - D/10 (escluso D/5) | 65 | |
 | D/5 | 80 | |
 
+---
+
 ### 2.2.1 Coefficienti Fabbricati Gruppo D Non Iscritti in Catasto (DM 14/3/2025)
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
 
 **Ambito di applicazione:** Fabbricati classificabili nel gruppo catastale D che siano:
 - Non iscritti in catasto con attribuzione di rendita
@@ -208,7 +250,14 @@
 
 > **Fonte:** D.M. MEF 14 marzo 2025; art. 1, comma 746, L. 160/2019; art. 5, comma 3, D.Lgs. 504/1992
 
+---
+
 ### 2.3 Aliquote Base 2025
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
+> - `aggiornamenti/dossier_imu_2025.md`
 
 | Fattispecie | Base | Min | Max |
 |-------------|------|-----|-----|
@@ -221,7 +270,15 @@
 
 > **Nota**: Maggiorazione +0,08% in sostituzione TASI (c. 755)
 
+---
+
 ### 2.4 Esenzioni 2025
+
+> **Fonti documentali:**
+> - `aggiornamenti/dossier_imu_2025.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-terreni-agricoli.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/decreto-legislativo-504-1992-art-7.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md`
 
 | Fattispecie | Stato |
 |-------------|-------|
@@ -231,7 +288,14 @@
 | Immobili occupati abusivamente | ESENTI (dal 2023) |
 | Fabbricati collabenti F/2 | ESCLUSI |
 
+---
+
 ### 2.5 Riduzioni 2025
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
+> - `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md`
 
 | Riduzione | Tipo | Condizioni |
 |-----------|------|------------|
@@ -241,21 +305,40 @@
 | **25% aliquota** | Canone concordato | Art. 2 c.3 L. 431/1998 |
 | 50% base | Pensionati esteri | Un solo immobile, non locato |
 
+---
+
 ### 2.6 Detrazioni 2025
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
 
 | Tipo | Importo | Note |
 |------|---------|------|
 | Base abitazione principale | **€200** | Solo A/1, A/8, A/9 |
 | Per figli < 26 anni | **€0** | **ABOLITA dal 2014** |
 
+---
+
 ### 2.7 Quote Stato/Comune
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
 
 | Tipologia | Quota Stato | Quota Comune |
 |-----------|-------------|--------------|
 | Gruppo D | 0,76% | Eccedenza |
 | Tutto il resto | 0% | 100% |
 
+---
+
 ### 2.8 Soggetti Passivi (art. 1, c. 743)
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/presupposto-soggettivo-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Casi particolari/trustee-soggetto-passivo-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
 
 | Soggetto | Condizione |
 |----------|------------|
@@ -270,7 +353,13 @@
 - Si considera la singola quota di possesso
 - Esenzioni/agevolazioni applicate **individualmente**
 
+---
+
 ### 2.9 Regola del Mese (art. 1, c. 761)
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/Adempimenti/imu-versamento-acconto.md`
+> - `aggiornamenti/articolo_ipsoa_imu_2025.md`
 
 L'imposta è proporzionale ai mesi di possesso:
 
@@ -280,7 +369,14 @@ L'imposta è proporzionale ai mesi di possesso:
 | Giorno di trasferimento | A carico dell'**acquirente** |
 | Giorni possesso uguali (cedente = acquirente) | Mese intero all'**acquirente** |
 
+---
+
 ### 2.10 Immobili Assimilati ad Abitazione Principale (art. 1, c. 741, lett. c)
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/presupposto-oggettivo-imu.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-abitazioni-coniugi.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
 
 | Fattispecie | Note |
 |-------------|------|
@@ -299,20 +395,39 @@ L'imposta è proporzionale ai mesi di possesso:
 **Locazione parziale abitazione principale** (CTR Abruzzo 8/2022):
 - **Mantiene esenzione** anche se parte dell'immobile è locata
 
+---
+
 ### 2.11 Aree Pertinenziali (Circ. 1/DF del 18/3/2020, par. 8)
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-pertinenze.md`
+> - `aggiornamenti/IMU – Definizione e presupposti/Riferimenti/circolare-mef-1-df-2020.md`
 
 | Situazione | Trattamento |
 |------------|-------------|
 | Accatastate unitariamente al fabbricato (anche "graffatura") | **Pertinenza** |
 | Non accatastate unitariamente | **Area fabbricabile** (soggetta autonomamente) |
 
+---
+
 ### 2.12 Valori Venali Aree Fabbricabili (art. 1, c. 777, lett. d)
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Definizione e presupposti/Approfondimenti/imu-area-fabbricabile.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
 
 I Comuni possono determinare **valori venali per zone omogenee**.
 
 **Effetto**: Se il contribuente versa su valore ≥ valore predeterminato dal Comune → **limitazione potere di accertamento**.
 
+---
+
 ### 2.13 Aliquote per il Saldo
+
+> **Fonti documentali:**
+> - `aggiornamenti/IMU – Base imponibile e aliquote/imu_base_imponibile_aliquote.md`
+> - `aggiornamenti/IMU – Base imponibile e aliquote/Articoli operativi/novita_imu_bilancio_2024.md`
+> - `aggiornamenti/dossier_imu_2025.md`
 
 | Situazione | Aliquote da applicare |
 |------------|----------------------|
@@ -1374,7 +1489,8 @@ Per omesso versamento pluriennale: **regime continuazione attenuata**.
 | 2025-12-11 | **RISTRUTTURAZIONE SEZIONE 3** - Nuova organizzazione per flusso logico calcolo IMU |
 | 2025-12-11 | Da 29 sottosezioni disperse → 9 sezioni logiche (Presupposti → Base → Esenzioni → Riduzioni → Aliquote → Calcolo → Regionali → Adempimenti → Rapporti) |
 | 2025-12-11 | ENC distribuito nelle sezioni pertinenti (non regime separato) - IMIS/IMI aggiunti come voci complete |
-| 2025-12-11 | **Aggiunta mappatura fonti documentali** a tutte le sezioni 3.x (riferimenti a cartella `aggiornamenti/`) |
+| 2025-12-11 | **Aggiunta mappatura fonti documentali** a tutte le sezioni 3.x (riferimenti a cartella `aggiornamenti/`)
+| 2025-12-11 | **Allineamento sezione 2** al formato sezione 3: indice con stato implementazione (✅/🔶/⏳) e fonti documentali per ogni sottosezione |
 
 ---
 
