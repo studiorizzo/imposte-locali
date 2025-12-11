@@ -49,6 +49,8 @@
 | Specifiche tecniche IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/2024_IMU-IMPi_SpecificheTecniche_2024.04.24.md` | ✅ Analizzato |
 | Istruzioni modello IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` | ✅ Analizzato |
 | Modello IMU/IMPi (PDF) | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Modello_2024_Definitivo.pdf` | Riferimento visivo |
+| **Istruzioni modello IMU ENC** | `aggiornamenti/IMU - Dichiarazione/IMU_ENC_Istr_24-Definitivo.md` | ✅ Analizzato |
+| Modello IMU ENC (PDF) | `aggiornamenti/IMU - Dichiarazione/IMU_ENC_Modello_2024_Definitivo.pdf` | Riferimento visivo |
 
 ### 1.3 Strumenti Metodologici
 
@@ -1349,6 +1351,102 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 - Presentazione **esclusivamente telematica** (Fisconline/Entratel)
 - Dichiarazione **annuale** (non pluriennale come IMU/IMPi)
 
+#### Dichiarazione IMU ENC - Approfondimento
+
+**Fonte:** `IMU_ENC_Istr_24-Definitivo.md` - Istruzioni per la compilazione D.M. 18/07/2024
+
+**Soggetti obbligati:** Enti non commerciali ex art. 73, c. 1, lett. c) TUIR (enti pubblici e privati diversi dalle società che non hanno per oggetto esclusivo o principale l'esercizio di attività commerciale).
+
+**Obbligo dichiarazione ANNUALE:** A differenza del modello IMU/IMPi (efficacia pluriennale), la dichiarazione ENC **deve essere presentata ogni anno** (art. 1, c. 770, L. 160/2019) perché i parametri per determinare il rapporto proporzionale variano di anno in anno.
+
+**Struttura modello - 4 Quadri:**
+
+| Quadro | Contenuto | Note |
+|--------|-----------|------|
+| **A** | Immobili e relative utilizzazioni | Sempre da compilare, anche se totalmente esenti |
+| **B** | Rapporto proporzionale (utilizzo misto) | Solo se colonna 12 Quadro A barrata |
+| **C** | IMU dovuta per comune | Riepilogo versamenti |
+| **D** | Sottoscrizione dichiarazione | Firma rappresentante legale |
+
+**Quadro A - Colonne utilizzazione (11-17):**
+
+| Col. | Descrizione | Conseguenza |
+|------|-------------|-------------|
+| **11** | Attività meritevoli solo modalità NON commerciali | Totalmente esente |
+| **12** | Utilizzo misto (commerciale + non commerciale) | Compilare Quadro B |
+| **13** | Attività NON meritevoli | Totalmente imponibile |
+| **14** | Occupazione abusiva (art. 1, c. 759, lett. g-bis) | Esente con denuncia |
+| **15** | Non utilizzabile né disponibile (denuncia ex artt. 614 c.2 / 633 c.p.) | Esente (allegare denuncia) |
+| **16** | Comodato a ENC collegato (art. 1, c. 71, lett. a, L. 213/2023) | Verifica collegamento |
+| **17** | Strumentale senza esercizio attuale (art. 1, c. 71, lett. b, L. 213/2023) | Esente se strumentalità |
+
+**Codici attività (Quadro A, col. 19):**
+
+| Codice | Attività meritevole |
+|--------|---------------------|
+| 1 | Assistenziale |
+| 2 | Previdenziale |
+| 3 | Sanitaria |
+| 4 | Ricerca scientifica |
+| 5 | Didattica |
+| 6 | Ricettiva |
+| 7 | Culturale |
+| 8 | Ricreativa |
+| 9 | Sportiva |
+| 10 | Religione e culto |
+| 11 | Altre attività (non meritevoli) |
+
+**Rapporto proporzionale (Quadro B) - Art. 5 Reg. 200/2012:**
+
+| Criterio | Quando si applica | Formula |
+|----------|-------------------|---------|
+| **Spazio** (Sez. I) | Utilizzo promiscuo di parti immobile | mq non commerciale / mq totali × 100 |
+| **Tempo** (Sez. II) | Utilizzo temporaneo | giorni non comm. / giorni totali × 100 |
+| **Soggetti** (Sez. III) | Modalità non riconducibili artt. 3-4 | n. soggetti non comm. / n. totale × 100 |
+| **Miste** (Sez. IV) | Pluralità di attività | (spazio × tempo) / 100 |
+
+**Requisiti generali non commercialità (art. 3 Reg. 200/2012):**
+- **a)** Divieto distribuzione utili/avanzi gestione (salvo eccezioni per legge)
+- **b)** Obbligo reinvestire utili per sviluppo attività solidarietà sociale
+- **c)** Obbligo devoluzione patrimonio a ENC analogo in caso di scioglimento
+
+**Requisiti di settore (art. 4 Reg. 200/2012):**
+
+| Attività | Requisiti specifici |
+|----------|---------------------|
+| Assistenziali/Sanitarie | Accreditate/contrattualizzate OPPURE gratuite/corrispettivo simbolico (<50% mercato) |
+| Didattiche | Paritarie + non discriminazione + obblighi handicap + CCNL + standard strutture + pubblicità bilancio + gratuità/simbolico |
+| Ricettive | Accessibilità limitata a destinatari propri + discontinuità apertura (NO strutture alberghiere/paralberghiere) |
+| Culturali/Ricreative | Gratuite o corrispettivo simbolico (<50% mercato) |
+| Sportive | Discipline CONI, associazioni affiliate FSN/EPS, attività agonistica organizzata (NO mera messa a disposizione) |
+| Ricerca scientifica | Interesse collettivo, contributo alla conoscenza, pubblicazione risultati |
+
+**Interpretazione autentica (art. 1, c. 71, L. 213/2023):**
+
+| Concetto | Interpretazione |
+|----------|-----------------|
+| **"Posseduti"** (lett. a) | Include comodato a ENC funzionalmente/strutturalmente collegato (Cass. 27761/2023) |
+| **"Utilizzati"** (lett. b) | Strumentali anche senza esercizio attuale (se non cessazione definitiva strumentalità) |
+
+**Collegamento funzionale:** Attività comodatario accessorie/integrative rispetto ad attività istituzionali comodante (es. università + ESU per diritto allo studio).
+
+**Collegamento strutturale:** Comodatario appartiene alla stessa struttura del concedente ("compenetrazione").
+
+**Monitoraggio UE - Concluso:**
+- CGUE C-261/23 P del 5/9/2024: annullata decisione Commissione 2055/2016
+- Obbligo recupero ICI 2006-2011 decaduto
+- Procedura infrazione 2014/4202 chiusa
+- **Nuovo modello senza prospetto Monitoraggio UE**
+
+**Versamento IMU ENC:**
+
+| Scadenza | Rata |
+|----------|------|
+| **16 giugno** | Acconto (aliquote anno precedente) |
+| **16 dicembre** | Saldo a conguaglio |
+
+**Codici tributo F24:** Identici a IMU ordinaria (3912, 3913, 3914, 3916, 3918, 3925, 3930).
+
 **Novità D.M. 24/04/2024 rispetto a D.M. 29/07/2022:**
 
 | Novità | Riferimento | Dettaglio |
@@ -1859,6 +1957,14 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-11 | Tabella compilazione Quadro A - mapping campi dichiarazione |
 | 2025-12-11 | Canone concordato: NO obbligo dichiarativo (info via Puntofisco) |
 | 2025-12-11 | Regole compilazione multipla per più vicende stesso immobile |
+| 2025-12-11 | **Analisi Istruzioni modello IMU ENC** - D.M. 18/07/2024 |
+| 2025-12-11 | Aggiunta sezione "Dichiarazione IMU ENC - Approfondimento" in 6.24 |
+| 2025-12-11 | Struttura 4 Quadri ENC (A-D), colonne utilizzazione 11-17 |
+| 2025-12-11 | Tabella codici attività ENC (1-11: assistenziale → altre attività) |
+| 2025-12-11 | Calcolo rapporto proporzionale (spazio, tempo, soggetti, miste) |
+| 2025-12-11 | Requisiti generali/settore non commercialità (artt. 3-4 Reg. 200/2012) |
+| 2025-12-11 | Interpretazione autentica ENC (L. 213/2023): collegamento funzionale/strutturale |
+| 2025-12-11 | Monitoraggio UE concluso: CGUE C-261/23 P annulla decisione Commissione 2055/2016 |
 
 ---
 
@@ -1889,6 +1995,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **D.M. 7/7/2023** | Prospetto aliquote obbligatorio | - |
 | **D.M. 6/9/2024** | Proroga prospetto aliquote al 2025 | - |
 | **D.L. 84/2025, art. 6-bis** | ENC attività sportive semplificazione | - |
+| **D.M. 19/11/2012, n. 200** | Regolamento esenzione ENC - requisiti generali e di settore | - |
+| **D.L. 1/2012, art. 91-bis** | Esenzione IMU enti non commerciali | - |
+| **D.M. 18/7/2024** | Approvazione modello IMU ENC (sostituisce D.M. 4/5/2023) | - |
 | **L. 108/2025, art. 6** | Proroga delibere Prospetto IMU al 15/9/2025 | - |
 | **D.M. MEF 14/3/2025** | Coefficienti fabbricati gruppo D non catastati | - |
 | **L. 213/2023 (Bilancio 2024)** | Novità IMU 2024 (ENC, termini, sisma) | - |
@@ -1946,6 +2055,8 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Cass. 9529/2023** | Aree fabbricabili: conferma parametri tassativi per valutazione |
 | **Cass. 11445/2018** | Aree fabbricabili: parametri vincolanti D.Lgs. 504/1992 |
 | **Cass. 8073/2019** | ENC comodato: esenzione se "compenetrazione" tra enti |
+| **Cass. 27761/2023** | ENC collegamento funzionale: Università + ESU = esenzione IMU |
+| **CGUE C-261/23 P (5/9/2024)** | Annulla decisione Commissione 2055/2016 - fine obbligo recupero ICI 2006-2011 |
 
 > ⚠️ **CONFLITTO GIURISPRUDENZIALE NON RISOLTO** (Leasing immobiliare):
 > - **Cass. 13793/2019**: Dopo risoluzione anticipata, IMU in capo al **LOCATORE** (società di leasing)
