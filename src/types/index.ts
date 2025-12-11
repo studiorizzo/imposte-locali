@@ -118,7 +118,7 @@ export interface RiepilogoIMU {
 // Configurazione comune
 export interface ConfigurazioneComune {
   codice: string;
-  nome: string;
+  comune: string;
   provincia: string;
 
   // Aliquote deliberate
