@@ -11,13 +11,12 @@
 ## INDICE
 
 1. [Fonte Dati](#1-fonte-dati)
-2. [Analisi Excel Originale 2022](#2-analisi-excel-originale-2022) *(→ documento esterno)*
-3. [Normativa IMU 2025](#3-normativa-imu-2025)
-4. [Modifiche Necessarie](#4-modifiche-necessarie)
-5. [Funzionalità App 2025](#5-funzionalità-app-2025)
-6. [Specifiche Validate](#6-specifiche-validate)
-7. [Changelog](#7-changelog)
-8. [Riferimenti Normativi](#8-riferimenti-normativi)
+2. [Normativa IMU 2025](#2-normativa-imu-2025)
+3. [Modifiche Necessarie](#3-modifiche-necessarie)
+4. [Funzionalità App 2025](#4-funzionalità-app-2025)
+5. [Specifiche Validate](#5-specifiche-validate)
+6. [Changelog](#6-changelog)
+7. [Riferimenti Normativi](#7-riferimenti-normativi)
 
 ---
 
@@ -25,15 +24,16 @@
 
 ### 1.1 Excel Originale
 
-| Attributo | Valore |
-|-----------|--------|
-| File | `excel-originale/fiscaleDoc_10SM0000003516.xls` |
-| Versione | 1.3 |
-| Data versione | Giugno 2022 |
-| Autore | Saverio Cinieri |
-| Copyright | Wolters Kluwer Italia S.r.l. – Ipsoa |
-| Normativa base | Art. 13, D.L. 6 dicembre 2011, n. 201 |
-| **Stato normativa** | **ABROGATA dal 01/01/2020** |
+**File:** `excel-originale/fiscaleDoc_10SM0000003516.xlsm`
+
+**Analisi completa:** [docs/EXCEL_2022_ANALISI.md](docs/EXCEL_2022_ANALISI.md)
+- Struttura degli 11 fogli Excel
+- Costanti e coefficienti
+- Formule estratte per ogni tipo di immobile
+- Codici tributo F24
+- Note migrazione a IMU 2025
+
+> La logica è stata reimplementata in `src/utils/calcolo.ts`
 
 ### 1.2 Documentazione IMU 2025
 
@@ -67,35 +67,16 @@
 
 ---
 
-## 2. ANALISI EXCEL ORIGINALE 2022
+## 2. NORMATIVA IMU 2025
 
-> **Documentazione di archivio** - Il dettaglio completo delle formule e struttura dell'Excel originale
-> è stato spostato in un documento dedicato per mantenere SPECS.md più snello e navigabile.
-
-**Vedi:** [docs/EXCEL_2022_ANALISI.md](docs/EXCEL_2022_ANALISI.md)
-
-**Contenuto del documento:**
-- Struttura degli 11 fogli Excel
-- Costanti e coefficienti (foglio "Oggetti")
-- Formule estratte per ogni tipo di immobile (Terreni, Fabbricati, Aree)
-- Codici tributo F24
-- Note sulle differenze con IMU 2025
-
-> **Nota**: La logica delle formule Excel è stata reimplementata in `src/utils/calcolo.ts`.
-> Le differenze tra Excel 2022 e normativa IMU 2025 sono documentate nella [Sezione 4](#4-tabella-confronto-2022-vs-2025).
-
----
-
-## 3. NORMATIVA IMU 2025
-
-### 3.1 Base Giuridica
+### 2.1 Base Giuridica
 
 | Norma | Stato |
 |-------|-------|
 | Art. 1, L. 27/12/2019, n. 160 | **VIGENTE** dal 01/01/2020 |
 | Art. 13, D.L. 06/12/2011, n. 201 | ABROGATA |
 
-### 3.2 Coefficienti Moltiplicatori (2025)
+### 2.2 Coefficienti Moltiplicatori (2025)
 
 | Categorie | Coefficiente | Note |
 |-----------|--------------|------|
@@ -108,7 +89,7 @@
 | D/1 - D/10 (escluso D/5) | 65 | |
 | D/5 | 80 | |
 
-### 3.2.1 Coefficienti Fabbricati Gruppo D Non Iscritti in Catasto (DM 14/3/2025)
+### 2.2.1 Coefficienti Fabbricati Gruppo D Non Iscritti in Catasto (DM 14/3/2025)
 
 **Ambito di applicazione:** Fabbricati classificabili nel gruppo catastale D che siano:
 - Non iscritti in catasto con attribuzione di rendita
@@ -137,7 +118,7 @@
 
 > **Fonte:** D.M. MEF 14 marzo 2025; art. 1, comma 746, L. 160/2019; art. 5, comma 3, D.Lgs. 504/1992
 
-### 3.3 Aliquote Base 2025
+### 2.3 Aliquote Base 2025
 
 | Fattispecie | Base | Min | Max |
 |-------------|------|-----|-----|
@@ -150,7 +131,7 @@
 
 > **Nota**: Maggiorazione +0,08% in sostituzione TASI (c. 755)
 
-### 3.4 Esenzioni 2025
+### 2.4 Esenzioni 2025
 
 | Fattispecie | Stato |
 |-------------|-------|
@@ -160,7 +141,7 @@
 | Immobili occupati abusivamente | ESENTI (dal 2023) |
 | Fabbricati collabenti F/2 | ESCLUSI |
 
-### 3.5 Riduzioni 2025
+### 2.5 Riduzioni 2025
 
 | Riduzione | Tipo | Condizioni |
 |-----------|------|------------|
@@ -170,21 +151,21 @@
 | **25% aliquota** | Canone concordato | Art. 2 c.3 L. 431/1998 |
 | 50% base | Pensionati esteri | Un solo immobile, non locato |
 
-### 3.6 Detrazioni 2025
+### 2.6 Detrazioni 2025
 
 | Tipo | Importo | Note |
 |------|---------|------|
 | Base abitazione principale | **€200** | Solo A/1, A/8, A/9 |
 | Per figli < 26 anni | **€0** | **ABOLITA dal 2014** |
 
-### 3.7 Quote Stato/Comune
+### 2.7 Quote Stato/Comune
 
 | Tipologia | Quota Stato | Quota Comune |
 |-----------|-------------|--------------|
 | Gruppo D | 0,76% | Eccedenza |
 | Tutto il resto | 0% | 100% |
 
-### 3.8 Soggetti Passivi (art. 1, c. 743)
+### 2.8 Soggetti Passivi (art. 1, c. 743)
 
 | Soggetto | Condizione |
 |----------|------------|
@@ -199,7 +180,7 @@
 - Si considera la singola quota di possesso
 - Esenzioni/agevolazioni applicate **individualmente**
 
-### 3.9 Regola del Mese (art. 1, c. 761)
+### 2.9 Regola del Mese (art. 1, c. 761)
 
 L'imposta è proporzionale ai mesi di possesso:
 
@@ -209,7 +190,7 @@ L'imposta è proporzionale ai mesi di possesso:
 | Giorno di trasferimento | A carico dell'**acquirente** |
 | Giorni possesso uguali (cedente = acquirente) | Mese intero all'**acquirente** |
 
-### 3.10 Immobili Assimilati ad Abitazione Principale (art. 1, c. 741, lett. c)
+### 2.10 Immobili Assimilati ad Abitazione Principale (art. 1, c. 741, lett. c)
 
 | Fattispecie | Note |
 |-------------|------|
@@ -228,20 +209,20 @@ L'imposta è proporzionale ai mesi di possesso:
 **Locazione parziale abitazione principale** (CTR Abruzzo 8/2022):
 - **Mantiene esenzione** anche se parte dell'immobile è locata
 
-### 3.11 Aree Pertinenziali (Circ. 1/DF del 18/3/2020, par. 8)
+### 2.11 Aree Pertinenziali (Circ. 1/DF del 18/3/2020, par. 8)
 
 | Situazione | Trattamento |
 |------------|-------------|
 | Accatastate unitariamente al fabbricato (anche "graffatura") | **Pertinenza** |
 | Non accatastate unitariamente | **Area fabbricabile** (soggetta autonomamente) |
 
-### 3.12 Valori Venali Aree Fabbricabili (art. 1, c. 777, lett. d)
+### 2.12 Valori Venali Aree Fabbricabili (art. 1, c. 777, lett. d)
 
 I Comuni possono determinare **valori venali per zone omogenee**.
 
 **Effetto**: Se il contribuente versa su valore ≥ valore predeterminato dal Comune → **limitazione potere di accertamento**.
 
-### 3.13 Aliquote per il Saldo
+### 2.13 Aliquote per il Saldo
 
 | Situazione | Aliquote da applicare |
 |------------|----------------------|
@@ -250,24 +231,24 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ---
 
-## 4. MODIFICHE NECESSARIE (rispetto a Excel 2022)
+## 3. MODIFICHE NECESSARIE (rispetto a Excel 2022)
 
 > **Stato complessivo:** 9/10 implementate (90%)
 
-### 4.1 Priorità ALTA (🔴) - ✅ COMPLETATE
+### 3.1 Priorità ALTA (🔴) - ✅ COMPLETATE
 
 1. ✅ **Rimuovere detrazione figli** → Solo `DETRAZIONE_ABITAZIONE_PRINCIPALE = 200`
 2. ✅ **Terreni CD/IAP → esenzione** → Flag `terrenoCdIap` in `Esenzioni`
 3. ✅ **Quota Stato solo gruppo D** → `calcolaQuoteGruppoD()` con `QUOTA_STATO_GRUPPO_D = 0.76`
 4. ✅ **Riferimento L. 160/2019** → Commenti e documentazione aggiornati
 
-### 4.2 Priorità MEDIA (🟡) - ✅ COMPLETATE
+### 3.2 Priorità MEDIA (🟡) - ✅ COMPLETATE
 
 5. ✅ **Aliquote base aggiornate** → `ALIQUOTE_BASE` (0.50%, 0.10%, 0.86%)
 6. ✅ **Coefficiente A/11** → `'A/11': 160` in `COEFFICIENTI`
 7. ✅ **Riferimenti temporali dinamici** → Parametro `anno` nelle funzioni
 
-### 4.3 Priorità BASSA (🟢) - 2/3 COMPLETATE
+### 3.3 Priorità BASSA (🟢) - 2/3 COMPLETATE
 
 8. ✅ **Nuove esenzioni** → `beneMerce`, `occupatoAbusivamente`, `collabente` in `Esenzioni`
 9. ✅ **Pensionati esteri** → `pensionatoEstero` in `Riduzioni` (riduzione 50%)
@@ -275,7 +256,7 @@ I Comuni possono determinare **valori venali per zone omogenee**.
 
 ---
 
-## 5. FUNZIONALITÀ APP 2025
+## 4. FUNZIONALITÀ APP 2025
 
 > Funzionalità aggiuntive rispetto all'Excel originale 2022, basate sulla documentazione normativa analizzata.
 
@@ -1445,9 +1426,9 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 ---
 
-## 6. SPECIFICHE VALIDATE
+## 5. SPECIFICHE VALIDATE
 
-### 6.1 Formule Confermate
+### 5.1 Formule Confermate
 
 #### Base Imponibile Fabbricati
 ```
@@ -1485,7 +1466,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 ```
 ✅ **VALIDATA** - Art. 1, c. 760, L. 160/2019
 
-### 6.2 Coefficienti Validati
+### 5.2 Coefficienti Validati
 
 | Categoria | Coefficiente | Fonte | Stato |
 |-----------|--------------|-------|-------|
@@ -1499,7 +1480,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | D (no D/5, D/10) | 65 | c. 745 | ✅ |
 | D/5 | 80 | c. 745 | ✅ |
 
-### 6.3 Aliquote Base Validate
+### 5.3 Aliquote Base Validate
 
 | Fattispecie | Aliquota Base | Fonte | Stato |
 |-------------|---------------|-------|-------|
@@ -1510,7 +1491,7 @@ ALIQUOTA_EFFETTIVA = ALIQUOTA_DELIBERATA × 0.75
 | Altri fabbricati | 0,86% | c. 754 | ✅ |
 | Aree fabbricabili | 0,86% | c. 754 | ✅ |
 
-### 6.4 Esempi Pratici di Calcolo
+### 5.4 Esempi Pratici di Calcolo
 
 #### Esempio 1: Appartamento A/2
 
@@ -1592,7 +1573,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 
 ---
 
-## 7. CHANGELOG
+## 6. CHANGELOG
 
 | Data | Modifica |
 |------|----------|
@@ -1702,9 +1683,9 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 
 ---
 
-## 8. RIFERIMENTI NORMATIVI
+## 7. RIFERIMENTI NORMATIVI
 
-### 8.1 Leggi e Decreti
+### 7.1 Leggi e Decreti
 
 | Norma | Contenuto | Markdown |
 |-------|-----------|----------|
@@ -1742,7 +1723,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **D.L. 189/2016** | Elenco comuni colpiti da sisma 2016-2017 | - |
 | **L.R. FVG 17/2022** | Istituzione ILIA Friuli Venezia Giulia | - |
 
-### 8.2 Circolari e Risoluzioni MEF
+### 7.2 Circolari e Risoluzioni MEF
 
 | Documento | Contenuto | Markdown |
 |-----------|-----------|----------|
@@ -1756,7 +1737,7 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | **Ris. 3/DF 2015** | Dichiarazione IMU - modalità | - |
 | **Circ. 2/DF 2015** | Dichiarazione IMU - obblighi | - |
 
-### 8.3 Giurisprudenza
+### 7.3 Giurisprudenza
 
 | Pronuncia | Contenuto |
 |-----------|-----------|
