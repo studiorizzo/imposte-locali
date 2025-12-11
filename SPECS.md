@@ -50,6 +50,7 @@
 | Istruzioni modello IMU/IMPi | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Istruzioni_2024_Definitivo-24.04.2024.md` | ✅ Analizzato |
 | Modello IMU/IMPi (PDF) | `aggiornamenti/IMU - Dichiarazione/IMU_IMPi_Modello_2024_Definitivo.pdf` | Riferimento visivo |
 | **Istruzioni modello IMU ENC** | `aggiornamenti/IMU - Dichiarazione/IMU_ENC_Istr_24-Definitivo.md` | ✅ Analizzato |
+| **Specifiche tecniche IMU ENC** | `aggiornamenti/IMU - Dichiarazione/2024_ENC_SpecificheTecniche_2024.04.24.md` | ✅ Analizzato |
 | Modello IMU ENC (PDF) | `aggiornamenti/IMU - Dichiarazione/IMU_ENC_Modello_2024_Definitivo.pdf` | Riferimento visivo |
 
 ### 1.3 Strumenti Metodologici
@@ -1447,6 +1448,118 @@ Questa mappatura definisce la corrispondenza tra le voci della checklist profess
 
 **Codici tributo F24:** Identici a IMU ordinaria (3912, 3913, 3914, 3916, 3918, 3925, 3930).
 
+#### Specifiche tecniche trasmissione telematica IMU ENC
+
+**Fonte:** `2024_ENC_SpecificheTecniche_2024.04.24.md`
+
+**Struttura record:** 1.900 caratteri fissi per record, limite fornitura **3 MB compressi** (come IMU/IMPi).
+
+**Tipi record:**
+
+| Tipo | Contenuto | Note |
+|------|-----------|------|
+| **A** | Testa fornitura | Dati fornitore, tipologia dichiarazione |
+| **B** | Frontespizio | Dati contribuente, rappresentante, comune |
+| **C** | Quadro A | **2 immobili** per record (totalmente imponibili/esenti) |
+| **D** | Quadro B | **1 immobile** per record (parzialmente imponibili/esenti) |
+| **E** | Quadri C + D | Determinazione IMU, compensazioni |
+| **Z** | Coda fornitura | Riepilogo record |
+
+**Regola dichiarazione per comune:** Una singola dichiarazione deve riferirsi a immobili di un **singolo comune**. Tante dichiarazioni quanti sono i comuni.
+
+**Tipologia dichiarazione (Record A, campo 6):**
+
+| Codice | Tipo | Controllo |
+|--------|------|-----------|
+| **N** | Nuova | Scarto se esiste già per anno/comune/CF |
+| **S** | Sostitutiva | Scarto se NON esiste precedente |
+| **M** | Multipla | Per invii successivi al primo (dimensione > 3MB) |
+
+**Codici caratteristiche immobile (Record C/D, campo 9/19):**
+
+| Codice | Descrizione |
+|--------|-------------|
+| 1 | Terreno |
+| 2 | Area fabbricabile |
+| 3 | Fabbricato - valore da rendita catastale |
+| 4 | Fabbricato gruppo D - valore da scritture contabili |
+
+**Codici riduzioni ENC (Record C, campo 24):**
+
+| Codice | Riduzione |
+|--------|-----------|
+| 0 | Nessuna riduzione |
+| 1 | Immobile storico/artistico |
+| 2 | Immobile inagibile/inabitabile |
+| 3 | Altre riduzioni |
+
+**Codici esenzioni ENC - Quadro A (Record C, campo 25):**
+
+| Codice | Esenzione |
+|--------|-----------|
+| 0 | Nessuna esenzione |
+| 1 | Immobili non utilizzabili né disponibili (occupazione abusiva) |
+| 2 | Esenzione quadro temporaneo Aiuti di Stato |
+| 3 | Altre esenzioni |
+
+**Tipologia attività svolta - Quadro B (Record D, campi 9-18):**
+
+| Campo | Attività | Checkbox |
+|-------|----------|----------|
+| 9 | Assistenziali | CB |
+| 10 | Previdenziali | CB |
+| 11 | Sanitarie | CB |
+| 12 | Didattiche | CB |
+| 13 | Ricettive | CB |
+| 14 | Culturali | CB |
+| 15 | Ricreative | CB |
+| 16 | Sportive | CB |
+| 17 | Religione e culto | CB |
+| 18 | Ricerca scientifica | CB |
+
+**Comodato/Immobili strutturali (Record D, campo 44):**
+
+| Codice | Tipo |
+|--------|------|
+| 1 | Comodato (art. 1, c. 71, lett. a, L. 213/2023) |
+| 2 | Immobili strumentali (art. 1, c. 71, lett. b, L. 213/2023) |
+
+**Calcolo attività didattica (Record D, campi 46-67):**
+
+| Variabile | Descrizione |
+|-----------|-------------|
+| **Cm** | Corrispettivo medio percepito dall'ENC |
+| **Cms** | Costo medio studente (pubblicato dal Ministero) |
+| Se Cm < Cms | Esenzione totale attività didattica |
+| Se Cm ≥ Cms | Valore imponibile = Valore × (1 - Cms/Cm) |
+
+**Calcolo altre attività (Record D, campi 68-82):**
+
+| Variabile | Descrizione |
+|-----------|-------------|
+| **Cenc** | Corrispettivo medio percepito dall'ENC |
+| **Cm** | Corrispettivo medio mercato stesso ambito territoriale |
+| Criterio | Simbolicità se < 50% del corrispettivo medio mercato |
+
+**Importi in centesimi:** Campi Cm, Cms, Cenc e valori attività didattica/altre attività sono espressi in **centesimi senza virgola** (es. €100,00 = 10000).
+
+**Codice carica dichiarante ENC (Record B, campo 25):**
+
+| Codice | Descrizione |
+|--------|-------------|
+| 1 | Rappresentante legale, negoziale o di fatto |
+| 2 | Rappresentante minore/inabilitato/interdetto, curatore, amministratore sostegno |
+| 3 | Curatore fallimentare / liquidazione giudiziale |
+| 4 | Commissario liquidatore |
+| 5 | Custode giudiziario, commissario giudiziale |
+| 6 | Rappresentante fiscale non residente |
+| 7 | Erede |
+| 8 | Liquidatore (volontaria) |
+| 9 | Soggetto per operazioni straordinarie |
+| 10 | Tutore minore/interdetto (funzione istituzionale) |
+| 11 | Liquidatore ditta individuale (ante liquidazione) |
+| 12 | Amministratore di condominio |
+
 **Novità D.M. 24/04/2024 rispetto a D.M. 29/07/2022:**
 
 | Novità | Riferimento | Dettaglio |
@@ -1965,6 +2078,15 @@ CODICE TRIBUTO F24: 3914 (terreni - COMUNE)
 | 2025-12-11 | Requisiti generali/settore non commercialità (artt. 3-4 Reg. 200/2012) |
 | 2025-12-11 | Interpretazione autentica ENC (L. 213/2023): collegamento funzionale/strutturale |
 | 2025-12-11 | Monitoraggio UE concluso: CGUE C-261/23 P annulla decisione Commissione 2055/2016 |
+| 2025-12-11 | **Analisi Specifiche tecniche IMU ENC** - Trasmissione telematica D.M. 24/04/2024 |
+| 2025-12-11 | Aggiunta sezione "Specifiche tecniche trasmissione telematica IMU ENC" in 6.24 |
+| 2025-12-11 | Struttura record ENC: tipi A/B/C/D/E/Z, 1.900 chars, 3MB limite |
+| 2025-12-11 | Tipologia dichiarazione ENC: N (nuova), S (sostitutiva), M (multipla) |
+| 2025-12-11 | Codici caratteristiche/riduzioni/esenzioni ENC (record C/D) |
+| 2025-12-11 | Tipologia attività svolta ENC: 10 checkbox (campi 9-18 record D) |
+| 2025-12-11 | Calcolo attività didattica: Cm vs Cms (esenzione se Cm < Cms) |
+| 2025-12-11 | Calcolo altre attività: Cenc vs Cm (simbolicità < 50% mercato) |
+| 2025-12-11 | Comodato/immobili strutturali: codici 1-2 (art. 1, c. 71, L. 213/2023) |
 
 ---
 
