@@ -1,0 +1,39 @@
+{
+  "id_prospetto": 12445,
+  "comune": "SERRACAPRIOLA",
+  "codice_catastale": "I641",
+  "provincia": "FG",
+  "anno": 2026,
+  "delibera": {
+    "numero": "26",
+    "data": "21/11/2025",
+    "organo": "Consiglio comunale"
+  },
+  "comune_fusione": false,
+  "aliquote": {
+    "abitazione_principale_lusso": 0.6,
+    "assimilazione_anziani_disabili": false,
+    "fabbricati_rurali_strumentali": 0.1,
+    "fabbricati_gruppo_d": 1.05,
+    "terreni_agricoli": 0.76,
+    "aree_fabbricabili": 0.91,
+    "altri_fabbricati": 1.05
+  },
+  "aliquote_speciali": [
+    {
+      "tipo_immobile": "terreni_agricoli",
+      "aliquota": 0.0,
+      "condizione": "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)"
+    },
+    {
+      "tipo_immobile": "altri_fabbricati",
+      "aliquota": 1.04,
+      "condizione": "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità"
+    }
+  ],
+  "esenzioni_comunali": [],
+  "note": null,
+  "file_sorgente": "12445_DIMUNIC-13fg26i641d.pdf",
+  "data_generazione_prospetto": "27/11/2025",
+  "data_estrazione": "2025-12-11"
+}

@@ -1,0 +1,37 @@
+{
+  "id_prospetto": 13529,
+  "comune": "CASALNUOVO MONTEROTARO",
+  "codice_catastale": "B904",
+  "provincia": "FG",
+  "anno": 2026,
+  "delibera": {
+    "numero": "55",
+    "data": "26/11/2025",
+    "organo": "Consiglio comunale"
+  },
+  "comune_fusione": false,
+  "aliquote": {
+    "abitazione_principale_lusso": 0.5,
+    "assimilazione_anziani_disabili": true,
+    "fabbricati_rurali_strumentali": 0.0,
+    "fabbricati_gruppo_d": 0.93,
+    "terreni_agricoli": null,
+    "aree_fabbricabili": 0.93,
+    "altri_fabbricati": 0.93
+  },
+  "esenzioni_legge": {
+    "terreni_agricoli": "Esenti ai sensi dell'art. 1, comma 758, della legge 27 dicembre 2019, n. 160"
+  },
+  "aliquote_speciali": [],
+  "esenzioni_comunali": [
+    {
+      "tipo": "comodato_gratuito",
+      "riferimento_normativo": "art. 1, comma 777, lett. e), della legge n. 160 del 2019",
+      "descrizione": "Immobili dati in comodato gratuito al comune esclusivamente per l'esercizio dei relativi scopi istituzionali"
+    }
+  ],
+  "note": "Comune montano - terreni agricoli esenti per legge",
+  "file_sorgente": "13529_DIMUNIC-13fg26b904d.pdf",
+  "data_generazione_prospetto": "05/12/2025",
+  "data_estrazione": "2025-12-11"
+}

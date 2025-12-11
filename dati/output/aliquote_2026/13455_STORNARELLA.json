@@ -1,0 +1,28 @@
+{
+  "id_prospetto": 13455,
+  "comune": "STORNARELLA",
+  "codice_catastale": "I963",
+  "provincia": "FG",
+  "anno": 2026,
+  "delibera": {
+    "numero": "29",
+    "data": "28/11/2025",
+    "organo": "Consiglio comunale"
+  },
+  "comune_fusione": false,
+  "aliquote": {
+    "abitazione_principale_lusso": 0.2,
+    "assimilazione_anziani_disabili": false,
+    "fabbricati_rurali_strumentali": 0.1,
+    "fabbricati_gruppo_d": 1.06,
+    "terreni_agricoli": 0.76,
+    "aree_fabbricabili": 1.0,
+    "altri_fabbricati": 1.0
+  },
+  "aliquote_speciali": [],
+  "esenzioni_comunali": [],
+  "note": null,
+  "file_sorgente": "13455_DIMUNIC-13fg26i963d.pdf",
+  "data_generazione_prospetto": "10/12/2025",
+  "data_estrazione": "2025-12-11"
+}

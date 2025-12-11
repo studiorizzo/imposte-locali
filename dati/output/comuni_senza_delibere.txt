@@ -1,0 +1,58 @@
+COMUNI PUGLIA SENZA DELIBERE IMU (da verificare su sito MEF)
+============================================================
+
+
+--- BA (7 comuni) ---
+Bari - A662
+Bitritto - A894
+Modugno - F262
+Mola di Bari - F280
+Rutigliano - H643
+Santeramo in Colle - I330
+Triggiano - L425
+
+--- FG (14 comuni) ---
+Anzano di Puglia - A320
+Bovino - B104
+Celenza Valfortore - C429
+Deliceto - D269
+Ischitella - E332
+Isole Tremiti - E363
+Orsara di Puglia - G125
+Peschici - G487
+Pietramontecorvino - G604
+San Giovanni Rotondo - H926
+San Marco la Catola - H986
+San Nicandro Garganico - I054
+Sant'Agata di Puglia - I193
+Zapponeta - M267
+
+--- LE (22 comuni) ---
+Andrano - A281
+Calimera - B413
+Casarano - B936
+Gagliano del Capo - D851
+Giuggianello - E053
+Lizzanello - E629
+Martignano - E984
+Melendugno - F101
+Morciano di Leuca - F716
+Patù - G378
+Racale - H147
+Salice Salentino - H708
+San Cassiano - M264
+San Cesario di Lecce - H793
+San Pietro in Lama - I115
+Scorrano - I549
+Spongano - I923
+Taurisano - L064
+Trepuzzi - L383
+Tuglie - L462
+Ugento - L484
+Veglie - L711
+
+--- TA (4 comuni) ---
+Castellaneta - C136
+Grottaglie - E205
+Monteparano - F587
+San Marzano di San Giuseppe - I018

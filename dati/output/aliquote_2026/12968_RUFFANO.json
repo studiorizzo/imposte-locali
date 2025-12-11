@@ -1,0 +1,58 @@
+{
+  "id_prospetto": 12968,
+  "comune": "RUFFANO",
+  "codice_catastale": "H632",
+  "provincia": "LE",
+  "anno": 2026,
+  "delibera": {
+    "numero": "29",
+    "data": "28/11/2025",
+    "organo": "Commissario con i poteri del Consiglio comunale"
+  },
+  "comune_fusione": false,
+  "aliquote": {
+    "abitazione_principale_lusso": 0.5,
+    "assimilazione_anziani_disabili": true,
+    "fabbricati_rurali_strumentali": 0.1,
+    "fabbricati_gruppo_d": 1.06,
+    "terreni_agricoli": null,
+    "aree_fabbricabili": 1.06,
+    "altri_fabbricati": 1.06
+  },
+  "esenzioni_legge": {
+    "terreni_agricoli": "Esenti ai sensi dell'art. 1, comma 758, della legge 27 dicembre 2019, n. 160"
+  },
+  "aliquote_speciali": [
+    {
+      "tipo_immobile": "fabbricati_gruppo_d",
+      "aliquota": 0.86,
+      "categorie_catastali": ["D/1"],
+      "condizione": "Opifici - Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo - Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni"
+    },
+    {
+      "tipo_immobile": "altri_fabbricati",
+      "aliquota": 0.86,
+      "categorie_catastali": ["A/10", "C/1", "C/3"],
+      "condizione": "Uffici e studi privati, Negozi e botteghe, Laboratori per arti e mestieri - Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo - Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni"
+    }
+  ],
+  "esenzioni_comunali": [
+    {
+      "tipo": "comodato_gratuito",
+      "riferimento_normativo": "art. 1, comma 777, lett. e), della legge n. 160 del 2019",
+      "riferimento_regolamento": "Articolo 16",
+      "descrizione": "Immobili dati in comodato gratuito registrato al comune o ad altro ente territoriale, o ad ente non commerciale, esclusivamente per l'esercizio dei rispettivi scopi istituzionali"
+    },
+    {
+      "tipo": "onlus_terzo_settore",
+      "riferimento_normativo": "d.m. n. 200/2012 del Ministero dell'Economia e delle Finanze",
+      "riferimento_regolamento": "Articolo 12",
+      "descrizione": "Immobili di proprietà di ONLUS o enti del terzo settore",
+      "condizioni": "Gli immobili utilizzati dalle ONLUS sono tenuti al versamento solo della quota di IMU statale se dovuta; tale agevolazione si applica a condizione che gli stessi, oltre che utilizzati, siano anche posseduti dalla ONLUS e comunque destinati alle attività indicate nel d.m. n. 200/2012"
+    }
+  ],
+  "note": "Comune commissariato - terreni agricoli esenti per legge",
+  "file_sorgente": "12968_DIMUNIC-13le26h632d.pdf",
+  "data_generazione_prospetto": "03/12/2025",
+  "data_estrazione": "2025-12-11"
+}
