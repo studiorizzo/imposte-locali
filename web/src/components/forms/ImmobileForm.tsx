@@ -22,6 +22,19 @@ const CATEGORIE_OPTIONS = Object.keys(COEFFICIENTI).map((cat) => ({
   label: cat,
 }));
 
+// Categorie filtrate per tipo immobile
+// A/10 escluso: "Uffici e studi privati" non è residenziale
+const CATEGORIE_ABITAZIONE_PRINCIPALE = ['A/1', 'A/2', 'A/3', 'A/4', 'A/5', 'A/6', 'A/7', 'A/8', 'A/9', 'A/11'];
+
+const getCategoriePerTipo = (tipo: TipoImmobile) => {
+  switch (tipo) {
+    case 'abitazione_principale':
+      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_ABITAZIONE_PRINCIPALE.includes(opt.value));
+    default:
+      return CATEGORIE_OPTIONS;
+  }
+};
+
 const getDefaultAliquota = (tipo: TipoImmobile): number => {
   switch (tipo) {
     case 'abitazione_principale':
@@ -74,11 +87,18 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
     setImmobile((prev) => {
       const updated = { ...prev, [field]: value };
 
-      // Auto-update aliquote when tipo changes
+      // Auto-update aliquote and categoria when tipo changes
       if (field === 'tipo') {
-        const defaultAliquota = getDefaultAliquota(value as TipoImmobile);
+        const newTipo = value as TipoImmobile;
+        const defaultAliquota = getDefaultAliquota(newTipo);
         updated.aliquotaAcconto = defaultAliquota;
         updated.aliquotaSaldo = defaultAliquota;
+
+        // Reset categoria se non valida per il nuovo tipo
+        const categorieValide = getCategoriePerTipo(newTipo);
+        if (!categorieValide.some(opt => opt.value === prev.categoria)) {
+          updated.categoria = categorieValide[0]?.value as CategoriaCatastale || 'A/2';
+        }
       }
 
       return updated;
@@ -132,7 +152,7 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
                   label="Categoria Catastale"
                   value={immobile.categoria}
                   onChange={(e) => handleChange('categoria', e.target.value as CategoriaCatastale)}
-                  options={CATEGORIE_OPTIONS}
+                  options={getCategoriePerTipo(immobile.tipo)}
                 />
               )}
             </div>
