@@ -23,7 +23,8 @@ const CATEGORIE_OPTIONS = Object.keys(COEFFICIENTI).map((cat) => ({
 }));
 
 // Categorie filtrate per tipo immobile
-const CATEGORIE_ABITAZIONE_PRINCIPALE = ['A/1', 'A/2', 'A/3', 'A/4', 'A/5', 'A/6', 'A/7', 'A/8', 'A/9', 'A/10', 'A/11'];
+// A/10 escluso: "Uffici e studi privati" non è residenziale
+const CATEGORIE_ABITAZIONE_PRINCIPALE = ['A/1', 'A/2', 'A/3', 'A/4', 'A/5', 'A/6', 'A/7', 'A/8', 'A/9', 'A/11'];
 
 const getCategoriePerTipo = (tipo: TipoImmobile) => {
   switch (tipo) {
