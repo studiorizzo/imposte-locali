@@ -22,14 +22,20 @@ const CATEGORIE_OPTIONS = Object.keys(COEFFICIENTI).map((cat) => ({
   label: cat,
 }));
 
-// Categorie filtrate per tipo immobile
-// A/10 escluso: "Uffici e studi privati" non è residenziale
-const CATEGORIE_ABITAZIONE_PRINCIPALE = ['A/1', 'A/2', 'A/3', 'A/4', 'A/5', 'A/6', 'A/7', 'A/8', 'A/9', 'A/11'];
+// Categorie filtrate per tipo immobile secondo Allegato A D.M. 6/9/2024
+// Abitazione principale tassabile: solo categorie "di lusso" A/1, A/8, A/9
+// (le altre categorie A sono esenti se abitazione principale - c. 740 L. 160/2019)
+const CATEGORIE_ABITAZIONE_PRINCIPALE_LUSSO = ['A/1', 'A/8', 'A/9'];
+
+// Pertinenze abitazione principale: C/2, C/6, C/7 (max 1 per categoria)
+const CATEGORIE_PERTINENZA = ['C/2', 'C/6', 'C/7'];
 
 const getCategoriePerTipo = (tipo: TipoImmobile) => {
   switch (tipo) {
     case 'abitazione_principale':
-      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_ABITAZIONE_PRINCIPALE.includes(opt.value));
+      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_ABITAZIONE_PRINCIPALE_LUSSO.includes(opt.value));
+    case 'pertinenza':
+      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_PERTINENZA.includes(opt.value));
     default:
       return CATEGORIE_OPTIONS;
   }
@@ -53,7 +59,7 @@ const getDefaultAliquota = (tipo: TipoImmobile): number => {
 const createEmptyImmobile = (): DatiImmobile => ({
   id: crypto.randomUUID(),
   tipo: 'altro_fabbricato',
-  categoria: 'A/2',
+  categoria: 'A/2', // Default per altro_fabbricato (abitazione civile)
   renditaCatastale: 0,
   percentualePossesso: 100,
   mesiPrimoSemestre: 6,
