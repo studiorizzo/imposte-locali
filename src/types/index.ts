@@ -14,10 +14,11 @@ export type CategoriaCatastale = CategoriaGruppoA | CategoriaGruppoB | Categoria
 export type TipoImmobile =
   | 'abitazione_principale'    // A/1, A/8, A/9 con residenza (categorie "di lusso" tassabili)
   | 'pertinenza'               // Pertinenza abitazione principale: C/2, C/6, C/7 (max 1 per cat.)
+  | 'fabbricato_gruppo_d'      // Fabbricati gruppo D: D/1-D/9 (quota stato 0,76%)
   | 'terreno_agricolo'         // Terreni
-  | 'fabbricato_rurale'        // Fabbricati rurali strumentali
+  | 'fabbricato_rurale'        // Fabbricati rurali strumentali: D/10 (aliquota max 0,1%)
   | 'area_fabbricabile'        // Aree edificabili
-  | 'altro_fabbricato';        // Tutti gli altri
+  | 'altro_fabbricato';        // Tutti gli altri (A/2-A/11, B, C)
 
 // Riduzioni applicabili
 export interface Riduzioni {

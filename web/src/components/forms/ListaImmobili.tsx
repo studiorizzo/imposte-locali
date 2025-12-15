@@ -17,11 +17,12 @@ const formatCurrency = (value: number): string => {
 const getTipoLabel = (tipo: string): string => {
   const labels: Record<string, string> = {
     abitazione_principale: 'Abitazione Principale',
-    altro_fabbricato: 'Altro Fabbricato',
     pertinenza: 'Pertinenza Abitazione Principale',
+    fabbricato_gruppo_d: 'Fabbricato Gruppo D',
+    fabbricato_rurale: 'Fabbricato Rurale Strumentale',
     terreno_agricolo: 'Terreno Agricolo',
     area_fabbricabile: 'Area Fabbricabile',
-    fabbricato_rurale: 'Fabbricato Rurale',
+    altro_fabbricato: 'Altro Fabbricato',
   };
   return labels[tipo] || tipo;
 };

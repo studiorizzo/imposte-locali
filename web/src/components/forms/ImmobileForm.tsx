@@ -11,10 +11,11 @@ interface ImmobileFormProps {
 const TIPI_IMMOBILE: { value: TipoImmobile; label: string }[] = [
   { value: 'abitazione_principale', label: 'Abitazione Principale' },
   { value: 'pertinenza', label: 'Pertinenza Abitazione Principale' },
-  { value: 'altro_fabbricato', label: 'Altro Fabbricato' },
+  { value: 'fabbricato_gruppo_d', label: 'Fabbricato Gruppo D' },
+  { value: 'fabbricato_rurale', label: 'Fabbricato Rurale Strumentale' },
   { value: 'terreno_agricolo', label: 'Terreno Agricolo' },
   { value: 'area_fabbricabile', label: 'Area Fabbricabile' },
-  { value: 'fabbricato_rurale', label: 'Fabbricato Rurale Strumentale' },
+  { value: 'altro_fabbricato', label: 'Altro Fabbricato' },
 ];
 
 const CATEGORIE_OPTIONS = Object.keys(COEFFICIENTI).map((cat) => ({
@@ -30,12 +31,22 @@ const CATEGORIE_ABITAZIONE_PRINCIPALE_LUSSO = ['A/1', 'A/8', 'A/9'];
 // Pertinenze abitazione principale: C/2, C/6, C/7 (max 1 per categoria)
 const CATEGORIE_PERTINENZA = ['C/2', 'C/6', 'C/7'];
 
+// Fabbricati gruppo D: D/1-D/9 (quota stato 0,76% + maggiorazione comunale fino a 0,30%)
+const CATEGORIE_GRUPPO_D = ['D/1', 'D/2', 'D/3', 'D/4', 'D/5', 'D/6', 'D/7', 'D/8', 'D/9'];
+
+// Fabbricati rurali strumentali: principalmente D/10
+const CATEGORIE_FABBRICATO_RURALE = ['D/10'];
+
 const getCategoriePerTipo = (tipo: TipoImmobile) => {
   switch (tipo) {
     case 'abitazione_principale':
       return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_ABITAZIONE_PRINCIPALE_LUSSO.includes(opt.value));
     case 'pertinenza':
       return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_PERTINENZA.includes(opt.value));
+    case 'fabbricato_gruppo_d':
+      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_GRUPPO_D.includes(opt.value));
+    case 'fabbricato_rurale':
+      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_FABBRICATO_RURALE.includes(opt.value));
     default:
       return CATEGORIE_OPTIONS;
   }
@@ -45,6 +56,8 @@ const getDefaultAliquota = (tipo: TipoImmobile): number => {
   switch (tipo) {
     case 'abitazione_principale':
       return ALIQUOTE_BASE_2025.abitazionePrincipale;
+    case 'fabbricato_gruppo_d':
+      return ALIQUOTE_BASE_2025.gruppoD;
     case 'fabbricato_rurale':
       return ALIQUOTE_BASE_2025.fabbricatiRurali;
     case 'terreno_agricolo':
