@@ -12,8 +12,8 @@ export type CategoriaCatastale = CategoriaGruppoA | CategoriaGruppoB | Categoria
 
 // Tipologie immobile
 export type TipoImmobile =
-  | 'abitazione_principale'    // A/1, A/8, A/9 con residenza
-  | 'pertinenza'               // C/2, C/6, C/7 di abitazione principale
+  | 'abitazione_principale'    // A/1, A/8, A/9 con residenza (categorie "di lusso" tassabili)
+  | 'pertinenza'               // Pertinenza abitazione principale: C/2, C/6, C/7 (max 1 per cat.)
   | 'terreno_agricolo'         // Terreni
   | 'fabbricato_rurale'        // Fabbricati rurali strumentali
   | 'area_fabbricabile'        // Aree edificabili

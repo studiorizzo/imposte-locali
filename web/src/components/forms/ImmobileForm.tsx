@@ -10,8 +10,8 @@ interface ImmobileFormProps {
 
 const TIPI_IMMOBILE: { value: TipoImmobile; label: string }[] = [
   { value: 'abitazione_principale', label: 'Abitazione Principale' },
+  { value: 'pertinenza', label: 'Pertinenza Abitazione Principale' },
   { value: 'altro_fabbricato', label: 'Altro Fabbricato' },
-  { value: 'pertinenza', label: 'Pertinenza' },
   { value: 'terreno_agricolo', label: 'Terreno Agricolo' },
   { value: 'area_fabbricabile', label: 'Area Fabbricabile' },
   { value: 'fabbricato_rurale', label: 'Fabbricato Rurale Strumentale' },
