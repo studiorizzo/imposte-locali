@@ -1,7 +1,7 @@
 {
-  "3": {
+  "fabbricati_gruppo_d": {
     "descrizione": "Fabbricati appartenenti al gruppo catastale D",
-    "3.1": {
+    "gruppo_d_categoria_catastale": {
       "descrizione": "Categoria catastale",
       "tipo": "opzioni",
       "valori": [
@@ -16,7 +16,7 @@
         "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio"
       ]
     },
-    "3.2": {
+    "gruppo_d_superficie": {
       "descrizione": "Superficie",
       "tipo": "on/off",
       "valori": [
@@ -24,15 +24,15 @@
         "Non inferiore a (Mq)"
       ]
     },
-    "3.3": {
+    "gruppo_d_recupero": {
       "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica",
       "tipo": "on/off"
     },
-    "3.4": {
+    "gruppo_d_rendita": {
       "descrizione": "Rendita catastale (€)",
       "tipo": "on/off"
     },
-    "3.5": {
+    "gruppo_d_collocazione": {
       "descrizione": "Collocazione immobile",
       "tipo": "on/off",
       "valori": [
@@ -43,7 +43,7 @@
         "In zona non servita da servizi pubblici"
       ]
     },
-    "3.6": {
+    "gruppo_d_inagibili": {
       "descrizione": "Fabbricati divenuti inagibili",
       "tipo": "on/off",
       "valori": [
@@ -58,17 +58,17 @@
         }
       ]
     },
-    "3.7": {
+    "gruppo_d_utilizzo": {
       "descrizione": "Fabbricati a disposizione o utilizzati",
       "tipo": "opzioni",
-      "3.7.1": {
+      "gruppo_d_a_disposizione": {
         "descrizione": "Immobili a disposizione",
-        "3.7.1.1": {
+        "gruppo_d_a_disposizione_mesi": {
           "descrizione": "Purché la condizione di immobile a disposizione persista da almeno",
           "tipo": "on/off",
           "parametro": "Numero di mesi"
         },
-        "3.7.1.2": {
+        "gruppo_d_a_disposizione_requisiti_soggetto": {
           "descrizione": "Requisiti del soggetto passivo",
           "tipo": "on/off",
           "valori": [
@@ -80,7 +80,7 @@
             "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
           ]
         },
-        "3.7.1.3": {
+        "gruppo_d_a_disposizione_utilizzo": {
           "descrizione": "Utilizzo/Inutilizzo",
           "tipo": "on/off",
           "valori": [
@@ -92,9 +92,9 @@
           ]
         }
       },
-      "3.7.2": {
+      "gruppo_d_locati_comodato": {
         "descrizione": "Immobili locati o concessi in comodato",
-        "3.7.2.1": {
+        "gruppo_d_locati_comodato_requisiti": {
           "descrizione": "Requisiti soggettivi del locatario o comodatario",
           "tipo": "opzioni",
           "valori": [
@@ -104,7 +104,7 @@
             "Persona fisica di età non superiore ad anni"
           ]
         },
-        "3.7.2.2": {
+        "gruppo_d_locati_comodato_destinazione": {
           "descrizione": "Destinazione d'uso",
           "tipo": "on/off",
           "valori": [
@@ -121,7 +121,7 @@
             "Impianti idroelettrici"
           ]
         },
-        "3.7.2.3": {
+        "gruppo_d_locati_comodato_attivita": {
           "descrizione": "Tipologia di attività",
           "tipo": "on/off",
           "valori": [
@@ -131,29 +131,29 @@
             "Microimprese"
           ]
         },
-        "3.7.2.4": {
+        "gruppo_d_locati_comodato_ateco": {
           "descrizione": "Indicare il codice ATECO",
           "tipo": "on/off",
           "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
         },
-        "3.7.2.5": {
+        "gruppo_d_locati_comodato_dipendenti": {
           "descrizione": "Numero di dipendenti",
           "tipo": "on/off",
           "parametro": "Non superiore a"
         },
-        "3.7.2.6": {
+        "gruppo_d_locati_comodato_potenza": {
           "descrizione": "Potenza impianti produzione energia",
           "tipo": "on/off",
           "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
         },
-        "3.7.2.7": {
+        "gruppo_d_locati_comodato_contratto": {
           "descrizione": "Con contratto registrato",
           "tipo": "on/off"
         }
       },
-      "3.7.3": {
+      "gruppo_d_locati": {
         "descrizione": "Immobili locati",
-        "3.7.3.1": {
+        "gruppo_d_locati_requisiti": {
           "descrizione": "Requisiti soggettivi del locatario",
           "tipo": "opzioni",
           "valori": [
@@ -163,7 +163,7 @@
             "Persona fisica di età non superiore ad anni"
           ]
         },
-        "3.7.3.2": {
+        "gruppo_d_locati_destinazione": {
           "descrizione": "Destinazione d'uso",
           "tipo": "on/off",
           "valori": [
@@ -180,7 +180,7 @@
             "Impianti idroelettrici"
           ]
         },
-        "3.7.3.3": {
+        "gruppo_d_locati_attivita": {
           "descrizione": "Tipologia di attività",
           "tipo": "on/off",
           "valori": [
@@ -190,25 +190,25 @@
             "Microimprese"
           ]
         },
-        "3.7.3.4": {
+        "gruppo_d_locati_ateco": {
           "descrizione": "Indicare il codice ATECO",
           "tipo": "on/off",
           "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
         },
-        "3.7.3.5": {
+        "gruppo_d_locati_dipendenti": {
           "descrizione": "Numero di dipendenti",
           "tipo": "on/off",
           "parametro": "Non superiore a"
         },
-        "3.7.3.6": {
+        "gruppo_d_locati_potenza": {
           "descrizione": "Potenza impianti produzione energia",
           "tipo": "on/off",
           "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
         }
       },
-      "3.7.4": {
+      "gruppo_d_comodato": {
         "descrizione": "Immobili concessi in comodato",
-        "3.7.4.1": {
+        "gruppo_d_comodato_requisiti": {
           "descrizione": "Requisiti soggettivi del comodatario",
           "tipo": "opzioni",
           "valori": [
@@ -218,7 +218,7 @@
             "Persona fisica di età non superiore ad anni"
           ]
         },
-        "3.7.4.2": {
+        "gruppo_d_comodato_destinazione": {
           "descrizione": "Destinazione d'uso",
           "tipo": "on/off",
           "valori": [
@@ -235,7 +235,7 @@
             "Impianti idroelettrici"
           ]
         },
-        "3.7.4.3": {
+        "gruppo_d_comodato_attivita": {
           "descrizione": "Tipologia di attività",
           "tipo": "on/off",
           "valori": [
@@ -245,29 +245,29 @@
             "Microimprese"
           ]
         },
-        "3.7.4.4": {
+        "gruppo_d_comodato_ateco": {
           "descrizione": "Indicare il codice ATECO",
           "tipo": "on/off",
           "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
         },
-        "3.7.4.5": {
+        "gruppo_d_comodato_dipendenti": {
           "descrizione": "Numero di dipendenti",
           "tipo": "on/off",
           "parametro": "Non superiore a"
         },
-        "3.7.4.6": {
+        "gruppo_d_comodato_potenza": {
           "descrizione": "Potenza impianti produzione energia",
           "tipo": "on/off",
           "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
         },
-        "3.7.4.7": {
+        "gruppo_d_comodato_contratto": {
           "descrizione": "Con contratto registrato",
           "tipo": "on/off"
         }
       },
-      "3.7.5": {
+      "gruppo_d_utilizzati_direttamente": {
         "descrizione": "Immobili utilizzati direttamente dal soggetto passivo",
-        "3.7.5.1": {
+        "gruppo_d_utilizzati_requisiti": {
           "descrizione": "Requisiti soggettivi del soggetto passivo utilizzatore",
           "tipo": "opzioni",
           "valori": [
@@ -284,7 +284,7 @@
             "Utilizzatore diretto dell'immobile (tutti)"
           ]
         },
-        "3.7.5.2": {
+        "gruppo_d_utilizzati_destinazione": {
           "descrizione": "Destinazione d'uso",
           "tipo": "on/off",
           "valori": [
@@ -301,7 +301,7 @@
             "Impianti idroelettrici"
           ]
         },
-        "3.7.5.3": {
+        "gruppo_d_utilizzati_attivita": {
           "descrizione": "Tipologia di attività",
           "tipo": "on/off",
           "valori": [
@@ -311,25 +311,25 @@
             "Microimprese"
           ]
         },
-        "3.7.5.4": {
+        "gruppo_d_utilizzati_ateco": {
           "descrizione": "Indicare il codice ATECO",
           "tipo": "on/off",
           "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
         },
-        "3.7.5.5": {
+        "gruppo_d_utilizzati_dipendenti": {
           "descrizione": "Numero di dipendenti",
           "tipo": "on/off",
           "parametro": "Non superiore a"
         },
-        "3.7.5.6": {
+        "gruppo_d_utilizzati_potenza": {
           "descrizione": "Potenza impianti produzione energia",
           "tipo": "on/off",
           "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
         }
       },
-      "3.7.6": {
+      "gruppo_d_locati_comodato_utilizzati": {
         "descrizione": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
-        "3.7.6.1": {
+        "gruppo_d_lcu_requisiti": {
           "descrizione": "Requisiti soggettivi del locatario, comodatario o soggetto passivo utilizzatore",
           "tipo": "opzioni",
           "valori": [
@@ -346,7 +346,7 @@
             "Utilizzatore diretto dell'immobile (tutti)"
           ]
         },
-        "3.7.6.2": {
+        "gruppo_d_lcu_destinazione": {
           "descrizione": "Destinazione d'uso",
           "tipo": "on/off",
           "valori": [
@@ -363,7 +363,7 @@
             "Impianti idroelettrici"
           ]
         },
-        "3.7.6.3": {
+        "gruppo_d_lcu_attivita": {
           "descrizione": "Tipologia di attività",
           "tipo": "on/off",
           "valori": [
@@ -373,35 +373,35 @@
             "Microimprese"
           ]
         },
-        "3.7.6.4": {
+        "gruppo_d_lcu_ateco": {
           "descrizione": "Indicare il codice ATECO",
           "tipo": "on/off",
           "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
         },
-        "3.7.6.5": {
+        "gruppo_d_lcu_dipendenti": {
           "descrizione": "Numero di dipendenti",
           "tipo": "on/off",
           "parametro": "Non superiore a"
         },
-        "3.7.6.6": {
+        "gruppo_d_lcu_potenza": {
           "descrizione": "Potenza impianti produzione energia",
           "tipo": "on/off",
           "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
         },
-        "3.7.6.7": {
+        "gruppo_d_lcu_contratto": {
           "descrizione": "Con contratto registrato",
           "tipo": "on/off"
         }
       }
     },
-    "3.8": {
+    "gruppo_d_ulteriori_condizioni": {
       "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
       "tipo": "on/off"
     }
   },
-  "4": {
+  "terreni_agricoli": {
     "descrizione": "Terreni agricoli",
-    "4.1": {
+    "terreni_utilizzo": {
       "descrizione": "Utilizzo",
       "tipo": "opzioni",
       "valori": [
@@ -412,7 +412,7 @@
         "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)"
       ]
     },
-    "4.2": {
+    "terreni_collocazione": {
       "descrizione": "Collocazione",
       "tipo": "opzioni",
       "valori": [
@@ -420,14 +420,14 @@
         "Terreni ricadenti in determinate aree"
       ]
     },
-    "4.3": {
+    "terreni_onlus": {
       "descrizione": "Di proprietà di ONLUS o enti del terzo settore",
       "tipo": "on/off"
     }
   },
-  "5": {
+  "aree_fabbricabili": {
     "descrizione": "Aree fabbricabili",
-    "5.1": {
+    "aree_tipologia": {
       "descrizione": "Tipologia",
       "tipo": "opzioni",
       "valori": [
@@ -435,27 +435,27 @@
         "Diverse da residenziali"
       ]
     },
-    "5.2": {
+    "aree_zone": {
       "descrizione": "Situate in determinate zone, specificare",
       "tipo": "on/off"
     },
-    "5.3": {
+    "aree_onlus": {
       "descrizione": "Di proprietà di ONLUS o enti del terzo settore",
       "tipo": "on/off"
     },
-    "5.4": {
+    "aree_ulteriori_condizioni": {
       "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
       "tipo": "on/off"
     }
   },
-  "6": {
+  "altri_fabbricati": {
     "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)",
-    "6.1": {
+    "altri_tipologia": {
       "descrizione": "Tipologia immobile",
       "tipo": "opzioni",
-      "6.1.1": {
+      "altri_abitazione_locata": {
         "descrizione": "Abitazione locata o concessa in comodato",
-        "6.1.1.1": {
+        "altri_locata_tipo_contratto": {
           "descrizione": "Tipo di contratto",
           "tipo": "opzioni",
           "valori": [
@@ -473,7 +473,7 @@
             "Accordi/Patti territoriali per soddisfare particolari esigenze abitative (come definiti nel regolamento)"
           ]
         },
-        "6.1.1.2": {
+        "altri_locata_categoria": {
           "descrizione": "Categorie catastali",
           "tipo": "opzioni",
           "valori": [
@@ -489,11 +489,11 @@
             "A/11 Abitazioni o alloggi tipici dei luoghi"
           ]
         },
-        "6.1.1.3": {
+        "altri_locata_durata": {
           "descrizione": "Durata del contratto di durata non inferiore a (mesi)",
           "tipo": "on/off"
         },
-        "6.1.1.4": {
+        "altri_locata_condizioni_locatario": {
           "descrizione": "Condizioni locatario/comodatario",
           "tipo": "opzioni",
           "valori": [
@@ -515,20 +515,20 @@
             "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
           ]
         },
-        "6.1.1.5": {
+        "altri_locata_non_titolare": {
           "descrizione": "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili",
           "tipo": "on/off"
         },
-        "6.1.1.6": {
+        "altri_locata_destinazione": {
           "descrizione": "Destinazione d'uso",
           "tipo": "on/off",
           "valori": ["Purché l'affittuario/comodatario la utilizzi come abitazione principale"]
         },
-        "6.1.1.7": {
+        "altri_locata_isee": {
           "descrizione": "Reddito ISEE del comodatario non superiore a (€)",
           "tipo": "on/off"
         },
-        "6.1.1.8": {
+        "altri_locata_requisiti_soggetto": {
           "descrizione": "Requisiti del soggetto passivo",
           "tipo": "on/off",
           "valori": [
@@ -540,11 +540,11 @@
             "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
           ]
         },
-        "6.1.1.9": {
+        "altri_locata_solo_immobile": {
           "descrizione": "Limitatamente ad un solo immobile",
           "tipo": "on/off"
         },
-        "6.1.1.10": {
+        "altri_locata_collocazione": {
           "descrizione": "Collocazione immobile",
           "tipo": "on/off",
           "valori": [
@@ -555,7 +555,7 @@
             "In zona non servita da servizi pubblici"
           ]
         },
-        "6.1.1.11": {
+        "altri_locata_inagibili": {
           "descrizione": "Fabbricati divenuti inagibili",
           "tipo": "on/off",
           "valori": [
@@ -565,19 +565,19 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.1.12": {
+        "altri_locata_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
       },
-      "6.1.2": {
+      "altri_turistico_ricettiva": {
         "descrizione": "Abitazione destinata a struttura turistico-ricettiva",
-        "6.1.2.1": {
+        "altri_turistica_ateco": {
           "descrizione": "Indicare il codice ATECO",
           "tipo": "on/off",
           "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
         },
-        "6.1.2.2": {
+        "altri_turistica_collocazione": {
           "descrizione": "Collocazione immobile",
           "tipo": "opzioni",
           "valori": [
@@ -588,19 +588,19 @@
             "In zona non servita da servizi pubblici"
           ]
         },
-        "6.1.2.3": {
+        "altri_turistica_imprenditoriale": {
           "descrizione": "Attività condotta in forma imprenditoriale",
           "tipo": "on/off"
         },
-        "6.1.2.4": {
+        "altri_turistica_mesi": {
           "descrizione": "In attività da almeno (Mesi)",
           "tipo": "on/off"
         },
-        "6.1.2.5": {
+        "altri_turistica_solo_immobile": {
           "descrizione": "Limitatamente ad un solo immobile",
           "tipo": "on/off"
         },
-        "6.1.2.6": {
+        "altri_turistica_requisiti_soggetto": {
           "descrizione": "Requisiti del soggetto passivo",
           "tipo": "on/off",
           "valori": [
@@ -612,7 +612,7 @@
             "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
           ]
         },
-        "6.1.2.7": {
+        "altri_turistica_inagibili": {
           "descrizione": "Fabbricati divenuti inagibili",
           "tipo": "on/off",
           "valori": [
@@ -622,14 +622,14 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.2.8": {
+        "altri_turistica_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
       },
-      "6.1.3": {
+      "altri_abitazione_disposizione": {
         "descrizione": "Abitazione a disposizione",
-        "6.1.3.1": {
+        "altri_disposizione_definizione": {
           "descrizione": "Definizione di abitazioni a disposizione",
           "tipo": "opzioni",
           "valori": [
@@ -638,7 +638,7 @@
             "Abitazioni non locate e non concesse in comodato di proprietà di ONLUS o di altri enti del terzo settore"
           ]
         },
-        "6.1.3.2": {
+        "altri_disposizione_categoria": {
           "descrizione": "Categorie catastali",
           "tipo": "opzioni",
           "valori": [
@@ -654,12 +654,12 @@
             "A/11 Abitazioni o alloggi tipici dei luoghi"
           ]
         },
-        "6.1.3.3": {
+        "altri_disposizione_mesi": {
           "descrizione": "Periodo non coperto da contratti purché la condizione di immobile a disposizione persista da almeno",
           "tipo": "on/off",
           "parametro": "Numero di mesi"
         },
-        "6.1.3.4": {
+        "altri_disposizione_utilizzo": {
           "descrizione": "Utilizzo/Inutilizzo",
           "tipo": "opzioni",
           "valori": [
@@ -670,7 +670,7 @@
             "Con uso limitato e discontinuo o stagionale, per un utilizzo complessivo non superiore a mesi"
           ]
         },
-        "6.1.3.5": {
+        "altri_disposizione_requisiti_soggetto": {
           "descrizione": "Requisiti del soggetto passivo",
           "tipo": "on/off",
           "valori": [
@@ -682,7 +682,7 @@
             "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
           ]
         },
-        "6.1.3.6": {
+        "altri_disposizione_collocazione": {
           "descrizione": "Collocazione immobile",
           "tipo": "on/off",
           "valori": [
@@ -693,7 +693,7 @@
             "In zona non servita da servizi pubblici"
           ]
         },
-        "6.1.3.7": {
+        "altri_disposizione_inagibili": {
           "descrizione": "Fabbricati divenuti inagibili",
           "tipo": "on/off",
           "valori": [
@@ -703,14 +703,14 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.3.8": {
+        "altri_disposizione_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
       },
-      "6.1.4": {
+      "altri_abitazione_utilizzata": {
         "descrizione": "Abitazione utilizzata direttamente dal soggetto passivo",
-        "6.1.4.1": {
+        "altri_utilizzata_categoria": {
           "descrizione": "Categorie catastali",
           "tipo": "opzioni",
           "valori": [
@@ -726,7 +726,7 @@
             "A/11 Abitazioni o alloggi tipici dei luoghi"
           ]
         },
-        "6.1.4.2": {
+        "altri_utilizzata_requisiti_soggetto": {
           "descrizione": "Requisiti del soggetto passivo",
           "tipo": "on/off",
           "valori": [
@@ -738,7 +738,7 @@
             "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
           ]
         },
-        "6.1.4.3": {
+        "altri_utilizzata_destinazione": {
           "descrizione": "Destinazione d'uso",
           "tipo": "on/off",
           "valori": [
@@ -747,11 +747,11 @@
             "servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
           ]
         },
-        "6.1.4.4": {
+        "altri_utilizzata_isee": {
           "descrizione": "Reddito ISEE del soggetto passivo non superiore a (€)",
           "tipo": "on/off"
         },
-        "6.1.4.5": {
+        "altri_utilizzata_inagibili": {
           "descrizione": "Fabbricati divenuti inagibili",
           "tipo": "on/off",
           "valori": [
@@ -761,14 +761,14 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.4.6": {
+        "altri_utilizzata_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
       },
-      "6.1.5": {
+      "altri_a10_b_c": {
         "descrizione": "Immobili di categoria A10, B, C",
-        "6.1.5.1": {
+        "altri_abc_categoria": {
           "descrizione": "Categorie catastali",
           "tipo": "opzioni",
           "valori": [
@@ -790,20 +790,20 @@
             "C/7 Tettoie chiuse od aperte"
           ]
         },
-        "6.1.5.2": {
+        "altri_abc_superficie": {
           "descrizione": "Superficie",
           "tipo": "on/off",
           "valori": ["Non superiore a (Mq)", "Non inferiore a (Mq)"]
         },
-        "6.1.5.3": {
+        "altri_abc_recupero": {
           "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica",
           "tipo": "on/off"
         },
-        "6.1.5.4": {
+        "altri_abc_rendita": {
           "descrizione": "Rendita catastale (€)",
           "tipo": "on/off"
         },
-        "6.1.5.5": {
+        "altri_abc_collocazione": {
           "descrizione": "Collocazione immobile",
           "tipo": "opzioni",
           "valori": [
@@ -814,7 +814,7 @@
             "In zona non servita da servizi pubblici"
           ]
         },
-        "6.1.5.6": {
+        "altri_abc_requisiti_soggetto": {
           "descrizione": "Requisiti del soggetto passivo",
           "tipo": "on/off",
           "valori": [
@@ -826,17 +826,17 @@
             "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
           ]
         },
-        "6.1.5.7": {
+        "altri_abc_utilizzo": {
           "descrizione": "Fabbricati a disposizione o utilizzati",
           "tipo": "opzioni",
-          "6.1.5.7.1": {
+          "altri_abc_a_disposizione": {
             "descrizione": "Immobili a disposizione",
-            "6.1.5.7.1.1": {
+            "altri_abc_disp_mesi": {
               "descrizione": "Purché la condizione di immobile a disposizione persista da almeno",
               "tipo": "on/off",
               "parametro": "Numero di mesi"
             },
-            "6.1.5.7.1.2": {
+            "altri_abc_disp_utilizzo": {
               "descrizione": "Utilizzo/Inutilizzo",
               "tipo": "on/off",
               "valori": [
@@ -848,9 +848,9 @@
               ]
             }
           },
-          "6.1.5.7.2": {
+          "altri_abc_locati_comodato": {
             "descrizione": "Immobili locati o concessi in comodato",
-            "6.1.5.7.2.1": {
+            "altri_abc_lc_requisiti": {
               "descrizione": "Requisiti soggettivi del locatario o comodatario",
               "tipo": "opzioni",
               "valori": [
@@ -863,7 +863,7 @@
                 "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
               ]
             },
-            "6.1.5.7.2.2": {
+            "altri_abc_lc_destinazione": {
               "descrizione": "Destinazione d'uso",
               "tipo": "on/off",
               "valori": [
@@ -876,7 +876,7 @@
                 "Privi o che intendono dismettere giochi di azzardo"
               ]
             },
-            "6.1.5.7.2.3": {
+            "altri_abc_lc_attivita": {
               "descrizione": "Tipologia di attività",
               "tipo": "on/off",
               "valori": [
@@ -886,29 +886,29 @@
                 "Microimprese"
               ]
             },
-            "6.1.5.7.2.4": {
+            "altri_abc_lc_ateco": {
               "descrizione": "Indicare il codice ATECO",
               "tipo": "on/off",
               "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
             },
-            "6.1.5.7.2.5": {
+            "altri_abc_lc_dipendenti": {
               "descrizione": "Numero di dipendenti",
               "tipo": "on/off",
               "parametro": "Non superiore a"
             },
-            "6.1.5.7.2.6": {
+            "altri_abc_lc_potenza": {
               "descrizione": "Potenza impianti produzione energia",
               "tipo": "on/off",
               "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
             },
-            "6.1.5.7.2.7": {
+            "altri_abc_lc_contratto": {
               "descrizione": "Con contratto registrato",
               "tipo": "on/off"
             }
           },
-          "6.1.5.7.3": {
+          "altri_abc_locati": {
             "descrizione": "Immobili locati",
-            "6.1.5.7.3.1": {
+            "altri_abc_loc_requisiti": {
               "descrizione": "Requisiti soggettivi del locatario",
               "tipo": "opzioni",
               "valori": [
@@ -921,7 +921,7 @@
                 "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
               ]
             },
-            "6.1.5.7.3.2": {
+            "altri_abc_loc_destinazione": {
               "descrizione": "Destinazione d'uso",
               "tipo": "opzioni",
               "valori": [
@@ -934,7 +934,7 @@
                 "Privi o che intendono dismettere giochi di azzardo"
               ]
             },
-            "6.1.5.7.3.3": {
+            "altri_abc_loc_attivita": {
               "descrizione": "Tipologia di attività",
               "tipo": "on/off",
               "valori": [
@@ -944,25 +944,25 @@
                 "Microimprese"
               ]
             },
-            "6.1.5.7.3.4": {
+            "altri_abc_loc_ateco": {
               "descrizione": "Indicare il codice ATECO",
               "tipo": "on/off",
               "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
             },
-            "6.1.5.7.3.5": {
+            "altri_abc_loc_dipendenti": {
               "descrizione": "Numero di dipendenti",
               "tipo": "on/off",
               "parametro": "Non superiore a"
             },
-            "6.1.5.7.3.6": {
+            "altri_abc_loc_potenza": {
               "descrizione": "Potenza impianti produzione energia",
               "tipo": "on/off",
               "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
             }
           },
-          "6.1.5.7.4": {
+          "altri_abc_comodato": {
             "descrizione": "Immobili concessi in comodato",
-            "6.1.5.7.4.1": {
+            "altri_abc_com_requisiti": {
               "descrizione": "Requisiti soggettivi del comodatario",
               "tipo": "opzioni",
               "valori": [
@@ -975,7 +975,7 @@
                 "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
               ]
             },
-            "6.1.5.7.4.2": {
+            "altri_abc_com_destinazione": {
               "descrizione": "Destinazione d'uso",
               "tipo": "opzioni",
               "valori": [
@@ -988,7 +988,7 @@
                 "Privi o che intendono dismettere giochi di azzardo"
               ]
             },
-            "6.1.5.7.4.3": {
+            "altri_abc_com_attivita": {
               "descrizione": "Tipologia di attività",
               "tipo": "on/off",
               "valori": [
@@ -998,29 +998,29 @@
                 "Microimprese"
               ]
             },
-            "6.1.5.7.4.4": {
+            "altri_abc_com_ateco": {
               "descrizione": "Indicare il codice ATECO",
               "tipo": "on/off",
               "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
             },
-            "6.1.5.7.4.5": {
+            "altri_abc_com_dipendenti": {
               "descrizione": "Numero di dipendenti",
               "tipo": "on/off",
               "parametro": "Non superiore a"
             },
-            "6.1.5.7.4.6": {
+            "altri_abc_com_potenza": {
               "descrizione": "Potenza impianti produzione energia",
               "tipo": "on/off",
               "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
             },
-            "6.1.5.7.4.7": {
+            "altri_abc_com_contratto": {
               "descrizione": "Con contratto registrato",
               "tipo": "on/off"
             }
           },
-          "6.1.5.7.5": {
+          "altri_abc_utilizzati": {
             "descrizione": "Immobili utilizzati direttamente dal soggetto passivo",
-            "6.1.5.7.5.1": {
+            "altri_abc_util_requisiti": {
               "descrizione": "Requisiti soggettivi del soggetto passivo utilizzatore",
               "tipo": "opzioni",
               "valori": [
@@ -1038,7 +1038,7 @@
                 "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
               ]
             },
-            "6.1.5.7.5.2": {
+            "altri_abc_util_destinazione": {
               "descrizione": "Destinazione d'uso",
               "tipo": "opzioni",
               "valori": [
@@ -1051,7 +1051,7 @@
                 "Privi o che intendono dismettere giochi di azzardo"
               ]
             },
-            "6.1.5.7.5.3": {
+            "altri_abc_util_attivita": {
               "descrizione": "Tipologia di attività",
               "tipo": "on/off",
               "valori": [
@@ -1061,25 +1061,25 @@
                 "Microimprese"
               ]
             },
-            "6.1.5.7.5.4": {
+            "altri_abc_util_ateco": {
               "descrizione": "Indicare il codice ATECO",
               "tipo": "on/off",
               "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
             },
-            "6.1.5.7.5.5": {
+            "altri_abc_util_dipendenti": {
               "descrizione": "Numero di dipendenti",
               "tipo": "on/off",
               "parametro": "Non superiore a"
             },
-            "6.1.5.7.5.6": {
+            "altri_abc_util_potenza": {
               "descrizione": "Potenza impianti produzione energia",
               "tipo": "on/off",
               "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
             }
           },
-          "6.1.5.7.6": {
+          "altri_abc_lcu": {
             "descrizione": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
-            "6.1.5.7.6.1": {
+            "altri_abc_lcu_requisiti": {
               "descrizione": "Requisiti soggettivi del locatario, comodatario o soggetto passivo utilizzatore",
               "tipo": "opzioni",
               "valori": [
@@ -1097,7 +1097,7 @@
                 "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
               ]
             },
-            "6.1.5.7.6.2": {
+            "altri_abc_lcu_destinazione": {
               "descrizione": "Destinazione d'uso",
               "tipo": "opzioni",
               "valori": [
@@ -1110,7 +1110,7 @@
                 "Privi o che intendono dismettere giochi di azzardo"
               ]
             },
-            "6.1.5.7.6.3": {
+            "altri_abc_lcu_attivita": {
               "descrizione": "Tipologia di attività",
               "tipo": "on/off",
               "valori": [
@@ -1120,32 +1120,32 @@
                 "Microimprese"
               ]
             },
-            "6.1.5.7.6.4": {
+            "altri_abc_lcu_ateco": {
               "descrizione": "Indicare il codice ATECO",
               "tipo": "on/off",
               "valori": ["Divisione", "Gruppo", "Classe", "Categoria", "Sottocategoria"]
             },
-            "6.1.5.7.6.5": {
+            "altri_abc_lcu_dipendenti": {
               "descrizione": "Numero di dipendenti",
               "tipo": "on/off",
               "parametro": "Non superiore a"
             },
-            "6.1.5.7.6.6": {
+            "altri_abc_lcu_potenza": {
               "descrizione": "Potenza impianti produzione energia",
               "tipo": "on/off",
               "valori": ["Fino a (kW)", "Superiore a (kW)", "Intervallo di valori: Da (kW), A (kW)"]
             },
-            "6.1.5.7.6.7": {
+            "altri_abc_lcu_contratto": {
               "descrizione": "Con contratto registrato",
               "tipo": "on/off"
             }
           }
         },
-        "6.1.5.8": {
+        "altri_abc_solo_immobile": {
           "descrizione": "Limitatamente ad un solo immobile",
           "tipo": "on/off"
         },
-        "6.1.5.9": {
+        "altri_abc_inagibili": {
           "descrizione": "Fabbricati divenuti inagibili",
           "tipo": "on/off",
           "valori": [
@@ -1155,15 +1155,15 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.5.10": {
+        "altri_abc_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
       },
-      "6.1.6": {
+      "altri_alloggi_sociali": {
         "descrizione": "Fabbricati di civile abitazione destinati ad alloggi sociali o posseduti dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità, non adibiti ad abitazione principale per il periodo di espletamento delle attività di assegnazione",
         "parametro": "Fino a mesi",
-        "6.1.6.1": {
+        "altri_sociali_inagibili": {
           "descrizione": "Fabbricati divenuti inagibili",
           "tipo": "on/off",
           "valori": [
@@ -1173,14 +1173,14 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.6.2": {
+        "altri_sociali_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
       },
-      "6.1.7": {
+      "altri_alloggi_assegnati": {
         "descrizione": "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità",
-        "6.1.7.1": {
+        "altri_assegnati_inagibili": {
           "descrizione": "Fabbricati divenuti inagibili",
           "tipo": "on/off",
           "valori": [
@@ -1190,14 +1190,14 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.7.2": {
+        "altri_assegnati_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
       },
-      "6.1.8": {
+      "altri_inagibili_ex_principale": {
         "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale",
-        "6.1.8.1": {
+        "altri_inag_tipologia": {
           "descrizione": "Tipologia fabbricato",
           "tipo": "opzioni",
           "valori": [
@@ -1205,7 +1205,7 @@
             "Fabbricati divenuti inagibili già destinati ad abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze"
           ]
         },
-        "6.1.8.2": {
+        "altri_inag_causa": {
           "descrizione": "Fabbricato divenuto inagibile",
           "tipo": "opzioni",
           "valori": [
@@ -1214,7 +1214,7 @@
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
           ]
         },
-        "6.1.8.3": {
+        "altri_inag_ulteriori": {
           "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
           "tipo": "on/off"
         }
