@@ -1,48 +1,37 @@
-{
-  "descrizione": "Fattispecie principali IMU - righe a due colonne nei prospetti",
-  "note": "Queste fattispecie hanno descrizioni fisse nei prospetti. I pattern servono per l'estrazione automatica.",
-  "fattispecie": [
-    {
-      "id": "abitazione_principale_lusso",
-      "descrizione": "Abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze",
-      "tipo_valore": "percentuale",
-      "note": "Unica abitazione principale soggetta a IMU (categorie di lusso)"
-    },
-    {
-      "id": "assimilazione_anziani_disabili",
-      "descrizione": "Assimilazione all'abitazione principale dell'unità immobiliare posseduta da anziani o disabili di cui all'art. 1, comma 741, lett. c), n. 6), della legge n. 160 del 2019",
-      "tipo_valore": "booleano",
-      "valori_possibili": ["SI", "NO"],
-      "note": "Il comune può scegliere se assimilare o meno"
-    },
-    {
-      "id": "fabbricati_rurali_strumentali",
-      "descrizione": "Fabbricati rurali ad uso strumentale (inclusa la categoria catastale D/10)",
-      "tipo_valore": "percentuale",
-      "aliquota_max": "0,1%",
-      "note": "Aliquota massima fissata per legge allo 0,1%"
-    },
-    {
-      "id": "fabbricati_gruppo_d",
-      "descrizione": "Fabbricati appartenenti al gruppo catastale D (esclusa la categoria catastale D/10)",
-      "tipo_valore": "percentuale",
-      "note": "Quota statale 0,76% riservata allo Stato"
-    },
-    {
-      "id": "terreni_agricoli",
-      "descrizione": "Terreni agricoli",
-      "tipo_valore": "percentuale"
-    },
-    {
-      "id": "aree_fabbricabili",
-      "descrizione": "Aree fabbricabili",
-      "tipo_valore": "percentuale"
-    },
-    {
-      "id": "altri_fabbricati",
-      "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)",
-      "tipo_valore": "percentuale",
-      "note": "Categoria residuale che include abitazioni non principali, C/1, C/2, etc."
-    }
-  ]
-}
+[
+  {
+    "id": "abitazione_principale_lusso",
+    "descrizione": "Abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze",
+    "tipo_valore": "percentuale"
+  },
+  {
+    "id": "assimilazione_anziani_disabili",
+    "descrizione": "Assimilazione all'abitazione principale dell'unità immobiliare posseduta da anziani o disabili di cui all'art. 1, comma 741, lett. c), n. 6), della legge n. 160 del 2019",
+    "tipo_valore": "booleano"
+  },
+  {
+    "id": "fabbricati_rurali_strumentali",
+    "descrizione": "Fabbricati rurali ad uso strumentale (inclusa la categoria catastale D/10)",
+    "tipo_valore": "percentuale"
+  },
+  {
+    "id": "fabbricati_gruppo_d",
+    "descrizione": "Fabbricati appartenenti al gruppo catastale D (esclusa la categoria catastale D/10)",
+    "tipo_valore": "percentuale"
+  },
+  {
+    "id": "terreni_agricoli",
+    "descrizione": "Terreni agricoli",
+    "tipo_valore": "percentuale"
+  },
+  {
+    "id": "aree_fabbricabili",
+    "descrizione": "Aree fabbricabili",
+    "tipo_valore": "percentuale"
+  },
+  {
+    "id": "altri_fabbricati",
+    "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)",
+    "tipo_valore": "percentuale"
+  }
+]
