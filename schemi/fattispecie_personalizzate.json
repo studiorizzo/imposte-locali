@@ -78,12 +78,10 @@
               "descrizione": "Immobili a disposizione",
               "condizioni": [
                 {
-                  "id": "d_utilizzo_disposizione_durata",
                   "descrizione": "Purché la condizione di immobile a disposizione persista da almeno",
                   "valori": ["Numero di mesi"]
                 },
                 {
-                  "id": "d_utilizzo_disposizione_soggetto",
                   "descrizione": "Requisiti del soggetto passivo",
                   "condizioni": [
                     { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
@@ -98,7 +96,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_disposizione_inutilizzo",
                   "descrizione": "Utilizzo/Inutilizzo",
                   "condizioni": [
                     { "descrizione": "Privi di ogni arredo" },
@@ -118,7 +115,6 @@
               "descrizione": "Immobili locati o concessi in comodato",
               "condizioni": [
                 {
-                  "id": "d_utilizzo_locati_comodato_soggetto",
                   "descrizione": "Requisiti soggettivi del locatario o comodatario",
                   "condizioni": [
                     { "descrizione": "ONLUS o altri enti del terzo settore" },
@@ -137,7 +133,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_destinazione",
                   "descrizione": "Destinazione d'uso",
                   "condizioni": [
                     { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
@@ -157,7 +152,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_tipologia",
                   "descrizione": "Tipologia di attività",
                   "condizioni": [
                     { "descrizione": "Attività innovative - Start up" },
@@ -167,12 +161,10 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_ateco",
                   "descrizione": "Codice ATECO",
                   "valori": ["Codice"]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_dipendenti",
                   "descrizione": "Numero di dipendenti",
                   "condizioni": [
                     {
@@ -182,7 +174,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_potenza",
                   "descrizione": "Potenza impianti produzione energia",
                   "condizioni": [
                     {
@@ -200,7 +191,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_contratto",
                   "descrizione": "Con contratto registrato"
                 }
               ]
@@ -210,7 +200,6 @@
               "descrizione": "Immobili locati",
               "condizioni": [
                 {
-                  "id": "d_utilizzo_locati_soggetto",
                   "descrizione": "Requisiti soggettivi del locatario",
                   "condizioni": [
                     { "descrizione": "ONLUS o altri enti del terzo settore" },
@@ -229,7 +218,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_destinazione",
                   "descrizione": "Destinazione d'uso",
                   "condizioni": [
                     { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
@@ -249,7 +237,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_tipologia",
                   "descrizione": "Tipologia di attività",
                   "condizioni": [
                     { "descrizione": "Attività innovative - Start up" },
@@ -259,12 +246,10 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_ateco",
                   "descrizione": "Codice ATECO",
                   "valori": ["Codice"]
                 },
                 {
-                  "id": "d_utilizzo_locati_dipendenti",
                   "descrizione": "Numero di dipendenti",
                   "condizioni": [
                     {
@@ -274,7 +259,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_potenza",
                   "descrizione": "Potenza impianti produzione energia",
                   "condizioni": [
                     {
@@ -298,7 +282,6 @@
               "descrizione": "Immobili concessi in comodato",
               "condizioni": [
                 {
-                  "id": "d_utilizzo_comodato_soggetto",
                   "descrizione": "Requisiti soggettivi del comodatario",
                   "condizioni": [
                     { "descrizione": "ONLUS o altri enti del terzo settore" },
@@ -317,7 +300,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_comodato_destinazione",
                   "descrizione": "Destinazione d'uso",
                   "condizioni": [
                     { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
@@ -337,7 +319,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_comodato_tipologia",
                   "descrizione": "Tipologia di attività",
                   "condizioni": [
                     { "descrizione": "Attività innovative - Start up" },
@@ -347,12 +328,10 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_comodato_ateco",
                   "descrizione": "Codice ATECO",
                   "valori": ["Codice"]
                 },
                 {
-                  "id": "d_utilizzo_comodato_dipendenti",
                   "descrizione": "Numero di dipendenti",
                   "condizioni": [
                     {
@@ -362,7 +341,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_comodato_potenza",
                   "descrizione": "Potenza impianti produzione energia",
                   "condizioni": [
                     {
@@ -380,7 +358,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_comodato_contratto",
                   "descrizione": "Con contratto registrato"
                 }
               ]
@@ -390,7 +367,6 @@
               "descrizione": "Immobili utilizzati direttamente dal soggetto passivo",
               "condizioni": [
                 {
-                  "id": "d_utilizzo_diretto_soggetto",
                   "descrizione": "Requisiti soggettivi del soggetto passivo utilizzatore",
                   "condizioni": [
                     { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
@@ -419,7 +395,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_diretto_destinazione",
                   "descrizione": "Destinazione d'uso",
                   "condizioni": [
                     { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
@@ -439,7 +414,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_diretto_tipologia",
                   "descrizione": "Tipologia di attività",
                   "condizioni": [
                     { "descrizione": "Attività innovative - Start up" },
@@ -449,12 +423,10 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_diretto_ateco",
                   "descrizione": "Codice ATECO",
                   "valori": ["Codice"]
                 },
                 {
-                  "id": "d_utilizzo_diretto_dipendenti",
                   "descrizione": "Numero di dipendenti",
                   "condizioni": [
                     {
@@ -464,7 +436,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_diretto_potenza",
                   "descrizione": "Potenza impianti produzione energia",
                   "condizioni": [
                     {
@@ -488,7 +459,6 @@
               "descrizione": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
               "condizioni": [
                 {
-                  "id": "d_utilizzo_locati_comodato_diretto_soggetto",
                   "descrizione": "Requisiti soggettivi del locatario, comodatario o soggetto passivo utilizzatore",
                   "condizioni": [
                     { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
@@ -517,7 +487,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_diretto_destinazione",
                   "descrizione": "Destinazione d'uso",
                   "condizioni": [
                     { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
@@ -537,7 +506,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_diretto_tipologia",
                   "descrizione": "Tipologia di attività",
                   "condizioni": [
                     { "descrizione": "Attività innovative - Start up" },
@@ -547,12 +515,10 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_diretto_ateco",
                   "descrizione": "Codice ATECO",
                   "valori": ["Codice"]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_diretto_dipendenti",
                   "descrizione": "Numero di dipendenti",
                   "condizioni": [
                     {
@@ -562,7 +528,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_diretto_potenza",
                   "descrizione": "Potenza impianti produzione energia",
                   "condizioni": [
                     {
@@ -580,7 +545,6 @@
                   ]
                 },
                 {
-                  "id": "d_utilizzo_locati_comodato_diretto_contratto",
                   "descrizione": "Con contratto registrato"
                 }
               ]
