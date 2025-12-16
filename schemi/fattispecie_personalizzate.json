@@ -8,15 +8,15 @@
           "id": "d_categoria_catastale",
           "descrizione": "Categoria catastale",
           "condizioni": [
-            "D/1 Opifici",
-            "D/2 Alberghi e pensioni (con fine di lucro)",
-            "D/3 Teatri, cinematografi, sale per concerti e spettacoli e simili (con fine di lucro)",
-            "D/4 Case di cura ed ospedali (con fine di lucro)",
-            "D/5 Istituto di credito, cambio e assicurazione (con fine di lucro)",
-            "D/6 Fabbricati e locali per esercizi sportivi (con fine di lucro)",
-            "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attività industriale e non suscettibili di destinazione diversa senza radicali trasformazioni",
-            "D/8 Fabbricati costruiti o adattati per le speciali esigenze di un'attività commerciale e non suscettibili di destinazione diversa senza radicali trasformazioni",
-            "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio"
+            { "descrizione": "D/1 Opifici" },
+            { "descrizione": "D/2 Alberghi e pensioni (con fine di lucro)" },
+            { "descrizione": "D/3 Teatri, cinematografi, sale per concerti e spettacoli e simili (con fine di lucro)" },
+            { "descrizione": "D/4 Case di cura ed ospedali (con fine di lucro)" },
+            { "descrizione": "D/5 Istituto di credito, cambio e assicurazione (con fine di lucro)" },
+            { "descrizione": "D/6 Fabbricati e locali per esercizi sportivi (con fine di lucro)" },
+            { "descrizione": "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attività industriale e non suscettibili di destinazione diversa senza radicali trasformazioni" },
+            { "descrizione": "D/8 Fabbricati costruiti o adattati per le speciali esigenze di un'attività commerciale e non suscettibili di destinazione diversa senza radicali trasformazioni" },
+            { "descrizione": "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio" }
           ]
         },
         {
@@ -46,25 +46,25 @@
           "id": "d_collocazione",
           "descrizione": "Collocazione immobile",
           "condizioni": [
-            "Dentro il centro storico",
-            "Fuori dal centro storico",
-            "In una zona specificamente indicata dal comune",
-            "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale",
-            "In zona non servita da servizi pubblici"
+            { "descrizione": "Dentro il centro storico" },
+            { "descrizione": "Fuori dal centro storico" },
+            { "descrizione": "In una zona specificamente indicata dal comune" },
+            { "descrizione": "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale" },
+            { "descrizione": "In zona non servita da servizi pubblici" }
           ]
         },
         {
           "id": "d_inagibili",
           "descrizione": "Fabbricati divenuti inagibili",
           "condizioni": [
-            "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+            { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
             {
               "id": "d_inagibili_diverse",
               "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
               "condizioni": [
-                "A seguito di calamità naturali",
-                "A seguito di cause diverse da calamità naturali",
-                "A seguito di calamità naturali o di cause diverse da calamità naturali"
+                { "descrizione": "A seguito di calamità naturali" },
+                { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
               ]
             }
           ]
@@ -86,25 +86,25 @@
                   "id": "d_utilizzo_disposizione_soggetto",
                   "descrizione": "Requisiti del soggetto passivo",
                   "condizioni": [
-                    "Posseduti da ONLUS o enti del terzo settore",
-                    "Posseduti da enti non commerciali",
-                    "Posseduti da società o altri soggetti con personalità giuridica",
-                    "Posseduti da società o altri soggetti senza personalità giuridica",
+                    { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                    { "descrizione": "Posseduti da enti non commerciali" },
+                    { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                    { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
                     {
                       "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
                       "valori": ["Percentuale di invalidità"]
                     },
-                    "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" }
                   ]
                 },
                 {
                   "id": "d_utilizzo_disposizione_inutilizzo",
                   "descrizione": "Utilizzo/Inutilizzo",
                   "condizioni": [
-                    "Privi di ogni arredo",
-                    "Sprovvisti di utenze di fornitura attive di acqua, luce e gas",
-                    "Privi di ogni arredo, sprovvisti di utenze di fornitura attive di acqua, luce e gas",
-                    "Inutilizzato a seguito di crisi aziendale",
+                    { "descrizione": "Privi di ogni arredo" },
+                    { "descrizione": "Sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+                    { "descrizione": "Privi di ogni arredo, sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+                    { "descrizione": "Inutilizzato a seguito di crisi aziendale" },
                     {
                       "descrizione": "Con uso limitato e discontinuo o stagionale, per un utilizzo complessivo non superiore a mesi",
                       "valori": ["Numero di mesi"]
@@ -116,7 +116,100 @@
             {
               "id": "d_utilizzo_locati_comodato",
               "descrizione": "Immobili locati o concessi in comodato",
-              "condizioni": []
+              "condizioni": [
+                {
+                  "id": "d_utilizzo_locati_comodato_soggetto",
+                  "descrizione": "Requisiti soggettivi del locatario o comodatario",
+                  "condizioni": [
+                    { "descrizione": "ONLUS o altri enti del terzo settore" },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona fisica di età non superiore ad anni",
+                      "valori": ["Anni"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_destinazione",
+                  "descrizione": "Destinazione d'uso",
+                  "condizioni": [
+                    { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                    {
+                      "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                      "valori": ["Numero di mesi"]
+                    },
+                    { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                    { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                    { "descrizione": "Bottega storica o artigiana" },
+                    { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale" },
+                    { "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                    { "descrizione": "Impianti eolici" },
+                    { "descrizione": "Impianti fotovoltaici" },
+                    { "descrizione": "Impianti eolici e fotovoltaici" },
+                    { "descrizione": "Impianti idroelettrici" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_tipologia",
+                  "descrizione": "Tipologia di attività",
+                  "condizioni": [
+                    { "descrizione": "Attività innovative - Start up" },
+                    { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione" },
+                    { "descrizione": "Imprese green" },
+                    { "descrizione": "Microimprese" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_ateco",
+                  "descrizione": "Indicare il codice ATECO",
+                  "condizioni": [
+                    { "descrizione": "Divisione" },
+                    { "descrizione": "Gruppo" },
+                    { "descrizione": "Classe" },
+                    { "descrizione": "Categoria" },
+                    { "descrizione": "Sottocategoria" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_dipendenti",
+                  "descrizione": "Numero di dipendenti",
+                  "condizioni": [
+                    {
+                      "descrizione": "Non superiore a",
+                      "valori": ["Numero"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_potenza",
+                  "descrizione": "Potenza impianti produzione energia",
+                  "condizioni": [
+                    {
+                      "descrizione": "Fino a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Superiore a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Intervallo di valori",
+                      "valori": ["Da kW", "A kW"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_contratto",
+                  "descrizione": "Con contratto registrato"
+                }
+              ]
             },
             {
               "id": "d_utilizzo_locati",
