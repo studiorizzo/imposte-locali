@@ -1,56 +1,146 @@
 {
-  "d": {
-    "descrizione": "Fabbricati appartenenti al gruppo catastale D",
-    "d_categoria_catastale": {
-      "descrizione": "Categoria catastale",
-      "valori": [
-        "D/1 Opifici",
-        "D/2 Alberghi e pensioni (con fine di lucro)",
-        "D/3 Teatri, cinematografi, sale per concerti e spettacoli e simili (con fine di lucro)",
-        "D/4 Case di cura ed ospedali (con fine di lucro)",
-        "D/5 Istituto di credito, cambio e assicurazione (con fine di lucro)",
-        "D/6 Fabbricati e locali per esercizi sportivi (con fine di lucro)",
-        "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attività industriale e non suscettibili di destinazione diversa senza radicali trasformazioni",
-        "D/8 Fabbricati costruiti o adattati per le speciali esigenze di un'attività commerciale e non suscettibili di destinazione diversa senza radicali trasformazioni",
-        "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio"
-      ]
-    },
-    "d_superficie": {
-      "descrizione": "Superficie",
-      "valori": [
-        "Non superiore a (Mq)",
-        "Non inferiore a (Mq)"
-      ]
-    },
-    "d_recupero": {
-      "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
-    },
-    "d_rendita": {
-      "descrizione": "Rendita catastale (€)"
-    },
-    "d_collocazione": {
-      "descrizione": "Collocazione immobile",
-      "valori": [
-        "Dentro il centro storico",
-        "Fuori dal centro storico",
-        "In una zona specificamente indicata dal comune",
-        "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale",
-        "In zona non servita da servizi pubblici"
-      ]
-    },
-    "d_inagibili": {
-      "descrizione": "Fabbricati divenuti inagibili",
-      "valori": [
-        "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+  "fattispecie_personalizzate": [
+    {
+      "id": "d",
+      "descrizione": "Fabbricati appartenenti al gruppo catastale D",
+      "condizioni": [
         {
-          "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
-          "valori": [
-            "A seguito di calamità naturali",
-            "A seguito di cause diverse da calamità naturali",
-            "A seguito di calamità naturali o di cause diverse da calamità naturali"
+          "id": "d_categoria_catastale",
+          "descrizione": "Categoria catastale",
+          "condizioni": [
+            "D/1 Opifici",
+            "D/2 Alberghi e pensioni (con fine di lucro)",
+            "D/3 Teatri, cinematografi, sale per concerti e spettacoli e simili (con fine di lucro)",
+            "D/4 Case di cura ed ospedali (con fine di lucro)",
+            "D/5 Istituto di credito, cambio e assicurazione (con fine di lucro)",
+            "D/6 Fabbricati e locali per esercizi sportivi (con fine di lucro)",
+            "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attività industriale e non suscettibili di destinazione diversa senza radicali trasformazioni",
+            "D/8 Fabbricati costruiti o adattati per le speciali esigenze di un'attività commerciale e non suscettibili di destinazione diversa senza radicali trasformazioni",
+            "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio"
+          ]
+        },
+        {
+          "id": "d_superficie",
+          "descrizione": "Superficie",
+          "condizioni": [
+            {
+              "descrizione": "Non superiore a",
+              "valori": ["Mq"]
+            },
+            {
+              "descrizione": "Non inferiore a",
+              "valori": ["Mq"]
+            }
+          ]
+        },
+        {
+          "id": "d_recupero",
+          "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
+        },
+        {
+          "id": "d_rendita",
+          "descrizione": "Rendita catastale",
+          "valori": ["€"]
+        },
+        {
+          "id": "d_collocazione",
+          "descrizione": "Collocazione immobile",
+          "condizioni": [
+            "Dentro il centro storico",
+            "Fuori dal centro storico",
+            "In una zona specificamente indicata dal comune",
+            "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale",
+            "In zona non servita da servizi pubblici"
+          ]
+        },
+        {
+          "id": "d_inagibili",
+          "descrizione": "Fabbricati divenuti inagibili",
+          "condizioni": [
+            "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+            {
+              "id": "d_inagibili_diverse",
+              "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+              "condizioni": [
+                "A seguito di calamità naturali",
+                "A seguito di cause diverse da calamità naturali",
+                "A seguito di calamità naturali o di cause diverse da calamità naturali"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d_utilizzo",
+          "descrizione": "Fabbricati a disposizione o utilizzati",
+          "condizioni": [
+            {
+              "id": "d_utilizzo_disposizione",
+              "descrizione": "Immobili a disposizione",
+              "condizioni": [
+                {
+                  "id": "d_utilizzo_disposizione_durata",
+                  "descrizione": "Purché la condizione di immobile a disposizione persista da almeno",
+                  "valori": ["Numero di mesi"]
+                },
+                {
+                  "id": "d_utilizzo_disposizione_soggetto",
+                  "descrizione": "Requisiti del soggetto passivo",
+                  "condizioni": [
+                    "Posseduti da ONLUS o enti del terzo settore",
+                    "Posseduti da enti non commerciali",
+                    "Posseduti da società o altri soggetti con personalità giuridica",
+                    "Posseduti da società o altri soggetti senza personalità giuridica",
+                    {
+                      "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                      "valori": ["Percentuale di invalidità"]
+                    },
+                    "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92"
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_disposizione_inutilizzo",
+                  "descrizione": "Utilizzo/Inutilizzo",
+                  "condizioni": [
+                    "Privi di ogni arredo",
+                    "Sprovvisti di utenze di fornitura attive di acqua, luce e gas",
+                    "Privi di ogni arredo, sprovvisti di utenze di fornitura attive di acqua, luce e gas",
+                    "Inutilizzato a seguito di crisi aziendale",
+                    {
+                      "descrizione": "Con uso limitato e discontinuo o stagionale, per un utilizzo complessivo non superiore a mesi",
+                      "valori": ["Numero di mesi"]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "d_utilizzo_locati_comodato",
+              "descrizione": "Immobili locati o concessi in comodato",
+              "condizioni": []
+            },
+            {
+              "id": "d_utilizzo_locati",
+              "descrizione": "Immobili locati",
+              "condizioni": []
+            },
+            {
+              "id": "d_utilizzo_comodato",
+              "descrizione": "Immobili concessi in comodato",
+              "condizioni": []
+            },
+            {
+              "id": "d_utilizzo_diretto",
+              "descrizione": "Immobili utilizzati direttamente dal soggetto passivo",
+              "condizioni": []
+            },
+            {
+              "id": "d_utilizzo_locati_comodato_diretto",
+              "descrizione": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
+              "condizioni": []
+            }
           ]
         }
       ]
     }
-  }
+  ]
 }
