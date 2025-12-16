@@ -593,6 +593,44 @@
           "valori": ["Testo"]
         }
       ]
+    },
+    {
+      "id": "terreni_agricoli",
+      "descrizione": "Terreni agricoli",
+      "fattispecie_personalizzata": [
+        {
+          "id": "terreni_utilizzo",
+          "descrizione": "Utilizzo",
+          "condizioni": [
+            { "descrizione": "Coltivati" },
+            { "descrizione": "Non coltivati" },
+            {
+              "descrizione": "Coltivati e destinati ad alcuni tipi di coltura",
+              "valori": ["Tipo di coltura"]
+            },
+            { "descrizione": "Coltivati da parenti e affini di coltivatori (entro il terzo grado)" },
+            { "descrizione": "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)" }
+          ]
+        },
+        {
+          "id": "terreni_collocazione",
+          "descrizione": "Collocazione",
+          "condizioni": [
+            {
+              "descrizione": "Ricadenti nei fogli catastali n.",
+              "valori": ["Fogli catastali"]
+            },
+            {
+              "descrizione": "Terreni ricadenti in determinate aree",
+              "valori": ["Area"]
+            }
+          ]
+        },
+        {
+          "id": "terreni_onlus",
+          "descrizione": "Di proprietà di ONLUS o enti del terzo settore"
+        }
+      ]
     }
   ]
 }
