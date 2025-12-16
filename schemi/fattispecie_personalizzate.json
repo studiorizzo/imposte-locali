@@ -208,24 +208,389 @@
             {
               "id": "d_utilizzo_locati",
               "descrizione": "Immobili locati",
-              "condizioni": []
+              "condizioni": [
+                {
+                  "id": "d_utilizzo_locati_soggetto",
+                  "descrizione": "Requisiti soggettivi del locatario",
+                  "condizioni": [
+                    { "descrizione": "ONLUS o altri enti del terzo settore" },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona fisica di età non superiore ad anni",
+                      "valori": ["Anni"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_destinazione",
+                  "descrizione": "Destinazione d'uso",
+                  "condizioni": [
+                    { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                    {
+                      "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                      "valori": ["Numero di mesi"]
+                    },
+                    { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                    { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                    { "descrizione": "Bottega storica o artigiana" },
+                    { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale" },
+                    { "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                    { "descrizione": "Impianti eolici" },
+                    { "descrizione": "Impianti fotovoltaici" },
+                    { "descrizione": "Impianti eolici e fotovoltaici" },
+                    { "descrizione": "Impianti idroelettrici" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_tipologia",
+                  "descrizione": "Tipologia di attività",
+                  "condizioni": [
+                    { "descrizione": "Attività innovative - Start up" },
+                    { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione" },
+                    { "descrizione": "Imprese green" },
+                    { "descrizione": "Microimprese" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_ateco",
+                  "descrizione": "Codice ATECO",
+                  "valori": ["Codice"]
+                },
+                {
+                  "id": "d_utilizzo_locati_dipendenti",
+                  "descrizione": "Numero di dipendenti",
+                  "condizioni": [
+                    {
+                      "descrizione": "Non superiore a",
+                      "valori": ["Numero"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_potenza",
+                  "descrizione": "Potenza impianti produzione energia",
+                  "condizioni": [
+                    {
+                      "descrizione": "Fino a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Superiore a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Intervallo di valori",
+                      "valori": ["Da kW", "A kW"]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "d_utilizzo_comodato",
               "descrizione": "Immobili concessi in comodato",
-              "condizioni": []
+              "condizioni": [
+                {
+                  "id": "d_utilizzo_comodato_soggetto",
+                  "descrizione": "Requisiti soggettivi del comodatario",
+                  "condizioni": [
+                    { "descrizione": "ONLUS o altri enti del terzo settore" },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona fisica di età non superiore ad anni",
+                      "valori": ["Anni"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_comodato_destinazione",
+                  "descrizione": "Destinazione d'uso",
+                  "condizioni": [
+                    { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                    {
+                      "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                      "valori": ["Numero di mesi"]
+                    },
+                    { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                    { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                    { "descrizione": "Bottega storica o artigiana" },
+                    { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale" },
+                    { "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                    { "descrizione": "Impianti eolici" },
+                    { "descrizione": "Impianti fotovoltaici" },
+                    { "descrizione": "Impianti eolici e fotovoltaici" },
+                    { "descrizione": "Impianti idroelettrici" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_comodato_tipologia",
+                  "descrizione": "Tipologia di attività",
+                  "condizioni": [
+                    { "descrizione": "Attività innovative - Start up" },
+                    { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione" },
+                    { "descrizione": "Imprese green" },
+                    { "descrizione": "Microimprese" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_comodato_ateco",
+                  "descrizione": "Codice ATECO",
+                  "valori": ["Codice"]
+                },
+                {
+                  "id": "d_utilizzo_comodato_dipendenti",
+                  "descrizione": "Numero di dipendenti",
+                  "condizioni": [
+                    {
+                      "descrizione": "Non superiore a",
+                      "valori": ["Numero"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_comodato_potenza",
+                  "descrizione": "Potenza impianti produzione energia",
+                  "condizioni": [
+                    {
+                      "descrizione": "Fino a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Superiore a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Intervallo di valori",
+                      "valori": ["Da kW", "A kW"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_comodato_contratto",
+                  "descrizione": "Con contratto registrato"
+                }
+              ]
             },
             {
               "id": "d_utilizzo_diretto",
               "descrizione": "Immobili utilizzati direttamente dal soggetto passivo",
-              "condizioni": []
+              "condizioni": [
+                {
+                  "id": "d_utilizzo_diretto_soggetto",
+                  "descrizione": "Requisiti soggettivi del soggetto passivo utilizzatore",
+                  "condizioni": [
+                    { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                    { "descrizione": "Posseduti da enti non commerciali" },
+                    { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                    { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                    {
+                      "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                      "valori": ["Percentuale di invalidità"]
+                    },
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona fisica di età non superiore ad anni",
+                      "valori": ["Anni"]
+                    },
+                    { "descrizione": "Utilizzatore diretto dell'immobile nel caso di piccole e medie imprese" },
+                    { "descrizione": "Utilizzatore diretto dell'immobile (tutti)" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_diretto_destinazione",
+                  "descrizione": "Destinazione d'uso",
+                  "condizioni": [
+                    { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                    {
+                      "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                      "valori": ["Numero di mesi"]
+                    },
+                    { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                    { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                    { "descrizione": "Bottega storica o artigiana" },
+                    { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale" },
+                    { "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                    { "descrizione": "Impianti eolici" },
+                    { "descrizione": "Impianti fotovoltaici" },
+                    { "descrizione": "Impianti eolici e fotovoltaici" },
+                    { "descrizione": "Impianti idroelettrici" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_diretto_tipologia",
+                  "descrizione": "Tipologia di attività",
+                  "condizioni": [
+                    { "descrizione": "Attività innovative - Start up" },
+                    { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione" },
+                    { "descrizione": "Imprese green" },
+                    { "descrizione": "Microimprese" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_diretto_ateco",
+                  "descrizione": "Codice ATECO",
+                  "valori": ["Codice"]
+                },
+                {
+                  "id": "d_utilizzo_diretto_dipendenti",
+                  "descrizione": "Numero di dipendenti",
+                  "condizioni": [
+                    {
+                      "descrizione": "Non superiore a",
+                      "valori": ["Numero"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_diretto_potenza",
+                  "descrizione": "Potenza impianti produzione energia",
+                  "condizioni": [
+                    {
+                      "descrizione": "Fino a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Superiore a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Intervallo di valori",
+                      "valori": ["Da kW", "A kW"]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "d_utilizzo_locati_comodato_diretto",
               "descrizione": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
-              "condizioni": []
+              "condizioni": [
+                {
+                  "id": "d_utilizzo_locati_comodato_diretto_soggetto",
+                  "descrizione": "Requisiti soggettivi del locatario, comodatario o soggetto passivo utilizzatore",
+                  "condizioni": [
+                    { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                    { "descrizione": "Posseduti da enti non commerciali" },
+                    { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                    { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                    {
+                      "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                      "valori": ["Percentuale di invalidità"]
+                    },
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                      "valori": ["Anni/Mesi"]
+                    },
+                    {
+                      "descrizione": "Persona fisica di età non superiore ad anni",
+                      "valori": ["Anni"]
+                    },
+                    { "descrizione": "Utilizzatore diretto dell'immobile nel caso di piccole e medie imprese" },
+                    { "descrizione": "Utilizzatore diretto dell'immobile (tutti)" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_diretto_destinazione",
+                  "descrizione": "Destinazione d'uso",
+                  "condizioni": [
+                    { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                    {
+                      "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                      "valori": ["Numero di mesi"]
+                    },
+                    { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                    { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                    { "descrizione": "Bottega storica o artigiana" },
+                    { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale" },
+                    { "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                    { "descrizione": "Impianti eolici" },
+                    { "descrizione": "Impianti fotovoltaici" },
+                    { "descrizione": "Impianti eolici e fotovoltaici" },
+                    { "descrizione": "Impianti idroelettrici" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_diretto_tipologia",
+                  "descrizione": "Tipologia di attività",
+                  "condizioni": [
+                    { "descrizione": "Attività innovative - Start up" },
+                    { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione" },
+                    { "descrizione": "Imprese green" },
+                    { "descrizione": "Microimprese" }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_diretto_ateco",
+                  "descrizione": "Codice ATECO",
+                  "valori": ["Codice"]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_diretto_dipendenti",
+                  "descrizione": "Numero di dipendenti",
+                  "condizioni": [
+                    {
+                      "descrizione": "Non superiore a",
+                      "valori": ["Numero"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_diretto_potenza",
+                  "descrizione": "Potenza impianti produzione energia",
+                  "condizioni": [
+                    {
+                      "descrizione": "Fino a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Superiore a",
+                      "valori": ["kW"]
+                    },
+                    {
+                      "descrizione": "Intervallo di valori",
+                      "valori": ["Da kW", "A kW"]
+                    }
+                  ]
+                },
+                {
+                  "id": "d_utilizzo_locati_comodato_diretto_contratto",
+                  "descrizione": "Con contratto registrato"
+                }
+              ]
             }
           ]
+        },
+        {
+          "id": "d_ulteriori_condizioni",
+          "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+          "valori": ["Testo"]
         }
       ]
     }
