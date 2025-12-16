@@ -3,7 +3,7 @@
     "descrizione": "Fabbricati appartenenti al gruppo catastale D",
     "d_categoria_catastale": {
       "descrizione": "Categoria catastale",
-      "tipo": "opzioni",
+      "tipo": "opzioni_multiple",
       "valori": [
         "D/1 Opifici",
         "D/2 Alberghi e pensioni (con fine di lucro)",
