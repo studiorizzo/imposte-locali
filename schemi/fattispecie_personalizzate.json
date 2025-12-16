@@ -43,8 +43,8 @@
       "valori": [
         "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
         {
-          "valore": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
-          "sotto_opzioni": [
+          "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+          "valori": [
             "A seguito di calamità naturali",
             "A seguito di cause diverse da calamità naturali",
             "A seguito di calamità naturali o di cause diverse da calamità naturali"
