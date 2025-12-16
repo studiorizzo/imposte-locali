@@ -168,14 +168,8 @@
                 },
                 {
                   "id": "d_utilizzo_locati_comodato_ateco",
-                  "descrizione": "Indicare il codice ATECO",
-                  "condizioni": [
-                    { "descrizione": "Divisione" },
-                    { "descrizione": "Gruppo" },
-                    { "descrizione": "Classe" },
-                    { "descrizione": "Categoria" },
-                    { "descrizione": "Sottocategoria" }
-                  ]
+                  "descrizione": "Codice ATECO",
+                  "valori": ["Codice"]
                 },
                 {
                   "id": "d_utilizzo_locati_comodato_dipendenti",
