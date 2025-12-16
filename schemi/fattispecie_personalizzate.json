@@ -673,7 +673,6 @@
               "descrizione": "Abitazione locata o concessa in comodato",
               "condizioni": [
                 {
-                  "id": "altri_locata_tipo_contratto",
                   "descrizione": "Tipo di contratto",
                   "condizioni": [
                     { "descrizione": "Locazione" },
@@ -686,24 +685,23 @@
                     { "descrizione": "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14" },
                     { "descrizione": "Locazione ai sensi dell'art. 2, commi 3 e 5, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14" },
                     {
-                      "id": "altri_locata_comodato_gratuito",
                       "descrizione": "Comodato d'uso gratuito",
                       "condizioni": [
-                        { "descrizione": "Con contratto registrato" }
+                        { "descrizione": "Con contratto registrato" },
+                        { "descrizione": null }
                       ]
                     },
                     {
-                      "id": "altri_locata_locazione_comodato",
                       "descrizione": "Locazione o comodato d'uso gratuito",
                       "condizioni": [
-                        { "descrizione": "Con contratto registrato" }
+                        { "descrizione": "Con contratto registrato" },
+                        { "descrizione": null }
                       ]
                     },
                     { "descrizione": "Accordi/Patti territoriali per soddisfare particolari esigenze abitative (come definiti nel regolamento)" }
                   ]
                 },
                 {
-                  "id": "altri_locata_categorie",
                   "descrizione": "Categorie catastali",
                   "condizioni": [
                     { "descrizione": "A/1 Abitazioni di tipo signorile" },
@@ -719,16 +717,13 @@
                   ]
                 },
                 {
-                  "id": "altri_locata_durata",
                   "descrizione": "Durata del contratto di durata non inferiore a",
                   "valori": ["Mesi"]
                 },
                 {
-                  "id": "altri_locata_condizioni_locatario",
                   "descrizione": "Condizioni locatario/comodatario",
                   "condizioni": [
                     {
-                      "id": "altri_locata_parenti",
                       "descrizione": "Parenti",
                       "condizioni": [
                         { "descrizione": "Sino al primo grado (ipotesi diverse da quella di cui all'art. 1, comma 747, lett. c), della legge n. 160 del 2019)" },
@@ -755,23 +750,19 @@
                   ]
                 },
                 {
-                  "id": "altri_locata_non_titolare",
                   "descrizione": "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili"
                 },
                 {
-                  "id": "altri_locata_destinazione",
                   "descrizione": "Destinazione d'uso",
                   "condizioni": [
                     { "descrizione": "Purché l'affittuario/comodatario la utilizzi come abitazione principale" }
                   ]
                 },
                 {
-                  "id": "altri_locata_isee",
                   "descrizione": "Reddito ISEE del comodatario non superiore a",
                   "valori": ["€"]
                 },
                 {
-                  "id": "altri_locata_requisiti_soggetto",
                   "descrizione": "Requisiti del soggetto passivo",
                   "condizioni": [
                     { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
@@ -786,11 +777,9 @@
                   ]
                 },
                 {
-                  "id": "altri_locata_solo_immobile",
                   "descrizione": "Limitatamente ad un solo immobile"
                 },
                 {
-                  "id": "altri_locata_collocazione",
                   "descrizione": "Collocazione immobile",
                   "condizioni": [
                     { "descrizione": "Dentro il centro storico" },
@@ -807,12 +796,10 @@
                   ]
                 },
                 {
-                  "id": "altri_locata_inagibili",
                   "descrizione": "Fabbricati divenuti inagibili",
                   "condizioni": [
                     { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
                     {
-                      "id": "altri_locata_inagibili_diverse",
                       "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
                       "condizioni": [
                         { "descrizione": "A seguito di calamità naturali" },
@@ -823,7 +810,6 @@
                   ]
                 },
                 {
-                  "id": "altri_locata_ulteriori",
                   "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
                   "valori": ["Testo"]
                 }
