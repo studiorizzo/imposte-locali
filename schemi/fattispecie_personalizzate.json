@@ -1,7 +1,7 @@
 {
-  "fabbricati_gruppo_d": {
+  "d": {
     "descrizione": "Fabbricati appartenenti al gruppo catastale D",
-    "gruppo_d_categoria_catastale": {
+    "d_categoria_catastale": {
       "descrizione": "Categoria catastale",
       "tipo": "opzioni",
       "valori": [
@@ -16,7 +16,7 @@
         "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio"
       ]
     },
-    "gruppo_d_superficie": {
+    "d_superficie": {
       "descrizione": "Superficie",
       "tipo": "on/off",
       "valori": [
@@ -24,15 +24,15 @@
         "Non inferiore a (Mq)"
       ]
     },
-    "gruppo_d_recupero": {
+    "d_recupero": {
       "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica",
       "tipo": "on/off"
     },
-    "gruppo_d_rendita": {
+    "d_rendita": {
       "descrizione": "Rendita catastale (€)",
       "tipo": "on/off"
     },
-    "gruppo_d_collocazione": {
+    "d_collocazione": {
       "descrizione": "Collocazione immobile",
       "tipo": "on/off",
       "valori": [
@@ -43,7 +43,7 @@
         "In zona non servita da servizi pubblici"
       ]
     },
-    "gruppo_d_inagibili": {
+    "d_inagibili": {
       "descrizione": "Fabbricati divenuti inagibili",
       "tipo": "on/off",
       "valori": [
@@ -58,14 +58,5 @@
         }
       ]
     }
-  },
-  "terreni_agricoli": {
-    "descrizione": "Terreni agricoli"
-  },
-  "aree_fabbricabili": {
-    "descrizione": "Aree fabbricabili"
-  },
-  "altri_fabbricati": {
-    "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)"
   }
 }
