@@ -1,0 +1,64 @@
+{
+  "descrizione": "Fattispecie principali IMU - righe a 2 colonne nei prospetti (aliquota base)",
+  "riferimento": "MEF Allegato A - protocollo 50585/2025",
+  "fattispecie": [
+    {
+      "id": "abitazione_principale",
+      "descrizione": "Abitazione principale di categoria catastale A/1, A/8 e A/9",
+      "categorie_catastali": ["A/1", "A/8", "A/9"],
+      "aliquota_base_legge": "0,5%",
+      "aliquota_max": "0,6%",
+      "detrazione": "200 €",
+      "diversificazione_consentita": false,
+      "note": "Non è consentita l'introduzione di alcuna differenziazione all'interno di tale fattispecie"
+    },
+    {
+      "id": "fabbricati_rurali_strumentali",
+      "descrizione": "Fabbricati rurali ad uso strumentale",
+      "categorie_catastali": ["D/10"],
+      "aliquota_base_legge": "0,1%",
+      "aliquota_max": "0,1%",
+      "diversificazione_consentita": false,
+      "note": "Non è consentita l'introduzione di alcuna differenziazione all'interno di tale fattispecie. I comuni possono solo ridurre fino all'azzeramento."
+    },
+    {
+      "id": "fabbricati_gruppo_d",
+      "descrizione": "Fabbricati appartenenti al gruppo catastale D",
+      "categorie_catastali": ["D/1", "D/2", "D/3", "D/4", "D/5", "D/6", "D/7", "D/8", "D/9"],
+      "aliquota_base_legge": "0,86%",
+      "aliquota_max": "1,06%",
+      "quota_stato": "0,76%",
+      "diversificazione_consentita": true,
+      "schema_diversificazione": "fabbricati_gruppo_d.json",
+      "note": "Quota riservata allo Stato pari allo 0,76%. Il comune può solo variare la quota comunale (da 0,1% a 0,3%)."
+    },
+    {
+      "id": "terreni_agricoli",
+      "descrizione": "Terreni agricoli",
+      "categorie_catastali": null,
+      "aliquota_base_legge": "0,76%",
+      "aliquota_max": "1,06%",
+      "diversificazione_consentita": true,
+      "schema_diversificazione": "terreni_agricoli.json"
+    },
+    {
+      "id": "aree_fabbricabili",
+      "descrizione": "Aree fabbricabili",
+      "categorie_catastali": null,
+      "aliquota_base_legge": "0,86%",
+      "aliquota_max": "1,06%",
+      "diversificazione_consentita": true,
+      "schema_diversificazione": "aree_fabbricabili.json"
+    },
+    {
+      "id": "altri_fabbricati",
+      "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)",
+      "categorie_catastali": ["A/1", "A/2", "A/3", "A/4", "A/5", "A/6", "A/7", "A/8", "A/9", "A/10", "A/11", "B/*", "C/*"],
+      "aliquota_base_legge": "0,86%",
+      "aliquota_max": "1,06%",
+      "diversificazione_consentita": true,
+      "schema_diversificazione": "altri_fabbricati.json",
+      "note": "Include abitazioni non principali (cat. A escluso A/10), uffici (A/10), fabbricati gruppo B e C"
+    }
+  ]
+}
