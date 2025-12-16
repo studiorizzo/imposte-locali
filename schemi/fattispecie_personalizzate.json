@@ -659,6 +659,50 @@
           "valori": ["Testo"]
         }
       ]
+    },
+    {
+      "id": "altri_fabbricati",
+      "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)",
+      "fattispecie_personalizzata": [
+        {
+          "id": "altri_tipologia",
+          "descrizione": "Tipologia immobile",
+          "condizioni": [
+            {
+              "id": "altri_tipologia_locata_comodato",
+              "descrizione": "Abitazione locata o concessa in comodato"
+            },
+            {
+              "id": "altri_tipologia_turistico_ricettiva",
+              "descrizione": "Abitazione destinata a struttura turistico-ricettiva"
+            },
+            {
+              "id": "altri_tipologia_disposizione",
+              "descrizione": "Abitazione a disposizione"
+            },
+            {
+              "id": "altri_tipologia_utilizzata_direttamente",
+              "descrizione": "Abitazione utilizzata direttamente dal soggetto passivo"
+            },
+            {
+              "id": "altri_tipologia_a10_b_c",
+              "descrizione": "Immobili di categoria A10, B, C"
+            },
+            {
+              "id": "altri_tipologia_alloggi_sociali",
+              "descrizione": "Fabbricati di civile abitazione destinati ad alloggi sociali o posseduti dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità, non adibiti ad abitazione principale per il periodo di espletamento delle attività di assegnazione"
+            },
+            {
+              "id": "altri_tipologia_iacp_assegnati",
+              "descrizione": "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità"
+            },
+            {
+              "id": "altri_tipologia_inagibili_ex_principale",
+              "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
