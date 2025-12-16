@@ -59,7 +59,6 @@
           "condizioni": [
             { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
             {
-              "id": "d_inagibili_diverse",
               "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
               "condizioni": [
                 { "descrizione": "A seguito di calamità naturali" },
