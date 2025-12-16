@@ -1,0 +1,410 @@
+{
+  "fattispecie": "fabbricati_gruppo_d",
+  "codice_fattispecie": 3,
+  "descrizione": "Fabbricati appartenenti al gruppo catastale D",
+  "diversificazione_consentita": true,
+  "condizioni": {
+    "categoria_catastale": {
+      "tipo": "multi_select",
+      "opzioni": [
+        { "codice": "D/1", "descrizione": "Opifici" },
+        { "codice": "D/2", "descrizione": "Alberghi e pensioni (con fine di lucro)" },
+        { "codice": "D/3", "descrizione": "Teatri, cinematografi, sale per concerti e spettacoli e simili (con fine di lucro)" },
+        { "codice": "D/4", "descrizione": "Case di cura ed ospedali (con fine di lucro)" },
+        { "codice": "D/5", "descrizione": "Istituto di credito, cambio e assicurazione (con fine di lucro)" },
+        { "codice": "D/6", "descrizione": "Fabbricati e locali per esercizi sportivi (con fine di lucro)" },
+        { "codice": "D/7", "descrizione": "Fabbricati costruiti o adattati per le speciali esigenze di un'attività industriale e non suscettibili di destinazione diversa senza radicali trasformazioni" },
+        { "codice": "D/8", "descrizione": "Fabbricati costruiti o adattati per le speciali esigenze di un'attività commerciale e non suscettibili di destinazione diversa senza radicali trasformazioni" },
+        { "codice": "D/9", "descrizione": "Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio" }
+      ]
+    },
+    "superficie": {
+      "tipo": "on_off",
+      "parametri": {
+        "non_superiore_mq": { "tipo": "number", "unita": "mq" },
+        "non_inferiore_mq": { "tipo": "number", "unita": "mq" }
+      }
+    },
+    "oggetto_recupero_decoro_energia": {
+      "tipo": "on_off",
+      "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
+    },
+    "rendita_catastale": {
+      "tipo": "on_off",
+      "parametri": {
+        "valore": { "tipo": "number", "unita": "euro" }
+      }
+    },
+    "collocazione_immobile": {
+      "tipo": "on_off",
+      "opzioni": [
+        { "codice": "centro_storico", "descrizione": "Dentro il centro storico" },
+        { "codice": "fuori_centro_storico", "descrizione": "Fuori dal centro storico" },
+        { "codice": "zona_specifica", "descrizione": "In una zona specificamente indicata dal comune", "richiede_specifica": true },
+        { "codice": "zona_abbandono", "descrizione": "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale", "richiede_specifica": true },
+        { "codice": "zona_non_servita", "descrizione": "In zona non servita da servizi pubblici" }
+      ]
+    },
+    "fabbricati_inagibili": {
+      "tipo": "on_off",
+      "opzioni": [
+        {
+          "codice": "ipotesi_art1_c747_b",
+          "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019"
+        },
+        {
+          "codice": "ipotesi_diverse",
+          "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+          "sotto_opzioni": [
+            { "codice": "calamita_naturali", "descrizione": "A seguito di calamità naturali" },
+            { "codice": "cause_diverse", "descrizione": "A seguito di cause diverse da calamità naturali" },
+            { "codice": "calamita_o_altre", "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+          ]
+        }
+      ]
+    },
+    "fabbricati_disposizione_utilizzati": {
+      "tipo": "select_one",
+      "opzioni": {
+        "immobili_a_disposizione": {
+          "codice": "3.7.1",
+          "descrizione": "Immobili a disposizione",
+          "condizioni": {
+            "persistenza_minima": {
+              "tipo": "on_off",
+              "parametri": { "mesi": { "tipo": "number" } }
+            },
+            "requisiti_soggetto_passivo": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "onlus_terzo_settore", "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                { "codice": "enti_non_commerciali", "descrizione": "Posseduti da enti non commerciali" },
+                { "codice": "societa_con_personalita", "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                { "codice": "societa_senza_personalita", "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                { "codice": "invalidita_civile", "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al", "richiede_percentuale": true },
+                { "codice": "disabilita_104", "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" }
+              ]
+            },
+            "utilizzo_inutilizzo": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "privi_arredo", "descrizione": "Privi di ogni arredo" },
+                { "codice": "senza_utenze", "descrizione": "Sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+                { "codice": "privi_arredo_senza_utenze", "descrizione": "Privi di ogni arredo, sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+                { "codice": "crisi_aziendale", "descrizione": "Inutilizzato a seguito di crisi aziendale" },
+                { "codice": "uso_limitato", "descrizione": "Con uso limitato e discontinuo o stagionale, per un utilizzo complessivo non superiore a mesi", "richiede_mesi": true }
+              ]
+            }
+          }
+        },
+        "immobili_locati_comodato": {
+          "codice": "3.7.2",
+          "descrizione": "Immobili locati o concessi in comodato",
+          "condizioni": {
+            "requisiti_locatario_comodatario": {
+              "tipo": "select",
+              "opzioni": [
+                { "codice": "onlus_terzo_settore", "descrizione": "ONLUS o altri enti del terzo settore" },
+                { "codice": "persona_giuridica_max_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a", "richiede_mesi": true },
+                { "codice": "persona_giuridica_min_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a", "richiede_mesi": true },
+                { "codice": "persona_fisica_eta", "descrizione": "Persona fisica di età non superiore ad anni", "richiede_anni": true }
+              ]
+            },
+            "destinazione_uso": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "attivita_produttiva", "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                { "codice": "uso_limitato", "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi", "richiede_mesi": true },
+                { "codice": "scopi_istituzionali", "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                { "codice": "non_produttivi_reddito", "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                { "codice": "bottega_storica", "descrizione": "Bottega storica o artigiana" },
+                { "codice": "cig", "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                { "codice": "no_azzardo", "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                { "codice": "impianti_eolici", "descrizione": "Impianti eolici" },
+                { "codice": "impianti_fotovoltaici", "descrizione": "Impianti fotovoltaici" },
+                { "codice": "impianti_eolici_fotovoltaici", "descrizione": "Impianti eolici e fotovoltaici" },
+                { "codice": "impianti_idroelettrici", "descrizione": "Impianti idroelettrici" }
+              ]
+            },
+            "tipologia_attivita": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "startup", "descrizione": "Attività innovative – Start up" },
+                { "codice": "ampliamento_occupazione", "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                { "codice": "green", "descrizione": "Imprese green" },
+                { "codice": "microimprese", "descrizione": "Microimprese" }
+              ]
+            },
+            "codice_ateco": {
+              "tipo": "on_off",
+              "livelli": ["divisione", "gruppo", "classe", "categoria", "sottocategoria"]
+            },
+            "numero_dipendenti": {
+              "tipo": "on_off",
+              "parametri": { "non_superiore_a": { "tipo": "number" } }
+            },
+            "potenza_impianti": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "fino_a", "descrizione": "Fino a (kW)", "richiede_valore": true },
+                { "codice": "superiore_a", "descrizione": "Superiore a (kW)", "richiede_valore": true },
+                { "codice": "intervallo", "descrizione": "Intervallo di valori", "richiede_da": true, "richiede_a": true }
+              ]
+            },
+            "contratto_registrato": {
+              "tipo": "on_off"
+            }
+          }
+        },
+        "immobili_locati": {
+          "codice": "3.7.3",
+          "descrizione": "Immobili locati",
+          "condizioni": {
+            "requisiti_locatario": {
+              "tipo": "select",
+              "opzioni": [
+                { "codice": "onlus_terzo_settore", "descrizione": "ONLUS o altri enti del terzo settore" },
+                { "codice": "persona_giuridica_max_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a", "richiede_mesi": true },
+                { "codice": "persona_giuridica_min_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a", "richiede_mesi": true },
+                { "codice": "persona_fisica_eta", "descrizione": "Persona fisica di età non superiore ad anni", "richiede_anni": true }
+              ]
+            },
+            "destinazione_uso": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "attivita_produttiva", "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                { "codice": "uso_limitato", "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi", "richiede_mesi": true },
+                { "codice": "scopi_istituzionali", "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                { "codice": "non_produttivi_reddito", "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                { "codice": "bottega_storica", "descrizione": "Bottega storica o artigiana" },
+                { "codice": "cig", "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                { "codice": "no_azzardo", "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                { "codice": "impianti_eolici", "descrizione": "Impianti eolici" },
+                { "codice": "impianti_fotovoltaici", "descrizione": "Impianti fotovoltaici" },
+                { "codice": "impianti_eolici_fotovoltaici", "descrizione": "Impianti eolici e fotovoltaici" },
+                { "codice": "impianti_idroelettrici", "descrizione": "Impianti idroelettrici" }
+              ]
+            },
+            "tipologia_attivita": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "startup", "descrizione": "Attività innovative – Start up" },
+                { "codice": "ampliamento_occupazione", "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                { "codice": "green", "descrizione": "Imprese green" },
+                { "codice": "microimprese", "descrizione": "Microimprese" }
+              ]
+            },
+            "codice_ateco": {
+              "tipo": "on_off",
+              "livelli": ["divisione", "gruppo", "classe", "categoria", "sottocategoria"]
+            },
+            "numero_dipendenti": {
+              "tipo": "on_off",
+              "parametri": { "non_superiore_a": { "tipo": "number" } }
+            },
+            "potenza_impianti": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "fino_a", "descrizione": "Fino a (kW)", "richiede_valore": true },
+                { "codice": "superiore_a", "descrizione": "Superiore a (kW)", "richiede_valore": true },
+                { "codice": "intervallo", "descrizione": "Intervallo di valori", "richiede_da": true, "richiede_a": true }
+              ]
+            }
+          }
+        },
+        "immobili_comodato": {
+          "codice": "3.7.4",
+          "descrizione": "Immobili concessi in comodato",
+          "condizioni": {
+            "requisiti_comodatario": {
+              "tipo": "select",
+              "opzioni": [
+                { "codice": "onlus_terzo_settore", "descrizione": "ONLUS o altri enti del terzo settore" },
+                { "codice": "persona_giuridica_max_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a", "richiede_mesi": true },
+                { "codice": "persona_giuridica_min_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a", "richiede_mesi": true },
+                { "codice": "persona_fisica_eta", "descrizione": "Persona fisica di età non superiore ad anni", "richiede_anni": true }
+              ]
+            },
+            "destinazione_uso": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "attivita_produttiva", "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                { "codice": "uso_limitato", "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi", "richiede_mesi": true },
+                { "codice": "scopi_istituzionali", "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                { "codice": "non_produttivi_reddito", "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                { "codice": "bottega_storica", "descrizione": "Bottega storica o artigiana" },
+                { "codice": "cig", "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                { "codice": "no_azzardo", "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                { "codice": "impianti_eolici", "descrizione": "Impianti eolici" },
+                { "codice": "impianti_fotovoltaici", "descrizione": "Impianti fotovoltaici" },
+                { "codice": "impianti_eolici_fotovoltaici", "descrizione": "Impianti eolici e fotovoltaici" },
+                { "codice": "impianti_idroelettrici", "descrizione": "Impianti idroelettrici" }
+              ]
+            },
+            "tipologia_attivita": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "startup", "descrizione": "Attività innovative – Start up" },
+                { "codice": "ampliamento_occupazione", "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                { "codice": "green", "descrizione": "Imprese green" },
+                { "codice": "microimprese", "descrizione": "Microimprese" }
+              ]
+            },
+            "codice_ateco": {
+              "tipo": "on_off",
+              "livelli": ["divisione", "gruppo", "classe", "categoria", "sottocategoria"]
+            },
+            "numero_dipendenti": {
+              "tipo": "on_off",
+              "parametri": { "non_superiore_a": { "tipo": "number" } }
+            },
+            "potenza_impianti": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "fino_a", "descrizione": "Fino a (kW)", "richiede_valore": true },
+                { "codice": "superiore_a", "descrizione": "Superiore a (kW)", "richiede_valore": true },
+                { "codice": "intervallo", "descrizione": "Intervallo di valori", "richiede_da": true, "richiede_a": true }
+              ]
+            },
+            "contratto_registrato": {
+              "tipo": "on_off"
+            }
+          }
+        },
+        "immobili_utilizzati_direttamente": {
+          "codice": "3.7.5",
+          "descrizione": "Immobili utilizzati direttamente dal soggetto passivo",
+          "condizioni": {
+            "requisiti_soggetto_passivo_utilizzatore": {
+              "tipo": "select",
+              "opzioni": [
+                { "codice": "onlus_terzo_settore", "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                { "codice": "enti_non_commerciali", "descrizione": "Posseduti da enti non commerciali" },
+                { "codice": "societa_con_personalita", "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                { "codice": "societa_senza_personalita", "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                { "codice": "invalidita_civile", "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al", "richiede_percentuale": true },
+                { "codice": "disabilita_104", "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+                { "codice": "persona_giuridica_max_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a", "richiede_mesi": true },
+                { "codice": "persona_giuridica_min_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a", "richiede_mesi": true },
+                { "codice": "persona_fisica_eta", "descrizione": "Persona fisica di età non superiore ad anni", "richiede_anni": true },
+                { "codice": "pmi_utilizzatore", "descrizione": "Utilizzatore diretto dell'immobile nel caso di piccole e medie imprese" },
+                { "codice": "utilizzatore_tutti", "descrizione": "Utilizzatore diretto dell'immobile (tutti)" }
+              ]
+            },
+            "destinazione_uso": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "attivita_produttiva", "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                { "codice": "uso_limitato", "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi", "richiede_mesi": true },
+                { "codice": "scopi_istituzionali", "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                { "codice": "non_produttivi_reddito", "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                { "codice": "bottega_storica", "descrizione": "Bottega storica o artigiana" },
+                { "codice": "cig", "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                { "codice": "no_azzardo", "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                { "codice": "impianti_eolici", "descrizione": "Impianti eolici" },
+                { "codice": "impianti_fotovoltaici", "descrizione": "Impianti fotovoltaici" },
+                { "codice": "impianti_eolici_fotovoltaici", "descrizione": "Impianti eolici e fotovoltaici" },
+                { "codice": "impianti_idroelettrici", "descrizione": "Impianti idroelettrici" }
+              ]
+            },
+            "tipologia_attivita": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "startup", "descrizione": "Attività innovative – Start up" },
+                { "codice": "ampliamento_occupazione", "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                { "codice": "green", "descrizione": "Imprese green" },
+                { "codice": "microimprese", "descrizione": "Microimprese" }
+              ]
+            },
+            "codice_ateco": {
+              "tipo": "on_off",
+              "livelli": ["divisione", "gruppo", "classe", "categoria", "sottocategoria"]
+            },
+            "numero_dipendenti": {
+              "tipo": "on_off",
+              "parametri": { "non_superiore_a": { "tipo": "number" } }
+            },
+            "potenza_impianti": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "fino_a", "descrizione": "Fino a (kW)", "richiede_valore": true },
+                { "codice": "superiore_a", "descrizione": "Superiore a (kW)", "richiede_valore": true },
+                { "codice": "intervallo", "descrizione": "Intervallo di valori", "richiede_da": true, "richiede_a": true }
+              ]
+            }
+          }
+        },
+        "immobili_locati_comodato_utilizzati": {
+          "codice": "3.7.6",
+          "descrizione": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
+          "condizioni": {
+            "requisiti_soggetto": {
+              "tipo": "select",
+              "opzioni": [
+                { "codice": "onlus_terzo_settore", "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                { "codice": "enti_non_commerciali", "descrizione": "Posseduti da enti non commerciali" },
+                { "codice": "societa_con_personalita", "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                { "codice": "societa_senza_personalita", "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                { "codice": "invalidita_civile", "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al", "richiede_percentuale": true },
+                { "codice": "disabilita_104", "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+                { "codice": "persona_giuridica_max_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a", "richiede_mesi": true },
+                { "codice": "persona_giuridica_min_mesi", "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a", "richiede_mesi": true },
+                { "codice": "persona_fisica_eta", "descrizione": "Persona fisica di età non superiore ad anni", "richiede_anni": true },
+                { "codice": "pmi_utilizzatore", "descrizione": "Utilizzatore diretto dell'immobile nel caso di piccole e medie imprese" },
+                { "codice": "utilizzatore_tutti", "descrizione": "Utilizzatore diretto dell'immobile (tutti)" }
+              ]
+            },
+            "destinazione_uso": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "attivita_produttiva", "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                { "codice": "uso_limitato", "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi", "richiede_mesi": true },
+                { "codice": "scopi_istituzionali", "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                { "codice": "non_produttivi_reddito", "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                { "codice": "bottega_storica", "descrizione": "Bottega storica o artigiana" },
+                { "codice": "cig", "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                { "codice": "no_azzardo", "descrizione": "Privi o che intendono dismettere giochi di azzardo" },
+                { "codice": "impianti_eolici", "descrizione": "Impianti eolici" },
+                { "codice": "impianti_fotovoltaici", "descrizione": "Impianti fotovoltaici" },
+                { "codice": "impianti_eolici_fotovoltaici", "descrizione": "Impianti eolici e fotovoltaici" },
+                { "codice": "impianti_idroelettrici", "descrizione": "Impianti idroelettrici" }
+              ]
+            },
+            "tipologia_attivita": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "startup", "descrizione": "Attività innovative – Start up" },
+                { "codice": "ampliamento_occupazione", "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                { "codice": "green", "descrizione": "Imprese green" },
+                { "codice": "microimprese", "descrizione": "Microimprese" }
+              ]
+            },
+            "codice_ateco": {
+              "tipo": "on_off",
+              "livelli": ["divisione", "gruppo", "classe", "categoria", "sottocategoria"]
+            },
+            "numero_dipendenti": {
+              "tipo": "on_off",
+              "parametri": { "non_superiore_a": { "tipo": "number" } }
+            },
+            "potenza_impianti": {
+              "tipo": "on_off",
+              "opzioni": [
+                { "codice": "fino_a", "descrizione": "Fino a (kW)", "richiede_valore": true },
+                { "codice": "superiore_a", "descrizione": "Superiore a (kW)", "richiede_valore": true },
+                { "codice": "intervallo", "descrizione": "Intervallo di valori", "richiede_da": true, "richiede_a": true }
+              ]
+            },
+            "contratto_registrato": {
+              "tipo": "on_off"
+            }
+          }
+        }
+      }
+    },
+    "ulteriori_condizioni_comma_755": {
+      "tipo": "on_off",
+      "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%"
+    }
+  }
+}
