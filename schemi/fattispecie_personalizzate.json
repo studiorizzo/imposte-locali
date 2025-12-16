@@ -631,6 +631,34 @@
           "descrizione": "Di proprietà di ONLUS o enti del terzo settore"
         }
       ]
+    },
+    {
+      "id": "aree_fabbricabili",
+      "descrizione": "Aree fabbricabili",
+      "fattispecie_personalizzata": [
+        {
+          "id": "aree_tipologia",
+          "descrizione": "Tipologia",
+          "condizioni": [
+            { "descrizione": "Residenziali" },
+            { "descrizione": "Diverse da residenziali" }
+          ]
+        },
+        {
+          "id": "aree_collocazione",
+          "descrizione": "Situate in determinate zone",
+          "valori": ["Zona"]
+        },
+        {
+          "id": "aree_onlus",
+          "descrizione": "Di proprietà di ONLUS o enti del terzo settore"
+        },
+        {
+          "id": "aree_ulteriori_condizioni",
+          "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+          "valori": ["Testo"]
+        }
+      ]
     }
   ]
 }
