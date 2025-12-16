@@ -1,0 +1,408 @@
+{
+  "fattispecie": "altri_fabbricati",
+  "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)",
+  "definizioni_comuni": {
+    "categorie_catastali_abitazioni": [
+      { "id": "A/1", "descrizione": "A/1 Abitazioni di tipo signorile" },
+      { "id": "A/2", "descrizione": "A/2 Abitazioni di tipo civile" },
+      { "id": "A/3", "descrizione": "A/3 Abitazioni di tipo economico" },
+      { "id": "A/4", "descrizione": "A/4 Abitazioni di tipo popolare" },
+      { "id": "A/5", "descrizione": "A/5 Abitazioni di tipo ultrapopolare" },
+      { "id": "A/6", "descrizione": "A/6 Abitazioni di tipo rurale" },
+      { "id": "A/7", "descrizione": "A/7 Abitazioni in villini" },
+      { "id": "A/8", "descrizione": "A/8 Abitazioni in ville" },
+      { "id": "A/9", "descrizione": "A/9 Castelli, palazzi di eminenti pregi artistici o storici" },
+      { "id": "A/11", "descrizione": "A/11 Abitazioni o alloggi tipici dei luoghi" }
+    ],
+    "categorie_catastali_a10_b_c": [
+      { "id": "A/10", "descrizione": "A/10 Uffici e studi privati" },
+      { "id": "B/1", "descrizione": "B/1 Collegi e convitti, educandati; ricoveri; orfanotrofi; ospizi; conventi; seminari; caserme" },
+      { "id": "B/2", "descrizione": "B/2 Case di cura ed ospedali (senza fine di lucro)" },
+      { "id": "B/3", "descrizione": "B/3 Prigioni e riformatori" },
+      { "id": "B/4", "descrizione": "B/4 Uffici pubblici" },
+      { "id": "B/5", "descrizione": "B/5 Scuole e laboratori scientifici" },
+      { "id": "B/6", "descrizione": "B/6 Biblioteche, pinacoteche, musei, gallerie, accademie che non hanno sede in edifici della categoria A/9" },
+      { "id": "B/7", "descrizione": "B/7 Cappelle ed oratori non destinati all'esercizio pubblico del culto" },
+      { "id": "B/8", "descrizione": "B/8 Magazzini sotterranei per depositi di derrate" },
+      { "id": "C/1", "descrizione": "C/1 Negozi e botteghe" },
+      { "id": "C/2", "descrizione": "C/2 Magazzini e locali di deposito" },
+      { "id": "C/3", "descrizione": "C/3 Laboratori per arti e mestieri" },
+      { "id": "C/4", "descrizione": "C/4 Fabbricati e locali per esercizi sportivi (senza fine di lucro)" },
+      { "id": "C/5", "descrizione": "C/5 Stabilimenti balneari e di acque curative (senza fine di lucro)" },
+      { "id": "C/6", "descrizione": "C/6 Stalle, scuderie, rimesse, autorimesse (senza fine di lucro)" },
+      { "id": "C/7", "descrizione": "C/7 Tettoie chiuse od aperte" }
+    ],
+    "requisiti_soggetto_passivo": [
+      { "id": "onlus_terzo_settore", "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+      { "id": "enti_non_commerciali", "descrizione": "Posseduti da enti non commerciali" },
+      { "id": "societa_con_personalita", "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+      { "id": "societa_senza_personalita", "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+      { "id": "invalidita_civile", "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al", "parametro": { "nome": "percentuale", "tipo": "numero" } },
+      { "id": "disabilita_104", "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" }
+    ],
+    "collocazione_immobile": [
+      { "id": "centro_storico", "descrizione": "Dentro il centro storico" },
+      { "id": "fuori_centro_storico", "descrizione": "Fuori dal centro storico" },
+      { "id": "zona_specifica", "descrizione": "In una zona specificamente indicata dal comune", "parametro": { "nome": "zona", "tipo": "testo" } },
+      { "id": "zona_abbandono", "descrizione": "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale", "parametro": { "nome": "zona", "tipo": "testo" } },
+      { "id": "zona_non_servita", "descrizione": "In zona non servita da servizi pubblici" }
+    ],
+    "fabbricati_inagibili": [
+      { "id": "ipotesi_747b", "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
+      { "id": "calamita", "descrizione": "A seguito di calamità naturali" },
+      { "id": "cause_diverse", "descrizione": "A seguito di cause diverse da calamità naturali" },
+      { "id": "calamita_o_diverse", "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+    ]
+  },
+  "tipologia_immobile": {
+    "descrizione": "Tipologia immobile",
+    "tipi": {
+      "abitazione_locata_comodato": {
+        "descrizione": "Abitazione locata o concessa in comodato",
+        "condizioni": {
+          "tipo_contratto": {
+            "tipo": "opzioni",
+            "descrizione": "Tipo di contratto",
+            "valori": [
+              { "id": "locazione", "descrizione": "Locazione" },
+              { "id": "locazione_canone_libero", "descrizione": "Locazione a canone libero" },
+              { "id": "locazione_art2_c1", "descrizione": "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i." },
+              { "id": "locazione_art2_c3", "descrizione": "Locazione ai sensi dell'art. 2, commi 3, della Legge n.431/1998 e s.m.i." },
+              { "id": "locazione_art5_c1", "descrizione": "Locazione ai sensi dell'art. 5, comma 1, della Legge n. 431/1998 e s.m.i." },
+              { "id": "locazione_studenti", "descrizione": "Locazione a studenti ai sensi dell'art. 5, comma 2, della Legge n. 431/1998 e s.m.i." },
+              { "id": "locazione_art5_c3", "descrizione": "Locazione ai sensi dell'art. 5, comma 3, della Legge n. 431/1998 e s.m.i." },
+              { "id": "locazione_art2_c1_ridotto", "descrizione": "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14" },
+              { "id": "locazione_art2_c3_5_ridotto", "descrizione": "Locazione ai sensi dell'art. 2, commi 3 e 5, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14" },
+              { "id": "comodato", "descrizione": "Comodato d'uso gratuito", "opzione_aggiuntiva": { "id": "contratto_registrato", "descrizione": "Con contratto registrato" } },
+              { "id": "locazione_o_comodato", "descrizione": "Locazione o comodato d'uso gratuito", "opzione_aggiuntiva": { "id": "contratto_registrato", "descrizione": "Con contratto registrato" } },
+              { "id": "accordi_territoriali", "descrizione": "Accordi/Patti territoriali per soddisfare particolari esigenze abitative (come definiti nel regolamento)" }
+            ]
+          },
+          "categorie_catastali": {
+            "tipo": "opzioni",
+            "descrizione": "Categorie catastali",
+            "valori": { "$ref": "#/definizioni_comuni/categorie_catastali_abitazioni" }
+          },
+          "durata_contratto": {
+            "tipo": "booleano_con_parametro",
+            "descrizione": "Durata del contratto di durata non inferiore a (mesi)",
+            "parametro": { "nome": "mesi", "tipo": "numero" }
+          },
+          "condizioni_locatario_comodatario": {
+            "tipo": "opzioni",
+            "descrizione": "Condizioni locatario/comodatario",
+            "valori": [
+              { "id": "parenti_primo_grado_diversi", "descrizione": "Parenti sino al primo grado (ipotesi diverse da quella di cui all'art. 1, comma 747, lett. c), della legge n. 160 del 2019)" },
+              { "id": "parenti_primo_grado_747c", "descrizione": "Parenti sino al primo grado (ipotesi di cui all'art. 1, comma 747, lett. c), della legge n. 160 del 2019)" },
+              { "id": "parenti_secondo_grado_retta", "descrizione": "Parenti sino al secondo grado (in linea retta)" },
+              { "id": "parenti_secondo_grado_collaterale", "descrizione": "Parenti sino al secondo grado (in linea retta e collaterale)" },
+              { "id": "parenti_terzo_grado_retta", "descrizione": "Parenti sino al terzo grado (in linea retta)" },
+              { "id": "parenti_terzo_grado_collaterale", "descrizione": "Parenti sino al terzo grado (in linea retta e collaterale)" },
+              { "id": "parenti_qualsiasi", "descrizione": "Indipendentemente dal grado di parentela" },
+              { "id": "invalidita_civile", "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al", "parametro": { "nome": "percentuale", "tipo": "numero" } },
+              { "id": "studenti", "descrizione": "Studenti" },
+              { "id": "disabilita_104", "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+              { "id": "nucleo_difficolta", "descrizione": "Nucleo familiare in difficoltà economiche (come definite nel regolamento)" },
+              { "id": "vulnerabilita_sociale", "descrizione": "Soggetto in condizioni di vulnerabilità sociale/emergenza abitativa (come definite nel regolamento)" },
+              { "id": "onlus_terzo_settore", "descrizione": "ONLUS o altri enti del terzo settore" },
+              { "id": "gestore_casa_famiglia", "descrizione": "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+              { "id": "gestore_struttura_vittime", "descrizione": "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+              { "id": "affidatari_accoglienza", "descrizione": "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+            ]
+          },
+          "non_titolare_proprieta": {
+            "tipo": "booleano",
+            "descrizione": "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili"
+          },
+          "abitazione_principale_locatario": {
+            "tipo": "booleano",
+            "descrizione": "Purché l'affittuario/comodatario la utilizzi come abitazione principale"
+          },
+          "isee_comodatario": {
+            "tipo": "booleano_con_parametro",
+            "descrizione": "Reddito ISEE del comodatario non superiore a (€)",
+            "parametro": { "nome": "euro", "tipo": "numero" }
+          },
+          "requisiti_soggetto_passivo": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Requisiti del soggetto passivo",
+            "valori": { "$ref": "#/definizioni_comuni/requisiti_soggetto_passivo" }
+          },
+          "solo_un_immobile": {
+            "tipo": "booleano",
+            "descrizione": "Limitatamente ad un solo immobile"
+          },
+          "collocazione_immobile": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Collocazione immobile",
+            "valori": { "$ref": "#/definizioni_comuni/collocazione_immobile" }
+          },
+          "fabbricati_inagibili": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Fabbricati divenuti inagibili",
+            "valori": { "$ref": "#/definizioni_comuni/fabbricati_inagibili" }
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%"
+          }
+        }
+      },
+      "abitazione_turistico_ricettiva": {
+        "descrizione": "Abitazione destinata a struttura turistico-ricettiva",
+        "condizioni": {
+          "codice_ateco": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Indicare il codice ATECO",
+            "valori": [
+              { "id": "divisione", "descrizione": "Divisione", "parametro": { "nome": "codice", "tipo": "testo" } },
+              { "id": "gruppo", "descrizione": "Gruppo", "parametro": { "nome": "codice", "tipo": "testo" } },
+              { "id": "classe", "descrizione": "Classe", "parametro": { "nome": "codice", "tipo": "testo" } },
+              { "id": "categoria", "descrizione": "Categoria", "parametro": { "nome": "codice", "tipo": "testo" } },
+              { "id": "sottocategoria", "descrizione": "Sottocategoria", "parametro": { "nome": "codice", "tipo": "testo" } }
+            ]
+          },
+          "collocazione_immobile": {
+            "tipo": "opzioni",
+            "descrizione": "Collocazione immobile",
+            "valori": { "$ref": "#/definizioni_comuni/collocazione_immobile" }
+          },
+          "attivita_imprenditoriale": {
+            "tipo": "booleano",
+            "descrizione": "Attività condotta in forma imprenditoriale"
+          },
+          "in_attivita_da": {
+            "tipo": "booleano_con_parametro",
+            "descrizione": "In attività da almeno (Mesi)",
+            "parametro": { "nome": "mesi", "tipo": "numero" }
+          },
+          "solo_un_immobile": {
+            "tipo": "booleano",
+            "descrizione": "Limitatamente ad un solo immobile"
+          },
+          "requisiti_soggetto_passivo": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Requisiti del soggetto passivo",
+            "valori": { "$ref": "#/definizioni_comuni/requisiti_soggetto_passivo" }
+          },
+          "fabbricati_inagibili": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Fabbricati divenuti inagibili",
+            "valori": { "$ref": "#/definizioni_comuni/fabbricati_inagibili" }
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755"
+          }
+        }
+      },
+      "abitazione_a_disposizione": {
+        "descrizione": "Abitazione a disposizione",
+        "condizioni": {
+          "definizione": {
+            "tipo": "opzioni",
+            "descrizione": "Definizione di abitazioni a disposizione",
+            "valori": [
+              { "id": "non_locate_non_comodato", "descrizione": "Abitazioni non locate e non concesse in comodato" },
+              { "id": "non_locate_o_parzialmente", "descrizione": "Abitazioni non locate e non concesse in comodato nonché abitazioni locate o concesse in comodato per periodi inferiori all'anno e comunque per un numero complessivo di mesi inferiore a", "parametro": { "nome": "mesi", "tipo": "numero" } },
+              { "id": "onlus_terzo_settore", "descrizione": "Abitazioni non locate e non concesse in comodato di proprietà di ONLUS o di altri enti del terzo settore" }
+            ]
+          },
+          "categorie_catastali": {
+            "tipo": "opzioni",
+            "descrizione": "Categorie catastali",
+            "valori": { "$ref": "#/definizioni_comuni/categorie_catastali_abitazioni" }
+          },
+          "persistenza_minima": {
+            "tipo": "booleano_con_parametro",
+            "descrizione": "Periodo non coperto da contratti purché la condizione di immobile a disposizione persista da almeno",
+            "parametro": { "nome": "mesi", "tipo": "numero" }
+          },
+          "utilizzo_inutilizzo": {
+            "tipo": "opzioni",
+            "descrizione": "Utilizzo/Inutilizzo",
+            "valori": [
+              { "id": "privi_arredo", "descrizione": "Privi di ogni arredo" },
+              { "id": "senza_utenze", "descrizione": "Sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+              { "id": "privi_arredo_senza_utenze", "descrizione": "Privi di ogni arredo, sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+              { "id": "crisi_aziendale", "descrizione": "Inutilizzato a seguito di crisi aziendale" },
+              { "id": "uso_limitato", "descrizione": "Con uso limitato e discontinuo o stagionale, per un utilizzo complessivo non superiore a mesi", "parametro": { "nome": "mesi", "tipo": "numero" } }
+            ]
+          },
+          "requisiti_soggetto_passivo": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Requisiti del soggetto passivo",
+            "valori": { "$ref": "#/definizioni_comuni/requisiti_soggetto_passivo" }
+          },
+          "collocazione_immobile": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Collocazione immobile",
+            "valori": { "$ref": "#/definizioni_comuni/collocazione_immobile" }
+          },
+          "fabbricati_inagibili": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Fabbricati divenuti inagibili",
+            "valori": { "$ref": "#/definizioni_comuni/fabbricati_inagibili" }
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755"
+          }
+        }
+      },
+      "abitazione_utilizzata_direttamente": {
+        "descrizione": "Abitazione utilizzata direttamente dal soggetto passivo",
+        "condizioni": {
+          "categorie_catastali": {
+            "tipo": "opzioni",
+            "descrizione": "Categorie catastali",
+            "valori": { "$ref": "#/definizioni_comuni/categorie_catastali_abitazioni" }
+          },
+          "requisiti_soggetto_passivo": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Requisiti del soggetto passivo",
+            "valori": { "$ref": "#/definizioni_comuni/requisiti_soggetto_passivo" }
+          },
+          "destinazione_uso": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Destinazione d'uso",
+            "valori": [
+              { "id": "casa_famiglia", "descrizione": "Casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+              { "id": "struttura_vittime", "descrizione": "Struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+              { "id": "accoglienza_asilo", "descrizione": "Servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+            ]
+          },
+          "isee_soggetto_passivo": {
+            "tipo": "booleano_con_parametro",
+            "descrizione": "Reddito ISEE del soggetto passivo non superiore a (€)",
+            "parametro": { "nome": "euro", "tipo": "numero" }
+          },
+          "fabbricati_inagibili": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Fabbricati divenuti inagibili",
+            "valori": { "$ref": "#/definizioni_comuni/fabbricati_inagibili" }
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755"
+          }
+        }
+      },
+      "immobili_a10_b_c": {
+        "descrizione": "Immobili di categoria A10, B, C",
+        "nota": "Struttura analoga a Fabbricati Gruppo D",
+        "condizioni_generali": {
+          "categorie_catastali": {
+            "tipo": "opzioni",
+            "descrizione": "Categorie catastali",
+            "valori": { "$ref": "#/definizioni_comuni/categorie_catastali_a10_b_c" }
+          },
+          "superficie": {
+            "tipo": "booleano_con_parametro",
+            "descrizione": "Superficie",
+            "valori": [
+              { "id": "non_superiore", "descrizione": "Non superiore a (Mq)", "parametro": { "nome": "mq", "tipo": "numero" } },
+              { "id": "non_inferiore", "descrizione": "Non inferiore a (Mq)", "parametro": { "nome": "mq", "tipo": "numero" } }
+            ]
+          },
+          "oggetto_recupero": {
+            "tipo": "booleano",
+            "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
+          },
+          "rendita_catastale": {
+            "tipo": "booleano_con_parametro",
+            "descrizione": "Rendita catastale (€)",
+            "parametro": { "nome": "euro", "tipo": "numero" }
+          },
+          "collocazione_immobile": {
+            "tipo": "opzioni",
+            "descrizione": "Collocazione immobile",
+            "valori": { "$ref": "#/definizioni_comuni/collocazione_immobile" }
+          },
+          "requisiti_soggetto_passivo": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Requisiti del soggetto passivo",
+            "valori": { "$ref": "#/definizioni_comuni/requisiti_soggetto_passivo" }
+          },
+          "solo_un_immobile": {
+            "tipo": "booleano",
+            "descrizione": "Limitatamente ad un solo immobile"
+          },
+          "fabbricati_inagibili": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Fabbricati divenuti inagibili",
+            "valori": { "$ref": "#/definizioni_comuni/fabbricati_inagibili" }
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755"
+          }
+        },
+        "uso_immobile": {
+          "descrizione": "Fabbricati a disposizione o utilizzati",
+          "nota": "Stessa struttura di Fabbricati Gruppo D ma SENZA impianti eolici/fotovoltaici/idroelettrici in destinazione_uso",
+          "riferimento": "Vedere schema fabbricati_gruppo_d.json per la struttura completa dei 6 tipi di uso_immobile"
+        }
+      },
+      "alloggi_sociali_iacp_non_assegnati": {
+        "descrizione": "Fabbricati di civile abitazione destinati ad alloggi sociali o posseduti dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità, non adibiti ad abitazione principale per il periodo di espletamento delle attività di assegnazione",
+        "condizioni": {
+          "fino_a_mesi": {
+            "tipo": "parametro",
+            "descrizione": "Fino a mesi",
+            "parametro": { "nome": "mesi", "tipo": "numero" }
+          },
+          "fabbricati_inagibili": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Fabbricati divenuti inagibili",
+            "valori": { "$ref": "#/definizioni_comuni/fabbricati_inagibili" }
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755"
+          }
+        }
+      },
+      "alloggi_iacp_assegnati": {
+        "descrizione": "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità",
+        "condizioni": {
+          "fabbricati_inagibili": {
+            "tipo": "booleano_con_opzioni",
+            "descrizione": "Fabbricati divenuti inagibili",
+            "valori": { "$ref": "#/definizioni_comuni/fabbricati_inagibili" }
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755"
+          }
+        }
+      },
+      "inagibili_ex_abitazione_principale": {
+        "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale",
+        "condizioni": {
+          "tipologia_fabbricato": {
+            "tipo": "opzioni",
+            "descrizione": "Tipologia fabbricato",
+            "valori": [
+              { "id": "cat_diverse_a1_a8_a9", "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale di categoria catastale diversa da A/1, A/8 e A/9 e relative pertinenze" },
+              { "id": "cat_a1_a8_a9", "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze" }
+            ]
+          },
+          "causa_inagibilita": {
+            "tipo": "opzioni",
+            "descrizione": "Fabbricato divenuto inagibile",
+            "valori": [
+              { "id": "calamita", "descrizione": "A seguito di calamità naturali" },
+              { "id": "cause_diverse", "descrizione": "A seguito di cause diverse da calamità naturali" },
+              { "id": "calamita_o_diverse", "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+            ]
+          },
+          "ulteriori_condizioni_c755": {
+            "tipo": "booleano",
+            "descrizione": "Ulteriori condizioni stabilite dal comune ai sensi dell'art. 1, comma 755"
+          }
+        }
+      }
+    }
+  }
+}

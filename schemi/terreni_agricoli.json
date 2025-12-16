@@ -1,0 +1,65 @@
+{
+  "fattispecie": "terreni_agricoli",
+  "descrizione": "Terreni agricoli",
+  "condizioni": {
+    "utilizzo": {
+      "tipo": "opzioni",
+      "descrizione": "Utilizzo",
+      "valori": [
+        {
+          "id": "coltivati",
+          "descrizione": "Coltivati"
+        },
+        {
+          "id": "non_coltivati",
+          "descrizione": "Non coltivati"
+        },
+        {
+          "id": "coltivati_coltura_specifica",
+          "descrizione": "Coltivati e destinati ad alcuni tipi di coltura",
+          "parametro": {
+            "nome": "tipo_coltura",
+            "tipo": "testo",
+            "descrizione": "Tipo di coltura"
+          }
+        },
+        {
+          "id": "coltivati_parenti_affini",
+          "descrizione": "Coltivati da parenti e affini di coltivatori (entro il terzo grado)"
+        },
+        {
+          "id": "condotti_cd_iap",
+          "descrizione": "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)"
+        }
+      ]
+    },
+    "collocazione": {
+      "tipo": "opzioni",
+      "descrizione": "Collocazione",
+      "valori": [
+        {
+          "id": "fogli_catastali",
+          "descrizione": "Ricadenti nei fogli catastali n:",
+          "parametro": {
+            "nome": "fogli",
+            "tipo": "testo",
+            "descrizione": "Indicare i fogli catastali"
+          }
+        },
+        {
+          "id": "area_specifica",
+          "descrizione": "Terreni ricadenti in determinate aree",
+          "parametro": {
+            "nome": "specifica",
+            "tipo": "testo",
+            "descrizione": "Specificare area"
+          }
+        }
+      ]
+    },
+    "proprieta_onlus_terzo_settore": {
+      "tipo": "booleano",
+      "descrizione": "Di proprietà di ONLUS o enti del terzo settore"
+    }
+  }
+}
