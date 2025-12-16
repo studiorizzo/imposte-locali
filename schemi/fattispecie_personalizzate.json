@@ -670,7 +670,164 @@
           "condizioni": [
             {
               "id": "altri_tipologia_locata_comodato",
-              "descrizione": "Abitazione locata o concessa in comodato"
+              "descrizione": "Abitazione locata o concessa in comodato",
+              "condizioni": [
+                {
+                  "id": "altri_locata_tipo_contratto",
+                  "descrizione": "Tipo di contratto",
+                  "condizioni": [
+                    { "descrizione": "Locazione" },
+                    { "descrizione": "Locazione a canone libero" },
+                    { "descrizione": "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i." },
+                    { "descrizione": "Locazione ai sensi dell'art. 2, commi 3, della Legge n. 431/1998 e s.m.i." },
+                    { "descrizione": "Locazione ai sensi dell'art. 5, comma 1, della Legge n. 431/1998 e s.m.i." },
+                    { "descrizione": "Locazione a studenti ai sensi dell'art. 5, comma 2, della Legge n. 431/1998 e s.m.i." },
+                    { "descrizione": "Locazione ai sensi dell'art. 5, comma 3, della Legge n. 431/1998 e s.m.i." },
+                    { "descrizione": "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14" },
+                    { "descrizione": "Locazione ai sensi dell'art. 2, commi 3 e 5, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14" },
+                    {
+                      "id": "altri_locata_comodato_gratuito",
+                      "descrizione": "Comodato d'uso gratuito",
+                      "condizioni": [
+                        { "descrizione": "Con contratto registrato" }
+                      ]
+                    },
+                    {
+                      "id": "altri_locata_locazione_comodato",
+                      "descrizione": "Locazione o comodato d'uso gratuito",
+                      "condizioni": [
+                        { "descrizione": "Con contratto registrato" }
+                      ]
+                    },
+                    { "descrizione": "Accordi/Patti territoriali per soddisfare particolari esigenze abitative (come definiti nel regolamento)" }
+                  ]
+                },
+                {
+                  "id": "altri_locata_categorie",
+                  "descrizione": "Categorie catastali",
+                  "condizioni": [
+                    { "descrizione": "A/1 Abitazioni di tipo signorile" },
+                    { "descrizione": "A/2 Abitazioni di tipo civile" },
+                    { "descrizione": "A/3 Abitazioni di tipo economico" },
+                    { "descrizione": "A/4 Abitazioni di tipo popolare" },
+                    { "descrizione": "A/5 Abitazioni di tipo ultrapopolare" },
+                    { "descrizione": "A/6 Abitazioni di tipo rurale" },
+                    { "descrizione": "A/7 Abitazioni in villini" },
+                    { "descrizione": "A/8 Abitazioni in ville" },
+                    { "descrizione": "A/9 Castelli, palazzi di eminenti pregi artistici o storici" },
+                    { "descrizione": "A/11 Abitazioni o alloggi tipici dei luoghi" }
+                  ]
+                },
+                {
+                  "id": "altri_locata_durata",
+                  "descrizione": "Durata del contratto di durata non inferiore a",
+                  "valori": ["Mesi"]
+                },
+                {
+                  "id": "altri_locata_condizioni_locatario",
+                  "descrizione": "Condizioni locatario/comodatario",
+                  "condizioni": [
+                    {
+                      "id": "altri_locata_parenti",
+                      "descrizione": "Parenti",
+                      "condizioni": [
+                        { "descrizione": "Sino al primo grado (ipotesi diverse da quella di cui all'art. 1, comma 747, lett. c), della legge n. 160 del 2019)" },
+                        { "descrizione": "Sino al primo grado (ipotesi di cui all'art. 1, comma 747, lett. c), della legge n. 160 del 2019)" },
+                        { "descrizione": "Sino al secondo grado (in linea retta)" },
+                        { "descrizione": "Sino al secondo grado (in linea retta e collaterale)" },
+                        { "descrizione": "Sino al terzo grado (in linea retta)" },
+                        { "descrizione": "Sino al terzo grado (in linea retta e collaterale)" },
+                        { "descrizione": "Indipendentemente dal grado di parentela" }
+                      ]
+                    },
+                    {
+                      "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                      "valori": ["Percentuale di invalidità"]
+                    },
+                    { "descrizione": "Studenti" },
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+                    { "descrizione": "Nucleo familiare in difficoltà economiche (come definite nel regolamento)" },
+                    { "descrizione": "Soggetto in condizioni di vulnerabilità sociale/emergenza abitativa (come definite nel regolamento)" },
+                    { "descrizione": "ONLUS o altri enti del terzo settore" },
+                    { "descrizione": "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+                    { "descrizione": "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+                    { "descrizione": "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+                  ]
+                },
+                {
+                  "id": "altri_locata_non_titolare",
+                  "descrizione": "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili"
+                },
+                {
+                  "id": "altri_locata_destinazione",
+                  "descrizione": "Destinazione d'uso",
+                  "condizioni": [
+                    { "descrizione": "Purché l'affittuario/comodatario la utilizzi come abitazione principale" }
+                  ]
+                },
+                {
+                  "id": "altri_locata_isee",
+                  "descrizione": "Reddito ISEE del comodatario non superiore a",
+                  "valori": ["€"]
+                },
+                {
+                  "id": "altri_locata_requisiti_soggetto",
+                  "descrizione": "Requisiti del soggetto passivo",
+                  "condizioni": [
+                    { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                    { "descrizione": "Posseduti da enti non commerciali" },
+                    { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                    { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                    {
+                      "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                      "valori": ["Percentuale di invalidità"]
+                    },
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" }
+                  ]
+                },
+                {
+                  "id": "altri_locata_solo_immobile",
+                  "descrizione": "Limitatamente ad un solo immobile"
+                },
+                {
+                  "id": "altri_locata_collocazione",
+                  "descrizione": "Collocazione immobile",
+                  "condizioni": [
+                    { "descrizione": "Dentro il centro storico" },
+                    { "descrizione": "Fuori dal centro storico" },
+                    {
+                      "descrizione": "In una zona specificamente indicata dal comune",
+                      "valori": ["Zona"]
+                    },
+                    {
+                      "descrizione": "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale",
+                      "valori": ["Zona"]
+                    },
+                    { "descrizione": "In zona non servita da servizi pubblici" }
+                  ]
+                },
+                {
+                  "id": "altri_locata_inagibili",
+                  "descrizione": "Fabbricati divenuti inagibili",
+                  "condizioni": [
+                    { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
+                    {
+                      "id": "altri_locata_inagibili_diverse",
+                      "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+                      "condizioni": [
+                        { "descrizione": "A seguito di calamità naturali" },
+                        { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                        { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "altri_locata_ulteriori",
+                  "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+                  "valori": ["Testo"]
+                }
+              ]
             },
             {
               "id": "altri_tipologia_turistico_ricettiva",
@@ -681,7 +838,7 @@
               "descrizione": "Abitazione a disposizione"
             },
             {
-              "id": "altri_tipologia_utilizzata_direttamente",
+              "id": "altri_tipologia_utilizzo_diretto",
               "descrizione": "Abitazione utilizzata direttamente dal soggetto passivo"
             },
             {
