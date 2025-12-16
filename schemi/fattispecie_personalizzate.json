@@ -780,7 +780,68 @@
             },
             {
               "id": "altri_tipologia_turistico_ricettiva",
-              "descrizione": "Abitazione destinata a struttura turistico-ricettiva"
+              "descrizione": "Abitazione destinata a struttura turistico-ricettiva",
+              "condizioni": [
+                {
+                  "descrizione": "Codice ATECO",
+                  "valori": ["Codice"]
+                },
+                {
+                  "descrizione": "Collocazione immobile",
+                  "condizioni": [
+                    { "descrizione": "Dentro il centro storico" },
+                    { "descrizione": "Fuori dal centro storico" },
+                    { "descrizione": "In una zona specificamente indicata dal comune", "valori": ["Zona"] },
+                    { "descrizione": "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale", "valori": ["Zona"] },
+                    { "descrizione": "In zona non servita da servizi pubblici" }
+                  ]
+                },
+                {
+                  "descrizione": "Attività condotta in forma imprenditoriale",
+                  "condizioni": [
+                    { "descrizione": "Attività condotta in forma imprenditoriale" },
+                    { "descrizione": null }
+                  ]
+                },
+                { "descrizione": "In attività da almeno", "valori": ["Mesi"] },
+                {
+                  "descrizione": "Limitatamente ad un solo immobile",
+                  "condizioni": [
+                    { "descrizione": "Limitatamente ad un solo immobile" },
+                    { "descrizione": null }
+                  ]
+                },
+                {
+                  "descrizione": "Requisiti del soggetto passivo",
+                  "condizioni": [
+                    { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                    { "descrizione": "Posseduti da enti non commerciali" },
+                    { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                    { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                    { "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al", "valori": ["Percentuale di invalidità"] },
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" }
+                  ]
+                },
+                {
+                  "descrizione": "Fabbricati divenuti inagibili",
+                  "condizioni": [
+                    { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
+                    {
+                      "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+                      "condizioni": [
+                        { "descrizione": "A seguito di calamità naturali" },
+                        { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                        { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+                      ]
+                    },
+                    { "descrizione": null }
+                  ]
+                },
+                {
+                  "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+                  "valori": ["Testo"]
+                }
+              ]
             },
             {
               "id": "altri_tipologia_disposizione",
