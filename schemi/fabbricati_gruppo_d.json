@@ -178,7 +178,6 @@
       },
       "locati": {
         "descrizione": "Immobili locati",
-        "nota": "Non include 'contratto_registrato' perché la registrazione è obbligatoria per legge (art. 1 c.346 L.311/2004) - vedi FAQ 8",
         "condizioni": {
           "requisiti_soggettivi": {
             "tipo": "opzioni",

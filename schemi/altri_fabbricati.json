@@ -290,7 +290,6 @@
       },
       "immobili_a10_b_c": {
         "descrizione": "Immobili di categoria A10, B, C",
-        "nota": "Struttura analoga a Fabbricati Gruppo D",
         "condizioni_generali": {
           "categorie_catastali": {
             "tipo": "opzioni",
@@ -339,9 +338,7 @@
           }
         },
         "uso_immobile": {
-          "descrizione": "Fabbricati a disposizione o utilizzati",
-          "nota": "Stessa struttura di Fabbricati Gruppo D ma SENZA impianti eolici/fotovoltaici/idroelettrici in destinazione_uso",
-          "riferimento": "Vedere schema fabbricati_gruppo_d.json per la struttura completa dei 6 tipi di uso_immobile"
+          "descrizione": "Fabbricati a disposizione o utilizzati"
         }
       },
       "alloggi_sociali_iacp_non_assegnati": {
