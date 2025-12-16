@@ -942,7 +942,68 @@
             },
             {
               "id": "altri_tipologia_utilizzo_diretto",
-              "descrizione": "Abitazione utilizzata direttamente dal soggetto passivo"
+              "descrizione": "Abitazione utilizzata direttamente dal soggetto passivo",
+              "condizioni": [
+                {
+                  "descrizione": "Categorie catastali",
+                  "condizioni": [
+                    { "descrizione": "A/1 Abitazioni di tipo signorile" },
+                    { "descrizione": "A/2 Abitazioni di tipo civile" },
+                    { "descrizione": "A/3 Abitazioni di tipo economico" },
+                    { "descrizione": "A/4 Abitazioni di tipo popolare" },
+                    { "descrizione": "A/5 Abitazioni di tipo ultrapopolare" },
+                    { "descrizione": "A/6 Abitazioni di tipo rurale" },
+                    { "descrizione": "A/7 Abitazioni in villini" },
+                    { "descrizione": "A/8 Abitazioni in ville" },
+                    { "descrizione": "A/9 Castelli, palazzi di eminenti pregi artistici o storici" },
+                    { "descrizione": "A/11 Abitazioni o alloggi tipici dei luoghi" }
+                  ]
+                },
+                {
+                  "descrizione": "Requisiti del soggetto passivo",
+                  "condizioni": [
+                    { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                    { "descrizione": "Posseduti da enti non commerciali" },
+                    { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                    { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                    {
+                      "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                      "valori": ["Percentuale di invalidità"]
+                    },
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" }
+                  ]
+                },
+                {
+                  "descrizione": "Destinazione d'uso",
+                  "condizioni": [
+                    { "descrizione": "Casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+                    { "descrizione": "Struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+                    { "descrizione": "Servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+                  ]
+                },
+                {
+                  "descrizione": "Reddito ISEE del soggetto passivo non superiore a",
+                  "valori": ["€"]
+                },
+                {
+                  "descrizione": "Fabbricati divenuti inagibili",
+                  "condizioni": [
+                    { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
+                    {
+                      "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+                      "condizioni": [
+                        { "descrizione": "A seguito di calamità naturali" },
+                        { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                        { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+                  "valori": ["Testo"]
+                }
+              ]
             },
             {
               "id": "altri_tipologia_a10_b_c",
