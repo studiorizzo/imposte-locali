@@ -1,9 +1,9 @@
 {
-  "fattispecie_personalizzate": [
+  "fattispecie_principale": [
     {
       "id": "d",
       "descrizione": "Fabbricati appartenenti al gruppo catastale D",
-      "condizioni": [
+      "fattispecie_personalizzata": [
         {
           "id": "d_categoria_catastale",
           "descrizione": "Categoria catastale",
