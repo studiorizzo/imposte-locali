@@ -1,0 +1,171 @@
+{
+  "comune": "GENOVA",
+  "id_prospetto": "10322",
+  "anno": 2025,
+  "delibera": {
+    "numero": 41,
+    "data": "22/07/2025",
+    "organo": "Consiglio comunale"
+  },
+  "aliquote_base": [
+    {
+      "fattispecie_principale": "Abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze",
+      "aliquota": "0,58%"
+    },
+    {
+      "fattispecie_principale": "Fabbricati rurali ad uso strumentale (inclusa la categoria catastale D/10)",
+      "aliquota": "0,1%"
+    },
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "aliquota": "1,06%"
+    },
+    {
+      "fattispecie_principale": "terreni_agricoli",
+      "aliquota": "1,06%"
+    },
+    {
+      "fattispecie_principale": "aree_fabbricabili",
+      "aliquota": "1,06%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "aliquota": "1,06%"
+    }
+  ],
+  "aliquote_personalizzate": [
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "categoria_catastale": "D/1 Opifici",
+      "requisiti_oggettivi": "Immobili utilizzati direttamente dal soggetto passivo",
+      "requisiti_soggettivi": "Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
+      "attivita": "Attivita' innovative - Start up",
+      "ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "categoria_catastale": "D/1 Opifici",
+      "requisiti_oggettivi": "Immobili locati",
+      "requisiti_soggettivi": "Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
+      "attivita": "Attivita' innovative - Start up",
+      "ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "categoria_catastale": "D/1 Opifici",
+      "requisiti_oggettivi": "Immobili utilizzati direttamente dal soggetto passivo",
+      "requisiti_soggettivi": "Utilizzatore diretto dell'immobile (tutti)",
+      "attivita": "Imprese che hanno ampliato la propria attivita' economica/aumentato l'occupazione (come definite nel regolamento)",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "categoria_catastale": "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attivita' industriale e non suscettibili di destinazione diversa senza radicali trasformazioni",
+      "requisiti_oggettivi": "Immobili utilizzati direttamente dal soggetto passivo",
+      "requisiti_soggettivi": "Utilizzatore diretto dell'immobile (tutti)",
+      "attivita": "Imprese che hanno ampliato la propria attivita' economica/aumentato l'occupazione (come definite nel regolamento)",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "categoria_catastale": "D/3 Teatri, cinematografi, sale per concerti e spettacoli e simili (con fine di lucro)",
+      "requisiti_oggettivi": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
+      "requisiti_soggettivi": "Utilizzatore diretto dell'immobile (tutti)",
+      "aliquota": "0,96%"
+    },
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "categoria_catastale": "D/1 Opifici",
+      "requisiti_oggettivi": "Immobili utilizzati direttamente dal soggetto passivo",
+      "requisiti_soggettivi": "Utilizzatore diretto dell'immobile (tutti)",
+      "dipendenti": "Non superiore a: 49",
+      "aliquota": "1,01%"
+    },
+    {
+      "fattispecie_principale": "fabbricati_gruppo_d",
+      "categoria_catastale": "D/1 Opifici",
+      "requisiti_oggettivi": "Immobili utilizzati direttamente dal soggetto passivo",
+      "requisiti_soggettivi": "Utilizzatore diretto dell'immobile (tutti)",
+      "attivita": "Microimprese",
+      "aliquota": "1,01%"
+    },
+    {
+      "fattispecie_principale": "aree_fabbricabili",
+      "requisiti_oggettivi": "Diverse da residenziali",
+      "collocazione": "Situate in determinate zone: Distretto di Trasformazione n. 20 Fiera - Kennedy in base al PUC del Comune di Genova (D.D. 2015/118.0.0./18 del 27.11.2015)",
+      "aliquota": "0,76%"
+    },
+    {
+      "fattispecie_principale": "aree_fabbricabili",
+      "requisiti_oggettivi": "Residenziali",
+      "collocazione": "Situate in determinate zone: Distretto di Trasformazione n. 20 Fiera - Kennedy in base al PUC del Comune di Genova (D.D. 2015/118.0.0./18 del 27.11.2015)",
+      "aliquota": "0,76%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "requisiti_oggettivi": "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità",
+      "aliquota": "0,71%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "categoria_catastale": "A/10 Uffici e studi privati",
+      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Immobili utilizzati direttamente dal soggetto passivo"],
+      "requisiti_soggettivi": "Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
+      "attivita": "Attivita' innovative - Start up",
+      "ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "categoria_catastale": "C/3 Laboratori per arti e mestieri",
+      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Immobili utilizzati direttamente dal soggetto passivo"],
+      "requisiti_soggettivi": "Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
+      "attivita": "Attivita' innovative - Start up",
+      "ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "categoria_catastale": "A/10 Uffici e studi privati",
+      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Immobili locati"],
+      "requisiti_soggettivi": "Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
+      "attivita": "Attivita' innovative - Start up",
+      "ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "categoria_catastale": "C/3 Laboratori per arti e mestieri",
+      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Immobili locati"],
+      "requisiti_soggettivi": "Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
+      "attivita": "Attivita' innovative - Start up",
+      "ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO",
+      "aliquota": "0,84%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "categoria_catastale": "C/1 Negozi e botteghe",
+      "requisiti_oggettivi": ["Immobili di categoria C", "Immobili utilizzati direttamente dal soggetto passivo"],
+      "destinazione_uso": "Utilizzato per attivita' produttiva e/o commerciale o per l'esercizio di arti e professioni",
+      "aliquota": "0,96%"
+    },
+    {
+      "fattispecie_principale": "altri_fabbricati",
+      "categoria_catastale": "C/3 Laboratori per arti e mestieri",
+      "requisiti_oggettivi": ["Immobili di categoria C", "Immobili utilizzati direttamente dal soggetto passivo"],
+      "destinazione_uso": "Utilizzato per attivita' produttiva e/o commerciale o per l'esercizio di arti e professioni",
+      "aliquota": "0,96%"
+    }
+  ],
+  "assimilazioni": {
+    "anziani_disabili": true
+  },
+  "esenzioni": [],
+  "precisazioni": [
+    "Devono intendersi richiamate le esenzioni, le assimilazioni all'abitazione principale, le detrazioni e le agevolazioni previste dalla legge alle condizioni nella stessa stabilite.",
+    "Per le fattispecie di cui all'art. 1, commi 747 e 760, della legge n. 160 del 2019, l'imposta è determinata applicando la riduzione di legge sull'aliquota stabilita dal comune per ciascuna fattispecie.",
+    "Per contratti di locazione di immobili devono intendersi esclusivamente quelli registrati ai sensi delle vigenti disposizioni di legge."
+  ]
+}
