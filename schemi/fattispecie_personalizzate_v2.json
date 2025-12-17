@@ -120,5 +120,45 @@
       "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)"
     ],
     "input": ["Tipo di coltura"]
+  },
+  "requisiti_soggettivi": {
+    "descrizione": [
+      "Requisiti del soggetto passivo",
+      "Requisiti soggettivi del locatario o comodatario",
+      "Requisiti soggettivi del locatario",
+      "Requisiti soggettivi del comodatario",
+      "Requisiti soggettivi del soggetto passivo utilizzatore",
+      "Requisiti soggettivi del locatario, comodatario o soggetto passivo utilizzatore",
+      "Condizioni locatario/comodatario"
+    ],
+    "valori": [
+      "Posseduti da ONLUS o enti del terzo settore",
+      "Posseduti da enti non commerciali",
+      "Posseduti da società o altri soggetti con personalità giuridica",
+      "Posseduti da società o altri soggetti senza personalità giuridica",
+      "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+      "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92",
+      "ONLUS o altri enti del terzo settore",
+      "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+      "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+      "Persona fisica di età non superiore ad anni",
+      "Utilizzatore diretto dell'immobile nel caso di piccole e medie imprese",
+      "Utilizzatore diretto dell'immobile (tutti)",
+      "Parenti - Sino al primo grado (ipotesi diverse da quella di cui all'art. 1, comma 747, lett. c), della legge n. 160 del 2019)",
+      "Parenti - Sino al primo grado (ipotesi di cui all'art. 1, comma 747, lett. c), della legge n. 160 del 2019)",
+      "Parenti - Sino al secondo grado (in linea retta)",
+      "Parenti - Sino al secondo grado (in linea retta e collaterale)",
+      "Parenti - Sino al terzo grado (in linea retta)",
+      "Parenti - Sino al terzo grado (in linea retta e collaterale)",
+      "Parenti - Indipendentemente dal grado di parentela",
+      "Studenti",
+      "Nucleo familiare in difficoltà economiche (come definite nel regolamento)",
+      "Soggetto in condizioni di vulnerabilità sociale/emergenza abitativa (come definite nel regolamento)",
+      "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare",
+      "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale",
+      "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria",
+      "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili"
+    ],
+    "input": ["Percentuale di invalidità", "Anni/Mesi", "Anni"]
   }
 }
