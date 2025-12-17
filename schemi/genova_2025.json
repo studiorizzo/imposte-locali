@@ -1,0 +1,198 @@
+{
+  "comune": "GENOVA",
+  "anno": 2025,
+  "id_prospetto": 10322,
+  "delibera": {
+    "numero": 41,
+    "data": "22/07/2025",
+    "organo": "Consiglio comunale"
+  },
+  "fusione_aliquote_differenziate": false,
+  "fattispecie_principali": [
+    {
+      "id": "abitazione_principale_lusso",
+      "aliquota": 0.58
+    },
+    {
+      "id": "assimilazione_anziani_disabili",
+      "valore": true
+    },
+    {
+      "id": "fabbricati_rurali_strumentali",
+      "aliquota": 0.1
+    },
+    {
+      "id": "fabbricati_gruppo_d",
+      "aliquota": 1.06
+    },
+    {
+      "id": "terreni_agricoli",
+      "aliquota": 1.06
+    },
+    {
+      "id": "aree_fabbricabili",
+      "aliquota": 1.06
+    },
+    {
+      "id": "altri_fabbricati",
+      "aliquota": 1.06
+    }
+  ],
+  "fattispecie_personalizzate": {
+    "fabbricati_gruppo_d": [
+      {
+        "aliquota": 0.84,
+        "condizioni": {
+          "d_categoria_catastale": ["D/1 Opifici"],
+          "d_utilizzo": {
+            "tipo": "d_utilizzo_diretto",
+            "requisiti_soggetto_passivo_utilizzatore": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+            "requisiti_soggetto_passivo_utilizzatore_valore": 36,
+            "tipologia_attivita": "Attività innovative - Start up",
+            "codice_ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO"
+          }
+        }
+      },
+      {
+        "aliquota": 0.84,
+        "condizioni": {
+          "d_categoria_catastale": ["D/1 Opifici"],
+          "d_utilizzo": {
+            "tipo": "d_utilizzo_locati",
+            "requisiti_soggettivi_locatario": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+            "requisiti_soggettivi_locatario_valore": 36,
+            "tipologia_attivita": "Attività innovative - Start up",
+            "codice_ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO"
+          }
+        }
+      },
+      {
+        "aliquota": 0.84,
+        "condizioni": {
+          "d_categoria_catastale": [
+            "D/1 Opifici",
+            "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attività industriale e non suscettibili di destinazione diversa senza radicali trasformazioni"
+          ],
+          "d_utilizzo": {
+            "tipo": "d_utilizzo_diretto",
+            "requisiti_soggetto_passivo_utilizzatore": "Utilizzatore diretto dell'immobile (tutti)",
+            "tipologia_attivita": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione"
+          }
+        }
+      },
+      {
+        "aliquota": 0.96,
+        "condizioni": {
+          "d_categoria_catastale": ["D/3 Teatri, cinematografi, sale per concerti e spettacoli e simili (con fine di lucro)"],
+          "d_utilizzo": {
+            "tipo": "d_utilizzo_locati_comodato_diretto",
+            "requisiti_soggettivi_locatario_comodatario_utilizzatore": "Utilizzatore diretto dell'immobile (tutti)"
+          }
+        }
+      },
+      {
+        "aliquota": 1.01,
+        "condizioni": {
+          "d_categoria_catastale": ["D/1 Opifici"],
+          "d_utilizzo": {
+            "tipo": "d_utilizzo_diretto",
+            "requisiti_soggetto_passivo_utilizzatore": "Utilizzatore diretto dell'immobile (tutti)",
+            "numero_dipendenti": "Non superiore a",
+            "numero_dipendenti_valore": 49
+          }
+        }
+      },
+      {
+        "aliquota": 1.01,
+        "condizioni": {
+          "d_categoria_catastale": ["D/1 Opifici"],
+          "d_utilizzo": {
+            "tipo": "d_utilizzo_diretto",
+            "requisiti_soggetto_passivo_utilizzatore": "Utilizzatore diretto dell'immobile (tutti)",
+            "tipologia_attivita": "Microimprese"
+          }
+        }
+      }
+    ],
+    "aree_fabbricabili": [
+      {
+        "aliquota": 0.76,
+        "condizioni": {
+          "aree_tipologia": "Diverse da residenziali",
+          "aree_collocazione": "Distretto di Trasformazione n. 20 Fiera - Kennedy in base al PUC del Comune di Genova (D.D. 2015/118.0.0./18 del 27.11.2015)"
+        }
+      },
+      {
+        "aliquota": 0.76,
+        "condizioni": {
+          "aree_tipologia": "Residenziali",
+          "aree_collocazione": "Distretto di Trasformazione n. 20 Fiera - Kennedy in base al PUC del Comune di Genova (D.D. 2015/118.0.0./18 del 27.11.2015)"
+        }
+      }
+    ],
+    "altri_fabbricati": [
+      {
+        "aliquota": 0.71,
+        "condizioni": {
+          "altri_tipologia": "altri_tipologia_iacp_assegnati"
+        }
+      },
+      {
+        "aliquota": 0.84,
+        "condizioni": {
+          "altri_tipologia": "altri_tipologia_a10_b_c",
+          "categorie_catastali": [
+            "A/10 Uffici e studi privati",
+            "C/3 Laboratori per arti e mestieri"
+          ],
+          "fabbricati_utilizzo": {
+            "tipo": "Immobili utilizzati direttamente dal soggetto passivo",
+            "requisiti_soggetto_passivo_utilizzatore": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+            "requisiti_soggetto_passivo_utilizzatore_valore": 36,
+            "tipologia_attivita": "Attività innovative – Start up",
+            "codice_ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO"
+          }
+        }
+      },
+      {
+        "aliquota": 0.84,
+        "condizioni": {
+          "altri_tipologia": "altri_tipologia_a10_b_c",
+          "categorie_catastali": [
+            "A/10 Uffici e studi privati",
+            "C/3 Laboratori per arti e mestieri"
+          ],
+          "fabbricati_utilizzo": {
+            "tipo": "Immobili locati",
+            "requisiti_soggettivi_locatario": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+            "requisiti_soggettivi_locatario_valore": 36,
+            "tipologia_attivita": "Attività innovative – Start up",
+            "codice_ateco": "72 - RICERCA SCIENTIFICA E SVILUPPO"
+          }
+        }
+      },
+      {
+        "aliquota": 0.96,
+        "condizioni": {
+          "altri_tipologia": "altri_tipologia_a10_b_c",
+          "categorie_catastali": [
+            "C/1 Negozi e botteghe",
+            "C/3 Laboratori per arti e mestieri"
+          ],
+          "fabbricati_utilizzo": {
+            "tipo": "Immobili utilizzati direttamente dal soggetto passivo",
+            "destinazione_uso": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni"
+          }
+        }
+      }
+    ]
+  },
+  "esenzioni_agevolazioni": null,
+  "precisazioni": [
+    "Devono intendersi richiamate le esenzioni, le assimilazioni all'abitazione principale, le detrazioni e le agevolazioni previste dalla legge alle condizioni nella stessa stabilite.",
+    "Per le fattispecie di cui all'art. 1, commi 747 e 760, della legge n. 160 del 2019, l'imposta è determinata applicando la riduzione di legge sull'aliquota stabilita dal comune per ciascuna fattispecie.",
+    "Le pertinenze delle abitazioni principali e degli altri immobili non sono autonomamente assoggettate a tassazione in quanto, sulla base dei criteri civilistici di cui all'art. 817 c.c. e della consolidata giurisprudenza di legittimità in materia, alle stesse si applica il medesimo regime di tassazione degli immobili di cui costituiscono pertinenze.",
+    "Le pertinenze dell'abitazione principale, in particolare, ai sensi dell'art. 1, comma 741, lett. b), della legge n. 160 del 2019, devono intendersi \"esclusivamente quelle classificate nelle categorie catastali C/2, C/6 e C/7, nella misura massima di un'unità pertinenziale per ciascuna delle categorie catastali indicate, anche se iscritte in catasto unitamente all'unità ad uso abitativo\".",
+    "Per contratti di locazione di immobili devono intendersi esclusivamente quelli registrati ai sensi delle vigenti disposizioni di legge."
+  ]
+}
