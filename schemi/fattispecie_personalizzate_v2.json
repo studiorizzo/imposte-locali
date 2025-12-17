@@ -118,7 +118,9 @@
       "Utilizzo",
       "Tipologia",
       "Definizione di abitazioni a disposizione",
-      "Tipologia fabbricato"
+      "Tipologia fabbricato",
+      "Purché la condizione di immobile a disposizione persista da almeno",
+      "Periodo non coperto da contratti purché la condizione di immobile a disposizione persista da almeno"
     ],
     "valori": [
       "Immobili a disposizione",
@@ -225,7 +227,10 @@
     "input": ["Mesi"]
   },
   "attivita": {
-    "descrizione": "Tipologia di attività",
+    "descrizione": [
+      "Tipologia di attività",
+      "Attività condotta in forma imprenditoriale"
+    ],
     "valori": [
       "Attività innovative - Start up",
       "Attività innovative – Start up",
