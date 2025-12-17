@@ -196,9 +196,11 @@
       "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale",
       "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria",
       "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili",
-      "Di proprietà di ONLUS o enti del terzo settore"
+      "Di proprietà di ONLUS o enti del terzo settore",
+      "Reddito ISEE del comodatario non superiore a",
+      "Reddito ISEE del soggetto passivo non superiore a"
     ],
-    "input": ["Percentuale di invalidità", "Anni/Mesi", "Anni"]
+    "input": ["Percentuale di invalidità", "Anni/Mesi", "Anni", "€"]
   },
   "destinazione_uso": {
     "descrizione": "Destinazione d'uso",
