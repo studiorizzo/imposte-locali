@@ -110,6 +110,18 @@
       "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo"
     ]
   },
+  "inutilizzo": {
+    "descrizione": "Utilizzo/Inutilizzo",
+    "valori": [
+      "Privi di ogni arredo",
+      "Sprovvisti di utenze di fornitura attive di acqua, luce e gas",
+      "Privi di ogni arredo, sprovvisti di utenze di fornitura attive di acqua, luce e gas",
+      "Inutilizzato a seguito di crisi aziendale",
+      "Con uso limitato e discontinuo o stagionale, per un utilizzo complessivo non superiore a mesi",
+      "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi"
+    ],
+    "input": ["Mesi"]
+  },
   "utilizzo_terreno": {
     "descrizione": "Utilizzo",
     "valori": [
