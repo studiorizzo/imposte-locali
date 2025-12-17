@@ -70,5 +70,19 @@
   "rendita": {
     "descrizione": "Rendita catastale",
     "valori": ["€"]
+  },
+  "collocazione": {
+    "descrizione": "Collocazione immobile",
+    "condizioni": [
+      "Dentro il centro storico",
+      "Fuori dal centro storico",
+      "In una zona specificamente indicata dal comune",
+      "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale",
+      "In zona non servita da servizi pubblici",
+      "Ricadenti nei fogli catastali n.",
+      "Terreni ricadenti in determinate aree",
+      "Situate in determinate zone"
+    ],
+    "valori": ["Zona", "Fogli catastali", "Area"]
   }
 }
