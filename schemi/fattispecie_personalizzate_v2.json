@@ -72,7 +72,11 @@
     "valori": ["€"]
   },
   "collocazione": {
-    "descrizione": "Collocazione immobile",
+    "descrizione": [
+      "Collocazione immobile",
+      "Collocazione",
+      "Situate in determinate zone"
+    ],
     "condizioni": [
       "Dentro il centro storico",
       "Fuori dal centro storico",
