@@ -1521,6 +1521,31 @@
                   "valori": ["Testo"]
                 }
               ]
+            },
+            {
+              "id": "altri_tipologia_alloggi_sociali",
+              "descrizione": "Fabbricati di civile abitazione destinati ad alloggi sociali o posseduti dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità, non adibiti ad abitazione principale per il periodo di espletamento delle attività di assegnazione (fino a)",
+              "valori": ["Mesi"],
+              "condizioni": [
+                {
+                  "descrizione": "Fabbricati divenuti inagibili",
+                  "condizioni": [
+                    { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
+                    {
+                      "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+                      "condizioni": [
+                        { "descrizione": "A seguito di calamità naturali" },
+                        { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                        { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+                  "valori": ["Testo"]
+                }
+              ]
             }
           ]
         }
