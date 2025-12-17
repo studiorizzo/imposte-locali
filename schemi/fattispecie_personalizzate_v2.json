@@ -1,0 +1,20 @@
+{
+  "fattispecie_principale": [
+    {
+      "id": "d",
+      "descrizione": "Fabbricati appartenenti al gruppo catastale D"
+    },
+    {
+      "id": "terreni_agricoli",
+      "descrizione": "Terreni agricoli"
+    },
+    {
+      "id": "aree_fabbricabili",
+      "descrizione": "Aree fabbricabili"
+    },
+    {
+      "id": "altri_fabbricati",
+      "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)"
+    }
+  ]
+}
