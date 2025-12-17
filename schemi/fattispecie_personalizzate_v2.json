@@ -182,5 +182,34 @@
       "Servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria"
     ],
     "input": ["Mesi"]
+  },
+  "attivita": {
+    "descrizione": "Tipologia di attività",
+    "valori": [
+      "Attività innovative - Start up",
+      "Attività innovative – Start up",
+      "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione",
+      "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)",
+      "Imprese green",
+      "Microimprese"
+    ]
+  },
+  "ateco": {
+    "descrizione": "Codice ATECO",
+    "input": ["Codice"]
+  },
+  "dipendenti": {
+    "descrizione": "Numero di dipendenti",
+    "valori": ["Non superiore a"],
+    "input": ["Numero"]
+  },
+  "impianti": {
+    "descrizione": "Potenza impianti produzione energia",
+    "valori": [
+      "Fino a",
+      "Superiore a",
+      "Intervallo di valori"
+    ],
+    "input": ["kW", "Da kW", "A kW"]
   }
 }
