@@ -167,7 +167,10 @@
       "Requisiti soggettivi del comodatario",
       "Requisiti soggettivi del soggetto passivo utilizzatore",
       "Requisiti soggettivi del locatario, comodatario o soggetto passivo utilizzatore",
-      "Condizioni locatario/comodatario"
+      "Condizioni locatario/comodatario",
+      "Di proprietà di ONLUS o enti del terzo settore",
+      "Reddito ISEE del comodatario non superiore a",
+      "Reddito ISEE del soggetto passivo non superiore a"
     ],
     "valori": [
       "Posseduti da ONLUS o enti del terzo settore",
@@ -195,10 +198,7 @@
       "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare",
       "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale",
       "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria",
-      "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili",
-      "Di proprietà di ONLUS o enti del terzo settore",
-      "Reddito ISEE del comodatario non superiore a",
-      "Reddito ISEE del soggetto passivo non superiore a"
+      "Locatario/comodatario non titolare di proprietà o altro diritto reale di godimento su immobili"
     ],
     "input": ["Percentuale di invalidità", "Anni/Mesi", "Anni", "€"]
   },
