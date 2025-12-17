@@ -66,5 +66,9 @@
   },
   "recupero": {
     "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
+  },
+  "rendita": {
+    "descrizione": "Rendita catastale",
+    "valori": ["€"]
   }
 }
