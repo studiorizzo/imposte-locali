@@ -1007,7 +1007,520 @@
             },
             {
               "id": "altri_tipologia_a10_b_c",
-              "descrizione": "Immobili di categoria A10, B, C"
+              "descrizione": "Immobili di categoria A10, B, C",
+              "condizioni": [
+                {
+                  "descrizione": "Categorie catastali",
+                  "condizioni": [
+                    { "descrizione": "A/10 Uffici e studi privati" },
+                    { "descrizione": "B/1 Collegi e convitti, educandati; ricoveri; orfanotrofi; ospizi; conventi; seminari; caserme" },
+                    { "descrizione": "B/2 Case di cura ed ospedali (senza fine di lucro)" },
+                    { "descrizione": "B/3 Prigioni e riformatori" },
+                    { "descrizione": "B/4 Uffici pubblici" },
+                    { "descrizione": "B/5 Scuole e laboratori scientifici" },
+                    { "descrizione": "B/6 Biblioteche, pinacoteche, musei, gallerie, accademie che non hanno sede in edifici della categoria A/9" },
+                    { "descrizione": "B/7 Cappelle ed oratori non destinati all'esercizio pubblico del culto" },
+                    { "descrizione": "B/8 Magazzini sotterranei per depositi di derrate" },
+                    { "descrizione": "C/1 Negozi e botteghe" },
+                    { "descrizione": "C/2 Magazzini e locali di deposito" },
+                    { "descrizione": "C/3 Laboratori per arti e mestieri" },
+                    { "descrizione": "C/4 Fabbricati e locali per esercizi sportivi (senza fine di lucro)" },
+                    { "descrizione": "C/5 Stabilimenti balneari e di acque curative (senza fine di lucro)" },
+                    { "descrizione": "C/6 Stalle, scuderie, rimesse, autorimesse (senza fine di lucro)" },
+                    { "descrizione": "C/7 Tettoie chiuse od aperte" }
+                  ]
+                },
+                {
+                  "descrizione": "Superficie",
+                  "condizioni": [
+                    {
+                      "descrizione": "Non superiore a",
+                      "valori": ["Mq"]
+                    },
+                    {
+                      "descrizione": "Non inferiore a",
+                      "valori": ["Mq"]
+                    }
+                  ]
+                },
+                {
+                  "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
+                },
+                {
+                  "descrizione": "Rendita catastale",
+                  "valori": ["€"]
+                },
+                {
+                  "descrizione": "Collocazione immobile",
+                  "condizioni": [
+                    { "descrizione": "Dentro il centro storico" },
+                    { "descrizione": "Fuori dal centro storico" },
+                    {
+                      "descrizione": "In una zona specificamente indicata dal comune",
+                      "valori": ["Zona"]
+                    },
+                    {
+                      "descrizione": "In zone soggette ad un alto tasso di abbandono di attività economico-commerciale",
+                      "valori": ["Zona"]
+                    },
+                    { "descrizione": "In zona non servita da servizi pubblici" }
+                  ]
+                },
+                {
+                  "descrizione": "Requisiti del soggetto passivo",
+                  "condizioni": [
+                    { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                    { "descrizione": "Posseduti da enti non commerciali" },
+                    { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                    { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                    {
+                      "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                      "valori": ["Percentuale di invalidità"]
+                    },
+                    { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" }
+                  ]
+                },
+                {
+                  "descrizione": "Fabbricati a disposizione o utilizzati",
+                  "condizioni": [
+                    {
+                      "descrizione": "Immobili a disposizione",
+                      "condizioni": [
+                        {
+                          "descrizione": "Purché la condizione di immobile a disposizione persista da almeno",
+                          "valori": ["Mesi"]
+                        },
+                        {
+                          "descrizione": "Utilizzo/Inutilizzo",
+                          "condizioni": [
+                            { "descrizione": "Privi di ogni arredo" },
+                            { "descrizione": "Sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+                            { "descrizione": "Privi di ogni arredo, sprovvisti di utenze di fornitura attive di acqua, luce e gas" },
+                            { "descrizione": "Inutilizzato a seguito di crisi aziendale" },
+                            {
+                              "descrizione": "Con uso limitato e discontinuo o stagionale, per un utilizzo complessivo non superiore a mesi",
+                              "valori": ["Mesi"]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "descrizione": "Immobili locati o concessi in comodato",
+                      "condizioni": [
+                        {
+                          "descrizione": "Requisiti soggettivi del locatario o comodatario",
+                          "condizioni": [
+                            { "descrizione": "ONLUS o altri enti del terzo settore" },
+                            {
+                              "descrizione": "Persona fisica di età non superiore ad anni",
+                              "valori": ["Anni"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                              "valori": ["Mesi"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+                            { "descrizione": "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+                            { "descrizione": "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Destinazione d'uso",
+                          "condizioni": [
+                            { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                            {
+                              "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                            { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                            { "descrizione": "Bottega storica o artigiana" },
+                            { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                            { "descrizione": "Privi o che intendono dismettere giochi di azzardo" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Tipologia di attività",
+                          "condizioni": [
+                            { "descrizione": "Attività innovative – Start up" },
+                            { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                            { "descrizione": "Imprese green" },
+                            { "descrizione": "Microimprese" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Codice ATECO",
+                          "valori": ["Codice"]
+                        },
+                        {
+                          "descrizione": "Numero di dipendenti non superiore a",
+                          "valori": ["Numero"]
+                        },
+                        {
+                          "descrizione": "Potenza impianti produzione energia",
+                          "condizioni": [
+                            {
+                              "descrizione": "Fino a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Superiore a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Intervallo di valori",
+                              "valori": ["kW minimo", "kW massimo"]
+                            }
+                          ]
+                        },
+                        { "descrizione": "Con contratto registrato" }
+                      ]
+                    },
+                    {
+                      "descrizione": "Immobili locati",
+                      "condizioni": [
+                        {
+                          "descrizione": "Requisiti soggettivi del locatario",
+                          "condizioni": [
+                            { "descrizione": "ONLUS o altri enti del terzo settore" },
+                            {
+                              "descrizione": "Persona fisica di età non superiore ad anni",
+                              "valori": ["Anni"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                              "valori": ["Mesi"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+                            { "descrizione": "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+                            { "descrizione": "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Destinazione d'uso",
+                          "condizioni": [
+                            { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                            {
+                              "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                            { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                            { "descrizione": "Bottega storica o artigiana" },
+                            { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                            { "descrizione": "Privi o che intendono dismettere giochi di azzardo" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Tipologia di attività",
+                          "condizioni": [
+                            { "descrizione": "Attività innovative – Start up" },
+                            { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                            { "descrizione": "Imprese green" },
+                            { "descrizione": "Microimprese" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Codice ATECO",
+                          "valori": ["Codice"]
+                        },
+                        {
+                          "descrizione": "Numero di dipendenti non superiore a",
+                          "valori": ["Numero"]
+                        },
+                        {
+                          "descrizione": "Potenza impianti produzione energia",
+                          "condizioni": [
+                            {
+                              "descrizione": "Fino a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Superiore a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Intervallo di valori",
+                              "valori": ["kW minimo", "kW massimo"]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "descrizione": "Immobili concessi in comodato",
+                      "condizioni": [
+                        {
+                          "descrizione": "Requisiti soggettivi del comodatario",
+                          "condizioni": [
+                            { "descrizione": "ONLUS o altri enti del terzo settore" },
+                            {
+                              "descrizione": "Persona fisica di età non superiore ad anni",
+                              "valori": ["Anni"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                              "valori": ["Mesi"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+                            { "descrizione": "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+                            { "descrizione": "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Destinazione d'uso",
+                          "condizioni": [
+                            { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                            {
+                              "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                            { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                            { "descrizione": "Bottega storica o artigiana" },
+                            { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                            { "descrizione": "Privi o che intendono dismettere giochi di azzardo" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Tipologia di attività",
+                          "condizioni": [
+                            { "descrizione": "Attività innovative – Start up" },
+                            { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                            { "descrizione": "Imprese green" },
+                            { "descrizione": "Microimprese" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Codice ATECO",
+                          "valori": ["Codice"]
+                        },
+                        {
+                          "descrizione": "Numero di dipendenti non superiore a",
+                          "valori": ["Numero"]
+                        },
+                        {
+                          "descrizione": "Potenza impianti produzione energia",
+                          "condizioni": [
+                            {
+                              "descrizione": "Fino a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Superiore a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Intervallo di valori",
+                              "valori": ["kW minimo", "kW massimo"]
+                            }
+                          ]
+                        },
+                        { "descrizione": "Con contratto registrato" }
+                      ]
+                    },
+                    {
+                      "descrizione": "Immobili utilizzati direttamente dal soggetto passivo",
+                      "condizioni": [
+                        {
+                          "descrizione": "Requisiti soggettivi del soggetto passivo utilizzatore",
+                          "condizioni": [
+                            { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                            { "descrizione": "Posseduti da enti non commerciali" },
+                            { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                            { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                            {
+                              "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                              "valori": ["Percentuale di invalidità"]
+                            },
+                            { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+                            {
+                              "descrizione": "Persona fisica di età non superiore ad anni",
+                              "valori": ["Anni"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                              "valori": ["Mesi"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+                            { "descrizione": "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+                            { "descrizione": "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Destinazione d'uso",
+                          "condizioni": [
+                            { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                            {
+                              "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                            { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                            { "descrizione": "Bottega storica o artigiana" },
+                            { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                            { "descrizione": "Privi o che intendono dismettere giochi di azzardo" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Tipologia di attività",
+                          "condizioni": [
+                            { "descrizione": "Attività innovative – Start up" },
+                            { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                            { "descrizione": "Imprese green" },
+                            { "descrizione": "Microimprese" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Codice ATECO",
+                          "valori": ["Codice"]
+                        },
+                        {
+                          "descrizione": "Numero di dipendenti non superiore a",
+                          "valori": ["Numero"]
+                        },
+                        {
+                          "descrizione": "Potenza impianti produzione energia",
+                          "condizioni": [
+                            {
+                              "descrizione": "Fino a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Superiore a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Intervallo di valori",
+                              "valori": ["kW minimo", "kW massimo"]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "descrizione": "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
+                      "condizioni": [
+                        {
+                          "descrizione": "Requisiti soggettivi del locatario, comodatario o soggetto passivo utilizzatore",
+                          "condizioni": [
+                            { "descrizione": "Posseduti da ONLUS o enti del terzo settore" },
+                            { "descrizione": "Posseduti da enti non commerciali" },
+                            { "descrizione": "Posseduti da società o altri soggetti con personalità giuridica" },
+                            { "descrizione": "Posseduti da società o altri soggetti senza personalità giuridica" },
+                            {
+                              "descrizione": "Soggetto con invalidità civile riconosciuta in percentuale non inferiore al",
+                              "valori": ["Percentuale di invalidità"]
+                            },
+                            { "descrizione": "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92" },
+                            {
+                              "descrizione": "Persona fisica di età non superiore ad anni",
+                              "valori": ["Anni"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+                              "valori": ["Mesi"]
+                            },
+                            {
+                              "descrizione": "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Soggetto gestore di casa-famiglia o altra struttura destinata all'assistenza, cura e protezione alle persone con necessità di sostegno intensivo e prive di sostegno familiare" },
+                            { "descrizione": "Soggetto gestore di struttura destinata all'accoglienza e protezione di persone vittime di violenza o che vivono in condizioni di disagio e vulnerabilità sociale" },
+                            { "descrizione": "Soggetti affidatari dei servizi di accoglienza integrata destinati a richiedenti asilo e titolari di protezione internazionale o umanitaria" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Destinazione d'uso",
+                          "condizioni": [
+                            { "descrizione": "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni" },
+                            {
+                              "descrizione": "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
+                              "valori": ["Mesi"]
+                            },
+                            { "descrizione": "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro" },
+                            { "descrizione": "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)" },
+                            { "descrizione": "Bottega storica o artigiana" },
+                            { "descrizione": "Azienda che abbia fatto ricorso nell'anno di imposta alla CIG o ad analogo ammortizzatore sociale (come definita nel regolamento)" },
+                            { "descrizione": "Privi o che intendono dismettere giochi di azzardo" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Tipologia di attività",
+                          "condizioni": [
+                            { "descrizione": "Attività innovative – Start up" },
+                            { "descrizione": "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)" },
+                            { "descrizione": "Imprese green" },
+                            { "descrizione": "Microimprese" }
+                          ]
+                        },
+                        {
+                          "descrizione": "Codice ATECO",
+                          "valori": ["Codice"]
+                        },
+                        {
+                          "descrizione": "Numero di dipendenti non superiore a",
+                          "valori": ["Numero"]
+                        },
+                        {
+                          "descrizione": "Potenza impianti produzione energia",
+                          "condizioni": [
+                            {
+                              "descrizione": "Fino a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Superiore a",
+                              "valori": ["kW"]
+                            },
+                            {
+                              "descrizione": "Intervallo di valori",
+                              "valori": ["kW minimo", "kW massimo"]
+                            }
+                          ]
+                        },
+                        { "descrizione": "Con contratto registrato" }
+                      ]
+                    }
+                  ]
+                },
+                { "descrizione": "Limitatamente ad un solo immobile" },
+                {
+                  "descrizione": "Fabbricati divenuti inagibili",
+                  "condizioni": [
+                    { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
+                    {
+                      "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+                      "condizioni": [
+                        { "descrizione": "A seguito di calamità naturali" },
+                        { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                        { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+                  "valori": ["Testo"]
+                }
+              ]
             },
             {
               "id": "altri_tipologia_alloggi_sociali",
