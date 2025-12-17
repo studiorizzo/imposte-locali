@@ -204,6 +204,28 @@
     ],
     "input": ["Percentuale di invalidità", "Anni/Mesi", "Anni", "€"]
   },
+  "contratto": {
+    "descrizione": [
+      "Tipo di contratto",
+      "Durata del contratto di durata non inferiore a",
+      "Con contratto registrato"
+    ],
+    "valori": [
+      "Locazione",
+      "Locazione a canone libero",
+      "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 2, commi 3, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 5, comma 1, della Legge n. 431/1998 e s.m.i.",
+      "Locazione a studenti ai sensi dell'art. 5, comma 2, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 5, comma 3, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14",
+      "Locazione ai sensi dell'art. 2, commi 3 e 5, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14",
+      "Comodato d'uso gratuito",
+      "Locazione o comodato d'uso gratuito",
+      "Accordi/Patti territoriali per soddisfare particolari esigenze abitative (come definiti nel regolamento)"
+    ],
+    "input": ["Mesi"]
+  },
   "destinazione_uso": {
     "descrizione": "Destinazione d'uso",
     "valori": [
