@@ -99,17 +99,6 @@
       "Ipotesi diverse - A seguito di calamità naturali o di cause diverse da calamità naturali"
     ]
   },
-  "utilizzo_fabbricato": {
-    "descrizione": "Fabbricati a disposizione o utilizzati",
-    "valori": [
-      "Immobili a disposizione",
-      "Immobili locati o concessi in comodato",
-      "Immobili locati",
-      "Immobili concessi in comodato",
-      "Immobili utilizzati direttamente dal soggetto passivo",
-      "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo"
-    ]
-  },
   "inutilizzo": {
     "descrizione": "Utilizzo/Inutilizzo",
     "valori": [
@@ -122,16 +111,53 @@
     ],
     "input": ["Mesi"]
   },
-  "utilizzo_terreno": {
-    "descrizione": "Utilizzo",
+  "requisiti_oggettivi": {
+    "descrizione": [
+      "Tipologia immobile",
+      "Fabbricati a disposizione o utilizzati",
+      "Utilizzo",
+      "Tipologia",
+      "Definizione di abitazioni a disposizione",
+      "Tipologia fabbricato"
+    ],
     "valori": [
+      "Immobili a disposizione",
+      "Immobili locati o concessi in comodato",
+      "Immobili locati",
+      "Immobili concessi in comodato",
+      "Immobili utilizzati direttamente dal soggetto passivo",
+      "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo",
       "Coltivati",
       "Non coltivati",
       "Coltivati e destinati ad alcuni tipi di coltura",
       "Coltivati da parenti e affini di coltivatori (entro il terzo grado)",
-      "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)"
+      "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)",
+      "Abitazione locata o concessa in comodato",
+      "Abitazione destinata a struttura turistico-ricettiva",
+      "Abitazione a disposizione",
+      "Abitazione utilizzata direttamente dal soggetto passivo",
+      "Immobili di categoria A10, B, C",
+      "Immobili di categoria A10",
+      "Immobili di categoria B",
+      "Immobili di categoria C",
+      "Immobili di categoria A10, B",
+      "Immobili di categoria A10, C",
+      "Immobili di categoria B, C",
+      "Fabbricati di civile abitazione destinati ad alloggi sociali o posseduti dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità, non adibiti ad abitazione principale per il periodo di espletamento delle attività di assegnazione (fino a)",
+      "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità",
+      "Fabbricati divenuti inagibili già destinati ad abitazione principale",
+      "Fabbricati divenuti inagibili già destinati ad abitazione principale di categoria catastale diversa da A/1, A/8 e A/9 e relative pertinenze",
+      "Fabbricati divenuti inagibili già destinati ad abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze",
+      "Residenziali",
+      "Diverse da residenziali",
+      "Abitazioni non locate e non concesse in comodato",
+      "Abitazioni non locate e non concesse in comodato nonché abitazioni locate o concesse in comodato per periodi inferiori all'anno e comunque per un numero complessivo di mesi inferiore a",
+      "Abitazioni non locate e non concesse in comodato di proprietà di ONLUS o di altri enti del terzo settore"
     ],
-    "input": ["Tipo di coltura"]
+    "input": [
+      "Tipo di coltura",
+      "Mesi"
+    ]
   },
   "requisiti_soggettivi": {
     "descrizione": [
