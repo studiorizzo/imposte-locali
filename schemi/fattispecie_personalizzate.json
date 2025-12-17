@@ -1521,18 +1521,6 @@
                   "valori": ["Testo"]
                 }
               ]
-            },
-            {
-              "id": "altri_tipologia_alloggi_sociali",
-              "descrizione": "Fabbricati di civile abitazione destinati ad alloggi sociali o posseduti dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità, non adibiti ad abitazione principale per il periodo di espletamento delle attività di assegnazione"
-            },
-            {
-              "id": "altri_tipologia_iacp_assegnati",
-              "descrizione": "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità"
-            },
-            {
-              "id": "altri_tipologia_inagibili_ex_principale",
-              "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale"
             }
           ]
         }
