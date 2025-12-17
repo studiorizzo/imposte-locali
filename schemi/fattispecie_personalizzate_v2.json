@@ -63,5 +63,8 @@
       "Non superiore a (Mq)",
       "Non inferiore a (Mq)"
     ]
+  },
+  "recupero": {
+    "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
   }
 }
