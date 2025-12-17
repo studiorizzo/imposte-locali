@@ -60,16 +60,17 @@
   "superficie": {
     "descrizione": "Superficie",
     "valori": [
-      "Non superiore a (Mq)",
-      "Non inferiore a (Mq)"
-    ]
+      "Non superiore a",
+      "Non inferiore a"
+    ],
+    "input": ["Mq"]
   },
   "recupero": {
     "descrizione": "Oggetto di attività di recupero per miglioramento del decoro urbano o della classe energetica"
   },
   "rendita": {
     "descrizione": "Rendita catastale",
-    "valori": ["€"]
+    "input": ["€"]
   },
   "collocazione": {
     "descrizione": [
