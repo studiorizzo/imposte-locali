@@ -98,5 +98,27 @@
       "Ipotesi diverse - A seguito di cause diverse da calamità naturali",
       "Ipotesi diverse - A seguito di calamità naturali o di cause diverse da calamità naturali"
     ]
+  },
+  "utilizzo_fabbricato": {
+    "descrizione": "Fabbricati a disposizione o utilizzati",
+    "valori": [
+      "Immobili a disposizione",
+      "Immobili locati o concessi in comodato",
+      "Immobili locati",
+      "Immobili concessi in comodato",
+      "Immobili utilizzati direttamente dal soggetto passivo",
+      "Immobili locati o concessi in comodato o utilizzati direttamente dal soggetto passivo"
+    ]
+  },
+  "utilizzo_terreno": {
+    "descrizione": "Utilizzo",
+    "valori": [
+      "Coltivati",
+      "Non coltivati",
+      "Coltivati e destinati ad alcuni tipi di coltura",
+      "Coltivati da parenti e affini di coltivatori (entro il terzo grado)",
+      "Terreni agricoli condotti da CD e IAP e Società agricole (non posseduti)"
+    ],
+    "input": ["Tipo di coltura"]
   }
 }
