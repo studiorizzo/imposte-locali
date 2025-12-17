@@ -94,12 +94,9 @@
     "descrizione": "Fabbricati divenuti inagibili",
     "valori": [
       "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
-      "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019"
-    ],
-    "causa": [
-      "A seguito di calamità naturali",
-      "A seguito di cause diverse da calamità naturali",
-      "A seguito di calamità naturali o di cause diverse da calamità naturali"
+      "Ipotesi diverse - A seguito di calamità naturali",
+      "Ipotesi diverse - A seguito di cause diverse da calamità naturali",
+      "Ipotesi diverse - A seguito di calamità naturali o di cause diverse da calamità naturali"
     ]
   }
 }
