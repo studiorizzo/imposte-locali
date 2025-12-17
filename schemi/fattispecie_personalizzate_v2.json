@@ -77,7 +77,7 @@
       "Collocazione",
       "Situate in determinate zone"
     ],
-    "condizioni": [
+    "valori": [
       "Dentro il centro storico",
       "Fuori dal centro storico",
       "In una zona specificamente indicata dal comune",
@@ -87,6 +87,6 @@
       "Terreni ricadenti in determinate aree",
       "Situate in determinate zone"
     ],
-    "valori": ["Zona", "Fogli catastali", "Area"]
+    "input": ["Zona", "Fogli catastali", "Area"]
   }
 }
