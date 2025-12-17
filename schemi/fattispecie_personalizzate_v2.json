@@ -1,4 +1,22 @@
 {
+  "fattispecie_principale": [
+    {
+      "id": "fabbricati_gruppo_d",
+      "descrizione": "Fabbricati appartenenti al gruppo catastale D"
+    },
+    {
+      "id": "terreni_agricoli",
+      "descrizione": "Terreni agricoli"
+    },
+    {
+      "id": "aree_fabbricabili",
+      "descrizione": "Aree fabbricabili"
+    },
+    {
+      "id": "altri_fabbricati",
+      "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)"
+    }
+  ],
   "categoria_catastale": {
     "descrizione": "Categoria catastale",
     "valori": [
@@ -45,23 +63,5 @@
       "Non superiore a (Mq)",
       "Non inferiore a (Mq)"
     ]
-  },
-  "fattispecie_principale": [
-    {
-      "id": "fabbricati_gruppo_d",
-      "descrizione": "Fabbricati appartenenti al gruppo catastale D"
-    },
-    {
-      "id": "terreni_agricoli",
-      "descrizione": "Terreni agricoli"
-    },
-    {
-      "id": "aree_fabbricabili",
-      "descrizione": "Aree fabbricabili"
-    },
-    {
-      "id": "altri_fabbricati",
-      "descrizione": "Altri fabbricati (fabbricati diversi dall'abitazione principale e dai fabbricati appartenenti al gruppo catastale D)"
-    }
-  ]
+  }
 }
