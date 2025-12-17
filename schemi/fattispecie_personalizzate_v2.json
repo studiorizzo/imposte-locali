@@ -53,7 +53,9 @@
       "D/5 Istituto di credito, cambio e assicurazione (con fine di lucro)",
       "D/6 Fabbricati e locali per esercizi sportivi (con fine di lucro)",
       "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attività industriale e non suscettibili di destinazione diversa senza radicali trasformazioni",
+      "D/7 Fabbricati costruiti o adattati per le speciali esigenze di un'attivita' industriale e non suscettibili di destinazione diversa senza radicali trasformazioni",
       "D/8 Fabbricati costruiti o adattati per le speciali esigenze di un'attività commerciale e non suscettibili di destinazione diversa senza radicali trasformazioni",
+      "D/8 Fabbricati costruiti o adattati per le speciali esigenze di un'attivita' commerciale e non suscettibili di destinazione diversa senza radicali trasformazioni",
       "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio"
     ]
   },
@@ -184,7 +186,9 @@
       "Persona con disabilità riconosciuta ai sensi dell'articolo 3, comma 3, della L. 104/92",
       "ONLUS o altri enti del terzo settore",
       "Persona giuridica esercente attività d'impresa da un numero di mesi non superiore a",
+      "Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a",
       "Persona giuridica esercente attività d'impresa da un numero di mesi non inferiore a",
+      "Persona giuridica esercente attivita' d'impresa da un numero di mesi non inferiore a",
       "Persona fisica di età non superiore ad anni",
       "Utilizzatore diretto dell'immobile nel caso di piccole e medie imprese",
       "Utilizzatore diretto dell'immobile (tutti)",
@@ -231,6 +235,7 @@
     "descrizione": "Destinazione d'uso",
     "valori": [
       "Utilizzato per attività produttiva e/o commerciale o per l'esercizio di arti e professioni",
+      "Utilizzato per attivita' produttiva e/o commerciale o per l'esercizio di arti e professioni",
       "Con uso limitato e discontinuo o stagionale, per un periodo complessivo inferiore a mesi",
       "Utilizzati per scopi istituzionali o di pubblica utilità, senza fine di lucro",
       "Immobili non produttivi di reddito fondiario (art. 43 T.U.I.R.)",
@@ -257,9 +262,13 @@
     ],
     "valori": [
       "Attività innovative - Start up",
+      "Attivita' innovative - Start up",
       "Attività innovative – Start up",
+      "Attivita' innovative – Start up",
       "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione",
+      "Imprese che hanno ampliato la propria attivita' economica/aumentato l'occupazione",
       "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)",
+      "Imprese che hanno ampliato la propria attivita' economica/aumentato l'occupazione (come definite nel regolamento)",
       "Imprese green",
       "Microimprese"
     ],
