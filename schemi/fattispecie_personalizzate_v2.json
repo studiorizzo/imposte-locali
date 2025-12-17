@@ -18,7 +18,7 @@
     }
   ],
   "categoria_catastale": {
-    "descrizione": "Categoria catastale",
+    "descrizione": ["Categoria catastale", "Categorie catastali"],
     "valori": [
       "A/1 Abitazioni di tipo signorile",
       "A/2 Abitazioni di tipo civile",
@@ -91,7 +91,7 @@
     "input": ["Zona", "Fogli catastali", "Area"]
   },
   "inagibilita": {
-    "descrizione": "Fabbricati divenuti inagibili",
+    "descrizione": ["Fabbricati divenuti inagibili", "Fabbricato divenuto inagibile"],
     "valori": [
       "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
       "Ipotesi diverse - A seguito di calamità naturali",
