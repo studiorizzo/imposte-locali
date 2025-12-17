@@ -9,11 +9,15 @@
   },
   "aliquote_base": [
     {
-      "fattispecie_principale": "Abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze",
+      "fattispecie_principale": "abitazione_principale_lusso",
       "aliquota": "0,58%"
     },
     {
-      "fattispecie_principale": "Fabbricati rurali ad uso strumentale (inclusa la categoria catastale D/10)",
+      "fattispecie_principale": "assimilazione_anziani_disabili",
+      "aliquota": true
+    },
+    {
+      "fattispecie_principale": "fabbricati_rurali_strumentali",
       "aliquota": "0,1%"
     },
     {
@@ -159,8 +163,5 @@
       "aliquota": "0,96%"
     }
   ],
-  "assimilazioni": {
-    "anziani_disabili": true
-  },
   "esenzioni": []
 }
