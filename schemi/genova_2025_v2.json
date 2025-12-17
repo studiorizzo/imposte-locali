@@ -162,10 +162,5 @@
   "assimilazioni": {
     "anziani_disabili": true
   },
-  "esenzioni": [],
-  "precisazioni": [
-    "Devono intendersi richiamate le esenzioni, le assimilazioni all'abitazione principale, le detrazioni e le agevolazioni previste dalla legge alle condizioni nella stessa stabilite.",
-    "Per le fattispecie di cui all'art. 1, commi 747 e 760, della legge n. 160 del 2019, l'imposta è determinata applicando la riduzione di legge sull'aliquota stabilita dal comune per ciascuna fattispecie.",
-    "Per contratti di locazione di immobili devono intendersi esclusivamente quelli registrati ai sensi delle vigenti disposizioni di legge."
-  ]
+  "esenzioni": []
 }
