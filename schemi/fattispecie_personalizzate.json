@@ -1546,6 +1546,55 @@
                   "valori": ["Testo"]
                 }
               ]
+            },
+            {
+              "id": "altri_tipologia_iacp_assegnati",
+              "descrizione": "Alloggi regolarmente assegnati dagli IACP o dagli enti di edilizia residenziale pubblica aventi le stesse finalità",
+              "condizioni": [
+                {
+                  "descrizione": "Fabbricati divenuti inagibili",
+                  "condizioni": [
+                    { "descrizione": "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019" },
+                    {
+                      "descrizione": "Ipotesi diverse da quella di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
+                      "condizioni": [
+                        { "descrizione": "A seguito di calamità naturali" },
+                        { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                        { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+                  "valori": ["Testo"]
+                }
+              ]
+            },
+            {
+              "id": "altri_tipologia_inagibili_ex_principale",
+              "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale",
+              "condizioni": [
+                {
+                  "descrizione": "Tipologia fabbricato",
+                  "condizioni": [
+                    { "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale di categoria catastale diversa da A/1, A/8 e A/9 e relative pertinenze" },
+                    { "descrizione": "Fabbricati divenuti inagibili già destinati ad abitazione principale di categoria catastale A/1, A/8 e A/9 e relative pertinenze" }
+                  ]
+                },
+                {
+                  "descrizione": "Fabbricato divenuto inagibile",
+                  "condizioni": [
+                    { "descrizione": "A seguito di calamità naturali" },
+                    { "descrizione": "A seguito di cause diverse da calamità naturali" },
+                    { "descrizione": "A seguito di calamità naturali o di cause diverse da calamità naturali" }
+                  ]
+                },
+                {
+                  "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+                  "valori": ["Testo"]
+                }
+              ]
             }
           ]
         }
