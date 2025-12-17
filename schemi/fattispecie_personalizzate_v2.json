@@ -18,7 +18,7 @@
     }
   ],
   "categoria_catastale": {
-    "descrizione": "Categoria catastale",
+    "descrizione": ["Categoria catastale", "Categorie catastali"],
     "valori": [
       "A/1 Abitazioni di tipo signorile",
       "A/2 Abitazioni di tipo civile",
@@ -91,7 +91,7 @@
     "input": ["Zona", "Fogli catastali", "Area"]
   },
   "inagibilita": {
-    "descrizione": "Fabbricati divenuti inagibili",
+    "descrizione": ["Fabbricati divenuti inagibili", "Fabbricato divenuto inagibile"],
     "valori": [
       "Ipotesi di cui all'art. 1, comma 747, lett. b), della legge n. 160 del 2019",
       "Ipotesi diverse - A seguito di calamità naturali",
@@ -172,7 +172,8 @@
       "Condizioni locatario/comodatario",
       "Di proprietà di ONLUS o enti del terzo settore",
       "Reddito ISEE del comodatario non superiore a",
-      "Reddito ISEE del soggetto passivo non superiore a"
+      "Reddito ISEE del soggetto passivo non superiore a",
+      "Limitatamente ad un solo immobile"
     ],
     "valori": [
       "Posseduti da ONLUS o enti del terzo settore",
@@ -204,6 +205,28 @@
     ],
     "input": ["Percentuale di invalidità", "Anni/Mesi", "Anni", "€"]
   },
+  "contratto": {
+    "descrizione": [
+      "Tipo di contratto",
+      "Durata del contratto di durata non inferiore a",
+      "Con contratto registrato"
+    ],
+    "valori": [
+      "Locazione",
+      "Locazione a canone libero",
+      "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 2, commi 3, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 5, comma 1, della Legge n. 431/1998 e s.m.i.",
+      "Locazione a studenti ai sensi dell'art. 5, comma 2, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 5, comma 3, della Legge n. 431/1998 e s.m.i.",
+      "Locazione ai sensi dell'art. 2, comma 1, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14",
+      "Locazione ai sensi dell'art. 2, commi 3 e 5, della Legge n. 431/1998 e s.m.i., in caso di canone ridotto ex art. 19, c. 1-bis, D.L. n. 133/14",
+      "Comodato d'uso gratuito",
+      "Locazione o comodato d'uso gratuito",
+      "Accordi/Patti territoriali per soddisfare particolari esigenze abitative (come definiti nel regolamento)"
+    ],
+    "input": ["Mesi"]
+  },
   "destinazione_uso": {
     "descrizione": "Destinazione d'uso",
     "valori": [
@@ -229,7 +252,8 @@
   "attivita": {
     "descrizione": [
       "Tipologia di attività",
-      "Attività condotta in forma imprenditoriale"
+      "Attività condotta in forma imprenditoriale",
+      "In attività da almeno"
     ],
     "valori": [
       "Attività innovative - Start up",
@@ -238,7 +262,8 @@
       "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)",
       "Imprese green",
       "Microimprese"
-    ]
+    ],
+    "input": ["Mesi"]
   },
   "ateco": {
     "descrizione": "Codice ATECO",
