@@ -39,6 +39,13 @@
       "D/9 Edifici galleggianti o sospesi assicurati a punti fissi del suolo, ponti privati soggetti a pedaggio"
     ]
   },
+  "superficie": {
+    "descrizione": "Superficie",
+    "valori": [
+      "Non superiore a (Mq)",
+      "Non inferiore a (Mq)"
+    ]
+  },
   "fattispecie_principale": [
     {
       "id": "fabbricati_gruppo_d",
