@@ -249,5 +249,9 @@
       "Intervallo di valori"
     ],
     "input": ["kW", "Da kW", "A kW"]
+  },
+  "ulteriori_condizioni": {
+    "descrizione": "Ulteriori condizioni (non rinvenibili tra quelle proposte nella presente schermata) stabilite dal comune, ai sensi dell'art. 1, comma 755, legge n. 160 del 2019, ai fini dell'applicazione dell'aliquota oltre la misura dell'1,06%",
+    "input": ["Testo"]
   }
 }
