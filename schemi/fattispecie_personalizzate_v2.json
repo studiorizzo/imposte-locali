@@ -252,7 +252,8 @@
   "attivita": {
     "descrizione": [
       "Tipologia di attività",
-      "Attività condotta in forma imprenditoriale"
+      "Attività condotta in forma imprenditoriale",
+      "In attività da almeno"
     ],
     "valori": [
       "Attività innovative - Start up",
@@ -261,7 +262,8 @@
       "Imprese che hanno ampliato la propria attività economica/aumentato l'occupazione (come definite nel regolamento)",
       "Imprese green",
       "Microimprese"
-    ]
+    ],
+    "input": ["Mesi"]
   },
   "ateco": {
     "descrizione": "Codice ATECO",
