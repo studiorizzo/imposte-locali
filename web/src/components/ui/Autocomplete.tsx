@@ -14,6 +14,8 @@ interface AutocompleteProps<T extends AutocompleteOption> {
   error?: string;
   hint?: string;
   maxResults?: number;
+  minCharsPrefix?: number;    // Minimo caratteri per cercare all'inizio (default 2)
+  minCharsContains?: number;  // Minimo caratteri per cercare ovunque (default 3)
 }
 
 export function Autocomplete<T extends AutocompleteOption>({
@@ -25,6 +27,8 @@ export function Autocomplete<T extends AutocompleteOption>({
   error,
   hint,
   maxResults = 10,
+  minCharsPrefix = 2,
+  minCharsContains = 3,
 }: AutocompleteProps<T>) {
   const [inputValue, setInputValue] = useState(value?.label || '');
   const [isOpen, setIsOpen] = useState(false);
@@ -32,13 +36,24 @@ export function Autocomplete<T extends AutocompleteOption>({
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
-  const filteredOptions = inputValue.trim()
-    ? options
-        .filter((opt) =>
-          opt.label.toLowerCase().includes(inputValue.toLowerCase())
-        )
-        .slice(0, maxResults)
-    : [];
+  const filteredOptions = (() => {
+    const query = inputValue.trim().toLowerCase();
+    const len = query.length;
+
+    if (len < minCharsPrefix) return [];
+
+    // Con almeno minCharsPrefix caratteri: cerca all'inizio
+    // Con almeno minCharsContains caratteri: cerca anche all'interno
+    return options
+      .filter((opt) => {
+        const labelLower = opt.label.toLowerCase();
+        if (len >= minCharsContains) {
+          return labelLower.includes(query);
+        }
+        return labelLower.startsWith(query);
+      })
+      .slice(0, maxResults);
+  })();
 
   useEffect(() => {
     setInputValue(value?.label || '');
