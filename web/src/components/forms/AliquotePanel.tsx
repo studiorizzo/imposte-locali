@@ -35,15 +35,15 @@ const LABEL_CAMPI: Record<string, string> = {
   destinazione_uso: "Destinazione d'uso",
 };
 
-// Mappa tipo immobile → fattispecie prospetto
-const TIPO_TO_FATTISPECIE: Record<TipoImmobile, string[]> = {
-  abitazione_principale: ['abitazione_principale', 'abitazione_principale_lusso'],
-  pertinenza: ['pertinenze', 'pertinenza'],
-  fabbricato_rurale: ['fabbricati_rurali_strumentali', 'fabbricati_rurali'],
-  fabbricato_gruppo_d: ['fabbricati_gruppo_d', 'immobili_produttivi'],
-  terreno_agricolo: ['terreni_agricoli'],
-  area_fabbricabile: ['aree_fabbricabili'],
-  altro_fabbricato: ['altri_fabbricati', 'altri_immobili'],
+// Mappa tipo immobile → fattispecie prospetto (match esatto)
+const TIPO_TO_FATTISPECIE: Record<TipoImmobile, string> = {
+  abitazione_principale: 'abitazione_principale_lusso',
+  pertinenza: 'pertinenze', // non presente nel prospetto standard
+  fabbricato_rurale: 'fabbricati_rurali_strumentali',
+  fabbricato_gruppo_d: 'fabbricati_gruppo_d',
+  terreno_agricolo: 'terreni_agricoli',
+  area_fabbricabile: 'aree_fabbricabili',
+  altro_fabbricato: 'altri_fabbricati',
 };
 
 // Genera un ID univoco per l'aliquota personalizzata
@@ -87,15 +87,11 @@ export function AliquotePanel({
   const aliquotePersonalizzate = useMemo(() => {
     if (!prospetto || !categoria || !tipo) return [];
 
-    const fattispecie = TIPO_TO_FATTISPECIE[tipo] || [];
+    const fattispecie = TIPO_TO_FATTISPECIE[tipo];
 
     return prospetto.aliquote_personalizzate.filter((ap) => {
-      // 1. La fattispecie DEVE corrispondere al tipo immobile
-      const fattispMatch = fattispecie.some(f =>
-        ap.fattispecie_principale.toLowerCase().includes(f.toLowerCase())
-      );
-
-      if (!fattispMatch) return false;
+      // 1. La fattispecie DEVE corrispondere esattamente al tipo immobile
+      if (ap.fattispecie_principale !== fattispecie) return false;
 
       // 2. Se ha categoria_catastale, deve corrispondere
       if (ap.categoria_catastale) {
