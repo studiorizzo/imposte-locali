@@ -21,7 +21,7 @@ export function Header() {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">Calcolo IMU</h1>
-              <p className="text-sm text-gray-500">Anno 2025</p>
+              <p className="text-sm text-gray-500">Anno 2026</p>
             </div>
           </div>
           <a

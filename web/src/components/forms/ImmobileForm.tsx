@@ -275,7 +275,6 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
                 options={comuniOptions}
                 value={immobile.comune.codice_catastale ? comuniOptions.find(c => c.codice_catastale === immobile.comune.codice_catastale) || null : null}
                 onChange={handleComuneChange}
-                hint="Seleziona il comune dove si trova l'immobile"
                 maxResults={15}
               />
               {/* Indicatore fonte aliquote */}
@@ -284,12 +283,10 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
                   {loadingProspetto ? (
                     <span className="text-gray-500">Caricamento aliquote comunali...</span>
                   ) : usaAliquoteMinisteriali ? (
-                    <span className="text-amber-600">
-                      Aliquote ministeriali (delibera comunale non disponibile)
-                    </span>
+                    <span className="text-amber-600">Aliquote ministeriali</span>
                   ) : delibera ? (
                     <span className="text-green-600">
-                      Delibera n. {delibera.num_delibera} del {delibera.data_delibera} - Anno {delibera.anno_riferimento}
+                      Aliquote comunali - Anno {delibera.anno_riferimento}
                     </span>
                   ) : null}
                 </div>
