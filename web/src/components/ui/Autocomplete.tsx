@@ -35,6 +35,12 @@ export function Autocomplete<T extends AutocompleteOption>({
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
+  const valueRef = useRef(value);
+  const inputValueRef = useRef(inputValue);
+
+  // Keep refs in sync
+  valueRef.current = value;
+  inputValueRef.current = inputValue;
 
   const filteredOptions = (() => {
     const query = inputValue.trim().toLowerCase();
@@ -120,10 +126,12 @@ export function Autocomplete<T extends AutocompleteOption>({
     setTimeout(() => {
       setIsOpen(false);
       setHighlightedIndex(-1);
-      // Reset to selected value if input doesn't match
-      if (value && inputValue !== value.label) {
-        setInputValue(value.label);
-      } else if (!value && inputValue) {
+      // Reset to selected value if input doesn't match (use refs for current values)
+      const currentValue = valueRef.current;
+      const currentInputValue = inputValueRef.current;
+      if (currentValue && currentInputValue !== currentValue.label) {
+        setInputValue(currentValue.label);
+      } else if (!currentValue && currentInputValue) {
         setInputValue('');
       }
     }, 150);
