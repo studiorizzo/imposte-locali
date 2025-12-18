@@ -52,16 +52,25 @@ Mappa ogni campo all'id corrispondente in `fattispecie_personalizzate_v2.json`.
 
 **NO array**: ogni campo è sempre una stringa singola, mai array.
 
-### categoria_catastale multiple
-Se presenti più categorie (es. A/10 e C/3), duplica il record:
+### Valori multipli → duplica il record
+
+Se un campo ha più valori, duplica l'intero record (uno per valore):
+
+**categoria_catastale multiple** (es. A/10 e C/3):
 ```json
 {"fattispecie_principale": "altri_fabbricati", "categoria_catastale": "A/10 Uffici e studi privati", ...}
 {"fattispecie_principale": "altri_fabbricati", "categoria_catastale": "C/3 Laboratori per arti e mestieri", ...}
 ```
 
+**requisiti_soggettivi multipli** (se in futuro):
+```json
+{"fattispecie_principale": "...", "requisiti_soggettivi": "Requisito A", ...}
+{"fattispecie_principale": "...", "requisiti_soggettivi": "Requisito B", ...}
+```
+
 ### Filtri categoria da ESCLUDERE dal JSON
 
-I seguenti pattern servono SOLO per identificare le righe nel PDF e NON devono essere riportati nel JSON (la categoria è già in `categoria_catastale`):
+I seguenti pattern sono solo intestazioni/filtri nel PDF. NON vanno riportati nel JSON perché la categoria è già in `categoria_catastale`:
 
 - "Immobili di categoria A10, B, C"
 - "Immobili di categoria A10"
