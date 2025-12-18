@@ -83,25 +83,27 @@ export function AliquotePanel({
   aliquotaPersonalizzataSelezionata,
   onSelectAliquotaPersonalizzata,
 }: AliquotePanelProps) {
-  // Filtra aliquote personalizzate per categoria catastale e tipo
+  // Filtra aliquote personalizzate per tipo E categoria catastale
   const aliquotePersonalizzate = useMemo(() => {
     if (!prospetto || !categoria || !tipo) return [];
 
     const fattispecie = TIPO_TO_FATTISPECIE[tipo] || [];
 
     return prospetto.aliquote_personalizzate.filter((ap) => {
-      // Verifica fattispecie_principale
+      // 1. La fattispecie DEVE corrispondere al tipo immobile
       const fattispMatch = fattispecie.some(f =>
         ap.fattispecie_principale.toLowerCase().includes(f.toLowerCase())
       );
 
-      // Se ha categoria_catastale, deve corrispondere
+      if (!fattispMatch) return false;
+
+      // 2. Se ha categoria_catastale, deve corrispondere
       if (ap.categoria_catastale) {
         return matchCategoria(ap.categoria_catastale, categoria);
       }
 
-      // Se non ha categoria_catastale, mostra solo se fattispecie corrisponde
-      return fattispMatch;
+      // 3. Se non ha categoria_catastale, mostra (fattispecie già verificata)
+      return true;
     });
   }, [prospetto, categoria, tipo]);
 
