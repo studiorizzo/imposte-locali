@@ -16,6 +16,14 @@ import type { DatiImmobile } from '../types';
 function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
   return {
     id: 'test',
+    comune: {
+      comune: 'Roma',
+      regione: 'Lazio',
+      provincia: 'Roma',
+      sigla_provincia: 'RM',
+      codice_catastale: 'H501',
+      label: 'H501 - Roma',
+    },
     tipo: 'altro_fabbricato',
     categoria: 'A/2',
     renditaCatastale: 1000,

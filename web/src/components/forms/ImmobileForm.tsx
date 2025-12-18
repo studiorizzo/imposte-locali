@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button } from '../ui';
-import type { DatiImmobile, TipoImmobile, CategoriaCatastale } from '@lib';
-import { COEFFICIENTI, ALIQUOTE_BASE_2025 } from '@lib';
+import { useState, useMemo } from 'react';
+import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button, Autocomplete } from '../ui';
+import type { DatiImmobile, TipoImmobile, CategoriaCatastale, Comune } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_BASE_2025, COMUNI } from '@lib';
 
 interface ImmobileFormProps {
   onAdd: (immobile: DatiImmobile) => void;
@@ -71,6 +71,14 @@ const getDefaultAliquota = (tipo: TipoImmobile): number => {
 
 const createEmptyImmobile = (): DatiImmobile => ({
   id: crypto.randomUUID(),
+  comune: {
+    comune: '',
+    regione: '',
+    provincia: '',
+    sigla_provincia: '',
+    codice_catastale: '',
+    label: '',
+  },
   tipo: 'altro_fabbricato',
   categoria: 'A/2', // Default per altro_fabbricato (abitazione civile)
   renditaCatastale: 0,
@@ -98,6 +106,46 @@ const createEmptyImmobile = (): DatiImmobile => ({
 export function ImmobileForm({ onAdd }: ImmobileFormProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
+
+  // Memoize comuni options for autocomplete
+  const comuniOptions = useMemo(() =>
+    COMUNI.map(c => ({
+      value: c.codice_catastale,
+      label: c.label,
+      comune: c.comune,
+      regione: c.regione,
+      provincia: c.provincia,
+      sigla_provincia: c.sigla_provincia,
+      codice_catastale: c.codice_catastale,
+    })),
+    []
+  );
+
+  const handleComuneChange = (option: (typeof comuniOptions)[number] | null) => {
+    if (option) {
+      const comune: Comune = {
+        comune: option.comune,
+        regione: option.regione,
+        provincia: option.provincia,
+        sigla_provincia: option.sigla_provincia,
+        codice_catastale: option.codice_catastale,
+        label: option.label,
+      };
+      setImmobile((prev) => ({ ...prev, comune }));
+    } else {
+      setImmobile((prev) => ({
+        ...prev,
+        comune: {
+          comune: '',
+          regione: '',
+          provincia: '',
+          sigla_provincia: '',
+          codice_catastale: '',
+          label: '',
+        },
+      }));
+    }
+  };
 
   const handleChange = <K extends keyof DatiImmobile>(
     field: K,
@@ -158,6 +206,19 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
+            {/* Comune */}
+            <div className="grid grid-cols-1 gap-4">
+              <Autocomplete
+                label="Comune"
+                placeholder="Cerca per codice catastale o nome comune..."
+                options={comuniOptions}
+                value={immobile.comune.codice_catastale ? comuniOptions.find(c => c.codice_catastale === immobile.comune.codice_catastale) || null : null}
+                onChange={handleComuneChange}
+                hint="Seleziona il comune dove si trova l'immobile"
+                maxResults={15}
+              />
+            </div>
+
             {/* Tipo e Categoria */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Select
