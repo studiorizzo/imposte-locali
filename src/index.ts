@@ -17,6 +17,25 @@ export * from './utils/constants';
 // Dati
 export { COMUNI, cercaComune, getComuneByCodice } from './data/comuni';
 
+// Prospetti (lookup aliquote comunali)
+export {
+  trovaDeliberaPiuRecente,
+  trovaDeliberaApplicabile,
+  getNomeFileProspetto,
+  getPercorsoDelibere,
+  getPercorsoProspetto,
+  trovaComuneInDelibere,
+  lookupProspetto,
+} from './data/prospetti';
+export type {
+  Delibera,
+  ComuneDelibere,
+  AliquotaBase,
+  AliquotaPersonalizzata,
+  Prospetto,
+  RisultatoLookup,
+} from './data/prospetti';
+
 // Funzioni di calcolo
 export {
   getCoeffciente,

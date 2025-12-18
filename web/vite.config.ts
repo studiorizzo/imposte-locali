@@ -11,4 +11,12 @@ export default defineConfig({
       '@lib': path.resolve(__dirname, '../src'),
     },
   },
+  server: {
+    fs: {
+      // Allow serving files from parent directory (dati/prospetti)
+      allow: ['..'],
+    },
+  },
+  // Copy prospetti data to build output
+  publicDir: 'public',
 })

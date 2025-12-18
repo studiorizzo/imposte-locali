@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button, Autocomplete } from '../ui';
-import type { DatiImmobile, TipoImmobile, CategoriaCatastale, Comune } from '@lib';
+import type { DatiImmobile, TipoImmobile, CategoriaCatastale, Comune, Prospetto } from '@lib';
 import { COEFFICIENTI, ALIQUOTE_BASE_2025, COMUNI } from '@lib';
+import { useProspetto } from '../../hooks';
 
 interface ImmobileFormProps {
   onAdd: (immobile: DatiImmobile) => void;
@@ -69,6 +70,34 @@ const getDefaultAliquota = (tipo: TipoImmobile): number => {
   }
 };
 
+// Mappa tipo immobile → fattispecie prospetto
+const TIPO_TO_FATTISPECIE: Record<TipoImmobile, string> = {
+  abitazione_principale: 'abitazione_principale_lusso',
+  pertinenza: 'altri_fabbricati', // pertinenze seguono aliquota altri fabbricati
+  fabbricato_rurale: 'fabbricati_rurali_strumentali',
+  fabbricato_gruppo_d: 'fabbricati_gruppo_d',
+  terreno_agricolo: 'terreni_agricoli',
+  area_fabbricabile: 'aree_fabbricabili',
+  altro_fabbricato: 'altri_fabbricati',
+};
+
+// Estrae aliquota dal prospetto
+const getAliquotaDaProspetto = (prospetto: Prospetto | null, tipo: TipoImmobile): number | null => {
+  if (!prospetto || !tipo) return null;
+
+  const fattispecie = TIPO_TO_FATTISPECIE[tipo];
+  if (!fattispecie) return null;
+
+  const aliquotaBase = prospetto.aliquote_base.find(a => a.fattispecie_principale === fattispecie);
+  if (!aliquotaBase || typeof aliquotaBase.aliquota !== 'string') return null;
+
+  // Converte "0,58%" → 0.58
+  const match = aliquotaBase.aliquota.match(/(\d+)[,.](\d+)/);
+  if (!match) return null;
+
+  return parseFloat(`${match[1]}.${match[2]}`);
+};
+
 const createEmptyImmobile = (): DatiImmobile => ({
   id: crypto.randomUUID(),
   comune: {
@@ -107,6 +136,10 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
 
+  // Hook per caricare prospetto quando si seleziona un comune
+  const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
+  const { prospetto, delibera, loading: loadingProspetto, usaAliquoteMinisteriali } = useProspetto(comuneSelezionato);
+
   // Memoize comuni options for autocomplete
   const comuniOptions = useMemo(() =>
     COMUNI.map(c => ({
@@ -120,6 +153,30 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
     })),
     []
   );
+
+  // Aggiorna aliquote quando prospetto cambia o tipo immobile cambia
+  useEffect(() => {
+    if (!immobile.tipo) return;
+
+    const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, immobile.tipo);
+
+    if (aliquotaDaProspetto !== null) {
+      // Usa aliquota dal prospetto comunale
+      setImmobile(prev => ({
+        ...prev,
+        aliquotaAcconto: aliquotaDaProspetto,
+        aliquotaSaldo: aliquotaDaProspetto,
+      }));
+    } else {
+      // Usa aliquota ministeriale
+      const aliquotaMinisteriale = getDefaultAliquota(immobile.tipo);
+      setImmobile(prev => ({
+        ...prev,
+        aliquotaAcconto: aliquotaMinisteriale,
+        aliquotaSaldo: aliquotaMinisteriale,
+      }));
+    }
+  }, [prospetto, immobile.tipo]);
 
   const handleComuneChange = (option: (typeof comuniOptions)[number] | null) => {
     if (option) {
@@ -221,6 +278,22 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
                 hint="Seleziona il comune dove si trova l'immobile"
                 maxResults={15}
               />
+              {/* Indicatore fonte aliquote */}
+              {comuneSelezionato && (
+                <div className="text-sm">
+                  {loadingProspetto ? (
+                    <span className="text-gray-500">Caricamento aliquote comunali...</span>
+                  ) : usaAliquoteMinisteriali ? (
+                    <span className="text-amber-600">
+                      Aliquote ministeriali (delibera comunale non disponibile)
+                    </span>
+                  ) : delibera ? (
+                    <span className="text-green-600">
+                      Delibera n. {delibera.num_delibera} del {delibera.data_delibera} - Anno {delibera.anno_riferimento}
+                    </span>
+                  ) : null}
+                </div>
+              )}
             </div>
 
             {/* Tipo e Categoria */}
