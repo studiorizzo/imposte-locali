@@ -11,7 +11,7 @@
 // Tipi
 export * from './types';
 
-// Costanti
+// Costanti e utilità date
 export * from './utils/constants';
 
 // Dati

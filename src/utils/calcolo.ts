@@ -23,6 +23,7 @@ import {
   CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI,
   CODICI_TRIBUTO,
   SOGLIA_MINIMA_VERSAMENTO,
+  calcolaMesiPossesso,
 } from './constants';
 
 /**
@@ -280,14 +281,15 @@ export function calcolaIMUImmobile(
     redditoDominicale,
     valoreVenale,
     percentualePossesso,
-    mesiPrimoSemestre,
-    mesiSecondoSemestre,
+    dataInizio,
+    dataFine,
     aliquotaAcconto,
     aliquotaSaldo,
     riduzioni,
   } = immobile;
 
-  const mesiTotali = mesiPrimoSemestre + mesiSecondoSemestre;
+  // Calcola i mesi di possesso applicando la Regola del Mese
+  const { mesiPrimoSemestre, mesiSecondoSemestre, mesiTotali } = calcolaMesiPossesso(dataInizio, dataFine);
   const coefficiente = fattispecie_principale === 'terreni_agricoli'
     ? COEFFICIENTE_TERRENI
     : getCoeffciente(categoria);
