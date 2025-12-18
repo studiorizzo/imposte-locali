@@ -79,8 +79,8 @@ const createEmptyImmobile = (): DatiImmobile => ({
     codice_catastale: '',
     label: '',
   },
-  tipo: 'altro_fabbricato',
-  categoria: 'A/2', // Default per altro_fabbricato (abitazione civile)
+  tipo: '' as TipoImmobile,
+  categoria: '' as CategoriaCatastale,
   renditaCatastale: 0,
   percentualePossesso: 100,
   mesiPrimoSemestre: 6,
@@ -194,6 +194,7 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
 
   const isTerreno = immobile.tipo === 'terreno_agricolo';
   const isArea = immobile.tipo === 'area_fabbricabile';
+  const showCategoria = immobile.tipo && !isTerreno && !isArea;
 
   return (
     <Card>
@@ -228,7 +229,7 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
                 onChange={(e) => handleChange('tipo', e.target.value as TipoImmobile)}
                 options={TIPI_IMMOBILE}
               />
-              {!isTerreno && !isArea && (
+              {showCategoria && (
                 <Select
                   label="Categoria Catastale"
                   placeholder="Seleziona categoria"
@@ -241,7 +242,7 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
 
             {/* Valori catastali */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {!isTerreno && !isArea && (
+              {showCategoria && (
                 <Input
                   label="Rendita Catastale (€)"
                   type="number"
