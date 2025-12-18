@@ -161,10 +161,13 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
         updated.aliquotaAcconto = defaultAliquota;
         updated.aliquotaSaldo = defaultAliquota;
 
-        // Reset categoria se non valida per il nuovo tipo
-        const categorieValide = getCategoriePerTipo(newTipo);
-        if (!categorieValide.some(opt => opt.value === prev.categoria)) {
-          updated.categoria = categorieValide[0]?.value as CategoriaCatastale || 'A/2';
+        // Reset categoria solo se aveva un valore non valido per il nuovo tipo
+        // Mantieni vuoto se era vuoto (per mostrare placeholder)
+        if (prev.categoria) {
+          const categorieValide = getCategoriePerTipo(newTipo);
+          if (!categorieValide.some(opt => opt.value === prev.categoria)) {
+            updated.categoria = '' as CategoriaCatastale;
+          }
         }
       }
 
