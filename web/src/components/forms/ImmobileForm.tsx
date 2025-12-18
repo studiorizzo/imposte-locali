@@ -222,7 +222,8 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
             {/* Tipo e Categoria */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Select
-                label="Tipo Immobile"
+                label="Tipologia"
+                placeholder="Seleziona tipologia"
                 value={immobile.tipo}
                 onChange={(e) => handleChange('tipo', e.target.value as TipoImmobile)}
                 options={TIPI_IMMOBILE}
@@ -230,6 +231,7 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
               {!isTerreno && !isArea && (
                 <Select
                   label="Categoria Catastale"
+                  placeholder="Seleziona categoria"
                   value={immobile.categoria}
                   onChange={(e) => handleChange('categoria', e.target.value as CategoriaCatastale)}
                   options={getCategoriePerTipo(immobile.tipo)}
