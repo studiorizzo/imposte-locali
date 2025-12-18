@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Comune, Prospetto, ComuneDelibere, RisultatoLookup, Delibera } from '@lib';
-import { getPercorsoDelibere, getPercorsoProspetto, lookupProspetto } from '@lib';
+import { getPercorsoDelibere, getPercorsoProspetto, lookupProspetto, trovaComuneInDelibere } from '@lib';
 
 interface UseProspettoResult {
   prospetto: Prospetto | null;
   delibera: Delibera | null;
+  urlPagina: string | null;
   loading: boolean;
   error: string | null;
   usaAliquoteMinisteriali: boolean;
@@ -20,6 +21,7 @@ const prospettoCache = new Map<string, Prospetto>();
 export function useProspetto(comune: Comune | null, anno: number = 2026): UseProspettoResult {
   const [prospetto, setProspetto] = useState<Prospetto | null>(null);
   const [delibera, setDelibera] = useState<Delibera | null>(null);
+  const [urlPagina, setUrlPagina] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [usaAliquoteMinisteriali, setUsaAliquoteMinisteriali] = useState(true);
@@ -76,6 +78,7 @@ export function useProspetto(comune: Comune | null, anno: number = 2026): UsePro
     // Reset state when comune changes
     setProspetto(null);
     setDelibera(null);
+    setUrlPagina(null);
     setError(null);
     setUsaAliquoteMinisteriali(true);
 
@@ -102,6 +105,12 @@ export function useProspetto(comune: Comune | null, anno: number = 2026): UsePro
 
         // 2. Find applicable delibera using lookup
         const risultato: RisultatoLookup = lookupProspetto(comune, delibereProvince, anno);
+
+        // Get url_pagina from comune delibere
+        const comuneDelibere = trovaComuneInDelibere(delibereProvince, comune.codice_catastale);
+        if (comuneDelibere) {
+          setUrlPagina(comuneDelibere.url_pagina);
+        }
 
         if (risultato.usaAliquoteMinisteriali || !risultato.delibera) {
           setUsaAliquoteMinisteriali(true);
@@ -136,6 +145,7 @@ export function useProspetto(comune: Comune | null, anno: number = 2026): UsePro
   return {
     prospetto,
     delibera,
+    urlPagina,
     loading,
     error,
     usaAliquoteMinisteriali,

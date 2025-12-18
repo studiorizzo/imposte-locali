@@ -138,7 +138,7 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
 
   // Hook per caricare prospetto quando si seleziona un comune
   const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
-  const { prospetto, delibera, loading: loadingProspetto, usaAliquoteMinisteriali } = useProspetto(comuneSelezionato);
+  const { prospetto, delibera, urlPagina, loading: loadingProspetto, usaAliquoteMinisteriali } = useProspetto(comuneSelezionato);
 
   // Memoize comuni options for autocomplete
   const comuniOptions = useMemo(() =>
