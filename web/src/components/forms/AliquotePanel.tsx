@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { Card, CardHeader, CardContent, Input } from '../ui';
-import type { Prospetto, AliquotaPersonalizzata, CategoriaCatastale } from '@lib';
+import type { Prospetto, AliquotaPersonalizzata, CategoriaCatastale, TipoImmobile } from '@lib';
 
 interface AliquotePanelProps {
   prospetto: Prospetto | null;
   categoria: CategoriaCatastale | '';
-  tipo: string;
+  tipo: TipoImmobile | '';
   aliquotaAcconto: number;
   aliquotaSaldo: number;
   onAliquotaAccontoChange: (value: number) => void;
@@ -35,6 +35,17 @@ const LABEL_CAMPI: Record<string, string> = {
   destinazione_uso: "Destinazione d'uso",
 };
 
+// Mappa tipo immobile → fattispecie prospetto
+const TIPO_TO_FATTISPECIE: Record<TipoImmobile, string[]> = {
+  abitazione_principale: ['abitazione_principale', 'abitazione_principale_lusso'],
+  pertinenza: ['pertinenze', 'altri_fabbricati'],
+  fabbricato_rurale: ['fabbricati_rurali_strumentali', 'fabbricati_rurali'],
+  fabbricato_gruppo_d: ['fabbricati_gruppo_d', 'immobili_produttivi'],
+  terreno_agricolo: ['terreni_agricoli'],
+  area_fabbricabile: ['aree_fabbricabili'],
+  altro_fabbricato: ['altri_fabbricati', 'altri_immobili'],
+};
+
 // Genera un ID univoco per l'aliquota personalizzata
 function getAliquotaId(aliquota: AliquotaPersonalizzata, index: number): string {
   return `${aliquota.fattispecie_principale}-${aliquota.categoria_catastale || ''}-${index}`;
@@ -45,6 +56,20 @@ function parseAliquota(aliquota: string): number | null {
   const match = aliquota.match(/(\d+)[,.](\d+)/);
   if (!match) return null;
   return parseFloat(`${match[1]}.${match[2]}`);
+}
+
+// Verifica se una categoria corrisponde al pattern
+function matchCategoria(pattern: string, categoria: string): boolean {
+  const patternUpper = pattern.toUpperCase();
+  const categoriaUpper = categoria.toUpperCase();
+
+  // Match esatto o pattern contiene la categoria
+  if (patternUpper === categoriaUpper) return true;
+  if (patternUpper.includes(categoriaUpper)) return true;
+
+  // Pattern come "A/1, A/8, A/9" - split e verifica
+  const patterns = patternUpper.split(/[,;]\s*/);
+  return patterns.some(p => p.trim() === categoriaUpper);
 }
 
 export function AliquotePanel({
@@ -58,18 +83,27 @@ export function AliquotePanel({
   aliquotaPersonalizzataSelezionata,
   onSelectAliquotaPersonalizzata,
 }: AliquotePanelProps) {
-  // Filtra aliquote personalizzate per categoria catastale
+  // Filtra aliquote personalizzate per categoria catastale e tipo
   const aliquotePersonalizzate = useMemo(() => {
-    if (!prospetto || !categoria) return [];
+    if (!prospetto || !categoria || !tipo) return [];
+
+    const fattispecie = TIPO_TO_FATTISPECIE[tipo] || [];
 
     return prospetto.aliquote_personalizzate.filter((ap) => {
+      // Verifica fattispecie_principale
+      const fattispMatch = fattispecie.some(f =>
+        ap.fattispecie_principale.toLowerCase().includes(f.toLowerCase())
+      );
+
       // Se ha categoria_catastale, deve corrispondere
       if (ap.categoria_catastale) {
-        return ap.categoria_catastale.toUpperCase().includes(categoria.toUpperCase());
+        return matchCategoria(ap.categoria_catastale, categoria);
       }
-      return true;
+
+      // Se non ha categoria_catastale, mostra solo se fattispecie corrisponde
+      return fattispMatch;
     });
-  }, [prospetto, categoria]);
+  }, [prospetto, categoria, tipo]);
 
   const showAliquote = tipo !== '';
 
