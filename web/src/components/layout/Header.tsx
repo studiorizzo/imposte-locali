@@ -25,7 +25,7 @@ export function Header() {
             </div>
           </div>
           <a
-            href="https://www.finanze.gov.it/it/fiscalita-regionale-e-locale/Imposta-municipale-propria-IMU/"
+            href="https://www.finanze.gov.it/it/fiscalita/fiscalita-regionale-e-locale/Imposta-municipale-propria-IMU/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-primary-600 hover:text-primary-700 flex items-center gap-1"
