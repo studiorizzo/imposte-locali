@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Header, Footer } from './components/layout';
 import { StepIndicator, WizardNavigation } from './components/wizard';
-import { ContribuenteForm, ImmobileForm, ListaImmobili } from './components/forms';
+import { ContribuenteForm, ImmobiliStep } from './components/forms';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
 import { calcolaRiepilogoIMU } from '@lib';
 import type { Contribuente, DatiImmobile, RiepilogoIMU, WizardStep } from '@lib';
@@ -88,13 +88,11 @@ function App() {
         );
       case 1:
         return (
-          <div className="space-y-6">
-            <ImmobileForm onAdd={handleAddImmobile} />
-            <ListaImmobili
-              immobili={immobili}
-              onRemove={handleRemoveImmobile}
-            />
-          </div>
+          <ImmobiliStep
+            immobili={immobili}
+            onAddImmobile={handleAddImmobile}
+            onRemoveImmobile={handleRemoveImmobile}
+          />
         );
       case 2:
         return riepilogo ? (
@@ -109,7 +107,7 @@ function App() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
 
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
         <StepIndicator
           steps={WIZARD_STEPS}
           currentStep={currentStep}
