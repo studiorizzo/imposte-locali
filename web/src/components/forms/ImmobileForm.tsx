@@ -267,30 +267,32 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
-            {/* Comune */}
-            <div className="grid grid-cols-1 gap-4">
-              <Autocomplete
-                label="Comune"
-                placeholder="Cerca per codice catastale o nome comune..."
-                options={comuniOptions}
-                value={immobile.comune.codice_catastale ? comuniOptions.find(c => c.codice_catastale === immobile.comune.codice_catastale) || null : null}
-                onChange={handleComuneChange}
-                maxResults={15}
-              />
+            {/* Comune e fonte aliquote */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+              <div className="md:col-span-2">
+                <Autocomplete
+                  label="Comune"
+                  placeholder="Cerca per codice catastale o nome comune..."
+                  options={comuniOptions}
+                  value={immobile.comune.codice_catastale ? comuniOptions.find(c => c.codice_catastale === immobile.comune.codice_catastale) || null : null}
+                  onChange={handleComuneChange}
+                  maxResults={15}
+                />
+              </div>
               {/* Indicatore fonte aliquote */}
-              {comuneSelezionato && (
-                <div className="text-sm">
-                  {loadingProspetto ? (
-                    <span className="text-gray-500">Caricamento aliquote comunali...</span>
+              <div className="text-sm pb-2">
+                {comuneSelezionato && (
+                  loadingProspetto ? (
+                    <span className="text-gray-500">Caricamento...</span>
                   ) : usaAliquoteMinisteriali ? (
                     <span className="text-amber-600">Aliquote ministeriali</span>
                   ) : delibera ? (
                     <span className="text-green-600">
                       Aliquote comunali - Anno {delibera.anno_riferimento}
                     </span>
-                  ) : null}
-                </div>
-              )}
+                  ) : null
+                )}
+              </div>
             </div>
 
             {/* Tipo e Categoria */}
