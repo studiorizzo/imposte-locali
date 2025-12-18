@@ -114,8 +114,8 @@ const createEmptyImmobile = (): DatiImmobile => ({
   percentualePossesso: 100,
   mesiPrimoSemestre: 6,
   mesiSecondoSemestre: 6,
-  aliquotaAcconto: ALIQUOTE_BASE_2025.altriFabbricati,
-  aliquotaSaldo: ALIQUOTE_BASE_2025.altriFabbricati,
+  aliquotaAcconto: 0,
+  aliquotaSaldo: 0,
   riduzioni: {
     storicoArtistico: false,
     inagibileInabitabile: false,
@@ -395,29 +395,31 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
               />
             </div>
 
-            {/* Aliquote */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Input
-                label="Aliquota Acconto (%)"
-                type="number"
-                value={immobile.aliquotaAcconto}
-                onChange={(e) => handleChange('aliquotaAcconto', parseFloat(e.target.value) || 0)}
-                min={0}
-                max={1.14}
-                step={0.01}
-                hint="Aliquota anno precedente"
-              />
-              <Input
-                label="Aliquota Saldo (%)"
-                type="number"
-                value={immobile.aliquotaSaldo}
-                onChange={(e) => handleChange('aliquotaSaldo', parseFloat(e.target.value) || 0)}
-                min={0}
-                max={1.14}
-                step={0.01}
-                hint="Aliquota anno corrente"
-              />
-            </div>
+            {/* Aliquote - visibili solo quando tipo è selezionato */}
+            {immobile.tipo && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Input
+                  label="Aliquota Acconto (%)"
+                  type="number"
+                  value={immobile.aliquotaAcconto || ''}
+                  onChange={(e) => handleChange('aliquotaAcconto', parseFloat(e.target.value) || 0)}
+                  min={0}
+                  max={1.14}
+                  step={0.01}
+                  hint="Aliquota anno precedente"
+                />
+                <Input
+                  label="Aliquota Saldo (%)"
+                  type="number"
+                  value={immobile.aliquotaSaldo || ''}
+                  onChange={(e) => handleChange('aliquotaSaldo', parseFloat(e.target.value) || 0)}
+                  min={0}
+                  max={1.14}
+                  step={0.01}
+                  hint="Aliquota anno corrente"
+                />
+              </div>
+            )}
 
             {/* Toggle avanzate */}
             <button
