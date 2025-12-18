@@ -179,6 +179,9 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
   }, [prospetto, immobile.tipo]);
 
   const handleComuneChange = (option: (typeof comuniOptions)[number] | null) => {
+    // Reset form quando cambia il comune
+    const emptyImmobile = createEmptyImmobile();
+
     if (option) {
       const comune: Comune = {
         comune: option.comune,
@@ -188,19 +191,9 @@ export function ImmobileForm({ onAdd }: ImmobileFormProps) {
         codice_catastale: option.codice_catastale,
         label: option.label,
       };
-      setImmobile((prev) => ({ ...prev, comune }));
+      setImmobile({ ...emptyImmobile, comune });
     } else {
-      setImmobile((prev) => ({
-        ...prev,
-        comune: {
-          comune: '',
-          regione: '',
-          provincia: '',
-          sigla_provincia: '',
-          codice_catastale: '',
-          label: '',
-        },
-      }));
+      setImmobile(emptyImmobile);
     }
   };
 
