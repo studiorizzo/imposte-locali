@@ -45,22 +45,40 @@ Usa id: `fabbricati_gruppo_d`, `terreni_agricoli`, `aree_fabbricabili`, `altri_f
 ### Colonna 2: dettagli
 Mappa ogni campo all'id corrispondente in `fattispecie_personalizzate_v2.json`.
 
-**Formato valore**: stringa completa = descrizione + valore + input
+**Formato valore**: stringa singola = descrizione + valore + input
 ```
 "Requisiti soggettivi del locatario: Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36"
 ```
 
-**Array** se stesso id ha più valori:
-```json
-"requisiti_oggettivi": ["Immobili di categoria A10, C", "Fabbricati a disposizione o utilizzati: Immobili locati"]
-```
+**NO array**: ogni campo è sempre una stringa singola, mai array.
 
-### categoria_catastale multiple
-Se presenti più categorie (es. A/10 e C/3), duplica il record:
+### Valori multipli → duplica il record
+
+Se un campo ha più valori, duplica l'intero record (uno per valore):
+
+**categoria_catastale multiple** (es. A/10 e C/3):
 ```json
 {"fattispecie_principale": "altri_fabbricati", "categoria_catastale": "A/10 Uffici e studi privati", ...}
 {"fattispecie_principale": "altri_fabbricati", "categoria_catastale": "C/3 Laboratori per arti e mestieri", ...}
 ```
+
+**requisiti_soggettivi multipli** (se in futuro):
+```json
+{"fattispecie_principale": "...", "requisiti_soggettivi": "Requisito A", ...}
+{"fattispecie_principale": "...", "requisiti_soggettivi": "Requisito B", ...}
+```
+
+### Filtri categoria da ESCLUDERE dal JSON
+
+I seguenti pattern sono solo intestazioni/filtri nel PDF. NON vanno riportati nel JSON perché la categoria è già in `categoria_catastale`:
+
+- "Immobili di categoria A10, B, C"
+- "Immobili di categoria A10"
+- "Immobili di categoria B"
+- "Immobili di categoria C"
+- "Immobili di categoria A10, B"
+- "Immobili di categoria A10, C"
+- "Immobili di categoria B, C"
 
 ## esenzioni
 

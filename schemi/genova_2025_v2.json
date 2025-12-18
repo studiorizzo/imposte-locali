@@ -115,7 +115,7 @@
     {
       "fattispecie_principale": "altri_fabbricati",
       "categoria_catastale": "A/10 Uffici e studi privati",
-      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo"],
+      "requisiti_oggettivi": "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo",
       "requisiti_soggettivi": "Requisiti soggettivi del soggetto passivo utilizzatore: Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
       "attivita": "Tipologia di attività: Attivita' innovative - Start up",
       "ateco": "Codice ATECO: 72 - RICERCA SCIENTIFICA E SVILUPPO",
@@ -124,7 +124,7 @@
     {
       "fattispecie_principale": "altri_fabbricati",
       "categoria_catastale": "C/3 Laboratori per arti e mestieri",
-      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo"],
+      "requisiti_oggettivi": "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo",
       "requisiti_soggettivi": "Requisiti soggettivi del soggetto passivo utilizzatore: Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
       "attivita": "Tipologia di attività: Attivita' innovative - Start up",
       "ateco": "Codice ATECO: 72 - RICERCA SCIENTIFICA E SVILUPPO",
@@ -133,7 +133,7 @@
     {
       "fattispecie_principale": "altri_fabbricati",
       "categoria_catastale": "A/10 Uffici e studi privati",
-      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Fabbricati a disposizione o utilizzati: Immobili locati"],
+      "requisiti_oggettivi": "Fabbricati a disposizione o utilizzati: Immobili locati",
       "requisiti_soggettivi": "Requisiti soggettivi del locatario: Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
       "attivita": "Tipologia di attività: Attivita' innovative - Start up",
       "ateco": "Codice ATECO: 72 - RICERCA SCIENTIFICA E SVILUPPO",
@@ -142,7 +142,7 @@
     {
       "fattispecie_principale": "altri_fabbricati",
       "categoria_catastale": "C/3 Laboratori per arti e mestieri",
-      "requisiti_oggettivi": ["Immobili di categoria A10, C", "Fabbricati a disposizione o utilizzati: Immobili locati"],
+      "requisiti_oggettivi": "Fabbricati a disposizione o utilizzati: Immobili locati",
       "requisiti_soggettivi": "Requisiti soggettivi del locatario: Persona giuridica esercente attivita' d'impresa da un numero di mesi non superiore a: 36",
       "attivita": "Tipologia di attività: Attivita' innovative - Start up",
       "ateco": "Codice ATECO: 72 - RICERCA SCIENTIFICA E SVILUPPO",
@@ -151,14 +151,14 @@
     {
       "fattispecie_principale": "altri_fabbricati",
       "categoria_catastale": "C/1 Negozi e botteghe",
-      "requisiti_oggettivi": ["Immobili di categoria C", "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo"],
+      "requisiti_oggettivi": "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo",
       "destinazione_uso": "Destinazione d'uso: Utilizzato per attivita' produttiva e/o commerciale o per l'esercizio di arti e professioni",
       "aliquota": "0,96%"
     },
     {
       "fattispecie_principale": "altri_fabbricati",
       "categoria_catastale": "C/3 Laboratori per arti e mestieri",
-      "requisiti_oggettivi": ["Immobili di categoria C", "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo"],
+      "requisiti_oggettivi": "Fabbricati a disposizione o utilizzati: Immobili utilizzati direttamente dal soggetto passivo",
       "destinazione_uso": "Destinazione d'uso: Utilizzato per attivita' produttiva e/o commerciale o per l'esercizio di arti e professioni",
       "aliquota": "0,96%"
     }
