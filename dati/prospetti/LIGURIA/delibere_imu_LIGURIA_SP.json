@@ -1,0 +1,643 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=A261",
+    "comune": "AMEGLIA",
+    "codice_catastale": "A261",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1667_DIMUNIC-08sp25a261d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a641c&nome=1667_DIMUNIC-08sp25a261d.pdf",
+        "key_documentum": "0900f230807a641c"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "8844_DIMUNIC-08sp25a261d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a7069&nome=8844_DIMUNIC-08sp25a261d.pdf",
+        "key_documentum": "0900f230807a7069"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=A373",
+    "comune": "ARCOLA",
+    "codice_catastale": "A373",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "89",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4112_DIMUNIC-08sp25a373d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075429e&nome=4112_DIMUNIC-08sp25a373d.pdf",
+        "key_documentum": "0900f2308075429e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=A836",
+    "comune": "BEVERINO",
+    "codice_catastale": "A836",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "25",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "27-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5226_DIMUNIC-08sp25a836d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b9738&nome=5226_DIMUNIC-08sp25a836d.pdf",
+        "key_documentum": "0900f230807b9738"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=A932",
+    "comune": "BOLANO",
+    "codice_catastale": "A932",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "41",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4843_DIMUNIC-08sp25a932d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080795b2b&nome=4843_DIMUNIC-08sp25a932d.pdf",
+        "key_documentum": "0900f23080795b2b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=A961",
+    "comune": "BONASSOLA",
+    "codice_catastale": "A961",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "17-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "426_DIMUNIC-08sp25a961d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308073d670&nome=426_DIMUNIC-08sp25a961d.pdf",
+        "key_documentum": "0900f2308073d670"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=A992",
+    "comune": "BORGHETTO DI VARA",
+    "codice_catastale": "A992",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "21-02-2025",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6121_DIMUNIC-08sp25a992d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078f983&nome=6121_DIMUNIC-08sp25a992d.pdf",
+        "key_documentum": "0900f2308078f983"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=B214",
+    "comune": "BRUGNATO",
+    "codice_catastale": "B214",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "17-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "211_DIMUNIC-08sp25b214d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308073d108&nome=211_DIMUNIC-08sp25b214d.pdf",
+        "key_documentum": "0900f2308073d108"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=B410",
+    "comune": "CALICE AL CORNOVIGLIO",
+    "codice_catastale": "B410",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "05-12-2024",
+        "data_pubblicazione": "03-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2383_DIMUNIC-08sp25b410d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074cea2&nome=2383_DIMUNIC-08sp25b410d.pdf",
+        "key_documentum": "0900f2308074cea2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=B838",
+    "comune": "CARRO",
+    "codice_catastale": "B838",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "22-02-2025",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2868_DIMUNIC-08sp25b838d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079107a&nome=2868_DIMUNIC-08sp25b838d.pdf",
+        "key_documentum": "0900f2308079107a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=B839",
+    "comune": "CARRODANO",
+    "codice_catastale": "B839",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "13-12-2024",
+        "data_pubblicazione": "20-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2902_DIMUNIC-08sp25b839d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075e4fb&nome=2902_DIMUNIC-08sp25b839d.pdf",
+        "key_documentum": "0900f2308075e4fb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=C240",
+    "comune": "CASTELNUOVO MAGRA",
+    "codice_catastale": "C240",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "19-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "995_DIMUNIC-08sp25c240d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080788734&nome=995_DIMUNIC-08sp25c240d.pdf",
+        "key_documentum": "0900f23080788734"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=D265",
+    "comune": "DEIVA MARINA",
+    "codice_catastale": "D265",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "24-02-2025",
+        "data_pubblicazione": "10-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11743_DIMUNIC-08sp25d265d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308098b50a&nome=11743_DIMUNIC-08sp25d265d.pdf",
+        "key_documentum": "0900f2308098b50a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=D655",
+    "comune": "FOLLO",
+    "codice_catastale": "D655",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "46",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5728_DIMUNIC-08sp25d655d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a7683&nome=5728_DIMUNIC-08sp25d655d.pdf",
+        "key_documentum": "0900f230807a7683"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=D758",
+    "comune": "FRAMURA",
+    "codice_catastale": "D758",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "28",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "22-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5674_DIMUNIC-08sp25d758d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808dba7f&nome=5674_DIMUNIC-08sp25d758d.pdf",
+        "key_documentum": "0900f230808dba7f"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "28",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "12-11-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "12585_DIMUNIC-08sp25d758d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080a95b01&nome=12585_DIMUNIC-08sp25d758d.pdf",
+        "key_documentum": "0900f23080a95b01"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=E463",
+    "comune": "LA SPEZIA",
+    "codice_catastale": "E463",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "37",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "03-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "960_DIMUNIC-08sp25e463d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074d20b&nome=960_DIMUNIC-08sp25e463d.pdf",
+        "key_documentum": "0900f2308074d20b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=E542",
+    "comune": "LERICI",
+    "codice_catastale": "E542",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "62",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "14-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2789_DIMUNIC-08sp25e542d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a83dd&nome=2789_DIMUNIC-08sp25e542d.pdf",
+        "key_documentum": "0900f230807a83dd"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=E560",
+    "comune": "LEVANTO",
+    "codice_catastale": "E560",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "89",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "27-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3368_DIMUNIC-08sp25e560d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b703c&nome=3368_DIMUNIC-08sp25e560d.pdf",
+        "key_documentum": "0900f230807b703c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=G143",
+    "comune": "LUNI",
+    "codice_catastale": "G143",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "29",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "14-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5944_DIMUNIC-08sp25g143d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a8386&nome=5944_DIMUNIC-08sp25g143d.pdf",
+        "key_documentum": "0900f230807a8386"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=E842",
+    "comune": "MAISSANA",
+    "codice_catastale": "E842",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8635_DIMUNIC-08sp25e842d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807959c7&nome=8635_DIMUNIC-08sp25e842d.pdf",
+        "key_documentum": "0900f230807959c7"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=F609",
+    "comune": "MONTEROSSO AL MARE",
+    "codice_catastale": "F609",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "14-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6462_DIMUNIC-08sp25f609d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077eada&nome=6462_DIMUNIC-08sp25f609d.pdf",
+        "key_documentum": "0900f2308077eada"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=G664",
+    "comune": "PIGNONE",
+    "codice_catastale": "G664",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3280_DIMUNIC-08sp25g664d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6954&nome=3280_DIMUNIC-08sp25g664d.pdf",
+        "key_documentum": "0900f230807a6954"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "8845_DIMUNIC-08sp25g664d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a707e&nome=8845_DIMUNIC-08sp25g664d.pdf",
+        "key_documentum": "0900f230807a707e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=G925",
+    "comune": "PORTOVENERE",
+    "codice_catastale": "G925",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "88",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2023_DIMUNIC-08sp25g925d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807586c3&nome=2023_DIMUNIC-08sp25g925d.pdf",
+        "key_documentum": "0900f230807586c3"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=H275",
+    "comune": "RICCO' DEL GOLFO DI SPEZIA",
+    "codice_catastale": "H275",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "40",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2655_DIMUNIC-08sp25h275d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080754f4e&nome=2655_DIMUNIC-08sp25h275d.pdf",
+        "key_documentum": "0900f23080754f4e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=H304",
+    "comune": "RIOMAGGIORE",
+    "codice_catastale": "H304",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "47",
+        "data_delibera": "28-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2026_DIMUNIC-08sp25h304d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075973f&nome=2026_DIMUNIC-08sp25h304d.pdf",
+        "key_documentum": "0900f2308075973f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=H461",
+    "comune": "ROCCHETTA DI VARA",
+    "codice_catastale": "H461",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7794_DIMUNIC-08sp25h461d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807966a1&nome=7794_DIMUNIC-08sp25h461d.pdf",
+        "key_documentum": "0900f230807966a1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=I363",
+    "comune": "SANTO STEFANO DI MAGRA",
+    "codice_catastale": "I363",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1722_DIMUNIC-08sp25i363d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077ca88&nome=1722_DIMUNIC-08sp25i363d.pdf",
+        "key_documentum": "0900f2308077ca88"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=I449",
+    "comune": "SARZANA",
+    "codice_catastale": "I449",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "95",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "27-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2329_DIMUNIC-08sp25i449d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b25eb&nome=2329_DIMUNIC-08sp25i449d.pdf",
+        "key_documentum": "0900f230807b25eb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=E070",
+    "comune": "SESTA GODANO",
+    "codice_catastale": "E070",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "03-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5496_DIMUNIC-08sp25e070d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074cce4&nome=5496_DIMUNIC-08sp25e070d.pdf",
+        "key_documentum": "0900f2308074cce4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=L681",
+    "comune": "VARESE LIGURE",
+    "codice_catastale": "L681",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "26-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7461_DIMUNIC-08sp25l681d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308080c082&nome=7461_DIMUNIC-08sp25l681d.pdf",
+        "key_documentum": "0900f2308080c082"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=L774",
+    "comune": "VERNAZZA",
+    "codice_catastale": "L774",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "31-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2090_DIMUNIC-08sp25l774d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074b1c8&nome=2090_DIMUNIC-08sp25l774d.pdf",
+        "key_documentum": "0900f2308074b1c8"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2025&cc=L819",
+    "comune": "VEZZANO LIGURE",
+    "codice_catastale": "L819",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "27-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1324_DIMUNIC-08sp25l819d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b7f22&nome=1324_DIMUNIC-08sp25l819d.pdf",
+        "key_documentum": "0900f230807b7f22"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=liguria.htm&cm=&pr=SP&anno=2026&cc=M177",
+    "comune": "ZIGNAGO",
+    "codice_catastale": "M177",
+    "provincia": "SP",
+    "delibere": [
+      {
+        "anno_riferimento": 2026,
+        "num_delibera": "22",
+        "data_delibera": "27-11-2025",
+        "data_pubblicazione": "12-12-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "13591_DIMUNIC-08sp26m177d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080aae05c&nome=13591_DIMUNIC-08sp26m177d.pdf",
+        "key_documentum": "0900f23080aae05c"
+      }
+    ]
+  }
+]

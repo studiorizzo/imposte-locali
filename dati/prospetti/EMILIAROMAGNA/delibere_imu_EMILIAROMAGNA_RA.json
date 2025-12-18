@@ -1,0 +1,498 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=A191",
+    "comune": "ALFONSINE",
+    "codice_catastale": "A191",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "21-01-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1388_DIMUNIC-05ra25a191d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6681&nome=1388_DIMUNIC-05ra25a191d.pdf",
+        "key_documentum": "0900f230807a6681"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "21-01-2025",
+        "data_pubblicazione": "21-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9704_DIMUNIC-05ra25a191d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805af9&nome=9704_DIMUNIC-05ra25a191d.pdf",
+        "key_documentum": "0900f23080805af9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=A547",
+    "comune": "BAGNACAVALLO",
+    "codice_catastale": "A547",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1597_DIMUNIC-05ra25a547d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a66ac&nome=1597_DIMUNIC-05ra25a547d.pdf",
+        "key_documentum": "0900f230807a66ac"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "22-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9705_DIMUNIC-05ra25a547d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805b4d&nome=9705_DIMUNIC-05ra25a547d.pdf",
+        "key_documentum": "0900f23080805b4d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=A551",
+    "comune": "BAGNARA DI ROMAGNA",
+    "codice_catastale": "A551",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "30-01-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1602_DIMUNIC-05ra25a551d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a692f&nome=1602_DIMUNIC-05ra25a551d.pdf",
+        "key_documentum": "0900f230807a692f"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "30-01-2025",
+        "data_pubblicazione": "22-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9706_DIMUNIC-05ra25a551d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805e3e&nome=9706_DIMUNIC-05ra25a551d.pdf",
+        "key_documentum": "0900f23080805e3e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=B188",
+    "comune": "BRISIGHELLA",
+    "codice_catastale": "B188",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "05-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2250_DIMUNIC-05ra25b188d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080774847&nome=2250_DIMUNIC-05ra25b188d.pdf",
+        "key_documentum": "0900f23080774847"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=B982",
+    "comune": "CASOLA VALSENIO",
+    "codice_catastale": "B982",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "43",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2169_DIMUNIC-05ra25b982d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080774d0d&nome=2169_DIMUNIC-05ra25b982d.pdf",
+        "key_documentum": "0900f23080774d0d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=C065",
+    "comune": "CASTEL BOLOGNESE",
+    "codice_catastale": "C065",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "27-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1554_DIMUNIC-05ra25c065d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807698da&nome=1554_DIMUNIC-05ra25c065d.pdf",
+        "key_documentum": "0900f230807698da"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "13-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9543_DIMUNIC-05ra25c065d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807f0992&nome=9543_DIMUNIC-05ra25c065d.pdf",
+        "key_documentum": "0900f230807f0992"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=C553",
+    "comune": "CERVIA",
+    "codice_catastale": "C553",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "12",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6165_DIMUNIC-05ra25c553d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a54a6&nome=6165_DIMUNIC-05ra25c553d.pdf",
+        "key_documentum": "0900f230807a54a6"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=C963",
+    "comune": "CONSELICE",
+    "codice_catastale": "C963",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "21-01-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1606_DIMUNIC-05ra25c963d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6944&nome=1606_DIMUNIC-05ra25c963d.pdf",
+        "key_documentum": "0900f230807a6944"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "21-01-2025",
+        "data_pubblicazione": "28-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9707_DIMUNIC-05ra25c963d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805bab&nome=9707_DIMUNIC-05ra25c963d.pdf",
+        "key_documentum": "0900f23080805bab"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=D121",
+    "comune": "COTIGNOLA",
+    "codice_catastale": "D121",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "22-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1624_DIMUNIC-05ra25d121d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308080610a&nome=1624_DIMUNIC-05ra25d121d.pdf",
+        "key_documentum": "0900f2308080610a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=D458",
+    "comune": "FAENZA",
+    "codice_catastale": "D458",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "69",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "10-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1504_DIMUNIC-05ra25d458d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080778a75&nome=1504_DIMUNIC-05ra25d458d.pdf",
+        "key_documentum": "0900f23080778a75"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "69",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "15-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9545_DIMUNIC-05ra25d458d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807f0a23&nome=9545_DIMUNIC-05ra25d458d.pdf",
+        "key_documentum": "0900f230807f0a23"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=D829",
+    "comune": "FUSIGNANO",
+    "codice_catastale": "D829",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "21-01-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1608_DIMUNIC-05ra25d829d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6958&nome=1608_DIMUNIC-05ra25d829d.pdf",
+        "key_documentum": "0900f230807a6958"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "21-01-2025",
+        "data_pubblicazione": "28-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9708_DIMUNIC-05ra25d829d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805be0&nome=9708_DIMUNIC-05ra25d829d.pdf",
+        "key_documentum": "0900f23080805be0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=E730",
+    "comune": "LUGO",
+    "codice_catastale": "E730",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1609_DIMUNIC-05ra25e730d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6978&nome=1609_DIMUNIC-05ra25e730d.pdf",
+        "key_documentum": "0900f230807a6978"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "21-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9702_DIMUNIC-05ra25e730d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805d03&nome=9702_DIMUNIC-05ra25e730d.pdf",
+        "key_documentum": "0900f23080805d03"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=F029",
+    "comune": "MASSA LOMBARDA",
+    "codice_catastale": "F029",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1610_DIMUNIC-05ra25f029d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a697d&nome=1610_DIMUNIC-05ra25f029d.pdf",
+        "key_documentum": "0900f230807a697d"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "21-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9709_DIMUNIC-05ra25f029d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805c16&nome=9709_DIMUNIC-05ra25f029d.pdf",
+        "key_documentum": "0900f23080805c16"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "22-01-2025",
+        "data_pubblicazione": "13-10-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "11766_DIMUNIC-05ra25f029d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308098bdf2&nome=11766_DIMUNIC-05ra25f029d.pdf",
+        "key_documentum": "0900f2308098bdf2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=H199",
+    "comune": "RAVENNA",
+    "codice_catastale": "H199",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "159",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "24-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2667_DIMUNIC-05ra25h199d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080766da1&nome=2667_DIMUNIC-05ra25h199d.pdf",
+        "key_documentum": "0900f23080766da1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=H302",
+    "comune": "RIOLO TERME",
+    "codice_catastale": "H302",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "05-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1992_DIMUNIC-05ra25h302d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080772e2d&nome=1992_DIMUNIC-05ra25h302d.pdf",
+        "key_documentum": "0900f23080772e2d"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "12-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9541_DIMUNIC-05ra25h302d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807f06a3&nome=9541_DIMUNIC-05ra25h302d.pdf",
+        "key_documentum": "0900f230807f06a3"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=H642",
+    "comune": "RUSSI",
+    "codice_catastale": "H642",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "93",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1879_DIMUNIC-05ra25h642d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080754ebb&nome=1879_DIMUNIC-05ra25h642d.pdf",
+        "key_documentum": "0900f23080754ebb"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "93",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "20-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9622_DIMUNIC-05ra25h642d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807f9058&nome=9622_DIMUNIC-05ra25h642d.pdf",
+        "key_documentum": "0900f230807f9058"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=I196",
+    "comune": "SANT'AGATA SUL SANTERNO",
+    "codice_catastale": "I196",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "31-01-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1614_DIMUNIC-05ra25i196d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6759&nome=1614_DIMUNIC-05ra25i196d.pdf",
+        "key_documentum": "0900f230807a6759"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "31-01-2025",
+        "data_pubblicazione": "23-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9703_DIMUNIC-05ra25i196d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805ad0&nome=9703_DIMUNIC-05ra25i196d.pdf",
+        "key_documentum": "0900f23080805ad0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=emiliaromagna.htm&cm=&pr=RA&anno=2025&cc=I787",
+    "comune": "SOLAROLO",
+    "codice_catastale": "I787",
+    "provincia": "RA",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "07-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1505_DIMUNIC-05ra25i787d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077876b&nome=1505_DIMUNIC-05ra25i787d.pdf",
+        "key_documentum": "0900f2308077876b"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "09-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9546_DIMUNIC-05ra25i787d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807f07f7&nome=9546_DIMUNIC-05ra25i787d.pdf",
+        "key_documentum": "0900f230807f07f7"
+      }
+    ]
+  }
+]

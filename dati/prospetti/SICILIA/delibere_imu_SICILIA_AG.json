@@ -1,0 +1,792 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=A089",
+    "comune": "AGRIGENTO",
+    "codice_catastale": "A089",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "179",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "21-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4406_DIMUNIC-15ag25a089d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b32d0&nome=4406_DIMUNIC-15ag25a089d.pdf",
+        "key_documentum": "0900f230807b32d0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=A181",
+    "comune": "ALESSANDRIA DELLA ROCCA",
+    "codice_catastale": "A181",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7488_DIMUNIC-15ag25a181d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a68ae&nome=7488_DIMUNIC-15ag25a181d.pdf",
+        "key_documentum": "0900f230807a68ae"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=A351",
+    "comune": "ARAGONA",
+    "codice_catastale": "A351",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "26-06-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7583_DIMUNIC-15ag25a351d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080877754&nome=7583_DIMUNIC-15ag25a351d.pdf",
+        "key_documentum": "0900f23080877754"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=A896",
+    "comune": "BIVONA",
+    "codice_catastale": "A896",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "24-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7563_DIMUNIC-15ag25a896d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b798a&nome=7563_DIMUNIC-15ag25a896d.pdf",
+        "key_documentum": "0900f230807b798a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=B275",
+    "comune": "BURGIO",
+    "codice_catastale": "B275",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "9",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "18-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8024_DIMUNIC-15ag25b275d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808f8e87&nome=8024_DIMUNIC-15ag25b275d.pdf",
+        "key_documentum": "0900f230808f8e87"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=B377",
+    "comune": "CALAMONACI",
+    "codice_catastale": "B377",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "92",
+        "data_delibera": "05-09-2025",
+        "data_pubblicazione": "10-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11165_DIMUNIC-15ag25b377d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808ec5c4&nome=11165_DIMUNIC-15ag25b377d.pdf",
+        "key_documentum": "0900f230808ec5c4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=B427",
+    "comune": "CALTABELLOTTA",
+    "codice_catastale": "B427",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5015_DIMUNIC-15ag25b427d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074db7c&nome=5015_DIMUNIC-15ag25b427d.pdf",
+        "key_documentum": "0900f2308074db7c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=B460",
+    "comune": "CAMASTRA",
+    "codice_catastale": "B460",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8194_DIMUNIC-15ag25b460d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807943e9&nome=8194_DIMUNIC-15ag25b460d.pdf",
+        "key_documentum": "0900f230807943e9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=B486",
+    "comune": "CAMMARATA",
+    "codice_catastale": "B486",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "21-02-2025",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7160_DIMUNIC-15ag25b486d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807903c5&nome=7160_DIMUNIC-15ag25b486d.pdf",
+        "key_documentum": "0900f230807903c5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=B520",
+    "comune": "CAMPOBELLO DI LICATA",
+    "codice_catastale": "B520",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "40",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "16-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "706_DIMUNIC-15ag25b520d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807390e9&nome=706_DIMUNIC-15ag25b520d.pdf",
+        "key_documentum": "0900f230807390e9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=B602",
+    "comune": "CANICATTI'",
+    "codice_catastale": "B602",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "8",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "11-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7819_DIMUNIC-15ag25b602d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a5462&nome=7819_DIMUNIC-15ag25b602d.pdf",
+        "key_documentum": "0900f230807a5462"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=C275",
+    "comune": "CASTELTERMINI",
+    "codice_catastale": "C275",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "98",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "24-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3303_DIMUNIC-15ag25c275d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080747970&nome=3303_DIMUNIC-15ag25c275d.pdf",
+        "key_documentum": "0900f23080747970"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=C341",
+    "comune": "CASTROFILIPPO",
+    "codice_catastale": "C341",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "03",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "26-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8458_DIMUNIC-15ag25c341d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807ba4ff&nome=8458_DIMUNIC-15ag25c341d.pdf",
+        "key_documentum": "0900f230807ba4ff"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=C356",
+    "comune": "CATTOLICA ERACLEA",
+    "codice_catastale": "C356",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "07-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5453_DIMUNIC-15ag25c356d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079fc88&nome=5453_DIMUNIC-15ag25c356d.pdf",
+        "key_documentum": "0900f2308079fc88"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=C668",
+    "comune": "CIANCIANA",
+    "codice_catastale": "C668",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7513_DIMUNIC-15ag25c668d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a868c&nome=7513_DIMUNIC-15ag25c668d.pdf",
+        "key_documentum": "0900f230807a868c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=C928",
+    "comune": "COMITINI",
+    "codice_catastale": "C928",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "37",
+        "data_delibera": "10-12-2024",
+        "data_pubblicazione": "16-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4555_DIMUNIC-15ag25c928d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080738b8d&nome=4555_DIMUNIC-15ag25c928d.pdf",
+        "key_documentum": "0900f23080738b8d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=D514",
+    "comune": "FAVARA",
+    "codice_catastale": "D514",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "55",
+        "data_delibera": "05-06-2024",
+        "data_pubblicazione": "30-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11143_DIMUNIC-15ag25d514d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308090b099&nome=11143_DIMUNIC-15ag25d514d.pdf",
+        "key_documentum": "0900f2308090b099"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=E209",
+    "comune": "GROTTE",
+    "codice_catastale": "E209",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "51",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1415_DIMUNIC-15ag25e209d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080795b3b&nome=1415_DIMUNIC-15ag25e209d.pdf",
+        "key_documentum": "0900f23080795b3b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=E390",
+    "comune": "JOPPOLO GIANCAXIO",
+    "codice_catastale": "E390",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "7",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8644_DIMUNIC-15ag25e390d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080795b51&nome=8644_DIMUNIC-15ag25e390d.pdf",
+        "key_documentum": "0900f23080795b51"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=E431",
+    "comune": "LAMPEDUSA E LINOSA",
+    "codice_catastale": "E431",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "11-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8124_DIMUNIC-15ag25e431d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a4847&nome=8124_DIMUNIC-15ag25e431d.pdf",
+        "key_documentum": "0900f230807a4847"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=E573",
+    "comune": "LICATA",
+    "codice_catastale": "E573",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "12",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7678_DIMUNIC-15ag25e573d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080795787&nome=7678_DIMUNIC-15ag25e573d.pdf",
+        "key_documentum": "0900f23080795787"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=E714",
+    "comune": "LUCCA SICULA",
+    "codice_catastale": "E714",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "47",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6802_DIMUNIC-15ag25e714d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807515a9&nome=6802_DIMUNIC-15ag25e714d.pdf",
+        "key_documentum": "0900f230807515a9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=F414",
+    "comune": "MONTALLEGRO",
+    "codice_catastale": "F414",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "11-06-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "10104_DIMUNIC-15ag25f414d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308083032e&nome=10104_DIMUNIC-15ag25f414d.pdf",
+        "key_documentum": "0900f2308083032e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=F655",
+    "comune": "MONTEVAGO",
+    "codice_catastale": "F655",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "04-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "173_DIMUNIC-15ag25f655d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808eae0c&nome=173_DIMUNIC-15ag25f655d.pdf",
+        "key_documentum": "0900f230808eae0c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=F845",
+    "comune": "NARO",
+    "codice_catastale": "F845",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "02",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "06-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6534_DIMUNIC-15ag25f845d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079e8f4&nome=6534_DIMUNIC-15ag25f845d.pdf",
+        "key_documentum": "0900f2308079e8f4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=G282",
+    "comune": "PALMA DI MONTECHIARO",
+    "codice_catastale": "G282",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "26",
+        "data_delibera": "14-10-2025",
+        "data_pubblicazione": "14-10-2025",
+        "codice_tributo": "IMU",
+        "note": "INAPPLICABILE PER IL 2025 (ADOTTATO OLTRE TERMINE EX ART. 6, D.L. N. 84/2025)",
+        "nome_prospetto": "5245_DIMUNIC-15ag25g282d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230809d0536&nome=5245_DIMUNIC-15ag25g282d.pdf",
+        "key_documentum": "0900f230809d0536"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=F299",
+    "comune": "PORTO EMPEDOCLE",
+    "codice_catastale": "F299",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "12",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "04-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8035_DIMUNIC-15ag25f299d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079bd03&nome=8035_DIMUNIC-15ag25f299d.pdf",
+        "key_documentum": "0900f2308079bd03"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H148",
+    "comune": "RACALMUTO",
+    "codice_catastale": "H148",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "57",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2467_DIMUNIC-15ag25h148d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6bcc&nome=2467_DIMUNIC-15ag25h148d.pdf",
+        "key_documentum": "0900f230807a6bcc"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H159",
+    "comune": "RAFFADALI",
+    "codice_catastale": "H159",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "25",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7875_DIMUNIC-15ag25h159d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807965ee&nome=7875_DIMUNIC-15ag25h159d.pdf",
+        "key_documentum": "0900f230807965ee"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H194",
+    "comune": "RAVANUSA",
+    "codice_catastale": "H194",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "62",
+        "data_delibera": "12-09-2025",
+        "data_pubblicazione": "15-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7915_DIMUNIC-15ag25h194d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808f4096&nome=7915_DIMUNIC-15ag25h194d.pdf",
+        "key_documentum": "0900f230808f4096"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H205",
+    "comune": "REALMONTE",
+    "codice_catastale": "H205",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7937_DIMUNIC-15ag25h205d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080794afc&nome=7937_DIMUNIC-15ag25h205d.pdf",
+        "key_documentum": "0900f23080794afc"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H269",
+    "comune": "RIBERA",
+    "codice_catastale": "H269",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "06",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2114_DIMUNIC-15ag25h269d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796dfc&nome=2114_DIMUNIC-15ag25h269d.pdf",
+        "key_documentum": "0900f23080796dfc"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H743",
+    "comune": "SAMBUCA DI SICILIA",
+    "codice_catastale": "H743",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "102",
+        "data_delibera": "10-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1167_DIMUNIC-15ag25h743d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f593&nome=1167_DIMUNIC-15ag25h743d.pdf",
+        "key_documentum": "0900f2308074f593"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H778",
+    "comune": "SAN BIAGIO PLATANI",
+    "codice_catastale": "H778",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "12-02-2025",
+        "data_pubblicazione": "21-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4668_DIMUNIC-15ag25h778d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078cd82&nome=4668_DIMUNIC-15ag25h778d.pdf",
+        "key_documentum": "0900f2308078cd82"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=H914",
+    "comune": "SAN GIOVANNI GEMINI",
+    "codice_catastale": "H914",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "29",
+        "data_delibera": "13-12-2024",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1613_DIMUNIC-15ag25h914d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076b203&nome=1613_DIMUNIC-15ag25h914d.pdf",
+        "key_documentum": "0900f2308076b203"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=I185",
+    "comune": "SANTA ELISABETTA",
+    "codice_catastale": "I185",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "7",
+        "data_delibera": "24-02-2025",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8096_DIMUNIC-15ag25i185d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807928e5&nome=8096_DIMUNIC-15ag25i185d.pdf",
+        "key_documentum": "0900f230807928e5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=I224",
+    "comune": "SANTA MARGHERITA DI BELICE",
+    "codice_catastale": "I224",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "78",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "18-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5588_DIMUNIC-15ag25i224d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808dbc57&nome=5588_DIMUNIC-15ag25i224d.pdf",
+        "key_documentum": "0900f230808dbc57"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "12-09-2025",
+        "data_pubblicazione": "17-09-2025",
+        "codice_tributo": "IMU",
+        "note": "AUTOTUTELA EX ART. 21-NONIES, L. 241/1990",
+        "nome_prospetto": "11222_DIMUNIC-15ag25i224d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808f7af5&nome=11222_DIMUNIC-15ag25i224d.pdf",
+        "key_documentum": "0900f230808f7af5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=I290",
+    "comune": "SANT'ANGELO MUXARO",
+    "codice_catastale": "I290",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "21-11-2024",
+        "data_pubblicazione": "26-11-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "104_DIMUNIC-15ag25i290d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308071d33d&nome=104_DIMUNIC-15ag25i290d.pdf",
+        "key_documentum": "0900f2308071d33d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=I356",
+    "comune": "SANTO STEFANO QUISQUINA",
+    "codice_catastale": "I356",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "62",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "03-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3199_DIMUNIC-15ag25i356d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074da0c&nome=3199_DIMUNIC-15ag25i356d.pdf",
+        "key_documentum": "0900f2308074da0c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=I533",
+    "comune": "SCIACCA",
+    "codice_catastale": "I533",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "11",
+        "data_delibera": "12-03-2025",
+        "data_pubblicazione": "06-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4916_DIMUNIC-15ag25i533d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807eb56d&nome=4916_DIMUNIC-15ag25i533d.pdf",
+        "key_documentum": "0900f230807eb56d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=sicilia.htm&cm=&pr=AG&anno=2025&cc=I723",
+    "comune": "SICULIANA",
+    "codice_catastale": "I723",
+    "provincia": "AG",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7956_DIMUNIC-15ag25i723d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080794cef&nome=7956_DIMUNIC-15ag25i723d.pdf",
+        "key_documentum": "0900f23080794cef"
+      }
+    ]
+  }
+]

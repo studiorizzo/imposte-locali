@@ -1,0 +1,895 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=A125",
+    "comune": "ALBA ADRIATICA",
+    "codice_catastale": "A125",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "47",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1379_DIMUNIC-01te25a125d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a654a&nome=1379_DIMUNIC-01te25a125d.pdf",
+        "key_documentum": "0900f230807a654a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=A270",
+    "comune": "ANCARANO",
+    "codice_catastale": "A270",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "12",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7789_DIMUNIC-01te25a270d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797a95&nome=7789_DIMUNIC-01te25a270d.pdf",
+        "key_documentum": "0900f23080797a95"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=A445",
+    "comune": "ARSITA",
+    "codice_catastale": "A445",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "21",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "11-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6435_DIMUNIC-01te25a445d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077c9bf&nome=6435_DIMUNIC-01te25a445d.pdf",
+        "key_documentum": "0900f2308077c9bf"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=A488",
+    "comune": "ATRI",
+    "codice_catastale": "A488",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7685_DIMUNIC-01te25a488d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080798689&nome=7685_DIMUNIC-01te25a488d.pdf",
+        "key_documentum": "0900f23080798689"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=A692",
+    "comune": "BASCIANO",
+    "codice_catastale": "A692",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "24",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2371_DIMUNIC-01te25a692d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075391a&nome=2371_DIMUNIC-01te25a692d.pdf",
+        "key_documentum": "0900f2308075391a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=A746",
+    "comune": "BELLANTE",
+    "codice_catastale": "A746",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "51",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "866_DIMUNIC-01te25a746d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807744d5&nome=866_DIMUNIC-01te25a746d.pdf",
+        "key_documentum": "0900f230807744d5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=A885",
+    "comune": "BISENTI",
+    "codice_catastale": "A885",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8047_DIMUNIC-01te25a885d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080795d0e&nome=8047_DIMUNIC-01te25a885d.pdf",
+        "key_documentum": "0900f23080795d0e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=B515",
+    "comune": "CAMPLI",
+    "codice_catastale": "B515",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "31-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5139_DIMUNIC-01te25b515d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807beed5&nome=5139_DIMUNIC-01te25b515d.pdf",
+        "key_documentum": "0900f230807beed5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=B640",
+    "comune": "CANZANO",
+    "codice_catastale": "B640",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "27-01-2025",
+        "data_pubblicazione": "21-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6039_DIMUNIC-01te25b640d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078c3fb&nome=6039_DIMUNIC-01te25b640d.pdf",
+        "key_documentum": "0900f2308078c3fb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C040",
+    "comune": "CASTEL CASTAGNA",
+    "codice_catastale": "C040",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "11",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3540_DIMUNIC-01te25c040d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077e401&nome=3540_DIMUNIC-01te25c040d.pdf",
+        "key_documentum": "0900f2308077e401"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C128",
+    "comune": "CASTELLALTO",
+    "codice_catastale": "C128",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "21-02-2025",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7848_DIMUNIC-01te25c128d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807956ae&nome=7848_DIMUNIC-01te25c128d.pdf",
+        "key_documentum": "0900f230807956ae"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C169",
+    "comune": "CASTELLI",
+    "codice_catastale": "C169",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7438_DIMUNIC-01te25c169d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807965d1&nome=7438_DIMUNIC-01te25c169d.pdf",
+        "key_documentum": "0900f230807965d1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C316",
+    "comune": "CASTIGLIONE MESSER RAIMONDO",
+    "codice_catastale": "C316",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7807_DIMUNIC-01te25c316d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080781311&nome=7807_DIMUNIC-01te25c316d.pdf",
+        "key_documentum": "0900f23080781311"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C322",
+    "comune": "CASTILENTI",
+    "codice_catastale": "C322",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "23",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5329_DIMUNIC-01te25c322d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076ac7b&nome=5329_DIMUNIC-01te25c322d.pdf",
+        "key_documentum": "0900f2308076ac7b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C449",
+    "comune": "CELLINO ATTANASIO",
+    "codice_catastale": "C449",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "37",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "14-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5821_DIMUNIC-01te25c449d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080783d45&nome=5821_DIMUNIC-01te25c449d.pdf",
+        "key_documentum": "0900f23080783d45"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C517",
+    "comune": "CERMIGNANO",
+    "codice_catastale": "C517",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8429_DIMUNIC-01te25c517d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079723d&nome=8429_DIMUNIC-01te25c517d.pdf",
+        "key_documentum": "0900f2308079723d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C781",
+    "comune": "CIVITELLA DEL TRONTO",
+    "codice_catastale": "C781",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "03-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4821_DIMUNIC-01te25c781d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074cb76&nome=4821_DIMUNIC-01te25c781d.pdf",
+        "key_documentum": "0900f2308074cb76"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C311",
+    "comune": "COLLEDARA",
+    "codice_catastale": "C311",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "27-11-2024",
+        "data_pubblicazione": "03-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2583_DIMUNIC-01te25c311d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080760993&nome=2583_DIMUNIC-01te25c311d.pdf",
+        "key_documentum": "0900f23080760993"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C901",
+    "comune": "COLONNELLA",
+    "codice_catastale": "C901",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4497_DIMUNIC-01te25c901d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6b4a&nome=4497_DIMUNIC-01te25c901d.pdf",
+        "key_documentum": "0900f230807a6b4a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=C972",
+    "comune": "CONTROGUERRA",
+    "codice_catastale": "C972",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2504_DIMUNIC-01te25c972d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807512ef&nome=2504_DIMUNIC-01te25c972d.pdf",
+        "key_documentum": "0900f230807512ef"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=D043",
+    "comune": "CORROPOLI",
+    "codice_catastale": "D043",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "24-02-2025",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1990_DIMUNIC-01te25d043d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080791a56&nome=1990_DIMUNIC-01te25d043d.pdf",
+        "key_documentum": "0900f23080791a56"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=D076",
+    "comune": "CORTINO",
+    "codice_catastale": "D076",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3383_DIMUNIC-01te25d076d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079a226&nome=3383_DIMUNIC-01te25d076d.pdf",
+        "key_documentum": "0900f2308079a226"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=D179",
+    "comune": "CROGNALETO",
+    "codice_catastale": "D179",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "01-03-2025",
+        "data_pubblicazione": "25-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8574_DIMUNIC-01te25d179d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808e45fe&nome=8574_DIMUNIC-01te25d179d.pdf",
+        "key_documentum": "0900f230808e45fe"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=D489",
+    "comune": "FANO ADRIANO",
+    "codice_catastale": "D489",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "07-01-2025",
+        "data_pubblicazione": "05-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6647_DIMUNIC-01te25d489d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808dac8c&nome=6647_DIMUNIC-01te25d489d.pdf",
+        "key_documentum": "0900f230808dac8c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=E058",
+    "comune": "GIULIANOVA",
+    "codice_catastale": "E058",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "76",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4936_DIMUNIC-01te25e058d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080761eed&nome=4936_DIMUNIC-01te25e058d.pdf",
+        "key_documentum": "0900f23080761eed"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=E343",
+    "comune": "ISOLA DEL GRAN SASSO D'ITALIA",
+    "codice_catastale": "E343",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "21-02-2025",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7425_DIMUNIC-01te25e343d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a890c&nome=7425_DIMUNIC-01te25e343d.pdf",
+        "key_documentum": "0900f230807a890c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=E989",
+    "comune": "MARTINSICURO",
+    "codice_catastale": "E989",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "446_DIMUNIC-01te25e989d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080773a28&nome=446_DIMUNIC-01te25e989d.pdf",
+        "key_documentum": "0900f23080773a28"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F500",
+    "comune": "MONTEFINO",
+    "codice_catastale": "F500",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "08",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7975_DIMUNIC-01te25f500d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079779f&nome=7975_DIMUNIC-01te25f500d.pdf",
+        "key_documentum": "0900f2308079779f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F690",
+    "comune": "MONTORIO AL VOMANO",
+    "codice_catastale": "F690",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "20-03-2025",
+        "data_pubblicazione": "14-04-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5638_DIMUNIC-01te25f690d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807cf735&nome=5638_DIMUNIC-01te25f690d.pdf",
+        "key_documentum": "0900f230807cf735"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F747",
+    "comune": "MORRO D'ORO",
+    "codice_catastale": "F747",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "41",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6553_DIMUNIC-01te25f747d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077755f&nome=6553_DIMUNIC-01te25f747d.pdf",
+        "key_documentum": "0900f2308077755f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F764",
+    "comune": "MOSCIANO SANT'ANGELO",
+    "codice_catastale": "F764",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "63",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2978_DIMUNIC-01te25f764d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080757a8d&nome=2978_DIMUNIC-01te25f764d.pdf",
+        "key_documentum": "0900f23080757a8d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F870",
+    "comune": "NERETO",
+    "codice_catastale": "F870",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "84_DIMUNIC-01te25f870d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075a7e3&nome=84_DIMUNIC-01te25f870d.pdf",
+        "key_documentum": "0900f2308075a7e3"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F942",
+    "comune": "NOTARESCO",
+    "codice_catastale": "F942",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "03-04-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7366_DIMUNIC-01te25f942d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807c4379&nome=7366_DIMUNIC-01te25f942d.pdf",
+        "key_documentum": "0900f230807c4379"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=G437",
+    "comune": "PENNA SANT'ANDREA",
+    "codice_catastale": "G437",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "24-02-2025",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8508_DIMUNIC-01te25g437d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080792bf1&nome=8508_DIMUNIC-01te25g437d.pdf",
+        "key_documentum": "0900f23080792bf1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=G608",
+    "comune": "PIETRACAMELA",
+    "codice_catastale": "G608",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "19",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5374_DIMUNIC-01te25g608d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077f353&nome=5374_DIMUNIC-01te25g608d.pdf",
+        "key_documentum": "0900f2308077f353"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F831",
+    "comune": "PINETO",
+    "codice_catastale": "F831",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "10-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4409_DIMUNIC-01te25f831d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080779507&nome=4409_DIMUNIC-01te25f831d.pdf",
+        "key_documentum": "0900f23080779507"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=H440",
+    "comune": "ROCCA SANTA MARIA",
+    "codice_catastale": "H440",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "05-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7802_DIMUNIC-01te25h440d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808eb010&nome=7802_DIMUNIC-01te25h440d.pdf",
+        "key_documentum": "0900f230808eb010"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=F585",
+    "comune": "ROSETO DEGLI ABRUZZI",
+    "codice_catastale": "F585",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3104_DIMUNIC-01te25f585d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075886f&nome=3104_DIMUNIC-01te25f585d.pdf",
+        "key_documentum": "0900f2308075886f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=I318",
+    "comune": "SANT'EGIDIO ALLA VIBRATA",
+    "codice_catastale": "I318",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "64",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "10-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4886_DIMUNIC-01te25i318d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080751d05&nome=4886_DIMUNIC-01te25i318d.pdf",
+        "key_documentum": "0900f23080751d05"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=I348",
+    "comune": "SANT'OMERO",
+    "codice_catastale": "I348",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "10",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6823_DIMUNIC-01te25i348d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797dae&nome=6823_DIMUNIC-01te25i348d.pdf",
+        "key_documentum": "0900f23080797dae"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=I741",
+    "comune": "SILVI",
+    "codice_catastale": "I741",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "116",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "21-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4371_DIMUNIC-01te25i741d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080805e7f&nome=4371_DIMUNIC-01te25i741d.pdf",
+        "key_documentum": "0900f23080805e7f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=L103",
+    "comune": "TERAMO",
+    "codice_catastale": "L103",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7245_DIMUNIC-01te25l103d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a70f2&nome=7245_DIMUNIC-01te25l103d.pdf",
+        "key_documentum": "0900f230807a70f2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=L207",
+    "comune": "TORANO NUOVO",
+    "codice_catastale": "L207",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7568_DIMUNIC-01te25l207d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796e53&nome=7568_DIMUNIC-01te25l207d.pdf",
+        "key_documentum": "0900f23080796e53"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=L295",
+    "comune": "TORRICELLA SICURA",
+    "codice_catastale": "L295",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7205_DIMUNIC-01te25l295d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080763862&nome=7205_DIMUNIC-01te25l295d.pdf",
+        "key_documentum": "0900f23080763862"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=L307",
+    "comune": "TORTORETO",
+    "codice_catastale": "L307",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "28",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "03-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3315_DIMUNIC-01te25l307d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076173d&nome=3315_DIMUNIC-01te25l307d.pdf",
+        "key_documentum": "0900f2308076173d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=L314",
+    "comune": "TOSSICIA",
+    "codice_catastale": "L314",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4134_DIMUNIC-01te25l314d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078051a&nome=4134_DIMUNIC-01te25l314d.pdf",
+        "key_documentum": "0900f2308078051a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=abruzzo.htm&cm=&pr=TE&anno=2025&cc=L597",
+    "comune": "VALLE CASTELLANA",
+    "codice_catastale": "L597",
+    "provincia": "TE",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "27-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11042_DIMUNIC-01te25l597d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808e61fa&nome=11042_DIMUNIC-01te25l597d.pdf",
+        "key_documentum": "0900f230808e61fa"
+      }
+    ]
+  }
+]

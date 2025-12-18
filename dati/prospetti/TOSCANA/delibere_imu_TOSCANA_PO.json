@@ -1,0 +1,135 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=PO&anno=2025&cc=B626",
+    "comune": "CANTAGALLO",
+    "codice_catastale": "B626",
+    "provincia": "PO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3842_DIMUNIC-16po25b626d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075974a&nome=3842_DIMUNIC-16po25b626d.pdf",
+        "key_documentum": "0900f2308075974a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=PO&anno=2025&cc=B794",
+    "comune": "CARMIGNANO",
+    "codice_catastale": "B794",
+    "provincia": "PO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "131",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "10-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "246_DIMUNIC-16po25b794d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807514f9&nome=246_DIMUNIC-16po25b794d.pdf",
+        "key_documentum": "0900f230807514f9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=PO&anno=2025&cc=F572",
+    "comune": "MONTEMURLO",
+    "codice_catastale": "F572",
+    "provincia": "PO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6204_DIMUNIC-16po25f572d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6b01&nome=6204_DIMUNIC-16po25f572d.pdf",
+        "key_documentum": "0900f230807a6b01"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=PO&anno=2025&cc=G754",
+    "comune": "POGGIO A CAIANO",
+    "codice_catastale": "G754",
+    "provincia": "PO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "96",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4459_DIMUNIC-16po25g754d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078b1ff&nome=4459_DIMUNIC-16po25g754d.pdf",
+        "key_documentum": "0900f2308078b1ff"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=PO&anno=2025&cc=G999",
+    "comune": "PRATO",
+    "codice_catastale": "G999",
+    "provincia": "PO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "85",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "21-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1958_DIMUNIC-16po25g999d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077e720&nome=1958_DIMUNIC-16po25g999d.pdf",
+        "key_documentum": "0900f2308077e720"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=PO&anno=2025&cc=L537",
+    "comune": "VAIANO",
+    "codice_catastale": "L537",
+    "provincia": "PO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "61",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "10-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1172_DIMUNIC-16po25l537d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807529a0&nome=1172_DIMUNIC-16po25l537d.pdf",
+        "key_documentum": "0900f230807529a0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=PO&anno=2025&cc=L775",
+    "comune": "VERNIO",
+    "codice_catastale": "L775",
+    "provincia": "PO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "65",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "10-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1244_DIMUNIC-16po25l775d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080752821&nome=1244_DIMUNIC-16po25l775d.pdf",
+        "key_documentum": "0900f23080752821"
+      }
+    ]
+  }
+]

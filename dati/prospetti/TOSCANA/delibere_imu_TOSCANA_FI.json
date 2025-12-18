@@ -1,0 +1,803 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=A564",
+    "comune": "BAGNO A RIPOLI",
+    "codice_catastale": "A564",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "112",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "06-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3481_DIMUNIC-16fi25a564d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080777410&nome=3481_DIMUNIC-16fi25a564d.pdf",
+        "key_documentum": "0900f23080777410"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=A632",
+    "comune": "BARBERINO DI MUGELLO",
+    "codice_catastale": "A632",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "95",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2825_DIMUNIC-16fi25a632d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080751759&nome=2825_DIMUNIC-16fi25a632d.pdf",
+        "key_documentum": "0900f23080751759"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=M408",
+    "comune": "BARBERINO TAVARNELLE",
+    "codice_catastale": "M408",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "71",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2275_DIMUNIC-16fi25m408d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075b970&nome=2275_DIMUNIC-16fi25m408d.pdf",
+        "key_documentum": "0900f2308075b970"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=B036",
+    "comune": "BORGO SAN LORENZO",
+    "codice_catastale": "B036",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "8",
+        "data_delibera": "24-02-2025",
+        "data_pubblicazione": "28-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7255_DIMUNIC-16fi25b036d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807bd772&nome=7255_DIMUNIC-16fi25b036d.pdf",
+        "key_documentum": "0900f230807bd772"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=B406",
+    "comune": "CALENZANO",
+    "codice_catastale": "B406",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "161",
+        "data_delibera": "11-12-2024",
+        "data_pubblicazione": "20-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4819_DIMUNIC-16fi25b406d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080734fb6&nome=4819_DIMUNIC-16fi25b406d.pdf",
+        "key_documentum": "0900f23080734fb6"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "151",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "6860_DIMUNIC-16fi25b406d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080752f54&nome=6860_DIMUNIC-16fi25b406d.pdf",
+        "key_documentum": "0900f23080752f54"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=B507",
+    "comune": "CAMPI BISENZIO",
+    "codice_catastale": "B507",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "253",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "832_DIMUNIC-16fi25b507d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075b329&nome=832_DIMUNIC-16fi25b507d.pdf",
+        "key_documentum": "0900f2308075b329"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=B684",
+    "comune": "CAPRAIA E LIMITE",
+    "codice_catastale": "B684",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "70",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "24-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3488_DIMUNIC-16fi25b684d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080766a11&nome=3488_DIMUNIC-16fi25b684d.pdf",
+        "key_documentum": "0900f23080766a11"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=C101",
+    "comune": "CASTELFIORENTINO",
+    "codice_catastale": "C101",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "82",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "02-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2240_DIMUNIC-16fi25c101d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074aee1&nome=2240_DIMUNIC-16fi25c101d.pdf",
+        "key_documentum": "0900f2308074aee1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=C529",
+    "comune": "CERRETO GUIDI",
+    "codice_catastale": "C529",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "15",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "925_DIMUNIC-16fi25c529d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6bc6&nome=925_DIMUNIC-16fi25c529d.pdf",
+        "key_documentum": "0900f230807a6bc6"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=C540",
+    "comune": "CERTALDO",
+    "codice_catastale": "C540",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "78",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "03-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3759_DIMUNIC-16fi25c540d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074d828&nome=3759_DIMUNIC-16fi25c540d.pdf",
+        "key_documentum": "0900f2308074d828"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=D299",
+    "comune": "DICOMANO",
+    "codice_catastale": "D299",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "8",
+        "data_delibera": "13-01-2025",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3633_DIMUNIC-16fi25d299d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080768a42&nome=3633_DIMUNIC-16fi25d299d.pdf",
+        "key_documentum": "0900f23080768a42"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=D403",
+    "comune": "EMPOLI",
+    "codice_catastale": "D403",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "109",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "03-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "826_DIMUNIC-16fi25d403d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080770cfa&nome=826_DIMUNIC-16fi25d403d.pdf",
+        "key_documentum": "0900f23080770cfa"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=D575",
+    "comune": "FIESOLE",
+    "codice_catastale": "D575",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "96",
+        "data_delibera": "28-11-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1184_DIMUNIC-16fi25d575d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074a4b4&nome=1184_DIMUNIC-16fi25d575d.pdf",
+        "key_documentum": "0900f2308074a4b4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=M321",
+    "comune": "FIGLINE E INCISA VALDARNO",
+    "codice_catastale": "M321",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "93",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1225_DIMUNIC-16fi25m321d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074be4e&nome=1225_DIMUNIC-16fi25m321d.pdf",
+        "key_documentum": "0900f2308074be4e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=D612",
+    "comune": "FIRENZE",
+    "codice_catastale": "D612",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "00089",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "24-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "794_DIMUNIC-16fi25d612d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807aef4f&nome=794_DIMUNIC-16fi25d612d.pdf",
+        "key_documentum": "0900f230807aef4f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=D613",
+    "comune": "FIRENZUOLA",
+    "codice_catastale": "D613",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "114",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6105_DIMUNIC-16fi25d613d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a9620&nome=6105_DIMUNIC-16fi25d613d.pdf",
+        "key_documentum": "0900f230807a9620"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=D815",
+    "comune": "FUCECCHIO",
+    "codice_catastale": "D815",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "70",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "12-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1935_DIMUNIC-16fi25d815d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077cc76&nome=1935_DIMUNIC-16fi25d815d.pdf",
+        "key_documentum": "0900f2308077cc76"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=D895",
+    "comune": "GAMBASSI TERME",
+    "codice_catastale": "D895",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4035_DIMUNIC-16fi25d895d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080756a01&nome=4035_DIMUNIC-16fi25d895d.pdf",
+        "key_documentum": "0900f23080756a01"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=E169",
+    "comune": "GREVE IN CHIANTI",
+    "codice_catastale": "E169",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "108",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2130_DIMUNIC-16fi25e169d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080758e0c&nome=2130_DIMUNIC-16fi25e169d.pdf",
+        "key_documentum": "0900f23080758e0c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=E291",
+    "comune": "IMPRUNETA",
+    "codice_catastale": "E291",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "91",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2082_DIMUNIC-16fi25e291d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080756c41&nome=2082_DIMUNIC-16fi25e291d.pdf",
+        "key_documentum": "0900f23080756c41"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=E466",
+    "comune": "LASTRA A SIGNA",
+    "codice_catastale": "E466",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "93",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3314_DIMUNIC-16fi25e466d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807acd82&nome=3314_DIMUNIC-16fi25e466d.pdf",
+        "key_documentum": "0900f230807acd82"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "93",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "27-11-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "14249_DIMUNIC-16fi25e466d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080aa8d3c&nome=14249_DIMUNIC-16fi25e466d.pdf",
+        "key_documentum": "0900f23080aa8d3c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=E668",
+    "comune": "LONDA",
+    "codice_catastale": "E668",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "57",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3970_DIMUNIC-16fi25e668d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079033f&nome=3970_DIMUNIC-16fi25e668d.pdf",
+        "key_documentum": "0900f2308079033f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=E971",
+    "comune": "MARRADI",
+    "codice_catastale": "E971",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "16",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8167_DIMUNIC-16fi25e971d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796cd1&nome=8167_DIMUNIC-16fi25e971d.pdf",
+        "key_documentum": "0900f23080796cd1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=F398",
+    "comune": "MONTAIONE",
+    "codice_catastale": "F398",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3210_DIMUNIC-16fi25f398d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080750030&nome=3210_DIMUNIC-16fi25f398d.pdf",
+        "key_documentum": "0900f23080750030"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=F551",
+    "comune": "MONTELUPO FIORENTINO",
+    "codice_catastale": "F551",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "86",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "03-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4376_DIMUNIC-16fi25f551d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807712d5&nome=4376_DIMUNIC-16fi25f551d.pdf",
+        "key_documentum": "0900f230807712d5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=F648",
+    "comune": "MONTESPERTOLI",
+    "codice_catastale": "F648",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "137",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "07-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2683_DIMUNIC-16fi25f648d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f701&nome=2683_DIMUNIC-16fi25f648d.pdf",
+        "key_documentum": "0900f2308074f701"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=G270",
+    "comune": "PALAZZUOLO SUL SENIO",
+    "codice_catastale": "G270",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "53",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4955_DIMUNIC-16fi25g270d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6b19&nome=4955_DIMUNIC-16fi25g270d.pdf",
+        "key_documentum": "0900f230807a6b19"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=G420",
+    "comune": "PELAGO",
+    "codice_catastale": "G420",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "55",
+        "data_delibera": "26-11-2024",
+        "data_pubblicazione": "02-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "175_DIMUNIC-16fi25g420d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807263fd&nome=175_DIMUNIC-16fi25g420d.pdf",
+        "key_documentum": "0900f230807263fd"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=G825",
+    "comune": "PONTASSIEVE",
+    "codice_catastale": "G825",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "132",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "05-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4701_DIMUNIC-16fi25g825d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808eb21f&nome=4701_DIMUNIC-16fi25g825d.pdf",
+        "key_documentum": "0900f230808eb21f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=H222",
+    "comune": "REGGELLO",
+    "codice_catastale": "H222",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "81",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "19-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4933_DIMUNIC-16fi25h222d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a4bef&nome=4933_DIMUNIC-16fi25h222d.pdf",
+        "key_documentum": "0900f230807a4bef"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=H286",
+    "comune": "RIGNANO SULL'ARNO",
+    "codice_catastale": "H286",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "62",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "978_DIMUNIC-16fi25h286d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078ae03&nome=978_DIMUNIC-16fi25h286d.pdf",
+        "key_documentum": "0900f2308078ae03"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=H635",
+    "comune": "RUFINA",
+    "codice_catastale": "H635",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "100",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "12-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "469_DIMUNIC-16fi25h635d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077c2b7&nome=469_DIMUNIC-16fi25h635d.pdf",
+        "key_documentum": "0900f2308077c2b7"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=H791",
+    "comune": "SAN CASCIANO IN VAL DI PESA",
+    "codice_catastale": "H791",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "112",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "21-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2033_DIMUNIC-16fi25h791d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075b96c&nome=2033_DIMUNIC-16fi25h791d.pdf",
+        "key_documentum": "0900f2308075b96c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=H937",
+    "comune": "SAN GODENZO",
+    "codice_catastale": "H937",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "55",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3961_DIMUNIC-16fi25h937d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079034d&nome=3961_DIMUNIC-16fi25h937d.pdf",
+        "key_documentum": "0900f2308079034d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=B962",
+    "comune": "SCANDICCI",
+    "codice_catastale": "B962",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "124",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "234_DIMUNIC-16fi25b962d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074fe40&nome=234_DIMUNIC-16fi25b962d.pdf",
+        "key_documentum": "0900f2308074fe40"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=M326",
+    "comune": "SCARPERIA E SAN PIERO",
+    "codice_catastale": "M326",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "64",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2729_DIMUNIC-16fi25m326d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f63c&nome=2729_DIMUNIC-16fi25m326d.pdf",
+        "key_documentum": "0900f2308074f63c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=I684",
+    "comune": "SESTO FIORENTINO",
+    "codice_catastale": "I684",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "128",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "20-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "26_DIMUNIC-16fi25i684d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080758e10&nome=26_DIMUNIC-16fi25i684d.pdf",
+        "key_documentum": "0900f23080758e10"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=I728",
+    "comune": "SIGNA",
+    "codice_catastale": "I728",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "96",
+        "data_delibera": "28-11-2024",
+        "data_pubblicazione": "12-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1763_DIMUNIC-16fi25i728d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080735c41&nome=1763_DIMUNIC-16fi25i728d.pdf",
+        "key_documentum": "0900f23080735c41"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=L529",
+    "comune": "VAGLIA",
+    "codice_catastale": "L529",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "7",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "04-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1890_DIMUNIC-16fi25l529d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808ea7b3&nome=1890_DIMUNIC-16fi25l529d.pdf",
+        "key_documentum": "0900f230808ea7b3"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=L838",
+    "comune": "VICCHIO",
+    "codice_catastale": "L838",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "13",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3004_DIMUNIC-16fi25l838d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807975d1&nome=3004_DIMUNIC-16fi25l838d.pdf",
+        "key_documentum": "0900f230807975d1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=toscana.htm&cm=&pr=FI&anno=2025&cc=M059",
+    "comune": "VINCI",
+    "codice_catastale": "M059",
+    "provincia": "FI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "110",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4012_DIMUNIC-16fi25m059d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807906d7&nome=4012_DIMUNIC-16fi25m059d.pdf",
+        "key_documentum": "0900f230807906d7"
+      }
+    ]
+  }
+]
