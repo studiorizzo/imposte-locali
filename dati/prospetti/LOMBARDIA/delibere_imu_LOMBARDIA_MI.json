@@ -1,0 +1,2617 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A010",
+    "comune": "ABBIATEGRASSO",
+    "codice_catastale": "A010",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "69",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "389_DIMUNIC-09mi25a010d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075a92c&nome=389_DIMUNIC-09mi25a010d.pdf",
+        "key_documentum": "0900f2308075a92c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A127",
+    "comune": "ALBAIRATE",
+    "codice_catastale": "A127",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "21-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3467_DIMUNIC-09mi25a127d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808040c1&nome=3467_DIMUNIC-09mi25a127d.pdf",
+        "key_documentum": "0900f230808040c1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A375",
+    "comune": "ARCONATE",
+    "codice_catastale": "A375",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4453_DIMUNIC-09mi25a375d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080752486&nome=4453_DIMUNIC-09mi25a375d.pdf",
+        "key_documentum": "0900f23080752486"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A389",
+    "comune": "ARESE",
+    "codice_catastale": "A389",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "91",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "723_DIMUNIC-09mi25a389d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807442d6&nome=723_DIMUNIC-09mi25a389d.pdf",
+        "key_documentum": "0900f230807442d6"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A413",
+    "comune": "ARLUNO",
+    "codice_catastale": "A413",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "261_DIMUNIC-09mi25a413d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a7a63&nome=261_DIMUNIC-09mi25a413d.pdf",
+        "key_documentum": "0900f230807a7a63"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A473",
+    "comune": "ASSAGO",
+    "codice_catastale": "A473",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "67",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "18-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11264_DIMUNIC-09mi25a473d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808f16cf&nome=11264_DIMUNIC-09mi25a473d.pdf",
+        "key_documentum": "0900f230808f16cf"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "67",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "18-11-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "13210_DIMUNIC-09mi25a473d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080a9c011&nome=13210_DIMUNIC-09mi25a473d.pdf",
+        "key_documentum": "0900f23080a9c011"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A618",
+    "comune": "BARANZATE",
+    "codice_catastale": "A618",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "09-01-2025",
+        "data_pubblicazione": "18-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4206_DIMUNIC-09mi25a618d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078192e&nome=4206_DIMUNIC-09mi25a618d.pdf",
+        "key_documentum": "0900f2308078192e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A652",
+    "comune": "BAREGGIO",
+    "codice_catastale": "A652",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "96",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2777_DIMUNIC-09mi25a652d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079107d&nome=2777_DIMUNIC-09mi25a652d.pdf",
+        "key_documentum": "0900f2308079107d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A697",
+    "comune": "BASIANO",
+    "codice_catastale": "A697",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4521_DIMUNIC-09mi25a697d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080758be0&nome=4521_DIMUNIC-09mi25a697d.pdf",
+        "key_documentum": "0900f23080758be0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A699",
+    "comune": "BASIGLIO",
+    "codice_catastale": "A699",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "559_DIMUNIC-09mi25a699d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075158f&nome=559_DIMUNIC-09mi25a699d.pdf",
+        "key_documentum": "0900f2308075158f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A751",
+    "comune": "BELLINZAGO LOMBARDO",
+    "codice_catastale": "A751",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "511_DIMUNIC-09mi25a751d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080751998&nome=511_DIMUNIC-09mi25a751d.pdf",
+        "key_documentum": "0900f23080751998"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A804",
+    "comune": "BERNATE TICINO",
+    "codice_catastale": "A804",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5273_DIMUNIC-09mi25a804d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807523d5&nome=5273_DIMUNIC-09mi25a804d.pdf",
+        "key_documentum": "0900f230807523d5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A820",
+    "comune": "BESATE",
+    "codice_catastale": "A820",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5168_DIMUNIC-09mi25a820d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080756a84&nome=5168_DIMUNIC-09mi25a820d.pdf",
+        "key_documentum": "0900f23080756a84"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A872",
+    "comune": "BINASCO",
+    "codice_catastale": "A872",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "63",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "07-07-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1035_DIMUNIC-09mi25a872d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808b0a32&nome=1035_DIMUNIC-09mi25a872d.pdf",
+        "key_documentum": "0900f230808b0a32"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A920",
+    "comune": "BOFFALORA SOPRA TICINO",
+    "codice_catastale": "A920",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "270_DIMUNIC-09mi25a920d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077d667&nome=270_DIMUNIC-09mi25a920d.pdf",
+        "key_documentum": "0900f2308077d667"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=A940",
+    "comune": "BOLLATE",
+    "codice_catastale": "A940",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "64",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "02-04-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4108_DIMUNIC-09mi25a940d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807c29d7&nome=4108_DIMUNIC-09mi25a940d.pdf",
+        "key_documentum": "0900f230807c29d7"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B162",
+    "comune": "BRESSO",
+    "codice_catastale": "B162",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "60",
+        "data_delibera": "11-12-2024",
+        "data_pubblicazione": "21-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3460_DIMUNIC-09mi25b162d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077c101&nome=3460_DIMUNIC-09mi25b162d.pdf",
+        "key_documentum": "0900f2308077c101"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B235",
+    "comune": "BUBBIANO",
+    "codice_catastale": "B235",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "37",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5266_DIMUNIC-09mi25b235d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807596e7&nome=5266_DIMUNIC-09mi25b235d.pdf",
+        "key_documentum": "0900f230807596e7"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B240",
+    "comune": "BUCCINASCO",
+    "codice_catastale": "B240",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "47",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5186_DIMUNIC-09mi25b240d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080759376&nome=5186_DIMUNIC-09mi25b240d.pdf",
+        "key_documentum": "0900f23080759376"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B286",
+    "comune": "BUSCATE",
+    "codice_catastale": "B286",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "8",
+        "data_delibera": "01-02-2025",
+        "data_pubblicazione": "11-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6404_DIMUNIC-09mi25b286d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796c7d&nome=6404_DIMUNIC-09mi25b286d.pdf",
+        "key_documentum": "0900f23080796c7d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B292",
+    "comune": "BUSSERO",
+    "codice_catastale": "B292",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "55",
+        "data_delibera": "26-11-2024",
+        "data_pubblicazione": "13-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "237_DIMUNIC-09mi25b292d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308072d099&nome=237_DIMUNIC-09mi25b292d.pdf",
+        "key_documentum": "0900f2308072d099"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B301",
+    "comune": "BUSTO GAROLFO",
+    "codice_catastale": "B301",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "79",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4329_DIMUNIC-09mi25b301d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a86fb&nome=4329_DIMUNIC-09mi25b301d.pdf",
+        "key_documentum": "0900f230807a86fb"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "79",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "03-07-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "10129_DIMUNIC-09mi25b301d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308083256e&nome=10129_DIMUNIC-09mi25b301d.pdf",
+        "key_documentum": "0900f2308083256e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B448",
+    "comune": "CALVIGNASCO",
+    "codice_catastale": "B448",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "30",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5502_DIMUNIC-09mi25b448d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f6ad&nome=5502_DIMUNIC-09mi25b448d.pdf",
+        "key_documentum": "0900f2308074f6ad"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B461",
+    "comune": "CAMBIAGO",
+    "codice_catastale": "B461",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "06-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6327_DIMUNIC-09mi25b461d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080777054&nome=6327_DIMUNIC-09mi25b461d.pdf",
+        "key_documentum": "0900f23080777054"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B593",
+    "comune": "CANEGRATE",
+    "codice_catastale": "B593",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "75",
+        "data_delibera": "09-12-2024",
+        "data_pubblicazione": "20-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3348_DIMUNIC-09mi25b593d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075e442&nome=3348_DIMUNIC-09mi25b593d.pdf",
+        "key_documentum": "0900f2308075e442"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B820",
+    "comune": "CARPIANO",
+    "codice_catastale": "B820",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "8",
+        "data_delibera": "20-02-2025",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4094_DIMUNIC-09mi25b820d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080791fff&nome=4094_DIMUNIC-09mi25b820d.pdf",
+        "key_documentum": "0900f23080791fff"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B850",
+    "comune": "CARUGATE",
+    "codice_catastale": "B850",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "56",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1855_DIMUNIC-09mi25b850d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f87e&nome=1855_DIMUNIC-09mi25b850d.pdf",
+        "key_documentum": "0900f2308074f87e"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "56",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "08-10-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9909_DIMUNIC-09mi25b850d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308096bbc3&nome=9909_DIMUNIC-09mi25b850d.pdf",
+        "key_documentum": "0900f2308096bbc3"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B938",
+    "comune": "CASARILE",
+    "codice_catastale": "B938",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "11-12-2024",
+        "data_pubblicazione": "20-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3858_DIMUNIC-09mi25b938d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b250d&nome=3858_DIMUNIC-09mi25b938d.pdf",
+        "key_documentum": "0900f230807b250d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=B989",
+    "comune": "CASOREZZO",
+    "codice_catastale": "B989",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "41",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "10-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2764_DIMUNIC-09mi25b989d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807525c4&nome=2764_DIMUNIC-09mi25b989d.pdf",
+        "key_documentum": "0900f230807525c4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C003",
+    "comune": "CASSANO D'ADDA",
+    "codice_catastale": "C003",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "66",
+        "data_delibera": "03-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1886_DIMUNIC-09mi25c003d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080750d12&nome=1886_DIMUNIC-09mi25c003d.pdf",
+        "key_documentum": "0900f23080750d12"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C014",
+    "comune": "CASSINA DE' PECCHI",
+    "codice_catastale": "C014",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "07-01-2025",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1756_DIMUNIC-09mi25c014d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076b3ea&nome=1756_DIMUNIC-09mi25c014d.pdf",
+        "key_documentum": "0900f2308076b3ea"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C033",
+    "comune": "CASSINETTA DI LUGAGNANO",
+    "codice_catastale": "C033",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "49",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "85_DIMUNIC-09mi25c033d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a674e&nome=85_DIMUNIC-09mi25c033d.pdf",
+        "key_documentum": "0900f230807a674e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2026&cc=C052",
+    "comune": "CASTANO PRIMO",
+    "codice_catastale": "C052",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2026,
+        "num_delibera": "66",
+        "data_delibera": "25-11-2025",
+        "data_pubblicazione": "09-12-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "13090_DIMUNIC-09mi26c052d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080ab888e&nome=13090_DIMUNIC-09mi26c052d.pdf",
+        "key_documentum": "0900f23080ab888e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C523",
+    "comune": "CERNUSCO SUL NAVIGLIO",
+    "codice_catastale": "C523",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "102",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3205_DIMUNIC-09mi25c523d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076bd5d&nome=3205_DIMUNIC-09mi25c523d.pdf",
+        "key_documentum": "0900f2308076bd5d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C536",
+    "comune": "CERRO AL LAMBRO",
+    "codice_catastale": "C536",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2585_DIMUNIC-09mi25c536d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076b324&nome=2585_DIMUNIC-09mi25c536d.pdf",
+        "key_documentum": "0900f2308076b324"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C537",
+    "comune": "CERRO MAGGIORE",
+    "codice_catastale": "C537",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "67",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "21-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1183_DIMUNIC-09mi25c537d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807608ef&nome=1183_DIMUNIC-09mi25c537d.pdf",
+        "key_documentum": "0900f230807608ef"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C565",
+    "comune": "CESANO BOSCONE",
+    "codice_catastale": "C565",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "366_DIMUNIC-09mi25c565d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080752a05&nome=366_DIMUNIC-09mi25c565d.pdf",
+        "key_documentum": "0900f23080752a05"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C569",
+    "comune": "CESATE",
+    "codice_catastale": "C569",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "07-02-2025",
+        "data_pubblicazione": "06-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1569_DIMUNIC-09mi25c569d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079e98f&nome=1569_DIMUNIC-09mi25c569d.pdf",
+        "key_documentum": "0900f2308079e98f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C707",
+    "comune": "CINISELLO BALSAMO",
+    "codice_catastale": "C707",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "83",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "326_DIMUNIC-09mi25c707d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807553e2&nome=326_DIMUNIC-09mi25c707d.pdf",
+        "key_documentum": "0900f230807553e2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C733",
+    "comune": "CISLIANO",
+    "codice_catastale": "C733",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "97_DIMUNIC-09mi25c733d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075743f&nome=97_DIMUNIC-09mi25c733d.pdf",
+        "key_documentum": "0900f2308075743f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C895",
+    "comune": "COLOGNO MONZESE",
+    "codice_catastale": "C895",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "69",
+        "data_delibera": "11-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1577_DIMUNIC-09mi25c895d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080757750&nome=1577_DIMUNIC-09mi25c895d.pdf",
+        "key_documentum": "0900f23080757750"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C908",
+    "comune": "COLTURANO",
+    "codice_catastale": "C908",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "40",
+        "data_delibera": "17-01-2025",
+        "data_pubblicazione": "23-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4243_DIMUNIC-09mi25c908d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080763bfa&nome=4243_DIMUNIC-09mi25c908d.pdf",
+        "key_documentum": "0900f23080763bfa"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "40",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "24-01-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "7241_DIMUNIC-09mi25c908d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080765731&nome=7241_DIMUNIC-09mi25c908d.pdf",
+        "key_documentum": "0900f23080765731"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C986",
+    "comune": "CORBETTA",
+    "codice_catastale": "C986",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1481_DIMUNIC-09mi25c986d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6952&nome=1481_DIMUNIC-09mi25c986d.pdf",
+        "key_documentum": "0900f230807a6952"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D013",
+    "comune": "CORMANO",
+    "codice_catastale": "D013",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "51",
+        "data_delibera": "18-11-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1038_DIMUNIC-09mi25d013d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080756358&nome=1038_DIMUNIC-09mi25d013d.pdf",
+        "key_documentum": "0900f23080756358"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D018",
+    "comune": "CORNAREDO",
+    "codice_catastale": "D018",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "20-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1268_DIMUNIC-09mi25d018d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075b175&nome=1268_DIMUNIC-09mi25d018d.pdf",
+        "key_documentum": "0900f2308075b175"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D045",
+    "comune": "CORSICO",
+    "codice_catastale": "D045",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "49",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4782_DIMUNIC-09mi25d045d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796661&nome=4782_DIMUNIC-09mi25d045d.pdf",
+        "key_documentum": "0900f23080796661"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D198",
+    "comune": "CUGGIONO",
+    "codice_catastale": "D198",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "03-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1173_DIMUNIC-09mi25d198d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076fd6d&nome=1173_DIMUNIC-09mi25d198d.pdf",
+        "key_documentum": "0900f2308076fd6d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D229",
+    "comune": "CUSAGO",
+    "codice_catastale": "D229",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1125_DIMUNIC-09mi25d229d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807963a4&nome=1125_DIMUNIC-09mi25d229d.pdf",
+        "key_documentum": "0900f230807963a4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D231",
+    "comune": "CUSANO MILANINO",
+    "codice_catastale": "D231",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "73",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "20-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "207_DIMUNIC-09mi25d231d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080742682&nome=207_DIMUNIC-09mi25d231d.pdf",
+        "key_documentum": "0900f23080742682"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D244",
+    "comune": "DAIRAGO",
+    "codice_catastale": "D244",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "58",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "17-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1137_DIMUNIC-09mi25d244d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078134b&nome=1137_DIMUNIC-09mi25d244d.pdf",
+        "key_documentum": "0900f2308078134b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D367",
+    "comune": "DRESANO",
+    "codice_catastale": "D367",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "37",
+        "data_delibera": "26-11-2024",
+        "data_pubblicazione": "19-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2161_DIMUNIC-09mi25d367d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080741a9e&nome=2161_DIMUNIC-09mi25d367d.pdf",
+        "key_documentum": "0900f23080741a9e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D845",
+    "comune": "GAGGIANO",
+    "codice_catastale": "D845",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "31-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4254_DIMUNIC-09mi25d845d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807bcb7c&nome=4254_DIMUNIC-09mi25d845d.pdf",
+        "key_documentum": "0900f230807bcb7c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D912",
+    "comune": "GARBAGNATE MILANESE",
+    "codice_catastale": "D912",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "20-11-2024",
+        "data_pubblicazione": "02-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "119_DIMUNIC-09mi25d912d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308072115e&nome=119_DIMUNIC-09mi25d912d.pdf",
+        "key_documentum": "0900f2308072115e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D995",
+    "comune": "GESSATE",
+    "codice_catastale": "D995",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "56",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4101_DIMUNIC-09mi25d995d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075008f&nome=4101_DIMUNIC-09mi25d995d.pdf",
+        "key_documentum": "0900f2308075008f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E094",
+    "comune": "GORGONZOLA",
+    "codice_catastale": "E094",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "77",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "20-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "472_DIMUNIC-09mi25e094d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078b956&nome=472_DIMUNIC-09mi25e094d.pdf",
+        "key_documentum": "0900f2308078b956"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E170",
+    "comune": "GREZZAGO",
+    "codice_catastale": "E170",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "28-11-2024",
+        "data_pubblicazione": "17-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1978_DIMUNIC-09mi25e170d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807344bf&nome=1978_DIMUNIC-09mi25e170d.pdf",
+        "key_documentum": "0900f230807344bf"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E258",
+    "comune": "GUDO VISCONTI",
+    "codice_catastale": "E258",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1028_DIMUNIC-09mi25e258d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080794558&nome=1028_DIMUNIC-09mi25e258d.pdf",
+        "key_documentum": "0900f23080794558"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E313",
+    "comune": "INVERUNO",
+    "codice_catastale": "E313",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "74",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3426_DIMUNIC-09mi25e313d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080781fdf&nome=3426_DIMUNIC-09mi25e313d.pdf",
+        "key_documentum": "0900f23080781fdf"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E317",
+    "comune": "INZAGO",
+    "codice_catastale": "E317",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1860_DIMUNIC-09mi25e317d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807ad533&nome=1860_DIMUNIC-09mi25e317d.pdf",
+        "key_documentum": "0900f230807ad533"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E395",
+    "comune": "LACCHIARELLA",
+    "codice_catastale": "E395",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "51",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "521_DIMUNIC-09mi25e395d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080754fc7&nome=521_DIMUNIC-09mi25e395d.pdf",
+        "key_documentum": "0900f23080754fc7"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "7",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "25-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8641_DIMUNIC-09mi25e395d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b7316&nome=8641_DIMUNIC-09mi25e395d.pdf",
+        "key_documentum": "0900f230807b7316"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E415",
+    "comune": "LAINATE",
+    "codice_catastale": "E415",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "83",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1272_DIMUNIC-09mi25e415d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076ba20&nome=1272_DIMUNIC-09mi25e415d.pdf",
+        "key_documentum": "0900f2308076ba20"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E514",
+    "comune": "LEGNANO",
+    "codice_catastale": "E514",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "132",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "11-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1773_DIMUNIC-09mi25e514d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077d3f6&nome=1773_DIMUNIC-09mi25e514d.pdf",
+        "key_documentum": "0900f2308077d3f6"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E610",
+    "comune": "LISCATE",
+    "codice_catastale": "E610",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "10-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "784_DIMUNIC-09mi25e610d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080751fad&nome=784_DIMUNIC-09mi25e610d.pdf",
+        "key_documentum": "0900f23080751fad"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E639",
+    "comune": "LOCATE DI TRIULZI",
+    "codice_catastale": "E639",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7581_DIMUNIC-09mi25e639d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796c35&nome=7581_DIMUNIC-09mi25e639d.pdf",
+        "key_documentum": "0900f23080796c35"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E801",
+    "comune": "MAGENTA",
+    "codice_catastale": "E801",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "23-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2569_DIMUNIC-09mi25e801d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807440fd&nome=2569_DIMUNIC-09mi25e801d.pdf",
+        "key_documentum": "0900f230807440fd"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E819",
+    "comune": "MAGNAGO",
+    "codice_catastale": "E819",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "40",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3275_DIMUNIC-09mi25e819d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807579b5&nome=3275_DIMUNIC-09mi25e819d.pdf",
+        "key_documentum": "0900f230807579b5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=E921",
+    "comune": "MARCALLO CON CASONE",
+    "codice_catastale": "E921",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "734_DIMUNIC-09mi25e921d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807591a2&nome=734_DIMUNIC-09mi25e921d.pdf",
+        "key_documentum": "0900f230807591a2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F003",
+    "comune": "MASATE",
+    "codice_catastale": "F003",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4524_DIMUNIC-09mi25f003d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080758b2a&nome=4524_DIMUNIC-09mi25f003d.pdf",
+        "key_documentum": "0900f23080758b2a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F084",
+    "comune": "MEDIGLIA",
+    "codice_catastale": "F084",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "57",
+        "data_delibera": "26-11-2024",
+        "data_pubblicazione": "10-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "293_DIMUNIC-09mi25f084d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077b85a&nome=293_DIMUNIC-09mi25f084d.pdf",
+        "key_documentum": "0900f2308077b85a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F100",
+    "comune": "MELEGNANO",
+    "codice_catastale": "F100",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "91",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "02-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2297_DIMUNIC-09mi25f100d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074c3a2&nome=2297_DIMUNIC-09mi25f100d.pdf",
+        "key_documentum": "0900f2308074c3a2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F119",
+    "comune": "MELZO",
+    "codice_catastale": "F119",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "14-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6670_DIMUNIC-09mi25f119d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a8950&nome=6670_DIMUNIC-09mi25f119d.pdf",
+        "key_documentum": "0900f230807a8950"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F155",
+    "comune": "MESERO",
+    "codice_catastale": "F155",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "17-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1463_DIMUNIC-09mi25f155d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308073d81d&nome=1463_DIMUNIC-09mi25f155d.pdf",
+        "key_documentum": "0900f2308073d81d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F205",
+    "comune": "MILANO",
+    "codice_catastale": "F205",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "86",
+        "data_delibera": "25-11-2024",
+        "data_pubblicazione": "17-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "188_DIMUNIC-09mi25f205d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308072b3af&nome=188_DIMUNIC-09mi25f205d.pdf",
+        "key_documentum": "0900f2308072b3af"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=D033",
+    "comune": "MORIMONDO",
+    "codice_catastale": "D033",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "21",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4553_DIMUNIC-09mi25d033d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6c3e&nome=4553_DIMUNIC-09mi25d033d.pdf",
+        "key_documentum": "0900f230807a6c3e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F783",
+    "comune": "MOTTA VISCONTI",
+    "codice_catastale": "F783",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "40",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "14-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "552_DIMUNIC-09mi25f783d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080773d4d&nome=552_DIMUNIC-09mi25f783d.pdf",
+        "key_documentum": "0900f23080773d4d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F874",
+    "comune": "NERVIANO",
+    "codice_catastale": "F874",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "89",
+        "data_delibera": "21-11-2024",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2092_DIMUNIC-09mi25f874d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796fcb&nome=2092_DIMUNIC-09mi25f874d.pdf",
+        "key_documentum": "0900f23080796fcb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F939",
+    "comune": "NOSATE",
+    "codice_catastale": "F939",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8263_DIMUNIC-09mi25f939d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078c721&nome=8263_DIMUNIC-09mi25f939d.pdf",
+        "key_documentum": "0900f2308078c721"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F955",
+    "comune": "NOVATE MILANESE",
+    "codice_catastale": "F955",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "78",
+        "data_delibera": "05-12-2024",
+        "data_pubblicazione": "20-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "296_DIMUNIC-09mi25f955d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080743212&nome=296_DIMUNIC-09mi25f955d.pdf",
+        "key_documentum": "0900f23080743212"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=F968",
+    "comune": "NOVIGLIO",
+    "codice_catastale": "F968",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "25-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7397_DIMUNIC-09mi25f968d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808e3625&nome=7397_DIMUNIC-09mi25f968d.pdf",
+        "key_documentum": "0900f230808e3625"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G078",
+    "comune": "OPERA",
+    "codice_catastale": "G078",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "43",
+        "data_delibera": "04-12-2024",
+        "data_pubblicazione": "31-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3313_DIMUNIC-09mi25g078d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080771321&nome=3313_DIMUNIC-09mi25g078d.pdf",
+        "key_documentum": "0900f23080771321"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G181",
+    "comune": "OSSONA",
+    "codice_catastale": "G181",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "30-01-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6663_DIMUNIC-09mi25g181d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079a5f9&nome=6663_DIMUNIC-09mi25g181d.pdf",
+        "key_documentum": "0900f2308079a5f9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G206",
+    "comune": "OZZERO",
+    "codice_catastale": "G206",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "43",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "30-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3517_DIMUNIC-09mi25g206d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076ea96&nome=3517_DIMUNIC-09mi25g206d.pdf",
+        "key_documentum": "0900f2308076ea96"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G220",
+    "comune": "PADERNO DUGNANO",
+    "codice_catastale": "G220",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "78",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "03-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "375_DIMUNIC-09mi25g220d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074cfbf&nome=375_DIMUNIC-09mi25g220d.pdf",
+        "key_documentum": "0900f2308074cfbf"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G316",
+    "comune": "PANTIGLIATE",
+    "codice_catastale": "G316",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "20-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1836_DIMUNIC-09mi25g316d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077cfea&nome=1836_DIMUNIC-09mi25g316d.pdf",
+        "key_documentum": "0900f2308077cfea"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G324",
+    "comune": "PARABIAGO",
+    "codice_catastale": "G324",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "73",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "761_DIMUNIC-09mi25g324d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080757789&nome=761_DIMUNIC-09mi25g324d.pdf",
+        "key_documentum": "0900f23080757789"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "72",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "6963_DIMUNIC-09mi25g324d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075861c&nome=6963_DIMUNIC-09mi25g324d.pdf",
+        "key_documentum": "0900f2308075861c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G385",
+    "comune": "PAULLO",
+    "codice_catastale": "G385",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "61",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "06-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2486_DIMUNIC-09mi25g385d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080952d15&nome=2486_DIMUNIC-09mi25g385d.pdf",
+        "key_documentum": "0900f23080952d15"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=C013",
+    "comune": "PERO",
+    "codice_catastale": "C013",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "63",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "23-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3997_DIMUNIC-09mi25c013d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080761fbe&nome=3997_DIMUNIC-09mi25c013d.pdf",
+        "key_documentum": "0900f23080761fbe"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G488",
+    "comune": "PESCHIERA BORROMEO",
+    "codice_catastale": "G488",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3560_DIMUNIC-09mi25g488d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797505&nome=3560_DIMUNIC-09mi25g488d.pdf",
+        "key_documentum": "0900f23080797505"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G502",
+    "comune": "PESSANO CON BORNAGO",
+    "codice_catastale": "G502",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "66",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "18-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1635_DIMUNIC-09mi25g502d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a788d&nome=1635_DIMUNIC-09mi25g502d.pdf",
+        "key_documentum": "0900f230807a788d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G634",
+    "comune": "PIEVE EMANUELE",
+    "codice_catastale": "G634",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "57",
+        "data_delibera": "14-11-2024",
+        "data_pubblicazione": "29-11-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "38_DIMUNIC-09mi25g634d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080715830&nome=38_DIMUNIC-09mi25g634d.pdf",
+        "key_documentum": "0900f23080715830"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G686",
+    "comune": "PIOLTELLO",
+    "codice_catastale": "G686",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "99",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "05-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5288_DIMUNIC-09mi25g686d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079cefb&nome=5288_DIMUNIC-09mi25g686d.pdf",
+        "key_documentum": "0900f2308079cefb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G772",
+    "comune": "POGLIANO MILANESE",
+    "codice_catastale": "G772",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "7",
+        "data_delibera": "03-03-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7470_DIMUNIC-09mi25g772d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a7998&nome=7470_DIMUNIC-09mi25g772d.pdf",
+        "key_documentum": "0900f230807a7998"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G955",
+    "comune": "POZZO D'ADDA",
+    "codice_catastale": "G955",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "43",
+        "data_delibera": "22-11-2024",
+        "data_pubblicazione": "14-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1507_DIMUNIC-09mi25g955d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807778c0&nome=1507_DIMUNIC-09mi25g955d.pdf",
+        "key_documentum": "0900f230807778c0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=G965",
+    "comune": "POZZUOLO MARTESANA",
+    "codice_catastale": "G965",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "41",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1837_DIMUNIC-09mi25g965d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807515db&nome=1837_DIMUNIC-09mi25g965d.pdf",
+        "key_documentum": "0900f230807515db"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H026",
+    "comune": "PREGNANA MILANESE",
+    "codice_catastale": "H026",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "62",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "10-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3724_DIMUNIC-09mi25h026d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807527ca&nome=3724_DIMUNIC-09mi25h026d.pdf",
+        "key_documentum": "0900f230807527ca"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H240",
+    "comune": "RESCALDINA",
+    "codice_catastale": "H240",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "63",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "06-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2407_DIMUNIC-09mi25h240d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080774f94&nome=2407_DIMUNIC-09mi25h240d.pdf",
+        "key_documentum": "0900f23080774f94"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H264",
+    "comune": "RHO",
+    "codice_catastale": "H264",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "69",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2160_DIMUNIC-09mi25h264d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080793230&nome=2160_DIMUNIC-09mi25h264d.pdf",
+        "key_documentum": "0900f23080793230"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H371",
+    "comune": "ROBECCHETTO CON INDUNO",
+    "codice_catastale": "H371",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "07-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5529_DIMUNIC-09mi25h371d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077871b&nome=5529_DIMUNIC-09mi25h371d.pdf",
+        "key_documentum": "0900f2308077871b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H373",
+    "comune": "ROBECCO SUL NAVIGLIO",
+    "codice_catastale": "H373",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "26-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1216_DIMUNIC-09mi25h373d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807941df&nome=1216_DIMUNIC-09mi25h373d.pdf",
+        "key_documentum": "0900f230807941df"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H470",
+    "comune": "RODANO",
+    "codice_catastale": "H470",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "12",
+        "data_delibera": "30-04-2025",
+        "data_pubblicazione": "20-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "9149_DIMUNIC-09mi25h470d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807fafba&nome=9149_DIMUNIC-09mi25h470d.pdf",
+        "key_documentum": "0900f230807fafba"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H560",
+    "comune": "ROSATE",
+    "codice_catastale": "H560",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "605_DIMUNIC-09mi25h560d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080792a56&nome=605_DIMUNIC-09mi25h560d.pdf",
+        "key_documentum": "0900f23080792a56"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H623",
+    "comune": "ROZZANO",
+    "codice_catastale": "H623",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "57",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1794_DIMUNIC-09mi25h623d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074d7b1&nome=1794_DIMUNIC-09mi25h623d.pdf",
+        "key_documentum": "0900f2308074d7b1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H803",
+    "comune": "SAN COLOMBANO AL LAMBRO",
+    "codice_catastale": "H803",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "55",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "25-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "636_DIMUNIC-09mi25h803d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b8bf2&nome=636_DIMUNIC-09mi25h803d.pdf",
+        "key_documentum": "0900f230807b8bf2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H827",
+    "comune": "SAN DONATO MILANESE",
+    "codice_catastale": "H827",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "42",
+        "data_delibera": "11-12-2024",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2473_DIMUNIC-09mi25h827d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080767432&nome=2473_DIMUNIC-09mi25h827d.pdf",
+        "key_documentum": "0900f23080767432"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H884",
+    "comune": "SAN GIORGIO SU LEGNANO",
+    "codice_catastale": "H884",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "31-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2887_DIMUNIC-09mi25h884d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076eb01&nome=2887_DIMUNIC-09mi25h884d.pdf",
+        "key_documentum": "0900f2308076eb01"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=H930",
+    "comune": "SAN GIULIANO MILANESE",
+    "codice_catastale": "H930",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "51",
+        "data_delibera": "09-12-2024",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3546_DIMUNIC-09mi25h930d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078f6c0&nome=3546_DIMUNIC-09mi25h930d.pdf",
+        "key_documentum": "0900f2308078f6c0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I409",
+    "comune": "SAN VITTORE OLONA",
+    "codice_catastale": "I409",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "37",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3667_DIMUNIC-09mi25i409d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807438b0&nome=3667_DIMUNIC-09mi25i409d.pdf",
+        "key_documentum": "0900f230807438b0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I415",
+    "comune": "SAN ZENONE AL LAMBRO",
+    "codice_catastale": "I415",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "03-02-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7035_DIMUNIC-09mi25i415d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a9356&nome=7035_DIMUNIC-09mi25i415d.pdf",
+        "key_documentum": "0900f230807a9356"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "13-02-2025",
+        "data_pubblicazione": "08-10-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "11730_DIMUNIC-09mi25i415d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308097b878&nome=11730_DIMUNIC-09mi25i415d.pdf",
+        "key_documentum": "0900f2308097b878"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I361",
+    "comune": "SANTO STEFANO TICINO",
+    "codice_catastale": "I361",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "386_DIMUNIC-09mi25i361d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807552ac&nome=386_DIMUNIC-09mi25i361d.pdf",
+        "key_documentum": "0900f230807552ac"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I566",
+    "comune": "SEDRIANO",
+    "codice_catastale": "I566",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "51",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "05-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "9_DIMUNIC-09mi25i566d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076619b&nome=9_DIMUNIC-09mi25i566d.pdf",
+        "key_documentum": "0900f2308076619b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I577",
+    "comune": "SEGRATE",
+    "codice_catastale": "I577",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "30",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1436_DIMUNIC-09mi25i577d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075578c&nome=1436_DIMUNIC-09mi25i577d.pdf",
+        "key_documentum": "0900f2308075578c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2026&cc=I602",
+    "comune": "SENAGO",
+    "codice_catastale": "I602",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2026,
+        "num_delibera": "47",
+        "data_delibera": "24-11-2025",
+        "data_pubblicazione": "09-12-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11843_DIMUNIC-09mi26i602d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080ab9054&nome=11843_DIMUNIC-09mi26i602d.pdf",
+        "key_documentum": "0900f23080ab9054"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I690",
+    "comune": "SESTO SAN GIOVANNI",
+    "codice_catastale": "I690",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "16-12-2024",
+        "data_pubblicazione": "05-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3050_DIMUNIC-09mi25i690d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807e44ee&nome=3050_DIMUNIC-09mi25i690d.pdf",
+        "key_documentum": "0900f230807e44ee"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I696",
+    "comune": "SETTALA",
+    "codice_catastale": "I696",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "53",
+        "data_delibera": "05-12-2024",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "525_DIMUNIC-09mi25i696d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796c18&nome=525_DIMUNIC-09mi25i696d.pdf",
+        "key_documentum": "0900f23080796c18"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I700",
+    "comune": "SETTIMO MILANESE",
+    "codice_catastale": "I700",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "75",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1437_DIMUNIC-09mi25i700d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807555d5&nome=1437_DIMUNIC-09mi25i700d.pdf",
+        "key_documentum": "0900f230807555d5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=I786",
+    "comune": "SOLARO",
+    "codice_catastale": "I786",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "56",
+        "data_delibera": "15-11-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6768_DIMUNIC-09mi25i786d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807516de&nome=6768_DIMUNIC-09mi25i786d.pdf",
+        "key_documentum": "0900f230807516de"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L408",
+    "comune": "TREZZANO ROSA",
+    "codice_catastale": "L408",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "58",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "15-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4132_DIMUNIC-09mi25l408d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080757288&nome=4132_DIMUNIC-09mi25l408d.pdf",
+        "key_documentum": "0900f23080757288"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L409",
+    "comune": "TREZZANO SUL NAVIGLIO",
+    "codice_catastale": "L409",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "85",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "04-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3377_DIMUNIC-09mi25l409d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808ea489&nome=3377_DIMUNIC-09mi25l409d.pdf",
+        "key_documentum": "0900f230808ea489"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L411",
+    "comune": "TREZZO SULL'ADDA",
+    "codice_catastale": "L411",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3395_DIMUNIC-09mi25l411d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075afe7&nome=3395_DIMUNIC-09mi25l411d.pdf",
+        "key_documentum": "0900f2308075afe7"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L415",
+    "comune": "TRIBIANO",
+    "codice_catastale": "L415",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "12-12-2024",
+        "data_pubblicazione": "14-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3529_DIMUNIC-09mi25l415d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080782b3d&nome=3529_DIMUNIC-09mi25l415d.pdf",
+        "key_documentum": "0900f23080782b3d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L454",
+    "comune": "TRUCCAZZANO",
+    "codice_catastale": "L454",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "20-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1191_DIMUNIC-09mi25l454d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080789123&nome=1191_DIMUNIC-09mi25l454d.pdf",
+        "key_documentum": "0900f23080789123"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L471",
+    "comune": "TURBIGO",
+    "codice_catastale": "L471",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "21-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5942_DIMUNIC-09mi25l471d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078a4e8&nome=5942_DIMUNIC-09mi25l471d.pdf",
+        "key_documentum": "0900f2308078a4e8"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "45",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "8481_DIMUNIC-09mi25l471d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807978dd&nome=8481_DIMUNIC-09mi25l471d.pdf",
+        "key_documentum": "0900f230807978dd"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2026&cc=L664",
+    "comune": "VANZAGHELLO",
+    "codice_catastale": "L664",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2026,
+        "num_delibera": "99",
+        "data_delibera": "25-11-2025",
+        "data_pubblicazione": "05-12-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "13679_DIMUNIC-09mi26l664d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080ab40da&nome=13679_DIMUNIC-09mi26l664d.pdf",
+        "key_documentum": "0900f23080ab40da"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L665",
+    "comune": "VANZAGO",
+    "codice_catastale": "L665",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "9",
+        "data_delibera": "27-01-2025",
+        "data_pubblicazione": "10-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6862_DIMUNIC-09mi25l665d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308097cc26&nome=6862_DIMUNIC-09mi25l665d.pdf",
+        "key_documentum": "0900f2308097cc26"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L667",
+    "comune": "VAPRIO D'ADDA",
+    "codice_catastale": "L667",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4619_DIMUNIC-09mi25l667d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075035b&nome=4619_DIMUNIC-09mi25l667d.pdf",
+        "key_documentum": "0900f2308075035b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=M424",
+    "comune": "VERMEZZO CON ZELO",
+    "codice_catastale": "M424",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "08-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1138_DIMUNIC-09mi25m424d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808de18a&nome=1138_DIMUNIC-09mi25m424d.pdf",
+        "key_documentum": "0900f230808de18a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L773",
+    "comune": "VERNATE",
+    "codice_catastale": "L773",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "04-12-2024",
+        "data_pubblicazione": "06-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1942_DIMUNIC-09mi25l773d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308072ce59&nome=1942_DIMUNIC-09mi25l773d.pdf",
+        "key_documentum": "0900f2308072ce59"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L883",
+    "comune": "VIGNATE",
+    "codice_catastale": "L883",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "83",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "02-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5058_DIMUNIC-09mi25l883d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074a426&nome=5058_DIMUNIC-09mi25l883d.pdf",
+        "key_documentum": "0900f2308074a426"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=L928",
+    "comune": "VILLA CORTESE",
+    "codice_catastale": "L928",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "29",
+        "data_delibera": "26-11-2024",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1728_DIMUNIC-09mi25l928d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080790c93&nome=1728_DIMUNIC-09mi25l928d.pdf",
+        "key_documentum": "0900f23080790c93"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=M053",
+    "comune": "VIMODRONE",
+    "codice_catastale": "M053",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "62",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "477_DIMUNIC-09mi25m053d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807571cd&nome=477_DIMUNIC-09mi25m053d.pdf",
+        "key_documentum": "0900f230807571cd"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=M091",
+    "comune": "VITTUONE",
+    "codice_catastale": "M091",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "28-11-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1186_DIMUNIC-09mi25m091d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a673b&nome=1186_DIMUNIC-09mi25m091d.pdf",
+        "key_documentum": "0900f230807a673b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=M102",
+    "comune": "VIZZOLO PREDABISSI",
+    "codice_catastale": "M102",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "58",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "18-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3506_DIMUNIC-09mi25m102d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080788258&nome=3506_DIMUNIC-09mi25m102d.pdf",
+        "key_documentum": "0900f23080788258"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=lombardia.htm&cm=&pr=MI&anno=2025&cc=M176",
+    "comune": "ZIBIDO SAN GIACOMO",
+    "codice_catastale": "M176",
+    "provincia": "MI",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "11-12-2024",
+        "data_pubblicazione": "10-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3453_DIMUNIC-09mi25m176d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a208b&nome=3453_DIMUNIC-09mi25m176d.pdf",
+        "key_documentum": "0900f230807a208b"
+      }
+    ]
+  }
+]

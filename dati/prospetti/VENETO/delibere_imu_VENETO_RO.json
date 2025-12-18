@@ -1,0 +1,985 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=A059",
+    "comune": "ADRIA",
+    "codice_catastale": "A059",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "107",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "19-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5123_DIMUNIC-20ro25a059d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080788cb0&nome=5123_DIMUNIC-20ro25a059d.pdf",
+        "key_documentum": "0900f23080788cb0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=A400",
+    "comune": "ARIANO NEL POLESINE",
+    "codice_catastale": "A400",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "54",
+        "data_delibera": "27-11-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "625_DIMUNIC-20ro25a400d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807597e5&nome=625_DIMUNIC-20ro25a400d.pdf",
+        "key_documentum": "0900f230807597e5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=A435",
+    "comune": "ARQUA' POLESINE",
+    "codice_catastale": "A435",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "46",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5540_DIMUNIC-20ro25a435d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075c126&nome=5540_DIMUNIC-20ro25a435d.pdf",
+        "key_documentum": "0900f2308075c126"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=A539",
+    "comune": "BADIA POLESINE",
+    "codice_catastale": "A539",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "18-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4401_DIMUNIC-20ro25a539d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807872ff&nome=4401_DIMUNIC-20ro25a539d.pdf",
+        "key_documentum": "0900f230807872ff"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=A574",
+    "comune": "BAGNOLO DI PO",
+    "codice_catastale": "A574",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "43",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5953_DIMUNIC-20ro25a574d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075c88f&nome=5953_DIMUNIC-20ro25a574d.pdf",
+        "key_documentum": "0900f2308075c88f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=A795",
+    "comune": "BERGANTINO",
+    "codice_catastale": "A795",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "37",
+        "data_delibera": "07-10-2024",
+        "data_pubblicazione": "18-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6104_DIMUNIC-20ro25a795d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308073f2c6&nome=6104_DIMUNIC-20ro25a795d.pdf",
+        "key_documentum": "0900f2308073f2c6"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "14-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6695_DIMUNIC-20ro25a795d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807f81d4&nome=6695_DIMUNIC-20ro25a795d.pdf",
+        "key_documentum": "0900f230807f81d4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=B069",
+    "comune": "BOSARO",
+    "codice_catastale": "B069",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2279_DIMUNIC-20ro25b069d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797bac&nome=2279_DIMUNIC-20ro25b069d.pdf",
+        "key_documentum": "0900f23080797bac"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=B432",
+    "comune": "CALTO",
+    "codice_catastale": "B432",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "14-11-2024",
+        "data_pubblicazione": "09-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "959_DIMUNIC-20ro25b432d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308072f86f&nome=959_DIMUNIC-20ro25b432d.pdf",
+        "key_documentum": "0900f2308072f86f"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=B578",
+    "comune": "CANARO",
+    "codice_catastale": "B578",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "49",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "20-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4018_DIMUNIC-20ro25b578d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078a69c&nome=4018_DIMUNIC-20ro25b578d.pdf",
+        "key_documentum": "0900f2308078a69c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=B582",
+    "comune": "CANDA",
+    "codice_catastale": "B582",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5312_DIMUNIC-20ro25b582d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080792e59&nome=5312_DIMUNIC-20ro25b582d.pdf",
+        "key_documentum": "0900f23080792e59"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=C122",
+    "comune": "CASTELGUGLIELMO",
+    "codice_catastale": "C122",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "20-01-2025",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2693_DIMUNIC-20ro25c122d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080794994&nome=2693_DIMUNIC-20ro25c122d.pdf",
+        "key_documentum": "0900f23080794994"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=C207",
+    "comune": "CASTELMASSA",
+    "codice_catastale": "C207",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "21-02-2025",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7584_DIMUNIC-20ro25c207d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080790e91&nome=7584_DIMUNIC-20ro25c207d.pdf",
+        "key_documentum": "0900f23080790e91"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=C215",
+    "comune": "CASTELNOVO BARIANO",
+    "codice_catastale": "C215",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "20-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2708_DIMUNIC-20ro25c215d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078a9aa&nome=2708_DIMUNIC-20ro25c215d.pdf",
+        "key_documentum": "0900f2308078a9aa"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=C461",
+    "comune": "CENESELLI",
+    "codice_catastale": "C461",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "29-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3597_DIMUNIC-20ro25c461d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076beb9&nome=3597_DIMUNIC-20ro25c461d.pdf",
+        "key_documentum": "0900f2308076beb9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=C500",
+    "comune": "CEREGNANO",
+    "codice_catastale": "C500",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "61",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "23-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5663_DIMUNIC-20ro25c500d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080765189&nome=5663_DIMUNIC-20ro25c500d.pdf",
+        "key_documentum": "0900f23080765189"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=C987",
+    "comune": "CORBOLA",
+    "codice_catastale": "C987",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "31-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3011_DIMUNIC-20ro25c987d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807bf252&nome=3011_DIMUNIC-20ro25c987d.pdf",
+        "key_documentum": "0900f230807bf252"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2026&cc=D105",
+    "comune": "COSTA DI ROVIGO",
+    "codice_catastale": "D105",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2026,
+        "num_delibera": "58",
+        "data_delibera": "26-11-2025",
+        "data_pubblicazione": "12-12-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "13069_DIMUNIC-20ro26d105d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080aac319&nome=13069_DIMUNIC-20ro26d105d.pdf",
+        "key_documentum": "0900f23080aac319"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=D161",
+    "comune": "CRESPINO",
+    "codice_catastale": "D161",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "07-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2091_DIMUNIC-20ro25d161d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079f28c&nome=2091_DIMUNIC-20ro25d161d.pdf",
+        "key_documentum": "0900f2308079f28c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=D568",
+    "comune": "FICAROLO",
+    "codice_catastale": "D568",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "354_DIMUNIC-20ro25d568d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807554d5&nome=354_DIMUNIC-20ro25d568d.pdf",
+        "key_documentum": "0900f230807554d5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=D577",
+    "comune": "FIESSO UMBERTIANO",
+    "codice_catastale": "D577",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "30-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "757_DIMUNIC-20ro25d577d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807479a6&nome=757_DIMUNIC-20ro25d577d.pdf",
+        "key_documentum": "0900f230807479a6"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=D776",
+    "comune": "FRASSINELLE POLESINE",
+    "codice_catastale": "D776",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "27-11-2024",
+        "data_pubblicazione": "30-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "658_DIMUNIC-20ro25d776d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080745cd2&nome=658_DIMUNIC-20ro25d776d.pdf",
+        "key_documentum": "0900f23080745cd2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=D788",
+    "comune": "FRATTA POLESINE",
+    "codice_catastale": "D788",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "47",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1535_DIMUNIC-20ro25d788d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080780fc4&nome=1535_DIMUNIC-20ro25d788d.pdf",
+        "key_documentum": "0900f23080780fc4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=D855",
+    "comune": "GAIBA",
+    "codice_catastale": "D855",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "20-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "495_DIMUNIC-20ro25d855d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075ecde&nome=495_DIMUNIC-20ro25d855d.pdf",
+        "key_documentum": "0900f2308075ecde"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=D942",
+    "comune": "GAVELLO",
+    "codice_catastale": "D942",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "24-12-2024",
+        "data_pubblicazione": "14-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5656_DIMUNIC-20ro25d942d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807836ca&nome=5656_DIMUNIC-20ro25d942d.pdf",
+        "key_documentum": "0900f230807836ca"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=E008",
+    "comune": "GIACCIANO CON BARUCHELLA",
+    "codice_catastale": "E008",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "10-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5258_DIMUNIC-20ro25e008d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077bd73&nome=5258_DIMUNIC-20ro25e008d.pdf",
+        "key_documentum": "0900f2308077bd73"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=E240",
+    "comune": "GUARDA VENETA",
+    "codice_catastale": "E240",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "20-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6572_DIMUNIC-20ro25e240d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808e275e&nome=6572_DIMUNIC-20ro25e240d.pdf",
+        "key_documentum": "0900f230808e275e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=E522",
+    "comune": "LENDINARA",
+    "codice_catastale": "E522",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "8",
+        "data_delibera": "11-02-2025",
+        "data_pubblicazione": "21-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6801_DIMUNIC-20ro25e522d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078cc5e&nome=6801_DIMUNIC-20ro25e522d.pdf",
+        "key_documentum": "0900f2308078cc5e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=E689",
+    "comune": "LOREO",
+    "codice_catastale": "E689",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "54",
+        "data_delibera": "27-11-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1705_DIMUNIC-20ro25e689d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080774cd7&nome=1705_DIMUNIC-20ro25e689d.pdf",
+        "key_documentum": "0900f23080774cd7"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=E761",
+    "comune": "LUSIA",
+    "codice_catastale": "E761",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1557_DIMUNIC-20ro25e761d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080753715&nome=1557_DIMUNIC-20ro25e761d.pdf",
+        "key_documentum": "0900f23080753715"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=F095",
+    "comune": "MELARA",
+    "codice_catastale": "F095",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4301_DIMUNIC-20ro25f095d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6331&nome=4301_DIMUNIC-20ro25f095d.pdf",
+        "key_documentum": "0900f230807a6331"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=F994",
+    "comune": "OCCHIOBELLO",
+    "codice_catastale": "F994",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "59",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "27-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1329_DIMUNIC-20ro25f994d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080768a4b&nome=1329_DIMUNIC-20ro25f994d.pdf",
+        "key_documentum": "0900f23080768a4b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=G323",
+    "comune": "PAPOZZE",
+    "codice_catastale": "G323",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1664_DIMUNIC-20ro25g323d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074efb0&nome=1664_DIMUNIC-20ro25g323d.pdf",
+        "key_documentum": "0900f2308074efb0"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=G525",
+    "comune": "PETTORAZZA GRIMANI",
+    "codice_catastale": "G525",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "42",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "04-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5660_DIMUNIC-20ro25g525d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808eab5e&nome=5660_DIMUNIC-20ro25g525d.pdf",
+        "key_documentum": "0900f230808eab5e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=G673",
+    "comune": "PINCARA",
+    "codice_catastale": "G673",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1200_DIMUNIC-20ro25g673d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a608e&nome=1200_DIMUNIC-20ro25g673d.pdf",
+        "key_documentum": "0900f230807a608e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=G782",
+    "comune": "POLESELLA",
+    "codice_catastale": "G782",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6009_DIMUNIC-20ro25g782d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796486&nome=6009_DIMUNIC-20ro25g782d.pdf",
+        "key_documentum": "0900f23080796486"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=G836",
+    "comune": "PONTECCHIO POLESINE",
+    "codice_catastale": "G836",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "30",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "21-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6347_DIMUNIC-20ro25g836d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078cd19&nome=6347_DIMUNIC-20ro25g836d.pdf",
+        "key_documentum": "0900f2308078cd19"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "10",
+        "data_delibera": "21-05-2025",
+        "data_pubblicazione": "03-09-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "11127_DIMUNIC-20ro25g836d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808e9e58&nome=11127_DIMUNIC-20ro25g836d.pdf",
+        "key_documentum": "0900f230808e9e58"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "30",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "03-09-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "11126_DIMUNIC-20ro25g836d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808e9e2b&nome=11126_DIMUNIC-20ro25g836d.pdf",
+        "key_documentum": "0900f230808e9e2b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=G923",
+    "comune": "PORTO TOLLE",
+    "codice_catastale": "G923",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "58",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3436_DIMUNIC-20ro25g923d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6ed1&nome=3436_DIMUNIC-20ro25g923d.pdf",
+        "key_documentum": "0900f230807a6ed1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=G926",
+    "comune": "PORTO VIRO",
+    "codice_catastale": "G926",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "03-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3265_DIMUNIC-20ro25g926d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308091e124&nome=3265_DIMUNIC-20ro25g926d.pdf",
+        "key_documentum": "0900f2308091e124"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=H573",
+    "comune": "ROSOLINA",
+    "codice_catastale": "H573",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "70",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2157_DIMUNIC-20ro25h573d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6f98&nome=2157_DIMUNIC-20ro25h573d.pdf",
+        "key_documentum": "0900f230807a6f98"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=H620",
+    "comune": "ROVIGO",
+    "codice_catastale": "H620",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "65",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "17-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "788_DIMUNIC-20ro25h620d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308075bf04&nome=788_DIMUNIC-20ro25h620d.pdf",
+        "key_documentum": "0900f2308075bf04"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=H689",
+    "comune": "SALARA",
+    "codice_catastale": "H689",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "43",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4981_DIMUNIC-20ro25h689d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807502b7&nome=4981_DIMUNIC-20ro25h689d.pdf",
+        "key_documentum": "0900f230807502b7"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=H768",
+    "comune": "SAN BELLINO",
+    "codice_catastale": "H768",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "55",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "23-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "590_DIMUNIC-20ro25h768d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080764fd3&nome=590_DIMUNIC-20ro25h768d.pdf",
+        "key_documentum": "0900f23080764fd3"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=H996",
+    "comune": "SAN MARTINO DI VENEZZE",
+    "codice_catastale": "H996",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "11-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8795_DIMUNIC-20ro25h996d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a03da&nome=8795_DIMUNIC-20ro25h996d.pdf",
+        "key_documentum": "0900f230807a03da"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=I953",
+    "comune": "STIENTA",
+    "codice_catastale": "I953",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "17-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4693_DIMUNIC-20ro25i953d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797704&nome=4693_DIMUNIC-20ro25i953d.pdf",
+        "key_documentum": "0900f23080797704"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=L026",
+    "comune": "TAGLIO DI PO",
+    "codice_catastale": "L026",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "39",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "23-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "112_DIMUNIC-20ro25l026d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080765684&nome=112_DIMUNIC-20ro25l026d.pdf",
+        "key_documentum": "0900f23080765684"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=L359",
+    "comune": "TRECENTA",
+    "codice_catastale": "L359",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "29",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4929_DIMUNIC-20ro25l359d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080781d82&nome=4929_DIMUNIC-20ro25l359d.pdf",
+        "key_documentum": "0900f23080781d82"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=L939",
+    "comune": "VILLADOSE",
+    "codice_catastale": "L939",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "27-01-2025",
+        "data_pubblicazione": "20-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4081_DIMUNIC-20ro25l939d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078aabe&nome=4081_DIMUNIC-20ro25l939d.pdf",
+        "key_documentum": "0900f2308078aabe"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=L967",
+    "comune": "VILLAMARZANA",
+    "codice_catastale": "L967",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "09-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5434_DIMUNIC-20ro25l967d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f7a6&nome=5434_DIMUNIC-20ro25l967d.pdf",
+        "key_documentum": "0900f2308074f7a6"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=L985",
+    "comune": "VILLANOVA DEL GHEBBO",
+    "codice_catastale": "L985",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "42",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "29-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4975_DIMUNIC-20ro25l985d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076c047&nome=4975_DIMUNIC-20ro25l985d.pdf",
+        "key_documentum": "0900f2308076c047"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=veneto.htm&cm=&pr=RO&anno=2025&cc=L988",
+    "comune": "VILLANOVA MARCHESANA",
+    "codice_catastale": "L988",
+    "provincia": "RO",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "14-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8886_DIMUNIC-20ro25l988d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807aa207&nome=8886_DIMUNIC-20ro25l988d.pdf",
+        "key_documentum": "0900f230807aa207"
+      }
+    ]
+  }
+]

@@ -1,0 +1,936 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=A043",
+    "comune": "ACQUARO",
+    "codice_catastale": "A043",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "05-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8746_DIMUNIC-03vv25a043d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080799eb5&nome=8746_DIMUNIC-03vv25a043d.pdf",
+        "key_documentum": "0900f23080799eb5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=B169",
+    "comune": "BRIATICO",
+    "codice_catastale": "B169",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "21",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "18-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2932_DIMUNIC-03vv25b169d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080781bbe&nome=2932_DIMUNIC-03vv25b169d.pdf",
+        "key_documentum": "0900f23080781bbe"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=B197",
+    "comune": "BROGNATURO",
+    "codice_catastale": "B197",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "18-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8445_DIMUNIC-03vv25b197d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808ee73b&nome=8445_DIMUNIC-03vv25b197d.pdf",
+        "key_documentum": "0900f230808ee73b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2026&cc=B655",
+    "comune": "CAPISTRANO",
+    "codice_catastale": "B655",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2026,
+        "num_delibera": "21",
+        "data_delibera": "19-11-2025",
+        "data_pubblicazione": "25-11-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "13446_DIMUNIC-03vv26b655d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080aa397c&nome=13446_DIMUNIC-03vv26b655d.pdf",
+        "key_documentum": "0900f23080aa397c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=C581",
+    "comune": "CESSANITI",
+    "codice_catastale": "C581",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "11",
+        "data_delibera": "10-07-2025",
+        "data_pubblicazione": "09-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5922_DIMUNIC-03vv25c581d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808ed19e&nome=5922_DIMUNIC-03vv25c581d.pdf",
+        "key_documentum": "0900f230808ed19e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D253",
+    "comune": "DASA'",
+    "codice_catastale": "D253",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "17-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7881_DIMUNIC-03vv25d253d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807829b3&nome=7881_DIMUNIC-03vv25d253d.pdf",
+        "key_documentum": "0900f230807829b3"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "03-04-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "9049_DIMUNIC-03vv25d253d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807ba114&nome=9049_DIMUNIC-03vv25d253d.pdf",
+        "key_documentum": "0900f230807ba114"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D303",
+    "comune": "DINAMI",
+    "codice_catastale": "D303",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "30",
+        "data_delibera": "25-11-2024",
+        "data_pubblicazione": "11-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "10804_DIMUNIC-03vv25d303d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808dcc40&nome=10804_DIMUNIC-03vv25d303d.pdf",
+        "key_documentum": "0900f230808dcc40"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D453",
+    "comune": "FABRIZIA",
+    "codice_catastale": "D453",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "13",
+        "data_delibera": "01-08-2025",
+        "data_pubblicazione": "01-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "10682_DIMUNIC-03vv25d453d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808e6bfd&nome=10682_DIMUNIC-03vv25d453d.pdf",
+        "key_documentum": "0900f230808e6bfd"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D587",
+    "comune": "FILADELFIA",
+    "codice_catastale": "D587",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "11-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8787_DIMUNIC-03vv25d587d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079f1b5&nome=8787_DIMUNIC-03vv25d587d.pdf",
+        "key_documentum": "0900f2308079f1b5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D589",
+    "comune": "FILANDARI",
+    "codice_catastale": "D589",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "07-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6815_DIMUNIC-03vv25d589d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308090fa23&nome=6815_DIMUNIC-03vv25d589d.pdf",
+        "key_documentum": "0900f2308090fa23"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D596",
+    "comune": "FILOGASO",
+    "codice_catastale": "D596",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "24-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8316_DIMUNIC-03vv25d596d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807975d6&nome=8316_DIMUNIC-03vv25d596d.pdf",
+        "key_documentum": "0900f230807975d6"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D762",
+    "comune": "FRANCAVILLA ANGITOLA",
+    "codice_catastale": "D762",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "18",
+        "data_delibera": "21-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3539_DIMUNIC-03vv25d762d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078d9bb&nome=3539_DIMUNIC-03vv25d762d.pdf",
+        "key_documentum": "0900f2308078d9bb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D767",
+    "comune": "FRANCICA",
+    "codice_catastale": "D767",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "9",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4884_DIMUNIC-03vv25d767d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6b13&nome=4884_DIMUNIC-03vv25d767d.pdf",
+        "key_documentum": "0900f230807a6b13"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=D988",
+    "comune": "GEROCARNE",
+    "codice_catastale": "D988",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "30-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6177_DIMUNIC-03vv25d988d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076d783&nome=6177_DIMUNIC-03vv25d988d.pdf",
+        "key_documentum": "0900f2308076d783"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=E321",
+    "comune": "JONADI",
+    "codice_catastale": "E321",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "22-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1899_DIMUNIC-03vv25e321d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797a4a&nome=1899_DIMUNIC-03vv25e321d.pdf",
+        "key_documentum": "0900f23080797a4a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=E389",
+    "comune": "JOPPOLO",
+    "codice_catastale": "E389",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "4",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "11-11-2025",
+        "codice_tributo": "IMU",
+        "note": "COMUNE CON DELIBERA DI DISSESTO",
+        "nome_prospetto": "12407_DIMUNIC-03vv25e389d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080a939b4&nome=12407_DIMUNIC-03vv25e389d.pdf",
+        "key_documentum": "0900f23080a939b4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=E590",
+    "comune": "LIMBADI",
+    "codice_catastale": "E590",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "628_DIMUNIC-03vv25e590d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074fdb2&nome=628_DIMUNIC-03vv25e590d.pdf",
+        "key_documentum": "0900f2308074fdb2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=E836",
+    "comune": "MAIERATO",
+    "codice_catastale": "E836",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "22",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4592_DIMUNIC-03vv25e836d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6ac5&nome=4592_DIMUNIC-03vv25e836d.pdf",
+        "key_documentum": "0900f230807a6ac5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=F207",
+    "comune": "MILETO",
+    "codice_catastale": "F207",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "07-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7352_DIMUNIC-03vv25f207d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308079ebba&nome=7352_DIMUNIC-03vv25f207d.pdf",
+        "key_documentum": "0900f2308079ebba"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=F364",
+    "comune": "MONGIANA",
+    "codice_catastale": "F364",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8440_DIMUNIC-03vv25f364d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807987eb&nome=8440_DIMUNIC-03vv25f364d.pdf",
+        "key_documentum": "0900f230807987eb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=F607",
+    "comune": "MONTEROSSO CALABRO",
+    "codice_catastale": "F607",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "12",
+        "data_delibera": "13-09-2025",
+        "data_pubblicazione": "10-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11186_DIMUNIC-03vv25f607d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308097d144&nome=11186_DIMUNIC-03vv25f607d.pdf",
+        "key_documentum": "0900f2308097d144"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=F843",
+    "comune": "NARDODIPACE",
+    "codice_catastale": "F843",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8729_DIMUNIC-03vv25f843d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807985a9&nome=8729_DIMUNIC-03vv25f843d.pdf",
+        "key_documentum": "0900f230807985a9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=F893",
+    "comune": "NICOTERA",
+    "codice_catastale": "F893",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "44",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "09-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11209_DIMUNIC-03vv25f893d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308097d21b&nome=11209_DIMUNIC-03vv25f893d.pdf",
+        "key_documentum": "0900f2308097d21b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=G335",
+    "comune": "PARGHELIA",
+    "codice_catastale": "G335",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "27-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7320_DIMUNIC-03vv25g335d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807bbdee&nome=7320_DIMUNIC-03vv25g335d.pdf",
+        "key_documentum": "0900f230807bbdee"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=G722",
+    "comune": "PIZZO",
+    "codice_catastale": "G722",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7835_DIMUNIC-03vv25g722d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080781a68&nome=7835_DIMUNIC-03vv25g722d.pdf",
+        "key_documentum": "0900f23080781a68"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=G728",
+    "comune": "PIZZONI",
+    "codice_catastale": "G728",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "30",
+        "data_delibera": "05-12-2024",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7725_DIMUNIC-03vv25g728d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077f70d&nome=7725_DIMUNIC-03vv25g728d.pdf",
+        "key_documentum": "0900f2308077f70d"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=G785",
+    "comune": "POLIA",
+    "codice_catastale": "G785",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "25",
+        "data_delibera": "25-11-2024",
+        "data_pubblicazione": "13-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2698_DIMUNIC-03vv25g785d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080754a18&nome=2698_DIMUNIC-03vv25g785d.pdf",
+        "key_documentum": "0900f23080754a18"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=H271",
+    "comune": "RICADI",
+    "codice_catastale": "H271",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8177_DIMUNIC-03vv25h271d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a64b2&nome=8177_DIMUNIC-03vv25h271d.pdf",
+        "key_documentum": "0900f230807a64b2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=H516",
+    "comune": "ROMBIOLO",
+    "codice_catastale": "H516",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8414_DIMUNIC-03vv25h516d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a8dae&nome=8414_DIMUNIC-03vv25h516d.pdf",
+        "key_documentum": "0900f230807a8dae"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=H785",
+    "comune": "SAN CALOGERO",
+    "codice_catastale": "H785",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "32",
+        "data_delibera": "14-12-2024",
+        "data_pubblicazione": "28-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4683_DIMUNIC-03vv25h785d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807691fd&nome=4683_DIMUNIC-03vv25h785d.pdf",
+        "key_documentum": "0900f230807691fd"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=H807",
+    "comune": "SAN COSTANTINO CALABRO",
+    "codice_catastale": "H807",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8322_DIMUNIC-03vv25h807d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797278&nome=8322_DIMUNIC-03vv25h807d.pdf",
+        "key_documentum": "0900f23080797278"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=H941",
+    "comune": "SAN GREGORIO D'IPPONA",
+    "codice_catastale": "H941",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "16-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1898_DIMUNIC-03vv25h941d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080755daf&nome=1898_DIMUNIC-03vv25h941d.pdf",
+        "key_documentum": "0900f23080755daf"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I058",
+    "comune": "SAN NICOLA DA CRISSA",
+    "codice_catastale": "I058",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "1",
+        "data_delibera": "24-03-2025",
+        "data_pubblicazione": "27-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8600_DIMUNIC-03vv25i058d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b8004&nome=8600_DIMUNIC-03vv25i058d.pdf",
+        "key_documentum": "0900f230807b8004"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I350",
+    "comune": "SANT'ONOFRIO",
+    "codice_catastale": "I350",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "22",
+        "data_delibera": "02-12-2024",
+        "data_pubblicazione": "05-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8828_DIMUNIC-03vv25i350d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807e86d8&nome=8828_DIMUNIC-03vv25i350d.pdf",
+        "key_documentum": "0900f230807e86d8"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I639",
+    "comune": "SERRA SAN BRUNO",
+    "codice_catastale": "I639",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "6",
+        "data_delibera": "28-03-2025",
+        "data_pubblicazione": "09-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11184_DIMUNIC-03vv25i639d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808ecab9&nome=11184_DIMUNIC-03vv25i639d.pdf",
+        "key_documentum": "0900f230808ecab9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I744",
+    "comune": "SIMBARIO",
+    "codice_catastale": "I744",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "25-02-2025",
+        "data_pubblicazione": "17-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7327_DIMUNIC-03vv25i744d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6d11&nome=7327_DIMUNIC-03vv25i744d.pdf",
+        "key_documentum": "0900f230807a6d11"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I853",
+    "comune": "SORIANELLO",
+    "codice_catastale": "I853",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "03",
+        "data_delibera": "24-02-2025",
+        "data_pubblicazione": "11-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7861_DIMUNIC-03vv25i853d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a5652&nome=7861_DIMUNIC-03vv25i853d.pdf",
+        "key_documentum": "0900f230807a5652"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I854",
+    "comune": "SORIANO CALABRO",
+    "codice_catastale": "I854",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "02",
+        "data_delibera": "06-03-2025",
+        "data_pubblicazione": "24-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7633_DIMUNIC-03vv25i854d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807b68cc&nome=7633_DIMUNIC-03vv25i854d.pdf",
+        "key_documentum": "0900f230807b68cc"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I884",
+    "comune": "SPADOLA",
+    "codice_catastale": "I884",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "24-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5666_DIMUNIC-03vv25i884d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308076608c&nome=5666_DIMUNIC-03vv25i884d.pdf",
+        "key_documentum": "0900f2308076608c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I905",
+    "comune": "SPILINGA",
+    "codice_catastale": "I905",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6736_DIMUNIC-03vv25i905d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797987&nome=6736_DIMUNIC-03vv25i905d.pdf",
+        "key_documentum": "0900f23080797987"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=I945",
+    "comune": "STEFANACONI",
+    "codice_catastale": "I945",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "11-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5470_DIMUNIC-03vv25i945d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077d254&nome=5470_DIMUNIC-03vv25i945d.pdf",
+        "key_documentum": "0900f2308077d254"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=L452",
+    "comune": "TROPEA",
+    "codice_catastale": "L452",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "177",
+        "data_delibera": "17-12-2024",
+        "data_pubblicazione": "27-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4809_DIMUNIC-03vv25l452d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080796033&nome=4809_DIMUNIC-03vv25l452d.pdf",
+        "key_documentum": "0900f23080796033"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=L607",
+    "comune": "VALLELONGA",
+    "codice_catastale": "L607",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "02",
+        "data_delibera": "28-03-2025",
+        "data_pubblicazione": "12-05-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "8682_DIMUNIC-03vv25l607d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807f45df&nome=8682_DIMUNIC-03vv25l607d.pdf",
+        "key_documentum": "0900f230807f45df"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "02",
+        "data_delibera": "28-03-2025",
+        "data_pubblicazione": "01-07-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "10283_DIMUNIC-03vv25l607d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308088641b&nome=10283_DIMUNIC-03vv25l607d.pdf",
+        "key_documentum": "0900f2308088641b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=L699",
+    "comune": "VAZZANO",
+    "codice_catastale": "L699",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "12",
+        "data_delibera": "20-02-2025",
+        "data_pubblicazione": "20-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7972_DIMUNIC-03vv25l699d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308078bd2e&nome=7972_DIMUNIC-03vv25l699d.pdf",
+        "key_documentum": "0900f2308078bd2e"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=F537",
+    "comune": "VIBO VALENTIA",
+    "codice_catastale": "F537",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "79",
+        "data_delibera": "12-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1219_DIMUNIC-03vv25f537d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074fb3a&nome=1219_DIMUNIC-03vv25f537d.pdf",
+        "key_documentum": "0900f2308074fb3a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=M138",
+    "comune": "ZACCANOPOLI",
+    "codice_catastale": "M138",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "5",
+        "data_delibera": "23-01-2025",
+        "data_pubblicazione": "31-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4443_DIMUNIC-03vv25m138d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080770702&nome=4443_DIMUNIC-03vv25m138d.pdf",
+        "key_documentum": "0900f23080770702"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=M143",
+    "comune": "ZAMBRONE",
+    "codice_catastale": "M143",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "21-02-2025",
+        "data_pubblicazione": "25-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7612_DIMUNIC-03vv25m143d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080790e45&nome=7612_DIMUNIC-03vv25m143d.pdf",
+        "key_documentum": "0900f23080790e45"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=calabria.htm&cm=&pr=VV&anno=2025&cc=M204",
+    "comune": "ZUNGRI",
+    "codice_catastale": "M204",
+    "provincia": "VV",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "11-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "416_DIMUNIC-03vv25m204d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077e53d&nome=416_DIMUNIC-03vv25m204d.pdf",
+        "key_documentum": "0900f2308077e53d"
+      }
+    ]
+  }
+]

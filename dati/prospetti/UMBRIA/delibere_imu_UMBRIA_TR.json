@@ -1,0 +1,695 @@
+[
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=A045",
+    "comune": "ACQUASPARTA",
+    "codice_catastale": "A045",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "67",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7748_DIMUNIC-18tr25a045d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080797554&nome=7748_DIMUNIC-18tr25a045d.pdf",
+        "key_documentum": "0900f23080797554"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "02",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "8741_DIMUNIC-18tr25a045d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807987ce&nome=8741_DIMUNIC-18tr25a045d.pdf",
+        "key_documentum": "0900f230807987ce"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=A207",
+    "comune": "ALLERONA",
+    "codice_catastale": "A207",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7905_DIMUNIC-18tr25a207d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807979ab&nome=7905_DIMUNIC-18tr25a207d.pdf",
+        "key_documentum": "0900f230807979ab"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=A242",
+    "comune": "ALVIANO",
+    "codice_catastale": "A242",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "9",
+        "data_delibera": "26-02-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7845_DIMUNIC-18tr25a242d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080795ef9&nome=7845_DIMUNIC-18tr25a242d.pdf",
+        "key_documentum": "0900f23080795ef9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=A262",
+    "comune": "AMELIA",
+    "codice_catastale": "A262",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7910_DIMUNIC-18tr25a262d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a5d54&nome=7910_DIMUNIC-18tr25a262d.pdf",
+        "key_documentum": "0900f230807a5d54"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=A439",
+    "comune": "ARRONE",
+    "codice_catastale": "A439",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "21-11-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2547_DIMUNIC-18tr25a439d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f719&nome=2547_DIMUNIC-18tr25a439d.pdf",
+        "key_documentum": "0900f2308074f719"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "49",
+        "data_delibera": "27-11-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "6762_DIMUNIC-18tr25a439d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080750126&nome=6762_DIMUNIC-18tr25a439d.pdf",
+        "key_documentum": "0900f23080750126"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=A490",
+    "comune": "ATTIGLIANO",
+    "codice_catastale": "A490",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "33",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "10-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5624_DIMUNIC-18tr25a490d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808ee6fc&nome=5624_DIMUNIC-18tr25a490d.pdf",
+        "key_documentum": "0900f230808ee6fc"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=M258",
+    "comune": "AVIGLIANO UMBRO",
+    "codice_catastale": "M258",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "51",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "04-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2726_DIMUNIC-18tr25m258d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080775044&nome=2726_DIMUNIC-18tr25m258d.pdf",
+        "key_documentum": "0900f23080775044"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=A691",
+    "comune": "BASCHI",
+    "codice_catastale": "A691",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "50",
+        "data_delibera": "29-11-2024",
+        "data_pubblicazione": "09-12-2024",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2613_DIMUNIC-18tr25a691d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308072cbcb&nome=2613_DIMUNIC-18tr25a691d.pdf",
+        "key_documentum": "0900f2308072cbcb"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=B446",
+    "comune": "CALVI DELL'UMBRIA",
+    "codice_catastale": "B446",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "42",
+        "data_delibera": "18-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2629_DIMUNIC-18tr25b446d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308074f332&nome=2629_DIMUNIC-18tr25b446d.pdf",
+        "key_documentum": "0900f2308074f332"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=C117",
+    "comune": "CASTEL GIORGIO",
+    "codice_catastale": "C117",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "27",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "11-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1810_DIMUNIC-18tr25c117d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077d874&nome=1810_DIMUNIC-18tr25c117d.pdf",
+        "key_documentum": "0900f2308077d874"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=C289",
+    "comune": "CASTEL VISCARDO",
+    "codice_catastale": "C289",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "28-02-2025",
+        "data_pubblicazione": "03-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7846_DIMUNIC-18tr25c289d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080798622&nome=7846_DIMUNIC-18tr25c289d.pdf",
+        "key_documentum": "0900f23080798622"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=D454",
+    "comune": "FABRO",
+    "codice_catastale": "D454",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "3",
+        "data_delibera": "31-01-2025",
+        "data_pubblicazione": "28-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6253_DIMUNIC-18tr25d454d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807963a9&nome=6253_DIMUNIC-18tr25d454d.pdf",
+        "key_documentum": "0900f230807963a9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=D538",
+    "comune": "FERENTILLO",
+    "codice_catastale": "D538",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "06-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5782_DIMUNIC-18tr25d538d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308094fda9&nome=5782_DIMUNIC-18tr25d538d.pdf",
+        "key_documentum": "0900f2308094fda9"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "36",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "06-10-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "11662_DIMUNIC-18tr25d538d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230809509d5&nome=11662_DIMUNIC-18tr25d538d.pdf",
+        "key_documentum": "0900f230809509d5"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=D570",
+    "comune": "FICULLE",
+    "codice_catastale": "D570",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "53",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "07-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2618_DIMUNIC-18tr25d570d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808dd70c&nome=2618_DIMUNIC-18tr25d570d.pdf",
+        "key_documentum": "0900f230808dd70c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=E045",
+    "comune": "GIOVE",
+    "codice_catastale": "E045",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "31",
+        "data_delibera": "08-11-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "630_DIMUNIC-18tr25e045d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a8834&nome=630_DIMUNIC-18tr25e045d.pdf",
+        "key_documentum": "0900f230807a8834"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=E241",
+    "comune": "GUARDEA",
+    "codice_catastale": "E241",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "59",
+        "data_delibera": "23-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "747_DIMUNIC-18tr25e241d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6ce1&nome=747_DIMUNIC-18tr25e241d.pdf",
+        "key_documentum": "0900f230807a6ce1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=E729",
+    "comune": "LUGNANO IN TEVERINA",
+    "codice_catastale": "E729",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "26-11-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1210_DIMUNIC-18tr25e729d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a6289&nome=1210_DIMUNIC-18tr25e729d.pdf",
+        "key_documentum": "0900f230807a6289"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=F457",
+    "comune": "MONTECASTRILLI",
+    "codice_catastale": "F457",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "24",
+        "data_delibera": "15-09-2025",
+        "data_pubblicazione": "16-09-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11208_DIMUNIC-18tr25f457d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808f4f4c&nome=11208_DIMUNIC-18tr25f457d.pdf",
+        "key_documentum": "0900f230808f4f4c"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=F462",
+    "comune": "MONTECCHIO",
+    "codice_catastale": "F462",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "38",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6902_DIMUNIC-18tr25f462d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807825bf&nome=6902_DIMUNIC-18tr25f462d.pdf",
+        "key_documentum": "0900f230807825bf"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=F510",
+    "comune": "MONTEFRANCO",
+    "codice_catastale": "F510",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "24-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5968_DIMUNIC-18tr25f510d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807902e0&nome=5968_DIMUNIC-18tr25f510d.pdf",
+        "key_documentum": "0900f230807902e0"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "26-05-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "9781_DIMUNIC-18tr25f510d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308080d92e&nome=9781_DIMUNIC-18tr25f510d.pdf",
+        "key_documentum": "0900f2308080d92e"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "04-12-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE DATI PROSPETTO",
+        "nome_prospetto": "15378_DIMUNIC-18tr25f510d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080ab4d23&nome=15378_DIMUNIC-18tr25f510d.pdf",
+        "key_documentum": "0900f23080ab4d23"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=F513",
+    "comune": "MONTEGABBIONE",
+    "codice_catastale": "F513",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "28-12-2024",
+        "data_pubblicazione": "08-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3400_DIMUNIC-18tr25f513d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080750975&nome=3400_DIMUNIC-18tr25f513d.pdf",
+        "key_documentum": "0900f23080750975"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=F543",
+    "comune": "MONTELEONE D'ORVIETO",
+    "codice_catastale": "F543",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "48",
+        "data_delibera": "27-12-2024",
+        "data_pubblicazione": "18-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4197_DIMUNIC-18tr25f543d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080787a30&nome=4197_DIMUNIC-18tr25f543d.pdf",
+        "key_documentum": "0900f23080787a30"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=F844",
+    "comune": "NARNI",
+    "codice_catastale": "F844",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "65",
+        "data_delibera": "19-12-2024",
+        "data_pubblicazione": "03-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2489_DIMUNIC-18tr25f844d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077337b&nome=2489_DIMUNIC-18tr25f844d.pdf",
+        "key_documentum": "0900f2308077337b"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=G148",
+    "comune": "ORVIETO",
+    "codice_catastale": "G148",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "77",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "14-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "1920_DIMUNIC-18tr25g148d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807837c3&nome=1920_DIMUNIC-18tr25g148d.pdf",
+        "key_documentum": "0900f230807837c3"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=G189",
+    "comune": "OTRICOLI",
+    "codice_catastale": "G189",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "35",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "13-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "6491_DIMUNIC-18tr25g189d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a7a12&nome=6491_DIMUNIC-18tr25g189d.pdf",
+        "key_documentum": "0900f230807a7a12"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=G344",
+    "comune": "PARRANO",
+    "codice_catastale": "G344",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "28",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "04-08-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2530_DIMUNIC-18tr25g344d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230808dace8&nome=2530_DIMUNIC-18tr25g344d.pdf",
+        "key_documentum": "0900f230808dace8"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=G432",
+    "comune": "PENNA IN TEVERINA",
+    "codice_catastale": "G432",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "34",
+        "data_delibera": "07-11-2024",
+        "data_pubblicazione": "13-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "7796_DIMUNIC-18tr25g432d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807811e2&nome=7796_DIMUNIC-18tr25g432d.pdf",
+        "key_documentum": "0900f230807811e2"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=G790",
+    "comune": "POLINO",
+    "codice_catastale": "G790",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "00",
+        "data_delibera": "01-02-2025",
+        "data_pubblicazione": "14-10-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "11852_DIMUNIC-18tr25g790d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230809cf75a&nome=11852_DIMUNIC-18tr25g790d.pdf",
+        "key_documentum": "0900f230809cf75a"
+      },
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "10",
+        "data_delibera": "27-02-2025",
+        "data_pubblicazione": "31-10-2025",
+        "codice_tributo": "IMU",
+        "note": "ERRATA CORRIGE PER CORREZIONE ESTREMI DELIBERA",
+        "nome_prospetto": "12164_DIMUNIC-18tr25g790d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080a8817a&nome=12164_DIMUNIC-18tr25g790d.pdf",
+        "key_documentum": "0900f23080a8817a"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=G881",
+    "comune": "PORANO",
+    "codice_catastale": "G881",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "46",
+        "data_delibera": "20-12-2024",
+        "data_pubblicazione": "11-02-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "4430_DIMUNIC-18tr25g881d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f2308077dba4&nome=4430_DIMUNIC-18tr25g881d.pdf",
+        "key_documentum": "0900f2308077dba4"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=H857",
+    "comune": "SAN GEMINI",
+    "codice_catastale": "H857",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "2",
+        "data_delibera": "16-01-2025",
+        "data_pubblicazione": "22-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "5883_DIMUNIC-18tr25h857d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080762ea9&nome=5883_DIMUNIC-18tr25h857d.pdf",
+        "key_documentum": "0900f23080762ea9"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=I381",
+    "comune": "SAN VENANZO",
+    "codice_catastale": "I381",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "52",
+        "data_delibera": "21-12-2024",
+        "data_pubblicazione": "27-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "2323_DIMUNIC-18tr25i381d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f23080769d72&nome=2323_DIMUNIC-18tr25i381d.pdf",
+        "key_documentum": "0900f23080769d72"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=I981",
+    "comune": "STRONCONE",
+    "codice_catastale": "I981",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "56",
+        "data_delibera": "30-12-2024",
+        "data_pubblicazione": "14-01-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "3533_DIMUNIC-18tr25i981d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807566d1&nome=3533_DIMUNIC-18tr25i981d.pdf",
+        "key_documentum": "0900f230807566d1"
+      }
+    ]
+  },
+  {
+    "url_pagina": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/risultato.htm?lista=1&r=1&pagina=umbria.htm&cm=&pr=TR&anno=2025&cc=L117",
+    "comune": "TERNI",
+    "codice_catastale": "L117",
+    "provincia": "TR",
+    "delibere": [
+      {
+        "anno_riferimento": 2025,
+        "num_delibera": "232",
+        "data_delibera": "03-12-2024",
+        "data_pubblicazione": "12-03-2025",
+        "codice_tributo": "IMU",
+        "note": "",
+        "nome_prospetto": "661_DIMUNIC-18tr25l117d.pdf",
+        "link_prospetto": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_imu/download_lib.php?key=0900f230807a66f0&nome=661_DIMUNIC-18tr25l117d.pdf",
+        "key_documentum": "0900f230807a66f0"
+      }
+    ]
+  }
+]
