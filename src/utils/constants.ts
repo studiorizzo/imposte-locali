@@ -3,7 +3,7 @@
  * Fonte: L. 160/2019, art. 1, cc. 739-783
  */
 
-import type { CategoriaCatastale } from '../types';
+import type { CategoriaCatastale, FattispeciePrincipale } from '../types';
 
 // Coefficienti moltiplicatori per categoria catastale (art. 1, c. 745)
 export const COEFFICIENTI: Record<CategoriaCatastale, number> = {
@@ -38,27 +38,29 @@ export const RIVALUTAZIONE_TERRENI = 1.25;  // 25%
 // Coefficiente rivalutazione rendite catastali (art. 1, c. 745)
 export const RIVALUTAZIONE_RENDITA = 1.05;  // 5%
 
-// Aliquote base 2025 (art. 1, cc. 748-754)
-export const ALIQUOTE_BASE = {
-  abitazionePrincipale: 0.50,   // c. 748 (A/1, A/8, A/9)
-  fabbricatiRurali: 0.10,       // c. 750
-  terreniAgricoli: 0.76,        // c. 752
-  gruppoD: 0.86,                // c. 753
-  altriFabbricati: 0.86,        // c. 754
-  areeFabbricabili: 0.86,       // c. 754
+// Aliquote base 2025 per fattispecie principale (art. 1, cc. 748-754)
+export const ALIQUOTE_BASE: Record<FattispeciePrincipale, number> = {
+  abitazione_principale_lusso: 0.50,    // c. 748 (A/1, A/8, A/9)
+  pertinenze: 0.50,                     // c. 748 (stessa aliquota abitazione principale)
+  fabbricati_rurali_strumentali: 0.10,  // c. 750 (D/10)
+  terreni_agricoli: 0.76,               // c. 752
+  fabbricati_gruppo_d: 0.86,            // c. 753 (D/1-D/9)
+  altri_fabbricati: 0.86,               // c. 754
+  aree_fabbricabili: 0.86,              // c. 754
 };
 
 // Alias per compatibilità
 export const ALIQUOTE_BASE_2025 = ALIQUOTE_BASE;
 
-// Aliquote massime
-export const ALIQUOTE_MAX = {
-  abitazionePrincipale: 0.60,   // c. 748
-  fabbricatiRurali: 0.10,       // c. 750 (non aumentabile)
-  terreniAgricoli: 1.06,        // c. 752
-  gruppoD: 1.14,                // c. 753
-  altriFabbricati: 1.14,        // c. 754
-  areeFabbricabili: 1.14,       // c. 754
+// Aliquote massime per fattispecie principale
+export const ALIQUOTE_MAX: Record<FattispeciePrincipale, number> = {
+  abitazione_principale_lusso: 0.60,    // c. 748
+  pertinenze: 0.60,                     // c. 748 (stessa aliquota abitazione principale)
+  fabbricati_rurali_strumentali: 0.10,  // c. 750 (non aumentabile)
+  terreni_agricoli: 1.06,               // c. 752
+  fabbricati_gruppo_d: 1.14,            // c. 753
+  altri_fabbricati: 1.14,               // c. 754
+  aree_fabbricabili: 1.14,              // c. 754
 };
 
 // Quota Stato per gruppo D (art. 1, c. 753)
@@ -67,15 +69,31 @@ export const QUOTA_STATO_GRUPPO_D = 0.76;  // 0.76%
 // Detrazione abitazione principale (art. 1, c. 749)
 export const DETRAZIONE_ABITAZIONE_PRINCIPALE = 200;  // €200
 
-// Categorie abitazione principale tassabili (non esenti)
-export const CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI: CategoriaCatastale[] = [
-  'A/1',  // Abitazioni signorili
-  'A/8',  // Ville
-  'A/9',  // Castelli/palazzi storici
-];
+// Categorie per fattispecie principale
+export const CATEGORIE_PER_FATTISPECIE: Record<FattispeciePrincipale, CategoriaCatastale[] | null> = {
+  abitazione_principale_lusso: ['A/1', 'A/8', 'A/9'],
+  pertinenze: ['C/2', 'C/6', 'C/7'],
+  fabbricati_rurali_strumentali: ['D/10'],
+  fabbricati_gruppo_d: ['D/1', 'D/2', 'D/3', 'D/4', 'D/5', 'D/6', 'D/7', 'D/8', 'D/9'],
+  terreni_agricoli: null,      // usa reddito dominicale
+  aree_fabbricabili: null,     // usa valore venale
+  altri_fabbricati: null,      // tutte le altre categorie
+};
 
-// Categorie pertinenze
-export const CATEGORIE_PERTINENZE: CategoriaCatastale[] = ['C/2', 'C/6', 'C/7'];
+// Labels per fattispecie principale (UI)
+export const FATTISPECIE_LABELS: Record<FattispeciePrincipale, string> = {
+  abitazione_principale_lusso: 'Abitazione Principale',
+  pertinenze: 'Pertinenza Abitazione Principale',
+  fabbricati_rurali_strumentali: 'Fabbricato Rurale Strumentale',
+  fabbricati_gruppo_d: 'Fabbricato Gruppo D',
+  terreni_agricoli: 'Terreno Agricolo',
+  aree_fabbricabili: 'Area Fabbricabile',
+  altri_fabbricati: 'Altro Fabbricato',
+};
+
+// Alias per retrocompatibilità
+export const CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI = CATEGORIE_PER_FATTISPECIE.abitazione_principale_lusso!;
+export const CATEGORIE_PERTINENZE = CATEGORIE_PER_FATTISPECIE.pertinenze!;
 
 // Codici tributo F24
 export const CODICI_TRIBUTO = {

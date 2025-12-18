@@ -2,8 +2,8 @@ import { useState, useMemo, useEffect } from 'react';
 import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button, Autocomplete } from '../ui';
 import { AliquotePanel } from './AliquotePanel';
 import { ListaImmobili } from './ListaImmobili';
-import type { DatiImmobile, TipoImmobile, CategoriaCatastale, Comune, Prospetto } from '@lib';
-import { COEFFICIENTI, ALIQUOTE_BASE_2025, COMUNI } from '@lib';
+import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_BASE, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI } from '@lib';
 import { useProspetto } from '../../hooks';
 
 interface ImmobiliStepProps {
@@ -12,14 +12,15 @@ interface ImmobiliStepProps {
   onRemoveImmobile: (id: string) => void;
 }
 
-const TIPI_IMMOBILE: { value: TipoImmobile; label: string }[] = [
-  { value: 'abitazione_principale', label: 'Abitazione Principale' },
-  { value: 'pertinenza', label: 'Pertinenza Abitazione Principale' },
-  { value: 'fabbricato_rurale', label: 'Fabbricato Rurale Strumentale' },
-  { value: 'fabbricato_gruppo_d', label: 'Fabbricato Gruppo D' },
-  { value: 'terreno_agricolo', label: 'Terreno Agricolo' },
-  { value: 'area_fabbricabile', label: 'Area Fabbricabile' },
-  { value: 'altro_fabbricato', label: 'Altro Fabbricato' },
+// Lista fattispecie per il select
+const FATTISPECIE_OPTIONS: { value: FattispeciePrincipale; label: string }[] = [
+  { value: 'abitazione_principale_lusso', label: FATTISPECIE_LABELS.abitazione_principale_lusso },
+  { value: 'pertinenze', label: FATTISPECIE_LABELS.pertinenze },
+  { value: 'fabbricati_rurali_strumentali', label: FATTISPECIE_LABELS.fabbricati_rurali_strumentali },
+  { value: 'fabbricati_gruppo_d', label: FATTISPECIE_LABELS.fabbricati_gruppo_d },
+  { value: 'terreni_agricoli', label: FATTISPECIE_LABELS.terreni_agricoli },
+  { value: 'aree_fabbricabili', label: FATTISPECIE_LABELS.aree_fabbricabili },
+  { value: 'altri_fabbricati', label: FATTISPECIE_LABELS.altri_fabbricati },
 ];
 
 const CATEGORIE_OPTIONS = Object.keys(COEFFICIENTI).map((cat) => ({
@@ -27,60 +28,29 @@ const CATEGORIE_OPTIONS = Object.keys(COEFFICIENTI).map((cat) => ({
   label: cat,
 }));
 
-const CATEGORIE_ABITAZIONE_PRINCIPALE_LUSSO = ['A/1', 'A/8', 'A/9'];
-const CATEGORIE_PERTINENZA = ['C/2', 'C/6', 'C/7'];
-const CATEGORIE_GRUPPO_D = ['D/1', 'D/2', 'D/3', 'D/4', 'D/5', 'D/6', 'D/7', 'D/8', 'D/9'];
-const CATEGORIE_FABBRICATO_RURALE = ['D/10'];
-
-const getCategoriePerTipo = (tipo: TipoImmobile) => {
-  switch (tipo) {
-    case 'abitazione_principale':
-      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_ABITAZIONE_PRINCIPALE_LUSSO.includes(opt.value));
-    case 'pertinenza':
-      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_PERTINENZA.includes(opt.value));
-    case 'fabbricato_gruppo_d':
-      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_GRUPPO_D.includes(opt.value));
-    case 'fabbricato_rurale':
-      return CATEGORIE_OPTIONS.filter(opt => CATEGORIE_FABBRICATO_RURALE.includes(opt.value));
-    default:
-      return CATEGORIE_OPTIONS;
+// Restituisce le categorie valide per una fattispecie
+const getCategoriePerFattispecie = (fattispecie: FattispeciePrincipale) => {
+  const categorie = CATEGORIE_PER_FATTISPECIE[fattispecie];
+  if (categorie === null) {
+    // altri_fabbricati accetta tutte le categorie
+    return CATEGORIE_OPTIONS;
   }
+  return CATEGORIE_OPTIONS.filter(opt => categorie.includes(opt.value as CategoriaCatastale));
 };
 
-const getDefaultAliquota = (tipo: TipoImmobile): number => {
-  switch (tipo) {
-    case 'abitazione_principale':
-      return ALIQUOTE_BASE_2025.abitazionePrincipale;
-    case 'fabbricato_gruppo_d':
-      return ALIQUOTE_BASE_2025.gruppoD;
-    case 'fabbricato_rurale':
-      return ALIQUOTE_BASE_2025.fabbricatiRurali;
-    case 'terreno_agricolo':
-      return ALIQUOTE_BASE_2025.terreniAgricoli;
-    case 'area_fabbricabile':
-      return ALIQUOTE_BASE_2025.areeFabbricabili;
-    default:
-      return ALIQUOTE_BASE_2025.altriFabbricati;
-  }
+// Restituisce l'aliquota base ministeriale per una fattispecie
+const getDefaultAliquota = (fattispecie: FattispeciePrincipale): number => {
+  return ALIQUOTE_BASE[fattispecie];
 };
 
-const TIPO_TO_FATTISPECIE: Record<TipoImmobile, string> = {
-  abitazione_principale: 'abitazione_principale_lusso',
-  pertinenza: 'altri_fabbricati',
-  fabbricato_rurale: 'fabbricati_rurali_strumentali',
-  fabbricato_gruppo_d: 'fabbricati_gruppo_d',
-  terreno_agricolo: 'terreni_agricoli',
-  area_fabbricabile: 'aree_fabbricabili',
-  altro_fabbricato: 'altri_fabbricati',
-};
+// Cerca l'aliquota nel prospetto comunale per una fattispecie
+const getAliquotaDaProspetto = (prospetto: Prospetto | null, fattispecie: FattispeciePrincipale): number | null => {
+  if (!prospetto || !fattispecie) return null;
 
-const getAliquotaDaProspetto = (prospetto: Prospetto | null, tipo: TipoImmobile): number | null => {
-  if (!prospetto || !tipo) return null;
+  // Per le pertinenze, cerca abitazione_principale_lusso (stessa aliquota)
+  const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale_lusso' : fattispecie;
 
-  const fattispecie = TIPO_TO_FATTISPECIE[tipo];
-  if (!fattispecie) return null;
-
-  const aliquotaBase = prospetto.aliquote_base.find(a => a.fattispecie_principale === fattispecie);
+  const aliquotaBase = prospetto.aliquote_base.find(a => a.fattispecie_principale === fattispcieDaCercare);
   if (!aliquotaBase || typeof aliquotaBase.aliquota !== 'string') return null;
 
   const match = aliquotaBase.aliquota.match(/(\d+)[,.](\d+)/);
@@ -99,7 +69,7 @@ const createEmptyImmobile = (): DatiImmobile => ({
     codice_catastale: '',
     label: '',
   },
-  tipo: '' as TipoImmobile,
+  fattispecie_principale: '' as FattispeciePrincipale,
   categoria: '' as CategoriaCatastale,
   renditaCatastale: 0,
   percentualePossesso: 100,
@@ -146,11 +116,11 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
     []
   );
 
-  // Aggiorna aliquote quando prospetto cambia o tipo immobile cambia
+  // Aggiorna aliquote quando prospetto cambia o fattispecie immobile cambia
   useEffect(() => {
-    if (!immobile.tipo) return;
+    if (!immobile.fattispecie_principale) return;
 
-    const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, immobile.tipo);
+    const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, immobile.fattispecie_principale);
 
     if (aliquotaDaProspetto !== null) {
       setImmobile(prev => ({
@@ -159,7 +129,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
         aliquotaSaldo: aliquotaDaProspetto,
       }));
     } else {
-      const aliquotaMinisteriale = getDefaultAliquota(immobile.tipo);
+      const aliquotaMinisteriale = getDefaultAliquota(immobile.fattispecie_principale);
       setImmobile(prev => ({
         ...prev,
         aliquotaAcconto: aliquotaMinisteriale,
@@ -168,7 +138,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
     }
     // Reset aliquota personalizzata selezionata
     setAliquotaPersonalizzataSelezionata(null);
-  }, [prospetto, immobile.tipo]);
+  }, [prospetto, immobile.fattispecie_principale]);
 
   const handleComuneChange = (option: (typeof comuniOptions)[number] | null) => {
     const emptyImmobile = createEmptyImmobile();
@@ -196,14 +166,14 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
     setImmobile((prev) => {
       const updated = { ...prev, [field]: value };
 
-      if (field === 'tipo') {
-        const newTipo = value as TipoImmobile;
-        const defaultAliquota = getDefaultAliquota(newTipo);
+      if (field === 'fattispecie_principale') {
+        const newFattispecie = value as FattispeciePrincipale;
+        const defaultAliquota = getDefaultAliquota(newFattispecie);
         updated.aliquotaAcconto = defaultAliquota;
         updated.aliquotaSaldo = defaultAliquota;
 
         if (prev.categoria) {
-          const categorieValide = getCategoriePerTipo(newTipo);
+          const categorieValide = getCategoriePerFattispecie(newFattispecie);
           if (!categorieValide.some(opt => opt.value === prev.categoria)) {
             updated.categoria = '' as CategoriaCatastale;
           }
@@ -240,9 +210,9 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
     setAliquotaPersonalizzataSelezionata(null);
   };
 
-  const isTerreno = immobile.tipo === 'terreno_agricolo';
-  const isArea = immobile.tipo === 'area_fabbricabile';
-  const showCategoria = immobile.tipo && !isTerreno && !isArea;
+  const isTerreno = immobile.fattispecie_principale === 'terreni_agricoli';
+  const isArea = immobile.fattispecie_principale === 'aree_fabbricabili';
+  const showCategoria = immobile.fattispecie_principale && !isTerreno && !isArea;
 
   return (
     <div className="space-y-6">
@@ -298,14 +268,14 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
                   )}
                 </div>
 
-                {/* Tipo e Categoria */}
+                {/* Fattispecie e Categoria */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Select
                     label="Tipologia"
                     placeholder="Seleziona tipologia"
-                    value={immobile.tipo}
-                    onChange={(e) => handleChange('tipo', e.target.value as TipoImmobile)}
-                    options={TIPI_IMMOBILE}
+                    value={immobile.fattispecie_principale}
+                    onChange={(e) => handleChange('fattispecie_principale', e.target.value as FattispeciePrincipale)}
+                    options={FATTISPECIE_OPTIONS}
                   />
                   {showCategoria && (
                     <Select
@@ -313,7 +283,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
                       placeholder="Seleziona categoria"
                       value={immobile.categoria}
                       onChange={(e) => handleChange('categoria', e.target.value as CategoriaCatastale)}
-                      options={getCategoriePerTipo(immobile.tipo)}
+                      options={getCategoriePerFattispecie(immobile.fattispecie_principale)}
                     />
                   )}
                 </div>
@@ -499,7 +469,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
         <AliquotePanel
           prospetto={prospetto}
           categoria={immobile.categoria}
-          tipo={immobile.tipo}
+          fattispecie={immobile.fattispecie_principale}
           aliquotaAcconto={immobile.aliquotaAcconto}
           aliquotaSaldo={immobile.aliquotaSaldo}
           onAliquotaAccontoChange={(value) => setImmobile(prev => ({ ...prev, aliquotaAcconto: value }))}

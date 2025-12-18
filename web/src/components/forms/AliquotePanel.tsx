@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { Card, CardHeader, CardContent, Input } from '../ui';
-import type { Prospetto, AliquotaPersonalizzata, CategoriaCatastale, TipoImmobile } from '@lib';
+import type { Prospetto, AliquotaPersonalizzata, CategoriaCatastale, FattispeciePrincipale } from '@lib';
 
 interface AliquotePanelProps {
   prospetto: Prospetto | null;
   categoria: CategoriaCatastale | '';
-  tipo: TipoImmobile | '';
+  fattispecie: FattispeciePrincipale | '';
   aliquotaAcconto: number;
   aliquotaSaldo: number;
   onAliquotaAccontoChange: (value: number) => void;
@@ -33,17 +33,6 @@ const LABEL_CAMPI: Record<string, string> = {
   dipendenti: 'Dipendenti',
   collocazione: 'Collocazione',
   destinazione_uso: "Destinazione d'uso",
-};
-
-// Mappa tipo immobile → fattispecie prospetto
-const TIPO_TO_FATTISPECIE: Record<TipoImmobile, string[]> = {
-  abitazione_principale: ['abitazione_principale', 'abitazione_principale_lusso'],
-  pertinenza: ['pertinenze', 'altri_fabbricati'],
-  fabbricato_rurale: ['fabbricati_rurali_strumentali', 'fabbricati_rurali'],
-  fabbricato_gruppo_d: ['fabbricati_gruppo_d', 'immobili_produttivi'],
-  terreno_agricolo: ['terreni_agricoli'],
-  area_fabbricabile: ['aree_fabbricabili'],
-  altro_fabbricato: ['altri_fabbricati', 'altri_immobili'],
 };
 
 // Genera un ID univoco per l'aliquota personalizzata
@@ -75,7 +64,7 @@ function matchCategoria(pattern: string, categoria: string): boolean {
 export function AliquotePanel({
   prospetto,
   categoria,
-  tipo,
+  fattispecie,
   aliquotaAcconto,
   aliquotaSaldo,
   onAliquotaAccontoChange,
@@ -83,29 +72,28 @@ export function AliquotePanel({
   aliquotaPersonalizzataSelezionata,
   onSelectAliquotaPersonalizzata,
 }: AliquotePanelProps) {
-  // Filtra aliquote personalizzate per categoria catastale e tipo
+  // Filtra aliquote personalizzate per fattispecie E categoria catastale
   const aliquotePersonalizzate = useMemo(() => {
-    if (!prospetto || !categoria || !tipo) return [];
+    if (!prospetto || !categoria || !fattispecie) return [];
 
-    const fattispecie = TIPO_TO_FATTISPECIE[tipo] || [];
+    // Per le pertinenze, cerca anche abitazione_principale_lusso (stessa aliquota)
+    const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale_lusso' : fattispecie;
 
     return prospetto.aliquote_personalizzate.filter((ap) => {
-      // Verifica fattispecie_principale
-      const fattispMatch = fattispecie.some(f =>
-        ap.fattispecie_principale.toLowerCase().includes(f.toLowerCase())
-      );
+      // 1. La fattispecie DEVE corrispondere esattamente
+      if (ap.fattispecie_principale !== fattispcieDaCercare) return false;
 
-      // Se ha categoria_catastale, deve corrispondere
+      // 2. Se ha categoria_catastale, deve corrispondere
       if (ap.categoria_catastale) {
         return matchCategoria(ap.categoria_catastale, categoria);
       }
 
-      // Se non ha categoria_catastale, mostra solo se fattispecie corrisponde
-      return fattispMatch;
+      // 3. Se non ha categoria_catastale, mostra (fattispecie già verificata)
+      return true;
     });
-  }, [prospetto, categoria, tipo]);
+  }, [prospetto, categoria, fattispecie]);
 
-  const showAliquote = tipo !== '';
+  const showAliquote = fattispecie !== '';
 
   if (!showAliquote) {
     return (

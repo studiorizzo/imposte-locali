@@ -1,6 +1,6 @@
 import { Card, CardContent, Button } from '../ui';
 import type { DatiImmobile } from '@lib';
-import { COEFFICIENTI, COEFFICIENTE_TERRENI } from '@lib';
+import { COEFFICIENTI, COEFFICIENTE_TERRENI, FATTISPECIE_LABELS } from '@lib';
 
 interface ListaImmobiliProps {
   immobili: DatiImmobile[];
@@ -14,17 +14,8 @@ const formatCurrency = (value: number): string => {
   }).format(value);
 };
 
-const getTipoLabel = (tipo: string): string => {
-  const labels: Record<string, string> = {
-    abitazione_principale: 'Abitazione Principale',
-    pertinenza: 'Pertinenza Abitazione Principale',
-    fabbricato_gruppo_d: 'Fabbricato Gruppo D',
-    fabbricato_rurale: 'Fabbricato Rurale Strumentale',
-    terreno_agricolo: 'Terreno Agricolo',
-    area_fabbricabile: 'Area Fabbricabile',
-    altro_fabbricato: 'Altro Fabbricato',
-  };
-  return labels[tipo] || tipo;
+const getFattspecieLabel = (fattispecie: string): string => {
+  return FATTISPECIE_LABELS[fattispecie as keyof typeof FATTISPECIE_LABELS] || fattispecie;
 };
 
 export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
@@ -60,8 +51,8 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
         Immobili inseriti ({immobili.length})
       </h3>
       {immobili.map((immobile) => {
-        const isTerreno = immobile.tipo === 'terreno_agricolo';
-        const isArea = immobile.tipo === 'area_fabbricabile';
+        const isTerreno = immobile.fattispecie_principale === 'terreni_agricoli';
+        const isArea = immobile.fattispecie_principale === 'aree_fabbricabili';
         const coefficiente = isTerreno
           ? COEFFICIENTE_TERRENI
           : COEFFICIENTI[immobile.categoria] || 0;
@@ -73,7 +64,7 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
-                      {getTipoLabel(immobile.tipo)}
+                      {getFattspecieLabel(immobile.fattispecie_principale)}
                     </span>
                     {!isTerreno && !isArea && (
                       <span className="text-sm text-gray-500">
