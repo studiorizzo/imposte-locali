@@ -11,6 +11,8 @@
     "declarationMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "lib": ["ES2022", "DOM"]
   },
   "include": ["src/**/*"],

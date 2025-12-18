@@ -14,6 +14,9 @@ export * from './types';
 // Costanti
 export * from './utils/constants';
 
+// Dati
+export { COMUNI, cercaComune, getComuneByCodice } from './data/comuni';
+
 // Funzioni di calcolo
 export {
   getCoeffciente,
