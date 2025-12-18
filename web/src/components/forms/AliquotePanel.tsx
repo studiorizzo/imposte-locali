@@ -38,7 +38,7 @@ const LABEL_CAMPI: Record<string, string> = {
 // Mappa tipo immobile → fattispecie prospetto
 const TIPO_TO_FATTISPECIE: Record<TipoImmobile, string[]> = {
   abitazione_principale: ['abitazione_principale', 'abitazione_principale_lusso'],
-  pertinenza: ['pertinenze', 'altri_fabbricati'],
+  pertinenza: ['pertinenze', 'pertinenza'],
   fabbricato_rurale: ['fabbricati_rurali_strumentali', 'fabbricati_rurali'],
   fabbricato_gruppo_d: ['fabbricati_gruppo_d', 'immobili_produttivi'],
   terreno_agricolo: ['terreni_agricoli'],
