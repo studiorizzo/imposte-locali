@@ -10,6 +10,16 @@ export type CategoriaGruppoC = 'C/1' | 'C/2' | 'C/3' | 'C/4' | 'C/5' | 'C/6' | '
 export type CategoriaGruppoD = 'D/1' | 'D/2' | 'D/3' | 'D/4' | 'D/5' | 'D/6' | 'D/7' | 'D/8' | 'D/9' | 'D/10';
 export type CategoriaCatastale = CategoriaGruppoA | CategoriaGruppoB | CategoriaGruppoC | CategoriaGruppoD;
 
+// Comune (da istat.json)
+export interface Comune {
+  comune: string;
+  regione: string;
+  provincia: string;
+  sigla_provincia: string;
+  codice_catastale: string;
+  label: string;                    // "codice_catastale - comune" per autocomplete
+}
+
 // Tipologie immobile
 export type TipoImmobile =
   | 'abitazione_principale'    // A/1, A/8, A/9 con residenza (categorie "di lusso" tassabili)
@@ -42,6 +52,7 @@ export interface Esenzioni {
 export interface DatiImmobile {
   id: string;
   descrizione?: string;
+  comune: Comune;                   // Comune dove si trova l'immobile
   tipo: TipoImmobile;
   categoria: CategoriaCatastale;
 
