@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardContent, Button } from './ui';
 import type { RiepilogoIMU, RisultatoCalcoloImmobile } from '@lib';
+import { FATTISPECIE_LABELS } from '@lib';
 
 interface RiepilogoCalcoloProps {
   riepilogo: RiepilogoIMU;
@@ -13,17 +14,8 @@ const formatCurrency = (value: number): string => {
   }).format(value);
 };
 
-const getTipoLabel = (tipo: string): string => {
-  const labels: Record<string, string> = {
-    abitazione_principale: 'Abitazione Principale',
-    pertinenza: 'Pertinenza Abitazione Principale',
-    fabbricato_gruppo_d: 'Fabbricato Gruppo D',
-    fabbricato_rurale: 'Fabbricato Rurale Strumentale',
-    terreno_agricolo: 'Terreno Agricolo',
-    area_fabbricabile: 'Area Fabbricabile',
-    altro_fabbricato: 'Altro Fabbricato',
-  };
-  return labels[tipo] || tipo;
+const getFattspecieLabel = (fattispecie: string): string => {
+  return FATTISPECIE_LABELS[fattispecie as keyof typeof FATTISPECIE_LABELS] || fattispecie;
 };
 
 function DettaglioImmobile({ risultato, index }: { risultato: RisultatoCalcoloImmobile; index: number }) {
@@ -34,8 +26,8 @@ function DettaglioImmobile({ risultato, index }: { risultato: RisultatoCalcoloIm
       <div className="flex justify-between items-start mb-3">
         <div>
           <span className="text-sm text-gray-500">Immobile #{index + 1}</span>
-          <h4 className="font-medium text-gray-900">{getTipoLabel(immobile.tipo)}</h4>
-          {immobile.tipo !== 'terreno_agricolo' && immobile.tipo !== 'area_fabbricabile' && (
+          <h4 className="font-medium text-gray-900">{getFattspecieLabel(immobile.fattispecie_principale)}</h4>
+          {immobile.fattispecie_principale !== 'terreni_agricoli' && immobile.fattispecie_principale !== 'aree_fabbricabili' && (
             <span className="text-sm text-gray-600">Cat. {immobile.categoria}</span>
           )}
         </div>

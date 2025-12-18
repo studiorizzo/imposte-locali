@@ -10,7 +10,7 @@ import type {
   RisultatoCalcoloImmobile,
   RiepilogoIMU,
   CategoriaCatastale,
-  TipoImmobile,
+  FattispeciePrincipale,
 } from '../types';
 
 import {
@@ -75,18 +75,18 @@ export function calcolaFattoreRiduzione(immobile: DatiImmobile): number {
 export function verificaEsenzione(
   immobile: DatiImmobile
 ): { esente: boolean; motivo?: string } {
-  const { esenzioni, tipo, categoria } = immobile;
+  const { esenzioni, fattispecie_principale, categoria } = immobile;
 
-  // Abitazione principale non di lusso
+  // Abitazione principale non di lusso (nota: abitazione_principale_lusso è già tassabile per definizione)
   if (
-    tipo === 'abitazione_principale' &&
+    fattispecie_principale === 'abitazione_principale_lusso' &&
     !CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI.includes(categoria)
   ) {
     return { esente: true, motivo: 'Abitazione principale (non A/1, A/8, A/9)' };
   }
 
   // Terreno CD/IAP
-  if (tipo === 'terreno_agricolo' && esenzioni.terrenoCdIap) {
+  if (fattispecie_principale === 'terreni_agricoli' && esenzioni.terrenoCdIap) {
     return { esente: true, motivo: 'Terreno agricolo CD/IAP' };
   }
 
@@ -223,25 +223,25 @@ export function calcolaQuoteGruppoD(
 }
 
 /**
- * Ottiene il codice tributo F24 per tipo immobile
+ * Ottiene il codice tributo F24 per fattispecie immobile
  */
 export function getCodiceTributo(
-  tipo: TipoImmobile,
+  fattispecie: FattispeciePrincipale,
   categoria: CategoriaCatastale
 ): { comune: string; stato?: string } {
   if (isGruppoD(categoria)) {
     return CODICI_TRIBUTO.gruppoD;
   }
 
-  switch (tipo) {
-    case 'abitazione_principale':
-    case 'pertinenza':
+  switch (fattispecie) {
+    case 'abitazione_principale_lusso':
+    case 'pertinenze':
       return CODICI_TRIBUTO.abitazionePrincipale;
-    case 'fabbricato_rurale':
+    case 'fabbricati_rurali_strumentali':
       return CODICI_TRIBUTO.fabbricatiRurali;
-    case 'terreno_agricolo':
+    case 'terreni_agricoli':
       return CODICI_TRIBUTO.terreni;
-    case 'area_fabbricabile':
+    case 'aree_fabbricabili':
       return CODICI_TRIBUTO.areeFabbricabili;
     default:
       return CODICI_TRIBUTO.altriFabbricati;
@@ -274,7 +274,7 @@ export function calcolaIMUImmobile(
   }
 
   const {
-    tipo,
+    fattispecie_principale,
     categoria,
     renditaCatastale,
     redditoDominicale,
@@ -288,18 +288,18 @@ export function calcolaIMUImmobile(
   } = immobile;
 
   const mesiTotali = mesiPrimoSemestre + mesiSecondoSemestre;
-  const coefficiente = tipo === 'terreno_agricolo'
+  const coefficiente = fattispecie_principale === 'terreni_agricoli'
     ? COEFFICIENTE_TERRENI
     : getCoeffciente(categoria);
 
   // Calcola base imponibile lorda
   let baseImponibileLorda = 0;
-  if (tipo === 'terreno_agricolo') {
+  if (fattispecie_principale === 'terreni_agricoli') {
     baseImponibileLorda = calcolaBaseImponibileTerreno(
       redditoDominicale ?? 0,
       percentualePossesso
     );
-  } else if (tipo === 'area_fabbricabile') {
+  } else if (fattispecie_principale === 'aree_fabbricabili') {
     baseImponibileLorda = calcolaBaseImponibileArea(
       valoreVenale ?? 0,
       percentualePossesso
@@ -341,7 +341,7 @@ export function calcolaIMUImmobile(
   // Detrazione per abitazione principale
   let detrazione: number | undefined;
   if (
-    tipo === 'abitazione_principale' &&
+    fattispecie_principale === 'abitazione_principale_lusso' &&
     CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI.includes(categoria)
   ) {
     detrazione = calcolaDetrazione(percentualePossesso, mesiTotali);
@@ -358,7 +358,7 @@ export function calcolaIMUImmobile(
   }
 
   // Codici tributo
-  const codici = getCodiceTributo(tipo, categoria);
+  const codici = getCodiceTributo(fattispecie_principale, categoria);
 
   return {
     immobile,
