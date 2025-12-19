@@ -8,29 +8,22 @@ interface StepIndicatorProps {
 
 export function StepIndicator({ steps, currentStep, onStepClick }: StepIndicatorProps) {
   return (
-    <nav aria-label="Progress" className="mb-8">
-      <ol className="flex items-center justify-between">
+    <nav aria-label="Progress" className="mb-8 flex justify-center">
+      <ol className="flex items-center gap-0">
         {steps.map((step, index) => {
           const isCompleted = index < currentStep;
           const isCurrent = index === currentStep;
           const isClickable = onStepClick && (isCompleted || isCurrent);
+          const isLastStep = index === steps.length - 1;
 
           return (
-            <li key={step.id} className="relative flex-1">
-              {index !== 0 && (
-                <div
-                  className={`absolute left-0 top-4 -ml-px h-0.5 w-full -translate-x-1/2 ${
-                    isCompleted ? 'bg-primary-600' : 'bg-gray-200'
-                  }`}
-                  aria-hidden="true"
-                />
-              )}
+            <li key={step.id} className="flex items-center">
               <button
                 type="button"
                 onClick={() => isClickable && onStepClick?.(index)}
                 disabled={!isClickable}
                 className={`
-                  group relative flex flex-col items-center
+                  group flex flex-col items-center
                   ${isClickable ? 'cursor-pointer' : 'cursor-default'}
                 `}
               >
@@ -68,6 +61,14 @@ export function StepIndicator({ steps, currentStep, onStepClick }: StepIndicator
                   {step.title}
                 </span>
               </button>
+              {!isLastStep && (
+                <div
+                  className={`h-0.5 w-16 mx-2 ${
+                    isCompleted ? 'bg-primary-600' : 'bg-gray-200'
+                  }`}
+                  aria-hidden="true"
+                />
+              )}
             </li>
           );
         })}
