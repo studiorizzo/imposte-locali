@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
-      <div className="max-w-4xl mx-auto px-4 py-4">
+      <div className="w-full px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="bg-primary-600 text-white p-2 rounded-lg">
