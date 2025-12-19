@@ -72,23 +72,23 @@ export function AliquotePanel({
   aliquotaPersonalizzataSelezionata,
   onSelectAliquotaPersonalizzata,
 }: AliquotePanelProps) {
-  // Filtra aliquote personalizzate per fattispecie E categoria catastale
+  // Filtra aliquote personalizzate per fattispecie e opzionalmente categoria
   const aliquotePersonalizzate = useMemo(() => {
-    if (!prospetto || !categoria || !fattispecie) return [];
+    if (!prospetto || !fattispecie) return [];
 
     // Per le pertinenze, cerca anche abitazione_principale_lusso (stessa aliquota)
     const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale_lusso' : fattispecie;
 
     return prospetto.aliquote_personalizzate.filter((ap) => {
-      // 1. La fattispecie DEVE corrispondere esattamente
+      // 1. Filtro su fattispecie (sempre richiesto)
       if (ap.fattispecie_principale !== fattispcieDaCercare) return false;
 
-      // 2. Se ha categoria_catastale, deve corrispondere
-      if (ap.categoria_catastale) {
+      // 2. Filtro su categoria (solo se entrambi valorizzati)
+      if (categoria && ap.categoria_catastale) {
         return matchCategoria(ap.categoria_catastale, categoria);
       }
 
-      // 3. Se non ha categoria_catastale, mostra (fattispecie già verificata)
+      // 3. Altrimenti mostra (utente senza categoria o aliquota senza categoria)
       return true;
     });
   }, [prospetto, categoria, fattispecie]);
@@ -142,7 +142,7 @@ export function AliquotePanel({
           </div>
 
           {/* Aliquote differenziate */}
-          {categoria && aliquotePersonalizzate.length > 0 && (
+          {aliquotePersonalizzate.length > 0 && (
             <div>
               <h3 className="text-sm font-medium text-gray-700 mb-3">
                 Aliquote differenziate
@@ -220,9 +220,9 @@ export function AliquotePanel({
             </div>
           )}
 
-          {categoria && aliquotePersonalizzate.length === 0 && prospetto && (
+          {aliquotePersonalizzate.length === 0 && prospetto && (
             <p className="text-gray-500 text-sm">
-              Nessuna aliquota differenziata per questa categoria
+              Nessuna aliquota differenziata per questa tipologia
             </p>
           )}
         </div>
