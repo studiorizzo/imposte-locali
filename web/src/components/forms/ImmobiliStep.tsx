@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button, Autocomplete } from '../ui';
+import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button, Autocomplete, Modal } from '../ui';
 import { AliquotePanel } from './AliquotePanel';
 import { ListaImmobili } from './ListaImmobili';
 import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto } from '@lib';
@@ -243,11 +243,6 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
               <p className="text-sm text-gray-500 mt-1">
                 Inserisci i dati catastali dell'immobile
               </p>
-              {erroreUnicita && (
-                <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-md">
-                  <p className="text-sm text-red-800">{erroreUnicita}</p>
-                </div>
-              )}
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -500,6 +495,15 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
         immobili={immobili}
         onRemove={onRemoveImmobile}
       />
+
+      {/* Modal errore unicità */}
+      <Modal
+        aperto={!!erroreUnicita}
+        onChiudi={() => setErroreUnicita(null)}
+        titolo="Errore"
+      >
+        {erroreUnicita}
+      </Modal>
     </div>
   );
 }
