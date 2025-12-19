@@ -208,7 +208,10 @@ function AliquoteDifferenziateCarousel({
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 524; // card width (32rem = 512px) + gap (12px)
+      // Calcola scroll amount dinamico basato sulla larghezza della prima card
+      const firstCard = scrollRef.current.querySelector('button');
+      const cardWidth = firstCard ? firstCard.offsetWidth : 300;
+      const scrollAmount = cardWidth + 12; // card width + gap
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -286,7 +289,7 @@ function AliquoteDifferenziateCarousel({
                   }
                 }
               }}
-              className={`flex-shrink-0 w-[32rem] h-48 text-left p-3 rounded-lg border-2 transition-all flex flex-col ${
+              className={`flex-shrink-0 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)] md:w-[32rem] h-48 text-left p-3 rounded-lg border-2 transition-all flex flex-col ${
                 isSelected
                   ? 'border-primary-500 bg-primary-50'
                   : 'border-gray-200 bg-white hover:border-gray-300'
