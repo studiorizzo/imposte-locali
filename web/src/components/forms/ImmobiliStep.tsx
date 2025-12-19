@@ -223,7 +223,11 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
 
     setErroreUnicita(null);
     onAddImmobile(immobile);
-    setImmobile(createEmptyImmobile());
+
+    // Reset form mantenendo il comune
+    const nuovoImmobile = createEmptyImmobile();
+    nuovoImmobile.comune = immobile.comune;
+    setImmobile(nuovoImmobile);
     setAliquotaPersonalizzataSelezionata(null);
   };
 
