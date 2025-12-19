@@ -107,7 +107,7 @@ function App() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
 
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
+      <main className="flex-1 w-full px-4 py-8">
         <StepIndicator
           steps={WIZARD_STEPS}
           currentStep={currentStep}
