@@ -149,7 +149,7 @@ export function AliquotePanel({
               <h3 className="text-sm font-medium text-gray-700 mb-3">
                 Aliquote differenziate
               </h3>
-              <div className="space-y-3">
+              <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1">
                 {aliquotePersonalizzate.map((ap, index) => {
                   const id = getAliquotaId(ap, index);
                   const isSelected = aliquotaPersonalizzataSelezionata === id;
@@ -176,7 +176,7 @@ export function AliquotePanel({
                           }
                         }
                       }}
-                      className={`w-full text-left p-3 rounded-lg border-2 transition-all ${
+                      className={`flex-shrink-0 w-64 text-left p-3 rounded-lg border-2 transition-all ${
                         isSelected
                           ? 'border-primary-500 bg-primary-50'
                           : 'border-gray-200 bg-white hover:border-gray-300'
