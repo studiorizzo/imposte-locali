@@ -129,7 +129,6 @@ export function AliquotePanel({
               min={0}
               max={1.14}
               step={0.01}
-              hint="Anno precedente"
             />
             <Input
               label="Aliquota Saldo (%)"
@@ -139,7 +138,6 @@ export function AliquotePanel({
               min={0}
               max={1.14}
               step={0.01}
-              hint="Anno corrente"
             />
           </div>
 
