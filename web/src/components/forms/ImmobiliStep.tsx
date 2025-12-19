@@ -3,7 +3,7 @@ import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, But
 import { AliquotePanel } from './AliquotePanel';
 import { ListaImmobili } from './ListaImmobili';
 import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto } from '@lib';
-import { COEFFICIENTI, ALIQUOTE_BASE, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_BASE, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT } from '@lib';
 import { useProspetto } from '../../hooks';
 
 interface ImmobiliStepProps {
@@ -73,8 +73,8 @@ const createEmptyImmobile = (): DatiImmobile => ({
   categoria: '' as CategoriaCatastale,
   renditaCatastale: 0,
   percentualePossesso: 100,
-  mesiPrimoSemestre: 6,
-  mesiSecondoSemestre: 6,
+  dataInizio: DATA_INIZIO_DEFAULT,
+  dataFine: DATA_FINE_DEFAULT,
   aliquotaAcconto: 0,
   aliquotaSaldo: 0,
   riduzioni: {
@@ -333,25 +333,19 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
                   />
                 </div>
 
-                {/* Mesi di possesso */}
+                {/* Periodo di possesso */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Input
-                    label="Mesi 1° Semestre"
-                    type="number"
-                    value={immobile.mesiPrimoSemestre}
-                    onChange={(e) => handleChange('mesiPrimoSemestre', parseInt(e.target.value) || 0)}
-                    min={0}
-                    max={6}
-                    hint="Gennaio - Giugno"
+                    label="Data Inizio Possesso"
+                    type="date"
+                    value={immobile.dataInizio}
+                    onChange={(e) => handleChange('dataInizio', e.target.value)}
                   />
                   <Input
-                    label="Mesi 2° Semestre"
-                    type="number"
-                    value={immobile.mesiSecondoSemestre}
-                    onChange={(e) => handleChange('mesiSecondoSemestre', parseInt(e.target.value) || 0)}
-                    min={0}
-                    max={6}
-                    hint="Luglio - Dicembre"
+                    label="Data Fine Possesso"
+                    type="date"
+                    value={immobile.dataFine}
+                    onChange={(e) => handleChange('dataFine', e.target.value)}
                   />
                 </div>
 

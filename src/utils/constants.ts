@@ -113,3 +113,71 @@ export const SCADENZE = {
 
 // Soglia minima versamento
 export const SOGLIA_MINIMA_VERSAMENTO = 12;  // €12 (art. 1, c. 759)
+
+// Anno di riferimento per il calcolo IMU
+export const ANNO_RIFERIMENTO = 2026;
+
+// Date di default per il possesso
+export const DATA_INIZIO_DEFAULT = `${ANNO_RIFERIMENTO}-01-01`;
+export const DATA_FINE_DEFAULT = `${ANNO_RIFERIMENTO}-12-31`;
+
+/**
+ * Calcola i mesi di possesso applicando la Regola del Mese (art. 1, c. 761)
+ * Se possesso > metà giorni del mese → mese intero
+ */
+export function calcolaMesiPossesso(
+  dataInizio: string,
+  dataFine: string,
+  anno: number = ANNO_RIFERIMENTO
+): { mesiPrimoSemestre: number; mesiSecondoSemestre: number; mesiTotali: number } {
+  const inizio = new Date(dataInizio);
+  const fine = new Date(dataFine);
+
+  // Valida le date
+  if (isNaN(inizio.getTime()) || isNaN(fine.getTime())) {
+    return { mesiPrimoSemestre: 0, mesiSecondoSemestre: 0, mesiTotali: 0 };
+  }
+
+  if (fine < inizio) {
+    return { mesiPrimoSemestre: 0, mesiSecondoSemestre: 0, mesiTotali: 0 };
+  }
+
+  let mesiPrimoSemestre = 0;
+  let mesiSecondoSemestre = 0;
+
+  // Calcola per ogni mese dell'anno
+  for (let mese = 0; mese < 12; mese++) {
+    const giorniMese = new Date(anno, mese + 1, 0).getDate(); // Giorni nel mese
+    const primoGiornoMese = new Date(anno, mese, 1);
+    const ultimoGiornoMese = new Date(anno, mese, giorniMese);
+
+    // Calcola intersezione tra periodo possesso e mese corrente
+    const inizioPeriodo = inizio > primoGiornoMese ? inizio : primoGiornoMese;
+    const finePeriodo = fine < ultimoGiornoMese ? fine : ultimoGiornoMese;
+
+    if (inizioPeriodo <= finePeriodo) {
+      // Calcola giorni di possesso nel mese
+      // +1 perché entrambi i giorni sono inclusi
+      const giorniPossesso = Math.floor(
+        (finePeriodo.getTime() - inizioPeriodo.getTime()) / (1000 * 60 * 60 * 24)
+      ) + 1;
+
+      // Regola del Mese: conta il mese se possesso > metà giorni
+      // Se giorni pari, > metà significa strettamente maggiore di giorniMese/2
+      const metaGiorni = giorniMese / 2;
+      if (giorniPossesso > metaGiorni) {
+        if (mese < 6) {
+          mesiPrimoSemestre++;
+        } else {
+          mesiSecondoSemestre++;
+        }
+      }
+    }
+  }
+
+  return {
+    mesiPrimoSemestre,
+    mesiSecondoSemestre,
+    mesiTotali: mesiPrimoSemestre + mesiSecondoSemestre,
+  };
+}

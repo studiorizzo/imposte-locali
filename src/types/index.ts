@@ -66,8 +66,8 @@ export interface DatiImmobile {
 
   // Possesso
   percentualePossesso: number;    // 0-100
-  mesiPrimoSemestre: number;      // 0-6
-  mesiSecondoSemestre: number;    // 0-6
+  dataInizio: string;             // Format: "YYYY-MM-DD" (default: primo giorno anno)
+  dataFine: string;               // Format: "YYYY-MM-DD" (default: ultimo giorno anno)
 
   // Aliquote
   aliquotaAcconto: number;        // % (es. 0.86)

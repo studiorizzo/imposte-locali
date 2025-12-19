@@ -1,6 +1,13 @@
 import { Card, CardContent, Button } from '../ui';
 import type { DatiImmobile } from '@lib';
-import { COEFFICIENTI, COEFFICIENTE_TERRENI, FATTISPECIE_LABELS } from '@lib';
+import { COEFFICIENTI, COEFFICIENTE_TERRENI, FATTISPECIE_LABELS, calcolaMesiPossesso } from '@lib';
+
+// Formatta data da YYYY-MM-DD a DD/MM/YYYY
+const formatDate = (dateStr: string): string => {
+  if (!dateStr) return '';
+  const [year, month, day] = dateStr.split('-');
+  return `${day}/${month}/${year}`;
+};
 
 interface ListaImmobiliProps {
   immobili: DatiImmobile[];
@@ -97,9 +104,12 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
                       <p className="font-medium">{immobile.percentualePossesso}%</p>
                     </div>
                     <div>
-                      <span className="text-gray-500">Mesi</span>
+                      <span className="text-gray-500">Periodo</span>
                       <p className="font-medium">
-                        {immobile.mesiPrimoSemestre + immobile.mesiSecondoSemestre}/12
+                        {formatDate(immobile.dataInizio)} - {formatDate(immobile.dataFine)}
+                      </p>
+                      <p className="text-xs text-gray-400">
+                        {calcolaMesiPossesso(immobile.dataInizio, immobile.dataFine).mesiTotali} mesi
                       </p>
                     </div>
                     <div>
