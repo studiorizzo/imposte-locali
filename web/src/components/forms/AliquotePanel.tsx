@@ -289,7 +289,7 @@ function AliquoteDifferenziateCarousel({
                   }
                 }
               }}
-              className={`flex-shrink-0 w-80 min-h-48 text-left p-3 rounded-lg border-2 transition-all flex flex-col ${
+              className={`flex-shrink-0 w-2/3 min-h-48 text-left p-3 rounded-lg border-2 transition-all flex flex-col ${
                 isSelected
                   ? 'border-primary-500 bg-primary-50'
                   : 'border-gray-200 bg-white hover:border-gray-300'
