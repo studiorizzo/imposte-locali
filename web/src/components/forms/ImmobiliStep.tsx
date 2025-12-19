@@ -3,7 +3,7 @@ import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, But
 import { AliquotePanel } from './AliquotePanel';
 import { ListaImmobili } from './ListaImmobili';
 import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto } from '@lib';
-import { COEFFICIENTI, ALIQUOTE_BASE, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT, applicaRegoleUnicita } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_BASE, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT, verificaUnicita } from '@lib';
 import { useProspetto } from '../../hooks';
 
 interface ImmobiliStepProps {
@@ -97,7 +97,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [aliquotaPersonalizzataSelezionata, setAliquotaPersonalizzataSelezionata] = useState<string | null>(null);
-  const [avvisoUnicita, setAvvisoUnicita] = useState<string | null>(null);
+  const [erroreUnicita, setErroreUnicita] = useState<string | null>(null);
 
   // Hook per caricare prospetto
   const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
@@ -207,29 +207,22 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Applica regole di unicità
-    const { fattispecie, convertito, motivo } = applicaRegoleUnicita(
+    // Verifica regole di unicità
+    const { valido, errore } = verificaUnicita(
       immobile.fattispecie_principale,
       immobile.categoria,
+      immobile.dataInizio,
+      immobile.dataFine,
       immobili
     );
 
-    // Aggiorna aliquota se convertito
-    let immobileDaAggiungere = immobile;
-    if (convertito) {
-      const nuovaAliquota = ALIQUOTE_BASE[fattispecie];
-      immobileDaAggiungere = {
-        ...immobile,
-        fattispecie_principale: fattispecie,
-        aliquotaAcconto: nuovaAliquota,
-        aliquotaSaldo: nuovaAliquota,
-      };
-      setAvvisoUnicita(motivo || null);
-      // Nascondi l'avviso dopo 5 secondi
-      setTimeout(() => setAvvisoUnicita(null), 5000);
+    if (!valido) {
+      setErroreUnicita(errore || null);
+      return; // Blocca l'inserimento
     }
 
-    onAddImmobile(immobileDaAggiungere);
+    setErroreUnicita(null);
+    onAddImmobile(immobile);
     setImmobile(createEmptyImmobile());
     setAliquotaPersonalizzataSelezionata(null);
   };
@@ -250,9 +243,9 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
               <p className="text-sm text-gray-500 mt-1">
                 Inserisci i dati catastali dell'immobile
               </p>
-              {avvisoUnicita && (
-                <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-md">
-                  <p className="text-sm text-amber-800">{avvisoUnicita}</p>
+              {erroreUnicita && (
+                <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-md">
+                  <p className="text-sm text-red-800">{erroreUnicita}</p>
                 </div>
               )}
             </CardHeader>
