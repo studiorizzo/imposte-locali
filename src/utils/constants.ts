@@ -181,3 +181,46 @@ export function calcolaMesiPossesso(
     mesiTotali: mesiPrimoSemestre + mesiSecondoSemestre,
   };
 }
+
+/**
+ * Verifica e applica le regole di unicità per fattispecie
+ * - abitazione_principale_lusso: max 1 in totale
+ * - pertinenze: max 1 per categoria (C/2, C/6, C/7)
+ *
+ * @returns La fattispecie corretta (eventualmente convertita in altri_fabbricati)
+ */
+export function applicaRegoleUnicita(
+  fattispecie: FattispeciePrincipale,
+  categoria: CategoriaCatastale,
+  immobiliEsistenti: Array<{ fattispecie_principale: FattispeciePrincipale; categoria: CategoriaCatastale }>
+): { fattispecie: FattispeciePrincipale; convertito: boolean; motivo?: string } {
+  // Regola 1: Max 1 abitazione principale lusso
+  if (fattispecie === 'abitazione_principale_lusso') {
+    const esisteGia = immobiliEsistenti.some(
+      (imm) => imm.fattispecie_principale === 'abitazione_principale_lusso'
+    );
+    if (esisteGia) {
+      return {
+        fattispecie: 'altri_fabbricati',
+        convertito: true,
+        motivo: 'Esiste già un\'abitazione principale. Immobile classificato come "Altro Fabbricato".',
+      };
+    }
+  }
+
+  // Regola 2: Max 1 pertinenza per categoria
+  if (fattispecie === 'pertinenze') {
+    const esisteStessaCategoria = immobiliEsistenti.some(
+      (imm) => imm.fattispecie_principale === 'pertinenze' && imm.categoria === categoria
+    );
+    if (esisteStessaCategoria) {
+      return {
+        fattispecie: 'altri_fabbricati',
+        convertito: true,
+        motivo: `Esiste già una pertinenza ${categoria}. Immobile classificato come "Altro Fabbricato".`,
+      };
+    }
+  }
+
+  return { fattispecie, convertito: false };
+}
