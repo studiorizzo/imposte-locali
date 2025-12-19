@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import { Card, CardHeader, CardContent, Input } from '../ui';
 import type { Prospetto, AliquotaPersonalizzata, CategoriaCatastale, FattispeciePrincipale } from '@lib';
 
@@ -145,81 +145,13 @@ export function AliquotePanel({
 
           {/* Aliquote differenziate */}
           {aliquotePersonalizzate.length > 0 && (
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-3">
-                Aliquote differenziate
-              </h3>
-              <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1">
-                {aliquotePersonalizzate.map((ap, index) => {
-                  const id = getAliquotaId(ap, index);
-                  const isSelected = aliquotaPersonalizzataSelezionata === id;
-                  const aliquotaValue = parseAliquota(ap.aliquota);
-
-                  // Raccogli i campi con valore
-                  const campiConValore = CAMPI_CARD.filter(
-                    (campo) => ap[campo] && ap[campo] !== ''
-                  );
-
-                  return (
-                    <button
-                      key={id}
-                      type="button"
-                      onClick={() => {
-                        if (isSelected) {
-                          onSelectAliquotaPersonalizzata(null);
-                        } else {
-                          onSelectAliquotaPersonalizzata(id);
-                          // Aggiorna aliquote con il valore selezionato
-                          if (aliquotaValue !== null) {
-                            onAliquotaAccontoChange(aliquotaValue);
-                            onAliquotaSaldoChange(aliquotaValue);
-                          }
-                        }
-                      }}
-                      className={`flex-shrink-0 w-64 text-left p-3 rounded-lg border-2 transition-all ${
-                        isSelected
-                          ? 'border-primary-500 bg-primary-50'
-                          : 'border-gray-200 bg-white hover:border-gray-300'
-                      }`}
-                    >
-                      {/* Header con aliquota */}
-                      <div className="flex justify-end mb-2">
-                        <span
-                          className={`text-sm font-semibold px-2 py-0.5 rounded ${
-                            isSelected
-                              ? 'bg-primary-100 text-primary-700'
-                              : 'bg-gray-100 text-gray-700'
-                          }`}
-                        >
-                          {ap.aliquota}
-                        </span>
-                      </div>
-
-                      {/* Bullet list dei campi */}
-                      {campiConValore.length > 0 && (
-                        <ul className="space-y-1">
-                          {campiConValore.map((campo) => (
-                            <li
-                              key={campo}
-                              className="text-xs text-gray-600 flex items-start gap-2"
-                            >
-                              <span className="text-gray-400 mt-0.5">•</span>
-                              <span>
-                                {campo === 'categoria_catastale' ? (
-                                  <><span className="font-medium">{LABEL_CAMPI[campo]}:</span> {ap[campo]}</>
-                                ) : (
-                                  ap[campo]
-                                )}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+            <AliquoteDifferenziateCarousel
+              aliquotePersonalizzate={aliquotePersonalizzate}
+              aliquotaPersonalizzataSelezionata={aliquotaPersonalizzataSelezionata}
+              onSelectAliquotaPersonalizzata={onSelectAliquotaPersonalizzata}
+              onAliquotaAccontoChange={onAliquotaAccontoChange}
+              onAliquotaSaldoChange={onAliquotaSaldoChange}
+            />
           )}
 
           {aliquotePersonalizzate.length === 0 && prospetto && (
@@ -230,5 +162,173 @@ export function AliquotePanel({
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+// Componente carousel per le aliquote differenziate
+function AliquoteDifferenziateCarousel({
+  aliquotePersonalizzate,
+  aliquotaPersonalizzataSelezionata,
+  onSelectAliquotaPersonalizzata,
+  onAliquotaAccontoChange,
+  onAliquotaSaldoChange,
+}: {
+  aliquotePersonalizzate: AliquotaPersonalizzata[];
+  aliquotaPersonalizzataSelezionata: string | null;
+  onSelectAliquotaPersonalizzata: (id: string | null) => void;
+  onAliquotaAccontoChange: (value: number) => void;
+  onAliquotaSaldoChange: (value: number) => void;
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollButtons = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
+    }
+  };
+
+  useEffect(() => {
+    updateScrollButtons();
+    const ref = scrollRef.current;
+    if (ref) {
+      ref.addEventListener('scroll', updateScrollButtons);
+      window.addEventListener('resize', updateScrollButtons);
+    }
+    return () => {
+      if (ref) {
+        ref.removeEventListener('scroll', updateScrollButtons);
+      }
+      window.removeEventListener('resize', updateScrollButtons);
+    };
+  }, [aliquotePersonalizzate]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 280; // ~card width + gap
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="text-sm font-medium text-gray-700">
+          Aliquote differenziate
+        </h3>
+        <div className="flex gap-1">
+          <button
+            type="button"
+            onClick={() => scroll('left')}
+            disabled={!canScrollLeft}
+            className={`p-1 rounded ${
+              canScrollLeft
+                ? 'text-gray-600 hover:bg-gray-100'
+                : 'text-gray-300 cursor-not-allowed'
+            }`}
+            aria-label="Scorri a sinistra"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => scroll('right')}
+            disabled={!canScrollRight}
+            className={`p-1 rounded ${
+              canScrollRight
+                ? 'text-gray-600 hover:bg-gray-100'
+                : 'text-gray-300 cursor-not-allowed'
+            }`}
+            aria-label="Scorri a destra"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        ref={scrollRef}
+        className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {aliquotePersonalizzate.map((ap, index) => {
+          const id = getAliquotaId(ap, index);
+          const isSelected = aliquotaPersonalizzataSelezionata === id;
+          const aliquotaValue = parseAliquota(ap.aliquota);
+
+          // Raccogli i campi con valore
+          const campiConValore = CAMPI_CARD.filter(
+            (campo) => ap[campo] && ap[campo] !== ''
+          );
+
+          return (
+            <button
+              key={id}
+              type="button"
+              onClick={() => {
+                if (isSelected) {
+                  onSelectAliquotaPersonalizzata(null);
+                } else {
+                  onSelectAliquotaPersonalizzata(id);
+                  // Aggiorna aliquote con il valore selezionato
+                  if (aliquotaValue !== null) {
+                    onAliquotaAccontoChange(aliquotaValue);
+                    onAliquotaSaldoChange(aliquotaValue);
+                  }
+                }
+              }}
+              className={`flex-shrink-0 w-64 text-left p-3 rounded-lg border-2 transition-all ${
+                isSelected
+                  ? 'border-primary-500 bg-primary-50'
+                  : 'border-gray-200 bg-white hover:border-gray-300'
+              }`}
+            >
+              {/* Header con aliquota */}
+              <div className="flex justify-end mb-2">
+                <span
+                  className={`text-sm font-semibold px-2 py-0.5 rounded ${
+                    isSelected
+                      ? 'bg-primary-100 text-primary-700'
+                      : 'bg-gray-100 text-gray-700'
+                  }`}
+                >
+                  {ap.aliquota}
+                </span>
+              </div>
+
+              {/* Bullet list dei campi */}
+              {campiConValore.length > 0 && (
+                <ul className="space-y-1">
+                  {campiConValore.map((campo) => (
+                    <li
+                      key={campo}
+                      className="text-xs text-gray-600 flex items-start gap-2"
+                    >
+                      <span className="text-gray-400 mt-0.5">•</span>
+                      <span>
+                        {campo === 'categoria_catastale' ? (
+                          <><span className="font-medium">{LABEL_CAMPI[campo]}:</span> {ap[campo]}</>
+                        ) : (
+                          ap[campo]
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
   );
 }
