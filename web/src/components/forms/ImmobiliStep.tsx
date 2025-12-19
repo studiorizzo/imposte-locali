@@ -207,6 +207,16 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Verifica campi obbligatori
+    const richiedeRendita = immobile.fattispecie_principale &&
+      immobile.fattispecie_principale !== 'terreni_agricoli' &&
+      immobile.fattispecie_principale !== 'aree_fabbricabili';
+
+    if (richiedeRendita && !immobile.renditaCatastale) {
+      setErroreUnicita('Rendita catastale non rivalutata campo richiesto.');
+      return;
+    }
+
     // Verifica regole di unicità
     const { valido, errore } = verificaUnicita(
       immobile.fattispecie_principale,
@@ -313,13 +323,12 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {showCategoria && (
                     <Input
-                      label="Rendita Catastale (€)"
+                      label="Rendita catastale non rivalutata"
                       type="number"
                       value={immobile.renditaCatastale || ''}
                       onChange={(e) => handleChange('renditaCatastale', parseFloat(e.target.value) || 0)}
                       min={0}
                       step={0.01}
-                      hint="Rendita non rivalutata"
                     />
                   )}
                   {isTerreno && (
