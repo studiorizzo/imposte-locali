@@ -182,11 +182,8 @@ export function AliquotePanel({
                           : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
                     >
-                      {/* Header con fattispecie e aliquota */}
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="font-medium text-gray-900 text-sm">
-                          {ap.fattispecie_principale}
-                        </span>
+                      {/* Header con aliquota */}
+                      <div className="flex justify-end mb-2">
                         <span
                           className={`text-sm font-semibold px-2 py-0.5 rounded ${
                             isSelected
@@ -208,8 +205,11 @@ export function AliquotePanel({
                             >
                               <span className="text-gray-400 mt-0.5">•</span>
                               <span>
-                                <span className="font-medium">{LABEL_CAMPI[campo]}:</span>{' '}
-                                {ap[campo]}
+                                {campo === 'categoria_catastale' ? (
+                                  <><span className="font-medium">{LABEL_CAMPI[campo]}:</span> {ap[campo]}</>
+                                ) : (
+                                  ap[campo]
+                                )}
                               </span>
                             </li>
                           ))}
