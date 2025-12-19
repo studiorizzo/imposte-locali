@@ -14,8 +14,9 @@ interface AliquotePanelProps {
   onSelectAliquotaPersonalizzata: (id: string | null) => void;
 }
 
-// Campi da mostrare nelle card (esclusi fattispecie_principale, aliquota, categoria_catastale)
+// Campi da mostrare nelle card (esclusi fattispecie_principale e aliquota che sono nell'header)
 const CAMPI_CARD: (keyof AliquotaPersonalizzata)[] = [
+  'categoria_catastale',
   'requisiti_oggettivi',
   'requisiti_soggettivi',
   'attivita',
@@ -26,6 +27,7 @@ const CAMPI_CARD: (keyof AliquotaPersonalizzata)[] = [
 ];
 
 const LABEL_CAMPI: Record<string, string> = {
+  categoria_catastale: 'Categoria catastale',
   requisiti_oggettivi: 'Requisiti oggettivi',
   requisiti_soggettivi: 'Requisiti soggettivi',
   attivita: 'Attività',
