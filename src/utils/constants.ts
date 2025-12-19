@@ -181,3 +181,66 @@ export function calcolaMesiPossesso(
     mesiTotali: mesiPrimoSemestre + mesiSecondoSemestre,
   };
 }
+
+/**
+ * Verifica se due periodi si sovrappongono
+ */
+export function verificaSovrapposizionePeriodi(
+  inizio1: string,
+  fine1: string,
+  inizio2: string,
+  fine2: string
+): boolean {
+  return inizio1 <= fine2 && inizio2 <= fine1;
+}
+
+/**
+ * Verifica le regole di unicità per fattispecie
+ * - abitazione_principale_lusso: max 1 nello stesso periodo
+ * - pertinenze: max 1 per categoria (C/2, C/6, C/7) nello stesso periodo
+ */
+export function verificaUnicita(
+  fattispecie: FattispeciePrincipale,
+  categoria: CategoriaCatastale,
+  dataInizio: string,
+  dataFine: string,
+  immobiliEsistenti: Array<{
+    fattispecie_principale: FattispeciePrincipale;
+    categoria: CategoriaCatastale;
+    dataInizio: string;
+    dataFine: string;
+  }>
+): { valido: boolean; errore?: string } {
+  // Regola 1: Max 1 abitazione principale nello stesso periodo
+  if (fattispecie === 'abitazione_principale_lusso') {
+    const sovrapposizionePeriodo = immobiliEsistenti.some(
+      (imm) =>
+        imm.fattispecie_principale === 'abitazione_principale_lusso' &&
+        verificaSovrapposizionePeriodi(dataInizio, dataFine, imm.dataInizio, imm.dataFine)
+    );
+    if (sovrapposizionePeriodo) {
+      return {
+        valido: false,
+        errore: 'Sono presenti più fabbricati dichiarati come abitazione principale nello stesso periodo',
+      };
+    }
+  }
+
+  // Regola 2: Max 1 pertinenza per categoria nello stesso periodo
+  if (fattispecie === 'pertinenze') {
+    const sovrapposizionePeriodo = immobiliEsistenti.some(
+      (imm) =>
+        imm.fattispecie_principale === 'pertinenze' &&
+        imm.categoria === categoria &&
+        verificaSovrapposizionePeriodi(dataInizio, dataFine, imm.dataInizio, imm.dataFine)
+    );
+    if (sovrapposizionePeriodo) {
+      return {
+        valido: false,
+        errore: 'Sono presenti più fabbricati dichiarati come pertinenza abitazione principale nello stesso periodo',
+      };
+    }
+  }
+
+  return { valido: true };
+}
