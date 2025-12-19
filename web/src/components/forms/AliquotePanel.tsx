@@ -208,7 +208,7 @@ function AliquoteDifferenziateCarousel({
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 280; // ~card width + gap
+      const scrollAmount = 524; // card width (32rem = 512px) + gap (12px)
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -286,14 +286,14 @@ function AliquoteDifferenziateCarousel({
                   }
                 }
               }}
-              className={`flex-shrink-0 w-64 text-left p-3 rounded-lg border-2 transition-all ${
+              className={`flex-shrink-0 w-[32rem] h-48 text-left p-3 rounded-lg border-2 transition-all flex flex-col ${
                 isSelected
                   ? 'border-primary-500 bg-primary-50'
                   : 'border-gray-200 bg-white hover:border-gray-300'
               }`}
             >
-              {/* Header con aliquota */}
-              <div className="flex justify-end mb-2">
+              {/* Header con aliquota - in alto a destra */}
+              <div className="flex justify-end">
                 <span
                   className={`text-sm font-semibold px-2 py-0.5 rounded ${
                     isSelected
@@ -305,26 +305,28 @@ function AliquoteDifferenziateCarousel({
                 </span>
               </div>
 
-              {/* Bullet list dei campi */}
-              {campiConValore.length > 0 && (
-                <ul className="space-y-1">
-                  {campiConValore.map((campo) => (
-                    <li
-                      key={campo}
-                      className="text-xs text-gray-600 flex items-start gap-2"
-                    >
-                      <span className="text-gray-400 mt-0.5">•</span>
-                      <span>
-                        {campo === 'categoria_catastale' ? (
-                          <><span className="font-medium">{LABEL_CAMPI[campo]}:</span> {ap[campo]}</>
-                        ) : (
-                          ap[campo]
-                        )}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              {/* Contenuto centrato verticalmente */}
+              <div className="flex-1 flex items-center">
+                {campiConValore.length > 0 && (
+                  <ul className="space-y-1">
+                    {campiConValore.map((campo) => (
+                      <li
+                        key={campo}
+                        className="text-xs text-gray-600 flex items-start gap-2"
+                      >
+                        <span className="text-gray-400 mt-0.5">•</span>
+                        <span>
+                          {campo === 'categoria_catastale' ? (
+                            <><span className="font-medium">{LABEL_CAMPI[campo]}:</span> {ap[campo]}</>
+                          ) : (
+                            ap[campo]
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </button>
           );
         })}
