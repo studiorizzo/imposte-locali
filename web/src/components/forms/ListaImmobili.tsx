@@ -57,7 +57,7 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
       <h3 className="text-lg font-medium text-gray-900">
         Immobili inseriti ({immobili.length})
       </h3>
-      {immobili.map((immobile) => {
+      {immobili.map((immobile, indice) => {
         const isTerreno = immobile.fattispecie_principale === 'terreni_agricoli';
         const isArea = immobile.fattispecie_principale === 'aree_fabbricabili';
         const coefficiente = isTerreno
@@ -70,6 +70,9 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
               <div className="flex justify-between items-start">
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold text-gray-700">
+                      Immobile #{indice + 1}
+                    </span>
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
                       {getFattspecieLabel(immobile.fattispecie_principale)}
                     </span>
