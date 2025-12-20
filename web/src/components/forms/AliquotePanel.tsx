@@ -8,6 +8,7 @@ interface AliquotePanelProps {
   fattispecie: FattispeciePrincipale | '';
   aliquotaAcconto: number;
   aliquotaSaldo: number;
+  aliquotaBase: number;
   onAliquotaAccontoChange: (value: number) => void;
   onAliquotaSaldoChange: (value: number) => void;
   aliquotaPersonalizzataSelezionata: string | null;
@@ -69,6 +70,7 @@ export function AliquotePanel({
   fattispecie,
   aliquotaAcconto,
   aliquotaSaldo,
+  aliquotaBase,
   onAliquotaAccontoChange,
   onAliquotaSaldoChange,
   aliquotaPersonalizzataSelezionata,
@@ -146,6 +148,7 @@ export function AliquotePanel({
             <AliquoteDifferenziateCarousel
               aliquotePersonalizzate={aliquotePersonalizzate}
               aliquotaPersonalizzataSelezionata={aliquotaPersonalizzataSelezionata}
+              aliquotaBase={aliquotaBase}
               onSelectAliquotaPersonalizzata={onSelectAliquotaPersonalizzata}
               onAliquotaAccontoChange={onAliquotaAccontoChange}
               onAliquotaSaldoChange={onAliquotaSaldoChange}
@@ -167,12 +170,14 @@ export function AliquotePanel({
 function AliquoteDifferenziateCarousel({
   aliquotePersonalizzate,
   aliquotaPersonalizzataSelezionata,
+  aliquotaBase,
   onSelectAliquotaPersonalizzata,
   onAliquotaAccontoChange,
   onAliquotaSaldoChange,
 }: {
   aliquotePersonalizzate: AliquotaPersonalizzata[];
   aliquotaPersonalizzataSelezionata: string | null;
+  aliquotaBase: number;
   onSelectAliquotaPersonalizzata: (id: string | null) => void;
   onAliquotaAccontoChange: (value: number) => void;
   onAliquotaSaldoChange: (value: number) => void;
@@ -220,8 +225,8 @@ function AliquoteDifferenziateCarousel({
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-medium text-gray-700">
-          Aliquote differenziate
+        <h3 className="text-sm font-bold text-gray-700">
+          Aliquote differenziate ({aliquotePersonalizzate.length})
         </h3>
         <div className="flex gap-1">
           <button
@@ -277,7 +282,10 @@ function AliquoteDifferenziateCarousel({
               type="button"
               onClick={() => {
                 if (isSelected) {
+                  // Deseleziona e ripristina aliquota base
                   onSelectAliquotaPersonalizzata(null);
+                  onAliquotaAccontoChange(aliquotaBase);
+                  onAliquotaSaldoChange(aliquotaBase);
                 } else {
                   onSelectAliquotaPersonalizzata(id);
                   // Aggiorna aliquote con il valore selezionato
