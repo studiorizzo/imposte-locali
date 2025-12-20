@@ -76,15 +76,7 @@ export function calcolaFattoreRiduzione(immobile: DatiImmobile): number {
 export function verificaEsenzione(
   immobile: DatiImmobile
 ): { esente: boolean; motivo?: string } {
-  const { esenzioni, fattispecie_principale, categoria } = immobile;
-
-  // Abitazione principale non di lusso (nota: abitazione_principale_lusso è già tassabile per definizione)
-  if (
-    fattispecie_principale === 'abitazione_principale_lusso' &&
-    !CATEGORIE_PER_FATTISPECIE.abitazione_principale_lusso!.includes(categoria)
-  ) {
-    return { esente: true, motivo: 'Abitazione principale (non A/1, A/8, A/9)' };
-  }
+  const { esenzioni, fattispecie_principale } = immobile;
 
   // Terreno CD/IAP
   if (fattispecie_principale === 'terreni_agricoli' && esenzioni.terrenoCdIap) {
