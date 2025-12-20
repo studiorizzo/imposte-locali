@@ -20,7 +20,6 @@ import {
   RIVALUTAZIONE_RENDITA,
   QUOTA_STATO_GRUPPO_D,
   DETRAZIONE_ABITAZIONE_PRINCIPALE,
-  CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI,
   CODICI_TRIBUTO,
   SOGLIA_MINIMA_VERSAMENTO,
   calcolaMesiPossesso,
@@ -76,15 +75,7 @@ export function calcolaFattoreRiduzione(immobile: DatiImmobile): number {
 export function verificaEsenzione(
   immobile: DatiImmobile
 ): { esente: boolean; motivo?: string } {
-  const { esenzioni, fattispecie_principale, categoria } = immobile;
-
-  // Abitazione principale non di lusso (nota: abitazione_principale_lusso è già tassabile per definizione)
-  if (
-    fattispecie_principale === 'abitazione_principale_lusso' &&
-    !CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI.includes(categoria)
-  ) {
-    return { esente: true, motivo: 'Abitazione principale (non A/1, A/8, A/9)' };
-  }
+  const { esenzioni, fattispecie_principale } = immobile;
 
   // Terreno CD/IAP
   if (fattispecie_principale === 'terreni_agricoli' && esenzioni.terrenoCdIap) {
@@ -340,12 +331,9 @@ export function calcolaIMUImmobile(
   // Totale
   let imuTotale = round2(imuAccontoLordo + imuSaldo);
 
-  // Detrazione per abitazione principale
+  // Detrazione per abitazione principale (A/1, A/8, A/9)
   let detrazione: number | undefined;
-  if (
-    fattispecie_principale === 'abitazione_principale_lusso' &&
-    CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI.includes(categoria)
-  ) {
+  if (fattispecie_principale === 'abitazione_principale_lusso') {
     detrazione = calcolaDetrazione(percentualePossesso, mesiTotali);
     imuTotale = round2(Math.max(0, imuTotale - detrazione));
   }

@@ -30,9 +30,6 @@ export type FattispeciePrincipale =
   | 'aree_fabbricabili'              // Aree edificabili - aliquota 0.86%
   | 'altri_fabbricati';              // Tutti gli altri (A/2-A/11, B, C) - aliquota 0.86%
 
-// Alias per retrocompatibilità
-export type TipoImmobile = FattispeciePrincipale;
-
 // Riduzioni applicabili
 export interface Riduzioni {
   storicoArtistico: boolean;      // -50% base
@@ -44,7 +41,6 @@ export interface Riduzioni {
 
 // Esenzioni
 export interface Esenzioni {
-  abitazionePrincipale: boolean;  // Non A/1, A/8, A/9
   terrenoCdIap: boolean;          // Coltivatore diretto / IAP
   beneMerce: boolean;             // Dal 2022
   occupatoAbusivamente: boolean;  // Dal 2023
@@ -128,26 +124,6 @@ export interface RiepilogoIMU {
   // Scadenze
   scadenzaAcconto: string;        // "16/06/YYYY"
   scadenzaSaldo: string;          // "16/12/YYYY"
-}
-
-// Configurazione comune
-export interface ConfigurazioneComune {
-  codice: string;
-  comune: string;
-  provincia: string;
-
-  // Aliquote deliberate
-  aliquote: {
-    abitazionePrincipale: number;  // Default 0.50%
-    fabbricatiRurali: number;      // Default 0.10%
-    terreniAgricoli: number;       // Default 0.76%
-    gruppoD: number;               // Default 0.86% (min 0.76%)
-    altriFabbricati: number;       // Default 0.86%
-    areeFabbricabili: number;      // Default 0.86%
-  };
-
-  // Maggiorazione TASI (max 0.08%)
-  maggiorazioneTasi?: number;
 }
 
 // Dati contribuente (per UI)

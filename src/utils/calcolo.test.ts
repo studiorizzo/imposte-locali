@@ -40,7 +40,6 @@ function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
       pensionatoEstero: false,
     },
     esenzioni: {
-      abitazionePrincipale: false,
       terrenoCdIap: false,
       beneMerce: false,
       occupatoAbusivamente: false,
@@ -123,7 +122,6 @@ describe('Calcolo IMU Immobile Completo', () => {
       categoria: 'A/2', // Non usata per terreni
       redditoDominicale: 500,
       esenzioni: {
-        abitazionePrincipale: false,
         terrenoCdIap: true, // CD/IAP = ESENTE
         beneMerce: false,
         occupatoAbusivamente: false,

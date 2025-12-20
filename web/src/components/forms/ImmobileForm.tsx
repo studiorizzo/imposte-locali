@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button, Autocomplete } from '../ui';
 import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto } from '@lib';
-import { COEFFICIENTI, ALIQUOTE_BASE, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_MINISTERO, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT } from '@lib';
 import { useProspetto } from '../../hooks';
 
 interface ImmobileFormProps {
@@ -34,9 +34,9 @@ const getCategoriePerFattispecie = (fattispecie: FattispeciePrincipale) => {
   return CATEGORIE_OPTIONS.filter(opt => categorie.includes(opt.value as CategoriaCatastale));
 };
 
-// Restituisce l'aliquota base ministeriale per una fattispecie
+// Restituisce l'aliquota ministeriale per una fattispecie
 const getDefaultAliquota = (fattispecie: FattispeciePrincipale): number => {
-  return ALIQUOTE_BASE[fattispecie];
+  return ALIQUOTE_MINISTERO[fattispecie];
 };
 
 // Cerca l'aliquota nel prospetto comunale per una fattispecie
@@ -81,7 +81,6 @@ const createEmptyImmobile = (): DatiImmobile => ({
     pensionatoEstero: false,
   },
   esenzioni: {
-    abitazionePrincipale: false,
     terrenoCdIap: false,
     beneMerce: false,
     occupatoAbusivamente: false,
