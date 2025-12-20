@@ -19,7 +19,7 @@
 │  │                 │   │   constants.ts  │   │                         │   │
 │  │ • DatiImmobile  │   │                 │   │ • calcolaIMUImmobile()  │   │
 │  │ • Riduzioni     │   │ • COEFFICIENTI  │   │ • calcolaRiepilogoIMU() │   │
-│  │ • Esenzioni     │   │ • ALIQUOTE_BASE │   │ • verificaEsenzione()   │   │
+│  │ • Esenzioni     │   │ • ALIQUOTE_MINISTERO│ │ • verificaEsenzione()   │   │
 │  │ • Risultato     │   │ • CODICI_TRIBUTO│   │ • calcolaBase...()      │   │
 │  │ • Riepilogo     │   │ • SCADENZE      │   │ • calcolaQuote...()     │   │
 │  └─────────────────┘   └─────────────────┘   └─────────────────────────┘   │

@@ -3,7 +3,7 @@ import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, But
 import { AliquotePanel } from './AliquotePanel';
 import { ListaImmobili } from './ListaImmobili';
 import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto } from '@lib';
-import { COEFFICIENTI, ALIQUOTE_BASE, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT, verificaUnicita } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_MINISTERO, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT, verificaUnicita } from '@lib';
 import { useProspetto } from '../../hooks';
 
 interface ImmobiliStepProps {
@@ -38,9 +38,9 @@ const getCategoriePerFattispecie = (fattispecie: FattispeciePrincipale) => {
   return CATEGORIE_OPTIONS.filter(opt => categorie.includes(opt.value as CategoriaCatastale));
 };
 
-// Restituisce l'aliquota base ministeriale per una fattispecie
+// Restituisce l'aliquota ministeriale per una fattispecie
 const getDefaultAliquota = (fattispecie: FattispeciePrincipale): number => {
-  return ALIQUOTE_BASE[fattispecie];
+  return ALIQUOTE_MINISTERO[fattispecie];
 };
 
 // Cerca l'aliquota nel prospetto comunale per una fattispecie

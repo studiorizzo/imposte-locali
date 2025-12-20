@@ -38,8 +38,8 @@ export const RIVALUTAZIONE_TERRENI = 1.25;  // 25%
 // Coefficiente rivalutazione rendite catastali (art. 1, c. 745)
 export const RIVALUTAZIONE_RENDITA = 1.05;  // 5%
 
-// Aliquote base 2025 per fattispecie principale (art. 1, cc. 748-754)
-export const ALIQUOTE_BASE: Record<FattispeciePrincipale, number> = {
+// Aliquote ministeriali per fattispecie principale (art. 1, cc. 748-754)
+export const ALIQUOTE_MINISTERO: Record<FattispeciePrincipale, number> = {
   abitazione_principale_lusso: 0.50,    // c. 748 (A/1, A/8, A/9)
   pertinenze: 0.50,                     // c. 748 (stessa aliquota abitazione principale)
   fabbricati_rurali_strumentali: 0.10,  // c. 750 (D/10)
@@ -48,9 +48,6 @@ export const ALIQUOTE_BASE: Record<FattispeciePrincipale, number> = {
   altri_fabbricati: 0.86,               // c. 754
   aree_fabbricabili: 0.86,              // c. 754
 };
-
-// Alias per compatibilità
-export const ALIQUOTE_BASE_2025 = ALIQUOTE_BASE;
 
 // Aliquote massime per fattispecie principale
 export const ALIQUOTE_MAX: Record<FattispeciePrincipale, number> = {

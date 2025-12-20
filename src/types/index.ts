@@ -145,9 +145,6 @@ export interface ConfigurazioneComune {
     altriFabbricati: number;       // Default 0.86%
     areeFabbricabili: number;      // Default 0.86%
   };
-
-  // Maggiorazione TASI (max 0.08%)
-  maggiorazioneTasi?: number;
 }
 
 // Dati contribuente (per UI)
