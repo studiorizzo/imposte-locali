@@ -20,7 +20,6 @@ import {
   RIVALUTAZIONE_RENDITA,
   QUOTA_STATO_GRUPPO_D,
   DETRAZIONE_ABITAZIONE_PRINCIPALE,
-  CATEGORIE_PER_FATTISPECIE,
   CODICI_TRIBUTO,
   SOGLIA_MINIMA_VERSAMENTO,
   calcolaMesiPossesso,
@@ -332,12 +331,9 @@ export function calcolaIMUImmobile(
   // Totale
   let imuTotale = round2(imuAccontoLordo + imuSaldo);
 
-  // Detrazione per abitazione principale
+  // Detrazione per abitazione principale (A/1, A/8, A/9)
   let detrazione: number | undefined;
-  if (
-    fattispecie_principale === 'abitazione_principale_lusso' &&
-    CATEGORIE_PER_FATTISPECIE.abitazione_principale_lusso!.includes(categoria)
-  ) {
+  if (fattispecie_principale === 'abitazione_principale_lusso') {
     detrazione = calcolaDetrazione(percentualePossesso, mesiTotali);
     imuTotale = round2(Math.max(0, imuTotale - detrazione));
   }

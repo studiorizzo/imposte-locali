@@ -126,26 +126,6 @@ export interface RiepilogoIMU {
   scadenzaSaldo: string;          // "16/12/YYYY"
 }
 
-// Configurazione comune
-export interface ConfigurazioneComune {
-  codice: string;
-  comune: string;
-  provincia: string;
-
-  // Aliquote deliberate
-  aliquote: {
-    abitazionePrincipale: number;  // Default 0.50%
-    fabbricatiRurali: number;      // Default 0.10%
-    terreniAgricoli: number;       // Default 0.76%
-    gruppoD: number;               // Default 0.86% (min 0.76%)
-    altriFabbricati: number;       // Default 0.86%
-    areeFabbricabili: number;      // Default 0.86%
-  };
-
-  // Maggiorazione TASI (max 0.08%)
-  maggiorazioneTasi?: number;
-}
-
 // Dati contribuente (per UI)
 export interface Contribuente {
   nome: string;
