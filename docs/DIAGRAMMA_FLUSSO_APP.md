@@ -224,7 +224,7 @@ flowchart TD
 │ Identificazione                                                 │
 │   • id: string                                                  │
 │   • descrizione?: string                                        │
-│   • tipo: TipoImmobile                                          │
+│   • fattispecie_principale: FattispeciePrincipale               │
 │   • categoria: CategoriaCatastale                               │
 ├─────────────────────────────────────────────────────────────────┤
 │ Dati Catastali (uno dei tre)                                    │

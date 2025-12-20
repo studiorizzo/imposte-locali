@@ -88,10 +88,6 @@ export const FATTISPECIE_LABELS: Record<FattispeciePrincipale, string> = {
   altri_fabbricati: 'Altro Fabbricato',
 };
 
-// Alias per retrocompatibilità
-export const CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI = CATEGORIE_PER_FATTISPECIE.abitazione_principale_lusso!;
-export const CATEGORIE_PERTINENZE = CATEGORIE_PER_FATTISPECIE.pertinenze!;
-
 // Codici tributo F24
 export const CODICI_TRIBUTO = {
   abitazionePrincipale: { comune: '3912' },

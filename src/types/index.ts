@@ -30,9 +30,6 @@ export type FattispeciePrincipale =
   | 'aree_fabbricabili'              // Aree edificabili - aliquota 0.86%
   | 'altri_fabbricati';              // Tutti gli altri (A/2-A/11, B, C) - aliquota 0.86%
 
-// Alias per retrocompatibilità
-export type TipoImmobile = FattispeciePrincipale;
-
 // Riduzioni applicabili
 export interface Riduzioni {
   storicoArtistico: boolean;      // -50% base

@@ -20,7 +20,7 @@ import {
   RIVALUTAZIONE_RENDITA,
   QUOTA_STATO_GRUPPO_D,
   DETRAZIONE_ABITAZIONE_PRINCIPALE,
-  CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI,
+  CATEGORIE_PER_FATTISPECIE,
   CODICI_TRIBUTO,
   SOGLIA_MINIMA_VERSAMENTO,
   calcolaMesiPossesso,
@@ -81,7 +81,7 @@ export function verificaEsenzione(
   // Abitazione principale non di lusso (nota: abitazione_principale_lusso è già tassabile per definizione)
   if (
     fattispecie_principale === 'abitazione_principale_lusso' &&
-    !CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI.includes(categoria)
+    !CATEGORIE_PER_FATTISPECIE.abitazione_principale_lusso!.includes(categoria)
   ) {
     return { esente: true, motivo: 'Abitazione principale (non A/1, A/8, A/9)' };
   }
@@ -344,7 +344,7 @@ export function calcolaIMUImmobile(
   let detrazione: number | undefined;
   if (
     fattispecie_principale === 'abitazione_principale_lusso' &&
-    CATEGORIE_ABITAZIONE_PRINCIPALE_TASSABILI.includes(categoria)
+    CATEGORIE_PER_FATTISPECIE.abitazione_principale_lusso!.includes(categoria)
   ) {
     detrazione = calcolaDetrazione(percentualePossesso, mesiTotali);
     imuTotale = round2(Math.max(0, imuTotale - detrazione));
