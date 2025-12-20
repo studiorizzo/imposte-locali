@@ -24,12 +24,12 @@ function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
       codice_catastale: 'H501',
       label: 'H501 - Roma',
     },
-    tipo: 'altro_fabbricato',
+    fattispecie_principale: 'altri_fabbricati',
     categoria: 'A/2',
     renditaCatastale: 1000,
     percentualePossesso: 100,
-    mesiPrimoSemestre: 6,
-    mesiSecondoSemestre: 6,
+    dataInizio: '2026-01-01',
+    dataFine: '2026-12-31',
     aliquotaAcconto: 1.06,
     aliquotaSaldo: 1.06,
     riduzioni: {
@@ -118,7 +118,7 @@ describe('Calcolo IMU Immobile Completo', () => {
 
   test('Terreno CD/IAP - esente', () => {
     const immobile = creaImmobile({
-      tipo: 'terreno_agricolo',
+      fattispecie_principale: 'terreni_agricoli',
       categoria: 'A/2', // Non usata per terreni
       redditoDominicale: 500,
       esenzioni: {
