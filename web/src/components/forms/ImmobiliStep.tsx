@@ -117,29 +117,25 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
     []
   );
 
+  // Calcola aliquota base (da prospetto o ministeriale)
+  const aliquotaBase = useMemo(() => {
+    if (!immobile.fattispecie_principale) return 0;
+    const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, immobile.fattispecie_principale);
+    return aliquotaDaProspetto !== null ? aliquotaDaProspetto : getDefaultAliquota(immobile.fattispecie_principale);
+  }, [prospetto, immobile.fattispecie_principale]);
+
   // Aggiorna aliquote quando prospetto cambia o fattispecie immobile cambia
   useEffect(() => {
     if (!immobile.fattispecie_principale) return;
 
-    const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, immobile.fattispecie_principale);
-
-    if (aliquotaDaProspetto !== null) {
-      setImmobile(prev => ({
-        ...prev,
-        aliquotaAcconto: aliquotaDaProspetto,
-        aliquotaSaldo: aliquotaDaProspetto,
-      }));
-    } else {
-      const aliquotaMinisteriale = getDefaultAliquota(immobile.fattispecie_principale);
-      setImmobile(prev => ({
-        ...prev,
-        aliquotaAcconto: aliquotaMinisteriale,
-        aliquotaSaldo: aliquotaMinisteriale,
-      }));
-    }
+    setImmobile(prev => ({
+      ...prev,
+      aliquotaAcconto: aliquotaBase,
+      aliquotaSaldo: aliquotaBase,
+    }));
     // Reset aliquota personalizzata selezionata
     setAliquotaPersonalizzataSelezionata(null);
-  }, [prospetto, immobile.fattispecie_principale]);
+  }, [aliquotaBase]);
 
   const handleComuneChange = (option: (typeof comuniOptions)[number] | null) => {
     const emptyImmobile = createEmptyImmobile();
@@ -509,6 +505,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
           fattispecie={immobile.fattispecie_principale}
           aliquotaAcconto={immobile.aliquotaAcconto}
           aliquotaSaldo={immobile.aliquotaSaldo}
+          aliquotaBase={aliquotaBase}
           onAliquotaAccontoChange={(value) => setImmobile(prev => ({ ...prev, aliquotaAcconto: value }))}
           onAliquotaSaldoChange={(value) => setImmobile(prev => ({ ...prev, aliquotaSaldo: value }))}
           aliquotaPersonalizzataSelezionata={aliquotaPersonalizzataSelezionata}
