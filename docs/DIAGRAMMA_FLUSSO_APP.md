@@ -249,7 +249,6 @@ flowchart TD
 │   • pensionatoEstero: boolean     (-50% base)                   │
 ├─────────────────────────────────────────────────────────────────┤
 │ Esenzioni                                                       │
-│   • abitazionePrincipale: boolean (non A/1,A/8,A/9)             │
 │   • terrenoCdIap: boolean         (CD/IAP)                      │
 │   • beneMerce: boolean            (dal 2022)                    │
 │   • occupatoAbusivamente: boolean (dal 2023)                    │

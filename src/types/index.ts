@@ -41,7 +41,6 @@ export interface Riduzioni {
 
 // Esenzioni
 export interface Esenzioni {
-  abitazionePrincipale: boolean;  // Non A/1, A/8, A/9
   terrenoCdIap: boolean;          // Coltivatore diretto / IAP
   beneMerce: boolean;             // Dal 2022
   occupatoAbusivamente: boolean;  // Dal 2023

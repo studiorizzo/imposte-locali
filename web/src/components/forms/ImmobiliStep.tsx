@@ -85,7 +85,6 @@ const createEmptyImmobile = (): DatiImmobile => ({
     pensionatoEstero: false,
   },
   esenzioni: {
-    abitazionePrincipale: false,
     terrenoCdIap: false,
     beneMerce: false,
     occupatoAbusivamente: false,
