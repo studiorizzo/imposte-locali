@@ -123,18 +123,21 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
     return aliquotaDaProspetto !== null ? aliquotaDaProspetto : getDefaultAliquota(immobile.fattispecie_principale);
   }, [prospetto, immobile.fattispecie_principale]);
 
-  // Aggiorna aliquote quando prospetto cambia o fattispecie immobile cambia
+  // Aggiorna aliquote quando prospetto cambia (dopo caricamento asincrono)
   useEffect(() => {
-    if (!immobile.fattispecie_principale) return;
+    if (!immobile.fattispecie_principale || !prospetto) return;
 
-    setImmobile(prev => ({
-      ...prev,
-      aliquotaAcconto: aliquotaBase,
-      aliquotaSaldo: aliquotaBase,
-    }));
-    // Reset aliquota personalizzata selezionata
-    setAliquotaPersonalizzataSelezionata(null);
-  }, [aliquotaBase]);
+    // Prospetto appena caricato: aggiorna le aliquote
+    const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, immobile.fattispecie_principale);
+    if (aliquotaDaProspetto !== null) {
+      setImmobile(prev => ({
+        ...prev,
+        aliquotaAcconto: aliquotaDaProspetto,
+        aliquotaSaldo: aliquotaDaProspetto,
+      }));
+      setAliquotaPersonalizzataSelezionata(null);
+    }
+  }, [prospetto]);
 
   const handleComuneChange = (option: (typeof comuniOptions)[number] | null) => {
     const emptyImmobile = createEmptyImmobile();
@@ -164,9 +167,11 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
 
       if (field === 'fattispecie_principale') {
         const newFattispecie = value as FattispeciePrincipale;
-        const defaultAliquota = getDefaultAliquota(newFattispecie);
-        updated.aliquotaAcconto = defaultAliquota;
-        updated.aliquotaSaldo = defaultAliquota;
+        // Usa aliquota dal prospetto se disponibile, altrimenti ministeriale
+        const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, newFattispecie);
+        const aliquota = aliquotaDaProspetto !== null ? aliquotaDaProspetto : getDefaultAliquota(newFattispecie);
+        updated.aliquotaAcconto = aliquota;
+        updated.aliquotaSaldo = aliquota;
 
         if (prev.categoria) {
           const categorieValide = getCategoriePerFattispecie(newFattispecie);
@@ -174,6 +179,9 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
             updated.categoria = '' as CategoriaCatastale;
           }
         }
+
+        // Reset aliquota personalizzata quando cambia fattispecie
+        setAliquotaPersonalizzataSelezionata(null);
       }
 
       // Reset aliquota personalizzata se cambia categoria

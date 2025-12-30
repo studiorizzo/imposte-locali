@@ -3,6 +3,7 @@
  * Verifica formule con esempi da SPECS.md
  */
 
+import { describe, test, expect } from 'vitest';
 import {
   calcolaBaseImponibileFabbricato,
   calcolaBaseImponibileTerreno,
@@ -194,7 +195,3 @@ describe('Calcolo IMU Immobile Completo', () => {
   });
 });
 
-// Esegui i test se in ambiente Node
-if (typeof process !== 'undefined' && process.env.NODE_ENV === 'test') {
-  console.log('Running tests...');
-}
