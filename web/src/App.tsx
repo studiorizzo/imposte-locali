@@ -3,7 +3,7 @@ import { Header, Footer } from './components/layout';
 import { StepIndicator, WizardNavigation } from './components/wizard';
 import { ContribuenteForm, ImmobiliStep } from './components/forms';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
-import { calcolaRiepilogoIMU } from '@lib';
+import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { Contribuente, DatiImmobile, RiepilogoIMU, WizardStep } from '@lib';
 import './index.css';
 
@@ -13,12 +13,9 @@ const WIZARD_STEPS: WizardStep[] = [
   { id: 'riepilogo', title: 'Riepilogo' },
 ];
 
-const currentYear = new Date().getFullYear();
-
 const initialContribuente: Contribuente = {
   nome: '',
   codiceFiscale: '',
-  anno: currentYear,
 };
 
 function App() {
@@ -42,7 +39,7 @@ function App() {
     if (currentStep === WIZARD_STEPS.length - 2) {
       // Calcola riepilogo prima di mostrare l'ultimo step
       const result = calcolaRiepilogoIMU(
-        contribuente.anno,
+        ANNO_RIFERIMENTO,
         contribuente.nome,
         immobili,
         contribuente.codiceFiscale

@@ -130,9 +130,6 @@ export interface RiepilogoIMU {
 export interface Contribuente {
   nome: string;
   codiceFiscale: string;
-  anno: number;
-  codiceComune?: string;
-  comuneResidenza?: string;
 }
 
 // Step del wizard (per UI)
