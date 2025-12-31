@@ -427,7 +427,7 @@ export function ContribuenteForm({ data, onChange }: ContribuenteFormProps) {
                 type="date"
                 value={data.pagamento.dataVersamento}
                 onChange={(e) => handlePagamentoChange('dataVersamento', e.target.value)}
-                hint={`Scadenza acconto: ${SCADENZE.acconto}`}
+                hint={`Scadenza acconto: ${SCADENZE.acconto.giorno}/${SCADENZE.acconto.mese.toString().padStart(2, '0')}/${ANNO_RIFERIMENTO}`}
               />
             </div>
           </div>
