@@ -70,8 +70,17 @@ export function calcolaFattoreRiduzione(immobile: DatiImmobile): number {
 }
 
 /**
+ * Verifica se la categoria è abitativa (gruppo A escluso A/10 uffici)
+ */
+function isCategoriaAbitativa(categoria: CategoriaCatastale): boolean {
+  return categoria.startsWith('A/') && categoria !== 'A/10';
+}
+
+/**
  * Calcola il fattore di riduzione IMU per residente estero
  * Art. 1, c. 48-48bis, L. 178/2020 (modificato dal 2026)
+ *
+ * Si applica SOLO a unità immobiliari a uso abitativo (cat. A escluso A/10)
  *
  * Requisiti (da verificare manualmente):
  * - Trasferito all'estero dopo almeno 5 anni di residenza in Italia
@@ -304,7 +313,9 @@ export function calcolaIMUImmobile(
   } = immobile;
 
   // Esenzione residente estero per rendita ≤ 200€ (art. 1, c. 48-bis, lett. a)
+  // Si applica SOLO a unità immobiliari a uso abitativo (cat. A escluso A/10)
   if (tipologiaContribuente === 'persona_fisica_residente_estero' &&
+      isCategoriaAbitativa(categoria) &&
       renditaCatastale !== undefined &&
       renditaCatastale <= 200) {
     return {
@@ -369,7 +380,10 @@ export function calcolaIMUImmobile(
   );
 
   // Applica riduzione per residente estero sull'imposta (art. 1, c. 48-bis)
-  if (tipologiaContribuente === 'persona_fisica_residente_estero' && renditaCatastale !== undefined) {
+  // Si applica SOLO a unità immobiliari a uso abitativo (cat. A escluso A/10)
+  if (tipologiaContribuente === 'persona_fisica_residente_estero' &&
+      isCategoriaAbitativa(categoria) &&
+      renditaCatastale !== undefined) {
     const fattoreResidenteEstero = calcolaFattoreResidenteEstero(renditaCatastale);
     imuAccontoLordo = round2(imuAccontoLordo * fattoreResidenteEstero);
     imuAnnuale = round2(imuAnnuale * fattoreResidenteEstero);
