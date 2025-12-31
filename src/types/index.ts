@@ -18,6 +18,7 @@ export interface Comune {
   sigla_provincia: string;
   codice_catastale: string;
   codice_comune: string;            // Codice ISTAT alfanumerico (es. "28001")
+  abitanti: number;                 // Popolazione residente (ISTAT 2025)
   label: string;                    // "codice_catastale - comune" per autocomplete
 }
 
