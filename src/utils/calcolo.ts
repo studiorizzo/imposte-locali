@@ -52,10 +52,7 @@ export function getCoeffciente(categoria: CategoriaCatastale): number {
  * Calcola il fattore di riduzione base imponibile
  * Equivalente Excel: O5 = IF(AND(D5=1,E5=1),N5, IF(AND(D5=2,E5=1),N5/2,...))
  */
-export function calcolaFattoreRiduzione(
-  immobile: DatiImmobile,
-  tipologiaContribuente: TipologiaContribuente = 'persona_fisica'
-): number {
+export function calcolaFattoreRiduzione(immobile: DatiImmobile): number {
   const { riduzioni } = immobile;
 
   // Conta le riduzioni al 50% applicabili (caratteristiche immobile)
@@ -65,17 +62,34 @@ export function calcolaFattoreRiduzione(
     riduzioni.comodatoParenti,
   ];
 
-  // Riduzione per pensionato estero (art. 1, c. 48, L. 178/2020)
-  // Si applica a una sola unità immobiliare, non locata né in comodato
-  if (tipologiaContribuente === 'persona_fisica_pensionato_estero') {
-    riduzioni50.push(true);
-  }
-
   const numeroRiduzioni = riduzioni50.filter(Boolean).length;
 
   // Le riduzioni si cumulano moltiplicativamente
   // 1 riduzione = 50%, 2 riduzioni = 25%, ecc.
   return Math.pow(0.5, numeroRiduzioni);
+}
+
+/**
+ * Calcola il fattore di riduzione IMU per residente estero
+ * Art. 1, c. 48-48bis, L. 178/2020 (modificato dal 2026)
+ *
+ * Requisiti (da verificare manualmente):
+ * - Trasferito all'estero dopo almeno 5 anni di residenza in Italia
+ * - Una sola unità immobiliare a uso abitativo, non locata né in comodato
+ * - Immobile nel comune di ultima residenza con popolazione < 5.000 abitanti
+ *
+ * @returns fattore moltiplicatore sull'imposta (0 = esente, 0.4, 0.67, 1)
+ */
+export function calcolaFattoreResidenteEstero(renditaCatastale: number): number {
+  if (renditaCatastale <= 200) {
+    return 0; // Esente
+  } else if (renditaCatastale <= 300) {
+    return 0.40; // IMU al 40%
+  } else if (renditaCatastale <= 500) {
+    return 0.67; // IMU al 67%
+  } else {
+    return 1; // IMU piena
+  }
 }
 
 /**
@@ -289,6 +303,25 @@ export function calcolaIMUImmobile(
     riduzioni,
   } = immobile;
 
+  // Esenzione residente estero per rendita ≤ 200€ (art. 1, c. 48-bis, lett. a)
+  if (tipologiaContribuente === 'persona_fisica_residente_estero' &&
+      renditaCatastale !== undefined &&
+      renditaCatastale <= 200) {
+    return {
+      immobile,
+      coefficiente: 0,
+      baseImponibileLorda: 0,
+      fattoreRiduzione: 1,
+      baseImponibileNetta: 0,
+      imuAcconto: 0,
+      imuSaldo: 0,
+      imuTotale: 0,
+      esente: true,
+      motivoEsenzione: 'Residente estero - rendita ≤ €200 (art. 1, c. 48-bis, lett. a)',
+      codiceTributoComune: '',
+    };
+  }
+
   // Calcola i mesi di possesso applicando la Regola del Mese
   const { mesiPrimoSemestre, mesiSecondoSemestre, mesiTotali } = calcolaMesiPossesso(dataInizio, dataFine);
   const coefficiente = fattispecie_principale === 'terreni_agricoli'
@@ -315,12 +348,12 @@ export function calcolaIMUImmobile(
     );
   }
 
-  // Applica riduzioni base
-  const fattoreRiduzione = calcolaFattoreRiduzione(immobile, tipologiaContribuente);
+  // Applica riduzioni base (caratteristiche immobile)
+  const fattoreRiduzione = calcolaFattoreRiduzione(immobile);
   const baseImponibileNetta = round2(baseImponibileLorda * fattoreRiduzione);
 
   // Calcola IMU acconto (1° rata)
-  const imuAccontoLordo = calcolaIMUPeriodo(
+  let imuAccontoLordo = calcolaIMUPeriodo(
     baseImponibileNetta,
     aliquotaAcconto,
     mesiPrimoSemestre,
@@ -328,12 +361,19 @@ export function calcolaIMUImmobile(
   );
 
   // Calcola IMU annuale con aliquota saldo
-  const imuAnnuale = calcolaIMUPeriodo(
+  let imuAnnuale = calcolaIMUPeriodo(
     baseImponibileNetta,
     aliquotaSaldo,
     mesiTotali,
     riduzioni.canoneCorordato
   );
+
+  // Applica riduzione per residente estero sull'imposta (art. 1, c. 48-bis)
+  if (tipologiaContribuente === 'persona_fisica_residente_estero' && renditaCatastale !== undefined) {
+    const fattoreResidenteEstero = calcolaFattoreResidenteEstero(renditaCatastale);
+    imuAccontoLordo = round2(imuAccontoLordo * fattoreResidenteEstero);
+    imuAnnuale = round2(imuAnnuale * fattoreResidenteEstero);
+  }
 
   // Saldo = max(0, annuale - acconto)
   const imuSaldo = round2(Math.max(0, imuAnnuale - imuAccontoLordo));

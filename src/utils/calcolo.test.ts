@@ -191,37 +191,66 @@ describe('Calcolo IMU Immobile Completo', () => {
     expect(risultato.baseImponibileNetta).toBe(42000);
   });
 
-  test('Riduzione 50% per pensionato estero (tipologia contribuente)', () => {
+  test('Residente estero: rendita ≤ 200€ → esente', () => {
     const immobile = creaImmobile({
       categoria: 'A/2',
-      renditaCatastale: 1000,
+      renditaCatastale: 200,
     });
 
-    // Calcolo con tipologia pensionato estero
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_pensionato_estero');
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
 
-    expect(risultato.fattoreRiduzione).toBe(0.5);
-    expect(risultato.baseImponibileNetta).toBe(84000);
-    expect(risultato.imuTotale).toBe(890.4); // 50% di 1780.80
+    expect(risultato.esente).toBe(true);
+    expect(risultato.motivoEsenzione).toContain('rendita');
+    expect(risultato.imuTotale).toBe(0);
   });
 
-  test('Riduzione cumulativa: storico + pensionato estero = 25%', () => {
+  test('Residente estero: rendita 201-300€ → IMU al 40%', () => {
+    const immobile = creaImmobile({
+      categoria: 'A/2',
+      renditaCatastale: 300,
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
+    });
+
+    // Base: 300 × 1.05 × 160 = 50.400€
+    // IMU piena: 50.400 × 1.06% = 534,24€
+    // IMU ridotta 40%: 534,24 × 0.40 = 213,70€
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    expect(risultato.imuTotale).toBe(213.7);
+  });
+
+  test('Residente estero: rendita 301-500€ → IMU al 67%', () => {
+    const immobile = creaImmobile({
+      categoria: 'A/2',
+      renditaCatastale: 500,
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
+    });
+
+    // Base: 500 × 1.05 × 160 = 84.000€
+    // IMU piena: 84.000 × 1.06% = 890,40€
+    // IMU ridotta 67%: 890,40 × 0.67 = 596,57€
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    expect(risultato.imuTotale).toBe(596.57);
+  });
+
+  test('Residente estero: rendita > 500€ → IMU piena', () => {
     const immobile = creaImmobile({
       categoria: 'A/2',
       renditaCatastale: 1000,
-      riduzioni: {
-        storicoArtistico: true,
-        inagibileInabitabile: false,
-        comodatoParenti: false,
-        canoneCorordato: false,
-      },
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
     });
 
-    // Calcolo con tipologia pensionato estero + riduzione storico
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_pensionato_estero');
+    // Rendita > 500€: nessuna riduzione
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
 
-    expect(risultato.fattoreRiduzione).toBe(0.25);
-    expect(risultato.baseImponibileNetta).toBe(42000);
+    expect(risultato.esente).toBe(false);
+    expect(risultato.imuTotale).toBe(1780.8); // IMU piena
   });
 });
 

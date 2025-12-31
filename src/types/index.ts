@@ -129,7 +129,7 @@ export interface RiepilogoIMU {
 // Tipologia contribuente
 export type TipologiaContribuente =
   | 'persona_fisica'                      // Standard
-  | 'persona_fisica_pensionato_estero'    // Riduzione 50% base (art. 1, c. 48, L. 178/2020)
+  | 'persona_fisica_residente_estero'     // Emigrato estero (art. 1, c. 48-48bis, L. 178/2020 mod. 2026)
   | 'persona_fisica_anziano_ricoverato'   // Assimilazione ab. principale (art. 1, c. 741, lett. c, n. 6)
   | 'persona_fisica_forze_armate'         // Assimilazione ab. principale (art. 1, c. 741, lett. c, n. 5)
   | 'persona_giuridica';
