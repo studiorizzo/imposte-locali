@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, Button, Autocomplete, Modal } from '../ui';
 import { AliquotePanel } from './AliquotePanel';
 import { ListaImmobili } from './ListaImmobili';
-import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto } from '@lib';
+import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto, TipologiaContribuente } from '@lib';
 import { COEFFICIENTI, ALIQUOTE_MINISTERO, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT, verificaUnicita } from '@lib';
 import { useProspetto } from '../../hooks';
 
@@ -10,6 +10,7 @@ interface ImmobiliStepProps {
   immobili: DatiImmobile[];
   onAddImmobile: (immobile: DatiImmobile) => void;
   onRemoveImmobile: (id: string) => void;
+  tipologiaContribuente: TipologiaContribuente;
 }
 
 // Lista fattispecie per il select
@@ -91,11 +92,22 @@ const createEmptyImmobile = (): DatiImmobile => ({
   },
 });
 
-export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: ImmobiliStepProps) {
+export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipologiaContribuente }: ImmobiliStepProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [aliquotaPersonalizzataSelezionata, setAliquotaPersonalizzataSelezionata] = useState<string | null>(null);
   const [erroreUnicita, setErroreUnicita] = useState<string | null>(null);
+
+  // Filtra fattispecie in base alla tipologia contribuente
+  // Residente estero non può avere abitazione principale né pertinenze
+  const fattspecieOptions = useMemo(() => {
+    if (tipologiaContribuente === 'persona_fisica_residente_estero') {
+      return FATTISPECIE_OPTIONS.filter(
+        opt => opt.value !== 'abitazione_principale_lusso' && opt.value !== 'pertinenze'
+      );
+    }
+    return FATTISPECIE_OPTIONS;
+  }, [tipologiaContribuente]);
 
   // Hook per caricare prospetto
   const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
@@ -313,7 +325,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
                     placeholder="Seleziona tipologia"
                     value={immobile.fattispecie_principale}
                     onChange={(e) => handleChange('fattispecie_principale', e.target.value as FattispeciePrincipale)}
-                    options={FATTISPECIE_OPTIONS}
+                    options={fattspecieOptions}
                   />
                   {showCategoria && (
                     <Select

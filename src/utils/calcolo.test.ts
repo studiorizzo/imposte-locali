@@ -252,5 +252,59 @@ describe('Calcolo IMU Immobile Completo', () => {
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(1780.8); // IMU piena
   });
+
+  test('Residente estero: D/1 (non abitativo) → IMU piena anche con rendita bassa', () => {
+    const immobile = creaImmobile({
+      categoria: 'D/1',
+      fattispecie_principale: 'fabbricati_gruppo_d',
+      renditaCatastale: 200, // rendita bassa, ma non abitativo
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
+    });
+
+    // D/1 non è abitativo, quindi nessuna riduzione residente estero
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    // Base: 200 × 1.05 × 65 = 13.650€
+    // IMU: 13.650 × 1.06% = 144,69€
+    expect(risultato.imuTotale).toBe(144.69);
+  });
+
+  test('Residente estero: A/10 (uffici) → IMU piena anche con rendita bassa', () => {
+    const immobile = creaImmobile({
+      categoria: 'A/10',
+      renditaCatastale: 200, // rendita bassa, ma A/10 sono uffici
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
+    });
+
+    // A/10 sono uffici, quindi non abitativi → nessuna riduzione
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    // Base: 200 × 1.05 × 80 = 16.800€ (A/10 ha coefficiente 80)
+    // IMU: 16.800 × 1.06% = 178,08€
+    expect(risultato.imuTotale).toBe(178.08);
+  });
+
+  test('Residente estero: terreno agricolo → IMU piena (non abitativo)', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'terreni_agricoli',
+      categoria: 'A/2', // Non usata per terreni
+      redditoDominicale: 100,
+      aliquotaAcconto: 0.86,
+      aliquotaSaldo: 0.86,
+    });
+
+    // Terreni non sono abitativi → nessuna riduzione residente estero
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    // Base: 100 × 1.25 × 135 = 16.875€
+    // IMU: 16.875 × 0.86% = 145,13€
+    expect(risultato.imuTotale).toBe(145.13);
+  });
+
 });
 
