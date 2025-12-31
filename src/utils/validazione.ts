@@ -48,20 +48,20 @@ export function validaCodiceFiscale(cf: string): RisultatoValidazioneCF {
   // Formato: 6 lettere + 2 numeri + 1 lettera + 2 numeri + 1 lettera + 3 alfanumerici + 1 lettera
   const formatoRegex = /^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9A-Z]{3}[A-Z]$/;
   if (!formatoRegex.test(cfUpper)) {
-    return { valido: false, errore: 'Formato codice fiscale non valido' };
+    return { valido: false, errore: 'Il codice fiscale non è nel formato corretto' };
   }
 
   // Verifica mese (posizione 8, indice 8)
   const letteraMese = cfUpper[8];
   if (!MESI_CF.includes(letteraMese)) {
-    return { valido: false, errore: 'Mese nel codice fiscale non valido' };
+    return { valido: false, errore: 'Il mese nel codice fiscale non è valido' };
   }
 
   // Verifica giorno (posizioni 9-10)
   const giorno = parseInt(cfUpper.substring(9, 11), 10);
   // Giorno: 01-31 per maschi, 41-71 per femmine
   if (!((giorno >= 1 && giorno <= 31) || (giorno >= 41 && giorno <= 71))) {
-    return { valido: false, errore: 'Giorno nel codice fiscale non valido' };
+    return { valido: false, errore: 'Il giorno nel codice fiscale non è valido' };
   }
 
   // Calcolo carattere di controllo
@@ -81,7 +81,7 @@ export function validaCodiceFiscale(cf: string): RisultatoValidazioneCF {
   const carattereControlloPresente = cfUpper[15];
 
   if (carattereControlloCalcolato !== carattereControlloPresente) {
-    return { valido: false, errore: 'Carattere di controllo non valido' };
+    return { valido: false, errore: 'L\'ultimo carattere nel codice fiscale non è valido' };
   }
 
   return { valido: true };
@@ -100,18 +100,18 @@ export function validaIBAN(iban: string): RisultatoValidazioneCF {
 
   // Lunghezza
   if (ibanClean.length !== 27) {
-    return { valido: false, errore: 'IBAN deve essere di 27 caratteri' };
+    return { valido: false, errore: 'Il codice IBAN deve essere di 27 caratteri' };
   }
 
   // Deve iniziare con IT
   if (!ibanClean.startsWith('IT')) {
-    return { valido: false, errore: 'IBAN deve iniziare con IT' };
+    return { valido: false, errore: 'Il codice IBAN deve iniziare con IT' };
   }
 
   // Formato: IT + 2 cifre + 1 lettera CIN + 5 cifre ABI + 5 cifre CAB + 12 alfanumerici
   const formatoRegex = /^IT[0-9]{2}[A-Z][0-9]{5}[0-9]{5}[0-9A-Z]{12}$/;
   if (!formatoRegex.test(ibanClean)) {
-    return { valido: false, errore: 'Formato IBAN non valido' };
+    return { valido: false, errore: 'Il codice IBAN non è nel formato corretto' };
   }
 
   // Validazione checksum ISO 7064 (Mod 97)
@@ -132,7 +132,7 @@ export function validaIBAN(iban: string): RisultatoValidazioneCF {
   }
 
   if (resto !== 1) {
-    return { valido: false, errore: 'IBAN non valido (checksum errato)' };
+    return { valido: false, errore: 'Il codice IBAN non è valido' };
   }
 
   return { valido: true };
