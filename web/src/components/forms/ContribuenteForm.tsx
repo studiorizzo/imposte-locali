@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Input, Select, Card, CardHeader, CardContent } from '../ui';
-import type { Contribuente, DatiAnagrafici, DomicilioFiscale, DatiPagamento, SoluzionePagamento } from '@lib';
+import type { Contribuente, DatiAnagrafici, DomicilioFiscale, DatiPagamento, SoluzionePagamento, TipologiaContribuente } from '@lib';
 import { validaCodiceFiscale, validaIBAN, validaCAP, SCADENZE, ANNO_RIFERIMENTO } from '@lib';
 
 interface ContribuenteFormProps {
@@ -16,6 +16,30 @@ const SESSO_OPTIONS = [
 const SOLUZIONE_PAGAMENTO_OPTIONS = [
   { value: 'rateizzato', label: 'Rateizzato' },
   { value: 'rata_unica', label: 'Rata unica' },
+];
+
+// Casi particolari persona fisica (mutualmente esclusivi)
+const CASI_PARTICOLARI: { value: TipologiaContribuente; label: string; description: string }[] = [
+  {
+    value: 'persona_fisica',
+    label: 'Nessuno',
+    description: 'Contribuente ordinario',
+  },
+  {
+    value: 'persona_fisica_pensionato_estero',
+    label: 'Pensionato estero',
+    description: 'Titolare di pensione in convenzione internazionale, residente all\'estero (riduzione 50%)',
+  },
+  {
+    value: 'persona_fisica_anziano_ricoverato',
+    label: 'Anziano/disabile ricoverato',
+    description: 'Ricoverato permanentemente in istituto (assimilazione ad abitazione principale)',
+  },
+  {
+    value: 'persona_fisica_forze_armate',
+    label: 'Forze armate / Polizia / VVF',
+    description: 'Personale in servizio permanente (assimilazione senza requisito residenza)',
+  },
 ];
 
 const PROVINCE_OPTIONS = [
@@ -185,6 +209,13 @@ export function ContribuenteForm({ data, onChange }: ContribuenteFormProps) {
     });
   };
 
+  const handleTipologiaChange = (tipologia: TipologiaContribuente) => {
+    onChange({
+      ...data,
+      tipologia,
+    });
+  };
+
   // Data scadenza acconto formattata per input date
   const dataScadenzaAcconto = `${ANNO_RIFERIMENTO}-06-16`;
 
@@ -264,7 +295,48 @@ export function ContribuenteForm({ data, onChange }: ContribuenteFormProps) {
         </CardContent>
       </Card>
 
-      {/* Sezione 2: Domicilio Fiscale */}
+      {/* Sezione 2: Casi Particolari */}
+      <Card>
+        <CardHeader>
+          <h2 className="text-xl font-semibold text-gray-900">Casi Particolari</h2>
+          <p className="text-sm text-gray-500 mt-1">
+            Seleziona se il contribuente rientra in una categoria con agevolazioni specifiche
+          </p>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-3">
+            {CASI_PARTICOLARI.map((caso) => (
+              <label
+                key={caso.value}
+                className={`flex items-start p-3 rounded-lg border cursor-pointer transition-colors ${
+                  data.tipologia === caso.value
+                    ? 'border-primary-500 bg-primary-50'
+                    : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="tipologia"
+                  value={caso.value}
+                  checked={data.tipologia === caso.value}
+                  onChange={() => handleTipologiaChange(caso.value)}
+                  className="mt-1 h-4 w-4 text-primary-600 border-gray-300 focus:ring-primary-500"
+                />
+                <div className="ml-3">
+                  <span className="block text-sm font-medium text-gray-900">
+                    {caso.label}
+                  </span>
+                  <span className="block text-xs text-gray-500 mt-0.5">
+                    {caso.description}
+                  </span>
+                </div>
+              </label>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Sezione 3: Domicilio Fiscale */}
       <Card>
         <CardHeader>
           <h2 className="text-xl font-semibold text-gray-900">Domicilio Fiscale</h2>
@@ -321,7 +393,7 @@ export function ContribuenteForm({ data, onChange }: ContribuenteFormProps) {
         </CardContent>
       </Card>
 
-      {/* Sezione 3: Pagamento */}
+      {/* Sezione 4: Pagamento */}
       <Card>
         <CardHeader>
           <h2 className="text-xl font-semibold text-gray-900">Pagamento</h2>

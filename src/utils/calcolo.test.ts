@@ -38,7 +38,6 @@ function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
       inagibileInabitabile: false,
       comodatoParenti: false,
       canoneCorordato: false,
-      pensionatoEstero: false,
     },
     esenzioni: {
       terrenoCdIap: false,
@@ -163,7 +162,6 @@ describe('Calcolo IMU Immobile Completo', () => {
         inagibileInabitabile: false,
         comodatoParenti: false,
         canoneCorordato: false,
-        pensionatoEstero: false,
       },
     });
 
@@ -184,11 +182,43 @@ describe('Calcolo IMU Immobile Completo', () => {
         inagibileInabitabile: true, // Seconda riduzione
         comodatoParenti: false,
         canoneCorordato: false,
-        pensionatoEstero: false,
       },
     });
 
     const risultato = calcolaIMUImmobile(immobile);
+
+    expect(risultato.fattoreRiduzione).toBe(0.25);
+    expect(risultato.baseImponibileNetta).toBe(42000);
+  });
+
+  test('Riduzione 50% per pensionato estero (tipologia contribuente)', () => {
+    const immobile = creaImmobile({
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+    });
+
+    // Calcolo con tipologia pensionato estero
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_pensionato_estero');
+
+    expect(risultato.fattoreRiduzione).toBe(0.5);
+    expect(risultato.baseImponibileNetta).toBe(84000);
+    expect(risultato.imuTotale).toBe(890.4); // 50% di 1780.80
+  });
+
+  test('Riduzione cumulativa: storico + pensionato estero = 25%', () => {
+    const immobile = creaImmobile({
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+      riduzioni: {
+        storicoArtistico: true,
+        inagibileInabitabile: false,
+        comodatoParenti: false,
+        canoneCorordato: false,
+      },
+    });
+
+    // Calcolo con tipologia pensionato estero + riduzione storico
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_pensionato_estero');
 
     expect(risultato.fattoreRiduzione).toBe(0.25);
     expect(risultato.baseImponibileNetta).toBe(42000);
