@@ -313,8 +313,9 @@ export function calcolaIMUImmobile(
   } = immobile;
 
   // Esenzione residente estero per rendita ≤ 200€ (art. 1, c. 48-bis, lett. a)
-  // Si applica SOLO a unità immobiliari a uso abitativo (cat. A escluso A/10)
+  // Si applica SOLO a: fattispecie "altri_fabbricati" + categoria A (escluso A/10)
   if (tipologiaContribuente === 'persona_fisica_residente_estero' &&
+      fattispecie_principale === 'altri_fabbricati' &&
       isCategoriaAbitativa(categoria) &&
       renditaCatastale !== undefined &&
       renditaCatastale <= 200) {
@@ -380,8 +381,9 @@ export function calcolaIMUImmobile(
   );
 
   // Applica riduzione per residente estero sull'imposta (art. 1, c. 48-bis)
-  // Si applica SOLO a unità immobiliari a uso abitativo (cat. A escluso A/10)
+  // Si applica SOLO a: fattispecie "altri_fabbricati" + categoria A (escluso A/10)
   if (tipologiaContribuente === 'persona_fisica_residente_estero' &&
+      fattispecie_principale === 'altri_fabbricati' &&
       isCategoriaAbitativa(categoria) &&
       renditaCatastale !== undefined) {
     const fattoreResidenteEstero = calcolaFattoreResidenteEstero(renditaCatastale);

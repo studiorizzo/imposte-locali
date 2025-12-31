@@ -305,5 +305,24 @@ describe('Calcolo IMU Immobile Completo', () => {
     // IMU: 16.875 × 0.86% = 145,13€
     expect(risultato.imuTotale).toBe(145.13);
   });
+
+  test('Residente estero: abitazione principale lusso A/1 → IMU piena (fattispecie non applicabile)', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale_lusso',
+      categoria: 'A/1',
+      renditaCatastale: 200, // rendita bassa, ma fattispecie non è altri_fabbricati
+      aliquotaAcconto: 0.50,
+      aliquotaSaldo: 0.50,
+    });
+
+    // abitazione_principale_lusso non è altri_fabbricati → nessuna riduzione residente estero
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    // Base: 200 × 1.05 × 160 = 33.600€
+    // IMU: 33.600 × 0.50% = 168€ - detrazione €200 = €0 (max 0)
+    // Ma senza riduzione residente estero
+    expect(risultato.imuTotale).toBe(0); // Detrazione copre tutto
+  });
 });
 

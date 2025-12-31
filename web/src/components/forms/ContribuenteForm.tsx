@@ -27,7 +27,7 @@ const CASI_PARTICOLARI: { value: TipologiaContribuente; label: string; descripti
   },
   {
     value: 'persona_fisica_residente_estero',
-    label: 'Emigrato all\'estero',
+    label: 'Residente all\'estero',
     description: 'Trasferito all\'estero dopo almeno 5 anni di residenza in Italia. Immobile nel comune di ultima residenza (<5.000 ab.). Riduzione variabile per rendita.',
   },
   {
