@@ -26,9 +26,9 @@ const CASI_PARTICOLARI: { value: TipologiaContribuente; label: string; descripti
     description: 'Contribuente ordinario',
   },
   {
-    value: 'persona_fisica_pensionato_estero',
-    label: 'Pensionato estero',
-    description: 'Titolare di pensione in convenzione internazionale, residente all\'estero (riduzione 50%)',
+    value: 'persona_fisica_residente_estero',
+    label: 'Emigrato all\'estero',
+    description: 'Trasferito all\'estero dopo almeno 5 anni di residenza in Italia. Immobile nel comune di ultima residenza (<5.000 ab.). Riduzione variabile per rendita.',
   },
   {
     value: 'persona_fisica_anziano_ricoverato',
