@@ -89,6 +89,7 @@ export function validaCodiceFiscale(cf: string): RisultatoValidazioneCF {
 
 /**
  * Valida IBAN italiano
+ * Formato: 2 lettere + 2 cifre + 1 lettera + 22 cifre = 27 caratteri
  */
 export function validaIBAN(iban: string): RisultatoValidazioneCF {
   if (!iban) {
@@ -97,39 +98,10 @@ export function validaIBAN(iban: string): RisultatoValidazioneCF {
 
   const ibanClean = iban.toUpperCase().replace(/\s/g, '');
 
-  // IBAN italiano: IT + 2 cifre controllo + 1 lettera CIN + 5 cifre ABI + 5 cifre CAB + 12 alfanumerici
-  if (ibanClean.length !== 27) {
-    return { valido: false, errore: 'IBAN italiano deve essere di 27 caratteri' };
-  }
-
-  if (!ibanClean.startsWith('IT')) {
-    return { valido: false, errore: 'IBAN deve iniziare con IT' };
-  }
-
-  const formatoRegex = /^IT[0-9]{2}[A-Z][0-9]{5}[0-9]{5}[0-9A-Z]{12}$/;
+  // Formato: 2 lettere + 2 cifre + 1 lettera + 22 cifre
+  const formatoRegex = /^[A-Z]{2}[0-9]{2}[A-Z][0-9]{22}$/;
   if (!formatoRegex.test(ibanClean)) {
-    return { valido: false, errore: 'Formato IBAN non valido' };
-  }
-
-  // Validazione checksum ISO 7064
-  const riordinato = ibanClean.substring(4) + ibanClean.substring(0, 4);
-  let numerico = '';
-  for (const char of riordinato) {
-    if (char >= 'A' && char <= 'Z') {
-      numerico += (char.charCodeAt(0) - 55).toString();
-    } else {
-      numerico += char;
-    }
-  }
-
-  // Mod 97
-  let resto = 0;
-  for (let i = 0; i < numerico.length; i++) {
-    resto = (resto * 10 + parseInt(numerico[i], 10)) % 97;
-  }
-
-  if (resto !== 1) {
-    return { valido: false, errore: 'IBAN non valido (checksum errato)' };
+    return { valido: false, errore: 'Il codice IBAN non è nel formato corretto: 2 lettere 2 cifre 1 lettera 22 cifre' };
   }
 
   return { valido: true };
