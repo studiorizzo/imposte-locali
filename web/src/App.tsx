@@ -14,8 +14,28 @@ const WIZARD_STEPS: WizardStep[] = [
 ];
 
 const initialContribuente: Contribuente = {
-  nome: '',
-  codiceFiscale: '',
+  tipologia: 'persona_fisica',
+  datiAnagrafici: {
+    cognome: '',
+    nome: '',
+    codiceFiscale: '',
+    sesso: '',
+    dataNascita: '',
+    comuneNascita: '',
+    provinciaNascita: '',
+  },
+  domicilioFiscale: {
+    indirizzo: '',
+    civico: '',
+    comune: '',
+    provincia: '',
+    cap: '',
+  },
+  pagamento: {
+    iban: '',
+    soluzionePagamento: 'rateizzato',
+    dataVersamento: '',
+  },
 };
 
 function App() {
@@ -27,7 +47,8 @@ function App() {
   const canProceed = useMemo(() => {
     switch (currentStep) {
       case 0: // Contribuente
-        return contribuente.nome.trim().length > 0;
+        return contribuente.datiAnagrafici.cognome.trim().length > 0 &&
+               contribuente.datiAnagrafici.nome.trim().length > 0;
       case 1: // Immobili
         return immobili.length > 0;
       default:
@@ -38,11 +59,12 @@ function App() {
   const handleNext = () => {
     if (currentStep === WIZARD_STEPS.length - 2) {
       // Calcola riepilogo prima di mostrare l'ultimo step
+      const nomeCompleto = `${contribuente.datiAnagrafici.cognome} ${contribuente.datiAnagrafici.nome}`.trim();
       const result = calcolaRiepilogoIMU(
         ANNO_RIFERIMENTO,
-        contribuente.nome,
+        nomeCompleto,
         immobili,
-        contribuente.codiceFiscale
+        contribuente.datiAnagrafici.codiceFiscale
       );
       setRiepilogo(result);
     }

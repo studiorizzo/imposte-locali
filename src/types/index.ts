@@ -126,10 +126,45 @@ export interface RiepilogoIMU {
   scadenzaSaldo: string;          // "16/12/YYYY"
 }
 
-// Dati contribuente (per UI)
-export interface Contribuente {
+// Tipologia contribuente
+export type TipologiaContribuente = 'persona_fisica' | 'persona_giuridica';
+
+// Soluzione di pagamento
+export type SoluzionePagamento = 'rateizzato' | 'rata_unica';
+
+// Dati anagrafici persona fisica
+export interface DatiAnagrafici {
+  cognome: string;
   nome: string;
   codiceFiscale: string;
+  sesso: 'M' | 'F' | '';
+  dataNascita: string;           // Format: "YYYY-MM-DD"
+  comuneNascita: string;
+  provinciaNascita: string;
+}
+
+// Domicilio fiscale
+export interface DomicilioFiscale {
+  indirizzo: string;
+  civico: string;
+  comune: string;
+  provincia: string;
+  cap: string;
+}
+
+// Dati pagamento
+export interface DatiPagamento {
+  iban: string;
+  soluzionePagamento: SoluzionePagamento;
+  dataVersamento: string;        // Format: "YYYY-MM-DD"
+}
+
+// Dati contribuente (per UI)
+export interface Contribuente {
+  tipologia: TipologiaContribuente;
+  datiAnagrafici: DatiAnagrafici;
+  domicilioFiscale: DomicilioFiscale;
+  pagamento: DatiPagamento;
 }
 
 // Step del wizard (per UI)

@@ -51,3 +51,11 @@ export {
   calcolaIMUImmobile,
   calcolaRiepilogoIMU,
 } from './utils/calcolo';
+
+// Validazione
+export {
+  validaCodiceFiscale,
+  validaIBAN,
+  validaCAP,
+} from './utils/validazione';
+export type { RisultatoValidazioneCF } from './utils/validazione';
