@@ -82,7 +82,6 @@ const createEmptyImmobile = (): DatiImmobile => ({
     inagibileInabitabile: false,
     comodatoParenti: false,
     canoneCorordato: false,
-    pensionatoEstero: false,
   },
   esenzioni: {
     terrenoCdIap: false,
@@ -435,12 +434,6 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: Immo
                           description="Uso gratuito a parenti 1° grado"
                           checked={immobile.riduzioni.comodatoParenti}
                           onChange={(e) => handleRiduzioneChange('comodatoParenti', e.target.checked)}
-                        />
-                        <Checkbox
-                          label="Pensionato estero"
-                          description="Pensionato residente all'estero"
-                          checked={immobile.riduzioni.pensionatoEstero}
-                          onChange={(e) => handleRiduzioneChange('pensionatoEstero', e.target.checked)}
                         />
                       </div>
                     </div>

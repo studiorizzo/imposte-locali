@@ -64,7 +64,8 @@ function App() {
         ANNO_RIFERIMENTO,
         nomeCompleto,
         immobili,
-        contribuente.datiAnagrafici.codiceFiscale
+        contribuente.datiAnagrafici.codiceFiscale,
+        contribuente.tipologia
       );
       setRiepilogo(result);
     }

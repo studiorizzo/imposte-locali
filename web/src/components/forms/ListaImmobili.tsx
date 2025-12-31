@@ -144,11 +144,6 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
                           Canone Concordato
                         </span>
                       )}
-                      {immobile.riduzioni.pensionatoEstero && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-yellow-100 text-yellow-800">
-                          Pensionato Estero
-                        </span>
-                      )}
                     </div>
                   )}
                 </div>

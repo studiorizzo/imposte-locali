@@ -11,6 +11,7 @@ import type {
   RiepilogoIMU,
   CategoriaCatastale,
   FattispeciePrincipale,
+  TipologiaContribuente,
 } from '../types';
 
 import {
@@ -51,16 +52,24 @@ export function getCoeffciente(categoria: CategoriaCatastale): number {
  * Calcola il fattore di riduzione base imponibile
  * Equivalente Excel: O5 = IF(AND(D5=1,E5=1),N5, IF(AND(D5=2,E5=1),N5/2,...))
  */
-export function calcolaFattoreRiduzione(immobile: DatiImmobile): number {
+export function calcolaFattoreRiduzione(
+  immobile: DatiImmobile,
+  tipologiaContribuente: TipologiaContribuente = 'persona_fisica'
+): number {
   const { riduzioni } = immobile;
 
-  // Conta le riduzioni al 50% applicabili
+  // Conta le riduzioni al 50% applicabili (caratteristiche immobile)
   const riduzioni50: boolean[] = [
     riduzioni.storicoArtistico,
     riduzioni.inagibileInabitabile,
     riduzioni.comodatoParenti,
-    riduzioni.pensionatoEstero,
   ];
+
+  // Riduzione per pensionato estero (art. 1, c. 48, L. 178/2020)
+  // Si applica a una sola unità immobiliare, non locata né in comodato
+  if (tipologiaContribuente === 'persona_fisica_pensionato_estero') {
+    riduzioni50.push(true);
+  }
 
   const numeroRiduzioni = riduzioni50.filter(Boolean).length;
 
@@ -244,7 +253,8 @@ export function getCodiceTributo(
  * Calcola l'IMU completa per un singolo immobile
  */
 export function calcolaIMUImmobile(
-  immobile: DatiImmobile
+  immobile: DatiImmobile,
+  tipologiaContribuente: TipologiaContribuente = 'persona_fisica'
 ): RisultatoCalcoloImmobile {
   // Verifica esenzione
   const { esente, motivo } = verificaEsenzione(immobile);
@@ -306,7 +316,7 @@ export function calcolaIMUImmobile(
   }
 
   // Applica riduzioni base
-  const fattoreRiduzione = calcolaFattoreRiduzione(immobile);
+  const fattoreRiduzione = calcolaFattoreRiduzione(immobile, tipologiaContribuente);
   const baseImponibileNetta = round2(baseImponibileLorda * fattoreRiduzione);
 
   // Calcola IMU acconto (1° rata)
@@ -375,9 +385,10 @@ export function calcolaRiepilogoIMU(
   anno: number,
   contribuente: string,
   immobili: DatiImmobile[],
-  codiceFiscale?: string
+  codiceFiscale?: string,
+  tipologiaContribuente: TipologiaContribuente = 'persona_fisica'
 ): RiepilogoIMU {
-  const risultati = immobili.map(calcolaIMUImmobile);
+  const risultati = immobili.map(imm => calcolaIMUImmobile(imm, tipologiaContribuente));
 
   // Totali
   const totaleAcconto = round2(

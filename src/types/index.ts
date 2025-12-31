@@ -30,13 +30,13 @@ export type FattispeciePrincipale =
   | 'aree_fabbricabili'              // Aree edificabili - aliquota 0.86%
   | 'altri_fabbricati';              // Tutti gli altri (A/2-A/11, B, C) - aliquota 0.86%
 
-// Riduzioni applicabili
+// Riduzioni applicabili (caratteristiche dell'immobile)
 export interface Riduzioni {
   storicoArtistico: boolean;      // -50% base
   inagibileInabitabile: boolean;  // -50% base
   comodatoParenti: boolean;       // -50% base (1° grado, stesso comune)
   canoneCorordato: boolean;       // -25% aliquota (L. 431/1998)
-  pensionatoEstero: boolean;      // -50% base (1 immobile, non locato)
+  // pensionatoEstero spostato in TipologiaContribuente
 }
 
 // Esenzioni
@@ -127,7 +127,12 @@ export interface RiepilogoIMU {
 }
 
 // Tipologia contribuente
-export type TipologiaContribuente = 'persona_fisica' | 'persona_giuridica';
+export type TipologiaContribuente =
+  | 'persona_fisica'                      // Standard
+  | 'persona_fisica_pensionato_estero'    // Riduzione 50% base (art. 1, c. 48, L. 178/2020)
+  | 'persona_fisica_anziano_ricoverato'   // Assimilazione ab. principale (art. 1, c. 741, lett. c, n. 6)
+  | 'persona_fisica_forze_armate'         // Assimilazione ab. principale (art. 1, c. 741, lett. c, n. 5)
+  | 'persona_giuridica';
 
 // Soluzione di pagamento
 export type SoluzionePagamento = 'rateizzato' | 'rata_unica';
