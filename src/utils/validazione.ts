@@ -100,18 +100,18 @@ export function validaIBAN(iban: string): RisultatoValidazioneCF {
 
   // Lunghezza
   if (ibanClean.length !== 27) {
-    return { valido: false, errore: 'IBAN deve essere di 27 caratteri' };
+    return { valido: false, errore: 'Il codice IBAN deve essere di 27 caratteri' };
   }
 
   // Deve iniziare con IT
   if (!ibanClean.startsWith('IT')) {
-    return { valido: false, errore: 'IBAN deve iniziare con IT' };
+    return { valido: false, errore: 'Il codice IBAN deve iniziare con IT' };
   }
 
   // Formato: IT + 2 cifre + 1 lettera CIN + 5 cifre ABI + 5 cifre CAB + 12 alfanumerici
   const formatoRegex = /^IT[0-9]{2}[A-Z][0-9]{5}[0-9]{5}[0-9A-Z]{12}$/;
   if (!formatoRegex.test(ibanClean)) {
-    return { valido: false, errore: 'Formato IBAN non valido' };
+    return { valido: false, errore: 'Il codice IBAN non è nel formato corretto' };
   }
 
   // Validazione checksum ISO 7064 (Mod 97)
@@ -132,7 +132,7 @@ export function validaIBAN(iban: string): RisultatoValidazioneCF {
   }
 
   if (resto !== 1) {
-    return { valido: false, errore: 'IBAN non valido (checksum errato)' };
+    return { valido: false, errore: 'Il codice IBAN non è valido' };
   }
 
   return { valido: true };
