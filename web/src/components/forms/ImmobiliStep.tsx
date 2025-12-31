@@ -68,6 +68,7 @@ const createEmptyImmobile = (): DatiImmobile => ({
     provincia: '',
     sigla_provincia: '',
     codice_catastale: '',
+    codice_comune: '',
     label: '',
   },
   fattispecie_principale: '' as FattispeciePrincipale,
@@ -123,6 +124,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       provincia: c.provincia,
       sigla_provincia: c.sigla_provincia,
       codice_catastale: c.codice_catastale,
+      codice_comune: c.codice_comune,
     })),
     []
   );
@@ -160,6 +162,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         provincia: option.provincia,
         sigla_provincia: option.sigla_provincia,
         codice_catastale: option.codice_catastale,
+        codice_comune: option.codice_comune,
         label: option.label,
       };
       setImmobile({ ...emptyImmobile, comune });
