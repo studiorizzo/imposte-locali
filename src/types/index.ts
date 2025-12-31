@@ -17,6 +17,7 @@ export interface Comune {
   provincia: string;
   sigla_provincia: string;
   codice_catastale: string;
+  codice_comune: string;            // Codice ISTAT alfanumerico (es. "28001")
   label: string;                    // "codice_catastale - comune" per autocomplete
 }
 
