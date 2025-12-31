@@ -14,7 +14,7 @@ const SESSO_OPTIONS = [
 ];
 
 const SOLUZIONE_PAGAMENTO_OPTIONS = [
-  { value: 'rateizzato', label: 'Rateizzato (Acconto + Saldo)' },
+  { value: 'rateizzato', label: 'Rateizzato' },
   { value: 'rata_unica', label: 'Rata unica' },
 ];
 
