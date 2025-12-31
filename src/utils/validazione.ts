@@ -48,20 +48,20 @@ export function validaCodiceFiscale(cf: string): RisultatoValidazioneCF {
   // Formato: 6 lettere + 2 numeri + 1 lettera + 2 numeri + 1 lettera + 3 alfanumerici + 1 lettera
   const formatoRegex = /^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9A-Z]{3}[A-Z]$/;
   if (!formatoRegex.test(cfUpper)) {
-    return { valido: false, errore: 'Formato codice fiscale non valido' };
+    return { valido: false, errore: 'Il codice fiscale non è nel formato corretto' };
   }
 
   // Verifica mese (posizione 8, indice 8)
   const letteraMese = cfUpper[8];
   if (!MESI_CF.includes(letteraMese)) {
-    return { valido: false, errore: 'Mese nel codice fiscale non valido' };
+    return { valido: false, errore: 'Il mese nel codice fiscale non è valido' };
   }
 
   // Verifica giorno (posizioni 9-10)
   const giorno = parseInt(cfUpper.substring(9, 11), 10);
   // Giorno: 01-31 per maschi, 41-71 per femmine
   if (!((giorno >= 1 && giorno <= 31) || (giorno >= 41 && giorno <= 71))) {
-    return { valido: false, errore: 'Giorno nel codice fiscale non valido' };
+    return { valido: false, errore: 'Il giorno nel codice fiscale non è valido' };
   }
 
   // Calcolo carattere di controllo
@@ -81,7 +81,7 @@ export function validaCodiceFiscale(cf: string): RisultatoValidazioneCF {
   const carattereControlloPresente = cfUpper[15];
 
   if (carattereControlloCalcolato !== carattereControlloPresente) {
-    return { valido: false, errore: 'Carattere di controllo non valido' };
+    return { valido: false, errore: 'L\'ultimo carattere nel codice fiscale non è valido' };
   }
 
   return { valido: true };
