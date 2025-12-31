@@ -112,6 +112,7 @@ function App() {
             immobili={immobili}
             onAddImmobile={handleAddImmobile}
             onRemoveImmobile={handleRemoveImmobile}
+            tipologiaContribuente={contribuente.tipologia}
           />
         );
       case 2:
