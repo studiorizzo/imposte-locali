@@ -435,6 +435,43 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   // Flag inagibile: non visibile per abitazione principale
   const showFlagInagibile = !isAbitazionePrincipale;
 
+  // Validazione campi obbligatori per abilitare il pulsante "Aggiungi Immobile"
+  const canSubmit = useMemo(() => {
+    // Comune obbligatorio
+    if (!immobile.comune.codice_catastale) return false;
+
+    // Tipologia obbligatoria
+    if (!immobile.fattispecie_principale) return false;
+
+    // Categoria obbligatoria per fabbricati (non terreni né aree)
+    if (!isTerreno && !isArea && !immobile.categoria) return false;
+
+    // Valore catastale obbligatorio in base alla tipologia
+    if (!isTerreno && !isArea && !immobile.renditaCatastale) return false;
+    if (isTerreno && !immobile.redditoDominicale) return false;
+    if (isArea && !immobile.valoreVenale) return false;
+
+    // Percentuale possesso obbligatoria e > 0
+    if (!immobile.percentualePossesso || immobile.percentualePossesso <= 0) return false;
+
+    // Date possesso obbligatorie
+    if (!immobile.dataInizio || !immobile.dataFine) return false;
+
+    return true;
+  }, [
+    immobile.comune.codice_catastale,
+    immobile.fattispecie_principale,
+    immobile.categoria,
+    immobile.renditaCatastale,
+    immobile.redditoDominicale,
+    immobile.valoreVenale,
+    immobile.percentualePossesso,
+    immobile.dataInizio,
+    immobile.dataFine,
+    isTerreno,
+    isArea,
+  ]);
+
   return (
     <div className="space-y-6">
       {/* Layout a due colonne */}
@@ -726,7 +763,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
             </CardContent>
             <CardFooter>
               <div className="flex justify-end">
-                <Button type="submit">
+                <Button type="submit" disabled={!canSubmit}>
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
@@ -795,12 +832,9 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       <Modal
         aperto={showModalCondizioniForzeArmate}
         onChiudi={handleAnnullaDeselezione}
-        titolo="Condizioni assimilazione abitazione principale"
+        titolo="Condizioni assimilazione abitazione principale per il personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia"
       >
         <div className="space-y-4">
-          <p className="text-sm text-gray-500 -mt-2 mb-2">
-            per il personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia
-          </p>
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_FORZE_ARMATE}</p>
           <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
