@@ -120,11 +120,13 @@ const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU pe
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
 // Testo condizioni forze armate (art. 1, c. 741, lett. c, n. 5, L. 160/2019)
-const CONDIZIONI_FORZE_ARMATE = `Per fruire dell'assimilazione ad abitazione principale per appartenenti a Forze armate, Polizia, Vigili del fuoco (art. 1, c. 741, lett. c, n. 5, L. 160/2019), devono sussistere le seguenti condizioni:
+const CONDIZIONI_FORZE_ARMATE = `Per fruire dell'assimilazione ad abitazione principale (art. 1, c. 741, lett. c, n. 5, L. 160/2019), devono sussistere le seguenti condizioni:
 
-• Appartenenza alle Forze armate, Forze di polizia, Corpo nazionale dei vigili del fuoco, carriera prefettizia
-• Impossibilità di dimorare nell'immobile per ragioni di servizio
-• Immobile non locato né concesso in comodato d'uso
+• Personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia
+• Un solo immobile posseduto (unica unità immobiliare)
+• Immobile non concesso in locazione
+
+Non sono richieste le condizioni della dimora abituale e della residenza anagrafica.
 
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
@@ -508,8 +510,8 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                     </div>
                     <div className="space-y-3 mt-3">
                       <Checkbox
-                        label="Immobile non locato né concesso in comodato d'uso"
-                        description="L'immobile non è affittato a terzi né concesso in comodato"
+                        label="Immobile non concesso in locazione"
+                        description="L'immobile non è affittato a terzi"
                         checked={immobile.immobileNonLocatoForzeArmate ?? true}
                         onChange={(e) => handleCondizioneForzeArmateChange(e.target.checked)}
                       />

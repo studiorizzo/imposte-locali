@@ -82,7 +82,7 @@ export interface DatiImmobile {
 
   // Condizioni forze armate (art. 1, c. 741, lett. c, n. 5, L. 160/2019)
   // Visibili solo per: forze armate + abitazione_principale_lusso o pertinenze
-  immobileNonLocatoForzeArmate?: boolean;  // Immobile non locato né concesso in comodato
+  immobileNonLocatoForzeArmate?: boolean;  // Immobile non concesso in locazione
 }
 
 // Risultato calcolo singolo immobile
