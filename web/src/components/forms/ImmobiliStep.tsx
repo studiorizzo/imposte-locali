@@ -455,7 +455,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                       <div>
                         <h4 className="font-medium text-blue-900">Riduzione residente estero</h4>
                         <p className="text-sm text-blue-700 mt-1">
-                          Comune con meno di 5.000 abitanti. Per beneficiare della riduzione IMU, conferma le seguenti condizioni:
+                          Comune con meno di 5.000 abitanti. Per beneficiare della riduzione IMU, devono sussistere le seguenti condizioni:
                         </p>
                       </div>
                     </div>
@@ -655,7 +655,12 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         onChiudi={() => setErroreUnicita(null)}
         titolo="Errore"
       >
-        {erroreUnicita}
+        <div className="space-y-4">
+          <p>{erroreUnicita}</p>
+          <div className="flex justify-end">
+            <Button onClick={() => setErroreUnicita(null)}>Chiudi</Button>
+          </div>
+        </div>
       </Modal>
 
       {/* Modal condizioni residente estero */}

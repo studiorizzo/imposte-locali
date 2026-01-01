@@ -42,16 +42,6 @@ export function Modal({ aperto, onChiudi, titolo, children }: ModalProps) {
         <div className="text-gray-700">
           {children}
         </div>
-
-        <div className="mt-6 flex justify-end">
-          <button
-            type="button"
-            onClick={onChiudi}
-            className="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
-          >
-            Chiudi
-          </button>
-        </div>
       </div>
     </div>
   );
