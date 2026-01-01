@@ -671,7 +671,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       >
         <div className="space-y-4">
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_RESIDENTE_ESTERO}</p>
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
               Annulla
             </Button>
