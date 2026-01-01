@@ -313,13 +313,13 @@ export function calcolaIMUImmobile(
   } = immobile;
 
   // Verifica se l'immobile qualifica per riduzione residente estero
-  // Condizioni: altri_fabbricati + cat. A (no A/10) + comune < 5000 ab. + non locato + non comodato
+  // Condizioni: altri_fabbricati + cat. A (no A/10) + comune < 5000 ab. + non locato/comodato + ultima residenza
   const qualificaResidenteEstero = tipologiaContribuente === 'persona_fisica_residente_estero' &&
     fattispecie_principale === 'altri_fabbricati' &&
     isCategoriaAbitativa(categoria) &&
     immobile.comune.abitanti > 0 && immobile.comune.abitanti < 5000 &&
-    immobile.immobileNonLocato === true &&
-    immobile.immobileNonComodato === true;
+    immobile.immobileNonLocatoNonComodato === true &&
+    immobile.immobileUltimaResidenza === true;
 
   // Esenzione residente estero per rendita ≤ 200€ (art. 1, c. 48-bis, lett. a)
   if (qualificaResidenteEstero &&

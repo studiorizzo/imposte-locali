@@ -64,8 +64,8 @@ function creaImmobileComunePiccolo(override: Partial<DatiImmobile>): DatiImmobil
       abitanti: 540, // < 5000 abitanti
       label: 'A019 - Accumoli',
     },
-    immobileNonLocato: true,
-    immobileNonComodato: true,
+    immobileNonLocatoNonComodato: true,
+    immobileUltimaResidenza: true,
     ...override,
   });
 }
@@ -283,8 +283,8 @@ describe('Calcolo IMU Immobile Completo', () => {
     const immobile = creaImmobile({
       categoria: 'A/2',
       renditaCatastale: 200,
-      immobileNonLocato: true,
-      immobileNonComodato: true,
+      immobileNonLocatoNonComodato: true,
+      immobileUltimaResidenza: true,
     });
 
     // Anche se rendita ≤ 200€, comune troppo grande → IMU piena
@@ -296,13 +296,13 @@ describe('Calcolo IMU Immobile Completo', () => {
     expect(risultato.imuTotale).toBe(356.16);
   });
 
-  test('Residente estero: immobile locato → IMU piena', () => {
-    // Comune piccolo ma immobile locato
+  test('Residente estero: immobile locato/comodato → IMU piena', () => {
+    // Comune piccolo ma immobile locato o in comodato
     const immobile = creaImmobileComunePiccolo({
       categoria: 'A/2',
       renditaCatastale: 200,
-      immobileNonLocato: false, // Locato!
-      immobileNonComodato: true,
+      immobileNonLocatoNonComodato: false, // Locato o in comodato!
+      immobileUltimaResidenza: true,
     });
 
     // Condizioni non soddisfatte → IMU piena

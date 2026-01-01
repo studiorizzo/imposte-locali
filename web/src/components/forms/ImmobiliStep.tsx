@@ -104,8 +104,8 @@ const isImmobileResidenteEstero = (imm: DatiImmobile): boolean => {
   return imm.fattispecie_principale === 'altri_fabbricati' &&
     isCategoriaAbitativa(imm.categoria) &&
     imm.comune.abitanti > 0 && imm.comune.abitanti < 5000 &&
-    imm.immobileNonLocato === true &&
-    imm.immobileNonComodato === true;
+    imm.immobileNonLocatoNonComodato === true &&
+    imm.immobileUltimaResidenza === true;
 };
 
 // Testo condizioni residente estero (art. 1, c. 48-48bis, L. 178/2020 mod. 2026)
@@ -125,7 +125,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const [aliquotaPersonalizzataSelezionata, setAliquotaPersonalizzataSelezionata] = useState<string | null>(null);
   const [erroreUnicita, setErroreUnicita] = useState<string | null>(null);
   const [showModalCondizioni, setShowModalCondizioni] = useState(false);
-  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocato' | 'immobileNonComodato' | null>(null);
+  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | null>(null);
 
   // Filtra fattispecie in base alla tipologia contribuente
   // Residente estero non può avere abitazione principale né pertinenze
@@ -155,14 +155,14 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
 
   // Imposta i flag di default quando le condizioni sono soddisfatte
   useEffect(() => {
-    if (showCondizioniResidenteEstero && immobile.immobileNonLocato === undefined) {
+    if (showCondizioniResidenteEstero && immobile.immobileNonLocatoNonComodato === undefined) {
       setImmobile(prev => ({
         ...prev,
-        immobileNonLocato: true,
-        immobileNonComodato: true,
+        immobileNonLocatoNonComodato: true,
+        immobileUltimaResidenza: true,
       }));
     }
-  }, [showCondizioniResidenteEstero, immobile.immobileNonLocato]);
+  }, [showCondizioniResidenteEstero, immobile.immobileNonLocatoNonComodato]);
 
   // Hook per caricare prospetto
   const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
@@ -278,7 +278,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   };
 
   // Handler per i flag condizioni residente estero
-  const handleCondizioneResidenteEsteroChange = (field: 'immobileNonLocato' | 'immobileNonComodato', value: boolean) => {
+  const handleCondizioneResidenteEsteroChange = (field: 'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza', value: boolean) => {
     if (!value) {
       // Se l'utente tenta di deselezionare, mostra il modal di avviso
       // NON aggiornare il valore finché l'utente non conferma
@@ -459,18 +459,18 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                         </p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                    <div className="space-y-3 mt-3">
                       <Checkbox
-                        label="Immobile non locato"
-                        description="L'immobile non è affittato a terzi"
-                        checked={immobile.immobileNonLocato ?? true}
-                        onChange={(e) => handleCondizioneResidenteEsteroChange('immobileNonLocato', e.target.checked)}
+                        label="Immobile non locato né concesso in comodato d'uso"
+                        description="L'immobile non è affittato a terzi né concesso in comodato"
+                        checked={immobile.immobileNonLocatoNonComodato ?? true}
+                        onChange={(e) => handleCondizioneResidenteEsteroChange('immobileNonLocatoNonComodato', e.target.checked)}
                       />
                       <Checkbox
-                        label="Immobile non in comodato"
-                        description="L'immobile non è concesso in comodato d'uso"
-                        checked={immobile.immobileNonComodato ?? true}
-                        onChange={(e) => handleCondizioneResidenteEsteroChange('immobileNonComodato', e.target.checked)}
+                        label="Immobile ubicato nel comune di ultima residenza"
+                        description="L'immobile si trova nel comune di ultima residenza in Italia"
+                        checked={immobile.immobileUltimaResidenza ?? true}
+                        onChange={(e) => handleCondizioneResidenteEsteroChange('immobileUltimaResidenza', e.target.checked)}
                       />
                     </div>
                   </div>

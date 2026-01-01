@@ -77,8 +77,8 @@ export interface DatiImmobile {
 
   // Condizioni residente estero (art. 1, c. 48-48bis, L. 178/2020)
   // Visibili solo per: residente estero + comune < 5000 ab. + altri_fabbricati + cat. A (no A/10)
-  immobileNonLocato?: boolean;    // Immobile non locato
-  immobileNonComodato?: boolean;  // Immobile non concesso in comodato d'uso
+  immobileNonLocatoNonComodato?: boolean;  // Immobile non locato né concesso in comodato d'uso
+  immobileUltimaResidenza?: boolean;       // Immobile ubicato nel comune di ultima residenza
 }
 
 // Risultato calcolo singolo immobile
