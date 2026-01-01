@@ -108,13 +108,14 @@ const isImmobileResidenteEstero = (imm: DatiImmobile): boolean => {
     imm.immobileNonComodato === true;
 };
 
-// Testo condizioni residente estero
-const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU per residente all'estero (art. 1, c. 48-48bis, L. 178/2020), l'immobile deve:
+// Testo condizioni residente estero (art. 1, c. 48-48bis, L. 178/2020 mod. 2026)
+const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU per residente all'estero (art. 1, c. 48-48bis, L. 178/2020), devono sussistere le seguenti condizioni:
 
-• Essere l'unica unità immobiliare a uso abitativo posseduta in Italia
-• Non essere locato
-• Non essere concesso in comodato d'uso
-• Trovarsi nel comune di ultima residenza in Italia (< 5.000 abitanti)
+• Persona fisica trasferita all'estero dopo almeno 5 anni di residenza in Italia
+• Immobile a uso abitativo posseduto a titolo di proprietà
+• Immobile non locato né concesso in comodato d'uso
+• Immobile ubicato nel comune di ultima residenza (< 5.000 abitanti)
+• Beneficio concesso per una sola unità immobiliare a uso abitativo
 
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
@@ -136,18 +137,20 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     return FATTISPECIE_OPTIONS;
   }, [tipologiaContribuente]);
 
-  // Verifica se mostrare sezione condizioni residente estero
-  const showCondizioniResidenteEstero = useMemo(() => {
-    return tipologiaContribuente === 'persona_fisica_residente_estero' &&
-      immobile.comune.abitanti > 0 && immobile.comune.abitanti < 5000 &&
-      immobile.fattispecie_principale === 'altri_fabbricati' &&
-      isCategoriaAbitativa(immobile.categoria);
-  }, [tipologiaContribuente, immobile.comune.abitanti, immobile.fattispecie_principale, immobile.categoria]);
-
   // Verifica se esiste già un immobile residente estero nella lista
   const esisteGiaImmobileResidenteEstero = useMemo(() => {
     return immobili.some(isImmobileResidenteEstero);
   }, [immobili]);
+
+  // Verifica se mostrare sezione condizioni residente estero
+  // NON mostrare se esiste già un immobile che fruisce della riduzione
+  const showCondizioniResidenteEstero = useMemo(() => {
+    return tipologiaContribuente === 'persona_fisica_residente_estero' &&
+      immobile.comune.abitanti > 0 && immobile.comune.abitanti < 5000 &&
+      immobile.fattispecie_principale === 'altri_fabbricati' &&
+      isCategoriaAbitativa(immobile.categoria) &&
+      !esisteGiaImmobileResidenteEstero;
+  }, [tipologiaContribuente, immobile.comune.abitanti, immobile.fattispecie_principale, immobile.categoria, esisteGiaImmobileResidenteEstero]);
 
   // Imposta i flag di default quando le condizioni sono soddisfatte
   useEffect(() => {
@@ -293,16 +296,6 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
 
     if (richiedeRendita && !immobile.renditaCatastale) {
       setErroreUnicita('Rendita catastale non rivalutata campo richiesto.');
-      return;
-    }
-
-    // Verifica unicità immobile residente estero
-    // La riduzione si applica ad un solo immobile a uso abitativo
-    if (showCondizioniResidenteEstero &&
-        immobile.immobileNonLocato &&
-        immobile.immobileNonComodato &&
-        esisteGiaImmobileResidenteEstero) {
-      setErroreUnicita('È già presente un immobile che beneficia della riduzione residente estero. La riduzione si applica ad una sola unità immobiliare a uso abitativo.');
       return;
     }
 
@@ -461,11 +454,6 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                         onChange={(e) => handleCondizioneResidenteEsteroChange('immobileNonComodato', e.target.checked)}
                       />
                     </div>
-                    {esisteGiaImmobileResidenteEstero && (
-                      <p className="text-sm text-amber-700 bg-amber-50 p-2 rounded mt-2">
-                        Attenzione: è già presente un immobile con riduzione residente estero. La riduzione si applica ad una sola unità abitativa.
-                      </p>
-                    )}
                   </div>
                 )}
 
