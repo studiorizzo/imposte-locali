@@ -124,6 +124,7 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
                   {/* Riduzioni attive */}
                   {(Object.entries(immobile.riduzioni).some(([, v]) => v) ||
                     immobile.immobileNonLocatoForzeArmate ||
+                    immobile.immobileNonLocatoAnzianoDisabile ||
                     (immobile.immobileNonLocatoNonComodato && immobile.immobileUltimaResidenza)) && (
                     <div className="mt-3 flex flex-wrap gap-1">
                       {immobile.riduzioni.storicoArtistico && (
@@ -149,6 +150,11 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
                       {immobile.immobileNonLocatoForzeArmate && (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-800">
                           Assimilazione
+                        </span>
+                      )}
+                      {immobile.immobileNonLocatoAnzianoDisabile && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-800">
+                          Assimilazione anziano
                         </span>
                       )}
                       {immobile.immobileNonLocatoNonComodato && immobile.immobileUltimaResidenza && (

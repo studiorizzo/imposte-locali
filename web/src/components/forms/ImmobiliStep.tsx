@@ -121,6 +121,13 @@ const isPertinenzaForzeArmateCategoria = (imm: DatiImmobile, categoria: Categori
     imm.immobileNonLocatoForzeArmate === true;
 };
 
+// Verifica se un immobile qualifica per assimilazione anziano/disabile
+const isImmobileAnzianoDisabile = (imm: DatiImmobile): boolean => {
+  return imm.fattispecie_principale === 'altri_fabbricati' &&
+    isCategoriaAbitativa(imm.categoria) &&
+    imm.immobileNonLocatoAnzianoDisabile === true;
+};
+
 // Testo condizioni residente estero (art. 1, c. 48-48bis, L. 178/2020 mod. 2026)
 const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU per residente all'estero (art. 1, c. 48-48bis, L. 178/2020), devono sussistere le seguenti condizioni:
 
@@ -142,6 +149,15 @@ Non sono richieste le condizioni della dimora abituale e della residenza anagraf
 
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
+// Testo condizioni anziano/disabile ricoverato (art. 1, c. 741, lett. c, n. 6, L. 160/2019)
+const CONDIZIONI_ANZIANO_DISABILE = `Per fruire dell'assimilazione ad abitazione principale per anziano o disabile ricoverato (art. 1, c. 741, lett. c, n. 6, L. 160/2019), devono sussistere le seguenti condizioni:
+
+• Anziano o disabile che ha acquisito residenza in istituto di ricovero o sanitario a seguito di ricovero permanente
+• Immobile non concesso in locazione
+• Assimilazione applicabile ad un solo immobile
+
+Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
+
 export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipologiaContribuente }: ImmobiliStepProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -149,12 +165,14 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const [erroreUnicita, setErroreUnicita] = useState<string | null>(null);
   const [showModalCondizioni, setShowModalCondizioni] = useState(false);
   const [showModalCondizioniForzeArmate, setShowModalCondizioniForzeArmate] = useState(false);
-  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | null>(null);
+  const [showModalCondizioniAnzianoDisabile, setShowModalCondizioniAnzianoDisabile] = useState(false);
+  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | 'immobileNonLocatoAnzianoDisabile' | null>(null);
 
   // Filtra fattispecie in base alla tipologia contribuente
-  // Residente estero non può avere abitazione principale né pertinenze
+  // Residente estero e anziano/disabile non possono avere abitazione principale né pertinenze
   const fattspecieOptions = useMemo(() => {
-    if (tipologiaContribuente === 'persona_fisica_residente_estero') {
+    if (tipologiaContribuente === 'persona_fisica_residente_estero' ||
+        tipologiaContribuente === 'persona_fisica_anziano_ricoverato') {
       return FATTISPECIE_OPTIONS.filter(
         opt => opt.value !== 'abitazione_principale_lusso' && opt.value !== 'pertinenze'
       );
@@ -231,6 +249,39 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   // Hook per caricare prospetto
   const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
   const { prospetto, delibera, loading: loadingProspetto, usaAliquoteMinisteriali } = useProspetto(comuneSelezionato);
+
+  // Verifica se il comune offre l'assimilazione anziano/disabile
+  const comuneOffreAssimilazioneAnzianoDisabile = useMemo(() => {
+    if (!prospetto?.aliquote_base) return false;
+    return prospetto.aliquote_base.some(
+      a => a.fattispecie_principale === 'assimilazione_anziani_disabili' && a.aliquota === true
+    );
+  }, [prospetto]);
+
+  // Verifica se esiste già un immobile anziano/disabile nella lista
+  const esisteGiaImmobileAnzianoDisabile = useMemo(() => {
+    return immobili.some(isImmobileAnzianoDisabile);
+  }, [immobili]);
+
+  // Verifica se mostrare sezione condizioni anziano/disabile
+  // Richiede: tipologia anziano + comune offre assimilazione + altri_fabbricati + cat. abitativa + non esiste già
+  const showCondizioniAnzianoDisabile = useMemo(() => {
+    return tipologiaContribuente === 'persona_fisica_anziano_ricoverato' &&
+      comuneOffreAssimilazioneAnzianoDisabile &&
+      immobile.fattispecie_principale === 'altri_fabbricati' &&
+      isCategoriaAbitativa(immobile.categoria) &&
+      !esisteGiaImmobileAnzianoDisabile;
+  }, [tipologiaContribuente, comuneOffreAssimilazioneAnzianoDisabile, immobile.fattispecie_principale, immobile.categoria, esisteGiaImmobileAnzianoDisabile]);
+
+  // Imposta i flag di default per anziano/disabile
+  useEffect(() => {
+    if (showCondizioniAnzianoDisabile && immobile.immobileNonLocatoAnzianoDisabile === undefined) {
+      setImmobile(prev => ({
+        ...prev,
+        immobileNonLocatoAnzianoDisabile: true,
+      }));
+    }
+  }, [showCondizioniAnzianoDisabile, immobile.immobileNonLocatoAnzianoDisabile]);
 
   // Comuni options
   const comuniOptions = useMemo(() =>
@@ -369,6 +420,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     setCampoInDeselezione(null);
     setShowModalCondizioni(false);
     setShowModalCondizioniForzeArmate(false);
+    setShowModalCondizioniAnzianoDisabile(false);
   };
 
   // Annulla deselezione dal modal
@@ -376,6 +428,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     setCampoInDeselezione(null);
     setShowModalCondizioni(false);
     setShowModalCondizioniForzeArmate(false);
+    setShowModalCondizioniAnzianoDisabile(false);
   };
 
   // Handler per i flag condizioni forze armate
@@ -386,6 +439,17 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       setShowModalCondizioniForzeArmate(true);
     } else {
       setImmobile(prev => ({ ...prev, immobileNonLocatoForzeArmate: value }));
+    }
+  };
+
+  // Handler per i flag condizioni anziano/disabile
+  const handleCondizioneAnzianoDisabileChange = (value: boolean) => {
+    if (!value) {
+      // Se l'utente tenta di deselezionare, mostra il modal di avviso
+      setCampoInDeselezione('immobileNonLocatoAnzianoDisabile');
+      setShowModalCondizioniAnzianoDisabile(true);
+    } else {
+      setImmobile(prev => ({ ...prev, immobileNonLocatoAnzianoDisabile: value }));
     }
   };
 
@@ -622,6 +686,31 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                   </div>
                 )}
 
+                {/* Condizioni anziano/disabile - visibili solo quando applicabili */}
+                {showCondizioniAnzianoDisabile && (
+                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg space-y-3">
+                    <div className="flex items-start gap-2">
+                      <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <h4 className="font-medium text-blue-900">Assimilazione abitazione principale per anziano/disabile ricoverato</h4>
+                        <p className="text-sm text-blue-700 mt-1">
+                          Per beneficiare dell'assimilazione ad abitazione principale, devono sussistere le seguenti condizioni:
+                        </p>
+                      </div>
+                    </div>
+                    <div className="space-y-3 mt-3">
+                      <Checkbox
+                        label="Immobile non concesso in locazione"
+                        description="L'immobile non è affittato a terzi"
+                        checked={immobile.immobileNonLocatoAnzianoDisabile ?? true}
+                        onChange={(e) => handleCondizioneAnzianoDisabileChange(e.target.checked)}
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {/* Valori catastali */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {showCategoria && (
@@ -836,6 +925,25 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       >
         <div className="space-y-4">
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_FORZE_ARMATE}</p>
+          <div className="flex justify-between">
+            <Button variant="secondary" onClick={handleAnnullaDeselezione}>
+              Annulla
+            </Button>
+            <Button variant="danger" onClick={handleConfermaDeselezione}>
+              Deseleziona
+            </Button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Modal condizioni anziano/disabile */}
+      <Modal
+        aperto={showModalCondizioniAnzianoDisabile}
+        onChiudi={handleAnnullaDeselezione}
+        titolo="Condizioni assimilazione abitazione principale per anziano o disabile ricoverato"
+      >
+        <div className="space-y-4">
+          <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_ANZIANO_DISABILE}</p>
           <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
               Annulla

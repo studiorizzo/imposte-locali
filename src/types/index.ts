@@ -83,6 +83,10 @@ export interface DatiImmobile {
   // Condizioni forze armate (art. 1, c. 741, lett. c, n. 5, L. 160/2019)
   // Visibili solo per: forze armate + abitazione_principale_lusso o pertinenze
   immobileNonLocatoForzeArmate?: boolean;  // Immobile non concesso in locazione
+
+  // Condizioni anziano/disabile ricoverato (art. 1, c. 741, lett. c, n. 6, L. 160/2019)
+  // Visibili solo se: comune prevede assimilazione + altri_fabbricati + cat. A (no A/10)
+  immobileNonLocatoAnzianoDisabile?: boolean;  // Immobile non concesso in locazione
 }
 
 // Risultato calcolo singolo immobile
