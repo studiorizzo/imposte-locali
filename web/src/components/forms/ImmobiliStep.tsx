@@ -655,7 +655,12 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         onChiudi={() => setErroreUnicita(null)}
         titolo="Errore"
       >
-        {erroreUnicita}
+        <div className="space-y-4">
+          <p>{erroreUnicita}</p>
+          <div className="flex justify-end">
+            <Button onClick={() => setErroreUnicita(null)}>Chiudi</Button>
+          </div>
+        </div>
       </Modal>
 
       {/* Modal condizioni residente estero */}
