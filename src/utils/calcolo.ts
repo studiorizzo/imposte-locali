@@ -312,11 +312,17 @@ export function calcolaIMUImmobile(
     riduzioni,
   } = immobile;
 
+  // Verifica se l'immobile qualifica per riduzione residente estero
+  // Condizioni: altri_fabbricati + cat. A (no A/10) + comune < 5000 ab. + non locato + non comodato
+  const qualificaResidenteEstero = tipologiaContribuente === 'persona_fisica_residente_estero' &&
+    fattispecie_principale === 'altri_fabbricati' &&
+    isCategoriaAbitativa(categoria) &&
+    immobile.comune.abitanti > 0 && immobile.comune.abitanti < 5000 &&
+    immobile.immobileNonLocato === true &&
+    immobile.immobileNonComodato === true;
+
   // Esenzione residente estero per rendita ≤ 200€ (art. 1, c. 48-bis, lett. a)
-  // Si applica SOLO a: fattispecie "altri_fabbricati" + categoria A (escluso A/10)
-  if (tipologiaContribuente === 'persona_fisica_residente_estero' &&
-      fattispecie_principale === 'altri_fabbricati' &&
-      isCategoriaAbitativa(categoria) &&
+  if (qualificaResidenteEstero &&
       renditaCatastale !== undefined &&
       renditaCatastale <= 200) {
     return {
@@ -381,11 +387,8 @@ export function calcolaIMUImmobile(
   );
 
   // Applica riduzione per residente estero sull'imposta (art. 1, c. 48-bis)
-  // Si applica SOLO a: fattispecie "altri_fabbricati" + categoria A (escluso A/10)
-  if (tipologiaContribuente === 'persona_fisica_residente_estero' &&
-      fattispecie_principale === 'altri_fabbricati' &&
-      isCategoriaAbitativa(categoria) &&
-      renditaCatastale !== undefined) {
+  // Usa la variabile qualificaResidenteEstero calcolata sopra
+  if (qualificaResidenteEstero && renditaCatastale !== undefined) {
     const fattoreResidenteEstero = calcolaFattoreResidenteEstero(renditaCatastale);
     imuAccontoLordo = round2(imuAccontoLordo * fattoreResidenteEstero);
     imuAnnuale = round2(imuAnnuale * fattoreResidenteEstero);
