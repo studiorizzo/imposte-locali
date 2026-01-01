@@ -13,7 +13,7 @@ import {
 } from './calcolo';
 import type { DatiImmobile } from '../types';
 
-// Helper per creare immobile base
+// Helper per creare immobile base (comune grande, > 5000 abitanti)
 function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
   return {
     id: 'test',
@@ -23,6 +23,8 @@ function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
       provincia: 'Roma',
       sigla_provincia: 'RM',
       codice_catastale: 'H501',
+      codice_comune: '58091',
+      abitanti: 2749031, // Roma > 5000 abitanti
       label: 'H501 - Roma',
     },
     fattispecie_principale: 'altri_fabbricati',
@@ -47,6 +49,25 @@ function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
     },
     ...override,
   };
+}
+
+// Helper per creare immobile in comune piccolo (< 5000 abitanti) per test residente estero
+function creaImmobileComunePiccolo(override: Partial<DatiImmobile>): DatiImmobile {
+  return creaImmobile({
+    comune: {
+      comune: 'Accumoli',
+      regione: 'Lazio',
+      provincia: 'Rieti',
+      sigla_provincia: 'RI',
+      codice_catastale: 'A019',
+      codice_comune: '57001',
+      abitanti: 540, // < 5000 abitanti
+      label: 'A019 - Accumoli',
+    },
+    immobileNonLocato: true,
+    immobileNonComodato: true,
+    ...override,
+  });
 }
 
 describe('Calcolo Base Imponibile', () => {
@@ -192,7 +213,8 @@ describe('Calcolo IMU Immobile Completo', () => {
   });
 
   test('Residente estero: rendita ≤ 200€ → esente', () => {
-    const immobile = creaImmobile({
+    // Usa comune piccolo (< 5000 ab.) con condizioni soddisfatte
+    const immobile = creaImmobileComunePiccolo({
       categoria: 'A/2',
       renditaCatastale: 200,
     });
@@ -205,7 +227,8 @@ describe('Calcolo IMU Immobile Completo', () => {
   });
 
   test('Residente estero: rendita 201-300€ → IMU al 40%', () => {
-    const immobile = creaImmobile({
+    // Usa comune piccolo (< 5000 ab.) con condizioni soddisfatte
+    const immobile = creaImmobileComunePiccolo({
       categoria: 'A/2',
       renditaCatastale: 300,
       aliquotaAcconto: 1.06,
@@ -222,7 +245,8 @@ describe('Calcolo IMU Immobile Completo', () => {
   });
 
   test('Residente estero: rendita 301-500€ → IMU al 67%', () => {
-    const immobile = creaImmobile({
+    // Usa comune piccolo (< 5000 ab.) con condizioni soddisfatte
+    const immobile = creaImmobileComunePiccolo({
       categoria: 'A/2',
       renditaCatastale: 500,
       aliquotaAcconto: 1.06,
@@ -239,7 +263,8 @@ describe('Calcolo IMU Immobile Completo', () => {
   });
 
   test('Residente estero: rendita > 500€ → IMU piena', () => {
-    const immobile = creaImmobile({
+    // Usa comune piccolo (< 5000 ab.) con condizioni soddisfatte
+    const immobile = creaImmobileComunePiccolo({
       categoria: 'A/2',
       renditaCatastale: 1000,
       aliquotaAcconto: 1.06,
@@ -251,6 +276,40 @@ describe('Calcolo IMU Immobile Completo', () => {
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(1780.8); // IMU piena
+  });
+
+  test('Residente estero: comune >= 5000 abitanti → IMU piena', () => {
+    // Usa comune grande (Roma > 5000 ab.)
+    const immobile = creaImmobile({
+      categoria: 'A/2',
+      renditaCatastale: 200,
+      immobileNonLocato: true,
+      immobileNonComodato: true,
+    });
+
+    // Anche se rendita ≤ 200€, comune troppo grande → IMU piena
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    // Base: 200 × 1.05 × 160 = 33.600€
+    // IMU: 33.600 × 1.06% = 356,16€
+    expect(risultato.imuTotale).toBe(356.16);
+  });
+
+  test('Residente estero: immobile locato → IMU piena', () => {
+    // Comune piccolo ma immobile locato
+    const immobile = creaImmobileComunePiccolo({
+      categoria: 'A/2',
+      renditaCatastale: 200,
+      immobileNonLocato: false, // Locato!
+      immobileNonComodato: true,
+    });
+
+    // Condizioni non soddisfatte → IMU piena
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    expect(risultato.imuTotale).toBe(356.16);
   });
 
   test('Residente estero: D/1 (non abitativo) → IMU piena anche con rendita bassa', () => {
