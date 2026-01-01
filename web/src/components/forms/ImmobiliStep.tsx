@@ -108,6 +108,19 @@ const isImmobileResidenteEstero = (imm: DatiImmobile): boolean => {
     imm.immobileUltimaResidenza === true;
 };
 
+// Verifica se un immobile qualifica per assimilazione forze armate (abitazione principale)
+const isAbitazionePrincipaleForzeArmate = (imm: DatiImmobile): boolean => {
+  return imm.fattispecie_principale === 'abitazione_principale_lusso' &&
+    imm.immobileNonLocatoForzeArmate === true;
+};
+
+// Verifica se esiste già una pertinenza forze armate per una categoria specifica
+const isPertinenzaForzeArmateCategoria = (imm: DatiImmobile, categoria: CategoriaCatastale): boolean => {
+  return imm.fattispecie_principale === 'pertinenze' &&
+    imm.categoria === categoria &&
+    imm.immobileNonLocatoForzeArmate === true;
+};
+
 // Testo condizioni residente estero (art. 1, c. 48-48bis, L. 178/2020 mod. 2026)
 const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU per residente all'estero (art. 1, c. 48-48bis, L. 178/2020), devono sussistere le seguenti condizioni:
 
@@ -176,12 +189,35 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     }
   }, [showCondizioniResidenteEstero, immobile.immobileNonLocatoNonComodato]);
 
+  // Verifica se esiste già abitazione principale forze armate
+  const esisteGiaAbitazionePrincipaleForzeArmate = useMemo(() => {
+    return immobili.some(isAbitazionePrincipaleForzeArmate);
+  }, [immobili]);
+
+  // Verifica se esiste già una pertinenza forze armate della stessa categoria
+  const esisteGiaPertinenzaForzeArmateStessaCategoria = useMemo(() => {
+    if (immobile.fattispecie_principale !== 'pertinenze' || !immobile.categoria) {
+      return false;
+    }
+    return immobili.some(imm => isPertinenzaForzeArmateCategoria(imm, immobile.categoria));
+  }, [immobili, immobile.fattispecie_principale, immobile.categoria]);
+
   // Verifica se mostrare sezione condizioni forze armate
+  // NON mostrare se:
+  // - abitazione principale: esiste già un'abitazione principale con assimilazione
+  // - pertinenze: esiste già una pertinenza della stessa categoria con assimilazione
   const showCondizioniForzeArmate = useMemo(() => {
-    return tipologiaContribuente === 'persona_fisica_forze_armate' &&
-      (immobile.fattispecie_principale === 'abitazione_principale_lusso' ||
-       immobile.fattispecie_principale === 'pertinenze');
-  }, [tipologiaContribuente, immobile.fattispecie_principale]);
+    if (tipologiaContribuente !== 'persona_fisica_forze_armate') {
+      return false;
+    }
+    if (immobile.fattispecie_principale === 'abitazione_principale_lusso') {
+      return !esisteGiaAbitazionePrincipaleForzeArmate;
+    }
+    if (immobile.fattispecie_principale === 'pertinenze') {
+      return !esisteGiaPertinenzaForzeArmateStessaCategoria;
+    }
+    return false;
+  }, [tipologiaContribuente, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleForzeArmate, esisteGiaPertinenzaForzeArmateStessaCategoria]);
 
   // Imposta i flag di default per forze armate
   useEffect(() => {
