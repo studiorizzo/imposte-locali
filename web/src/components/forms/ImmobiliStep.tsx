@@ -136,7 +136,7 @@ Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordi
 const CONDIZIONI_FORZE_ARMATE = `Per fruire dell'assimilazione ad abitazione principale (art. 1, c. 741, lett. c, n. 5, L. 160/2019), devono sussistere le seguenti condizioni:
 
 • Immobile non concesso in locazione
-• Assimilazione applicabile ad un solo immobile (unica unità immobiliare)
+• Assimilazione applicabile ad un solo immobile
 
 Non sono richieste le condizioni della dimora abituale e della residenza anagrafica.
 
