@@ -250,6 +250,13 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
           }
         }
 
+        // Reset flag fabbricato quando cambia fattispecie
+        updated.riduzioni = {
+          ...prev.riduzioni,
+          storicoArtistico: false,
+          inagibileInabitabile: false,
+        };
+
         // Reset aliquota personalizzata quando cambia fattispecie
         setAliquotaPersonalizzataSelezionata(null);
       }
