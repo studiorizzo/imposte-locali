@@ -121,10 +121,16 @@ const isPertinenzaForzeArmateCategoria = (imm: DatiImmobile, categoria: Categori
     imm.immobileNonLocatoForzeArmate === true;
 };
 
-// Verifica se un immobile qualifica per assimilazione anziano/disabile
-const isImmobileAnzianoDisabile = (imm: DatiImmobile): boolean => {
-  return imm.fattispecie_principale === 'altri_fabbricati' &&
-    isCategoriaAbitativa(imm.categoria) &&
+// Verifica se un immobile qualifica per assimilazione anziano/disabile (abitazione principale)
+const isAbitazionePrincipaleAnzianoDisabile = (imm: DatiImmobile): boolean => {
+  return imm.fattispecie_principale === 'abitazione_principale_lusso' &&
+    imm.immobileNonLocatoAnzianoDisabile === true;
+};
+
+// Verifica se esiste già una pertinenza anziano/disabile per una categoria specifica
+const isPertinenzaAnzianoDisabileCategoria = (imm: DatiImmobile, categoria: CategoriaCatastale): boolean => {
+  return imm.fattispecie_principale === 'pertinenze' &&
+    imm.categoria === categoria &&
     imm.immobileNonLocatoAnzianoDisabile === true;
 };
 
@@ -169,10 +175,9 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | 'immobileNonLocatoAnzianoDisabile' | null>(null);
 
   // Filtra fattispecie in base alla tipologia contribuente
-  // Residente estero e anziano/disabile non possono avere abitazione principale né pertinenze
+  // Residente estero non può avere abitazione principale né pertinenze
   const fattspecieOptions = useMemo(() => {
-    if (tipologiaContribuente === 'persona_fisica_residente_estero' ||
-        tipologiaContribuente === 'persona_fisica_anziano_ricoverato') {
+    if (tipologiaContribuente === 'persona_fisica_residente_estero') {
       return FATTISPECIE_OPTIONS.filter(
         opt => opt.value !== 'abitazione_principale_lusso' && opt.value !== 'pertinenze'
       );
@@ -258,20 +263,39 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     );
   }, [prospetto]);
 
-  // Verifica se esiste già un immobile anziano/disabile nella lista
-  const esisteGiaImmobileAnzianoDisabile = useMemo(() => {
-    return immobili.some(isImmobileAnzianoDisabile);
+  // Verifica se esiste già abitazione principale anziano/disabile
+  const esisteGiaAbitazionePrincipaleAnzianoDisabile = useMemo(() => {
+    return immobili.some(isAbitazionePrincipaleAnzianoDisabile);
   }, [immobili]);
 
+  // Verifica se esiste già una pertinenza anziano/disabile della stessa categoria
+  const esisteGiaPertinenzaAnzianoDisabileStessaCategoria = useMemo(() => {
+    if (immobile.fattispecie_principale !== 'pertinenze' || !immobile.categoria) {
+      return false;
+    }
+    return immobili.some(imm => isPertinenzaAnzianoDisabileCategoria(imm, immobile.categoria));
+  }, [immobili, immobile.fattispecie_principale, immobile.categoria]);
+
   // Verifica se mostrare sezione condizioni anziano/disabile
-  // Richiede: tipologia anziano + comune offre assimilazione + altri_fabbricati + cat. abitativa + non esiste già
+  // NON mostrare se:
+  // - comune non offre l'assimilazione
+  // - abitazione principale: esiste già un'abitazione principale con assimilazione
+  // - pertinenze: esiste già una pertinenza della stessa categoria con assimilazione
   const showCondizioniAnzianoDisabile = useMemo(() => {
-    return tipologiaContribuente === 'persona_fisica_anziano_ricoverato' &&
-      comuneOffreAssimilazioneAnzianoDisabile &&
-      immobile.fattispecie_principale === 'altri_fabbricati' &&
-      isCategoriaAbitativa(immobile.categoria) &&
-      !esisteGiaImmobileAnzianoDisabile;
-  }, [tipologiaContribuente, comuneOffreAssimilazioneAnzianoDisabile, immobile.fattispecie_principale, immobile.categoria, esisteGiaImmobileAnzianoDisabile]);
+    if (tipologiaContribuente !== 'persona_fisica_anziano_ricoverato') {
+      return false;
+    }
+    if (!comuneOffreAssimilazioneAnzianoDisabile) {
+      return false;
+    }
+    if (immobile.fattispecie_principale === 'abitazione_principale_lusso') {
+      return !esisteGiaAbitazionePrincipaleAnzianoDisabile;
+    }
+    if (immobile.fattispecie_principale === 'pertinenze') {
+      return !esisteGiaPertinenzaAnzianoDisabileStessaCategoria;
+    }
+    return false;
+  }, [tipologiaContribuente, comuneOffreAssimilazioneAnzianoDisabile, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleAnzianoDisabile, esisteGiaPertinenzaAnzianoDisabileStessaCategoria]);
 
   // Imposta i flag di default per anziano/disabile
   useEffect(() => {
