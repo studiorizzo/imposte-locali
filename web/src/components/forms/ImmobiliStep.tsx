@@ -125,6 +125,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const [aliquotaPersonalizzataSelezionata, setAliquotaPersonalizzataSelezionata] = useState<string | null>(null);
   const [erroreUnicita, setErroreUnicita] = useState<string | null>(null);
   const [showModalCondizioni, setShowModalCondizioni] = useState(false);
+  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocato' | 'immobileNonComodato' | null>(null);
 
   // Filtra fattispecie in base alla tipologia contribuente
   // Residente estero non può avere abitazione principale né pertinenze
@@ -280,10 +281,28 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const handleCondizioneResidenteEsteroChange = (field: 'immobileNonLocato' | 'immobileNonComodato', value: boolean) => {
     if (!value) {
       // Se l'utente tenta di deselezionare, mostra il modal di avviso
+      // NON aggiornare il valore finché l'utente non conferma
+      setCampoInDeselezione(field);
       setShowModalCondizioni(true);
+    } else {
+      // Se l'utente seleziona, aggiorna subito
+      setImmobile(prev => ({ ...prev, [field]: value }));
     }
-    // In ogni caso aggiorna il valore
-    setImmobile(prev => ({ ...prev, [field]: value }));
+  };
+
+  // Conferma deselezione dal modal
+  const handleConfermaDeselezione = () => {
+    if (campoInDeselezione) {
+      setImmobile(prev => ({ ...prev, [campoInDeselezione]: false }));
+    }
+    setCampoInDeselezione(null);
+    setShowModalCondizioni(false);
+  };
+
+  // Annulla deselezione dal modal
+  const handleAnnullaDeselezione = () => {
+    setCampoInDeselezione(null);
+    setShowModalCondizioni(false);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -642,14 +661,17 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       {/* Modal condizioni residente estero */}
       <Modal
         aperto={showModalCondizioni}
-        onChiudi={() => setShowModalCondizioni(false)}
+        onChiudi={handleAnnullaDeselezione}
         titolo="Condizioni riduzione residente estero"
       >
         <div className="space-y-4">
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_RESIDENTE_ESTERO}</p>
-          <div className="flex justify-end">
-            <Button onClick={() => setShowModalCondizioni(false)}>
-              Ho capito
+          <div className="flex justify-end gap-3">
+            <Button variant="secondary" onClick={handleAnnullaDeselezione}>
+              Annulla
+            </Button>
+            <Button variant="danger" onClick={handleConfermaDeselezione}>
+              Deseleziona
             </Button>
           </div>
         </div>
