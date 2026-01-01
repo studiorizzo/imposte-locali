@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Header, Footer } from './components/layout';
 import { StepIndicator, WizardNavigation } from './components/wizard';
 import { ContribuenteForm, ImmobiliStep } from './components/forms';
@@ -43,6 +43,11 @@ function App() {
   const [contribuente, setContribuente] = useState<Contribuente>(initialContribuente);
   const [immobili, setImmobili] = useState<DatiImmobile[]>([]);
   const [riepilogo, setRiepilogo] = useState<RiepilogoIMU | null>(null);
+
+  // Scroll to top quando cambia lo step
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentStep]);
 
   const canProceed = useMemo(() => {
     switch (currentStep) {

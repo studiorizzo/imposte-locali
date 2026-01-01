@@ -108,6 +108,19 @@ const isImmobileResidenteEstero = (imm: DatiImmobile): boolean => {
     imm.immobileUltimaResidenza === true;
 };
 
+// Verifica se un immobile qualifica per assimilazione forze armate (abitazione principale)
+const isAbitazionePrincipaleForzeArmate = (imm: DatiImmobile): boolean => {
+  return imm.fattispecie_principale === 'abitazione_principale_lusso' &&
+    imm.immobileNonLocatoForzeArmate === true;
+};
+
+// Verifica se esiste già una pertinenza forze armate per una categoria specifica
+const isPertinenzaForzeArmateCategoria = (imm: DatiImmobile, categoria: CategoriaCatastale): boolean => {
+  return imm.fattispecie_principale === 'pertinenze' &&
+    imm.categoria === categoria &&
+    imm.immobileNonLocatoForzeArmate === true;
+};
+
 // Testo condizioni residente estero (art. 1, c. 48-48bis, L. 178/2020 mod. 2026)
 const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU per residente all'estero (art. 1, c. 48-48bis, L. 178/2020), devono sussistere le seguenti condizioni:
 
@@ -120,11 +133,13 @@ const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU pe
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
 // Testo condizioni forze armate (art. 1, c. 741, lett. c, n. 5, L. 160/2019)
-const CONDIZIONI_FORZE_ARMATE = `Per fruire dell'assimilazione ad abitazione principale per appartenenti a Forze armate, Polizia, Vigili del fuoco (art. 1, c. 741, lett. c, n. 5, L. 160/2019), devono sussistere le seguenti condizioni:
+const CONDIZIONI_FORZE_ARMATE = `Per fruire dell'assimilazione ad abitazione principale (art. 1, c. 741, lett. c, n. 5, L. 160/2019), devono sussistere le seguenti condizioni:
 
-• Appartenenza alle Forze armate, Forze di polizia, Corpo nazionale dei vigili del fuoco, carriera prefettizia
-• Impossibilità di dimorare nell'immobile per ragioni di servizio
-• Immobile non locato né concesso in comodato d'uso
+• Personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia
+• Un solo immobile posseduto (unica unità immobiliare)
+• Immobile non concesso in locazione
+
+Non sono richieste le condizioni della dimora abituale e della residenza anagrafica.
 
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
@@ -174,12 +189,35 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     }
   }, [showCondizioniResidenteEstero, immobile.immobileNonLocatoNonComodato]);
 
+  // Verifica se esiste già abitazione principale forze armate
+  const esisteGiaAbitazionePrincipaleForzeArmate = useMemo(() => {
+    return immobili.some(isAbitazionePrincipaleForzeArmate);
+  }, [immobili]);
+
+  // Verifica se esiste già una pertinenza forze armate della stessa categoria
+  const esisteGiaPertinenzaForzeArmateStessaCategoria = useMemo(() => {
+    if (immobile.fattispecie_principale !== 'pertinenze' || !immobile.categoria) {
+      return false;
+    }
+    return immobili.some(imm => isPertinenzaForzeArmateCategoria(imm, immobile.categoria));
+  }, [immobili, immobile.fattispecie_principale, immobile.categoria]);
+
   // Verifica se mostrare sezione condizioni forze armate
+  // NON mostrare se:
+  // - abitazione principale: esiste già un'abitazione principale con assimilazione
+  // - pertinenze: esiste già una pertinenza della stessa categoria con assimilazione
   const showCondizioniForzeArmate = useMemo(() => {
-    return tipologiaContribuente === 'persona_fisica_forze_armate' &&
-      (immobile.fattispecie_principale === 'abitazione_principale_lusso' ||
-       immobile.fattispecie_principale === 'pertinenze');
-  }, [tipologiaContribuente, immobile.fattispecie_principale]);
+    if (tipologiaContribuente !== 'persona_fisica_forze_armate') {
+      return false;
+    }
+    if (immobile.fattispecie_principale === 'abitazione_principale_lusso') {
+      return !esisteGiaAbitazionePrincipaleForzeArmate;
+    }
+    if (immobile.fattispecie_principale === 'pertinenze') {
+      return !esisteGiaPertinenzaForzeArmateStessaCategoria;
+    }
+    return false;
+  }, [tipologiaContribuente, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleForzeArmate, esisteGiaPertinenzaForzeArmateStessaCategoria]);
 
   // Imposta i flag di default per forze armate
   useEffect(() => {
@@ -508,8 +546,8 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                     </div>
                     <div className="space-y-3 mt-3">
                       <Checkbox
-                        label="Immobile non locato né concesso in comodato d'uso"
-                        description="L'immobile non è affittato a terzi né concesso in comodato"
+                        label="Immobile non concesso in locazione"
+                        description="L'immobile non è affittato a terzi"
                         checked={immobile.immobileNonLocatoForzeArmate ?? true}
                         onChange={(e) => handleCondizioneForzeArmateChange(e.target.checked)}
                       />
