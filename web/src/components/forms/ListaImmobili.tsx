@@ -122,7 +122,9 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
                   </div>
 
                   {/* Riduzioni attive */}
-                  {Object.entries(immobile.riduzioni).some(([, v]) => v) && (
+                  {(Object.entries(immobile.riduzioni).some(([, v]) => v) ||
+                    immobile.immobileNonLocatoForzeArmate ||
+                    (immobile.immobileNonLocatoNonComodato && immobile.immobileUltimaResidenza)) && (
                     <div className="mt-3 flex flex-wrap gap-1">
                       {immobile.riduzioni.storicoArtistico && (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-yellow-100 text-yellow-800">
@@ -142,6 +144,16 @@ export function ListaImmobili({ immobili, onRemove }: ListaImmobiliProps) {
                       {immobile.riduzioni.canoneCorordato && (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-green-100 text-green-800">
                           Canone Concordato
+                        </span>
+                      )}
+                      {immobile.immobileNonLocatoForzeArmate && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-800">
+                          Assimilazione
+                        </span>
+                      )}
+                      {immobile.immobileNonLocatoNonComodato && immobile.immobileUltimaResidenza && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-800">
+                          Riduzione estero
                         </span>
                       )}
                     </div>
