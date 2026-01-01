@@ -135,9 +135,8 @@ Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordi
 // Testo condizioni forze armate (art. 1, c. 741, lett. c, n. 5, L. 160/2019)
 const CONDIZIONI_FORZE_ARMATE = `Per fruire dell'assimilazione ad abitazione principale (art. 1, c. 741, lett. c, n. 5, L. 160/2019), devono sussistere le seguenti condizioni:
 
-• Personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia
-• Un solo immobile posseduto (unica unità immobiliare)
 • Immobile non concesso in locazione
+• Assimilazione applicabile ad un solo immobile (unica unità immobiliare)
 
 Non sono richieste le condizioni della dimora abituale e della residenza anagrafica.
 
@@ -799,6 +798,9 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         titolo="Condizioni assimilazione abitazione principale"
       >
         <div className="space-y-4">
+          <p className="text-sm text-gray-500 -mt-2 mb-2">
+            per il personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia
+          </p>
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_FORZE_ARMATE}</p>
           <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
