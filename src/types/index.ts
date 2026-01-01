@@ -74,6 +74,11 @@ export interface DatiImmobile {
   // Riduzioni ed esenzioni
   riduzioni: Riduzioni;
   esenzioni: Esenzioni;
+
+  // Condizioni residente estero (art. 1, c. 48-48bis, L. 178/2020)
+  // Visibili solo per: residente estero + comune < 5000 ab. + altri_fabbricati + cat. A (no A/10)
+  immobileNonLocato?: boolean;    // Immobile non locato
+  immobileNonComodato?: boolean;  // Immobile non concesso in comodato d'uso
 }
 
 // Risultato calcolo singolo immobile
