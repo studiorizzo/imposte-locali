@@ -94,11 +94,36 @@ const createEmptyImmobile = (): DatiImmobile => ({
   },
 });
 
+// Verifica se categoria è abitativa (gruppo A escluso A/10)
+const isCategoriaAbitativa = (categoria: CategoriaCatastale): boolean => {
+  return categoria?.startsWith('A/') && categoria !== 'A/10';
+};
+
+// Verifica se un immobile qualifica per riduzione residente estero
+const isImmobileResidenteEstero = (imm: DatiImmobile): boolean => {
+  return imm.fattispecie_principale === 'altri_fabbricati' &&
+    isCategoriaAbitativa(imm.categoria) &&
+    imm.comune.abitanti > 0 && imm.comune.abitanti < 5000 &&
+    imm.immobileNonLocato === true &&
+    imm.immobileNonComodato === true;
+};
+
+// Testo condizioni residente estero
+const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU per residente all'estero (art. 1, c. 48-48bis, L. 178/2020), l'immobile deve:
+
+• Essere l'unica unità immobiliare a uso abitativo posseduta in Italia
+• Non essere locato
+• Non essere concesso in comodato d'uso
+• Trovarsi nel comune di ultima residenza in Italia (< 5.000 abitanti)
+
+Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
+
 export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipologiaContribuente }: ImmobiliStepProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [aliquotaPersonalizzataSelezionata, setAliquotaPersonalizzataSelezionata] = useState<string | null>(null);
   const [erroreUnicita, setErroreUnicita] = useState<string | null>(null);
+  const [showModalCondizioni, setShowModalCondizioni] = useState(false);
 
   // Filtra fattispecie in base alla tipologia contribuente
   // Residente estero non può avere abitazione principale né pertinenze
@@ -110,6 +135,30 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     }
     return FATTISPECIE_OPTIONS;
   }, [tipologiaContribuente]);
+
+  // Verifica se mostrare sezione condizioni residente estero
+  const showCondizioniResidenteEstero = useMemo(() => {
+    return tipologiaContribuente === 'persona_fisica_residente_estero' &&
+      immobile.comune.abitanti > 0 && immobile.comune.abitanti < 5000 &&
+      immobile.fattispecie_principale === 'altri_fabbricati' &&
+      isCategoriaAbitativa(immobile.categoria);
+  }, [tipologiaContribuente, immobile.comune.abitanti, immobile.fattispecie_principale, immobile.categoria]);
+
+  // Verifica se esiste già un immobile residente estero nella lista
+  const esisteGiaImmobileResidenteEstero = useMemo(() => {
+    return immobili.some(isImmobileResidenteEstero);
+  }, [immobili]);
+
+  // Imposta i flag di default quando le condizioni sono soddisfatte
+  useEffect(() => {
+    if (showCondizioniResidenteEstero && immobile.immobileNonLocato === undefined) {
+      setImmobile(prev => ({
+        ...prev,
+        immobileNonLocato: true,
+        immobileNonComodato: true,
+      }));
+    }
+  }, [showCondizioniResidenteEstero, immobile.immobileNonLocato]);
 
   // Hook per caricare prospetto
   const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
@@ -224,6 +273,16 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     }));
   };
 
+  // Handler per i flag condizioni residente estero
+  const handleCondizioneResidenteEsteroChange = (field: 'immobileNonLocato' | 'immobileNonComodato', value: boolean) => {
+    if (!value) {
+      // Se l'utente tenta di deselezionare, mostra il modal di avviso
+      setShowModalCondizioni(true);
+    }
+    // In ogni caso aggiorna il valore
+    setImmobile(prev => ({ ...prev, [field]: value }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -234,6 +293,16 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
 
     if (richiedeRendita && !immobile.renditaCatastale) {
       setErroreUnicita('Rendita catastale non rivalutata campo richiesto.');
+      return;
+    }
+
+    // Verifica unicità immobile residente estero
+    // La riduzione si applica ad un solo immobile a uso abitativo
+    if (showCondizioniResidenteEstero &&
+        immobile.immobileNonLocato &&
+        immobile.immobileNonComodato &&
+        esisteGiaImmobileResidenteEstero) {
+      setErroreUnicita('È già presente un immobile che beneficia della riduzione residente estero. La riduzione si applica ad una sola unità immobiliare a uso abitativo.');
       return;
     }
 
@@ -360,6 +429,42 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                         checked={immobile.riduzioni.inagibileInabitabile}
                         onChange={(e) => handleRiduzioneChange('inagibileInabitabile', e.target.checked)}
                       />
+                    )}
+                  </div>
+                )}
+
+                {/* Condizioni residente estero - visibili solo quando applicabili */}
+                {showCondizioniResidenteEstero && (
+                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg space-y-3">
+                    <div className="flex items-start gap-2">
+                      <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <h4 className="font-medium text-blue-900">Riduzione residente estero</h4>
+                        <p className="text-sm text-blue-700 mt-1">
+                          Comune con meno di 5.000 abitanti. Per beneficiare della riduzione IMU, conferma le seguenti condizioni:
+                        </p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                      <Checkbox
+                        label="Immobile non locato"
+                        description="L'immobile non è affittato a terzi"
+                        checked={immobile.immobileNonLocato ?? true}
+                        onChange={(e) => handleCondizioneResidenteEsteroChange('immobileNonLocato', e.target.checked)}
+                      />
+                      <Checkbox
+                        label="Immobile non in comodato"
+                        description="L'immobile non è concesso in comodato d'uso"
+                        checked={immobile.immobileNonComodato ?? true}
+                        onChange={(e) => handleCondizioneResidenteEsteroChange('immobileNonComodato', e.target.checked)}
+                      />
+                    </div>
+                    {esisteGiaImmobileResidenteEstero && (
+                      <p className="text-sm text-amber-700 bg-amber-50 p-2 rounded mt-2">
+                        Attenzione: è già presente un immobile con riduzione residente estero. La riduzione si applica ad una sola unità abitativa.
+                      </p>
                     )}
                   </div>
                 )}
@@ -544,6 +649,22 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         titolo="Errore"
       >
         {erroreUnicita}
+      </Modal>
+
+      {/* Modal condizioni residente estero */}
+      <Modal
+        aperto={showModalCondizioni}
+        onChiudi={() => setShowModalCondizioni(false)}
+        titolo="Condizioni riduzione residente estero"
+      >
+        <div className="space-y-4">
+          <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_RESIDENTE_ESTERO}</p>
+          <div className="flex justify-end">
+            <Button onClick={() => setShowModalCondizioni(false)}>
+              Ho capito
+            </Button>
+          </div>
+        </div>
       </Modal>
     </div>
   );
