@@ -795,12 +795,9 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       <Modal
         aperto={showModalCondizioniForzeArmate}
         onChiudi={handleAnnullaDeselezione}
-        titolo="Condizioni assimilazione abitazione principale"
+        titolo="Condizioni assimilazione abitazione principale per il personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia"
       >
         <div className="space-y-4">
-          <p className="text-sm text-gray-500 -mt-2 mb-2">
-            per il personale in servizio permanente appartenente a Forze armate, Forze di polizia, Vigili del fuoco, carriera prefettizia
-          </p>
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_FORZE_ARMATE}</p>
           <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
