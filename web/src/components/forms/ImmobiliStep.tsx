@@ -119,13 +119,23 @@ const CONDIZIONI_RESIDENTE_ESTERO = `Per fruire della riduzione/esenzione IMU pe
 
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
+// Testo condizioni forze armate (art. 1, c. 741, lett. c, n. 5, L. 160/2019)
+const CONDIZIONI_FORZE_ARMATE = `Per fruire dell'assimilazione ad abitazione principale per appartenenti a Forze armate, Polizia, Vigili del fuoco (art. 1, c. 741, lett. c, n. 5, L. 160/2019), devono sussistere le seguenti condizioni:
+
+• Appartenenza alle Forze armate, Forze di polizia, Corpo nazionale dei vigili del fuoco, carriera prefettizia
+• Impossibilità di dimorare nell'immobile per ragioni di servizio
+• Immobile non locato né concesso in comodato d'uso
+
+Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
+
 export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipologiaContribuente }: ImmobiliStepProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [aliquotaPersonalizzataSelezionata, setAliquotaPersonalizzataSelezionata] = useState<string | null>(null);
   const [erroreUnicita, setErroreUnicita] = useState<string | null>(null);
   const [showModalCondizioni, setShowModalCondizioni] = useState(false);
-  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | null>(null);
+  const [showModalCondizioniForzeArmate, setShowModalCondizioniForzeArmate] = useState(false);
+  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | null>(null);
 
   // Filtra fattispecie in base alla tipologia contribuente
   // Residente estero non può avere abitazione principale né pertinenze
@@ -163,6 +173,23 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       }));
     }
   }, [showCondizioniResidenteEstero, immobile.immobileNonLocatoNonComodato]);
+
+  // Verifica se mostrare sezione condizioni forze armate
+  const showCondizioniForzeArmate = useMemo(() => {
+    return tipologiaContribuente === 'persona_fisica_forze_armate' &&
+      (immobile.fattispecie_principale === 'abitazione_principale_lusso' ||
+       immobile.fattispecie_principale === 'pertinenze');
+  }, [tipologiaContribuente, immobile.fattispecie_principale]);
+
+  // Imposta i flag di default per forze armate
+  useEffect(() => {
+    if (showCondizioniForzeArmate && immobile.immobileNonLocatoForzeArmate === undefined) {
+      setImmobile(prev => ({
+        ...prev,
+        immobileNonLocatoForzeArmate: true,
+      }));
+    }
+  }, [showCondizioniForzeArmate, immobile.immobileNonLocatoForzeArmate]);
 
   // Hook per caricare prospetto
   const comuneSelezionato = immobile.comune.codice_catastale ? immobile.comune : null;
@@ -304,12 +331,25 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     }
     setCampoInDeselezione(null);
     setShowModalCondizioni(false);
+    setShowModalCondizioniForzeArmate(false);
   };
 
   // Annulla deselezione dal modal
   const handleAnnullaDeselezione = () => {
     setCampoInDeselezione(null);
     setShowModalCondizioni(false);
+    setShowModalCondizioniForzeArmate(false);
+  };
+
+  // Handler per i flag condizioni forze armate
+  const handleCondizioneForzeArmateChange = (value: boolean) => {
+    if (!value) {
+      // Se l'utente tenta di deselezionare, mostra il modal di avviso
+      setCampoInDeselezione('immobileNonLocatoForzeArmate');
+      setShowModalCondizioniForzeArmate(true);
+    } else {
+      setImmobile(prev => ({ ...prev, immobileNonLocatoForzeArmate: value }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -449,6 +489,31 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                         onChange={(e) => handleRiduzioneChange('inagibileInabitabile', e.target.checked)}
                       />
                     )}
+                  </div>
+                )}
+
+                {/* Condizioni forze armate - visibili solo quando applicabili */}
+                {showCondizioniForzeArmate && (
+                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg space-y-3">
+                    <div className="flex items-start gap-2">
+                      <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <h4 className="font-medium text-blue-900">Assimilazione abitazione principale</h4>
+                        <p className="text-sm text-blue-700 mt-1">
+                          Per beneficiare dell'assimilazione ad abitazione principale, devono sussistere le seguenti condizioni:
+                        </p>
+                      </div>
+                    </div>
+                    <div className="space-y-3 mt-3">
+                      <Checkbox
+                        label="Immobile non locato né concesso in comodato d'uso"
+                        description="L'immobile non è affittato a terzi né concesso in comodato"
+                        checked={immobile.immobileNonLocatoForzeArmate ?? true}
+                        onChange={(e) => handleCondizioneForzeArmateChange(e.target.checked)}
+                      />
+                    </div>
                   </div>
                 )}
 
@@ -678,6 +743,25 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       >
         <div className="space-y-4">
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_RESIDENTE_ESTERO}</p>
+          <div className="flex justify-between">
+            <Button variant="secondary" onClick={handleAnnullaDeselezione}>
+              Annulla
+            </Button>
+            <Button variant="danger" onClick={handleConfermaDeselezione}>
+              Deseleziona
+            </Button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Modal condizioni forze armate */}
+      <Modal
+        aperto={showModalCondizioniForzeArmate}
+        onChiudi={handleAnnullaDeselezione}
+        titolo="Condizioni assimilazione abitazione principale"
+      >
+        <div className="space-y-4">
+          <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_FORZE_ARMATE}</p>
           <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
               Annulla

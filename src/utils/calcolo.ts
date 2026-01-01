@@ -401,8 +401,15 @@ export function calcolaIMUImmobile(
   let imuTotale = round2(imuAccontoLordo + imuSaldo);
 
   // Detrazione per abitazione principale (A/1, A/8, A/9)
+  // Per forze armate, la detrazione si applica solo se l'immobile non è locato/in comodato
   let detrazione: number | undefined;
-  if (fattispecie_principale === 'abitazione_principale_lusso') {
+  const qualificaForzeArmate = tipologiaContribuente === 'persona_fisica_forze_armate' &&
+    immobile.immobileNonLocatoForzeArmate === true;
+  const applicaDetrazioneAbitazionePrincipale =
+    fattispecie_principale === 'abitazione_principale_lusso' &&
+    (tipologiaContribuente !== 'persona_fisica_forze_armate' || qualificaForzeArmate);
+
+  if (applicaDetrazioneAbitazionePrincipale) {
     detrazione = calcolaDetrazione(percentualePossesso, mesiTotali);
     imuTotale = round2(Math.max(0, imuTotale - detrazione));
   }

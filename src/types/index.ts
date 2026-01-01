@@ -79,6 +79,10 @@ export interface DatiImmobile {
   // Visibili solo per: residente estero + comune < 5000 ab. + altri_fabbricati + cat. A (no A/10)
   immobileNonLocatoNonComodato?: boolean;  // Immobile non locato né concesso in comodato d'uso
   immobileUltimaResidenza?: boolean;       // Immobile ubicato nel comune di ultima residenza
+
+  // Condizioni forze armate (art. 1, c. 741, lett. c, n. 5, L. 160/2019)
+  // Visibili solo per: forze armate + abitazione_principale_lusso o pertinenze
+  immobileNonLocatoForzeArmate?: boolean;  // Immobile non locato né concesso in comodato
 }
 
 // Risultato calcolo singolo immobile
