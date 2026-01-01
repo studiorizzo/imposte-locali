@@ -401,19 +401,16 @@ export function calcolaIMUImmobile(
   let imuTotale = round2(imuAccontoLordo + imuSaldo);
 
   // Detrazione per abitazione principale (A/1, A/8, A/9)
-  // Per forze armate, la detrazione si applica solo se l'immobile non è locato
-  // Per anziano/disabile ricoverato, la detrazione si applica se l'immobile è assimilato (non locato)
+  // Per forze armate e anziano/disabile, la detrazione si applica solo se l'immobile non è locato
   let detrazione: number | undefined;
   const qualificaForzeArmate = tipologiaContribuente === 'persona_fisica_forze_armate' &&
     immobile.immobileNonLocatoForzeArmate === true;
   const qualificaAnzianoDisabile = tipologiaContribuente === 'persona_fisica_anziano_ricoverato' &&
-    fattispecie_principale === 'altri_fabbricati' &&
-    isCategoriaAbitativa(categoria) &&
     immobile.immobileNonLocatoAnzianoDisabile === true;
   const applicaDetrazioneAbitazionePrincipale =
-    (fattispecie_principale === 'abitazione_principale_lusso' &&
-      (tipologiaContribuente !== 'persona_fisica_forze_armate' || qualificaForzeArmate)) ||
-    qualificaAnzianoDisabile;
+    fattispecie_principale === 'abitazione_principale_lusso' &&
+    (tipologiaContribuente !== 'persona_fisica_forze_armate' || qualificaForzeArmate) &&
+    (tipologiaContribuente !== 'persona_fisica_anziano_ricoverato' || qualificaAnzianoDisabile);
 
   if (applicaDetrazioneAbitazionePrincipale) {
     detrazione = calcolaDetrazione(percentualePossesso, mesiTotali);
