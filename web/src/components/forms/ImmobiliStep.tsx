@@ -775,6 +775,13 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                   )}
                 </div>
 
+                {/* Messaggio informativo per abitazione principale esente */}
+                {isAbitazionePrincipaleEsente && (
+                  <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                    Categoria esente da IMU (art. 1, c. 740, L. 160/2019)
+                  </div>
+                )}
+
                 {/* Flag fabbricato - visibili solo per fabbricati */}
                 {showFlagFabbricato && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
