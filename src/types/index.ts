@@ -87,6 +87,10 @@ export interface DatiImmobile {
   // Condizioni anziano/disabile ricoverato (art. 1, c. 741, lett. c, n. 6, L. 160/2019)
   // Visibili solo se: comune prevede assimilazione + altri_fabbricati + cat. A (no A/10)
   immobileNonLocatoAnzianoDisabile?: boolean;  // Immobile non concesso in locazione
+
+  // Dichiarazione interesse culturale per storico/artistico (art. 13 D.Lgs. 42/2004)
+  // Obbligatoria per persone fisiche per usufruire della riduzione
+  dichiarazioneInteresseCulturale?: boolean;
 }
 
 // Risultato calcolo singolo immobile

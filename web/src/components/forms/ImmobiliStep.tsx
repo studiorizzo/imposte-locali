@@ -164,6 +164,15 @@ const CONDIZIONI_ANZIANO_DISABILE = `Per fruire dell'assimilazione ad abitazione
 
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
+// Testo condizioni storico/artistico per persone fisiche (art. 13 D.Lgs. 42/2004)
+const CONDIZIONI_STORICO_ARTISTICO = `Per fruire della riduzione IMU per fabbricato storico/artistico, è necessaria la Dichiarazione di interesse culturale di cui all'art. 13 del D.Lgs. 42/2004.
+
+A differenza degli immobili di proprietà di enti pubblici o persone giuridiche senza fine di lucro, per gli immobili di proprietà di persone fisiche la Dichiarazione ha natura costitutiva.
+
+Sono considerati di interesse culturale gli immobili che rivestono un interesse particolarmente importante a causa del loro riferimento con la storia politica, militare, della letteratura, dell'arte, della scienza, della tecnica, dell'industria e della cultura in genere, ovvero quali testimonianze dell'identità e della storia delle istituzioni pubbliche, collettive o religiose.
+
+Se la Dichiarazione non è stata notificata, l'immobile sarà soggetto ad IMU ordinaria.`;
+
 export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipologiaContribuente }: ImmobiliStepProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -172,7 +181,8 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const [showModalCondizioni, setShowModalCondizioni] = useState(false);
   const [showModalCondizioniForzeArmate, setShowModalCondizioniForzeArmate] = useState(false);
   const [showModalCondizioniAnzianoDisabile, setShowModalCondizioniAnzianoDisabile] = useState(false);
-  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | 'immobileNonLocatoAnzianoDisabile' | null>(null);
+  const [showModalCondizioniStoricoArtistico, setShowModalCondizioniStoricoArtistico] = useState(false);
+  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | 'immobileNonLocatoAnzianoDisabile' | 'dichiarazioneInteresseCulturale' | null>(null);
 
   // Filtra fattispecie in base alla tipologia contribuente
   // Residente estero non può avere abitazione principale né pertinenze
@@ -306,6 +316,30 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       }));
     }
   }, [showCondizioniAnzianoDisabile, immobile.immobileNonLocatoAnzianoDisabile]);
+
+  // Verifica se il contribuente è persona fisica
+  const isPersonaFisica = useMemo(() => {
+    return tipologiaContribuente === 'persona_fisica' ||
+      tipologiaContribuente === 'persona_fisica_residente_estero' ||
+      tipologiaContribuente === 'persona_fisica_anziano_ricoverato' ||
+      tipologiaContribuente === 'persona_fisica_forze_armate';
+  }, [tipologiaContribuente]);
+
+  // Verifica se mostrare sezione dichiarazione interesse culturale
+  // Visibile per persone fisiche quando storico/artistico è flaggato
+  const showCondizioniStoricoArtistico = useMemo(() => {
+    return isPersonaFisica && immobile.riduzioni.storicoArtistico;
+  }, [isPersonaFisica, immobile.riduzioni.storicoArtistico]);
+
+  // Imposta i flag di default per storico/artistico
+  useEffect(() => {
+    if (showCondizioniStoricoArtistico && immobile.dichiarazioneInteresseCulturale === undefined) {
+      setImmobile(prev => ({
+        ...prev,
+        dichiarazioneInteresseCulturale: true,
+      }));
+    }
+  }, [showCondizioniStoricoArtistico, immobile.dichiarazioneInteresseCulturale]);
 
   // Comuni options
   const comuniOptions = useMemo(() =>
@@ -445,6 +479,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     setShowModalCondizioni(false);
     setShowModalCondizioniForzeArmate(false);
     setShowModalCondizioniAnzianoDisabile(false);
+    setShowModalCondizioniStoricoArtistico(false);
   };
 
   // Annulla deselezione dal modal
@@ -453,6 +488,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     setShowModalCondizioni(false);
     setShowModalCondizioniForzeArmate(false);
     setShowModalCondizioniAnzianoDisabile(false);
+    setShowModalCondizioniStoricoArtistico(false);
   };
 
   // Handler per i flag condizioni forze armate
@@ -474,6 +510,17 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       setShowModalCondizioniAnzianoDisabile(true);
     } else {
       setImmobile(prev => ({ ...prev, immobileNonLocatoAnzianoDisabile: value }));
+    }
+  };
+
+  // Handler per i flag condizioni storico/artistico
+  const handleCondizioneStoricoArtisticoChange = (value: boolean) => {
+    if (!value) {
+      // Se l'utente tenta di deselezionare, mostra il modal di avviso
+      setCampoInDeselezione('dichiarazioneInteresseCulturale');
+      setShowModalCondizioniStoricoArtistico(true);
+    } else {
+      setImmobile(prev => ({ ...prev, dichiarazioneInteresseCulturale: value }));
     }
   };
 
@@ -649,6 +696,31 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                         onChange={(e) => handleRiduzioneChange('inagibileInabitabile', e.target.checked)}
                       />
                     )}
+                  </div>
+                )}
+
+                {/* Condizioni storico/artistico - visibili per persone fisiche quando flaggato */}
+                {showCondizioniStoricoArtistico && (
+                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg space-y-3">
+                    <div className="flex items-start gap-2">
+                      <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <h4 className="font-medium text-blue-900">Dichiarazione di interesse culturale</h4>
+                        <p className="text-sm text-blue-700 mt-1">
+                          Per usufruire della riduzione IMU è necessaria la Dichiarazione di cui all'art. 13 del D.Lgs. 42/2004:
+                        </p>
+                      </div>
+                    </div>
+                    <div className="space-y-3 mt-3">
+                      <Checkbox
+                        label="Dichiarazione di interesse culturale notificata"
+                        description="Ho ricevuto la notifica della Dichiarazione di interesse culturale"
+                        checked={immobile.dichiarazioneInteresseCulturale ?? true}
+                        onChange={(e) => handleCondizioneStoricoArtisticoChange(e.target.checked)}
+                      />
+                    </div>
                   </div>
                 )}
 
@@ -966,6 +1038,25 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       >
         <div className="space-y-4">
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_ANZIANO_DISABILE}</p>
+          <div className="flex justify-between">
+            <Button variant="secondary" onClick={handleAnnullaDeselezione}>
+              Annulla
+            </Button>
+            <Button variant="danger" onClick={handleConfermaDeselezione}>
+              Deseleziona
+            </Button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Modal condizioni storico/artistico */}
+      <Modal
+        aperto={showModalCondizioniStoricoArtistico}
+        onChiudi={handleAnnullaDeselezione}
+        titolo="Dichiarazione di interesse culturale per fabbricato storico/artistico"
+      >
+        <div className="space-y-4">
+          <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_STORICO_ARTISTICO}</p>
           <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
               Annulla
