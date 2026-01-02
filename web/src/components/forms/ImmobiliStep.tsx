@@ -639,14 +639,12 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Checkbox
                       label="Fabbricato storico/artistico"
-                      description="Art. 13, c. 3, D.L. 201/2011"
                       checked={immobile.riduzioni.storicoArtistico}
                       onChange={(e) => handleRiduzioneChange('storicoArtistico', e.target.checked)}
                     />
                     {showFlagInagibile && (
                       <Checkbox
                         label="Fabbricato inagibile/inabitabile"
-                        description="Dichiarato non utilizzabile"
                         checked={immobile.riduzioni.inagibileInabitabile}
                         onChange={(e) => handleRiduzioneChange('inagibileInabitabile', e.target.checked)}
                       />
