@@ -94,18 +94,18 @@ const createEmptyImmobile = (): DatiImmobile => ({
   },
 });
 
-// Verifica se categoria è abitativa (gruppo A escluso A/10)
-const isCategoriaAbitativa = (categoria: CategoriaCatastale): boolean => {
-  return categoria?.startsWith('A/') && categoria !== 'A/10';
-};
-
-// Verifica se un immobile qualifica per riduzione residente estero
-const isImmobileResidenteEstero = (imm: DatiImmobile): boolean => {
-  return imm.fattispecie_principale === 'altri_fabbricati' &&
-    isCategoriaAbitativa(imm.categoria) &&
-    imm.comune.abitanti > 0 && imm.comune.abitanti < 5000 &&
+// Verifica se un immobile qualifica per assimilazione residente estero (abitazione principale)
+const isAbitazionePrincipaleResidenteEstero = (imm: DatiImmobile): boolean => {
+  return imm.fattispecie_principale === 'abitazione_principale' &&
     imm.immobileNonLocatoNonComodato === true &&
     imm.immobileUltimaResidenza === true;
+};
+
+// Verifica se esiste già una pertinenza residente estero per una categoria specifica
+const isPertinenzaResidenteEsteroCategoria = (imm: DatiImmobile, categoria: CategoriaCatastale): boolean => {
+  return imm.fattispecie_principale === 'pertinenze' &&
+    imm.categoria === categoria &&
+    imm.immobileNonLocatoNonComodato === true;
 };
 
 // Verifica se un immobile qualifica per assimilazione forze armate (abitazione principale)
@@ -198,33 +198,42 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const [showModalCondizioniInagibile, setShowModalCondizioniInagibile] = useState(false);
   const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | 'immobileNonLocatoAnzianoDisabile' | 'dichiarazioneInteresseCulturale' | 'dichiarazioneInagibilita' | null>(null);
 
-  // Filtra fattispecie in base alla tipologia contribuente
-  // Residente estero non può avere abitazione principale né pertinenze
-  const fattspecieOptions = useMemo(() => {
-    if (tipologiaContribuente === 'persona_fisica_residente_estero') {
-      return FATTISPECIE_OPTIONS.filter(
-        opt => opt.value !== 'abitazione_principale' && opt.value !== 'pertinenze'
-      );
-    }
-    return FATTISPECIE_OPTIONS;
-  }, [tipologiaContribuente]);
-
-  // Verifica se esiste già un immobile residente estero nella lista
-  const esisteGiaImmobileResidenteEstero = useMemo(() => {
-    return immobili.some(isImmobileResidenteEstero);
+  // Verifica se esiste già abitazione principale residente estero
+  const esisteGiaAbitazionePrincipaleResidenteEstero = useMemo(() => {
+    return immobili.some(isAbitazionePrincipaleResidenteEstero);
   }, [immobili]);
 
-  // Verifica se mostrare sezione condizioni residente estero
-  // NON mostrare se esiste già un immobile che fruisce della riduzione
-  const showCondizioniResidenteEstero = useMemo(() => {
-    return tipologiaContribuente === 'persona_fisica_residente_estero' &&
-      immobile.comune.abitanti > 0 && immobile.comune.abitanti < 5000 &&
-      immobile.fattispecie_principale === 'altri_fabbricati' &&
-      isCategoriaAbitativa(immobile.categoria) &&
-      !esisteGiaImmobileResidenteEstero;
-  }, [tipologiaContribuente, immobile.comune.abitanti, immobile.fattispecie_principale, immobile.categoria, esisteGiaImmobileResidenteEstero]);
+  // Verifica se esiste già una pertinenza residente estero della stessa categoria
+  const esisteGiaPertinenzaResidenteEsteroStessaCategoria = useMemo(() => {
+    if (immobile.fattispecie_principale !== 'pertinenze' || !immobile.categoria) {
+      return false;
+    }
+    return immobili.some(imm => isPertinenzaResidenteEsteroCategoria(imm, immobile.categoria));
+  }, [immobili, immobile.fattispecie_principale, immobile.categoria]);
 
-  // Imposta i flag di default quando le condizioni sono soddisfatte
+  // Verifica se mostrare sezione condizioni residente estero
+  // NON mostrare se:
+  // - comune >= 5000 abitanti (requisito comune piccolo)
+  // - abitazione principale: esiste già un'abitazione principale con assimilazione
+  // - pertinenze: esiste già una pertinenza della stessa categoria con assimilazione
+  const showCondizioniResidenteEstero = useMemo(() => {
+    if (tipologiaContribuente !== 'persona_fisica_residente_estero') {
+      return false;
+    }
+    // Requisito: comune < 5000 abitanti
+    if (immobile.comune.abitanti === 0 || immobile.comune.abitanti >= 5000) {
+      return false;
+    }
+    if (immobile.fattispecie_principale === 'abitazione_principale') {
+      return !esisteGiaAbitazionePrincipaleResidenteEstero;
+    }
+    if (immobile.fattispecie_principale === 'pertinenze') {
+      return !esisteGiaPertinenzaResidenteEsteroStessaCategoria;
+    }
+    return false;
+  }, [tipologiaContribuente, immobile.comune.abitanti, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleResidenteEstero, esisteGiaPertinenzaResidenteEsteroStessaCategoria]);
+
+  // Imposta i flag di default per residente estero
   useEffect(() => {
     if (showCondizioniResidenteEstero && immobile.immobileNonLocatoNonComodato === undefined) {
       setImmobile(prev => ({
@@ -743,7 +752,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                     placeholder="Seleziona tipologia"
                     value={immobile.fattispecie_principale}
                     onChange={(e) => handleChange('fattispecie_principale', e.target.value as FattispeciePrincipale)}
-                    options={fattspecieOptions}
+                    options={FATTISPECIE_OPTIONS}
                   />
                   {showCategoria && (
                     <Select
