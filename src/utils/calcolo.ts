@@ -23,6 +23,7 @@ import {
   DETRAZIONE_ABITAZIONE_PRINCIPALE,
   CODICI_TRIBUTO,
   SOGLIA_MINIMA_VERSAMENTO,
+  CATEGORIE_LUSSO,
   calcolaMesiPossesso,
 } from './constants';
 
@@ -38,6 +39,14 @@ function round2(value: number): number {
  */
 function isGruppoD(categoria: CategoriaCatastale): boolean {
   return categoria.startsWith('D/');
+}
+
+/**
+ * Verifica se categoria è di lusso (A/1, A/8, A/9)
+ * Solo queste categorie pagano IMU come abitazione principale
+ */
+function isCategoriaLusso(categoria: CategoriaCatastale): boolean {
+  return CATEGORIE_LUSSO.includes(categoria);
 }
 
 /**
@@ -107,7 +116,13 @@ export function calcolaFattoreResidenteEstero(renditaCatastale: number): number 
 export function verificaEsenzione(
   immobile: DatiImmobile
 ): { esente: boolean; motivo?: string } {
-  const { esenzioni, fattispecie_principale } = immobile;
+  const { esenzioni, fattispecie_principale, categoria } = immobile;
+
+  // Abitazione principale non di lusso (art. 1, c. 740, L. 160/2019)
+  // Categorie A/2-A/7, A/11 come abitazione principale sono esenti
+  if (fattispecie_principale === 'abitazione_principale' && !isCategoriaLusso(categoria)) {
+    return { esente: true, motivo: 'Abitazione principale (categoria non di lusso)' };
+  }
 
   // Terreno CD/IAP
   if (fattispecie_principale === 'terreni_agricoli' && esenzioni.terrenoCdIap) {
@@ -258,7 +273,7 @@ export function getCodiceTributo(
   }
 
   switch (fattispecie) {
-    case 'abitazione_principale_lusso':
+    case 'abitazione_principale':
     case 'pertinenze':
       return CODICI_TRIBUTO.abitazionePrincipale;
     case 'fabbricati_rurali_strumentali':
@@ -408,7 +423,7 @@ export function calcolaIMUImmobile(
   const qualificaAnzianoDisabile = tipologiaContribuente === 'persona_fisica_anziano_ricoverato' &&
     immobile.immobileNonLocatoAnzianoDisabile === true;
   const applicaDetrazioneAbitazionePrincipale =
-    fattispecie_principale === 'abitazione_principale_lusso' &&
+    fattispecie_principale === 'abitazione_principale' &&
     (tipologiaContribuente !== 'persona_fisica_forze_armate' || qualificaForzeArmate) &&
     (tipologiaContribuente !== 'persona_fisica_anziano_ricoverato' || qualificaAnzianoDisabile);
 
