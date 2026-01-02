@@ -444,10 +444,17 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   };
 
   const handleRiduzioneChange = (key: keyof DatiImmobile['riduzioni'], value: boolean) => {
-    setImmobile((prev) => ({
-      ...prev,
-      riduzioni: { ...prev.riduzioni, [key]: value },
-    }));
+    setImmobile((prev) => {
+      const updated = {
+        ...prev,
+        riduzioni: { ...prev.riduzioni, [key]: value },
+      };
+      // Se si seleziona storico/artistico, imposta anche dichiarazioneInteresseCulturale
+      if (key === 'storicoArtistico' && value === true) {
+        updated.dichiarazioneInteresseCulturale = true;
+      }
+      return updated;
+    });
   };
 
   const handleEsenzioneChange = (key: keyof DatiImmobile['esenzioni'], value: boolean) => {
