@@ -80,8 +80,8 @@ export function AliquotePanel({
   const aliquotePersonalizzate = useMemo(() => {
     if (!prospetto || !fattispecie) return [];
 
-    // Per le pertinenze, cerca anche abitazione_principale_lusso (stessa aliquota)
-    const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale_lusso' : fattispecie;
+    // Per le pertinenze, cerca anche abitazione_principale (stessa aliquota)
+    const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale' : fattispecie;
 
     return prospetto.aliquote_personalizzate.filter((ap) => {
       // 1. Filtro su fattispecie (sempre richiesto)

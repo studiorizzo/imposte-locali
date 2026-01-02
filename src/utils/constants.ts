@@ -90,7 +90,7 @@ export const RIVALUTAZIONE_RENDITA = 1.05;  // 5%
 
 // Aliquote ministeriali per fattispecie principale (art. 1, cc. 748-754)
 export const ALIQUOTE_MINISTERO: Record<FattispeciePrincipale, number> = {
-  abitazione_principale_lusso: 0.50,    // c. 748 (A/1, A/8, A/9)
+  abitazione_principale: 0.50,          // c. 748 (A/1, A/8, A/9)
   pertinenze: 0.50,                     // c. 748 (stessa aliquota abitazione principale)
   fabbricati_rurali_strumentali: 0.10,  // c. 750 (D/10)
   terreni_agricoli: 0.76,               // c. 752
@@ -101,7 +101,7 @@ export const ALIQUOTE_MINISTERO: Record<FattispeciePrincipale, number> = {
 
 // Aliquote massime per fattispecie principale
 export const ALIQUOTE_MAX: Record<FattispeciePrincipale, number> = {
-  abitazione_principale_lusso: 0.60,    // c. 748
+  abitazione_principale: 0.60,          // c. 748
   pertinenze: 0.60,                     // c. 748 (stessa aliquota abitazione principale)
   fabbricati_rurali_strumentali: 0.10,  // c. 750 (non aumentabile)
   terreni_agricoli: 1.06,               // c. 752
@@ -117,10 +117,10 @@ export const QUOTA_STATO_GRUPPO_D = 0.76;  // 0.76%
 export const DETRAZIONE_ABITAZIONE_PRINCIPALE = 200;  // €200
 
 // Categorie per fattispecie principale
-// abitazione_principale_lusso accetta tutte le cat. A abitative (escluso A/10 uffici)
+// abitazione_principale accetta tutte le cat. A abitative (escluso A/10 uffici)
 // Le cat. di lusso (A/1, A/8, A/9) pagano IMU, le altre sono esenti
 export const CATEGORIE_PER_FATTISPECIE: Record<FattispeciePrincipale, CategoriaCatastale[] | null> = {
-  abitazione_principale_lusso: ['A/1', 'A/2', 'A/3', 'A/4', 'A/5', 'A/6', 'A/7', 'A/8', 'A/9', 'A/11'],
+  abitazione_principale: ['A/1', 'A/2', 'A/3', 'A/4', 'A/5', 'A/6', 'A/7', 'A/8', 'A/9', 'A/11'],
   pertinenze: ['C/2', 'C/6', 'C/7'],
   fabbricati_rurali_strumentali: ['D/10'],
   fabbricati_gruppo_d: ['D/1', 'D/2', 'D/3', 'D/4', 'D/5', 'D/6', 'D/7', 'D/8', 'D/9'],
@@ -131,7 +131,7 @@ export const CATEGORIE_PER_FATTISPECIE: Record<FattispeciePrincipale, CategoriaC
 
 // Labels per fattispecie principale (UI)
 export const FATTISPECIE_LABELS: Record<FattispeciePrincipale, string> = {
-  abitazione_principale_lusso: 'Abitazione Principale',
+  abitazione_principale: 'Abitazione Principale',
   pertinenze: 'Pertinenza Abitazione Principale',
   fabbricati_rurali_strumentali: 'Fabbricato Rurale Strumentale',
   fabbricati_gruppo_d: 'Fabbricato Gruppo D',
@@ -241,7 +241,7 @@ export function verificaSovrapposizionePeriodi(
 
 /**
  * Verifica le regole di unicità per fattispecie
- * - abitazione_principale_lusso: max 1 nello stesso periodo
+ * - abitazione_principale: max 1 nello stesso periodo
  * - pertinenze: max 1 per categoria (C/2, C/6, C/7) nello stesso periodo
  */
 export function verificaUnicita(
@@ -257,10 +257,10 @@ export function verificaUnicita(
   }>
 ): { valido: boolean; errore?: string } {
   // Regola 1: Max 1 abitazione principale nello stesso periodo
-  if (fattispecie === 'abitazione_principale_lusso') {
+  if (fattispecie === 'abitazione_principale') {
     const sovrapposizionePeriodo = immobiliEsistenti.some(
       (imm) =>
-        imm.fattispecie_principale === 'abitazione_principale_lusso' &&
+        imm.fattispecie_principale === 'abitazione_principale' &&
         verificaSovrapposizionePeriodi(dataInizio, dataFine, imm.dataInizio, imm.dataFine)
     );
     if (sovrapposizionePeriodo) {

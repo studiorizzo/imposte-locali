@@ -15,7 +15,7 @@ interface ImmobiliStepProps {
 
 // Lista fattispecie per il select
 const FATTISPECIE_OPTIONS: { value: FattispeciePrincipale; label: string }[] = [
-  { value: 'abitazione_principale_lusso', label: FATTISPECIE_LABELS.abitazione_principale_lusso },
+  { value: 'abitazione_principale', label: FATTISPECIE_LABELS.abitazione_principale },
   { value: 'pertinenze', label: FATTISPECIE_LABELS.pertinenze },
   { value: 'fabbricati_rurali_strumentali', label: FATTISPECIE_LABELS.fabbricati_rurali_strumentali },
   { value: 'fabbricati_gruppo_d', label: FATTISPECIE_LABELS.fabbricati_gruppo_d },
@@ -48,8 +48,8 @@ const getDefaultAliquota = (fattispecie: FattispeciePrincipale): number => {
 const getAliquotaDaProspetto = (prospetto: Prospetto | null, fattispecie: FattispeciePrincipale): number | null => {
   if (!prospetto || !fattispecie) return null;
 
-  // Per le pertinenze, cerca abitazione_principale_lusso (stessa aliquota)
-  const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale_lusso' : fattispecie;
+  // Per le pertinenze, cerca abitazione_principale (stessa aliquota)
+  const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale' : fattispecie;
 
   const aliquotaBase = prospetto.aliquote_base.find(a => a.fattispecie_principale === fattispcieDaCercare);
   if (!aliquotaBase || typeof aliquotaBase.aliquota !== 'string') return null;
@@ -110,7 +110,7 @@ const isImmobileResidenteEstero = (imm: DatiImmobile): boolean => {
 
 // Verifica se un immobile qualifica per assimilazione forze armate (abitazione principale)
 const isAbitazionePrincipaleForzeArmate = (imm: DatiImmobile): boolean => {
-  return imm.fattispecie_principale === 'abitazione_principale_lusso' &&
+  return imm.fattispecie_principale === 'abitazione_principale' &&
     imm.immobileNonLocatoForzeArmate === true;
 };
 
@@ -123,7 +123,7 @@ const isPertinenzaForzeArmateCategoria = (imm: DatiImmobile, categoria: Categori
 
 // Verifica se un immobile qualifica per assimilazione anziano/disabile (abitazione principale)
 const isAbitazionePrincipaleAnzianoDisabile = (imm: DatiImmobile): boolean => {
-  return imm.fattispecie_principale === 'abitazione_principale_lusso' &&
+  return imm.fattispecie_principale === 'abitazione_principale' &&
     imm.immobileNonLocatoAnzianoDisabile === true;
 };
 
@@ -203,7 +203,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const fattspecieOptions = useMemo(() => {
     if (tipologiaContribuente === 'persona_fisica_residente_estero') {
       return FATTISPECIE_OPTIONS.filter(
-        opt => opt.value !== 'abitazione_principale_lusso' && opt.value !== 'pertinenze'
+        opt => opt.value !== 'abitazione_principale' && opt.value !== 'pertinenze'
       );
     }
     return FATTISPECIE_OPTIONS;
@@ -256,7 +256,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     if (tipologiaContribuente !== 'persona_fisica_forze_armate') {
       return false;
     }
-    if (immobile.fattispecie_principale === 'abitazione_principale_lusso') {
+    if (immobile.fattispecie_principale === 'abitazione_principale') {
       return !esisteGiaAbitazionePrincipaleForzeArmate;
     }
     if (immobile.fattispecie_principale === 'pertinenze') {
@@ -312,7 +312,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     if (!comuneOffreAssimilazioneAnzianoDisabile) {
       return false;
     }
-    if (immobile.fattispecie_principale === 'abitazione_principale_lusso') {
+    if (immobile.fattispecie_principale === 'abitazione_principale') {
       return !esisteGiaAbitazionePrincipaleAnzianoDisabile;
     }
     if (immobile.fattispecie_principale === 'pertinenze') {
@@ -633,7 +633,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
 
   const isTerreno = immobile.fattispecie_principale === 'terreni_agricoli';
   const isArea = immobile.fattispecie_principale === 'aree_fabbricabili';
-  const isAbitazionePrincipale = immobile.fattispecie_principale === 'abitazione_principale_lusso';
+  const isAbitazionePrincipale = immobile.fattispecie_principale === 'abitazione_principale';
   const showCategoria = immobile.fattispecie_principale && !isTerreno && !isArea;
   // Flag fabbricato: non visibili per terreni e aree
   const showFlagFabbricato = immobile.fattispecie_principale && !isTerreno && !isArea;

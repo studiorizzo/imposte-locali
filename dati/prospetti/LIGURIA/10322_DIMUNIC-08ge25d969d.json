@@ -9,7 +9,8 @@
   },
   "aliquote_base": [
     {
-      "fattispecie_principale": "abitazione_principale_lusso",
+      "fattispecie_principale": "abitazione_principale",
+      "categoria_catastale": ["A/1", "A/8", "A/9"],
       "aliquota": "0,58%"
     },
     {

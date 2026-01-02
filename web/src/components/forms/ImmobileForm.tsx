@@ -11,7 +11,7 @@ interface ImmobileFormProps {
 
 // Lista fattispecie per il select
 const FATTISPECIE_OPTIONS: { value: FattispeciePrincipale; label: string }[] = [
-  { value: 'abitazione_principale_lusso', label: FATTISPECIE_LABELS.abitazione_principale_lusso },
+  { value: 'abitazione_principale', label: FATTISPECIE_LABELS.abitazione_principale },
   { value: 'pertinenze', label: FATTISPECIE_LABELS.pertinenze },
   { value: 'fabbricati_rurali_strumentali', label: FATTISPECIE_LABELS.fabbricati_rurali_strumentali },
   { value: 'fabbricati_gruppo_d', label: FATTISPECIE_LABELS.fabbricati_gruppo_d },
@@ -43,8 +43,8 @@ const getDefaultAliquota = (fattispecie: FattispeciePrincipale): number => {
 const getAliquotaDaProspetto = (prospetto: Prospetto | null, fattispecie: FattispeciePrincipale): number | null => {
   if (!prospetto || !fattispecie) return null;
 
-  // Per le pertinenze, cerca abitazione_principale_lusso (stessa aliquota)
-  const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale_lusso' : fattispecie;
+  // Per le pertinenze, cerca abitazione_principale (stessa aliquota)
+  const fattispcieDaCercare = fattispecie === 'pertinenze' ? 'abitazione_principale' : fattispecie;
 
   const aliquotaBase = prospetto.aliquote_base.find(a => a.fattispecie_principale === fattispcieDaCercare);
   if (!aliquotaBase || typeof aliquotaBase.aliquota !== 'string') return null;

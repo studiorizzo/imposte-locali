@@ -120,7 +120,7 @@ export function verificaEsenzione(
 
   // Abitazione principale non di lusso (art. 1, c. 740, L. 160/2019)
   // Categorie A/2-A/7, A/11 come abitazione principale sono esenti
-  if (fattispecie_principale === 'abitazione_principale_lusso' && !isCategoriaLusso(categoria)) {
+  if (fattispecie_principale === 'abitazione_principale' && !isCategoriaLusso(categoria)) {
     return { esente: true, motivo: 'Abitazione principale (categoria non di lusso)' };
   }
 
@@ -273,7 +273,7 @@ export function getCodiceTributo(
   }
 
   switch (fattispecie) {
-    case 'abitazione_principale_lusso':
+    case 'abitazione_principale':
     case 'pertinenze':
       return CODICI_TRIBUTO.abitazionePrincipale;
     case 'fabbricati_rurali_strumentali':
@@ -423,7 +423,7 @@ export function calcolaIMUImmobile(
   const qualificaAnzianoDisabile = tipologiaContribuente === 'persona_fisica_anziano_ricoverato' &&
     immobile.immobileNonLocatoAnzianoDisabile === true;
   const applicaDetrazioneAbitazionePrincipale =
-    fattispecie_principale === 'abitazione_principale_lusso' &&
+    fattispecie_principale === 'abitazione_principale' &&
     (tipologiaContribuente !== 'persona_fisica_forze_armate' || qualificaForzeArmate) &&
     (tipologiaContribuente !== 'persona_fisica_anziano_ricoverato' || qualificaAnzianoDisabile);
 

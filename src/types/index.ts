@@ -24,13 +24,13 @@ export interface Comune {
 
 // Fattispecie principale (allineato ai prospetti ministeriali)
 export type FattispeciePrincipale =
-  | 'abitazione_principale_lusso'    // A/1, A/8, A/9 - aliquota 0.50%
-  | 'pertinenze'                     // C/2, C/6, C/7 (max 1 per cat.) - aliquota 0.50% (stessa ab. principale)
+  | 'abitazione_principale'          // Cat. A (escluso A/10): A/1,A/8,A/9 pagano IMU, altre esenti
+  | 'pertinenze'                     // C/2, C/6, C/7 (max 1 per cat.) - stessa aliquota ab. principale
   | 'fabbricati_gruppo_d'            // D/1-D/9 (quota stato 0.76%) - aliquota 0.86%
   | 'terreni_agricoli'               // Terreni - aliquota 0.76%
   | 'fabbricati_rurali_strumentali'  // D/10 - aliquota 0.10%
   | 'aree_fabbricabili'              // Aree edificabili - aliquota 0.86%
-  | 'altri_fabbricati';              // Tutti gli altri (A/2-A/11, B, C) - aliquota 0.86%
+  | 'altri_fabbricati';              // Tutti gli altri (B, C, A/10) - aliquota 0.86%
 
 // Riduzioni applicabili (caratteristiche dell'immobile)
 export interface Riduzioni {
