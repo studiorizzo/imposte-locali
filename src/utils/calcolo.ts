@@ -366,7 +366,7 @@ export function calcolaIMUImmobile(
       imuSaldo: 0,
       imuTotale: 0,
       esente: true,
-      motivoEsenzione: 'Residente estero - rendita ≤ €200 (art. 1, c. 48-bis, lett. a)',
+      motivoEsenzione: 'Esenzione estero',
       codiceTributoComune: '',
     };
   }
@@ -419,10 +419,19 @@ export function calcolaIMUImmobile(
 
   // Applica riduzione per residente estero sull'imposta (art. 1, c. 48-bis)
   // Usa la variabile qualificaResidenteEstero calcolata sopra
+  let motivoRiduzione: string | undefined;
   if (qualificaResidenteEstero && renditaCatastale !== undefined) {
     const fattoreResidenteEstero = calcolaFattoreResidenteEstero(renditaCatastale);
     imuAccontoLordo = round2(imuAccontoLordo * fattoreResidenteEstero);
     imuAnnuale = round2(imuAnnuale * fattoreResidenteEstero);
+
+    // Imposta motivoRiduzione per rendite tra 201-500€
+    if (renditaCatastale > 200 && renditaCatastale <= 300) {
+      motivoRiduzione = 'Riduzione estero (40%)';
+    } else if (renditaCatastale > 300 && renditaCatastale <= 500) {
+      motivoRiduzione = 'Riduzione estero (67%)';
+    }
+    // Nessuna scritta per rendita > 500€
   }
 
   // Saldo = max(0, annuale - acconto)
@@ -475,6 +484,7 @@ export function calcolaIMUImmobile(
     quotaComune,
     detrazione,
     esente: false,
+    motivoRiduzione,
     codiceTributoComune: codici.comune,
     codiceTributoStato: codici.stato,
   };
