@@ -473,7 +473,16 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   // Conferma deselezione dal modal
   const handleConfermaDeselezione = () => {
     if (campoInDeselezione) {
-      setImmobile(prev => ({ ...prev, [campoInDeselezione]: false }));
+      if (campoInDeselezione === 'dichiarazioneInteresseCulturale') {
+        // Se si deseleziona la dichiarazione interesse culturale, resetta anche storico/artistico
+        setImmobile(prev => ({
+          ...prev,
+          dichiarazioneInteresseCulturale: false,
+          riduzioni: { ...prev.riduzioni, storicoArtistico: false },
+        }));
+      } else {
+        setImmobile(prev => ({ ...prev, [campoInDeselezione]: false }));
+      }
     }
     setCampoInDeselezione(null);
     setShowModalCondizioni(false);
