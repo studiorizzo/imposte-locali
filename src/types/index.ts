@@ -119,10 +119,9 @@ export interface RisultatoCalcoloImmobile {
   // Detrazione (solo abitazione principale)
   detrazione?: number;            // €200
 
-  // Esenzione / Riduzione
+  // Esenzione
   esente: boolean;
   motivoEsenzione?: string;
-  motivoRiduzione?: string;          // Per riduzioni residente estero
 
   // Codice tributo F24
   codiceTributoComune: string;
