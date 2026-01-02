@@ -1,6 +1,6 @@
 {
-  "name": "calcolatore-imu-2025",
-  "version": "0.1.0",
+  "name": "calcolimu",
+  "version": "0.2.0",
   "description": "Calcolatore IMU 2025 - Imposta Municipale Unica",
   "type": "module",
   "main": "dist/index.js",
