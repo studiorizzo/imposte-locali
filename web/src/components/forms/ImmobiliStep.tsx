@@ -173,6 +173,19 @@ Sono considerati di interesse culturale gli immobili che rivestono un interesse 
 
 Se la Dichiarazione non è stata notificata, l'immobile sarà soggetto ad IMU ordinaria.`;
 
+// Testo condizioni inagibile/inabitabile (art. 1, c. 747, lett. b, L. 160/2019)
+const CONDIZIONI_INAGIBILE = `Per fruire della riduzione IMU del 50% per fabbricato inagibile o inabitabile, devono sussistere le seguenti condizioni:
+
+• Il fabbricato deve essere dichiarato inagibile o inabitabile
+• Il fabbricato non deve essere di fatto utilizzato
+• L'inagibilità deve consistere in un degrado fisico sopravvenuto (fabbricato diroccato, pericolante, fatiscente) o in un'obsolescenza funzionale, strutturale e tecnologica, non superabile con interventi di manutenzione
+
+La dichiarazione di inagibilità può essere ottenuta tramite:
+• Accertamento dell'ufficio tecnico comunale con perizia a carico del proprietario
+• Dichiarazione sostitutiva corredata da perizia di un tecnico abilitato
+
+Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
+
 export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipologiaContribuente }: ImmobiliStepProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -182,7 +195,8 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const [showModalCondizioniForzeArmate, setShowModalCondizioniForzeArmate] = useState(false);
   const [showModalCondizioniAnzianoDisabile, setShowModalCondizioniAnzianoDisabile] = useState(false);
   const [showModalCondizioniStoricoArtistico, setShowModalCondizioniStoricoArtistico] = useState(false);
-  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | 'immobileNonLocatoAnzianoDisabile' | 'dichiarazioneInteresseCulturale' | null>(null);
+  const [showModalCondizioniInagibile, setShowModalCondizioniInagibile] = useState(false);
+  const [campoInDeselezione, setCampoInDeselezione] = useState<'immobileNonLocatoNonComodato' | 'immobileUltimaResidenza' | 'immobileNonLocatoForzeArmate' | 'immobileNonLocatoAnzianoDisabile' | 'dichiarazioneInteresseCulturale' | 'dichiarazioneInagibilita' | null>(null);
 
   // Filtra fattispecie in base alla tipologia contribuente
   // Residente estero non può avere abitazione principale né pertinenze
@@ -341,6 +355,22 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     }
   }, [showCondizioniStoricoArtistico, immobile.dichiarazioneInteresseCulturale]);
 
+  // Verifica se mostrare sezione dichiarazione inagibilità
+  // Visibile per TUTTE le tipologie di contribuenti quando inagibile è flaggato
+  const showCondizioniInagibile = useMemo(() => {
+    return immobile.riduzioni.inagibileInabitabile;
+  }, [immobile.riduzioni.inagibileInabitabile]);
+
+  // Imposta i flag di default per inagibile
+  useEffect(() => {
+    if (showCondizioniInagibile && immobile.dichiarazioneInagibilita === undefined) {
+      setImmobile(prev => ({
+        ...prev,
+        dichiarazioneInagibilita: true,
+      }));
+    }
+  }, [showCondizioniInagibile, immobile.dichiarazioneInagibilita]);
+
   // Comuni options
   const comuniOptions = useMemo(() =>
     COMUNI.map(c => ({
@@ -453,6 +483,10 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       if (key === 'storicoArtistico' && value === true) {
         updated.dichiarazioneInteresseCulturale = true;
       }
+      // Se si seleziona inagibile/inabitabile, imposta anche dichiarazioneInagibilita
+      if (key === 'inagibileInabitabile' && value === true) {
+        updated.dichiarazioneInagibilita = true;
+      }
       return updated;
     });
   };
@@ -487,6 +521,13 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
           dichiarazioneInteresseCulturale: false,
           riduzioni: { ...prev.riduzioni, storicoArtistico: false },
         }));
+      } else if (campoInDeselezione === 'dichiarazioneInagibilita') {
+        // Se si deseleziona la dichiarazione inagibilità, resetta anche inagibile/inabitabile
+        setImmobile(prev => ({
+          ...prev,
+          dichiarazioneInagibilita: false,
+          riduzioni: { ...prev.riduzioni, inagibileInabitabile: false },
+        }));
       } else {
         setImmobile(prev => ({ ...prev, [campoInDeselezione]: false }));
       }
@@ -496,6 +537,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     setShowModalCondizioniForzeArmate(false);
     setShowModalCondizioniAnzianoDisabile(false);
     setShowModalCondizioniStoricoArtistico(false);
+    setShowModalCondizioniInagibile(false);
   };
 
   // Annulla deselezione dal modal
@@ -505,6 +547,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
     setShowModalCondizioniForzeArmate(false);
     setShowModalCondizioniAnzianoDisabile(false);
     setShowModalCondizioniStoricoArtistico(false);
+    setShowModalCondizioniInagibile(false);
   };
 
   // Handler per i flag condizioni forze armate
@@ -537,6 +580,17 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       setShowModalCondizioniStoricoArtistico(true);
     } else {
       setImmobile(prev => ({ ...prev, dichiarazioneInteresseCulturale: value }));
+    }
+  };
+
+  // Handler per i flag condizioni inagibile
+  const handleCondizioneInagibileChange = (value: boolean) => {
+    if (!value) {
+      // Se l'utente tenta di deselezionare, mostra il modal di avviso
+      setCampoInDeselezione('dichiarazioneInagibilita');
+      setShowModalCondizioniInagibile(true);
+    } else {
+      setImmobile(prev => ({ ...prev, dichiarazioneInagibilita: value }));
     }
   };
 
@@ -735,6 +789,31 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                         description="Ho ricevuto la notifica della Dichiarazione di interesse culturale"
                         checked={immobile.dichiarazioneInteresseCulturale ?? true}
                         onChange={(e) => handleCondizioneStoricoArtisticoChange(e.target.checked)}
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {/* Condizioni inagibile - visibili per TUTTE le tipologie quando flaggato */}
+                {showCondizioniInagibile && (
+                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg space-y-3">
+                    <div className="flex items-start gap-2">
+                      <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <h4 className="font-medium text-blue-900">Dichiarazione di inagibilità o inabitabilità</h4>
+                        <p className="text-sm text-blue-700 mt-1">
+                          Per usufruire della riduzione IMU del 50% è necessaria la dichiarazione di inagibilità:
+                        </p>
+                      </div>
+                    </div>
+                    <div className="space-y-3 mt-3">
+                      <Checkbox
+                        label="Inagibilità accertata o dichiarata"
+                        description="Accertamento dell'ufficio tecnico comunale o dichiarazione sostitutiva con perizia"
+                        checked={immobile.dichiarazioneInagibilita ?? true}
+                        onChange={(e) => handleCondizioneInagibileChange(e.target.checked)}
                       />
                     </div>
                   </div>
@@ -1073,6 +1152,25 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       >
         <div className="space-y-4">
           <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_STORICO_ARTISTICO}</p>
+          <div className="flex justify-between">
+            <Button variant="secondary" onClick={handleAnnullaDeselezione}>
+              Annulla
+            </Button>
+            <Button variant="danger" onClick={handleConfermaDeselezione}>
+              Deseleziona
+            </Button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Modal condizioni inagibile */}
+      <Modal
+        aperto={showModalCondizioniInagibile}
+        onChiudi={handleAnnullaDeselezione}
+        titolo="Dichiarazione di inagibilità per fabbricato inagibile/inabitabile"
+      >
+        <div className="space-y-4">
+          <p className="text-gray-700 whitespace-pre-line">{CONDIZIONI_INAGIBILE}</p>
           <div className="flex justify-between">
             <Button variant="secondary" onClick={handleAnnullaDeselezione}>
               Annulla
