@@ -91,6 +91,10 @@ export interface DatiImmobile {
   // Dichiarazione interesse culturale per storico/artistico (art. 13 D.Lgs. 42/2004)
   // Obbligatoria per persone fisiche per usufruire della riduzione
   dichiarazioneInteresseCulturale?: boolean;
+
+  // Dichiarazione inagibilità per inagibile/inabitabile (art. 1, c. 747, lett. b, L. 160/2019)
+  // Obbligatoria per tutte le tipologie di contribuenti
+  dichiarazioneInagibilita?: boolean;
 }
 
 // Risultato calcolo singolo immobile
