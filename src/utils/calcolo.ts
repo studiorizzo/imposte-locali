@@ -345,10 +345,9 @@ export function calcolaIMUImmobile(
   } = immobile;
 
   // Verifica se l'immobile qualifica per riduzione residente estero
-  // Condizioni: altri_fabbricati + cat. A (no A/10) + comune < 5000 ab. + non locato/comodato + ultima residenza
+  // Condizioni: abitazione_principale + comune < 5000 ab. + non locato/comodato + ultima residenza
   const qualificaResidenteEstero = tipologiaContribuente === 'persona_fisica_residente_estero' &&
-    fattispecie_principale === 'altri_fabbricati' &&
-    isCategoriaAbitativa(categoria) &&
+    fattispecie_principale === 'abitazione_principale' &&
     immobile.comune.abitanti > 0 && immobile.comune.abitanti < 5000 &&
     immobile.immobileNonLocatoNonComodato === true &&
     immobile.immobileUltimaResidenza === true;
@@ -434,6 +433,7 @@ export function calcolaIMUImmobile(
 
   // Detrazione per abitazione principale (A/1, A/8, A/9)
   // Per forze armate e anziano/disabile, la detrazione si applica solo se l'immobile non è locato
+  // Residente estero: NO detrazione (ha già riduzione/esenzione basata su rendita)
   let detrazione: number | undefined;
   const qualificaForzeArmate = tipologiaContribuente === 'persona_fisica_forze_armate' &&
     immobile.immobileNonLocatoForzeArmate === true;
@@ -441,6 +441,7 @@ export function calcolaIMUImmobile(
     immobile.immobileNonLocatoAnzianoDisabile === true;
   const applicaDetrazioneAbitazionePrincipale =
     fattispecie_principale === 'abitazione_principale' &&
+    tipologiaContribuente !== 'persona_fisica_residente_estero' &&
     (tipologiaContribuente !== 'persona_fisica_forze_armate' || qualificaForzeArmate) &&
     (tipologiaContribuente !== 'persona_fisica_anziano_ricoverato' || qualificaAnzianoDisabile);
 

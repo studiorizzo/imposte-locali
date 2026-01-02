@@ -54,6 +54,7 @@ function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
 // Helper per creare immobile in comune piccolo (< 5000 abitanti) per test residente estero
 function creaImmobileComunePiccolo(override: Partial<DatiImmobile>): DatiImmobile {
   return creaImmobile({
+    fattispecie_principale: 'abitazione_principale',
     comune: {
       comune: 'Accumoli',
       regione: 'Lazio',
@@ -365,5 +366,116 @@ describe('Calcolo IMU Immobile Completo', () => {
     expect(risultato.imuTotale).toBe(145.13);
   });
 
+});
+
+describe('Esenzioni per tipologia contribuente', () => {
+  test('persona_fisica + abitazione principale A/2 → esente', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale',
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+    });
+
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica');
+
+    expect(risultato.esente).toBe(true);
+    expect(risultato.motivoEsenzione).toBe('Esenzione abitazione principale');
+    expect(risultato.imuTotale).toBe(0);
+  });
+
+  test('persona_fisica + abitazione principale A/1 (lusso) → IMU calcolata', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale',
+      categoria: 'A/1',
+      renditaCatastale: 1000,
+      aliquotaAcconto: 0.6,
+      aliquotaSaldo: 0.6,
+    });
+
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica');
+
+    expect(risultato.esente).toBe(false);
+    // Base: 1000 × 1.05 × 160 = 168.000€
+    // IMU: 168.000 × 0.6% = 1.008€ - 200€ detrazione = 808€
+    expect(risultato.imuTotale).toBe(808);
+  });
+
+  test('forze_armate + A/2 + non locato → esente', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale',
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+      immobileNonLocatoForzeArmate: true,
+    });
+
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_forze_armate');
+
+    expect(risultato.esente).toBe(true);
+    expect(risultato.motivoEsenzione).toBe('Assimilazione personale forze armate / polizia / VVF');
+    expect(risultato.imuTotale).toBe(0);
+  });
+
+  test('forze_armate + A/2 + locato → IMU calcolata', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale',
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
+      immobileNonLocatoForzeArmate: false,
+    });
+
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_forze_armate');
+
+    expect(risultato.esente).toBe(false);
+    expect(risultato.imuTotale).toBe(1780.8);
+  });
+
+  test('anziano_ricoverato + A/2 + non locato → esente', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale',
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+      immobileNonLocatoAnzianoDisabile: true,
+    });
+
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_anziano_ricoverato');
+
+    expect(risultato.esente).toBe(true);
+    expect(risultato.motivoEsenzione).toBe('Assimilazione anziani / disabili');
+    expect(risultato.imuTotale).toBe(0);
+  });
+
+  test('anziano_ricoverato + A/2 + locato → IMU calcolata', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale',
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
+      immobileNonLocatoAnzianoDisabile: false,
+    });
+
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_anziano_ricoverato');
+
+    expect(risultato.esente).toBe(false);
+    expect(risultato.imuTotale).toBe(1780.8);
+  });
+
+  test('residente_estero + A/2 → IMU calcolata (no esenzione per categoria)', () => {
+    const immobile = creaImmobile({
+      fattispecie_principale: 'abitazione_principale',
+      categoria: 'A/2',
+      renditaCatastale: 1000,
+      aliquotaAcconto: 1.06,
+      aliquotaSaldo: 1.06,
+    });
+
+    // Comune grande, condizioni non soddisfatte → IMU piena
+    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+
+    expect(risultato.esente).toBe(false);
+    expect(risultato.imuTotale).toBe(1780.8);
+  });
 });
 
