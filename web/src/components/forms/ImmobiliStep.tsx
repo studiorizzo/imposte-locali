@@ -474,11 +474,11 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         const fattispecie = prev.fattispecie_principale;
 
         // Per abitazione principale non di lusso: aliquote a 0 (esente)
-        // ESCLUSO residente estero: per loro l'esenzione dipende dalla rendita
+        // SOLO per contribuente ordinario (persona_fisica)
         const isEsentePerCategoria = fattispecie === 'abitazione_principale' &&
           newCategoria &&
           !CATEGORIE_LUSSO.includes(newCategoria) &&
-          tipologiaContribuente !== 'persona_fisica_residente_estero';
+          tipologiaContribuente === 'persona_fisica';
 
         if (isEsentePerCategoria) {
           updated.aliquotaAcconto = 0;
@@ -666,11 +666,13 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const showFlagInagibile = !isAbitazionePrincipale;
 
   // Verifica se abitazione principale è esente (categoria non di lusso)
-  // ESCLUSO residente estero: per loro l'esenzione dipende dalla rendita, non dalla categoria
+  // SOLO per contribuente ordinario (persona_fisica)
+  // - Residente estero: esenzione dipende dalla rendita
+  // - Forze armate/anziano: esenzione deriva dall'assimilazione
   const isAbitazionePrincipaleEsente = isAbitazionePrincipale &&
     immobile.categoria &&
     !CATEGORIE_LUSSO.includes(immobile.categoria) &&
-    tipologiaContribuente !== 'persona_fisica_residente_estero';
+    tipologiaContribuente === 'persona_fisica';
 
   // Validazione campi obbligatori per abilitare il pulsante "Aggiungi Immobile"
   const canSubmit = useMemo(() => {
