@@ -114,14 +114,31 @@ export function calcolaFattoreResidenteEstero(renditaCatastale: number): number 
  * Verifica se l'immobile è esente
  */
 export function verificaEsenzione(
-  immobile: DatiImmobile
+  immobile: DatiImmobile,
+  tipologiaContribuente?: TipologiaContribuente
 ): { esente: boolean; motivo?: string } {
   const { esenzioni, fattispecie_principale, categoria } = immobile;
 
-  // Abitazione principale non di lusso (art. 1, c. 740, L. 160/2019)
-  // Categorie A/2-A/7, A/11 come abitazione principale sono esenti
+  // Esenzioni per abitazione principale (categoria non di lusso)
   if (fattispecie_principale === 'abitazione_principale' && !isCategoriaLusso(categoria)) {
-    return { esente: true, motivo: 'Abitazione principale (categoria non di lusso)' };
+    // persona_fisica: esente per categoria
+    if (tipologiaContribuente === 'persona_fisica') {
+      return { esente: true, motivo: 'Esenzione abitazione principale' };
+    }
+
+    // persona_fisica_forze_armate: esente se immobile non locato
+    if (tipologiaContribuente === 'persona_fisica_forze_armate' &&
+        immobile.immobileNonLocatoForzeArmate === true) {
+      return { esente: true, motivo: 'Assimilazione personale forze armate / polizia / VVF' };
+    }
+
+    // persona_fisica_anziano_ricoverato: esente se immobile non locato
+    if (tipologiaContribuente === 'persona_fisica_anziano_ricoverato' &&
+        immobile.immobileNonLocatoAnzianoDisabile === true) {
+      return { esente: true, motivo: 'Assimilazione anziani / disabili' };
+    }
+
+    // persona_fisica_residente_estero: MAI esente per categoria (esenzione dipende dalla rendita)
   }
 
   // Terreno CD/IAP
@@ -295,7 +312,7 @@ export function calcolaIMUImmobile(
   tipologiaContribuente: TipologiaContribuente = 'persona_fisica'
 ): RisultatoCalcoloImmobile {
   // Verifica esenzione
-  const { esente, motivo } = verificaEsenzione(immobile);
+  const { esente, motivo } = verificaEsenzione(immobile, tipologiaContribuente);
 
   if (esente) {
     return {
