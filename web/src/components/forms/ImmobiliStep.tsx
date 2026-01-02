@@ -3,7 +3,7 @@ import { Input, Select, Checkbox, Card, CardHeader, CardContent, CardFooter, But
 import { AliquotePanel } from './AliquotePanel';
 import { ListaImmobili } from './ListaImmobili';
 import type { DatiImmobile, FattispeciePrincipale, CategoriaCatastale, Comune, Prospetto, TipologiaContribuente } from '@lib';
-import { COEFFICIENTI, ALIQUOTE_MINISTERO, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT, verificaUnicita } from '@lib';
+import { COEFFICIENTI, ALIQUOTE_MINISTERO, CATEGORIE_PER_FATTISPECIE, FATTISPECIE_LABELS, COMUNI, DATA_INIZIO_DEFAULT, DATA_FINE_DEFAULT, verificaUnicita, DESCRIZIONI_CATEGORIE, CATEGORIE_LUSSO } from '@lib';
 import { useProspetto } from '../../hooks';
 
 interface ImmobiliStepProps {
@@ -26,7 +26,7 @@ const FATTISPECIE_OPTIONS: { value: FattispeciePrincipale; label: string }[] = [
 
 const CATEGORIE_OPTIONS = Object.keys(COEFFICIENTI).map((cat) => ({
   value: cat,
-  label: cat,
+  label: `${cat} - ${DESCRIZIONI_CATEGORIE[cat as CategoriaCatastale]}`,
 }));
 
 // Restituisce le categorie valide per una fattispecie
@@ -640,6 +640,11 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   // Flag inagibile: non visibile per abitazione principale
   const showFlagInagibile = !isAbitazionePrincipale;
 
+  // Verifica se abitazione principale è esente (categoria non di lusso)
+  const isAbitazionePrincipaleEsente = isAbitazionePrincipale &&
+    immobile.categoria &&
+    !CATEGORIE_LUSSO.includes(immobile.categoria);
+
   // Validazione campi obbligatori per abilitare il pulsante "Aggiungi Immobile"
   const canSubmit = useMemo(() => {
     // Comune obbligatorio
@@ -750,6 +755,20 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                     />
                   )}
                 </div>
+
+                {/* Messaggio esenzione abitazione principale non di lusso */}
+                {isAbitazionePrincipaleEsente && (
+                  <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-green-800 font-medium">
+                        Immobile ESENTE da IMU (abitazione principale di categoria non di lusso)
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Flag fabbricato - visibili solo per fabbricati */}
                 {showFlagFabbricato && (

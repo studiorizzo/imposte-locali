@@ -5,6 +5,56 @@
 
 import type { CategoriaCatastale, FattispeciePrincipale } from '../types';
 
+// Descrizioni categorie catastali
+export const DESCRIZIONI_CATEGORIE: Record<CategoriaCatastale, string> = {
+  // Gruppo A - Abitazioni
+  'A/1': 'Abitazioni di tipo signorile',
+  'A/2': 'Abitazioni di tipo civile',
+  'A/3': 'Abitazioni di tipo economico',
+  'A/4': 'Abitazioni di tipo popolare',
+  'A/5': 'Abitazioni di tipo ultrapopolare',
+  'A/6': 'Abitazioni di tipo rurale',
+  'A/7': 'Abitazioni in villini',
+  'A/8': 'Abitazioni in ville',
+  'A/9': 'Castelli, palazzi di eminenti pregi artistici o storici',
+  'A/10': 'Uffici e studi privati',
+  'A/11': 'Abitazioni ed alloggi tipici dei luoghi',
+
+  // Gruppo B - Edifici collettivi
+  'B/1': 'Collegi e convitti, educandati, ricoveri, orfanotrofi, ospizi, conventi, seminari, caserme',
+  'B/2': 'Case di cura e ospedali (senza fine di lucro)',
+  'B/3': 'Prigioni e riformatori',
+  'B/4': 'Uffici pubblici',
+  'B/5': 'Scuole e laboratori scientifici',
+  'B/6': 'Biblioteche, pinacoteche, musei, gallerie, accademie (non commerciali)',
+  'B/7': 'Cappelle e oratori non destinati all\'esercizio pubblico del culto',
+  'B/8': 'Magazzini sotterranei per depositi di derrate',
+
+  // Gruppo C - Commerciali
+  'C/1': 'Negozi e botteghe',
+  'C/2': 'Magazzini e locali di deposito',
+  'C/3': 'Laboratori per arti e mestieri',
+  'C/4': 'Fabbricati e locali per esercizi sportivi (senza fine di lucro)',
+  'C/5': 'Stabilimenti balneari e di acque curative (senza fine di lucro)',
+  'C/6': 'Stalle, scuderie, rimesse, autorimesse (senza fine di lucro)',
+  'C/7': 'Tettoie chiuse o aperte',
+
+  // Gruppo D - Speciali
+  'D/1': 'Opifici',
+  'D/2': 'Alberghi e pensioni (con fine di lucro)',
+  'D/3': 'Teatri, cinematografi, sale per concerti e spettacoli (con fine di lucro)',
+  'D/4': 'Case di cura e ospedali (con fine di lucro)',
+  'D/5': 'Istituti di credito, cambio e assicurazione (con fine di lucro)',
+  'D/6': 'Fabbricati e locali per esercizi sportivi (con fine di lucro)',
+  'D/7': 'Fabbricati costruiti o adattati per speciali esigenze industriali',
+  'D/8': 'Fabbricati costruiti o adattati per speciali esigenze commerciali',
+  'D/9': 'Edifici galleggianti o sospesi, assicurati a punti fissi',
+  'D/10': 'Fabbricati per funzioni produttive connesse alle attività agricole',
+};
+
+// Categorie di lusso per abitazione principale (A/1, A/8, A/9 pagano IMU)
+export const CATEGORIE_LUSSO: CategoriaCatastale[] = ['A/1', 'A/8', 'A/9'];
+
 // Coefficienti moltiplicatori per categoria catastale (art. 1, c. 745)
 export const COEFFICIENTI: Record<CategoriaCatastale, number> = {
   // Gruppo A
@@ -67,8 +117,10 @@ export const QUOTA_STATO_GRUPPO_D = 0.76;  // 0.76%
 export const DETRAZIONE_ABITAZIONE_PRINCIPALE = 200;  // €200
 
 // Categorie per fattispecie principale
+// abitazione_principale_lusso accetta tutte le cat. A abitative (escluso A/10 uffici)
+// Le cat. di lusso (A/1, A/8, A/9) pagano IMU, le altre sono esenti
 export const CATEGORIE_PER_FATTISPECIE: Record<FattispeciePrincipale, CategoriaCatastale[] | null> = {
-  abitazione_principale_lusso: ['A/1', 'A/8', 'A/9'],
+  abitazione_principale_lusso: ['A/1', 'A/2', 'A/3', 'A/4', 'A/5', 'A/6', 'A/7', 'A/8', 'A/9', 'A/11'],
   pertinenze: ['C/2', 'C/6', 'C/7'],
   fabbricati_rurali_strumentali: ['D/10'],
   fabbricati_gruppo_d: ['D/1', 'D/2', 'D/3', 'D/4', 'D/5', 'D/6', 'D/7', 'D/8', 'D/9'],
