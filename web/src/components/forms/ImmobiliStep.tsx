@@ -449,18 +449,13 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
 
       if (field === 'fattispecie_principale') {
         const newFattispecie = value as FattispeciePrincipale;
-        // Usa aliquota dal prospetto se disponibile, altrimenti ministeriale
-        const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, newFattispecie);
-        const aliquota = aliquotaDaProspetto !== null ? aliquotaDaProspetto : getDefaultAliquota(newFattispecie);
-        updated.aliquotaAcconto = aliquota;
-        updated.aliquotaSaldo = aliquota;
 
-        if (prev.categoria) {
-          const categorieValide = getCategoriePerFattispecie(newFattispecie);
-          if (!categorieValide.some(opt => opt.value === prev.categoria)) {
-            updated.categoria = '' as CategoriaCatastale;
-          }
-        }
+        // Reset SEMPRE categoria quando cambia tipologia
+        updated.categoria = '' as CategoriaCatastale;
+
+        // Reset aliquote (verranno impostate quando si seleziona la categoria)
+        updated.aliquotaAcconto = 0;
+        updated.aliquotaSaldo = 0;
 
         // Reset flag fabbricato quando cambia fattispecie
         updated.riduzioni = {
@@ -473,8 +468,23 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         setAliquotaPersonalizzataSelezionata(null);
       }
 
-      // Reset aliquota personalizzata se cambia categoria
+      // Quando cambia categoria, imposta le aliquote
       if (field === 'categoria') {
+        const newCategoria = value as CategoriaCatastale;
+        const fattispecie = prev.fattispecie_principale;
+
+        // Per abitazione principale non di lusso: aliquote a 0 (esente)
+        if (fattispecie === 'abitazione_principale' && newCategoria && !CATEGORIE_LUSSO.includes(newCategoria)) {
+          updated.aliquotaAcconto = 0;
+          updated.aliquotaSaldo = 0;
+        } else if (fattispecie) {
+          // Per le altre fattispecie: usa aliquota da prospetto o ministeriale
+          const aliquotaDaProspetto = getAliquotaDaProspetto(prospetto, fattispecie);
+          const aliquota = aliquotaDaProspetto !== null ? aliquotaDaProspetto : getDefaultAliquota(fattispecie);
+          updated.aliquotaAcconto = aliquota;
+          updated.aliquotaSaldo = aliquota;
+        }
+
         setAliquotaPersonalizzataSelezionata(null);
       }
 
@@ -764,20 +774,6 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
                     />
                   )}
                 </div>
-
-                {/* Messaggio esenzione abitazione principale non di lusso */}
-                {isAbitazionePrincipaleEsente && (
-                  <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span className="text-green-800 font-medium">
-                        Immobile ESENTE da IMU (abitazione principale di categoria non di lusso)
-                      </span>
-                    </div>
-                  </div>
-                )}
 
                 {/* Flag fabbricato - visibili solo per fabbricati */}
                 {showFlagFabbricato && (
@@ -1080,19 +1076,21 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
           </form>
         </Card>
 
-        {/* Colonna destra: Aliquote */}
-        <AliquotePanel
-          prospetto={prospetto}
-          categoria={immobile.categoria}
-          fattispecie={immobile.fattispecie_principale}
-          aliquotaAcconto={immobile.aliquotaAcconto}
-          aliquotaSaldo={immobile.aliquotaSaldo}
-          aliquotaBase={aliquotaBase}
-          onAliquotaAccontoChange={(value) => setImmobile(prev => ({ ...prev, aliquotaAcconto: value }))}
-          onAliquotaSaldoChange={(value) => setImmobile(prev => ({ ...prev, aliquotaSaldo: value }))}
-          aliquotaPersonalizzataSelezionata={aliquotaPersonalizzataSelezionata}
-          onSelectAliquotaPersonalizzata={setAliquotaPersonalizzataSelezionata}
-        />
+        {/* Colonna destra: Aliquote - non mostrare per abitazione principale non di lusso */}
+        {!isAbitazionePrincipaleEsente && (
+          <AliquotePanel
+            prospetto={prospetto}
+            categoria={immobile.categoria}
+            fattispecie={immobile.fattispecie_principale}
+            aliquotaAcconto={immobile.aliquotaAcconto}
+            aliquotaSaldo={immobile.aliquotaSaldo}
+            aliquotaBase={aliquotaBase}
+            onAliquotaAccontoChange={(value) => setImmobile(prev => ({ ...prev, aliquotaAcconto: value }))}
+            onAliquotaSaldoChange={(value) => setImmobile(prev => ({ ...prev, aliquotaSaldo: value }))}
+            aliquotaPersonalizzataSelezionata={aliquotaPersonalizzataSelezionata}
+            onSelectAliquotaPersonalizzata={setAliquotaPersonalizzataSelezionata}
+          />
+        )}
       </div>
 
       {/* Lista immobili */}
