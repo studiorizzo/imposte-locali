@@ -58,7 +58,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
 
       {/* Footer */}
       <div className="p-4 text-white/60 text-sm">
-        v1.0.0
+        v1.0
       </div>
     </aside>
   );
