@@ -1,8 +1,24 @@
+import { Colors, Sizes, Fonts } from '../../theme';
+
 export function Header() {
   return (
-    <header className="bg-[#f1f7f0] h-[106px] flex items-center">
+    <header
+      className="flex items-center"
+      style={{
+        backgroundColor: Colors.bg1,
+        height: Sizes.headerHeight,
+      }}
+    >
       <div className="w-full px-4">
-        <h1 className="text-2xl font-bold text-[#116d5c]" style={{ fontFamily: "'Quicksand', sans-serif" }}>imuendo</h1>
+        <h1
+          className="text-2xl font-bold"
+          style={{
+            fontFamily: Fonts.heading,
+            color: Colors.headerTitle,
+          }}
+        >
+          imuendo
+        </h1>
       </div>
     </header>
   );

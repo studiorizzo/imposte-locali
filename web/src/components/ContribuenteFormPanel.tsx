@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Colors, Sizes, Shadows, Animations } from '../theme';
 
 interface ContribuenteFormPanelProps {
   isOpen: boolean;
@@ -33,6 +34,26 @@ const initialFormData: ContribuenteFormData = {
 
 export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: ContribuenteFormPanelProps) {
   const [formData, setFormData] = useState<ContribuenteFormData>(initialFormData);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Handle open/close animations
+  useEffect(() => {
+    if (isOpen) {
+      setIsVisible(true);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsAnimating(true);
+        });
+      });
+    } else {
+      setIsAnimating(false);
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 350);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
 
   const handleChange = (field: keyof ContribuenteFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -48,29 +69,50 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
     onClose();
   };
 
-  if (!isOpen) return null;
+  if (!isVisible) return null;
 
   return (
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/30 z-40"
+        className="fixed inset-0 z-40"
+        style={{
+          backgroundColor: `rgba(0, 0, 0, ${isAnimating ? 0.3 : 0})`,
+          transition: `background-color ${Animations.panel.duration} ${Animations.panel.easing}`,
+        }}
         onClick={handleClose}
       />
 
       {/* Panel */}
-      <div className="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 flex flex-col rounded-tl-3xl">
+      <div
+        className="fixed right-0 top-0 h-full flex flex-col z-50"
+        style={{
+          width: Sizes.panelWidth,
+          backgroundColor: Colors.surface,
+          borderTopLeftRadius: Sizes.radiusMd,
+          borderBottomLeftRadius: Sizes.radiusMd,
+          boxShadow: Shadows.panel,
+          transform: `translateX(${isAnimating ? 0 : Sizes.panelWidth}px)`,
+          transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
+        }}
+      >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
           <button
             onClick={onDelete || handleClose}
-            className="text-gray-500 hover:text-red-600 font-medium text-sm"
+            className="font-medium text-sm transition-colors"
+            style={{ color: Colors.grey }}
+            onMouseEnter={(e) => e.currentTarget.style.color = Colors.error}
+            onMouseLeave={(e) => e.currentTarget.style.color = Colors.grey}
           >
             ELIMINA
           </button>
           <button
             onClick={handleSave}
-            className="text-teal-600 hover:text-teal-700 font-medium text-sm"
+            className="font-medium text-sm transition-colors"
+            style={{ color: Colors.accent1 }}
+            onMouseEnter={(e) => e.currentTarget.style.color = Colors.accent1Dark}
+            onMouseLeave={(e) => e.currentTarget.style.color = Colors.accent1}
           >
             SALVA
           </button>
@@ -79,7 +121,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
         {/* Form */}
         <div className="flex-1 overflow-y-auto px-6 py-4">
           <div className="space-y-1">
-            {/* Cognome */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,8 +131,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.cognome}
               onChange={(v) => handleChange('cognome', v)}
             />
-
-            {/* Nome */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,8 +141,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.nome}
               onChange={(v) => handleChange('nome', v)}
             />
-
-            {/* Codice Fiscale */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,8 +151,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.codiceFiscale}
               onChange={(v) => handleChange('codiceFiscale', v.toUpperCase())}
             />
-
-            {/* Email */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,8 +161,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.email}
               onChange={(v) => handleChange('email', v)}
             />
-
-            {/* Telefono */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,8 +171,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.telefono}
               onChange={(v) => handleChange('telefono', v)}
             />
-
-            {/* Indirizzo */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,8 +182,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.indirizzo}
               onChange={(v) => handleChange('indirizzo', v)}
             />
-
-            {/* Comune */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,8 +192,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.comune}
               onChange={(v) => handleChange('comune', v)}
             />
-
-            {/* CAP */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,8 +202,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
               value={formData.cap}
               onChange={(v) => handleChange('cap', v)}
             />
-
-            {/* Provincia */}
             <FormField
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,7 +219,6 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
   );
 }
 
-// Component for individual form field
 function FormField({
   icon,
   placeholder,
@@ -208,7 +232,7 @@ function FormField({
 }) {
   return (
     <div className="flex items-center gap-4 py-3 border-b border-gray-200">
-      <div className="text-gray-400">
+      <div style={{ color: Colors.greyWeak }}>
         {icon}
       </div>
       <input
@@ -216,7 +240,8 @@ function FormField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="flex-1 text-gray-700 placeholder-gray-400 bg-transparent outline-none"
+        className="flex-1 bg-transparent outline-none placeholder-gray-400"
+        style={{ color: Colors.grey }}
       />
     </div>
   );

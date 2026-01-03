@@ -8,6 +8,7 @@ import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
+import { Colors } from './theme';
 import './index.css';
 
 type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
@@ -130,7 +131,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f1f7f0]">
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: Colors.bg1 }}>
       {/* Header in cima a tutto */}
       <Header />
 

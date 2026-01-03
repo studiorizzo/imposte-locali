@@ -1,0 +1,178 @@
+/**
+ * Theme constants for imuendo
+ * Centralized values for colors, sizes, spacing, and animations
+ * Based on Flokk's FlockGreen theme
+ */
+
+// =============================================================================
+// COLORS
+// =============================================================================
+
+export const Colors = {
+  // Text
+  txt: '#000000',
+  accentTxt: '#ffffff',
+
+  // Backgrounds
+  bg1: '#f1f7f0',
+  bg2: '#c1dcbc',
+  surface: '#ffffff',
+
+  // Accent colors
+  accent1: '#00a086',
+  accent1Dark: '#00856f',
+  accent1Darker: '#006b5a',
+  accent2: '#f09433',
+  accent3: '#5bc91a',
+
+  // Greys
+  greyWeak: '#909f9c',
+  grey: '#515d5a',
+  greyStrong: '#151918',
+
+  // Semantic
+  error: '#b71c1c',
+  focus: '#0ee2b1',
+
+  // Header
+  headerTitle: '#116d5c',
+} as const;
+
+// =============================================================================
+// BREAKPOINTS (matching Tailwind config)
+// =============================================================================
+
+export const PageBreaks = {
+  LargePhone: 550,
+  TabletPortrait: 768,
+  TabletLandscape: 1024,
+  Desktop: 1440,
+} as const;
+
+// =============================================================================
+// SIZES
+// =============================================================================
+
+export const Sizes = {
+  // Sidebar
+  sideBarSm: 60,    // Compact mode
+  sideBarMed: 200,  // Medium screens
+  sideBarLg: 256,   // Desktop (w-64)
+
+  // Fixed heights
+  headerHeight: 106,
+  buttonHeight: 60,
+
+  // Indicator
+  indicatorWidth: 6,
+  indicatorHeight: 48,
+
+  // Panel
+  panelWidth: 384,  // w-96
+
+  // Border radius
+  radiusSm: 8,
+  radiusMd: 10,
+  radiusLg: 12,
+} as const;
+
+// =============================================================================
+// SPACING (Insets)
+// =============================================================================
+
+export const Insets = {
+  xs: 4,
+  sm: 8,
+  m: 16,
+  l: 24,
+  xl: 32,
+  xxl: 48,
+
+  // Gutters
+  mGutter: 16,
+  lGutter: 24,
+} as const;
+
+// =============================================================================
+// ANIMATIONS
+// =============================================================================
+
+export const Durations = {
+  // In milliseconds
+  fastest: 100,
+  fast: 200,
+  medium: 300,
+  slow: 350,
+  slower: 500,
+} as const;
+
+// CSS duration strings
+export const DurationCSS = {
+  fastest: '100ms',
+  fast: '200ms',
+  medium: '300ms',
+  slow: '350ms',
+  slower: '500ms',
+} as const;
+
+// Easing functions
+export const Curves = {
+  easeOut: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
+  easeIn: 'cubic-bezier(0.4, 0.0, 1, 1)',
+  easeInOut: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
+  easeOutBack: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+} as const;
+
+// Animation presets for Tailwind-style inline styles
+export const Animations = {
+  // Indicator movement (0.5s easeOutBack)
+  indicator: {
+    duration: DurationCSS.slower,
+    easing: Curves.easeOutBack,
+  },
+  // Panel slide (0.35s easeOut)
+  panel: {
+    duration: DurationCSS.slow,
+    easing: Curves.easeOut,
+  },
+  // Button hover (0.3s easeOut)
+  button: {
+    duration: DurationCSS.medium,
+    easing: Curves.easeOut,
+  },
+  // Layout changes (0.35s easeOut)
+  layout: {
+    duration: DurationCSS.slow,
+    easing: Curves.easeOut,
+  },
+} as const;
+
+// =============================================================================
+// FONTS
+// =============================================================================
+
+export const Fonts = {
+  primary: "'Lato', system-ui, sans-serif",
+  heading: "'Quicksand', sans-serif",
+} as const;
+
+export const FontSizes = {
+  xs: '0.75rem',    // 12px
+  sm: '0.875rem',   // 14px
+  base: '1rem',     // 16px
+  lg: '1.125rem',   // 18px
+  xl: '1.25rem',    // 20px
+  '2xl': '1.5rem',  // 24px
+} as const;
+
+// =============================================================================
+// SHADOWS
+// =============================================================================
+
+export const Shadows = {
+  sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+  md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+  lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+  xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+  panel: `0 10px 40px -10px ${Colors.accent1Darker}40`,
+} as const;
