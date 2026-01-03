@@ -6,12 +6,12 @@ interface SidebarProps {
 
 export function Sidebar({ currentView, onNavigate, onCreateContribuente }: SidebarProps) {
   return (
-    <aside className="w-64 bg-teal-600 rounded-tr-3xl flex flex-col relative">
+    <aside className="w-64 bg-[#00a086] rounded-tr-3xl flex flex-col relative">
       {/* Create Button - bordi tratteggiati */}
       <div className="px-4 pt-6 pb-4">
         <button
           onClick={onCreateContribuente}
-          className="w-full flex items-center gap-2 bg-teal-600 border-2 border-dashed border-white/60 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
+          className="w-full flex items-center gap-2 bg-[#00a086] border-2 border-dashed border-white/60 hover:bg-[#00856f] text-white font-semibold py-3 px-4 rounded-lg transition-colors"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -30,7 +30,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
             )}
             <button
               onClick={() => onNavigate('dashboard')}
-              className="w-full flex items-center gap-2 py-3 px-4 rounded-lg transition-colors text-white hover:bg-teal-700"
+              className="w-full flex items-center gap-2 py-3 px-4 rounded-lg transition-colors text-white hover:bg-[#00856f]"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -45,7 +45,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
             )}
             <button
               onClick={() => onNavigate('contribuenti')}
-              className="w-full flex items-center gap-2 py-3 px-4 rounded-lg transition-colors text-white hover:bg-teal-700"
+              className="w-full flex items-center gap-2 py-3 px-4 rounded-lg transition-colors text-white hover:bg-[#00856f]"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
