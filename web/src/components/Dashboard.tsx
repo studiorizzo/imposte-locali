@@ -1,7 +1,6 @@
 import { Card, CardHeader, CardContent, Button } from './ui';
 import { ListaImmobili } from './forms/ListaImmobili';
 import type { DatiImmobile } from '@lib';
-import { ANNO_RIFERIMENTO } from '@lib';
 
 interface DashboardProps {
   immobili: DatiImmobile[];
@@ -20,16 +19,6 @@ export function Dashboard({
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-gray-900">
-          Calcolo IMU {ANNO_RIFERIMENTO}
-        </h1>
-        <p className="mt-2 text-gray-600">
-          Inserisci i tuoi immobili per calcolare l'IMU dovuta
-        </p>
-      </div>
-
       {/* Lista immobili o messaggio vuoto */}
       <Card>
         <CardHeader>

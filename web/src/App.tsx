@@ -115,20 +115,13 @@ function App() {
         ) : null;
       case 'contribuenti':
         return (
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Contribuenti</h2>
-            {contribuenti.length === 0 ? (
-              <p className="text-gray-500">Nessun contribuente inserito. Clicca su "+ CREA CONTRIBUENTE" per aggiungerne uno.</p>
-            ) : (
-              <div className="space-y-4">
-                {contribuenti.map((c, i) => (
-                  <div key={i} className="bg-white p-4 rounded-lg shadow border">
-                    <p className="font-semibold">{c.cognome} {c.nome}</p>
-                    <p className="text-sm text-gray-500">{c.codiceFiscale}</p>
-                  </div>
-                ))}
+          <div className="space-y-4">
+            {contribuenti.map((c, i) => (
+              <div key={i} className="bg-white p-4 rounded-lg shadow border">
+                <p className="font-semibold">{c.cognome} {c.nome}</p>
+                <p className="text-sm text-gray-500">{c.codiceFiscale}</p>
               </div>
-            )}
+            ))}
           </div>
         );
       default:
