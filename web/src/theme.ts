@@ -54,10 +54,10 @@ export const PageBreaks = {
 // =============================================================================
 
 export const Sizes = {
-  // Sidebar
-  sideBarSm: 60,    // Compact mode
-  sideBarMed: 200,  // Medium screens
-  sideBarLg: 256,   // Desktop (w-64)
+  // Sidebar (from Flokk styles.dart)
+  sideBarSm: 150,   // TabletPortrait (768-1023px) - skinnyMode
+  sideBarMed: 200,  // TabletLandscape (1024-1439px)
+  sideBarLg: 290,   // Desktop (≥1440px)
 
   // Fixed heights
   headerHeight: 106,
