@@ -69,6 +69,7 @@ const createEmptyImmobile = (): DatiImmobile => ({
   },
   fattispecie_principale: '' as FattispeciePrincipale,
   categoria: '' as CategoriaCatastale,
+  tipologiaContribuente: 'persona_fisica',
   renditaCatastale: 0,
   percentualePossesso: 100,
   dataInizio: DATA_INIZIO_DEFAULT,

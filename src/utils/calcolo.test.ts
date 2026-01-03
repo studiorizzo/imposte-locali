@@ -29,6 +29,7 @@ function creaImmobile(override: Partial<DatiImmobile>): DatiImmobile {
     },
     fattispecie_principale: 'altri_fabbricati',
     categoria: 'A/2',
+    tipologiaContribuente: 'persona_fisica',
     renditaCatastale: 1000,
     percentualePossesso: 100,
     dataInizio: '2026-01-01',
@@ -218,9 +219,10 @@ describe('Calcolo IMU Immobile Completo', () => {
     const immobile = creaImmobileComunePiccolo({
       categoria: 'A/2',
       renditaCatastale: 200,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(true);
     expect(risultato.motivoEsenzione).toContain('rendita');
@@ -234,12 +236,13 @@ describe('Calcolo IMU Immobile Completo', () => {
       renditaCatastale: 300,
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // Base: 300 × 1.05 × 160 = 50.400€
     // IMU piena: 50.400 × 1.06% = 534,24€
     // IMU ridotta 40%: 534,24 × 0.40 = 213,70€
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(213.7);
@@ -252,12 +255,13 @@ describe('Calcolo IMU Immobile Completo', () => {
       renditaCatastale: 500,
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // Base: 500 × 1.05 × 160 = 84.000€
     // IMU piena: 84.000 × 1.06% = 890,40€
     // IMU ridotta 67%: 890,40 × 0.67 = 596,57€
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(596.57);
@@ -270,10 +274,11 @@ describe('Calcolo IMU Immobile Completo', () => {
       renditaCatastale: 1000,
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // Rendita > 500€: nessuna riduzione
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(1780.8); // IMU piena
@@ -286,10 +291,11 @@ describe('Calcolo IMU Immobile Completo', () => {
       renditaCatastale: 200,
       immobileNonLocatoNonComodato: true,
       immobileUltimaResidenza: true,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // Anche se rendita ≤ 200€, comune troppo grande → IMU piena
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     // Base: 200 × 1.05 × 160 = 33.600€
@@ -304,10 +310,11 @@ describe('Calcolo IMU Immobile Completo', () => {
       renditaCatastale: 200,
       immobileNonLocatoNonComodato: false, // Locato o in comodato!
       immobileUltimaResidenza: true,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // Condizioni non soddisfatte → IMU piena
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(356.16);
@@ -320,10 +327,11 @@ describe('Calcolo IMU Immobile Completo', () => {
       renditaCatastale: 200, // rendita bassa, ma non abitativo
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // D/1 non è abitativo, quindi nessuna riduzione residente estero
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     // Base: 200 × 1.05 × 65 = 13.650€
@@ -337,10 +345,11 @@ describe('Calcolo IMU Immobile Completo', () => {
       renditaCatastale: 200, // rendita bassa, ma A/10 sono uffici
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // A/10 sono uffici, quindi non abitativi → nessuna riduzione
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     // Base: 200 × 1.05 × 80 = 16.800€ (A/10 ha coefficiente 80)
@@ -355,10 +364,11 @@ describe('Calcolo IMU Immobile Completo', () => {
       redditoDominicale: 100,
       aliquotaAcconto: 0.86,
       aliquotaSaldo: 0.86,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // Terreni non sono abitativi → nessuna riduzione residente estero
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     // Base: 100 × 1.25 × 135 = 16.875€
@@ -374,9 +384,10 @@ describe('Esenzioni per tipologia contribuente', () => {
       fattispecie_principale: 'abitazione_principale',
       categoria: 'A/2',
       renditaCatastale: 1000,
+      tipologiaContribuente: 'persona_fisica',
     });
 
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(true);
     expect(risultato.motivoEsenzione).toBe('Esenzione abitazione principale');
@@ -390,9 +401,10 @@ describe('Esenzioni per tipologia contribuente', () => {
       renditaCatastale: 1000,
       aliquotaAcconto: 0.6,
       aliquotaSaldo: 0.6,
+      tipologiaContribuente: 'persona_fisica',
     });
 
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     // Base: 1000 × 1.05 × 160 = 168.000€
@@ -406,9 +418,10 @@ describe('Esenzioni per tipologia contribuente', () => {
       categoria: 'A/2',
       renditaCatastale: 1000,
       immobileNonLocatoForzeArmate: true,
+      tipologiaContribuente: 'persona_fisica_forze_armate',
     });
 
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_forze_armate');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(true);
     expect(risultato.motivoEsenzione).toBe('Assimilazione personale forze armate / polizia / VVF');
@@ -423,9 +436,10 @@ describe('Esenzioni per tipologia contribuente', () => {
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
       immobileNonLocatoForzeArmate: false,
+      tipologiaContribuente: 'persona_fisica_forze_armate',
     });
 
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_forze_armate');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(1780.8);
@@ -437,9 +451,10 @@ describe('Esenzioni per tipologia contribuente', () => {
       categoria: 'A/2',
       renditaCatastale: 1000,
       immobileNonLocatoAnzianoDisabile: true,
+      tipologiaContribuente: 'persona_fisica_anziano_ricoverato',
     });
 
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_anziano_ricoverato');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(true);
     expect(risultato.motivoEsenzione).toBe('Assimilazione anziani / disabili');
@@ -454,9 +469,10 @@ describe('Esenzioni per tipologia contribuente', () => {
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
       immobileNonLocatoAnzianoDisabile: false,
+      tipologiaContribuente: 'persona_fisica_anziano_ricoverato',
     });
 
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_anziano_ricoverato');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(1780.8);
@@ -469,10 +485,11 @@ describe('Esenzioni per tipologia contribuente', () => {
       renditaCatastale: 1000,
       aliquotaAcconto: 1.06,
       aliquotaSaldo: 1.06,
+      tipologiaContribuente: 'persona_fisica_residente_estero',
     });
 
     // Comune grande, condizioni non soddisfatte → IMU piena
-    const risultato = calcolaIMUImmobile(immobile, 'persona_fisica_residente_estero');
+    const risultato = calcolaIMUImmobile(immobile);
 
     expect(risultato.esente).toBe(false);
     expect(risultato.imuTotale).toBe(1780.8);
