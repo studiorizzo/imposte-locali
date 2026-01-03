@@ -137,7 +137,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-[#f1f7f0]">
       {/* Header in cima a tutto */}
       <Header />
 
