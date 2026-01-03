@@ -1,58 +1,23 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header, Footer } from './components/layout';
-import { StepIndicator, WizardNavigation } from './components/wizard';
 import { ImmobiliStep } from './components/forms';
+import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
-import type { DatiImmobile, RiepilogoIMU, WizardStep } from '@lib';
+import type { DatiImmobile, RiepilogoIMU } from '@lib';
 import './index.css';
 
-const WIZARD_STEPS: WizardStep[] = [
-  { id: 'immobili', title: 'Immobili' },
-  { id: 'riepilogo', title: 'Riepilogo' },
-];
+type ViewType = 'dashboard' | 'form' | 'riepilogo';
 
 function App() {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentView, setCurrentView] = useState<ViewType>('dashboard');
   const [immobili, setImmobili] = useState<DatiImmobile[]>([]);
   const [riepilogo, setRiepilogo] = useState<RiepilogoIMU | null>(null);
 
-  // Scroll to top quando cambia lo step
+  // Scroll to top quando cambia la vista
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentStep]);
-
-  const canProceed = useMemo(() => {
-    switch (currentStep) {
-      case 0: // Immobili
-        return immobili.length > 0;
-      default:
-        return true;
-    }
-  }, [currentStep, immobili]);
-
-  const handleNext = () => {
-    if (currentStep === WIZARD_STEPS.length - 2) {
-      // Calcola riepilogo prima di mostrare l'ultimo step
-      const result = calcolaRiepilogoIMU(
-        ANNO_RIFERIMENTO,
-        '', // Contribuente vuoto per ora
-        immobili
-      );
-      setRiepilogo(result);
-    }
-    setCurrentStep((prev) => Math.min(prev + 1, WIZARD_STEPS.length - 1));
-  };
-
-  const handlePrevious = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0));
-  };
-
-  const handleStepClick = (step: number) => {
-    if (step < currentStep) {
-      setCurrentStep(step);
-    }
-  };
+  }, [currentView]);
 
   const handleAddImmobile = (immobile: DatiImmobile) => {
     setImmobili((prev) => [...prev, immobile]);
@@ -62,25 +27,81 @@ function App() {
     setImmobili((prev) => prev.filter((i) => i.id !== id));
   };
 
+  const handleGoToForm = () => {
+    setCurrentView('form');
+  };
+
+  const handleBackToDashboard = () => {
+    setCurrentView('dashboard');
+  };
+
+  const handleCalcolaIMU = () => {
+    const result = calcolaRiepilogoIMU(
+      ANNO_RIFERIMENTO,
+      '', // Contribuente vuoto per ora
+      immobili
+    );
+    setRiepilogo(result);
+    setCurrentView('riepilogo');
+  };
+
   const handleReset = () => {
-    setCurrentStep(0);
+    setCurrentView('dashboard');
     setImmobili([]);
     setRiepilogo(null);
   };
 
-  const renderStepContent = () => {
-    switch (currentStep) {
-      case 0:
+  const renderContent = () => {
+    switch (currentView) {
+      case 'dashboard':
         return (
-          <ImmobiliStep
+          <Dashboard
             immobili={immobili}
-            onAddImmobile={handleAddImmobile}
+            onAddImmobile={handleGoToForm}
             onRemoveImmobile={handleRemoveImmobile}
+            onCalcolaIMU={handleCalcolaIMU}
           />
         );
-      case 1:
+      case 'form':
+        return (
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-4">
+              <button
+                onClick={handleBackToDashboard}
+                className="inline-flex items-center text-blue-600 hover:text-blue-800"
+              >
+                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Torna alla dashboard
+              </button>
+            </div>
+            <ImmobiliStep
+              immobili={immobili}
+              onAddImmobile={(imm) => {
+                handleAddImmobile(imm);
+                handleBackToDashboard();
+              }}
+              onRemoveImmobile={handleRemoveImmobile}
+            />
+          </div>
+        );
+      case 'riepilogo':
         return riepilogo ? (
-          <RiepilogoCalcolo riepilogo={riepilogo} onReset={handleReset} />
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-4">
+              <button
+                onClick={handleBackToDashboard}
+                className="inline-flex items-center text-blue-600 hover:text-blue-800"
+              >
+                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Torna alla dashboard
+              </button>
+            </div>
+            <RiepilogoCalcolo riepilogo={riepilogo} onReset={handleReset} />
+          </div>
         ) : null;
       default:
         return null;
@@ -92,24 +113,7 @@ function App() {
       <Header />
 
       <main className="flex-1 w-full px-4 py-8">
-        <StepIndicator
-          steps={WIZARD_STEPS}
-          currentStep={currentStep}
-          onStepClick={handleStepClick}
-        />
-
-        <div className="mb-8">{renderStepContent()}</div>
-
-        {currentStep < WIZARD_STEPS.length - 1 && (
-          <WizardNavigation
-            currentStep={currentStep}
-            totalSteps={WIZARD_STEPS.length}
-            onPrevious={handlePrevious}
-            onNext={handleNext}
-            isNextDisabled={!canProceed}
-            nextLabel={currentStep === 0 ? 'Calcola IMU' : undefined}
-          />
-        )}
+        {renderContent()}
       </main>
 
       <Footer />
