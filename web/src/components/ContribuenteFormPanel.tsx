@@ -59,7 +59,7 @@ export function ContribuenteFormPanel({ isOpen, onClose, onSave, onDelete }: Con
       />
 
       {/* Panel */}
-      <div className="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 flex flex-col">
+      <div className="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 flex flex-col rounded-tl-3xl">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b">
           <button

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Header, Footer } from './components/layout';
+import { Header } from './components/layout';
 import { ImmobiliStep } from './components/forms';
 import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
@@ -151,13 +151,9 @@ function App() {
         />
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col">
-          <main className="flex-1 w-full px-6 py-8">
-            {renderContent()}
-          </main>
-
-          <Footer />
-        </div>
+        <main className="flex-1 w-full px-6 py-8">
+          {renderContent()}
+        </main>
       </div>
 
       {/* Contribuente Form Panel */}
