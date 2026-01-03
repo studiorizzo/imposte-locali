@@ -6,7 +6,7 @@ interface SidebarProps {
 
 export function Sidebar({ currentView, onNavigate, onCreateContribuente }: SidebarProps) {
   return (
-    <aside className="w-64 bg-[#00a086] rounded-tr-3xl flex flex-col relative">
+    <aside className="w-64 bg-[#00a086] rounded-tr-[10px] flex flex-col relative">
       {/* Create Button - bordi tratteggiati */}
       <div className="px-4 pt-6 pb-4">
         <button
