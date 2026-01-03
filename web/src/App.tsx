@@ -64,7 +64,7 @@ function App() {
         );
       case 'form':
         return (
-          <div className="max-w-6xl mx-auto">
+          <div>
             <div className="mb-4">
               <button
                 onClick={handleBackToDashboard}
@@ -88,7 +88,7 @@ function App() {
         );
       case 'riepilogo':
         return riepilogo ? (
-          <div className="max-w-4xl mx-auto">
+          <div>
             <div className="mb-4">
               <button
                 onClick={handleBackToDashboard}
