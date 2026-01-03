@@ -5,6 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'phone-lg': '550px',
+      'tablet': '768px',
+      'tablet-lg': '1024px',
+      'desktop': '1440px',
+    },
     extend: {
       colors: {
         primary: {
