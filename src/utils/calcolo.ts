@@ -308,9 +308,10 @@ export function getCodiceTributo(
  * Calcola l'IMU completa per un singolo immobile
  */
 export function calcolaIMUImmobile(
-  immobile: DatiImmobile,
-  tipologiaContribuente: TipologiaContribuente = 'persona_fisica'
+  immobile: DatiImmobile
 ): RisultatoCalcoloImmobile {
+  const tipologiaContribuente = immobile.tipologiaContribuente;
+
   // Verifica esenzione
   const { esente, motivo } = verificaEsenzione(immobile, tipologiaContribuente);
 
@@ -487,10 +488,9 @@ export function calcolaRiepilogoIMU(
   anno: number,
   contribuente: string,
   immobili: DatiImmobile[],
-  codiceFiscale?: string,
-  tipologiaContribuente: TipologiaContribuente = 'persona_fisica'
+  codiceFiscale?: string
 ): RiepilogoIMU {
-  const risultati = immobili.map(imm => calcolaIMUImmobile(imm, tipologiaContribuente));
+  const risultati = immobili.map(imm => calcolaIMUImmobile(imm));
 
   // Totali
   const totaleAcconto = round2(

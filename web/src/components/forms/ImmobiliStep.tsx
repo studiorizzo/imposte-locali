@@ -10,8 +10,15 @@ interface ImmobiliStepProps {
   immobili: DatiImmobile[];
   onAddImmobile: (immobile: DatiImmobile) => void;
   onRemoveImmobile: (id: string) => void;
-  tipologiaContribuente: TipologiaContribuente;
 }
+
+// Opzioni per tipologia contribuente
+const TIPOLOGIA_CONTRIBUENTE_OPTIONS: { value: TipologiaContribuente; label: string }[] = [
+  { value: 'persona_fisica', label: 'Contribuente ordinario' },
+  { value: 'persona_fisica_residente_estero', label: 'Residente all\'estero (AIRE)' },
+  { value: 'persona_fisica_forze_armate', label: 'Forze armate / Polizia / VVF' },
+  { value: 'persona_fisica_anziano_ricoverato', label: 'Anziano o disabile ricoverato' },
+];
 
 // Lista fattispecie per il select
 const FATTISPECIE_OPTIONS: { value: FattispeciePrincipale; label: string }[] = [
@@ -74,6 +81,7 @@ const createEmptyImmobile = (): DatiImmobile => ({
   },
   fattispecie_principale: '' as FattispeciePrincipale,
   categoria: '' as CategoriaCatastale,
+  tipologiaContribuente: 'persona_fisica',
   renditaCatastale: 0,
   percentualePossesso: 100,
   dataInizio: DATA_INIZIO_DEFAULT,
@@ -186,7 +194,7 @@ La dichiarazione di inagibilità può essere ottenuta tramite:
 
 Se queste condizioni non sono soddisfatte, l'immobile sarà soggetto ad IMU ordinaria.`;
 
-export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipologiaContribuente }: ImmobiliStepProps) {
+export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile }: ImmobiliStepProps) {
   const [immobile, setImmobile] = useState<DatiImmobile>(createEmptyImmobile());
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [aliquotaPersonalizzataSelezionata, setAliquotaPersonalizzataSelezionata] = useState<string | null>(null);
@@ -217,7 +225,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   // - abitazione principale: esiste già un'abitazione principale con assimilazione
   // - pertinenze: esiste già una pertinenza della stessa categoria con assimilazione
   const showCondizioniResidenteEstero = useMemo(() => {
-    if (tipologiaContribuente !== 'persona_fisica_residente_estero') {
+    if (immobile.tipologiaContribuente !== 'persona_fisica_residente_estero') {
       return false;
     }
     // Requisito: comune < 5000 abitanti
@@ -231,7 +239,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       return !esisteGiaPertinenzaResidenteEsteroStessaCategoria;
     }
     return false;
-  }, [tipologiaContribuente, immobile.comune.abitanti, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleResidenteEstero, esisteGiaPertinenzaResidenteEsteroStessaCategoria]);
+  }, [immobile.tipologiaContribuente, immobile.comune.abitanti, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleResidenteEstero, esisteGiaPertinenzaResidenteEsteroStessaCategoria]);
 
   // Imposta i flag di default per residente estero
   useEffect(() => {
@@ -262,7 +270,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   // - abitazione principale: esiste già un'abitazione principale con assimilazione
   // - pertinenze: esiste già una pertinenza della stessa categoria con assimilazione
   const showCondizioniForzeArmate = useMemo(() => {
-    if (tipologiaContribuente !== 'persona_fisica_forze_armate') {
+    if (immobile.tipologiaContribuente !== 'persona_fisica_forze_armate') {
       return false;
     }
     if (immobile.fattispecie_principale === 'abitazione_principale') {
@@ -272,7 +280,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       return !esisteGiaPertinenzaForzeArmateStessaCategoria;
     }
     return false;
-  }, [tipologiaContribuente, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleForzeArmate, esisteGiaPertinenzaForzeArmateStessaCategoria]);
+  }, [immobile.tipologiaContribuente, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleForzeArmate, esisteGiaPertinenzaForzeArmateStessaCategoria]);
 
   // Imposta i flag di default per forze armate
   useEffect(() => {
@@ -315,7 +323,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   // - abitazione principale: esiste già un'abitazione principale con assimilazione
   // - pertinenze: esiste già una pertinenza della stessa categoria con assimilazione
   const showCondizioniAnzianoDisabile = useMemo(() => {
-    if (tipologiaContribuente !== 'persona_fisica_anziano_ricoverato') {
+    if (immobile.tipologiaContribuente !== 'persona_fisica_anziano_ricoverato') {
       return false;
     }
     if (!comuneOffreAssimilazioneAnzianoDisabile) {
@@ -328,7 +336,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
       return !esisteGiaPertinenzaAnzianoDisabileStessaCategoria;
     }
     return false;
-  }, [tipologiaContribuente, comuneOffreAssimilazioneAnzianoDisabile, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleAnzianoDisabile, esisteGiaPertinenzaAnzianoDisabileStessaCategoria]);
+  }, [immobile.tipologiaContribuente, comuneOffreAssimilazioneAnzianoDisabile, immobile.fattispecie_principale, esisteGiaAbitazionePrincipaleAnzianoDisabile, esisteGiaPertinenzaAnzianoDisabileStessaCategoria]);
 
   // Imposta i flag di default per anziano/disabile
   useEffect(() => {
@@ -342,11 +350,11 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
 
   // Verifica se il contribuente è persona fisica
   const isPersonaFisica = useMemo(() => {
-    return tipologiaContribuente === 'persona_fisica' ||
-      tipologiaContribuente === 'persona_fisica_residente_estero' ||
-      tipologiaContribuente === 'persona_fisica_anziano_ricoverato' ||
-      tipologiaContribuente === 'persona_fisica_forze_armate';
-  }, [tipologiaContribuente]);
+    return immobile.tipologiaContribuente === 'persona_fisica' ||
+      immobile.tipologiaContribuente === 'persona_fisica_residente_estero' ||
+      immobile.tipologiaContribuente === 'persona_fisica_anziano_ricoverato' ||
+      immobile.tipologiaContribuente === 'persona_fisica_forze_armate';
+  }, [immobile.tipologiaContribuente]);
 
   // Verifica se mostrare sezione dichiarazione interesse culturale
   // Visibile per persone fisiche quando storico/artistico è flaggato
@@ -478,7 +486,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
         const isEsentePerCategoria = fattispecie === 'abitazione_principale' &&
           newCategoria &&
           !CATEGORIE_LUSSO.includes(newCategoria) &&
-          tipologiaContribuente === 'persona_fisica';
+          immobile.tipologiaContribuente === 'persona_fisica';
 
         if (isEsentePerCategoria) {
           updated.aliquotaAcconto = 0;
@@ -672,7 +680,7 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
   const isAbitazionePrincipaleEsente = isAbitazionePrincipale &&
     immobile.categoria &&
     !CATEGORIE_LUSSO.includes(immobile.categoria) &&
-    tipologiaContribuente === 'persona_fisica';
+    immobile.tipologiaContribuente === 'persona_fisica';
 
   // Validazione campi obbligatori per abilitare il pulsante "Aggiungi Immobile"
   const canSubmit = useMemo(() => {
@@ -726,6 +734,25 @@ export function ImmobiliStep({ immobili, onAddImmobile, onRemoveImmobile, tipolo
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
+                {/* Tipologia contribuente */}
+                <Select
+                  label="Tipologia contribuente"
+                  value={immobile.tipologiaContribuente}
+                  onChange={(e) => {
+                    const newTipologia = e.target.value as TipologiaContribuente;
+                    setImmobile(prev => ({
+                      ...prev,
+                      tipologiaContribuente: newTipologia,
+                      // Reset flag specifici quando cambia tipologia
+                      immobileNonLocatoNonComodato: undefined,
+                      immobileUltimaResidenza: undefined,
+                      immobileNonLocatoForzeArmate: undefined,
+                      immobileNonLocatoAnzianoDisabile: undefined,
+                    }));
+                  }}
+                  options={TIPOLOGIA_CONTRIBUENTE_OPTIONS}
+                />
+
                 {/* Comune e fonte aliquote */}
                 <div className="space-y-2">
                   <Autocomplete

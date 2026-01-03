@@ -56,6 +56,7 @@ export interface DatiImmobile {
   comune: Comune;                   // Comune dove si trova l'immobile
   fattispecie_principale: FattispeciePrincipale;
   categoria: CategoriaCatastale;
+  tipologiaContribuente: TipologiaContribuente;  // Tipologia contribuente per questo immobile
 
   // Dati catastali
   renditaCatastale?: number;      // Per fabbricati (€)
