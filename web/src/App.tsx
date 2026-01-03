@@ -3,16 +3,21 @@ import { Header, Footer } from './components/layout';
 import { ImmobiliStep } from './components/forms';
 import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
+import { Sidebar } from './components/Sidebar';
+import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
+import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
 import './index.css';
 
-type ViewType = 'dashboard' | 'form' | 'riepilogo';
+type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
 
 function App() {
   const [currentView, setCurrentView] = useState<ViewType>('dashboard');
   const [immobili, setImmobili] = useState<DatiImmobile[]>([]);
   const [riepilogo, setRiepilogo] = useState<RiepilogoIMU | null>(null);
+  const [isContribuentePanelOpen, setIsContribuentePanelOpen] = useState(false);
+  const [contribuenti, setContribuenti] = useState<ContribuenteFormData[]>([]);
 
   // Scroll to top quando cambia la vista
   useEffect(() => {
@@ -49,6 +54,11 @@ function App() {
     setCurrentView('dashboard');
     setImmobili([]);
     setRiepilogo(null);
+  };
+
+  const handleSaveContribuente = (data: ContribuenteFormData) => {
+    setContribuenti(prev => [...prev, data]);
+    setIsContribuentePanelOpen(false);
   };
 
   const renderContent = () => {
@@ -103,20 +113,55 @@ function App() {
             <RiepilogoCalcolo riepilogo={riepilogo} onReset={handleReset} />
           </div>
         ) : null;
+      case 'contribuenti':
+        return (
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Contribuenti</h2>
+            {contribuenti.length === 0 ? (
+              <p className="text-gray-500">Nessun contribuente inserito. Clicca su "+ CREA CONTRIBUENTE" per aggiungerne uno.</p>
+            ) : (
+              <div className="space-y-4">
+                {contribuenti.map((c, i) => (
+                  <div key={i} className="bg-white p-4 rounded-lg shadow border">
+                    <p className="font-semibold">{c.cognome} {c.nome}</p>
+                    <p className="text-sm text-gray-500">{c.codiceFiscale}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
       default:
         return null;
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <Header />
+    <div className="min-h-screen flex bg-gray-50">
+      {/* Sidebar */}
+      <Sidebar
+        currentView={currentView}
+        onNavigate={(view) => setCurrentView(view as ViewType)}
+        onCreateContribuente={() => setIsContribuentePanelOpen(true)}
+      />
 
-      <main className="flex-1 w-full px-4 py-8">
-        {renderContent()}
-      </main>
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        <Header />
 
-      <Footer />
+        <main className="flex-1 w-full px-6 py-8">
+          {renderContent()}
+        </main>
+
+        <Footer />
+      </div>
+
+      {/* Contribuente Form Panel */}
+      <ContribuenteFormPanel
+        isOpen={isContribuentePanelOpen}
+        onClose={() => setIsContribuentePanelOpen(false)}
+        onSave={handleSaveContribuente}
+      />
     </div>
   );
 }
