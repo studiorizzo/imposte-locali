@@ -137,23 +137,27 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex bg-gray-50">
-      {/* Sidebar */}
-      <Sidebar
-        currentView={currentView}
-        onNavigate={(view) => setCurrentView(view as ViewType)}
-        onCreateContribuente={() => setIsContribuentePanelOpen(true)}
-      />
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      {/* Header in cima a tutto */}
+      <Header />
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        <Header />
+      {/* Container per sidebar + contenuto */}
+      <div className="flex-1 flex">
+        {/* Sidebar sotto l'header */}
+        <Sidebar
+          currentView={currentView}
+          onNavigate={(view) => setCurrentView(view as ViewType)}
+          onCreateContribuente={() => setIsContribuentePanelOpen(true)}
+        />
 
-        <main className="flex-1 w-full px-6 py-8">
-          {renderContent()}
-        </main>
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col">
+          <main className="flex-1 w-full px-6 py-8">
+            {renderContent()}
+          </main>
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
 
       {/* Contribuente Form Panel */}
