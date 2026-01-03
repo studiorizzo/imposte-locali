@@ -19,7 +19,7 @@ export function Dashboard({
   const hasImmobili = immobili.length > 0;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="space-y-6">
       {/* Header */}
       <div className="text-center">
         <h1 className="text-3xl font-bold text-gray-900">
