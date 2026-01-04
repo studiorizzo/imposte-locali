@@ -1,17 +1,33 @@
 import { useState, useEffect } from 'react';
-import { Header } from './components/layout';
 import { ImmobiliStep } from './components/forms';
 import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
-import { Sidebar } from './components/Sidebar';
+import { Sidebar, MobileDrawer } from './components/Sidebar';
+import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
-import { Colors } from './theme';
+import { Colors, Sizes, Insets, PageBreaks, Fonts, Animations } from './theme';
 import './index.css';
 
 type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
+
+// Hook to detect mobile mode
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < PageBreaks.TabletPortrait);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile;
+}
 
 function App() {
   const [currentView, setCurrentView] = useState<ViewType>('dashboard');
@@ -19,6 +35,8 @@ function App() {
   const [riepilogo, setRiepilogo] = useState<RiepilogoIMU | null>(null);
   const [isContribuentePanelOpen, setIsContribuentePanelOpen] = useState(false);
   const [contribuenti, setContribuenti] = useState<ContribuenteFormData[]>([]);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   // Scroll to top quando cambia la vista
   useEffect(() => {
@@ -130,25 +148,111 @@ function App() {
     }
   };
 
+  // Handle search (placeholder - will integrate with actual search later)
+  const handleSearch = (query: string) => {
+    console.log('Searching:', query);
+    // TODO: Implement actual search functionality
+  };
+
+  // Close drawer on resize to non-mobile
+  useEffect(() => {
+    if (!isMobile && isDrawerOpen) {
+      setIsDrawerOpen(false);
+    }
+  }, [isMobile, isDrawerOpen]);
+
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: Colors.bg1 }}>
-      {/* Header in cima a tutto */}
-      <Header />
+    <div className="min-h-screen flex" style={{ backgroundColor: Colors.bg1 }}>
+      {/* Sidebar - full height with header area inside (hidden on mobile) */}
+      <Sidebar
+        currentView={currentView}
+        onNavigate={(view) => setCurrentView(view as ViewType)}
+        onCreateContribuente={() => setIsContribuentePanelOpen(true)}
+      />
 
-      {/* Container per sidebar + contenuto */}
-      <div className="flex-1 flex">
-        {/* Sidebar sotto l'header */}
-        <Sidebar
-          currentView={currentView}
-          onNavigate={(view) => setCurrentView(view as ViewType)}
-          onCreateContribuente={() => setIsContribuentePanelOpen(true)}
-        />
+      {/* Content Area */}
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* TopBar - from Flokk: topBarHeight = 60, padding = Insets.l (Insets.m on mobile) */}
+        <div
+          className="flex items-center"
+          style={{
+            height: Sizes.topBarHeight,
+            paddingLeft: isMobile ? Insets.mGutter : Insets.lGutter,
+            paddingRight: isMobile ? Insets.mGutter : Insets.lGutter,
+            marginTop: Insets.l,
+          }}
+        >
+          {/* Hamburger button on mobile - from Flokk: left: Insets.m, top: Insets.m */}
+          {isMobile && (
+            <button
+              onClick={() => setIsDrawerOpen(true)}
+              className="flex items-center justify-center mr-3"
+              style={{
+                width: 40,
+                height: 40,
+                color: Colors.accent1,
+                transition: `color ${Animations.button.duration} ${Animations.button.easing}`,
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.color = Colors.accent1Dark}
+              onMouseLeave={(e) => e.currentTarget.style.color = Colors.accent1}
+            >
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          )}
 
-        {/* Main Content */}
-        <main className="flex-1 w-full px-6 py-8">
+          {/* Centered logo on mobile - from Flokk: FlokkLogo(40, theme.accent1) */}
+          {isMobile && (
+            <div
+              className="absolute left-1/2 transform -translate-x-1/2"
+              style={{
+                fontFamily: Fonts.heading,
+                fontSize: '1.5rem',
+                fontWeight: 700,
+                color: Colors.accent1,
+              }}
+            >
+              imuendo
+            </div>
+          )}
+
+          {/* SearchBar */}
+          <SearchBar
+            onSearch={handleSearch}
+            placeholder="Cerca contribuenti..."
+            narrowMode={isMobile}
+          />
+        </div>
+
+        {/* Main Content - with top padding for spacing after SearchBar */}
+        <main
+          className="flex-1 overflow-auto"
+          style={{
+            paddingLeft: isMobile ? Insets.mGutter : Insets.lGutter,
+            paddingRight: Insets.mGutter,
+            paddingTop: Insets.l,
+            paddingBottom: Insets.l,
+          }}
+        >
           {renderContent()}
         </main>
       </div>
+
+      {/* Mobile Drawer */}
+      <MobileDrawer
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+        currentView={currentView}
+        onNavigate={(view) => {
+          setCurrentView(view as ViewType);
+          setIsDrawerOpen(false);
+        }}
+        onCreateContribuente={() => {
+          setIsContribuentePanelOpen(true);
+          setIsDrawerOpen(false);
+        }}
+      />
 
       {/* Contribuente Form Panel */}
       <ContribuenteFormPanel

@@ -61,6 +61,7 @@ export const Sizes = {
 
   // Fixed heights
   headerHeight: 106,
+  topBarHeight: 60,  // Content area top bar (from Flokk main_scaffold_view.dart)
   buttonHeight: 60,
 
   // Indicator

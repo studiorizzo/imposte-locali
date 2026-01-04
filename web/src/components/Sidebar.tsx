@@ -1,10 +1,11 @@
 import { useRef, useEffect, useState, forwardRef } from 'react';
-import { Colors, Sizes, Animations, Insets, PageBreaks, TextStyles } from '../theme';
+import { Colors, Sizes, Animations, Insets, PageBreaks, TextStyles, Fonts } from '../theme';
 
 interface SidebarProps {
   currentView: string;
   onNavigate: (view: string) => void;
   onCreateContribuente: () => void;
+  onMenuToggle?: () => void;  // For mobile hamburger
 }
 
 // Hook for responsive sidebar width
@@ -56,18 +57,18 @@ function useSidebarWidth() {
 export function Sidebar({ currentView, onNavigate, onCreateContribuente }: SidebarProps) {
   const [indicatorY, setIndicatorY] = useState(0);
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
-  const sidebarRef = useRef<HTMLElement | null>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
   const { width, isCompact, isHidden } = useSidebarWidth();
 
   // Update indicator position when view changes
-  // Calculate Y position relative to sidebar (aside), not nav
+  // Calculate Y position relative to menu section
   useEffect(() => {
     const button = buttonRefs.current[currentView];
-    if (button && sidebarRef.current) {
+    if (button && menuRef.current) {
       const buttonRect = button.getBoundingClientRect();
-      const sidebarRect = sidebarRef.current.getBoundingClientRect();
+      const menuRect = menuRef.current.getBoundingClientRect();
       // Center indicator vertically on the button
-      const y = buttonRect.top - sidebarRect.top + (buttonRect.height / 2) - (Sizes.indicatorHeight / 2);
+      const y = buttonRect.top - menuRect.top + (buttonRect.height / 2) - (Sizes.indicatorHeight / 2);
       setIndicatorY(y);
     }
   }, [currentView, isCompact]);
@@ -79,92 +80,128 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
 
   return (
     <aside
-      ref={sidebarRef}
-      className="flex flex-col relative"
+      className="flex flex-col"
       style={{
         width,
-        backgroundColor: Colors.accent1,
-        borderTopRightRadius: Sizes.radiusMd,
         transition: `width ${Animations.layout.duration} ${Animations.layout.easing}`,
       }}
     >
-      {/* Animated Indicator - always at left edge of sidebar (left: 0) */}
+      {/* ============================================ */}
+      {/* HEADER SECTION - 106px, bg1 background */}
+      {/* From Flokk: Stack with StyledContainer(theme.bg1) and FlokkSidebarLogo centered */}
+      {/* ============================================ */}
       <div
-        className="absolute"
+        className="flex items-center justify-center relative"
         style={{
-          left: 0,
-          top: 0,
-          width: Sizes.indicatorWidth,
-          height: Sizes.indicatorHeight,
-          backgroundColor: Colors.surface,
-          transform: `translateY(${indicatorY}px)`,
-          transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
-        }}
-      />
-
-      {/*
-        Button container structure from Flokk:
-        .padding(all: Insets.l, bottom: Insets.m).constrained(maxWidth: 280)
-        Inside: VSpace(l) + CreateBtn + VSpace(l) + Dashboard + Contacts (no gap!)
-      */}
-      <div
-        className="flex-1 flex flex-col"
-        style={{
-          padding: isCompact
-            ? Insets.m
-            : `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
-          maxWidth: isCompact ? undefined : 280,
-          alignItems: isCompact ? 'center' : 'stretch',
+          height: Sizes.headerHeight,
+          backgroundColor: Colors.bg1,
         }}
       >
-        {/* VSpace(Insets.l) - initial spacing before Create button */}
-        <div style={{ height: Insets.l }} />
-
-        {/* Create Button */}
-        <CreateButton
-          isCompact={isCompact}
-          onClick={onCreateContribuente}
-        />
-
-        {/* VSpace(Insets.l) - spacing after create button */}
-        <div style={{ height: Insets.l }} />
-
-        {/* Navigation */}
-        <nav
-          className="relative flex flex-col"
-          style={{ alignItems: isCompact ? 'center' : 'stretch' }}
+        {/* Logo/Title - "imuendo" text centered */}
+        <h1
+          style={{
+            fontFamily: Fonts.heading,
+            color: Colors.headerTitle,
+            fontSize: isCompact ? '1.25rem' : '1.75rem',
+            fontWeight: 700,
+            letterSpacing: '0.5px',
+            transition: `font-size ${Animations.layout.duration} ${Animations.layout.easing}`,
+          }}
         >
-          {/* Nav buttons - NO spacing between them (directly stacked like Flokk) */}
-          <NavButton
-            ref={(el) => { buttonRefs.current['dashboard'] = el; }}
-            icon={<DashboardIcon />}
-            label="DASHBOARD"
-            isSelected={currentView === 'dashboard'}
-            isCompact={isCompact}
-            onClick={() => onNavigate('dashboard')}
-          />
-          <NavButton
-            ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
-            icon={<UserIcon />}
-            label="CONTRIBUENTI"
-            isSelected={currentView === 'contribuenti'}
-            isCompact={isCompact}
-            onClick={() => onNavigate('contribuenti')}
-          />
-        </nav>
+          {isCompact ? 'imu' : 'imuendo'}
+        </h1>
       </div>
 
-      {/* Version - positioned absolute like Flokk: positioned(left: 4, bottom: 4) */}
+      {/* ============================================ */}
+      {/* MENU SECTION - flex-1, accent1, borderRadius topRight */}
+      {/* From Flokk: StyledContainer(bgColor, borderRadius: BorderRadius.only(topRight: Corners.s10Radius)) */}
+      {/* ============================================ */}
       <div
-        className="absolute"
+        ref={menuRef}
+        className="flex-1 flex flex-col relative"
         style={{
-          left: 4,
-          bottom: 4,
-          color: 'rgba(255, 255, 255, 0.6)',
-          ...TextStyles.caption,
+          backgroundColor: Colors.accent1,
+          borderTopRightRadius: Sizes.radiusMd,
         }}
       >
-        {isCompact ? 'v1' : 'v1.0'}
+        {/* Animated Indicator - at left edge of menu section */}
+        <div
+          className="absolute"
+          style={{
+            left: 0,
+            top: 0,
+            width: Sizes.indicatorWidth,
+            height: Sizes.indicatorHeight,
+            backgroundColor: Colors.surface,
+            transform: `translateY(${indicatorY}px)`,
+            transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
+          }}
+        />
+
+        {/*
+          Button container structure from Flokk:
+          .padding(all: Insets.l, bottom: Insets.m).constrained(maxWidth: 280)
+          Inside: VSpace(l) + CreateBtn + VSpace(l) + Dashboard + Contacts (no gap!)
+        */}
+        <div
+          className="flex-1 flex flex-col"
+          style={{
+            padding: isCompact
+              ? Insets.m
+              : `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
+            maxWidth: isCompact ? undefined : 280,
+            alignItems: isCompact ? 'center' : 'stretch',
+          }}
+        >
+          {/* VSpace(Insets.l) - initial spacing before Create button */}
+          <div style={{ height: Insets.l }} />
+
+          {/* Create Button */}
+          <CreateButton
+            isCompact={isCompact}
+            onClick={onCreateContribuente}
+          />
+
+          {/* VSpace(Insets.l) - spacing after create button */}
+          <div style={{ height: Insets.l }} />
+
+          {/* Navigation */}
+          <nav
+            className="relative flex flex-col"
+            style={{ alignItems: isCompact ? 'center' : 'stretch' }}
+          >
+            {/* Nav buttons - NO spacing between them (directly stacked like Flokk) */}
+            <NavButton
+              ref={(el) => { buttonRefs.current['dashboard'] = el; }}
+              icon={<DashboardIcon />}
+              label="DASHBOARD"
+              isSelected={currentView === 'dashboard'}
+              isCompact={isCompact}
+              onClick={() => onNavigate('dashboard')}
+            />
+            <NavButton
+              ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
+              icon={<UserIcon />}
+              label="CONTRIBUENTI"
+              isSelected={currentView === 'contribuenti'}
+              isCompact={isCompact}
+              onClick={() => onNavigate('contribuenti')}
+            />
+          </nav>
+        </div>
+
+        {/* Version - positioned absolute like Flokk: positioned(left: 4, bottom: 4) */}
+        <div
+          className="absolute"
+          style={{
+            left: 4,
+            bottom: 4,
+            color: 'rgba(255, 255, 255, 0.6)',
+            ...TextStyles.caption,
+          }}
+        >
+          {isCompact ? 'v1' : 'v1.0'}
+        </div>
       </div>
     </aside>
   );
@@ -304,3 +341,170 @@ const UserIcon = () => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
   </svg>
 );
+
+// ============================================
+// MOBILE DRAWER
+// From Flokk: drawer property of Scaffold with MainSideMenu inside
+// ============================================
+
+interface MobileDrawerProps {
+  isOpen: boolean;
+  onClose: () => void;
+  currentView: string;
+  onNavigate: (view: string) => void;
+  onCreateContribuente: () => void;
+}
+
+export function MobileDrawer({
+  isOpen,
+  onClose,
+  currentView,
+  onNavigate,
+  onCreateContribuente,
+}: MobileDrawerProps) {
+  const [indicatorY, setIndicatorY] = useState(0);
+  const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  // Update indicator position when view changes
+  useEffect(() => {
+    const button = buttonRefs.current[currentView];
+    if (button && menuRef.current) {
+      const buttonRect = button.getBoundingClientRect();
+      const menuRect = menuRef.current.getBoundingClientRect();
+      const y = buttonRect.top - menuRect.top + (buttonRect.height / 2) - (Sizes.indicatorHeight / 2);
+      setIndicatorY(y);
+    }
+  }, [currentView, isOpen]);
+
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  return (
+    <>
+      {/* Overlay */}
+      <div
+        className="fixed inset-0 z-40"
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          opacity: isOpen ? 1 : 0,
+          pointerEvents: isOpen ? 'auto' : 'none',
+          transition: `opacity ${Animations.panel.duration} ${Animations.panel.easing}`,
+        }}
+        onClick={onClose}
+      />
+
+      {/* Drawer */}
+      <aside
+        className="fixed top-0 left-0 h-full z-50 flex flex-col"
+        style={{
+          width: Sizes.sideBarLg,
+          maxWidth: '80vw',
+          transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
+          transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
+        }}
+      >
+        {/* HEADER SECTION - bg1 */}
+        <div
+          className="flex items-center justify-center relative"
+          style={{
+            height: Sizes.headerHeight,
+            backgroundColor: Colors.bg1,
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: Fonts.heading,
+              color: Colors.headerTitle,
+              fontSize: '1.75rem',
+              fontWeight: 700,
+              letterSpacing: '0.5px',
+            }}
+          >
+            imuendo
+          </h1>
+        </div>
+
+        {/* MENU SECTION - accent1 */}
+        <div
+          ref={menuRef}
+          className="flex-1 flex flex-col relative"
+          style={{
+            backgroundColor: Colors.accent1,
+            borderTopRightRadius: Sizes.radiusMd,
+          }}
+        >
+          {/* Animated Indicator */}
+          <div
+            className="absolute"
+            style={{
+              left: 0,
+              top: 0,
+              width: Sizes.indicatorWidth,
+              height: Sizes.indicatorHeight,
+              backgroundColor: Colors.surface,
+              transform: `translateY(${indicatorY}px)`,
+              transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
+            }}
+          />
+
+          {/* Button container */}
+          <div
+            className="flex-1 flex flex-col"
+            style={{
+              padding: `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
+              maxWidth: 280,
+            }}
+          >
+            <div style={{ height: Insets.l }} />
+
+            <CreateButton isCompact={false} onClick={onCreateContribuente} />
+
+            <div style={{ height: Insets.l }} />
+
+            <nav className="relative flex flex-col">
+              <NavButton
+                ref={(el) => { buttonRefs.current['dashboard'] = el; }}
+                icon={<DashboardIcon />}
+                label="DASHBOARD"
+                isSelected={currentView === 'dashboard'}
+                isCompact={false}
+                onClick={() => onNavigate('dashboard')}
+              />
+              <NavButton
+                ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
+                icon={<UserIcon />}
+                label="CONTRIBUENTI"
+                isSelected={currentView === 'contribuenti'}
+                isCompact={false}
+                onClick={() => onNavigate('contribuenti')}
+              />
+            </nav>
+          </div>
+
+          {/* Version */}
+          <div
+            className="absolute"
+            style={{
+              left: 4,
+              bottom: 4,
+              color: 'rgba(255, 255, 255, 0.6)',
+              ...TextStyles.caption,
+            }}
+          >
+            v1.0
+          </div>
+        </div>
+      </aside>
+    </>
+  );
+}
