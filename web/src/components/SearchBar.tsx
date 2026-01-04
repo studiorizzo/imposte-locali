@@ -32,7 +32,7 @@ export function SearchBar({
   onContribuenteSelect: _onContribuenteSelect,
   onSearchSubmit,
   onActiveChange,
-  placeholder = 'Cerca contribuenti...',
+  placeholder = 'Cerca contribuenti',
   narrowMode = false,
 }: SearchBarProps) {
   const [query, setQuery] = useState('');
@@ -194,7 +194,7 @@ export function SearchBar({
             </>
           )}
 
-          {/* Input field */}
+          {/* Input field - TextStyles.Body1 from Flokk: Lato, 14px, weight 400 */}
           <input
             ref={inputRef}
             type="text"
@@ -206,8 +206,10 @@ export function SearchBar({
             placeholder={narrowMode ? '' : placeholder}
             className="flex-1 h-full outline-none bg-transparent"
             style={{
-              fontFamily: Fonts.primary,
-              fontSize: '15px',
+              fontFamily: Fonts.primary,  // Lato
+              fontSize: '14px',           // FontSizes.s14
+              fontWeight: 400,            // normal
+              letterSpacing: 0,
               color: Colors.txt,
               // Content padding from Flokk: EdgeInsets.all(Insets.m * 1.25 - 0.5).copyWith(left: 0)
               padding: `${Insets.m * 1.25 - 0.5}px 0`,

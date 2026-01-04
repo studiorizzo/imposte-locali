@@ -222,7 +222,7 @@ function App() {
           <SearchBar
             onSearch={handleSearch}
             onActiveChange={setIsSearchActive}
-            placeholder="Cerca contribuenti..."
+            placeholder="Cerca contribuenti"
             narrowMode={isMobile}
           />
         </div>
