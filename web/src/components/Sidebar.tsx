@@ -56,16 +56,18 @@ function useSidebarWidth() {
 export function Sidebar({ currentView, onNavigate, onCreateContribuente }: SidebarProps) {
   const [indicatorY, setIndicatorY] = useState(0);
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
-  const navRef = useRef<HTMLElement | null>(null);
+  const sidebarRef = useRef<HTMLElement | null>(null);
   const { width, isCompact, isHidden } = useSidebarWidth();
 
   // Update indicator position when view changes
+  // Calculate Y position relative to sidebar (aside), not nav
   useEffect(() => {
     const button = buttonRefs.current[currentView];
-    if (button && navRef.current) {
+    if (button && sidebarRef.current) {
       const buttonRect = button.getBoundingClientRect();
-      const navRect = navRef.current.getBoundingClientRect();
-      const y = buttonRect.top - navRect.top + (buttonRect.height / 2) - (Sizes.indicatorHeight / 2);
+      const sidebarRect = sidebarRef.current.getBoundingClientRect();
+      // Center indicator vertically on the button
+      const y = buttonRect.top - sidebarRect.top + (buttonRect.height / 2) - (Sizes.indicatorHeight / 2);
       setIndicatorY(y);
     }
   }, [currentView, isCompact]);
@@ -77,6 +79,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
 
   return (
     <aside
+      ref={sidebarRef}
       className="flex flex-col relative"
       style={{
         width,
@@ -85,6 +88,20 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         transition: `width ${Animations.layout.duration} ${Animations.layout.easing}`,
       }}
     >
+      {/* Animated Indicator - always at left edge of sidebar (left: 0) */}
+      <div
+        className="absolute"
+        style={{
+          left: 0,
+          top: 0,
+          width: Sizes.indicatorWidth,
+          height: Sizes.indicatorHeight,
+          backgroundColor: Colors.surface,
+          transform: `translateY(${indicatorY}px)`,
+          transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
+        }}
+      />
+
       {/*
         Button container structure from Flokk:
         .padding(all: Insets.l, bottom: Insets.m).constrained(maxWidth: 280)
@@ -114,23 +131,9 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
 
         {/* Navigation */}
         <nav
-          ref={navRef}
           className="relative flex flex-col"
           style={{ alignItems: isCompact ? 'center' : 'stretch' }}
         >
-          {/* Animated Indicator - always visible, positioned at left edge */}
-          <div
-            className="absolute"
-            style={{
-              left: isCompact ? -Insets.m : -Insets.l,
-              width: Sizes.indicatorWidth,
-              height: Sizes.indicatorHeight,
-              backgroundColor: Colors.surface,
-              transform: `translateY(${indicatorY}px)`,
-              transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
-            }}
-          />
-
           {/* Nav buttons - NO spacing between them (directly stacked like Flokk) */}
           <NavButton
             ref={(el) => { buttonRefs.current['dashboard'] = el; }}
