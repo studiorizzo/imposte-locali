@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { Colors, Sizes, Insets, Animations, Fonts, Shadows, Durations } from '../theme';
+import { Colors, Sizes, Insets, Animations, Shadows, Durations, Fonts } from '../theme';
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;
@@ -143,7 +143,7 @@ export function SearchBar({
       className="relative"
       style={{
         width: '100%',
-        maxWidth: narrowMode ? undefined : 500,
+        // Flokk: SearchBar spans full content width, no maxWidth limit
       }}
     >
       {/* Search container - from Flokk _AnimatedSearchCard */}
@@ -151,7 +151,8 @@ export function SearchBar({
         className="flex items-center w-full"
         style={{
           height: isOpen ? openHeight : closedHeight,
-          // Background: surface, 40% opacity when inactive (from Flokk)
+          // Background: surface with 40% opacity when inactive (from Flokk)
+          // When active: full opacity surface
           backgroundColor: isActive ? Colors.surface : `${Colors.surface}66`,
           // BorderRadius: 6px (from Flokk BorderRadius.circular(6))
           borderRadius: Sizes.radiusSm,
@@ -242,27 +243,6 @@ export function SearchBar({
         </div>
       </div>
 
-      {/* Keyboard shortcut hint */}
-      {!isActive && !narrowMode && (
-        <div
-          className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
-          style={{
-            color: Colors.greyWeak,
-            fontSize: '12px',
-            fontFamily: Fonts.primary,
-          }}
-        >
-          <kbd
-            className="px-2 py-1 rounded"
-            style={{
-              backgroundColor: Colors.bg1,
-              border: `1px solid ${Colors.greyWeak}40`,
-            }}
-          >
-            ⌘K
-          </kbd>
-        </div>
-      )}
     </div>
   );
 }
