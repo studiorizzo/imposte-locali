@@ -151,9 +151,8 @@ export function SearchBar({
         className="flex items-center w-full"
         style={{
           height: isOpen ? openHeight : closedHeight,
-          // Background: surface with 40% opacity when inactive (from Flokk)
-          // When active: full opacity surface
-          backgroundColor: isActive ? Colors.surface : `${Colors.surface}66`,
+          // Background: bg1 when inactive, surface (white) when active
+          backgroundColor: isActive ? Colors.surface : Colors.bg1,
           // BorderRadius: 6px (from Flokk BorderRadius.circular(6))
           borderRadius: Sizes.radiusSm,
           // Shadow: only when active (from Flokk: Shadows.m(theme.accent1Darker))
