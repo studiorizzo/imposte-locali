@@ -118,20 +118,18 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           className="relative flex flex-col"
           style={{ alignItems: isCompact ? 'center' : 'stretch' }}
         >
-          {/* Animated Indicator - only show in non-compact mode */}
-          {!isCompact && (
-            <div
-              className="absolute"
-              style={{
-                left: -Insets.l,
-                width: Sizes.indicatorWidth,
-                height: Sizes.indicatorHeight,
-                backgroundColor: Colors.surface,
-                transform: `translateY(${indicatorY}px)`,
-                transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
-              }}
-            />
-          )}
+          {/* Animated Indicator - always visible, positioned at left edge */}
+          <div
+            className="absolute"
+            style={{
+              left: isCompact ? -Insets.m : -Insets.l,
+              width: Sizes.indicatorWidth,
+              height: Sizes.indicatorHeight,
+              backgroundColor: Colors.surface,
+              transform: `translateY(${indicatorY}px)`,
+              transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
+            }}
+          />
 
           {/* Nav buttons - NO spacing between them (directly stacked like Flokk) */}
           <NavButton
