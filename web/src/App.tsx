@@ -209,7 +209,7 @@ function App() {
               className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
               style={{
                 fontFamily: Fonts.heading,
-                fontSize: '1.5rem',
+                fontSize: '1.75rem',
                 fontWeight: 700,
                 color: Colors.headerTitle,
                 zIndex: 10,
