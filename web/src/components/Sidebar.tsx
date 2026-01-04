@@ -88,19 +88,18 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
     >
       {/* ============================================ */}
       {/* HEADER SECTION - 106px, bg1 background */}
-      {/* Logo aligned to left, "i" aligns with create button's outer border */}
+      {/* Logo always aligned left with same padding as button container */}
       {/* ============================================ */}
       <div
         className="flex items-center"
         style={{
           height: Sizes.headerHeight,
           backgroundColor: Colors.bg1,
-          // Align with button container padding (Insets.l = 24px)
+          // Same padding as button container: Insets.l in desktop, Insets.m in compact
           paddingLeft: isCompact ? Insets.m : Insets.l,
-          justifyContent: isCompact ? 'center' : 'flex-start',
         }}
       >
-        {/* Logo/Title - "imuendo" aligned left */}
+        {/* Logo/Title - always left-aligned */}
         <h1
           style={{
             fontFamily: Fonts.heading,
