@@ -13,9 +13,9 @@
 }
 
 @layer components {
-  /* SearchBar placeholder color - matches Flokk theme.grey */
+  /* SearchBar placeholder color - darker shade for better visibility */
   .search-input::placeholder {
-    color: #515d5a;
+    color: #3a4240;
     opacity: 1;
   }
 
