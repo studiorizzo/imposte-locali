@@ -70,10 +70,16 @@ export const Sizes = {
   // Panel
   panelWidth: 384,  // w-96
 
-  // Border radius
+  // Border radius (from Flokk Corners)
+  radiusBtn: 8,    // Corners.s8 - button radius
   radiusSm: 8,
   radiusMd: 10,
   radiusLg: 12,
+
+  // Sidebar button icons (from Flokk main_side_menu_btn.dart)
+  iconSizeNav: 22,     // iconSize 26 - 4 = 22
+  iconSizeCreate: 16,  // iconSize 20 - 4 = 16
+  iconPadding: 2,      // EdgeInsets.all(2.0)
 } as const;
 
 // =============================================================================
@@ -81,16 +87,20 @@ export const Sizes = {
 // =============================================================================
 
 export const Insets = {
-  xs: 4,
-  sm: 8,
-  m: 16,
+  // From Flokk styles.dart
+  xs: 2,
+  sm: 6,
+  m: 12,
   l: 24,
-  xl: 32,
-  xxl: 48,
+  xl: 36,
 
   // Gutters
-  mGutter: 16,
+  mGutter: 12,
   lGutter: 24,
+
+  // Sidebar button specific (from main_side_menu_btn.dart)
+  btnPaddingLeft: 24,    // HSpace(Insets.l)
+  btnIconTextGap: 12,    // HSpace(Insets.l * .5)
 } as const;
 
 // =============================================================================
@@ -163,6 +173,24 @@ export const FontSizes = {
   lg: '1.125rem',   // 18px
   xl: '1.25rem',    // 20px
   '2xl': '1.5rem',  // 24px
+} as const;
+
+// Text styles from Flokk (for sidebar buttons)
+export const TextStyles = {
+  // Btn: Quicksand, 14px, bold, letterSpacing 1.75
+  btn: {
+    fontFamily: Fonts.heading,
+    fontSize: '14px',
+    fontWeight: 700,
+    letterSpacing: '1.75px',
+  },
+  // BtnSelected: same but regular weight
+  btnSelected: {
+    fontFamily: Fonts.heading,
+    fontSize: '14px',
+    fontWeight: 400,
+    letterSpacing: '1.75px',
+  },
 } as const;
 
 // =============================================================================

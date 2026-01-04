@@ -1,13 +1,11 @@
 import { useRef, useEffect, useState, forwardRef } from 'react';
-import { Colors, Sizes, Animations, Insets, PageBreaks } from '../theme';
+import { Colors, Sizes, Animations, Insets, PageBreaks, TextStyles } from '../theme';
 
 interface SidebarProps {
   currentView: string;
   onNavigate: (view: string) => void;
   onCreateContribuente: () => void;
 }
-
-type PageType = 'dashboard' | 'contribuenti';
 
 // Hook for responsive sidebar width
 function useSidebarWidth() {
@@ -83,69 +81,124 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         transition: `width ${Animations.layout.duration} ${Animations.layout.easing}`,
       }}
     >
-      {/* Create Button */}
-      <div style={{ padding: isCompact ? Insets.m : `${Insets.l}px ${Insets.m}px ${Insets.m}px` }}>
-        <button
-          onClick={onCreateContribuente}
-          className={`w-full flex items-center border-2 border-dashed text-white font-semibold text-sm rounded-lg ${
-            isCompact ? 'justify-center' : 'gap-2 px-4'
-          }`}
-          style={{
-            height: Sizes.buttonHeight,
-            backgroundColor: Colors.accent1,
-            borderColor: 'rgba(255, 255, 255, 0.6)',
-            transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = Colors.accent1Dark}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = Colors.accent1}
-          title={isCompact ? 'Crea Contribuente' : undefined}
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-          </svg>
-          {!isCompact && 'CREA CONTRIBUENTE'}
-        </button>
-      </div>
+      {/* Button container - padding: 24px all, 12px bottom (from Flokk) */}
+      <div
+        style={{
+          padding: isCompact
+            ? Insets.m
+            : `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
+          maxWidth: 280,
+        }}
+      >
+        {/* VSpace(Insets.l) - top spacing already in padding */}
 
-      {/* Navigation */}
-      <nav className="flex-1 relative" style={{ paddingLeft: Insets.m, paddingRight: Insets.m }}>
-        {/* Animated Indicator */}
-        <div
-          className="absolute left-0"
-          style={{
-            width: Sizes.indicatorWidth,
-            height: Sizes.indicatorHeight,
-            backgroundColor: Colors.surface,
-            transform: `translateY(${indicatorY}px)`,
-            transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
-          }}
+        {/* Create Button */}
+        <CreateButton
+          isCompact={isCompact}
+          onClick={onCreateContribuente}
         />
 
-        <ul className="space-y-1">
-          <NavButton
-            ref={(el) => { buttonRefs.current['dashboard'] = el; }}
-            icon={<DashboardIcon />}
-            label="DASHBOARD"
-            isSelected={currentView === 'dashboard'}
-            isCompact={isCompact}
-            onClick={() => onNavigate('dashboard')}
+        {/* VSpace(Insets.l) - spacing after create button */}
+        <div style={{ height: Insets.l }} />
+
+        {/* Navigation */}
+        <nav className="relative">
+          {/* Animated Indicator */}
+          <div
+            className="absolute"
+            style={{
+              left: -Insets.l,
+              width: Sizes.indicatorWidth,
+              height: Sizes.indicatorHeight,
+              backgroundColor: Colors.surface,
+              transform: `translateY(${indicatorY}px)`,
+              transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
+            }}
           />
-          <NavButton
-            ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
-            icon={<UserIcon />}
-            label="CONTRIBUENTI"
-            isSelected={currentView === 'contribuenti'}
-            isCompact={isCompact}
-            onClick={() => onNavigate('contribuenti')}
-          />
-        </ul>
-      </nav>
+
+          <ul>
+            <NavButton
+              ref={(el) => { buttonRefs.current['dashboard'] = el; }}
+              icon={<DashboardIcon />}
+              label="DASHBOARD"
+              isSelected={currentView === 'dashboard'}
+              isCompact={isCompact}
+              onClick={() => onNavigate('dashboard')}
+            />
+            <NavButton
+              ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
+              icon={<UserIcon />}
+              label="CONTRIBUENTI"
+              isSelected={currentView === 'contribuenti'}
+              isCompact={isCompact}
+              onClick={() => onNavigate('contribuenti')}
+            />
+          </ul>
+        </nav>
+      </div>
+
+      {/* Spacer */}
+      <div className="flex-1" />
 
       {/* Footer - version */}
-      <div className="text-sm" style={{ padding: Insets.m, color: 'rgba(255, 255, 255, 0.6)' }}>
+      <div
+        style={{
+          padding: `${Insets.m}px`,
+          paddingLeft: Insets.l,
+          color: 'rgba(255, 255, 255, 0.6)',
+          fontSize: '11px',
+        }}
+      >
         {isCompact ? 'v1' : 'v1.0'}
       </div>
     </aside>
+  );
+}
+
+// Create Contact Button
+interface CreateButtonProps {
+  isCompact: boolean;
+  onClick: () => void;
+}
+
+function CreateButton({ isCompact, onClick }: CreateButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      className="w-full flex items-center border-2 border-dashed text-white"
+      style={{
+        height: Sizes.buttonHeight,
+        backgroundColor: Colors.accent1,
+        borderColor: 'rgba(255, 255, 255, 0.7)',
+        borderRadius: Sizes.radiusBtn,
+        paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
+        justifyContent: isCompact ? 'center' : 'flex-start',
+        transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
+        ...TextStyles.btn,
+      }}
+      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = Colors.accent1Dark}
+      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = Colors.accent1}
+      title={isCompact ? 'Crea Contribuente' : undefined}
+    >
+      {/* Icon with 2px padding */}
+      <span style={{ padding: Sizes.iconPadding }}>
+        <svg
+          style={{ width: Sizes.iconSizeCreate, height: Sizes.iconSizeCreate }}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+        </svg>
+      </span>
+      {/* Gap + Text */}
+      {!isCompact && (
+        <>
+          <span style={{ width: Insets.btnIconTextGap }} />
+          <span>CREA CONTRIBUENTE</span>
+        </>
+      )}
+    </button>
   );
 }
 
@@ -160,18 +213,22 @@ interface NavButtonProps {
 
 const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
   ({ icon, label, isSelected, isCompact, onClick }, ref) => {
+    const textStyle = isSelected ? TextStyles.btnSelected : TextStyles.btn;
+
     return (
       <li>
         <button
           ref={ref}
           onClick={onClick}
-          className={`w-full flex items-center rounded-lg text-white text-sm ${
-            isCompact ? 'justify-center' : 'gap-2 px-4'
-          }`}
+          className="w-full flex items-center text-white"
           style={{
             height: Sizes.buttonHeight,
+            borderRadius: Sizes.radiusBtn,
+            paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
+            justifyContent: isCompact ? 'center' : 'flex-start',
             opacity: isSelected ? 1 : 0.8,
             transition: `background-color ${Animations.button.duration} ${Animations.button.easing}, opacity ${Animations.button.duration} ${Animations.button.easing}`,
+            ...textStyle,
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = Colors.accent1Dark;
@@ -183,8 +240,17 @@ const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
           }}
           title={isCompact ? label : undefined}
         >
-          {icon}
-          {!isCompact && label}
+          {/* Icon with 2px padding */}
+          <span style={{ padding: Sizes.iconPadding }}>
+            {icon}
+          </span>
+          {/* Gap + Text */}
+          {!isCompact && (
+            <>
+              <span style={{ width: Insets.btnIconTextGap }} />
+              <span>{label}</span>
+            </>
+          )}
         </button>
       </li>
     );
@@ -193,15 +259,25 @@ const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
 
 NavButton.displayName = 'NavButton';
 
-// Icons
+// Icons - sized to iconSizeNav (22px)
 const DashboardIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg
+    style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
   </svg>
 );
 
 const UserIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg
+    style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
   </svg>
 );
