@@ -13,6 +13,12 @@
 }
 
 @layer components {
+  /* SearchBar placeholder color - darker shade for better visibility */
+  .search-input::placeholder {
+    color: #3a4240;
+    opacity: 1;
+  }
+
   .btn {
     @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
   }

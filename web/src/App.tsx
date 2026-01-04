@@ -183,7 +183,7 @@ function App() {
             marginTop: Insets.l,
           }}
         >
-          {/* Hamburger button on mobile - from Flokk: left: Insets.m, top: Insets.m */}
+          {/* Hamburger button on mobile - same color as imuendo (headerTitle) */}
           {isMobile && (
             <button
               onClick={() => setIsDrawerOpen(true)}
@@ -191,11 +191,11 @@ function App() {
               style={{
                 width: 40,
                 height: 40,
-                color: Colors.accent1,
+                color: Colors.headerTitle,
                 transition: `color ${Animations.button.duration} ${Animations.button.easing}`,
               }}
               onMouseEnter={(e) => e.currentTarget.style.color = Colors.accent1Dark}
-              onMouseLeave={(e) => e.currentTarget.style.color = Colors.accent1}
+              onMouseLeave={(e) => e.currentTarget.style.color = Colors.headerTitle}
             >
               <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -203,7 +203,7 @@ function App() {
             </button>
           )}
 
-          {/* Centered logo on mobile - hidden when search is active */}
+          {/* Centered logo on mobile - same color as desktop (headerTitle) */}
           {isMobile && !isSearchActive && (
             <div
               className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
@@ -211,7 +211,7 @@ function App() {
                 fontFamily: Fonts.heading,
                 fontSize: '1.5rem',
                 fontWeight: 700,
-                color: Colors.accent1,
+                color: Colors.headerTitle,
                 zIndex: 10,
               }}
             >

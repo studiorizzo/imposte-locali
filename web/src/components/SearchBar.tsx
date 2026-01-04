@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { Colors, Sizes, Insets, Animations, Shadows, Durations, Fonts } from '../theme';
+import { Colors, Sizes, Insets, Animations, Durations, Fonts } from '../theme';
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;
@@ -162,10 +162,8 @@ export function SearchBar({
           backgroundColor: isActive ? Colors.surface : Colors.bg1,
           // BorderRadius: 6px (from Flokk BorderRadius.circular(6))
           borderRadius: Sizes.radiusSm,
-          // Shadow: only when active (from Flokk: Shadows.m(theme.accent1Darker))
-          boxShadow: isActive ? Shadows.searchBar : 'none',
           // Animations
-          transition: `height ${Durations.fast}ms ease-out, background-color ${Durations.fast}ms ease-out, box-shadow ${Durations.fast}ms ease-out`,
+          transition: `height ${Durations.fast}ms ease-out, background-color ${Durations.fast}ms ease-out`,
           overflow: 'hidden',
         }}
       >
@@ -195,6 +193,7 @@ export function SearchBar({
           )}
 
           {/* Input field - TextStyles.Body1 from Flokk: Lato, 14px, weight 400 */}
+          {/* Placeholder color: theme.grey from Flokk hintStyle (via .search-input class) */}
           <input
             ref={inputRef}
             type="text"
@@ -204,7 +203,7 @@ export function SearchBar({
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}
             placeholder={narrowMode ? '' : placeholder}
-            className="flex-1 h-full outline-none bg-transparent"
+            className="search-input flex-1 h-full outline-none bg-transparent"
             style={{
               fontFamily: Fonts.primary,  // Lato
               fontSize: '14px',           // FontSizes.s14
