@@ -104,10 +104,9 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           style={{
             fontFamily: Fonts.heading,
             color: Colors.headerTitle,
-            fontSize: isCompact ? '1.25rem' : '1.75rem',
+            fontSize: '1.75rem',
             fontWeight: 700,
             letterSpacing: '0.5px',
-            transition: `font-size ${Animations.layout.duration} ${Animations.layout.easing}`,
           }}
         >
           imuendo
