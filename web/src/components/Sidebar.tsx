@@ -8,6 +8,11 @@ interface SidebarProps {
 }
 
 // Hook for responsive sidebar width
+// From Flokk main_scaffold_view.dart:
+// - Desktop (≥1440): sideBarLg, skinnyMode=false → rectangular with text
+// - TabletLandscape (>1024): sideBarMed, skinnyMode=true → circular icon only
+// - TabletPortrait (≥768): sideBarSm, skinnyMode=true → circular icon only
+// - Mobile (<768): hidden
 function useSidebarWidth() {
   const [width, setWidth] = useState<number>(Sizes.sideBarLg);
   const [isCompact, setIsCompact] = useState(false);
@@ -18,22 +23,22 @@ function useSidebarWidth() {
       const screenWidth = window.innerWidth;
 
       if (screenWidth >= PageBreaks.Desktop) {
-        // Desktop: full sidebar
+        // Desktop (≥1440): full sidebar, rectangular buttons with text
         setWidth(Sizes.sideBarLg);
         setIsCompact(false);
         setIsHidden(false);
-      } else if (screenWidth >= PageBreaks.TabletLandscape) {
-        // Tablet Landscape: medium sidebar
+      } else if (screenWidth > PageBreaks.TabletLandscape) {
+        // TabletLandscape (1025-1439): medium sidebar, CIRCULAR buttons
         setWidth(Sizes.sideBarMed);
-        setIsCompact(false);
+        setIsCompact(true);  // ← FIXED: was false!
         setIsHidden(false);
       } else if (screenWidth >= PageBreaks.TabletPortrait) {
-        // Tablet Portrait: compact/skinny mode
+        // TabletPortrait (768-1024): small sidebar, circular buttons
         setWidth(Sizes.sideBarSm);
         setIsCompact(true);
         setIsHidden(false);
       } else {
-        // Mobile: hidden (drawer mode)
+        // Mobile (<768): hidden (drawer mode)
         setWidth(0);
         setIsCompact(true);
         setIsHidden(true);
@@ -63,7 +68,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
       const y = buttonRect.top - navRect.top + (buttonRect.height / 2) - (Sizes.indicatorHeight / 2);
       setIndicatorY(y);
     }
-  }, [currentView]);
+  }, [currentView, isCompact]);
 
   // Don't render if hidden (mobile)
   if (isHidden) {
@@ -86,12 +91,13 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         Inside: VSpace(l) + CreateBtn + VSpace(l) + Dashboard + Contacts (no gap!)
       */}
       <div
-        className="flex-1"
+        className="flex-1 flex flex-col"
         style={{
           padding: isCompact
             ? Insets.m
             : `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
-          maxWidth: 280,
+          maxWidth: isCompact ? undefined : 280,
+          alignItems: isCompact ? 'center' : 'stretch',
         }}
       >
         {/* VSpace(Insets.l) - initial spacing before Create button */}
@@ -107,19 +113,25 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         <div style={{ height: Insets.l }} />
 
         {/* Navigation */}
-        <nav ref={navRef} className="relative">
-          {/* Animated Indicator */}
-          <div
-            className="absolute"
-            style={{
-              left: -Insets.l,
-              width: Sizes.indicatorWidth,
-              height: Sizes.indicatorHeight,
-              backgroundColor: Colors.surface,
-              transform: `translateY(${indicatorY}px)`,
-              transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
-            }}
-          />
+        <nav
+          ref={navRef}
+          className="relative flex flex-col"
+          style={{ alignItems: isCompact ? 'center' : 'stretch' }}
+        >
+          {/* Animated Indicator - only show in non-compact mode */}
+          {!isCompact && (
+            <div
+              className="absolute"
+              style={{
+                left: -Insets.l,
+                width: Sizes.indicatorWidth,
+                height: Sizes.indicatorHeight,
+                backgroundColor: Colors.surface,
+                transform: `translateY(${indicatorY}px)`,
+                transition: `transform ${Animations.indicator.duration} ${Animations.indicator.easing}`,
+              }}
+            />
+          )}
 
           {/* Nav buttons - NO spacing between them (directly stacked like Flokk) */}
           <NavButton
@@ -164,16 +176,22 @@ interface CreateButtonProps {
 }
 
 function CreateButton({ isCompact, onClick }: CreateButtonProps) {
+  // In compact mode: circular button (CircleBorder in Flokk)
+  // In normal mode: rounded rectangle (RRect in Flokk)
+  const buttonSize = Sizes.buttonHeight; // 60px
+
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center text-white"
+      className="flex items-center justify-center text-white"
       style={{
-        height: Sizes.buttonHeight,
+        width: isCompact ? buttonSize : '100%',
+        height: buttonSize,
         backgroundColor: Colors.accent1,
-        // Dotted border: dashPattern [3, 5] in Flokk - CSS approximation
+        // Dotted border: dashPattern [3, 5] in Flokk
         border: '2px dashed rgba(255, 255, 255, 0.7)',
-        borderRadius: Sizes.radiusBtn,
+        // Circular in compact, rounded rect in normal
+        borderRadius: isCompact ? '50%' : Sizes.radiusBtn,
         paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
         justifyContent: isCompact ? 'center' : 'flex-start',
         transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
@@ -181,7 +199,7 @@ function CreateButton({ isCompact, onClick }: CreateButtonProps) {
       }}
       onMouseEnter={(e) => e.currentTarget.style.backgroundColor = Colors.accent1Dark}
       onMouseLeave={(e) => e.currentTarget.style.backgroundColor = Colors.accent1}
-      title={isCompact ? 'Crea Contribuente' : undefined}
+      title={isCompact ? 'Contribuente' : undefined}
     >
       {/* Icon with 2px padding */}
       <span style={{ padding: Sizes.iconPadding }}>
@@ -194,7 +212,7 @@ function CreateButton({ isCompact, onClick }: CreateButtonProps) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
         </svg>
       </span>
-      {/* Gap + Text */}
+      {/* Gap + Text - only in non-compact mode */}
       {!isCompact && (
         <>
           <span style={{ width: Insets.btnIconTextGap }} />
@@ -217,15 +235,18 @@ interface NavButtonProps {
 const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
   ({ icon, label, isSelected, isCompact, onClick }, ref) => {
     const textStyle = isSelected ? TextStyles.btnSelected : TextStyles.btn;
+    const buttonSize = Sizes.buttonHeight; // 60px
 
     return (
       <button
         ref={ref}
         onClick={onClick}
-        className="w-full flex items-center text-white"
+        className="flex items-center text-white"
         style={{
-          height: Sizes.buttonHeight,
-          borderRadius: Sizes.radiusBtn,
+          width: isCompact ? buttonSize : '100%',
+          height: buttonSize,
+          // Circular in compact, rounded rect in normal
+          borderRadius: isCompact ? '50%' : Sizes.radiusBtn,
           paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
           justifyContent: isCompact ? 'center' : 'flex-start',
           opacity: isSelected ? 1 : 0.8,
@@ -246,7 +267,7 @@ const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
         <span style={{ padding: Sizes.iconPadding }}>
           {icon}
         </span>
-        {/* Gap + Text */}
+        {/* Gap + Text - only in non-compact mode */}
         {!isCompact && (
           <>
             <span style={{ width: Insets.btnIconTextGap }} />
@@ -260,7 +281,7 @@ const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
 
 NavButton.displayName = 'NavButton';
 
-// Icons - sized to iconSizeNav (22px)
+// Icons - sized to iconSizeNav (24px)
 const DashboardIcon = () => (
   <svg
     style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
