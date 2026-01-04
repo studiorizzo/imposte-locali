@@ -198,7 +198,7 @@ function CreateButton({ isCompact, onClick }: CreateButtonProps) {
       {!isCompact && (
         <>
           <span style={{ width: Insets.btnIconTextGap }} />
-          <span>CREA CONTRIBUENTE</span>
+          <span>CONTRIBUENTE</span>
         </>
       )}
     </button>
