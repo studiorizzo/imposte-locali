@@ -73,7 +73,7 @@ export const Sizes = {
 
   // Border radius (from Flokk Corners)
   radiusBtn: 8,    // Corners.s8 - button radius
-  radiusSm: 8,
+  radiusSm: 6,     // SearchBar radius
   radiusMd: 10,
   radiusLg: 12,
 
@@ -82,6 +82,7 @@ export const Sizes = {
   // so we use slightly larger values for equivalent visual weight
   iconSizeNav: 24,     // Flokk: 26 - 4 = 22, but we use 24 to match SVG viewBox
   iconSizeCreate: 20,  // Flokk: 20 - 4 = 16, adjusted proportionally
+  iconSizeMed: 22,     // Sizes.iconMed from Flokk
   iconPadding: 2,      // EdgeInsets.all(2.0)
 } as const;
 
@@ -213,4 +214,6 @@ export const Shadows = {
   lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
   xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
   panel: `0 10px 40px -10px ${Colors.accent1Darker}40`,
+  // SearchBar shadow: Shadows.m(theme.accent1Darker) from Flokk
+  searchBar: `0 4px 12px -2px ${Colors.accent1Darker}30`,
 } as const;

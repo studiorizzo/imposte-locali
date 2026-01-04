@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
-import { Colors, Sizes, Insets, Animations, TextStyles, Fonts, Shadows } from '../theme';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { Colors, Sizes, Insets, Animations, Fonts, Shadows, Durations } from '../theme';
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;
   onContribuenteSelect?: (contribuente: ContribuenteResult) => void;
+  onSearchSubmit?: () => void;
   placeholder?: string;
   narrowMode?: boolean;
 }
@@ -16,122 +17,261 @@ interface ContribuenteResult {
   codiceFiscale: string;
 }
 
+/**
+ * SearchBar component following Flokk's design patterns:
+ * - closedHeight: topBarHeight - 5 = 55px
+ * - borderRadius: 6px (Corners.s6)
+ * - Opacity: 40% when inactive, 100% when active or has query
+ * - Shadow: only when active or has query
+ * - Expands on focus, closes on submit or Escape
+ * - Ctrl+K keyboard shortcut to focus
+ */
 export function SearchBar({
   onSearch,
-  onContribuenteSelect: _onContribuenteSelect,  // Will be used when implementing search results
+  onContribuenteSelect: _onContribuenteSelect,
+  onSearchSubmit,
   placeholder = 'Cerca contribuenti...',
   narrowMode = false,
 }: SearchBarProps) {
   const [query, setQuery] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [resultsHeight, setResultsHeight] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Height from Flokk: topBarHeight - 5 = 55px
-  const barHeight = Sizes.topBarHeight - 5;
+  // Height from Flokk: closedHeight = topBarHeight - 5 = 55px
+  const closedHeight = Sizes.topBarHeight - 5;
 
+  // Calculate open height (closedHeight + resultsHeight, max 600px)
+  const openHeight = Math.min(closedHeight + resultsHeight, 600);
+
+  // Is active = focused or has query
+  const isActive = isOpen || query.length > 0;
+
+  // Handle input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
     onSearch?.(value);
-  };
 
-  const handleClear = () => {
-    setQuery('');
-    onSearch?.('');
-    inputRef.current?.focus();
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      handleClear();
-      inputRef.current?.blur();
+    // TODO: Simulate search results - replace with actual search
+    if (value.length > 0) {
+      setResultsHeight(0); // For now, no results dropdown
+    } else {
+      setResultsHeight(0);
     }
   };
 
+  // Clear search
+  const handleClear = () => {
+    setQuery('');
+    onSearch?.('');
+    setResultsHeight(0);
+    inputRef.current?.focus();
+  };
+
+  // Cancel/close search
+  const handleCancel = useCallback(() => {
+    setIsOpen(false);
+    inputRef.current?.blur();
+  }, []);
+
+  // Submit search
+  const handleSubmit = useCallback(() => {
+    onSearchSubmit?.();
+    setIsOpen(false);
+  }, [onSearchSubmit]);
+
+  // Handle focus
+  const handleFocus = () => {
+    // Expand when we get focus (from Flokk: "Expand when we get focus")
+    if (!query) {
+      setIsOpen(true);
+    }
+  };
+
+  // Handle blur
+  const handleBlur = () => {
+    // Close if no query
+    if (!query) {
+      setIsOpen(false);
+    }
+  };
+
+  // Handle keyboard events on input
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      handleCancel();
+    } else if (e.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
+  // Global keyboard shortcut: Ctrl+K to focus search
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        setIsOpen(true);
+        inputRef.current?.focus();
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
+
+  // Click outside to close
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        if (!query) {
+          setIsOpen(false);
+        }
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isOpen, query]);
+
   return (
     <div
-      className="relative flex items-center"
+      ref={containerRef}
+      className="relative"
       style={{
-        height: barHeight,
-        maxWidth: narrowMode ? '100%' : 500,
         width: '100%',
+        maxWidth: narrowMode ? undefined : 500,
       }}
     >
-      {/* Search container */}
+      {/* Search container - from Flokk _AnimatedSearchCard */}
       <div
         className="flex items-center w-full"
         style={{
-          height: '100%',
-          backgroundColor: Colors.surface,
-          borderRadius: Sizes.radiusMd,
-          boxShadow: isFocused ? Shadows.md : Shadows.sm,
-          border: `1px solid ${isFocused ? Colors.accent1 : 'transparent'}`,
-          transition: `box-shadow ${Animations.button.duration} ${Animations.button.easing}, border-color ${Animations.button.duration} ${Animations.button.easing}`,
+          height: isOpen ? openHeight : closedHeight,
+          // Background: surface, 40% opacity when inactive (from Flokk)
+          backgroundColor: isActive ? Colors.surface : `${Colors.surface}66`,
+          // BorderRadius: 6px (from Flokk BorderRadius.circular(6))
+          borderRadius: Sizes.radiusSm,
+          // Shadow: only when active (from Flokk: Shadows.m(theme.accent1Darker))
+          boxShadow: isActive ? Shadows.searchBar : 'none',
+          // Animations
+          transition: `height ${Durations.fast}ms ease-out, background-color ${Durations.fast}ms ease-out, box-shadow ${Durations.fast}ms ease-out`,
           overflow: 'hidden',
         }}
       >
-        {/* Search Icon */}
+        {/* Inner row - from Flokk SearchQueryRow */}
         <div
-          className="flex items-center justify-center"
+          className="flex items-center w-full h-full"
           style={{
-            width: 48,
-            height: '100%',
-            color: isFocused ? Colors.accent1 : Colors.greyWeak,
-            transition: `color ${Animations.button.duration} ${Animations.button.easing}`,
+            paddingLeft: narrowMode ? Insets.m : Insets.l,
+            paddingRight: Insets.m,
           }}
         >
-          <SearchIcon />
-        </div>
+          {/* Search Icon - only shown when not in narrowMode (from Flokk) */}
+          {!narrowMode && (
+            <>
+              <button
+                onClick={() => inputRef.current?.focus()}
+                className="flex items-center justify-center shrink-0"
+                style={{
+                  color: Colors.accent1Darker,
+                }}
+                tabIndex={-1}
+              >
+                <SearchIcon size={Sizes.iconSizeMed} />
+              </button>
+              <div style={{ width: Insets.m }} />
+            </>
+          )}
 
-        {/* Input */}
-        <input
-          ref={inputRef}
-          type="text"
-          value={query}
-          onChange={handleInputChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          onKeyDown={handleKeyDown}
-          placeholder={placeholder}
-          className="flex-1 h-full outline-none"
-          style={{
-            fontFamily: Fonts.primary,
-            fontSize: '15px',
-            color: Colors.txt,
-            backgroundColor: 'transparent',
-          }}
-        />
-
-        {/* Clear button - only show when there's text */}
-        {query && (
-          <button
-            onClick={handleClear}
-            className="flex items-center justify-center"
+          {/* Input field */}
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={handleInputChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onKeyDown={handleKeyDown}
+            placeholder={narrowMode ? '' : placeholder}
+            className="flex-1 h-full outline-none bg-transparent"
             style={{
-              width: 40,
-              height: '100%',
-              color: Colors.greyWeak,
-              transition: `color ${Animations.button.duration} ${Animations.button.easing}`,
+              fontFamily: Fonts.primary,
+              fontSize: '15px',
+              color: Colors.txt,
+              // Content padding from Flokk: EdgeInsets.all(Insets.m * 1.25 - 0.5).copyWith(left: 0)
+              padding: `${Insets.m * 1.25 - 0.5}px 0`,
             }}
-            onMouseEnter={(e) => e.currentTarget.style.color = Colors.grey}
-            onMouseLeave={(e) => e.currentTarget.style.color = Colors.greyWeak}
-          >
-            <ClearIcon />
-          </button>
-        )}
+          />
 
-        {/* Right padding */}
-        <div style={{ width: query ? 8 : 16 }} />
+          {/* Clear button - from Flokk: ColorShiftIconBtn with closeLarge, size 16 */}
+          {query && (
+            <button
+              onClick={handleClear}
+              className="flex items-center justify-center shrink-0"
+              style={{
+                color: Colors.grey,
+                padding: 0,
+                minWidth: 0,
+                minHeight: 0,
+                transition: `color ${Animations.button.duration} ${Animations.button.easing}`,
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.color = Colors.greyStrong}
+              onMouseLeave={(e) => e.currentTarget.style.color = Colors.grey}
+            >
+              <ClearIcon size={16} />
+            </button>
+          )}
+
+          {/* Search Icon in narrowMode - shown on right when no query */}
+          {narrowMode && !query && (
+            <button
+              onClick={() => inputRef.current?.focus()}
+              className="flex items-center justify-center shrink-0"
+              style={{
+                color: Colors.accent1Darker,
+              }}
+              tabIndex={-1}
+            >
+              <SearchIcon size={Sizes.iconSizeMed} />
+            </button>
+          )}
+        </div>
       </div>
+
+      {/* Keyboard shortcut hint */}
+      {!isActive && !narrowMode && (
+        <div
+          className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+          style={{
+            color: Colors.greyWeak,
+            fontSize: '12px',
+            fontFamily: Fonts.primary,
+          }}
+        >
+          <kbd
+            className="px-2 py-1 rounded"
+            style={{
+              backgroundColor: Colors.bg1,
+              border: `1px solid ${Colors.greyWeak}40`,
+            }}
+          >
+            ⌘K
+          </kbd>
+        </div>
+      )}
     </div>
   );
 }
 
-// Search Icon
-const SearchIcon = () => (
+// Search Icon - sized to Sizes.iconMed (22px)
+const SearchIcon = ({ size = 22 }: { size?: number }) => (
   <svg
-    width="20"
-    height="20"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -144,11 +284,11 @@ const SearchIcon = () => (
   </svg>
 );
 
-// Clear Icon
-const ClearIcon = () => (
+// Clear Icon (X) - from Flokk closeLarge
+const ClearIcon = ({ size = 16 }: { size?: number }) => (
   <svg
-    width="16"
-    height="16"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
