@@ -175,7 +175,7 @@ function App() {
       <div className="flex-1 flex flex-col min-w-0">
         {/* TopBar - from Flokk: topBarHeight = 60, padding = Insets.l (Insets.m on mobile) */}
         <div
-          className="flex items-center"
+          className="flex items-center relative"
           style={{
             height: Sizes.topBarHeight,
             paddingLeft: isMobile ? Insets.mGutter : Insets.lGutter,
@@ -206,12 +206,13 @@ function App() {
           {/* Centered logo on mobile - hidden when search is active */}
           {isMobile && !isSearchActive && (
             <div
-              className="absolute left-1/2 transform -translate-x-1/2"
+              className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
               style={{
                 fontFamily: Fonts.heading,
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: Colors.accent1,
+                zIndex: 10,
               }}
             >
               imuendo
