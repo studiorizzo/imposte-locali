@@ -110,7 +110,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
             transition: `font-size ${Animations.layout.duration} ${Animations.layout.easing}`,
           }}
         >
-          {isCompact ? 'imu' : 'imuendo'}
+          imuendo
         </h1>
       </div>
 
