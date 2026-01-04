@@ -36,6 +36,7 @@ function App() {
   const [isContribuentePanelOpen, setIsContribuentePanelOpen] = useState(false);
   const [contribuenti, setContribuenti] = useState<ContribuenteFormData[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isSearchActive, setIsSearchActive] = useState(false);
   const isMobile = useIsMobile();
 
   // Scroll to top quando cambia la vista
@@ -202,8 +203,8 @@ function App() {
             </button>
           )}
 
-          {/* Centered logo on mobile - from Flokk: FlokkLogo(40, theme.accent1) */}
-          {isMobile && (
+          {/* Centered logo on mobile - hidden when search is active */}
+          {isMobile && !isSearchActive && (
             <div
               className="absolute left-1/2 transform -translate-x-1/2"
               style={{
@@ -220,6 +221,7 @@ function App() {
           {/* SearchBar */}
           <SearchBar
             onSearch={handleSearch}
+            onActiveChange={setIsSearchActive}
             placeholder="Cerca contribuenti..."
             narrowMode={isMobile}
           />

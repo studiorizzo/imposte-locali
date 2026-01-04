@@ -88,16 +88,19 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
     >
       {/* ============================================ */}
       {/* HEADER SECTION - 106px, bg1 background */}
-      {/* From Flokk: Stack with StyledContainer(theme.bg1) and FlokkSidebarLogo centered */}
+      {/* Logo aligned to left, "i" aligns with create button's outer border */}
       {/* ============================================ */}
       <div
-        className="flex items-center justify-center relative"
+        className="flex items-center"
         style={{
           height: Sizes.headerHeight,
           backgroundColor: Colors.bg1,
+          // Align with button container padding (Insets.l = 24px)
+          paddingLeft: isCompact ? Insets.m : Insets.l,
+          justifyContent: isCompact ? 'center' : 'flex-start',
         }}
       >
-        {/* Logo/Title - "imuendo" text centered */}
+        {/* Logo/Title - "imuendo" aligned left */}
         <h1
           style={{
             fontFamily: Fonts.heading,
@@ -413,12 +416,13 @@ export function MobileDrawer({
           transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
         }}
       >
-        {/* HEADER SECTION - bg1 */}
+        {/* HEADER SECTION - bg1, logo aligned left */}
         <div
-          className="flex items-center justify-center relative"
+          className="flex items-center"
           style={{
             height: Sizes.headerHeight,
             backgroundColor: Colors.bg1,
+            paddingLeft: Insets.l,
           }}
         >
           <h1

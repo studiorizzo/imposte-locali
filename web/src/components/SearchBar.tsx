@@ -5,6 +5,7 @@ interface SearchBarProps {
   onSearch?: (query: string) => void;
   onContribuenteSelect?: (contribuente: ContribuenteResult) => void;
   onSearchSubmit?: () => void;
+  onActiveChange?: (isActive: boolean) => void;  // Notify parent when active state changes
   placeholder?: string;
   narrowMode?: boolean;
 }
@@ -30,6 +31,7 @@ export function SearchBar({
   onSearch,
   onContribuenteSelect: _onContribuenteSelect,
   onSearchSubmit,
+  onActiveChange,
   placeholder = 'Cerca contribuenti...',
   narrowMode = false,
 }: SearchBarProps) {
@@ -47,6 +49,11 @@ export function SearchBar({
 
   // Is active = focused or has query
   const isActive = isOpen || query.length > 0;
+
+  // Notify parent when active state changes
+  useEffect(() => {
+    onActiveChange?.(isActive);
+  }, [isActive, onActiveChange]);
 
   // Handle input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
