@@ -191,6 +191,13 @@ export const TextStyles = {
     fontWeight: 400,
     letterSpacing: '1.75px',
   },
+  // Caption: lato, 11px, letterSpacing 0.3
+  caption: {
+    fontFamily: Fonts.primary,
+    fontSize: '11px',
+    fontWeight: 400,
+    letterSpacing: '0.3px',
+  },
 } as const;
 
 // =============================================================================

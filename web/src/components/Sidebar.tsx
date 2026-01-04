@@ -51,18 +51,17 @@ function useSidebarWidth() {
 export function Sidebar({ currentView, onNavigate, onCreateContribuente }: SidebarProps) {
   const [indicatorY, setIndicatorY] = useState(0);
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const navRef = useRef<HTMLElement | null>(null);
   const { width, isCompact, isHidden } = useSidebarWidth();
 
   // Update indicator position when view changes
   useEffect(() => {
     const button = buttonRefs.current[currentView];
-    if (button) {
-      const rect = button.getBoundingClientRect();
-      const parentRect = button.parentElement?.parentElement?.getBoundingClientRect();
-      if (parentRect) {
-        const y = rect.top - parentRect.top + (rect.height / 2) - (Sizes.indicatorHeight / 2);
-        setIndicatorY(y);
-      }
+    if (button && navRef.current) {
+      const buttonRect = button.getBoundingClientRect();
+      const navRect = navRef.current.getBoundingClientRect();
+      const y = buttonRect.top - navRect.top + (buttonRect.height / 2) - (Sizes.indicatorHeight / 2);
+      setIndicatorY(y);
     }
   }, [currentView]);
 
@@ -81,8 +80,13 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         transition: `width ${Animations.layout.duration} ${Animations.layout.easing}`,
       }}
     >
-      {/* Button container - padding: 24px all, 12px bottom (from Flokk) */}
+      {/*
+        Button container structure from Flokk:
+        .padding(all: Insets.l, bottom: Insets.m).constrained(maxWidth: 280)
+        Inside: VSpace(l) + CreateBtn + VSpace(l) + Dashboard + Contacts (no gap!)
+      */}
       <div
+        className="flex-1"
         style={{
           padding: isCompact
             ? Insets.m
@@ -90,7 +94,8 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           maxWidth: 280,
         }}
       >
-        {/* VSpace(Insets.l) - top spacing already in padding */}
+        {/* VSpace(Insets.l) - initial spacing before Create button */}
+        <div style={{ height: Insets.l }} />
 
         {/* Create Button */}
         <CreateButton
@@ -102,7 +107,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         <div style={{ height: Insets.l }} />
 
         {/* Navigation */}
-        <nav className="relative">
+        <nav ref={navRef} className="relative">
           {/* Animated Indicator */}
           <div
             className="absolute"
@@ -116,37 +121,34 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
             }}
           />
 
-          <ul>
-            <NavButton
-              ref={(el) => { buttonRefs.current['dashboard'] = el; }}
-              icon={<DashboardIcon />}
-              label="DASHBOARD"
-              isSelected={currentView === 'dashboard'}
-              isCompact={isCompact}
-              onClick={() => onNavigate('dashboard')}
-            />
-            <NavButton
-              ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
-              icon={<UserIcon />}
-              label="CONTRIBUENTI"
-              isSelected={currentView === 'contribuenti'}
-              isCompact={isCompact}
-              onClick={() => onNavigate('contribuenti')}
-            />
-          </ul>
+          {/* Nav buttons - NO spacing between them (directly stacked like Flokk) */}
+          <NavButton
+            ref={(el) => { buttonRefs.current['dashboard'] = el; }}
+            icon={<DashboardIcon />}
+            label="DASHBOARD"
+            isSelected={currentView === 'dashboard'}
+            isCompact={isCompact}
+            onClick={() => onNavigate('dashboard')}
+          />
+          <NavButton
+            ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
+            icon={<UserIcon />}
+            label="CONTRIBUENTI"
+            isSelected={currentView === 'contribuenti'}
+            isCompact={isCompact}
+            onClick={() => onNavigate('contribuenti')}
+          />
         </nav>
       </div>
 
-      {/* Spacer */}
-      <div className="flex-1" />
-
-      {/* Footer - version */}
+      {/* Version - positioned absolute like Flokk: positioned(left: 4, bottom: 4) */}
       <div
+        className="absolute"
         style={{
-          padding: `${Insets.m}px`,
-          paddingLeft: Insets.l,
+          left: 4,
+          bottom: 4,
           color: 'rgba(255, 255, 255, 0.6)',
-          fontSize: '11px',
+          ...TextStyles.caption,
         }}
       >
         {isCompact ? 'v1' : 'v1.0'}
@@ -165,11 +167,12 @@ function CreateButton({ isCompact, onClick }: CreateButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center border-2 border-dashed text-white"
+      className="w-full flex items-center text-white"
       style={{
         height: Sizes.buttonHeight,
         backgroundColor: Colors.accent1,
-        borderColor: 'rgba(255, 255, 255, 0.7)',
+        // Dotted border: dashPattern [3, 5] in Flokk - CSS approximation
+        border: '2px dashed rgba(255, 255, 255, 0.7)',
         borderRadius: Sizes.radiusBtn,
         paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
         justifyContent: isCompact ? 'center' : 'flex-start',
@@ -216,43 +219,41 @@ const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
     const textStyle = isSelected ? TextStyles.btnSelected : TextStyles.btn;
 
     return (
-      <li>
-        <button
-          ref={ref}
-          onClick={onClick}
-          className="w-full flex items-center text-white"
-          style={{
-            height: Sizes.buttonHeight,
-            borderRadius: Sizes.radiusBtn,
-            paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
-            justifyContent: isCompact ? 'center' : 'flex-start',
-            opacity: isSelected ? 1 : 0.8,
-            transition: `background-color ${Animations.button.duration} ${Animations.button.easing}, opacity ${Animations.button.duration} ${Animations.button.easing}`,
-            ...textStyle,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = Colors.accent1Dark;
-            e.currentTarget.style.opacity = '1';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.opacity = isSelected ? '1' : '0.8';
-          }}
-          title={isCompact ? label : undefined}
-        >
-          {/* Icon with 2px padding */}
-          <span style={{ padding: Sizes.iconPadding }}>
-            {icon}
-          </span>
-          {/* Gap + Text */}
-          {!isCompact && (
-            <>
-              <span style={{ width: Insets.btnIconTextGap }} />
-              <span>{label}</span>
-            </>
-          )}
-        </button>
-      </li>
+      <button
+        ref={ref}
+        onClick={onClick}
+        className="w-full flex items-center text-white"
+        style={{
+          height: Sizes.buttonHeight,
+          borderRadius: Sizes.radiusBtn,
+          paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
+          justifyContent: isCompact ? 'center' : 'flex-start',
+          opacity: isSelected ? 1 : 0.8,
+          transition: `background-color ${Animations.button.duration} ${Animations.button.easing}, opacity ${Animations.button.duration} ${Animations.button.easing}`,
+          ...textStyle,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = Colors.accent1Dark;
+          e.currentTarget.style.opacity = '1';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'transparent';
+          e.currentTarget.style.opacity = isSelected ? '1' : '0.8';
+        }}
+        title={isCompact ? label : undefined}
+      >
+        {/* Icon with 2px padding */}
+        <span style={{ padding: Sizes.iconPadding }}>
+          {icon}
+        </span>
+        {/* Gap + Text */}
+        {!isCompact && (
+          <>
+            <span style={{ width: Insets.btnIconTextGap }} />
+            <span>{label}</span>
+          </>
+        )}
+      </button>
     );
   }
 );
