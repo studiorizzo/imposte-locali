@@ -195,6 +195,7 @@ export function SearchBar({
           )}
 
           {/* Input field - TextStyles.Body1 from Flokk: Lato, 14px, weight 400 */}
+          {/* Placeholder color: theme.grey from Flokk hintStyle (via .search-input class) */}
           <input
             ref={inputRef}
             type="text"
@@ -204,7 +205,7 @@ export function SearchBar({
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}
             placeholder={narrowMode ? '' : placeholder}
-            className="flex-1 h-full outline-none bg-transparent"
+            className="search-input flex-1 h-full outline-none bg-transparent"
             style={{
               fontFamily: Fonts.primary,  // Lato
               fontSize: '14px',           // FontSizes.s14
