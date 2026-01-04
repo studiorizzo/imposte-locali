@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { Colors, Sizes, Insets, Animations, Shadows, Durations, Fonts } from '../theme';
+import { Colors, Sizes, Insets, Animations, Durations, Fonts } from '../theme';
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;
@@ -162,10 +162,8 @@ export function SearchBar({
           backgroundColor: isActive ? Colors.surface : Colors.bg1,
           // BorderRadius: 6px (from Flokk BorderRadius.circular(6))
           borderRadius: Sizes.radiusSm,
-          // Shadow: only when active (from Flokk: Shadows.m(theme.accent1Darker))
-          boxShadow: isActive ? Shadows.searchBar : 'none',
           // Animations
-          transition: `height ${Durations.fast}ms ease-out, background-color ${Durations.fast}ms ease-out, box-shadow ${Durations.fast}ms ease-out`,
+          transition: `height ${Durations.fast}ms ease-out, background-color ${Durations.fast}ms ease-out`,
           overflow: 'hidden',
         }}
       >
