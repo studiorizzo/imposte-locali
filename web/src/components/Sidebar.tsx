@@ -84,7 +84,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
 
   return (
     <aside
-      className="flex flex-col"
+      className="h-full flex flex-col"
       style={{
         width,
         transition: `width ${Animations.layout.duration} ${Animations.layout.easing}`,
