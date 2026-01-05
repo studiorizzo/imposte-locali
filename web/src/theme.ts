@@ -79,7 +79,7 @@ export const Sizes = {
 
   // Sidebar button icons
   iconSizeDashboard: 24,    // Dashboard icon
-  iconSizeContribuenti: 30, // Contribuenti icon (Group_contribuenti.svg)
+  iconSizeContribuenti: 32, // Contribuenti icon (Group_contribuenti.svg)
   iconSizeCreate: 30,       // Create button icon (User_add_alt.svg)
   iconSizeMed: 22,          // Sizes.iconMed from Flokk
   iconPadding: 2,           // EdgeInsets.all(2.0)
