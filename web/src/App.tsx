@@ -205,14 +205,14 @@ function App() {
             </button>
           )}
 
-          {/* Centered logo on mobile - width 240px */}
+          {/* Centered logo on mobile - width 180px */}
           {isMobile && !isSearchActive && (
             <img
               src={imuendoLogo}
               alt="imuendo"
               className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
               style={{
-                width: 240,
+                width: 180,
                 height: 'auto',
                 zIndex: 10,
               }}
