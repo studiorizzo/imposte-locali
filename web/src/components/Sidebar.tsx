@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState, forwardRef } from 'react';
 import { Colors, Sizes, Animations, Insets, PageBreaks, TextStyles, Fonts } from '../theme';
 import imuendoLogo from '../assets/imuendo-logo-animated.svg';
+import userAddIcon from '../assets/User_add_alt.svg';
 
 interface SidebarProps {
   currentView: string;
@@ -151,7 +152,6 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
 
           {/* Create Button */}
           <CreateButton
-            isCompact={isCompact}
             onClick={onCreateContribuente}
           />
 
@@ -200,15 +200,12 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
   );
 }
 
-// Create Contact Button
+// Create Contact Button - always circular with user add icon
 interface CreateButtonProps {
-  isCompact: boolean;
   onClick: () => void;
 }
 
-function CreateButton({ isCompact, onClick }: CreateButtonProps) {
-  // In compact mode: circular button (CircleBorder in Flokk)
-  // In normal mode: rounded rectangle (RRect in Flokk)
+function CreateButton({ onClick }: CreateButtonProps) {
   const buttonSize = Sizes.buttonHeight; // 60px
 
   return (
@@ -216,40 +213,23 @@ function CreateButton({ isCompact, onClick }: CreateButtonProps) {
       onClick={onClick}
       className="flex items-center justify-center text-white"
       style={{
-        width: isCompact ? buttonSize : '100%',
+        width: buttonSize,
         height: buttonSize,
         backgroundColor: Colors.accent1,
         // Dotted border: dashPattern [3, 5] in Flokk
         border: '2px dashed rgba(255, 255, 255, 0.7)',
-        // Circular in compact, rounded rect in normal
-        borderRadius: isCompact ? '50%' : Sizes.radiusBtn,
-        paddingLeft: isCompact ? 0 : Insets.btnPaddingLeft,
-        justifyContent: isCompact ? 'center' : 'flex-start',
+        borderRadius: '50%',
         transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
-        ...TextStyles.btn,
       }}
       onMouseEnter={(e) => e.currentTarget.style.backgroundColor = Colors.accent1Dark}
       onMouseLeave={(e) => e.currentTarget.style.backgroundColor = Colors.accent1}
-      title={isCompact ? 'Contribuente' : undefined}
+      title="Nuovo contribuente"
     >
-      {/* Icon with 2px padding */}
-      <span style={{ padding: Sizes.iconPadding }}>
-        <svg
-          style={{ width: Sizes.iconSizeCreate, height: Sizes.iconSizeCreate }}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-        </svg>
-      </span>
-      {/* Gap + Text - only in non-compact mode */}
-      {!isCompact && (
-        <>
-          <span style={{ width: Insets.btnIconTextGap }} />
-          <span>CONTRIBUENTE</span>
-        </>
-      )}
+      <img
+        src={userAddIcon}
+        alt="Nuovo contribuente"
+        style={{ width: Sizes.iconSizeCreate, height: Sizes.iconSizeCreate }}
+      />
     </button>
   );
 }
@@ -459,7 +439,7 @@ export function MobileDrawer({
           >
             <div style={{ height: Insets.l }} />
 
-            <CreateButton isCompact={false} onClick={onCreateContribuente} />
+            <CreateButton onClick={onCreateContribuente} />
 
             <div style={{ height: Insets.l }} />
 
