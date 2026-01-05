@@ -94,12 +94,12 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           paddingLeft: isCompact ? Insets.m : Insets.l,
         }}
       >
-        {/* Logo - always left-aligned, width: 180px compact, 240px desktop */}
+        {/* Logo - always left-aligned, width: 180px */}
         <img
           src={imuendoLogo}
           alt="imuendo"
           style={{
-            width: isCompact ? 180 : 240,
+            width: 180,
             height: 'auto',
           }}
         />
@@ -419,7 +419,7 @@ export function MobileDrawer({
             src={imuendoLogo}
             alt="imuendo"
             style={{
-              width: 240,
+              width: 180,
               height: 'auto',
             }}
           />
