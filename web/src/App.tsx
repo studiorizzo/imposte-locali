@@ -253,11 +253,13 @@ function App() {
   return (
     <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: Colors.bg1 }}>
       {/* Sidebar - full height with header area inside (hidden on mobile) */}
-      <Sidebar
-        currentView={currentView}
-        onNavigate={(view) => setCurrentView(view as ViewType)}
-        onCreateContribuente={() => setIsContribuentePanelOpen(true)}
-      />
+      <div className="absolute top-0 bottom-0 left-0">
+        <Sidebar
+          currentView={currentView}
+          onNavigate={(view) => setCurrentView(view as ViewType)}
+          onCreateContribuente={() => setIsContribuentePanelOpen(true)}
+        />
+      </div>
 
       {/* Content Area Stack - positioned like Flokk */}
       <div
