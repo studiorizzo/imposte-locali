@@ -2,6 +2,7 @@ import { useRef, useEffect, useState, forwardRef } from 'react';
 import { Colors, Sizes, Animations, Insets, PageBreaks, TextStyles, Fonts } from '../theme';
 import imuendoLogo from '../assets/imuendo-logo-animated.svg';
 import userAddIcon from '../assets/User_add_alt.svg';
+import contribuentiIcon from '../assets/Group_contribuenti.svg';
 
 interface SidebarProps {
   currentView: string;
@@ -175,7 +176,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
             />
             <NavButton
               ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
-              icon={<UserIcon />}
+              icon={<ContribuentiIcon />}
               label="CONTRIBUENTI"
               isSelected={currentView === 'contribuenti'}
               isCompact={isCompact}
@@ -305,15 +306,12 @@ const DashboardIcon = () => (
   </svg>
 );
 
-const UserIcon = () => (
-  <svg
+const ContribuentiIcon = () => (
+  <img
+    src={contribuentiIcon}
+    alt="Contribuenti"
     style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-  </svg>
+  />
 );
 
 // ============================================
@@ -455,7 +453,7 @@ export function MobileDrawer({
               />
               <NavButton
                 ref={(el) => { buttonRefs.current['contribuenti'] = el; }}
-                icon={<UserIcon />}
+                icon={<ContribuentiIcon />}
                 label="CONTRIBUENTI"
                 isSelected={currentView === 'contribuenti'}
                 isCompact={false}
