@@ -406,13 +406,14 @@ export function MobileDrawer({
           transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
         }}
       >
-        {/* HEADER SECTION - bg1, logo aligned left */}
+        {/* HEADER SECTION - bg1, logo aligned left, rounded bottom-right */}
         <div
           className="flex items-center"
           style={{
             height: Sizes.headerHeight,
             backgroundColor: Colors.bg1,
             paddingLeft: Insets.l,
+            borderBottomRightRadius: Sizes.radiusMd,
           }}
         >
           <img
