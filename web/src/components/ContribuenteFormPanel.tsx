@@ -58,17 +58,20 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
         boxShadow: Shadows.panel,
       }}
     >
-      {/* Header - from Flokk: paddingTop = Insets.l * 0.75 = 18px, no border
-          Buttons use Body1 (Lato 14px) with Insets.sm padding
-          Hover shows bg1 background (light green)
+      {/* Header - from Flokk contact_edit_panel_view:
+          - contact_panel.dart: padding(top: Insets.l * 0.75) = 18px
+          - contact_edit_panel_view: SizedBox(height: Insets.sm) = 6px
+          - Total top: 24px
+          - Row padding(horizontal: Insets.l) = 24px
+          - Buttons use translate offset, not padding compensation
       */}
       <div
         className="flex items-center justify-between"
         style={{
-          paddingTop: Insets.l * 0.75,
+          paddingTop: Insets.l * 0.75 + Insets.sm, // 18px + 6px = 24px
           paddingBottom: Insets.m,
-          paddingLeft: Insets.l - Insets.sm,
-          paddingRight: Insets.l - Insets.sm,
+          paddingLeft: Insets.l,
+          paddingRight: Insets.l,
         }}
       >
         <button
