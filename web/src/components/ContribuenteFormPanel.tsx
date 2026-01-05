@@ -65,7 +65,7 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
       <div
         className="flex items-center justify-between"
         style={{
-          paddingTop: Insets.l * 0.75,
+          paddingTop: Insets.l,  // 24px - increased for more spacing from top
           paddingBottom: Insets.m,
           paddingLeft: Insets.l - Insets.sm,
           paddingRight: Insets.l - Insets.sm,
