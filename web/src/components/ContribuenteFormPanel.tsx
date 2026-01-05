@@ -58,9 +58,9 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
         boxShadow: Shadows.panel,
       }}
     >
-      {/* Header - from Flokk: paddingTop = Insets.l * 0.75 = 18px */}
+      {/* Header - from Flokk: paddingTop = Insets.l * 0.75 = 18px, no border */}
       <div
-        className="flex items-center justify-between border-b border-gray-200"
+        className="flex items-center justify-between"
         style={{
           paddingTop: Insets.l * 0.75,
           paddingBottom: Insets.m,
@@ -205,17 +205,20 @@ function FormField({
       >
         {icon}
       </div>
-      {/* Input with underline border */}
+      {/* Input with underline border
+          - Text color: Colors.greyStrong (dark, like Flokk default)
+          - Placeholder color: Colors.grey (lighter)
+      */}
       <div className="flex-1">
         <input
           type="text"
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-transparent outline-none border-b border-gray-200 focus:border-gray-400 transition-colors"
+          className="w-full bg-transparent outline-none border-b border-gray-200 focus:border-gray-400 transition-colors placeholder:text-gray-400"
           style={{
             ...TextStyles.body1,
-            color: Colors.grey,
+            color: Colors.greyStrong,
             paddingTop: 4,
             paddingBottom: 8,
           }}
