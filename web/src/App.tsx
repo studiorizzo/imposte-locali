@@ -9,6 +9,7 @@ import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
 import { Colors, Sizes, Insets, PageBreaks, Fonts, Animations } from './theme';
+import imuendoLogo from './assets/imuendo-logo-animated.svg';
 import './index.css';
 
 type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
@@ -203,20 +204,18 @@ function App() {
             </button>
           )}
 
-          {/* Centered logo on mobile - same color as desktop (headerTitle) */}
+          {/* Centered logo on mobile */}
           {isMobile && !isSearchActive && (
-            <div
+            <img
+              src={imuendoLogo}
+              alt="imuendo"
               className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
               style={{
-                fontFamily: Fonts.heading,
-                fontSize: '1.75rem',
-                fontWeight: 700,
-                color: Colors.headerTitle,
+                height: 28,
+                width: 'auto',
                 zIndex: 10,
               }}
-            >
-              imuendo
-            </div>
+            />
           )}
 
           {/* SearchBar */}
