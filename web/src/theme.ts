@@ -86,6 +86,10 @@ export const Sizes = {
   iconSizeCreate: 30,       // Create button icon (User_add_alt.svg)
   iconSizeMed: 22,          // Sizes.iconMed from Flokk
   iconPadding: 2,           // EdgeInsets.all(2.0)
+
+  // Form icons (from Flokk ExpandingMiniformContainer)
+  formIconSize: 20,         // Icon size in form rows
+  formIconOffset: 8,        // Icon vertical offset (translateY)
 } as const;
 
 // =============================================================================
@@ -181,7 +185,7 @@ export const FontSizes = {
   '2xl': '1.5rem',  // 24px
 } as const;
 
-// Text styles from Flokk (for sidebar buttons)
+// Text styles from Flokk
 export const TextStyles = {
   // Btn: Quicksand, 14px, bold, letterSpacing 1.75
   btn: {
@@ -203,6 +207,31 @@ export const TextStyles = {
     fontSize: '11px',
     fontWeight: 400,
     letterSpacing: '0.3px',
+  },
+  // T1: Quicksand, 14px, bold, letterSpacing 0.7 (titles/labels)
+  t1: {
+    fontFamily: Fonts.heading,
+    fontSize: '14px',
+    fontWeight: 700,
+    letterSpacing: '0.7px',
+  },
+  // Body1: Lato, 14px, regular (form inputs)
+  body1: {
+    fontFamily: Fonts.primary,
+    fontSize: '14px',
+    fontWeight: 400,
+  },
+  // Body2: Lato, 12px, regular
+  body2: {
+    fontFamily: Fonts.primary,
+    fontSize: '12px',
+    fontWeight: 400,
+  },
+  // Body3: Lato, 11px, regular
+  body3: {
+    fontFamily: Fonts.primary,
+    fontSize: '11px',
+    fontWeight: 400,
   },
 } as const;
 
