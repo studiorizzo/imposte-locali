@@ -58,22 +58,27 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
         boxShadow: Shadows.panel,
       }}
     >
-      {/* Header - from Flokk: paddingTop = Insets.l * 0.75 = 18px, no border */}
+      {/* Header - from Flokk: paddingTop = Insets.l * 0.75 = 18px, no border
+          Buttons use Body1 (Lato 14px) with Insets.sm padding
+          Cancel offset: -Insets.sm, Save offset: +Insets.sm
+      */}
       <div
         className="flex items-center justify-between"
         style={{
           paddingTop: Insets.l * 0.75,
           paddingBottom: Insets.m,
-          paddingLeft: Insets.l,
-          paddingRight: Insets.l,
+          paddingLeft: Insets.l - Insets.sm, // Compensate for button padding + offset
+          paddingRight: Insets.l - Insets.sm,
         }}
       >
         <button
           onClick={onDelete || handleClose}
           className="uppercase transition-colors"
           style={{
-            ...TextStyles.t1,
+            ...TextStyles.body1,
             color: Colors.grey,
+            padding: Insets.sm,
+            transform: `translateX(${-Insets.sm}px)`,
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = Colors.error}
           onMouseLeave={(e) => e.currentTarget.style.color = Colors.grey}
@@ -84,8 +89,10 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
           onClick={handleSave}
           className="uppercase transition-colors"
           style={{
-            ...TextStyles.t1,
+            ...TextStyles.body1,
             color: Colors.accent1,
+            padding: Insets.sm,
+            transform: `translateX(${Insets.sm}px)`,
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = Colors.accent1Dark}
           onMouseLeave={(e) => e.currentTarget.style.color = Colors.accent1}
