@@ -295,12 +295,12 @@ const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
 
 NavButton.displayName = 'NavButton';
 
-// Icons - sized to iconSizeNav (24px)
+// Icons
 const DashboardIcon = () => (
   <img
     src={dashboardIcon}
     alt="Dashboard"
-    style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
+    style={{ width: Sizes.iconSizeDashboard, height: Sizes.iconSizeDashboard }}
   />
 );
 
@@ -308,7 +308,7 @@ const ContribuentiIcon = () => (
   <img
     src={contribuentiIcon}
     alt="Contribuenti"
-    style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
+    style={{ width: Sizes.iconSizeContribuenti, height: Sizes.iconSizeContribuenti }}
   />
 );
 
