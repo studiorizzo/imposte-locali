@@ -73,11 +73,14 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
       >
         <button
           onClick={onDelete || handleClose}
-          className="uppercase transition-all rounded"
+          className="uppercase transition-all"
           style={{
             ...TextStyles.body1,
             color: Colors.grey,
             padding: Insets.sm,
+            minWidth: 30,
+            minHeight: 30,
+            borderRadius: 5, // Corners.s5
             transform: `translateX(${-Insets.sm}px)`,
             backgroundColor: 'transparent',
           }}
@@ -92,11 +95,14 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
         </button>
         <button
           onClick={handleSave}
-          className="uppercase transition-all rounded"
+          className="uppercase transition-all"
           style={{
             ...TextStyles.body1,
             color: Colors.accent1,
             padding: Insets.sm,
+            minWidth: 30,
+            minHeight: 30,
+            borderRadius: 5, // Corners.s5
             transform: `translateX(${Insets.sm}px)`,
             backgroundColor: 'transparent',
           }}
