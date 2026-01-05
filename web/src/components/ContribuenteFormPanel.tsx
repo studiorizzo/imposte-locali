@@ -60,42 +60,52 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
     >
       {/* Header - from Flokk: paddingTop = Insets.l * 0.75 = 18px, no border
           Buttons use Body1 (Lato 14px) with Insets.sm padding
-          Cancel offset: -Insets.sm, Save offset: +Insets.sm
+          Hover shows bg1 background (light green)
       */}
       <div
         className="flex items-center justify-between"
         style={{
           paddingTop: Insets.l * 0.75,
           paddingBottom: Insets.m,
-          paddingLeft: Insets.l - Insets.sm, // Compensate for button padding + offset
+          paddingLeft: Insets.l - Insets.sm,
           paddingRight: Insets.l - Insets.sm,
         }}
       >
         <button
           onClick={onDelete || handleClose}
-          className="uppercase transition-colors"
+          className="uppercase transition-all rounded"
           style={{
             ...TextStyles.body1,
             color: Colors.grey,
             padding: Insets.sm,
             transform: `translateX(${-Insets.sm}px)`,
+            backgroundColor: 'transparent',
           }}
-          onMouseEnter={(e) => e.currentTarget.style.color = Colors.error}
-          onMouseLeave={(e) => e.currentTarget.style.color = Colors.grey}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = Colors.bg1;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+          }}
         >
           Elimina
         </button>
         <button
           onClick={handleSave}
-          className="uppercase transition-colors"
+          className="uppercase transition-all rounded"
           style={{
             ...TextStyles.body1,
             color: Colors.accent1,
             padding: Insets.sm,
             transform: `translateX(${Insets.sm}px)`,
+            backgroundColor: 'transparent',
           }}
-          onMouseEnter={(e) => e.currentTarget.style.color = Colors.accent1Dark}
-          onMouseLeave={(e) => e.currentTarget.style.color = Colors.accent1}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = Colors.bg1;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+          }}
         >
           Salva
         </button>
