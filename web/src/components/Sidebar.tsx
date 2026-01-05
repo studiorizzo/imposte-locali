@@ -10,11 +10,10 @@ interface SidebarProps {
 }
 
 // Hook for responsive sidebar width
-// From Flokk main_scaffold_view.dart:
+// Updated from Flokk:
 // - Desktop (≥1440): sideBarLg, skinnyMode=false → rectangular with text
-// - TabletLandscape (>1024): sideBarMed, skinnyMode=true → circular icon only
-// - TabletPortrait (≥768): sideBarSm, skinnyMode=true → circular icon only
-// - Mobile (<768): hidden
+// - TabletLandscape (1024-1439): sideBarMed, skinnyMode=true → circular icon only
+// - TabletPortrait & Mobile (<1024): hidden (drawer mode)
 function useSidebarWidth() {
   const [width, setWidth] = useState<number>(Sizes.sideBarLg);
   const [isCompact, setIsCompact] = useState(false);
@@ -29,18 +28,13 @@ function useSidebarWidth() {
         setWidth(Sizes.sideBarLg);
         setIsCompact(false);
         setIsHidden(false);
-      } else if (screenWidth > PageBreaks.TabletLandscape) {
-        // TabletLandscape (1025-1439): medium sidebar, CIRCULAR buttons
+      } else if (screenWidth >= PageBreaks.TabletLandscape) {
+        // TabletLandscape (1024-1439): medium sidebar, circular buttons
         setWidth(Sizes.sideBarMed);
-        setIsCompact(true);  // ← FIXED: was false!
-        setIsHidden(false);
-      } else if (screenWidth >= PageBreaks.TabletPortrait) {
-        // TabletPortrait (768-1024): small sidebar, circular buttons
-        setWidth(Sizes.sideBarSm);
         setIsCompact(true);
         setIsHidden(false);
       } else {
-        // Mobile (<768): hidden (drawer mode)
+        // TabletPortrait & Mobile (<1024): hidden (drawer mode)
         setWidth(0);
         setIsCompact(true);
         setIsHidden(true);
@@ -100,12 +94,12 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           paddingLeft: isCompact ? Insets.m : Insets.l,
         }}
       >
-        {/* Logo - always left-aligned, width: 140px compact, 240px desktop */}
+        {/* Logo - always left-aligned, width: 180px compact, 240px desktop */}
         <img
           src={imuendoLogo}
           alt="imuendo"
           style={{
-            width: isCompact ? 140 : 240,
+            width: isCompact ? 180 : 240,
             height: 'auto',
           }}
         />
