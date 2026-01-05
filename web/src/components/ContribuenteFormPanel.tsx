@@ -77,7 +77,8 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
           style={{
             ...TextStyles.body1,
             color: Colors.grey,
-            padding: Insets.sm,
+            padding: `${Insets.sm}px ${Insets.sm}px`,
+            lineHeight: 1,
             minWidth: 30,
             minHeight: 30,
             borderRadius: 5, // Corners.s5
@@ -99,7 +100,8 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
           style={{
             ...TextStyles.body1,
             color: Colors.accent1,
-            padding: Insets.sm,
+            padding: `${Insets.sm}px ${Insets.sm}px`,
+            lineHeight: 1,
             minWidth: 30,
             minHeight: 30,
             borderRadius: 5, // Corners.s5
