@@ -15,13 +15,13 @@ import './index.css';
 type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
 
 // Hook to detect mobile mode (sidebar hidden)
-// TabletPortrait & Mobile (<1024): sidebar hidden, drawer mode
+// Mobile (<768): sidebar hidden, drawer mode
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < PageBreaks.TabletLandscape);
+      setIsMobile(window.innerWidth < PageBreaks.TabletPortrait);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);

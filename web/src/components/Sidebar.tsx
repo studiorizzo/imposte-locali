@@ -13,10 +13,11 @@ interface SidebarProps {
 }
 
 // Hook for responsive sidebar width
-// Updated from Flokk:
+// From Flokk main_scaffold_view.dart:
 // - Desktop (≥1440): sideBarLg, skinnyMode=false → rectangular with text
 // - TabletLandscape (1024-1439): sideBarMed, skinnyMode=true → circular icon only
-// - TabletPortrait & Mobile (<1024): hidden (drawer mode)
+// - TabletPortrait (768-1023): sideBarSm, skinnyMode=true → circular icon only
+// - Mobile (<768): hidden (drawer mode)
 function useSidebarWidth() {
   const [width, setWidth] = useState<number>(Sizes.sideBarLg);
   const [isCompact, setIsCompact] = useState(false);
@@ -36,8 +37,13 @@ function useSidebarWidth() {
         setWidth(Sizes.sideBarMed);
         setIsCompact(true);
         setIsHidden(false);
+      } else if (screenWidth >= PageBreaks.TabletPortrait) {
+        // TabletPortrait (768-1023): small sidebar, circular buttons
+        setWidth(Sizes.sideBarSm);
+        setIsCompact(true);
+        setIsHidden(false);
       } else {
-        // TabletPortrait & Mobile (<1024): hidden (drawer mode)
+        // Mobile (<768): hidden (drawer mode)
         setWidth(0);
         setIsCompact(true);
         setIsHidden(true);
@@ -97,12 +103,12 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           paddingLeft: isCompact ? Insets.m : Insets.l,
         }}
       >
-        {/* Logo - always left-aligned, width: 200px */}
+        {/* Logo - always left-aligned, width: 140px compact, 200px desktop */}
         <img
           src={imuendoLogo}
           alt="imuendo"
           style={{
-            width: 200,
+            width: isCompact ? 140 : 200,
             height: 'auto',
           }}
         />
