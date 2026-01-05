@@ -204,14 +204,14 @@ function App() {
             </button>
           )}
 
-          {/* Centered logo on mobile */}
+          {/* Centered logo on mobile - height 40px from Flokk */}
           {isMobile && !isSearchActive && (
             <img
               src={imuendoLogo}
               alt="imuendo"
               className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
               style={{
-                height: 28,
+                height: 40,
                 width: 'auto',
                 zIndex: 10,
               }}
