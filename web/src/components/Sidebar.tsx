@@ -140,11 +140,9 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         <div
           className="flex-1 flex flex-col"
           style={{
-            padding: isCompact
-              ? Insets.m
-              : `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
+            padding: `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
             maxWidth: isCompact ? undefined : 280,
-            alignItems: isCompact ? 'center' : 'stretch',
+            alignItems: 'center',
           }}
         >
           {/* VSpace(Insets.l) - initial spacing before Create button */}
@@ -161,7 +159,10 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           {/* Navigation */}
           <nav
             className="relative flex flex-col"
-            style={{ alignItems: isCompact ? 'center' : 'stretch' }}
+            style={{
+              alignItems: isCompact ? 'center' : 'stretch',
+              width: isCompact ? 'auto' : '100%',
+            }}
           >
             {/* Nav buttons - NO spacing between them (directly stacked like Flokk) */}
             <NavButton
