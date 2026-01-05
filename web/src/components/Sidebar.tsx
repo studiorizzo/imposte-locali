@@ -432,6 +432,7 @@ export function MobileDrawer({
             style={{
               padding: `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
               maxWidth: 280,
+              alignItems: 'center',
             }}
           >
             <div style={{ height: Insets.l }} />
@@ -440,7 +441,10 @@ export function MobileDrawer({
 
             <div style={{ height: Insets.l }} />
 
-            <nav className="relative flex flex-col">
+            <nav
+              className="relative flex flex-col"
+              style={{ width: '100%' }}
+            >
               <NavButton
                 ref={(el) => { buttonRefs.current['dashboard'] = el; }}
                 icon={<DashboardIcon />}
