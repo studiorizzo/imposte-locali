@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, forwardRef } from 'react';
 import { Colors, Sizes, Animations, Insets, PageBreaks, TextStyles, Fonts } from '../theme';
+import imuendoLogo from '../assets/imuendo-logo-animated.svg';
 
 interface SidebarProps {
   currentView: string;
@@ -99,18 +100,15 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
           paddingLeft: isCompact ? Insets.m : Insets.l,
         }}
       >
-        {/* Logo/Title - always left-aligned */}
-        <h1
+        {/* Logo - always left-aligned */}
+        <img
+          src={imuendoLogo}
+          alt="imuendo"
           style={{
-            fontFamily: Fonts.heading,
-            color: Colors.headerTitle,
-            fontSize: '1.75rem',
-            fontWeight: 700,
-            letterSpacing: '0.5px',
+            height: 28,
+            width: 'auto',
           }}
-        >
-          imuendo
-        </h1>
+        />
       </div>
 
       {/* ============================================ */}
@@ -423,17 +421,14 @@ export function MobileDrawer({
             paddingLeft: Insets.l,
           }}
         >
-          <h1
+          <img
+            src={imuendoLogo}
+            alt="imuendo"
             style={{
-              fontFamily: Fonts.heading,
-              color: Colors.headerTitle,
-              fontSize: '1.75rem',
-              fontWeight: 700,
-              letterSpacing: '0.5px',
+              height: 28,
+              width: 'auto',
             }}
-          >
-            imuendo
-          </h1>
+          />
         </div>
 
         {/* MENU SECTION - accent1 */}
