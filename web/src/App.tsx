@@ -8,11 +8,14 @@ import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
-import { Colors, Sizes, Insets, PageBreaks, Fonts, Animations } from './theme';
+import { Colors, Sizes, Insets, PageBreaks, Animations, Durations } from './theme';
 import imuendoLogo from './assets/imuendo-logo-animated.svg';
 import './index.css';
 
 type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
+
+// Convert pixels to inches (assuming 96 DPI standard)
+const pxToInches = (px: number) => px / 96;
 
 // Hook to detect mobile mode (sidebar hidden)
 // Mobile (<768): sidebar hidden, drawer mode
@@ -31,15 +34,93 @@ function useIsMobile() {
   return isMobile;
 }
 
+// Layout state type
+interface PanelLayoutState {
+  panelWidth: number;
+  useSingleColumn: boolean;
+  leftMenuWidth: number;
+  showLeftMenu: boolean;
+}
+
+// Hook to calculate panel layout (from Flokk main_scaffold_view.dart)
+function usePanelLayout() {
+  const [layout, setLayout] = useState<PanelLayoutState>({
+    panelWidth: Sizes.panelWidthBase,
+    useSingleColumn: true,
+    leftMenuWidth: Sizes.sideBarLg,
+    showLeftMenu: true,
+  });
+
+  useEffect(() => {
+    const calculateLayout = () => {
+      const widthPx = window.innerWidth;
+      const widthInches = pxToInches(widthPx);
+
+      // Calculate panel width: 400 + (widthInches - 8) * 12 for screens > 8"
+      let panelWidth = Sizes.panelWidthBase;
+      if (widthInches > Sizes.panelGrowthThreshold) {
+        panelWidth += (widthInches - Sizes.panelGrowthThreshold) * Sizes.panelWidthGrowthFactor;
+      }
+
+      // Single column mode for screens < 10 inches
+      const useSingleColumn = widthInches < Sizes.singleColumnThreshold;
+
+      // Calculate left menu width (matching Sidebar logic)
+      let leftMenuWidth: number = Sizes.sideBarSm;
+      const showLeftMenu = widthPx >= PageBreaks.TabletPortrait;
+
+      if (widthPx >= PageBreaks.Desktop) {
+        leftMenuWidth = Sizes.sideBarLg;
+      } else if (widthPx >= PageBreaks.TabletLandscape) {
+        leftMenuWidth = Sizes.sideBarMed;
+      }
+
+      setLayout({
+        panelWidth,
+        useSingleColumn,
+        leftMenuWidth: showLeftMenu ? leftMenuWidth : Insets.mGutter,
+        showLeftMenu,
+      });
+    };
+
+    calculateLayout();
+    window.addEventListener('resize', calculateLayout);
+    return () => window.removeEventListener('resize', calculateLayout);
+  }, []);
+
+  return layout;
+}
+
 function App() {
   const [currentView, setCurrentView] = useState<ViewType>('dashboard');
   const [immobili, setImmobili] = useState<DatiImmobile[]>([]);
   const [riepilogo, setRiepilogo] = useState<RiepilogoIMU | null>(null);
   const [isContribuentePanelOpen, setIsContribuentePanelOpen] = useState(false);
+  const [isPanelVisible, setIsPanelVisible] = useState(false);
+  const [isPanelAnimating, setIsPanelAnimating] = useState(false);
   const [contribuenti, setContribuenti] = useState<ContribuenteFormData[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
   const isMobile = useIsMobile();
+  const { panelWidth, useSingleColumn, leftMenuWidth, showLeftMenu } = usePanelLayout();
+
+  // Handle panel open/close animations (like Flokk)
+  useEffect(() => {
+    if (isContribuentePanelOpen) {
+      setIsPanelVisible(true);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsPanelAnimating(true);
+        });
+      });
+    } else {
+      setIsPanelAnimating(false);
+      const timer = setTimeout(() => {
+        setIsPanelVisible(false);
+      }, Durations.slow);
+      return () => clearTimeout(timer);
+    }
+  }, [isContribuentePanelOpen]);
 
   // Scroll to top quando cambia la vista
   useEffect(() => {
@@ -164,8 +245,13 @@ function App() {
     }
   }, [isMobile, isDrawerOpen]);
 
+  // Calculate if content should be hidden (single column + panel open)
+  const showPanel = isPanelVisible;
+  const hideContent = showPanel && useSingleColumn;
+  const contentRightOffset = showPanel && !useSingleColumn ? panelWidth : 0;
+
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: Colors.bg1 }}>
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: Colors.bg1 }}>
       {/* Sidebar - full height with header area inside (hidden on mobile) */}
       <Sidebar
         currentView={currentView}
@@ -173,11 +259,20 @@ function App() {
         onCreateContribuente={() => setIsContribuentePanelOpen(true)}
       />
 
-      {/* Content Area */}
-      <div className="flex-1 flex flex-col min-w-0">
+      {/* Content Area Stack - positioned like Flokk */}
+      <div
+        className="absolute top-0 bottom-0 flex flex-col"
+        style={{
+          left: leftMenuWidth,
+          right: isPanelAnimating && !useSingleColumn ? panelWidth : 0,
+          opacity: hideContent ? 0 : 1,
+          transition: `right ${Animations.panel.duration} ${Animations.panel.easing}, opacity ${Animations.panel.duration} ${Animations.panel.easing}`,
+          minWidth: 400,
+        }}
+      >
         {/* TopBar - from Flokk: topBarHeight = 60, padding = Insets.l (Insets.m on mobile) */}
         <div
-          className="flex items-center relative"
+          className="flex items-center relative flex-shrink-0"
           style={{
             height: Sizes.topBarHeight,
             paddingLeft: isMobile ? Insets.mGutter : Insets.lGutter,
@@ -257,12 +352,42 @@ function App() {
         }}
       />
 
-      {/* Contribuente Form Panel */}
-      <ContribuenteFormPanel
-        isOpen={isContribuentePanelOpen}
-        onClose={() => setIsContribuentePanelOpen(false)}
-        onSave={handleSaveContribuente}
-      />
+      {/* Contribuente Form Panel - Positioned like Flokk */}
+      {isPanelVisible && (
+        useSingleColumn ? (
+          // Single column mode: panel fills width minus left menu
+          <div
+            className="absolute top-0 bottom-0"
+            style={{
+              left: leftMenuWidth,
+              right: 0,
+              transform: `translateX(${isPanelAnimating ? 0 : '100%'})`,
+              transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
+            }}
+          >
+            <ContribuenteFormPanel
+              onClose={() => setIsContribuentePanelOpen(false)}
+              onSave={handleSaveContribuente}
+            />
+          </div>
+        ) : (
+          // Dual column mode: panel has fixed width on the right
+          <div
+            className="absolute top-0 bottom-0"
+            style={{
+              right: 0,
+              width: panelWidth,
+              transform: `translateX(${isPanelAnimating ? 0 : panelWidth}px)`,
+              transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
+            }}
+          >
+            <ContribuenteFormPanel
+              onClose={() => setIsContribuentePanelOpen(false)}
+              onSave={handleSaveContribuente}
+            />
+          </div>
+        )
+      )}
     </div>
   );
 }
