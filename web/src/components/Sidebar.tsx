@@ -295,12 +295,12 @@ const NavButton = forwardRef<HTMLButtonElement, NavButtonProps>(
 
 NavButton.displayName = 'NavButton';
 
-// Icons - sized to iconSizeNav (24px)
+// Icons
 const DashboardIcon = () => (
   <img
     src={dashboardIcon}
     alt="Dashboard"
-    style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
+    style={{ width: Sizes.iconSizeDashboard, height: Sizes.iconSizeDashboard }}
   />
 );
 
@@ -308,7 +308,7 @@ const ContribuentiIcon = () => (
   <img
     src={contribuentiIcon}
     alt="Contribuenti"
-    style={{ width: Sizes.iconSizeNav, height: Sizes.iconSizeNav }}
+    style={{ width: Sizes.iconSizeContribuenti, height: Sizes.iconSizeContribuenti }}
   />
 );
 
@@ -432,6 +432,7 @@ export function MobileDrawer({
             style={{
               padding: `${Insets.l}px ${Insets.l}px ${Insets.m}px ${Insets.l}px`,
               maxWidth: 280,
+              alignItems: 'center',
             }}
           >
             <div style={{ height: Insets.l }} />
@@ -440,7 +441,10 @@ export function MobileDrawer({
 
             <div style={{ height: Insets.l }} />
 
-            <nav className="relative flex flex-col">
+            <nav
+              className="relative flex flex-col"
+              style={{ width: '100%' }}
+            >
               <NavButton
                 ref={(el) => { buttonRefs.current['dashboard'] = el; }}
                 icon={<DashboardIcon />}

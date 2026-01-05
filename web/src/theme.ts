@@ -77,13 +77,12 @@ export const Sizes = {
   radiusMd: 10,
   radiusLg: 12,
 
-  // Sidebar button icons (from Flokk main_side_menu_btn.dart)
-  // Note: Flokk uses iconSize - 4 for actual render, but our SVGs have viewBox 24x24
-  // so we use slightly larger values for equivalent visual weight
-  iconSizeNav: 24,     // Flokk: 26 - 4 = 22, but we use 24 to match SVG viewBox
-  iconSizeCreate: 20,  // Flokk: 20 - 4 = 16, adjusted proportionally
-  iconSizeMed: 22,     // Sizes.iconMed from Flokk
-  iconPadding: 2,      // EdgeInsets.all(2.0)
+  // Sidebar button icons
+  iconSizeDashboard: 24,    // Dashboard icon
+  iconSizeContribuenti: 30, // Contribuenti icon (Group_contribuenti.svg)
+  iconSizeCreate: 30,       // Create button icon (User_add_alt.svg)
+  iconSizeMed: 22,          // Sizes.iconMed from Flokk
+  iconPadding: 2,           // EdgeInsets.all(2.0)
 } as const;
 
 // =============================================================================
