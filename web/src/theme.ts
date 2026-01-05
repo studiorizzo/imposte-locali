@@ -68,8 +68,11 @@ export const Sizes = {
   indicatorWidth: 6,
   indicatorHeight: 48,
 
-  // Panel
-  panelWidth: 384,  // w-96
+  // Panel (from Flokk main_scaffold_view.dart)
+  panelWidthBase: 400,        // Base detail panel width
+  panelWidthGrowthFactor: 12, // Growth per inch above 8"
+  panelGrowthThreshold: 8,    // Start growing above 8 inches
+  singleColumnThreshold: 10,  // Use single column below 10 inches
 
   // Border radius (from Flokk Corners)
   radiusBtn: 8,    // Corners.s8 - button radius
