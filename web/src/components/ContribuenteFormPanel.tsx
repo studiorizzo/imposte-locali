@@ -208,8 +208,11 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
  *   ├── Icon (20px, offset 8px)
  *   ├── HSpace(Insets.l) = 24px
  *   └── Content.flexible().padding(right: Insets.m)  ← outer padding 12px
- *       └── Input.padding(right: Insets.l * 1.5 - 2)  ← inner padding 34px
- * Total right padding: 12px + 34px = 46px
+ *       └── Row
+ *           ├── Input.flexible().padding(right: Insets.l * 1.5 - 2)  ← inner padding 34px
+ *           ├── HSpace(Insets.m) = 12px
+ *           └── DeleteButton (32px: 20px icon + 6px padding each side)
+ * Total right space: 12px outer + 34px inner + 12px gap + 32px delete = 90px
  */
 function FormField({
   icon,
@@ -244,24 +247,36 @@ function FormField({
         className="flex-1"
         style={{ paddingRight: Insets.m }}
       >
-        {/* Input container with inner padding (Insets.l * 1.5 - 2 = 34px) */}
-        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-          <input
-            type="text"
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            className="w-full bg-transparent outline-none"
+        {/* Row containing input and delete button space */}
+        <div className="flex items-start" style={{ gap: Insets.m }}>
+          {/* Input container with inner padding (Insets.l * 1.5 - 2 = 34px) */}
+          <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+            <input
+              type="text"
+              placeholder={placeholder}
+              value={value}
+              onChange={(e) => onChange(e.target.value)}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              className="w-full bg-transparent outline-none"
+              style={{
+                ...TextStyles.body1,
+                color: Colors.greyStrong,
+                paddingTop: 4,
+                paddingBottom: 8,
+                borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+                transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                caretColor: Colors.accent1,
+              }}
+            />
+          </div>
+          {/* Delete button placeholder (invisible but reserves space like Flokk) */}
+          <div
             style={{
-              ...TextStyles.body1,
-              color: Colors.greyStrong,
-              paddingTop: 4,
-              paddingBottom: 8,
-              borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
-              transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-              caretColor: Colors.accent1,
+              width: 32, // 20px icon + 6px padding each side
+              height: 32,
+              flexShrink: 0,
+              opacity: 0,
             }}
           />
         </div>
