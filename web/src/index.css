@@ -58,4 +58,9 @@
   .card-header {
     @apply text-xl font-semibold text-gray-900 mb-4;
   }
+
+  /* Hide scrollbar for horizontal scroll containers */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
