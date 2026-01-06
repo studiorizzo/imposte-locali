@@ -439,20 +439,18 @@ function LabelField({
             )}
             {/* Suggestions dropdown */}
             {isOpen && filteredSuggestions.length > 0 && (
-              <div style={{ marginTop: Insets.sm }}>
+              <div style={{ marginTop: Insets.m }}>
                 <div
                   style={{
-                    ...TextStyles.body2,
+                    ...TextStyles.caption, // Lato 11px, letterSpacing 0.3
                     color: Colors.grey,
                     marginBottom: Insets.xs,
                     textTransform: 'uppercase',
-                    fontSize: 11,
-                    letterSpacing: '0.5px',
                   }}
                 >
                   Suggerimenti
                 </div>
-                <div className="flex flex-wrap" style={{ gap: Insets.sm }}>
+                <div className="flex flex-wrap" style={{ gap: Insets.sm, rowGap: Insets.sm * 1.5 }}>
                   {filteredSuggestions.map((suggestion) => (
                     <button
                       key={suggestion}
@@ -460,10 +458,12 @@ function LabelField({
                       onMouseDown={(e) => e.preventDefault()} // Prevent blur
                       className="transition-colors"
                       style={{
-                        ...TextStyles.body3, // footnote style (11px)
+                        fontFamily: "'Quicksand', sans-serif", // Footnote uses Quicksand
+                        fontSize: '11px',
+                        fontWeight: 700, // Bold
                         textTransform: 'uppercase',
                         letterSpacing: 0,
-                        backgroundColor: `${Colors.bg2}59`, // 35% opacity (0.35 * 255 = 89 = 0x59)
+                        backgroundColor: `${Colors.bg2}59`, // 35% opacity
                         color: Colors.grey,
                         paddingLeft: Insets.m,
                         paddingRight: Insets.m,
