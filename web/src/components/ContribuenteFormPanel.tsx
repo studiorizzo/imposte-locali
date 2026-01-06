@@ -124,18 +124,19 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
 
       {/* Form - from Flokk contact_edit_panel_view:
           - paddingTop: Insets.sm (6px)
-          - paddingLeft: Insets.l (24px)
-          - paddingRight: 0 (each row has its own right padding)
+          - paddingHorizontal: Insets.l (24px) - BOTH sides
           - paddingBottom: Insets.m (12px)
           - spacing between fields: Insets.m (12px) via SeparatedColumn
+          - Each row adds: outer 12px + inner 34px = 46px
+          - Total right padding: 24px + 46px = 70px
       */}
       <div
         className="flex-1 overflow-y-auto"
         style={{
           paddingTop: Insets.sm,
           paddingLeft: Insets.l,
-          paddingRight: 0,
-          paddingBottom: Insets.m + 30, // Extra 30px for dropdown overflow like Flokk
+          paddingRight: Insets.l, // Form horizontal padding
+          paddingBottom: Insets.m + 30,
         }}
       >
         {/* Form fields with Insets.m (12px) vertical spacing */}
