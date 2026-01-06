@@ -334,6 +334,31 @@ function LabelField({
   const [isOpen, setIsOpen] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Drag-to-scroll state
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // Scroll speed multiplier
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   // Clean up timer on unmount
   useEffect(() => {
     return () => {
@@ -424,66 +449,79 @@ function LabelField({
         <div className="flex items-start" style={{ gap: Insets.m }}>
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Container with fixed underline */}
+            {/* Container with fixed underline - width stays constant */}
             <div
               style={{
                 borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
                 transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                display: 'flex',
+                alignItems: 'center',
+                gap: Insets.sm,
+                overflow: 'hidden', // Keep fixed width
               }}
             >
-              {/* Chips and input inline - scrollable without affecting underline */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: Insets.sm,
-                  paddingBottom: 8,
-                  overflowX: 'auto',
-                  overflowY: 'hidden',
-                  scrollbarWidth: 'none', // Firefox
-                  msOverflowStyle: 'none', // IE
-                }}
-                className="hide-scrollbar"
-              >
-                {/* Selected chips */}
-                {values.map((v) => (
-                  <div
-                    key={v}
-                    className="inline-flex items-center"
-                    style={{ ...chipStyle, flexShrink: 0 }}
-                  >
-                    <span>{v}</span>
-                    <button
-                      onClick={() => onRemove(v)}
-                      className="flex items-center justify-center"
-                      style={{
-                        width: 16,
-                        height: 16,
-                        color: Colors.grey,
-                      }}
-                    >
-                      <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
-                    </button>
-                  </div>
-                ))}
-                {/* Placeholder input - always visible */}
-                <input
-                  type="text"
-                  placeholder={placeholder}
-                  value=""
-                  readOnly
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  className="bg-transparent outline-none cursor-pointer"
+              {/* Scrollable chips area - only this part scrolls */}
+              {values.length > 0 && (
+                <div
+                  ref={scrollContainerRef}
+                  onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
+                  onMouseUp={handleMouseUp}
+                  onMouseLeave={handleMouseUp}
                   style={{
-                    ...TextStyles.body1,
-                    color: Colors.greyStrong,
-                    minWidth: 100,
-                    paddingTop: 4,
-                    flexShrink: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: Insets.sm,
+                    paddingBottom: 8,
+                    overflowX: 'auto',
+                    overflowY: 'hidden',
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none',
+                    cursor: isDragging ? 'grabbing' : 'grab',
+                    flexShrink: 1,
+                    minWidth: 0, // Allow shrinking below content size
                   }}
-                />
-              </div>
+                  className="hide-scrollbar"
+                >
+                  {values.map((v) => (
+                    <div
+                      key={v}
+                      className="inline-flex items-center"
+                      style={{ ...chipStyle, flexShrink: 0 }}
+                    >
+                      <span>{v}</span>
+                      <button
+                        onClick={() => onRemove(v)}
+                        className="flex items-center justify-center"
+                        style={{
+                          width: 16,
+                          height: 16,
+                          color: Colors.grey,
+                        }}
+                      >
+                        <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {/* Placeholder input - always visible, doesn't scroll */}
+              <input
+                type="text"
+                placeholder={placeholder}
+                value=""
+                readOnly
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                className="bg-transparent outline-none cursor-pointer"
+                style={{
+                  ...TextStyles.body1,
+                  color: Colors.greyStrong,
+                  flexShrink: 0,
+                  paddingTop: 4,
+                  paddingBottom: 8,
+                }}
+              />
             </div>
             {/* Suggestions dropdown */}
             {isOpen && availableSuggestions.length > 0 && (
