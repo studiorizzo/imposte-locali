@@ -368,6 +368,13 @@ function LabelField({
     };
   }, []);
 
+  // Auto-scroll to end when chips change (show "Aggiungi tipologia")
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft = scrollContainerRef.current.scrollWidth;
+    }
+  }, [values]);
+
   const handleFocus = () => {
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
