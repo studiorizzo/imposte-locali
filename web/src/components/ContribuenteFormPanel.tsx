@@ -11,7 +11,7 @@ interface ContribuenteFormPanelProps {
 
 export interface ContribuenteFormData {
   tippiologie: string[];
-  cognome: string;
+  cognomeDenominazione: string;  // Cognome o Denominazione/Ragione sociale
   nome: string;
   codiceFiscale: string;
   email: string;
@@ -24,7 +24,7 @@ export interface ContribuenteFormData {
 
 const initialFormData: ContribuenteFormData = {
   tippiologie: [],
-  cognome: '',
+  cognomeDenominazione: '',
   nome: '',
   codiceFiscale: '',
   email: '',
@@ -166,11 +166,15 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             primarySuggestions={TIPOLOGIA_PRIMARY}
             secondarySuggestions={TIPOLOGIA_SECONDARY}
           />
-          <FormField
+          <NameField
             icon={<img src={UserFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
-            placeholder="Cognome"
-            value={formData.cognome}
-            onChange={(v) => handleChange('cognome', v)}
+            tippiologie={formData.tippiologie}
+            cognomeDenominazione={formData.cognomeDenominazione}
+            nome={formData.nome}
+            codiceFiscale={formData.codiceFiscale}
+            onChangeCognomeDenominazione={(v) => handleChange('cognomeDenominazione', v)}
+            onChangeNome={(v) => handleChange('nome', v)}
+            onChangeCodiceFiscale={(v) => handleChange('codiceFiscale', v)}
           />
         </div>
       </div>
@@ -238,6 +242,169 @@ function FormField({
               caretColor: Colors.accent1,
             }}
           />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * NameField - like Flokk's NameMiniForm, expands to show name fields
+ * Shows "Aggiungi Nome" when closed, expands to show fields based on tipologia
+ */
+function NameField({
+  icon,
+  tippiologie,
+  cognomeDenominazione,
+  nome,
+  codiceFiscale,
+  onChangeCognomeDenominazione,
+  onChangeNome,
+  onChangeCodiceFiscale,
+}: {
+  icon: React.ReactNode;
+  tippiologie: string[];
+  cognomeDenominazione: string;
+  nome: string;
+  codiceFiscale: string;
+  onChangeCognomeDenominazione: (value: string) => void;
+  onChangeNome: (value: string) => void;
+  onChangeCodiceFiscale: (value: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  // Determine field labels based on tipologia
+  const isPersonaFisica = tippiologie.includes('PERSONA FISICA');
+  const isPersonaGiuridica = tippiologie.includes('PERSONA GIURIDICA');
+
+  // First field label
+  const getCognomeDenominazioneLabel = () => {
+    if (isPersonaFisica) return 'Cognome';
+    if (isPersonaGiuridica) return 'Denominazione o Ragione sociale';
+    return 'Cognome, Denominazione o Ragione sociale';
+  };
+
+  // Show Nome field only for persona fisica or no selection
+  const showNomeField = isPersonaFisica || (!isPersonaFisica && !isPersonaGiuridica);
+
+  // Check if there's any content
+  const hasContent = cognomeDenominazione || nome || codiceFiscale;
+
+  // Build display text for closed state
+  const getDisplayText = () => {
+    if (!hasContent) return '';
+    const parts = [];
+    if (cognomeDenominazione) parts.push(cognomeDenominazione);
+    if (nome && showNomeField) parts.push(nome);
+    return parts.join(' ');
+  };
+
+  const handlePromptClick = () => {
+    setIsOpen(true);
+  };
+
+  return (
+    <div
+      className="flex items-start"
+      style={{ gap: Insets.l }}
+    >
+      {/* Icon with vertical offset like Flokk */}
+      <div
+        style={{
+          color: Colors.grey,
+          transform: `translateY(${Sizes.formIconOffset}px)`,
+          flexShrink: 0,
+        }}
+      >
+        {icon}
+      </div>
+      {/* Content wrapper */}
+      <div
+        className="flex-1"
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
+      >
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          {!isOpen ? (
+            // Closed state - show prompt or summary
+            <div
+              onClick={handlePromptClick}
+              style={{
+                ...TextStyles.body1,
+                color: hasContent ? Colors.greyStrong : Colors.greyWeak,
+                paddingTop: 4,
+                paddingBottom: 8,
+                borderBottom: `2px solid ${Colors.greyWeak}`,
+                cursor: 'pointer',
+              }}
+            >
+              {hasContent ? getDisplayText() : 'Aggiungi Nome'}
+            </div>
+          ) : (
+            // Open state - show all fields
+            <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.sm * 0.5 }}>
+              {/* Cognome / Denominazione field */}
+              <input
+                type="text"
+                placeholder={getCognomeDenominazioneLabel()}
+                value={cognomeDenominazione}
+                onChange={(e) => onChangeCognomeDenominazione(e.target.value)}
+                onFocus={() => setFocusedField('cognome')}
+                onBlur={() => setFocusedField(null)}
+                autoFocus
+                className="w-full bg-transparent outline-none"
+                style={{
+                  ...TextStyles.body1,
+                  color: Colors.greyStrong,
+                  paddingTop: 4,
+                  paddingBottom: 8,
+                  borderBottom: `2px solid ${focusedField === 'cognome' ? Colors.accent1 : Colors.greyWeak}`,
+                  transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                  caretColor: Colors.accent1,
+                }}
+              />
+              {/* Nome field - only if persona fisica or no selection */}
+              {showNomeField && (
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  value={nome}
+                  onChange={(e) => onChangeNome(e.target.value)}
+                  onFocus={() => setFocusedField('nome')}
+                  onBlur={() => setFocusedField(null)}
+                  className="w-full bg-transparent outline-none"
+                  style={{
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    paddingTop: 4,
+                    paddingBottom: 8,
+                    borderBottom: `2px solid ${focusedField === 'nome' ? Colors.accent1 : Colors.greyWeak}`,
+                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                    caretColor: Colors.accent1,
+                  }}
+                />
+              )}
+              {/* Codice Fiscale field */}
+              <input
+                type="text"
+                placeholder="Codice Fiscale"
+                value={codiceFiscale}
+                onChange={(e) => onChangeCodiceFiscale(e.target.value.toUpperCase())}
+                onFocus={() => setFocusedField('cf')}
+                onBlur={() => setFocusedField(null)}
+                className="w-full bg-transparent outline-none"
+                style={{
+                  ...TextStyles.body1,
+                  color: Colors.greyStrong,
+                  paddingTop: 4,
+                  paddingBottom: 8,
+                  borderBottom: `2px solid ${focusedField === 'cf' ? Colors.accent1 : Colors.greyWeak}`,
+                  transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                  caretColor: Colors.accent1,
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
