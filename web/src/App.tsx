@@ -221,7 +221,7 @@ function App() {
           <div className="space-y-4">
             {contribuenti.map((c, i) => (
               <div key={i} className="bg-white p-4 rounded-lg shadow border">
-                <p className="font-semibold">{c.cognome} {c.nome}</p>
+                <p className="font-semibold">{c.cognomeDenominazione} {c.nome}</p>
                 <p className="text-sm text-gray-500">{c.codiceFiscale}</p>
               </div>
             ))}
