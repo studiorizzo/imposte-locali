@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Colors, Sizes, Shadows, Insets, TextStyles, Animations } from '../theme';
 import LabelIcon from '../assets/Label_form.svg';
+import UserFormIcon from '../assets/User_2_form.svg';
 
 interface ContribuenteFormPanelProps {
   onClose: () => void;
@@ -166,7 +167,7 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             secondarySuggestions={TIPOLOGIA_SECONDARY}
           />
           <FormField
-            icon={<UserIcon />}
+            icon={<img src={UserFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
             placeholder="Cognome"
             value={formData.cognome}
             onChange={(v) => handleChange('cognome', v)}
