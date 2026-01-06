@@ -396,6 +396,8 @@ function LabelField({
     paddingBottom: Insets.sm,
     borderRadius: 5,
     gap: Insets.sm,
+    userSelect: 'none' as const,
+    cursor: 'default',
   };
 
   return (
