@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Colors, Sizes, Shadows, Insets, TextStyles, Animations } from '../theme';
+import LabelIcon from '../assets/Label_form.svg';
 
 interface ContribuenteFormPanelProps {
   onClose: () => void;
@@ -8,6 +9,7 @@ interface ContribuenteFormPanelProps {
 }
 
 export interface ContribuenteFormData {
+  tipologia: string;
   cognome: string;
   nome: string;
   codiceFiscale: string;
@@ -20,6 +22,7 @@ export interface ContribuenteFormData {
 }
 
 const initialFormData: ContribuenteFormData = {
+  tipologia: '',
   cognome: '',
   nome: '',
   codiceFiscale: '',
@@ -30,6 +33,9 @@ const initialFormData: ContribuenteFormData = {
   cap: '',
   provincia: '',
 };
+
+// Tipologia suggestions (like Flokk's label suggestions)
+const TIPOLOGIA_SUGGESTIONS = ['PERSONA FISICA', 'PERSONA GIURIDICA'];
 
 export function ContribuenteFormPanel({ onClose, onSave, onDelete }: ContribuenteFormPanelProps) {
   const [formData, setFormData] = useState<ContribuenteFormData>(initialFormData);
@@ -141,6 +147,13 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
       >
         {/* Form fields with Insets.m (12px) vertical spacing */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.m }}>
+          <LabelField
+            icon={<img src={LabelIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
+            placeholder="Aggiungi tipologia"
+            value={formData.tipologia}
+            onChange={(v) => handleChange('tipologia', v)}
+            suggestions={TIPOLOGIA_SUGGESTIONS}
+          />
           <FormField
             icon={<UserIcon />}
             placeholder="Cognome"
@@ -274,6 +287,211 @@ function FormField({
           <div
             style={{
               width: 32, // 20px icon + 6px padding each side
+              height: 32,
+              flexShrink: 0,
+              opacity: 0,
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * LabelField - like Flokk's LabelMiniForm with suggestions dropdown
+ * Shows suggestions when focused, allows selecting from predefined options
+ */
+function LabelField({
+  icon,
+  placeholder,
+  value,
+  onChange,
+  suggestions,
+}: {
+  icon: React.ReactNode;
+  placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
+  suggestions: string[];
+}) {
+  const [isFocused, setIsFocused] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) {
+        clearTimeout(closeTimerRef.current);
+      }
+    };
+  }, []);
+
+  const handleFocus = () => {
+    // Cancel any pending close
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setIsFocused(true);
+    setIsOpen(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+    // Delay close like Flokk (750ms)
+    closeTimerRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 750);
+  };
+
+  const handleSelectSuggestion = (suggestion: string) => {
+    onChange(suggestion);
+    setIsOpen(false);
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  // Filter suggestions based on current value and exclude already selected
+  const filteredSuggestions = suggestions.filter(
+    (s) => s.toLowerCase().includes(value.toLowerCase()) && s !== value
+  );
+
+  return (
+    <div
+      className="flex items-start"
+      style={{ gap: Insets.l }}
+    >
+      {/* Icon with vertical offset like Flokk */}
+      <div
+        style={{
+          color: Colors.grey,
+          transform: `translateY(${Sizes.formIconOffset}px)`,
+          flexShrink: 0,
+        }}
+      >
+        {icon}
+      </div>
+      {/* Content wrapper with outer padding (Insets.m = 12px) */}
+      <div
+        className="flex-1"
+        style={{ paddingRight: Insets.m }}
+      >
+        {/* Row containing input and delete button space */}
+        <div className="flex items-start" style={{ gap: Insets.m }}>
+          {/* Input container with inner padding */}
+          <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+            {/* Selected value chip (if any) */}
+            {value && (
+              <div
+                className="inline-flex items-center"
+                style={{
+                  ...TextStyles.body1,
+                  backgroundColor: Colors.accent1,
+                  color: Colors.accentTxt,
+                  paddingLeft: Insets.m,
+                  paddingRight: Insets.sm,
+                  paddingTop: 4,
+                  paddingBottom: 4,
+                  borderRadius: 4,
+                  marginBottom: Insets.sm,
+                  gap: Insets.sm,
+                }}
+              >
+                <span>{value}</span>
+                <button
+                  onClick={() => onChange('')}
+                  className="flex items-center justify-center"
+                  style={{
+                    width: 16,
+                    height: 16,
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(255,255,255,0.3)',
+                  }}
+                >
+                  <span style={{ fontSize: 12, lineHeight: 1 }}>×</span>
+                </button>
+              </div>
+            )}
+            {/* Input field */}
+            {!value && (
+              <input
+                type="text"
+                placeholder={placeholder}
+                value=""
+                readOnly
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                className="w-full bg-transparent outline-none cursor-pointer"
+                style={{
+                  ...TextStyles.body1,
+                  color: Colors.greyStrong,
+                  paddingTop: 4,
+                  paddingBottom: 8,
+                  borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+                  transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                  caretColor: Colors.accent1,
+                }}
+              />
+            )}
+            {/* Suggestions dropdown */}
+            {isOpen && filteredSuggestions.length > 0 && (
+              <div style={{ marginTop: Insets.sm }}>
+                <div
+                  style={{
+                    ...TextStyles.body2,
+                    color: Colors.grey,
+                    marginBottom: Insets.xs,
+                    textTransform: 'uppercase',
+                    fontSize: 11,
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  Suggerimenti
+                </div>
+                <div className="flex flex-wrap" style={{ gap: Insets.sm }}>
+                  {filteredSuggestions.map((suggestion) => (
+                    <button
+                      key={suggestion}
+                      onClick={() => handleSelectSuggestion(suggestion)}
+                      onMouseDown={(e) => e.preventDefault()} // Prevent blur
+                      className="transition-colors"
+                      style={{
+                        ...TextStyles.body1,
+                        backgroundColor: Colors.bg1,
+                        color: Colors.greyStrong,
+                        paddingLeft: Insets.m,
+                        paddingRight: Insets.m,
+                        paddingTop: 6,
+                        paddingBottom: 6,
+                        borderRadius: 4,
+                        border: `1px solid ${Colors.greyWeak}`,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = Colors.accent1;
+                        e.currentTarget.style.color = Colors.accentTxt;
+                        e.currentTarget.style.borderColor = Colors.accent1;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = Colors.bg1;
+                        e.currentTarget.style.color = Colors.greyStrong;
+                        e.currentTarget.style.borderColor = Colors.greyWeak;
+                      }}
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          {/* Delete button placeholder (invisible but reserves space like Flokk) */}
+          <div
+            style={{
+              width: 32,
               height: 32,
               flexShrink: 0,
               opacity: 0,
