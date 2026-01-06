@@ -449,7 +449,7 @@ function LabelField({
         <div className="flex items-start" style={{ gap: Insets.m }}>
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Container with fixed underline */}
+            {/* Container with fixed underline - width stays constant */}
             <div
               style={{
                 borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
@@ -457,6 +457,7 @@ function LabelField({
                 display: 'flex',
                 alignItems: 'center',
                 gap: Insets.sm,
+                overflow: 'hidden', // Keep fixed width
               }}
             >
               {/* Scrollable chips area - only this part scrolls */}
@@ -477,6 +478,8 @@ function LabelField({
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none',
                     cursor: isDragging ? 'grabbing' : 'grab',
+                    flexShrink: 1,
+                    minWidth: 0, // Allow shrinking below content size
                   }}
                   className="hide-scrollbar"
                 >
