@@ -422,24 +422,29 @@ function LabelField({
         <div className="flex items-start" style={{ gap: Insets.m }}>
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Chips and input inline - like Flokk's StyledFormLabelInput */}
+            {/* Chips and input inline - like Flokk's StyledHorizontalScrollView */}
             <div
               style={{
                 display: 'flex',
-                flexWrap: 'wrap',
                 alignItems: 'center',
                 gap: Insets.sm,
                 paddingBottom: 8,
                 borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
                 transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                overflowX: 'auto',
+                overflowY: 'hidden',
+                whiteSpace: 'nowrap',
+                scrollbarWidth: 'none', // Firefox
+                msOverflowStyle: 'none', // IE
               }}
+              className="hide-scrollbar"
             >
               {/* Selected chips */}
               {values.map((v) => (
                 <div
                   key={v}
                   className="inline-flex items-center"
-                  style={chipStyle}
+                  style={{ ...chipStyle, flexShrink: 0 }}
                 >
                   <span>{v}</span>
                   <button
@@ -463,12 +468,13 @@ function LabelField({
                 readOnly
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className="bg-transparent outline-none cursor-pointer flex-1"
+                className="bg-transparent outline-none cursor-pointer"
                 style={{
                   ...TextStyles.body1,
                   color: Colors.greyStrong,
                   minWidth: 100,
                   paddingTop: 4,
+                  flexShrink: 0,
                 }}
               />
             </div>
