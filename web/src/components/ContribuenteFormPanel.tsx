@@ -460,25 +460,24 @@ function LabelField({
                       onMouseDown={(e) => e.preventDefault()} // Prevent blur
                       className="transition-colors"
                       style={{
-                        ...TextStyles.body1,
-                        backgroundColor: Colors.bg1,
-                        color: Colors.greyStrong,
+                        ...TextStyles.body3, // footnote style (11px)
+                        textTransform: 'uppercase',
+                        letterSpacing: 0,
+                        backgroundColor: `${Colors.bg2}59`, // 35% opacity (0.35 * 255 = 89 = 0x59)
+                        color: Colors.grey,
                         paddingLeft: Insets.m,
                         paddingRight: Insets.m,
-                        paddingTop: 6,
-                        paddingBottom: 6,
-                        borderRadius: 4,
-                        border: `1px solid ${Colors.greyWeak}`,
+                        paddingTop: Insets.sm,
+                        paddingBottom: Insets.sm,
+                        borderRadius: 5, // Corners.s5
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = Colors.accent1;
                         e.currentTarget.style.color = Colors.accentTxt;
-                        e.currentTarget.style.borderColor = Colors.accent1;
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = Colors.bg1;
-                        e.currentTarget.style.color = Colors.greyStrong;
-                        e.currentTarget.style.borderColor = Colors.greyWeak;
+                        e.currentTarget.style.backgroundColor = `${Colors.bg2}59`;
+                        e.currentTarget.style.color = Colors.grey;
                       }}
                     >
                       {suggestion}
