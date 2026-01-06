@@ -514,7 +514,7 @@ function LabelField({
 }
 
 // =============================================================================
-// Icons - 20x20px (Sizes.formIconSize)
+// Icons - 24x24px (Sizes.formIconSize)
 // =============================================================================
 
 const iconSize = Sizes.formIconSize;
