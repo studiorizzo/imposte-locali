@@ -171,54 +171,6 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             value={formData.cognome}
             onChange={(v) => handleChange('cognome', v)}
           />
-          <FormField
-            icon={<UserIcon />}
-            placeholder="Nome"
-            value={formData.nome}
-            onChange={(v) => handleChange('nome', v)}
-          />
-          <FormField
-            icon={<IdCardIcon />}
-            placeholder="Codice Fiscale"
-            value={formData.codiceFiscale}
-            onChange={(v) => handleChange('codiceFiscale', v.toUpperCase())}
-          />
-          <FormField
-            icon={<EmailIcon />}
-            placeholder="Email"
-            value={formData.email}
-            onChange={(v) => handleChange('email', v)}
-          />
-          <FormField
-            icon={<PhoneIcon />}
-            placeholder="Telefono"
-            value={formData.telefono}
-            onChange={(v) => handleChange('telefono', v)}
-          />
-          <FormField
-            icon={<LocationIcon />}
-            placeholder="Indirizzo"
-            value={formData.indirizzo}
-            onChange={(v) => handleChange('indirizzo', v)}
-          />
-          <FormField
-            icon={<BuildingIcon />}
-            placeholder="Comune"
-            value={formData.comune}
-            onChange={(v) => handleChange('comune', v)}
-          />
-          <FormField
-            icon={<HashIcon />}
-            placeholder="CAP"
-            value={formData.cap}
-            onChange={(v) => handleChange('cap', v)}
-          />
-          <FormField
-            icon={<GlobeIcon />}
-            placeholder="Provincia"
-            value={formData.provincia}
-            onChange={(v) => handleChange('provincia', v.toUpperCase())}
-          />
         </div>
       </div>
     </div>
@@ -226,17 +178,11 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
 }
 
 /**
- * FormField - styled like Flokk's ExpandingMiniformContainer + BaseMiniForm
- * Layout structure from Flokk:
- *   Row (crossAxisAlignment: start)
- *   ├── Icon (20px, offset 8px)
- *   ├── HSpace(Insets.l) = 24px
- *   └── Content.flexible().padding(right: Insets.m)  ← outer padding 12px
- *       └── Row
- *           ├── Input.flexible().padding(right: Insets.l * 1.5 - 2)  ← inner padding 34px
- *           ├── HSpace(Insets.m) = 12px
- *           └── DeleteButton (32px: 20px icon + 6px padding each side)
- * Total right space: 12px outer + 34px inner + 12px gap + 32px delete = 90px
+ * FormField - same structure as LabelField for consistent width
+ * Layout: Icon | 24px | Content.padding(right: 12px).flex-1
+ *                        └── Inner.padding(right: 34px)
+ *                              └── Input with underline
+ * Total right padding: 12px + 34px = 46px
  */
 function FormField({
   icon,
@@ -266,41 +212,29 @@ function FormField({
       >
         {icon}
       </div>
-      {/* Content wrapper with outer padding (Insets.m = 12px) */}
+      {/* Content wrapper: .padding(right: 12px).flexible() */}
       <div
         className="flex-1"
-        style={{ paddingRight: Insets.m }}
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
       >
-        {/* Row containing input and delete button space */}
-        <div className="flex items-start" style={{ gap: Insets.m }}>
-          {/* Input container with inner padding (Insets.l * 1.5 - 2 = 34px) */}
-          <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            <input
-              type="text"
-              placeholder={placeholder}
-              value={value}
-              onChange={(e) => onChange(e.target.value)}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-              className="w-full bg-transparent outline-none"
-              style={{
-                ...TextStyles.body1,
-                color: Colors.greyStrong,
-                paddingTop: 4,
-                paddingBottom: 8,
-                borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
-                transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-                caretColor: Colors.accent1,
-              }}
-            />
-          </div>
-          {/* Delete button placeholder (invisible but reserves space like Flokk) */}
-          <div
+        {/* Inner content: .padding(right: 34px) */}
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          <input
+            type="text"
+            placeholder={placeholder}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className="w-full bg-transparent outline-none"
             style={{
-              width: 32, // 20px icon + 6px padding each side
-              height: 32,
-              flexShrink: 0,
-              opacity: 0,
+              ...TextStyles.body1,
+              color: Colors.greyStrong,
+              paddingTop: 4,
+              paddingBottom: 8,
+              borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+              transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+              caretColor: Colors.accent1,
             }}
           />
         </div>
