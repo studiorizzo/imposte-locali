@@ -450,7 +450,7 @@ function LabelField({
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
             {/* Stack: scrollable content + fixed underline (like Flokk) */}
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', overflow: 'hidden' }}>
               {/* Scrollable row: chips + input together */}
               <div
                 ref={scrollContainerRef}
