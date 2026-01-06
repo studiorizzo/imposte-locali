@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Colors, Sizes, Shadows, Insets, TextStyles } from '../theme';
+import { Colors, Sizes, Shadows, Insets, TextStyles, Animations } from '../theme';
 
 interface ContribuenteFormPanelProps {
   onClose: () => void;
@@ -200,12 +200,13 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
 }
 
 /**
- * FormField - styled like Flokk's ExpandingMiniformContainer
+ * FormField - styled like Flokk's ExpandingMiniformContainer + BaseMiniForm
  * - Icon size: 20px with 8px vertical offset
  * - Icon color: theme.grey
  * - Gap icon→input: Insets.l (24px)
  * - Text style: Body1 (Lato 14px)
- * - Underline border on input
+ * - Right padding: Insets.l * 1.5 - 2 = 34px (underline ends before edge)
+ * - Underline: greyWeak default, accent1 on focus
  */
 function FormField({
   icon,
@@ -218,6 +219,8 @@ function FormField({
   value: string;
   onChange: (value: string) => void;
 }) {
+  const [isFocused, setIsFocused] = useState(false);
+
   return (
     <div
       className="flex items-start"
@@ -233,22 +236,28 @@ function FormField({
       >
         {icon}
       </div>
-      {/* Input with underline border
-          - Text color: Colors.greyStrong (dark, like Flokk default)
-          - Placeholder color: Colors.grey (lighter)
-      */}
-      <div className="flex-1">
+      {/* Input container with right padding (Insets.l * 1.5 - 2 = 34px)
+          so underline ends before the edge like Flokk */}
+      <div
+        className="flex-1"
+        style={{ paddingRight: Insets.l * 1.5 - 2 }}
+      >
         <input
           type="text"
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-transparent outline-none border-b border-gray-200 focus:border-gray-400 transition-colors placeholder:text-gray-400"
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          className="w-full bg-transparent outline-none"
           style={{
             ...TextStyles.body1,
             color: Colors.greyStrong,
             paddingTop: 4,
             paddingBottom: 8,
+            borderBottom: `1px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+            transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+            caretColor: Colors.accent1,
           }}
         />
       </div>
