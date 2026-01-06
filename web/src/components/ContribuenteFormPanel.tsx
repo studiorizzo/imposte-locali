@@ -255,7 +255,7 @@ function FormField({
             color: Colors.greyStrong,
             paddingTop: 4,
             paddingBottom: 8,
-            borderBottom: `1px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+            borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
             transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
             caretColor: Colors.accent1,
           }}
