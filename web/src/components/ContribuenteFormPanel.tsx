@@ -450,7 +450,7 @@ function LabelField({
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
             {/* Stack: scrollable content + fixed underline (like Flokk) */}
-            <div style={{ position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', width: '100%' }}>
               {/* Scrollable row: chips + input together */}
               <div
                 ref={scrollContainerRef}
@@ -468,6 +468,7 @@ function LabelField({
                   scrollbarWidth: 'none',
                   msOverflowStyle: 'none',
                   cursor: values.length > 0 && isDragging ? 'grabbing' : values.length > 0 ? 'grab' : 'default',
+                  minWidth: 0, // Allow shrinking below content width
                 }}
                 className="hide-scrollbar"
               >
