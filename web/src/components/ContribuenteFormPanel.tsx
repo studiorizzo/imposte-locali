@@ -425,6 +425,17 @@ function LabelField({
     cursor: 'default',
   };
 
+  // Flokk LabelMiniForm structure:
+  // Row [
+  //   Icon.translate(0, 8),
+  //   HSpace(Insets.l),           // 24px
+  //   formBuilder()               // _LabelMiniformWithSearch
+  //     .padding(right: 34px)     // rightPadding from base_miniform
+  //     .padding(right: 12px)     // Insets.m from expanding_miniform_container
+  //     .flexible()
+  // ]
+  // Note: LabelMiniForm does NOT have a delete button - only regular fields do
+
   return (
     <div
       className="flex items-start"
@@ -440,18 +451,18 @@ function LabelField({
       >
         {icon}
       </div>
-      {/* Content wrapper with outer padding (Insets.m = 12px) */}
+      {/* Content wrapper: .padding(right: 12px).flexible() from expanding_miniform_container */}
       <div
         className="flex-1"
-        style={{ paddingRight: Insets.m }}
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
       >
-        {/* Row containing input and delete button space */}
-        <div className="flex items-start" style={{ gap: Insets.m }}>
-          {/* Input container with inner padding */}
-          <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Stack: scrollable content + fixed underline (like Flokk) */}
-            <div style={{ position: 'relative', width: '100%' }}>
-              {/* Scrollable row: chips + input together */}
+        {/* Inner content: .padding(right: 34px) from label_miniform */}
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          {/* Container with bottom margin like styled_form_label_input.dart */}
+          <div style={{ marginBottom: Insets.m }}>
+            {/* Stack: scrollable content + underline (like Flokk Stack) */}
+            <div style={{ position: 'relative' }}>
+              {/* StyledHorizontalScrollView equivalent */}
               <div
                 ref={scrollContainerRef}
                 onMouseDown={values.length > 0 ? handleMouseDown : undefined}
@@ -468,7 +479,6 @@ function LabelField({
                   scrollbarWidth: 'none',
                   msOverflowStyle: 'none',
                   cursor: values.length > 0 && isDragging ? 'grabbing' : values.length > 0 ? 'grab' : 'default',
-                  minWidth: 0, // Allow shrinking below content width
                 }}
                 className="hide-scrollbar"
               >
@@ -510,78 +520,65 @@ function LabelField({
                   }}
                 />
               </div>
-              {/* Underline - separate element, fixed width (like Flokk Stack) */}
+              {/* Underline - positioned with margin-top: 38 like Flokk */}
               <div
                 style={{
-                  position: 'absolute',
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  height: 2,
-                  backgroundColor: isFocused ? Colors.accent1 : Colors.greyWeak,
-                  transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
+                  height: isFocused ? 1.8 : 1.2,
+                  backgroundColor: isFocused ? Colors.accent1 : `${Colors.greyWeak}59`,
+                  transition: `background-color ${Animations.button.duration} ${Animations.button.easing}, height ${Animations.button.duration} ${Animations.button.easing}`,
                 }}
               />
             </div>
-            {/* Suggestions dropdown */}
-            {isOpen && availableSuggestions.length > 0 && (
-              <div style={{ marginTop: Insets.m }}>
-                <div
-                  style={{
-                    ...TextStyles.caption,
-                    color: Colors.grey,
-                    paddingBottom: Insets.m,
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Suggerimenti
-                </div>
-                <div className="flex flex-wrap" style={{ gap: Insets.sm, rowGap: Insets.sm * 1.5 }}>
-                  {availableSuggestions.map((suggestion) => (
-                    <button
-                      key={suggestion}
-                      onClick={() => handleSelectSuggestion(suggestion)}
-                      onMouseDown={(e) => e.preventDefault()}
-                      className="transition-colors"
-                      style={{
-                        fontFamily: "'Quicksand', sans-serif",
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: 0,
-                        backgroundColor: `${Colors.bg2}59`,
-                        color: Colors.grey,
-                        paddingLeft: Insets.m,
-                        paddingRight: Insets.m,
-                        paddingTop: Insets.sm,
-                        paddingBottom: Insets.sm,
-                        borderRadius: 5,
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = Colors.accent1;
-                        e.currentTarget.style.color = Colors.accentTxt;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = `${Colors.bg2}59`;
-                        e.currentTarget.style.color = Colors.grey;
-                      }}
-                    >
-                      {suggestion}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
-          {/* Delete button placeholder (invisible but reserves space like Flokk) */}
-          <div
-            style={{
-              width: 32,
-              height: 32,
-              flexShrink: 0,
-              opacity: 0,
-            }}
-          />
+          {/* Suggestions dropdown */}
+          {isOpen && availableSuggestions.length > 0 && (
+            <div style={{ marginTop: Insets.m }}>
+              <div
+                style={{
+                  ...TextStyles.caption,
+                  color: Colors.grey,
+                  paddingBottom: Insets.m,
+                  textTransform: 'uppercase',
+                }}
+              >
+                Suggerimenti
+              </div>
+              <div className="flex flex-wrap" style={{ gap: Insets.sm, rowGap: Insets.sm * 1.5 }}>
+                {availableSuggestions.map((suggestion) => (
+                  <button
+                    key={suggestion}
+                    onClick={() => handleSelectSuggestion(suggestion)}
+                    onMouseDown={(e) => e.preventDefault()}
+                    className="transition-colors"
+                    style={{
+                      fontFamily: "'Quicksand', sans-serif",
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: 0,
+                      backgroundColor: `${Colors.bg2}59`,
+                      color: Colors.grey,
+                      paddingLeft: Insets.m,
+                      paddingRight: Insets.m,
+                      paddingTop: Insets.sm,
+                      paddingBottom: Insets.sm,
+                      borderRadius: 5,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = Colors.accent1;
+                      e.currentTarget.style.color = Colors.accentTxt;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = `${Colors.bg2}59`;
+                      e.currentTarget.style.color = Colors.grey;
+                    }}
+                  >
+                    {suggestion}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
