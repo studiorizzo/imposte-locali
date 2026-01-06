@@ -444,7 +444,7 @@ function LabelField({
                   style={{
                     ...TextStyles.caption, // Lato 11px, letterSpacing 0.3
                     color: Colors.grey,
-                    marginBottom: Insets.xs,
+                    paddingBottom: Insets.m, // Flokk: .padding(bottom: Insets.m)
                     textTransform: 'uppercase',
                   }}
                 >
