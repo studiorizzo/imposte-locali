@@ -384,19 +384,23 @@ function LabelField({
         <div className="flex items-start" style={{ gap: Insets.m }}>
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Selected value chip (if any) */}
+            {/* Selected value chip (if any) - styled like StyledGroupLabel */}
             {value && (
               <div
                 className="inline-flex items-center"
                 style={{
-                  ...TextStyles.body1,
-                  backgroundColor: Colors.accent1,
-                  color: Colors.accentTxt,
+                  fontFamily: "'Quicksand', sans-serif",
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: 0,
+                  backgroundColor: `${Colors.bg2}59`, // 35% opacity like StyledGroupLabel
+                  color: Colors.grey,
                   paddingLeft: Insets.m,
                   paddingRight: Insets.sm,
-                  paddingTop: 4,
-                  paddingBottom: 4,
-                  borderRadius: 4,
+                  paddingTop: Insets.sm,
+                  paddingBottom: Insets.sm,
+                  borderRadius: 5,
                   marginBottom: Insets.sm,
                   gap: Insets.sm,
                 }}
@@ -409,34 +413,32 @@ function LabelField({
                     width: 16,
                     height: 16,
                     borderRadius: '50%',
-                    backgroundColor: 'rgba(255,255,255,0.3)',
+                    color: Colors.grey,
                   }}
                 >
-                  <span style={{ fontSize: 12, lineHeight: 1 }}>×</span>
+                  <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
                 </button>
               </div>
             )}
-            {/* Input field */}
-            {!value && (
-              <input
-                type="text"
-                placeholder={placeholder}
-                value=""
-                readOnly
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                className="w-full bg-transparent outline-none cursor-pointer"
-                style={{
-                  ...TextStyles.body1,
-                  color: Colors.greyStrong,
-                  paddingTop: 4,
-                  paddingBottom: 8,
-                  borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
-                  transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-                  caretColor: Colors.accent1,
-                }}
-              />
-            )}
+            {/* Input field - always visible */}
+            <input
+              type="text"
+              placeholder={value ? '' : placeholder}
+              value=""
+              readOnly
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              className="w-full bg-transparent outline-none cursor-pointer"
+              style={{
+                ...TextStyles.body1,
+                color: Colors.greyStrong,
+                paddingTop: 4,
+                paddingBottom: 8,
+                borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+                transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                caretColor: Colors.accent1,
+              }}
+            />
             {/* Suggestions dropdown */}
             {isOpen && filteredSuggestions.length > 0 && (
               <div style={{ marginTop: Insets.m }}>
