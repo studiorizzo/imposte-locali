@@ -425,6 +425,18 @@ function LabelField({
     cursor: 'default',
   };
 
+  // Layout structure matching FormField for consistent alignment:
+  // Row [
+  //   Icon.translate(0, 8),
+  //   HSpace(Insets.l),           // 24px
+  //   Content.padding(right: 12px).flexible()
+  //     Row [
+  //       InputArea.padding(right: 34px).flexible()
+  //       HSpace(12px)
+  //       DeleteBtn(32px) - invisible placeholder for alignment
+  //     ]
+  // ]
+
   return (
     <div
       className="flex items-start"
@@ -440,88 +452,86 @@ function LabelField({
       >
         {icon}
       </div>
-      {/* Content wrapper with outer padding (Insets.m = 12px) */}
+      {/* Content wrapper: .padding(right: 12px).flexible() */}
       <div
         className="flex-1"
-        style={{ paddingRight: Insets.m }}
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
       >
-        {/* Row containing input and delete button space */}
+        {/* Row containing input area and delete button placeholder */}
         <div className="flex items-start" style={{ gap: Insets.m }}>
-          {/* Input container with inner padding */}
-          <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Stack: scrollable content + fixed underline (like Flokk) */}
-            <div style={{ position: 'relative', width: '100%' }}>
-              {/* Scrollable row: chips + input together */}
-              <div
-                ref={scrollContainerRef}
-                onMouseDown={values.length > 0 ? handleMouseDown : undefined}
-                onMouseMove={values.length > 0 ? handleMouseMove : undefined}
-                onMouseUp={values.length > 0 ? handleMouseUp : undefined}
-                onMouseLeave={values.length > 0 ? handleMouseUp : undefined}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: Insets.sm,
-                  paddingBottom: 8,
-                  overflowX: 'auto',
-                  overflowY: 'hidden',
-                  scrollbarWidth: 'none',
-                  msOverflowStyle: 'none',
-                  cursor: values.length > 0 && isDragging ? 'grabbing' : values.length > 0 ? 'grab' : 'default',
-                  minWidth: 0, // Allow shrinking below content width
-                }}
-                className="hide-scrollbar"
-              >
-                {/* Chips */}
-                {values.map((v) => (
-                  <div
-                    key={v}
-                    className="inline-flex items-center"
-                    style={{ ...chipStyle, flexShrink: 0 }}
-                  >
-                    <span>{v}</span>
-                    <button
-                      onClick={() => onRemove(v)}
-                      className="flex items-center justify-center"
-                      style={{
-                        width: 16,
-                        height: 16,
-                        color: Colors.grey,
-                      }}
-                    >
-                      <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
-                    </button>
-                  </div>
-                ))}
-                {/* Placeholder input */}
-                <input
-                  type="text"
-                  placeholder={placeholder}
-                  value=""
-                  readOnly
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  className="bg-transparent outline-none cursor-pointer"
+          {/* Input area with inner padding */}
+          <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2, minWidth: 0 }}>
+            {/* Container with bottom margin like styled_form_label_input.dart */}
+            <div style={{ marginBottom: Insets.m }}>
+              {/* Stack: scrollable content + underline (like Flokk Stack) */}
+              <div style={{ position: 'relative' }}>
+                {/* StyledHorizontalScrollView equivalent */}
+                <div
+                  ref={scrollContainerRef}
+                  onMouseDown={values.length > 0 ? handleMouseDown : undefined}
+                  onMouseMove={values.length > 0 ? handleMouseMove : undefined}
+                  onMouseUp={values.length > 0 ? handleMouseUp : undefined}
+                  onMouseLeave={values.length > 0 ? handleMouseUp : undefined}
                   style={{
-                    ...TextStyles.body1,
-                    color: Colors.greyStrong,
-                    flexShrink: 0,
-                    paddingTop: 4,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: Insets.sm,
+                    paddingBottom: 8,
+                    overflowX: 'auto',
+                    overflowY: 'hidden',
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none',
+                    cursor: values.length > 0 && isDragging ? 'grabbing' : values.length > 0 ? 'grab' : 'default',
+                  }}
+                  className="hide-scrollbar"
+                >
+                  {/* Chips */}
+                  {values.map((v) => (
+                    <div
+                      key={v}
+                      className="inline-flex items-center"
+                      style={{ ...chipStyle, flexShrink: 0 }}
+                    >
+                      <span>{v}</span>
+                      <button
+                        onClick={() => onRemove(v)}
+                        className="flex items-center justify-center"
+                        style={{
+                          width: 16,
+                          height: 16,
+                          color: Colors.grey,
+                        }}
+                      >
+                        <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
+                      </button>
+                    </div>
+                  ))}
+                  {/* Placeholder input */}
+                  <input
+                    type="text"
+                    placeholder={placeholder}
+                    value=""
+                    readOnly
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    className="bg-transparent outline-none cursor-pointer"
+                    style={{
+                      ...TextStyles.body1,
+                      color: Colors.greyStrong,
+                      flexShrink: 0,
+                      paddingTop: 4,
+                    }}
+                  />
+                </div>
+                {/* Underline - normal flow element like Flokk */}
+                <div
+                  style={{
+                    height: isFocused ? 1.8 : 1.2,
+                    backgroundColor: isFocused ? Colors.accent1 : `${Colors.greyWeak}59`,
+                    transition: `background-color ${Animations.button.duration} ${Animations.button.easing}, height ${Animations.button.duration} ${Animations.button.easing}`,
                   }}
                 />
               </div>
-              {/* Underline - separate element, fixed width (like Flokk Stack) */}
-              <div
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  height: 2,
-                  backgroundColor: isFocused ? Colors.accent1 : Colors.greyWeak,
-                  transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
-                }}
-              />
             </div>
             {/* Suggestions dropdown */}
             {isOpen && availableSuggestions.length > 0 && (
@@ -573,7 +583,7 @@ function LabelField({
               </div>
             )}
           </div>
-          {/* Delete button placeholder (invisible but reserves space like Flokk) */}
+          {/* Delete button placeholder (invisible, for alignment with FormField) */}
           <div
             style={{
               width: 32,
