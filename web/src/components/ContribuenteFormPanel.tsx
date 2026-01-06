@@ -449,74 +449,76 @@ function LabelField({
         <div className="flex items-start" style={{ gap: Insets.m }}>
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Container with fixed underline */}
-            <div
-              style={{
-                borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
-                transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-                display: 'flex',
-                alignItems: 'center',
-                gap: Insets.sm,
-              }}
-            >
-              {/* Scrollable chips area - only this part scrolls */}
-              {values.length > 0 && (
-                <div
-                  ref={scrollContainerRef}
-                  onMouseDown={handleMouseDown}
-                  onMouseMove={handleMouseMove}
-                  onMouseUp={handleMouseUp}
-                  onMouseLeave={handleMouseUp}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: Insets.sm,
-                    paddingBottom: 8,
-                    overflowX: 'auto',
-                    overflowY: 'hidden',
-                    scrollbarWidth: 'none',
-                    msOverflowStyle: 'none',
-                    cursor: isDragging ? 'grabbing' : 'grab',
-                  }}
-                  className="hide-scrollbar"
-                >
-                  {values.map((v) => (
-                    <div
-                      key={v}
-                      className="inline-flex items-center"
-                      style={{ ...chipStyle, flexShrink: 0 }}
-                    >
-                      <span>{v}</span>
-                      <button
-                        onClick={() => onRemove(v)}
-                        className="flex items-center justify-center"
-                        style={{
-                          width: 16,
-                          height: 16,
-                          color: Colors.grey,
-                        }}
-                      >
-                        <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {/* Placeholder input - always visible, doesn't scroll */}
-              <input
-                type="text"
-                placeholder={placeholder}
-                value=""
-                readOnly
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                className="bg-transparent outline-none cursor-pointer"
+            {/* Stack: scrollable content + fixed underline (like Flokk) */}
+            <div style={{ position: 'relative', overflow: 'hidden' }}>
+              {/* Scrollable row: chips + input together */}
+              <div
+                ref={scrollContainerRef}
+                onMouseDown={values.length > 0 ? handleMouseDown : undefined}
+                onMouseMove={values.length > 0 ? handleMouseMove : undefined}
+                onMouseUp={values.length > 0 ? handleMouseUp : undefined}
+                onMouseLeave={values.length > 0 ? handleMouseUp : undefined}
                 style={{
-                  ...TextStyles.body1,
-                  color: Colors.greyStrong,
-                  flexShrink: 0,
-                  paddingTop: 4,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: Insets.sm,
                   paddingBottom: 8,
+                  overflowX: 'auto',
+                  overflowY: 'hidden',
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                  cursor: values.length > 0 && isDragging ? 'grabbing' : values.length > 0 ? 'grab' : 'default',
+                }}
+                className="hide-scrollbar"
+              >
+                {/* Chips */}
+                {values.map((v) => (
+                  <div
+                    key={v}
+                    className="inline-flex items-center"
+                    style={{ ...chipStyle, flexShrink: 0 }}
+                  >
+                    <span>{v}</span>
+                    <button
+                      onClick={() => onRemove(v)}
+                      className="flex items-center justify-center"
+                      style={{
+                        width: 16,
+                        height: 16,
+                        color: Colors.grey,
+                      }}
+                    >
+                      <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
+                    </button>
+                  </div>
+                ))}
+                {/* Placeholder input */}
+                <input
+                  type="text"
+                  placeholder={placeholder}
+                  value=""
+                  readOnly
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  className="bg-transparent outline-none cursor-pointer"
+                  style={{
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    flexShrink: 0,
+                    paddingTop: 4,
+                  }}
+                />
+              </div>
+              {/* Underline - separate element, fixed width (like Flokk Stack) */}
+              <div
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  height: 2,
+                  backgroundColor: isFocused ? Colors.accent1 : Colors.greyWeak,
+                  transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
                 }}
               />
             </div>
