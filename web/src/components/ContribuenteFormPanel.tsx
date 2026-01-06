@@ -9,7 +9,7 @@ interface ContribuenteFormPanelProps {
 }
 
 export interface ContribuenteFormData {
-  tipologia: string;
+  tippiologie: string[];
   cognome: string;
   nome: string;
   codiceFiscale: string;
@@ -22,7 +22,7 @@ export interface ContribuenteFormData {
 }
 
 const initialFormData: ContribuenteFormData = {
-  tipologia: '',
+  tippiologie: [],
   cognome: '',
   nome: '',
   codiceFiscale: '',
@@ -34,8 +34,14 @@ const initialFormData: ContribuenteFormData = {
   provincia: '',
 };
 
-// Tipologia suggestions (like Flokk's label suggestions)
-const TIPOLOGIA_SUGGESTIONS = ['PERSONA FISICA', 'PERSONA GIURIDICA'];
+// Tipologia suggestions - primary options
+const TIPOLOGIA_PRIMARY = ['PERSONA FISICA', 'PERSONA GIURIDICA'];
+
+// Secondary suggestions based on primary selection
+const TIPOLOGIA_SECONDARY: Record<string, string[]> = {
+  'PERSONA FISICA': ['ANZIANO/DISABILE RICOVERATO', 'RESIDENTE ESTERO', 'FORZE ARMATE, POLIZIA, VVF'],
+  'PERSONA GIURIDICA': ['ONLUS', 'CONDOMINIO'],
+};
 
 export function ContribuenteFormPanel({ onClose, onSave, onDelete }: ContribuenteFormPanelProps) {
   const [formData, setFormData] = useState<ContribuenteFormData>(initialFormData);
@@ -150,9 +156,14 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
           <LabelField
             icon={<img src={LabelIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
             placeholder="Aggiungi tipologia"
-            value={formData.tipologia}
-            onChange={(v) => handleChange('tipologia', v)}
-            suggestions={TIPOLOGIA_SUGGESTIONS}
+            values={formData.tippiologie}
+            onAdd={(v) => setFormData(prev => ({ ...prev, tippiologie: [...prev.tippiologie, v] }))}
+            onRemove={(v) => setFormData(prev => ({
+              ...prev,
+              tippiologie: prev.tippiologie.filter(t => t !== v && !TIPOLOGIA_SECONDARY[v]?.includes(t))
+            }))}
+            primarySuggestions={TIPOLOGIA_PRIMARY}
+            secondarySuggestions={TIPOLOGIA_SECONDARY}
           />
           <FormField
             icon={<UserIcon />}
@@ -300,20 +311,24 @@ function FormField({
 
 /**
  * LabelField - like Flokk's LabelMiniForm with suggestions dropdown
- * Shows suggestions when focused, allows selecting from predefined options
+ * Shows chips inline with placeholder, supports multiple selections
  */
 function LabelField({
   icon,
   placeholder,
-  value,
-  onChange,
-  suggestions,
+  values,
+  onAdd,
+  onRemove,
+  primarySuggestions,
+  secondarySuggestions,
 }: {
   icon: React.ReactNode;
   placeholder: string;
-  value: string;
-  onChange: (value: string) => void;
-  suggestions: string[];
+  values: string[];
+  onAdd: (value: string) => void;
+  onRemove: (value: string) => void;
+  primarySuggestions: string[];
+  secondarySuggestions: Record<string, string[]>;
 }) {
   const [isFocused, setIsFocused] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -329,7 +344,6 @@ function LabelField({
   }, []);
 
   const handleFocus = () => {
-    // Cancel any pending close
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
       closeTimerRef.current = null;
@@ -340,25 +354,49 @@ function LabelField({
 
   const handleBlur = () => {
     setIsFocused(false);
-    // Delay close like Flokk (750ms)
     closeTimerRef.current = setTimeout(() => {
       setIsOpen(false);
     }, 750);
   };
 
   const handleSelectSuggestion = (suggestion: string) => {
-    onChange(suggestion);
-    setIsOpen(false);
-    if (closeTimerRef.current) {
-      clearTimeout(closeTimerRef.current);
-      closeTimerRef.current = null;
+    onAdd(suggestion);
+    // Don't close - keep open for secondary selections
+  };
+
+  // Determine which primary is selected (if any)
+  const selectedPrimary = values.find(v => primarySuggestions.includes(v));
+
+  // Get available suggestions
+  const getAvailableSuggestions = () => {
+    if (!selectedPrimary) {
+      // Show primary suggestions, exclude already selected
+      return primarySuggestions.filter(s => !values.includes(s));
+    } else {
+      // Show secondary suggestions for the selected primary, exclude already selected
+      const secondary = secondarySuggestions[selectedPrimary] || [];
+      return secondary.filter(s => !values.includes(s));
     }
   };
 
-  // Filter suggestions based on current value and exclude already selected
-  const filteredSuggestions = suggestions.filter(
-    (s) => s.toLowerCase().includes(value.toLowerCase()) && s !== value
-  );
+  const availableSuggestions = getAvailableSuggestions();
+
+  // Chip style (StyledGroupLabel)
+  const chipStyle = {
+    fontFamily: "'Quicksand', sans-serif",
+    fontSize: '11px',
+    fontWeight: 700,
+    textTransform: 'uppercase' as const,
+    letterSpacing: 0,
+    backgroundColor: `${Colors.bg2}59`,
+    color: Colors.grey,
+    paddingLeft: Insets.m,
+    paddingRight: Insets.sm,
+    paddingTop: Insets.sm,
+    paddingBottom: Insets.sm,
+    borderRadius: 5,
+    gap: Insets.sm,
+  };
 
   return (
     <div
@@ -384,94 +422,89 @@ function LabelField({
         <div className="flex items-start" style={{ gap: Insets.m }}>
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Selected value chip (if any) - styled like StyledGroupLabel */}
-            {value && (
-              <div
-                className="inline-flex items-center"
-                style={{
-                  fontFamily: "'Quicksand', sans-serif",
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: 0,
-                  backgroundColor: `${Colors.bg2}59`, // 35% opacity like StyledGroupLabel
-                  color: Colors.grey,
-                  paddingLeft: Insets.m,
-                  paddingRight: Insets.sm,
-                  paddingTop: Insets.sm,
-                  paddingBottom: Insets.sm,
-                  borderRadius: 5,
-                  marginBottom: Insets.sm,
-                  gap: Insets.sm,
-                }}
-              >
-                <span>{value}</span>
-                <button
-                  onClick={() => onChange('')}
-                  className="flex items-center justify-center"
-                  style={{
-                    width: 16,
-                    height: 16,
-                    borderRadius: '50%',
-                    color: Colors.grey,
-                  }}
-                >
-                  <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
-                </button>
-              </div>
-            )}
-            {/* Input field - always visible */}
-            <input
-              type="text"
-              placeholder={value ? '' : placeholder}
-              value=""
-              readOnly
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              className="w-full bg-transparent outline-none cursor-pointer"
+            {/* Chips and input inline - like Flokk's StyledFormLabelInput */}
+            <div
               style={{
-                ...TextStyles.body1,
-                color: Colors.greyStrong,
-                paddingTop: 4,
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                gap: Insets.sm,
                 paddingBottom: 8,
                 borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
                 transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-                caretColor: Colors.accent1,
               }}
-            />
+            >
+              {/* Selected chips */}
+              {values.map((v) => (
+                <div
+                  key={v}
+                  className="inline-flex items-center"
+                  style={chipStyle}
+                >
+                  <span>{v}</span>
+                  <button
+                    onClick={() => onRemove(v)}
+                    className="flex items-center justify-center"
+                    style={{
+                      width: 16,
+                      height: 16,
+                      color: Colors.grey,
+                    }}
+                  >
+                    <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
+                  </button>
+                </div>
+              ))}
+              {/* Placeholder input - always visible */}
+              <input
+                type="text"
+                placeholder={placeholder}
+                value=""
+                readOnly
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                className="bg-transparent outline-none cursor-pointer flex-1"
+                style={{
+                  ...TextStyles.body1,
+                  color: Colors.greyStrong,
+                  minWidth: 100,
+                  paddingTop: 4,
+                }}
+              />
+            </div>
             {/* Suggestions dropdown */}
-            {isOpen && filteredSuggestions.length > 0 && (
+            {isOpen && availableSuggestions.length > 0 && (
               <div style={{ marginTop: Insets.m }}>
                 <div
                   style={{
-                    ...TextStyles.caption, // Lato 11px, letterSpacing 0.3
+                    ...TextStyles.caption,
                     color: Colors.grey,
-                    paddingBottom: Insets.m, // Flokk: .padding(bottom: Insets.m)
+                    paddingBottom: Insets.m,
                     textTransform: 'uppercase',
                   }}
                 >
                   Suggerimenti
                 </div>
                 <div className="flex flex-wrap" style={{ gap: Insets.sm, rowGap: Insets.sm * 1.5 }}>
-                  {filteredSuggestions.map((suggestion) => (
+                  {availableSuggestions.map((suggestion) => (
                     <button
                       key={suggestion}
                       onClick={() => handleSelectSuggestion(suggestion)}
-                      onMouseDown={(e) => e.preventDefault()} // Prevent blur
+                      onMouseDown={(e) => e.preventDefault()}
                       className="transition-colors"
                       style={{
-                        fontFamily: "'Quicksand', sans-serif", // Footnote uses Quicksand
+                        fontFamily: "'Quicksand', sans-serif",
                         fontSize: '11px',
-                        fontWeight: 700, // Bold
+                        fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: 0,
-                        backgroundColor: `${Colors.bg2}59`, // 35% opacity
+                        backgroundColor: `${Colors.bg2}59`,
                         color: Colors.grey,
                         paddingLeft: Insets.m,
                         paddingRight: Insets.m,
                         paddingTop: Insets.sm,
                         paddingBottom: Insets.sm,
-                        borderRadius: 5, // Corners.s5
+                        borderRadius: 5,
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = Colors.accent1;
