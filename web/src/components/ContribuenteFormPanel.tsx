@@ -422,61 +422,66 @@ function LabelField({
         <div className="flex items-start" style={{ gap: Insets.m }}>
           {/* Input container with inner padding */}
           <div className="flex-1" style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-            {/* Chips and input inline - like Flokk's StyledHorizontalScrollView */}
+            {/* Container with fixed underline */}
             <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: Insets.sm,
-                paddingBottom: 8,
                 borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
                 transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-                overflowX: 'auto',
-                overflowY: 'hidden',
-                whiteSpace: 'nowrap',
-                scrollbarWidth: 'none', // Firefox
-                msOverflowStyle: 'none', // IE
               }}
-              className="hide-scrollbar"
             >
-              {/* Selected chips */}
-              {values.map((v) => (
-                <div
-                  key={v}
-                  className="inline-flex items-center"
-                  style={{ ...chipStyle, flexShrink: 0 }}
-                >
-                  <span>{v}</span>
-                  <button
-                    onClick={() => onRemove(v)}
-                    className="flex items-center justify-center"
-                    style={{
-                      width: 16,
-                      height: 16,
-                      color: Colors.grey,
-                    }}
-                  >
-                    <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
-                  </button>
-                </div>
-              ))}
-              {/* Placeholder input - always visible */}
-              <input
-                type="text"
-                placeholder={placeholder}
-                value=""
-                readOnly
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                className="bg-transparent outline-none cursor-pointer"
+              {/* Chips and input inline - scrollable without affecting underline */}
+              <div
                 style={{
-                  ...TextStyles.body1,
-                  color: Colors.greyStrong,
-                  minWidth: 100,
-                  paddingTop: 4,
-                  flexShrink: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: Insets.sm,
+                  paddingBottom: 8,
+                  overflowX: 'auto',
+                  overflowY: 'hidden',
+                  scrollbarWidth: 'none', // Firefox
+                  msOverflowStyle: 'none', // IE
                 }}
-              />
+                className="hide-scrollbar"
+              >
+                {/* Selected chips */}
+                {values.map((v) => (
+                  <div
+                    key={v}
+                    className="inline-flex items-center"
+                    style={{ ...chipStyle, flexShrink: 0 }}
+                  >
+                    <span>{v}</span>
+                    <button
+                      onClick={() => onRemove(v)}
+                      className="flex items-center justify-center"
+                      style={{
+                        width: 16,
+                        height: 16,
+                        color: Colors.grey,
+                      }}
+                    >
+                      <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
+                    </button>
+                  </div>
+                ))}
+                {/* Placeholder input - always visible */}
+                <input
+                  type="text"
+                  placeholder={placeholder}
+                  value=""
+                  readOnly
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  className="bg-transparent outline-none cursor-pointer"
+                  style={{
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    minWidth: 100,
+                    paddingTop: 4,
+                    flexShrink: 0,
+                  }}
+                />
+              </div>
             </div>
             {/* Suggestions dropdown */}
             {isOpen && availableSuggestions.length > 0 && (
