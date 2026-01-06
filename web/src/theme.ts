@@ -88,7 +88,7 @@ export const Sizes = {
   iconPadding: 2,           // EdgeInsets.all(2.0)
 
   // Form icons (from Flokk ExpandingMiniformContainer)
-  formIconSize: 20,         // Icon size in form rows
+  formIconSize: 24,         // Icon size in form rows (24px to match Flokk visual density)
   formIconOffset: 8,        // Icon vertical offset (translateY)
 } as const;
 
