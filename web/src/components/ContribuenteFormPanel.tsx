@@ -124,7 +124,8 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
 
       {/* Form - from Flokk contact_edit_panel_view:
           - paddingTop: Insets.sm (6px)
-          - paddingHorizontal: Insets.l (24px)
+          - paddingLeft: Insets.l (24px)
+          - paddingRight: 0 (each row has its own right padding)
           - paddingBottom: Insets.m (12px)
           - spacing between fields: Insets.m (12px) via SeparatedColumn
       */}
@@ -133,7 +134,7 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
         style={{
           paddingTop: Insets.sm,
           paddingLeft: Insets.l,
-          paddingRight: Insets.m,
+          paddingRight: 0,
           paddingBottom: Insets.m + 30, // Extra 30px for dropdown overflow like Flokk
         }}
       >
@@ -201,12 +202,13 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
 
 /**
  * FormField - styled like Flokk's ExpandingMiniformContainer + BaseMiniForm
- * - Icon size: 20px with 8px vertical offset
- * - Icon color: theme.grey
- * - Gap icon→input: Insets.l (24px)
- * - Text style: Body1 (Lato 14px)
- * - Right padding: Insets.l * 1.5 - 2 = 34px (underline ends before edge)
- * - Underline: greyWeak default, accent1 on focus
+ * Layout structure from Flokk:
+ *   Row (crossAxisAlignment: start)
+ *   ├── Icon (20px, offset 8px)
+ *   ├── HSpace(Insets.l) = 24px
+ *   └── Content.flexible().padding(right: Insets.m)  ← outer padding 12px
+ *       └── Input.padding(right: Insets.l * 1.5 - 2)  ← inner padding 34px
+ * Total right padding: 12px + 34px = 46px
  */
 function FormField({
   icon,
@@ -236,30 +238,32 @@ function FormField({
       >
         {icon}
       </div>
-      {/* Input container with right padding (Insets.l * 1.5 - 2 = 34px)
-          so underline ends before the edge like Flokk */}
+      {/* Content wrapper with outer padding (Insets.m = 12px) */}
       <div
         className="flex-1"
-        style={{ paddingRight: Insets.l * 1.5 - 2 }}
+        style={{ paddingRight: Insets.m }}
       >
-        <input
-          type="text"
-          placeholder={placeholder}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          className="w-full bg-transparent outline-none"
-          style={{
-            ...TextStyles.body1,
-            color: Colors.greyStrong,
-            paddingTop: 4,
-            paddingBottom: 8,
-            borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
-            transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-            caretColor: Colors.accent1,
-          }}
-        />
+        {/* Input container with inner padding (Insets.l * 1.5 - 2 = 34px) */}
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          <input
+            type="text"
+            placeholder={placeholder}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className="w-full bg-transparent outline-none"
+            style={{
+              ...TextStyles.body1,
+              color: Colors.greyStrong,
+              paddingTop: 4,
+              paddingBottom: 8,
+              borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+              transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+              caretColor: Colors.accent1,
+            }}
+          />
+        </div>
       </div>
     </div>
   );
