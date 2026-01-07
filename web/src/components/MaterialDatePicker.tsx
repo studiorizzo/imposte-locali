@@ -263,7 +263,11 @@ export function MaterialDatePicker({
           {/* Month/Year dropdown button */}
           <button
             type="button"
-            onClick={() => setShowYearSelector(!showYearSelector)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowYearSelector(!showYearSelector);
+            }}
+            onMouseDown={(e) => e.stopPropagation()}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -318,7 +322,11 @@ export function MaterialDatePicker({
           <div style={{ display: 'flex', gap: 0 }}>
             <button
               type="button"
-              onClick={goToPrevMonth}
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevMonth();
+              }}
+              onMouseDown={(e) => e.stopPropagation()}
               style={{
                 width: 40,
                 height: 40,
@@ -351,7 +359,11 @@ export function MaterialDatePicker({
             </button>
             <button
               type="button"
-              onClick={goToNextMonth}
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNextMonth();
+              }}
+              onMouseDown={(e) => e.stopPropagation()}
               style={{
                 width: 40,
                 height: 40,
@@ -413,7 +425,11 @@ export function MaterialDatePicker({
                     key={year}
                     type="button"
                     data-year={year}
-                    onClick={() => handleYearSelect(year)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleYearSelect(year);
+                    }}
+                    onMouseDown={(e) => e.stopPropagation()}
                     onMouseEnter={() => setHoveredYear(year)}
                     onMouseLeave={() => setHoveredYear(null)}
                     style={{
@@ -493,7 +509,11 @@ export function MaterialDatePicker({
                   <button
                     key={index}
                     type="button"
-                    onClick={() => !disabled && handleDayClick(dayInfo.day, dayInfo.monthOffset)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (!disabled) handleDayClick(dayInfo.day, dayInfo.monthOffset);
+                    }}
+                    onMouseDown={(e) => e.stopPropagation()}
                     onMouseEnter={() => !disabled && setHoveredDay(index)}
                     onMouseLeave={() => setHoveredDay(null)}
                     disabled={disabled}
