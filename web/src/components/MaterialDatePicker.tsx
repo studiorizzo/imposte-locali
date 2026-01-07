@@ -2,16 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import { Colors, Insets, TextStyles, Animations } from '../theme';
 
 /**
- * MaterialDatePicker - Faithful replica of Flutter Material Design DatePicker
+ * MaterialDatePicker - Custom date picker inspired by Material Design
  *
- * Specifications from Flutter/Material Design 3:
- * - Dialog width: 360px
- * - Day cell: 40×40px
- * - Grid: 7 columns
- * - Header height: 56px
- * - Border radius: 28px (dialog), 20px (selected day circle)
- * - Typography: Quicksand for header, Lato for days
- * - Animations: 250ms (fast), 350ms (medium)
+ * Features:
+ * - 5-row calendar grid
+ * - Year selector dropdown
+ * - Month navigation arrows on right
  */
 
 interface MaterialDatePickerProps {
@@ -22,8 +18,8 @@ interface MaterialDatePickerProps {
   maxDate?: Date;
 }
 
-// Italian weekday abbreviations (starting Monday)
-const WEEKDAYS_IT = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'];
+// Italian weekday abbreviations (starting Sunday like Material)
+const WEEKDAYS_IT = ['D', 'L', 'M', 'M', 'G', 'V', 'S'];
 
 // Italian month names
 const MONTHS_IT = [
@@ -36,11 +32,9 @@ function getDaysInMonth(year: number, month: number): number {
   return new Date(year, month + 1, 0).getDate();
 }
 
-// Helper to get first day of month (0 = Sunday, adjusted for Monday start)
+// Helper to get first day of month (0 = Sunday)
 function getFirstDayOfMonth(year: number, month: number): number {
-  const day = new Date(year, month, 1).getDay();
-  // Convert from Sunday-start (0) to Monday-start (0)
-  return day === 0 ? 6 : day - 1;
+  return new Date(year, month, 1).getDay();
 }
 
 // Helper to check if two dates are the same day
@@ -69,11 +63,11 @@ export function MaterialDatePicker({
   const [viewMonth, setViewMonth] = useState(initialDate.getMonth());
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(value);
   const [hoveredDay, setHoveredDay] = useState<number | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
+  const [showYearSelector, setShowYearSelector] = useState(false);
+  const [hoveredYear, setHoveredYear] = useState<number | null>(null);
 
   const dialogRef = useRef<HTMLDivElement>(null);
-  const calendarRef = useRef<HTMLDivElement>(null);
+  const yearListRef = useRef<HTMLDivElement>(null);
 
   // Close on click outside
   useEffect(() => {
@@ -91,61 +85,74 @@ export function MaterialDatePicker({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        onClose();
+        if (showYearSelector) {
+          setShowYearSelector(false);
+        } else {
+          onClose();
+        }
       }
     };
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+  }, [onClose, showYearSelector]);
+
+  // Scroll to current year when year selector opens
+  useEffect(() => {
+    if (showYearSelector && yearListRef.current) {
+      const selectedYearButton = yearListRef.current.querySelector(`[data-year="${viewYear}"]`);
+      if (selectedYearButton) {
+        selectedYearButton.scrollIntoView({ block: 'center', behavior: 'instant' });
+      }
+    }
+  }, [showYearSelector, viewYear]);
 
   // Navigate to previous month
   const goToPrevMonth = () => {
-    if (isAnimating) return;
-    setSlideDirection('right');
-    setIsAnimating(true);
-
-    setTimeout(() => {
-      if (viewMonth === 0) {
-        setViewMonth(11);
-        setViewYear(viewYear - 1);
-      } else {
-        setViewMonth(viewMonth - 1);
-      }
-      setIsAnimating(false);
-      setSlideDirection(null);
-    }, 150);
+    if (viewMonth === 0) {
+      setViewMonth(11);
+      setViewYear(viewYear - 1);
+    } else {
+      setViewMonth(viewMonth - 1);
+    }
   };
 
   // Navigate to next month
   const goToNextMonth = () => {
-    if (isAnimating) return;
-    setSlideDirection('left');
-    setIsAnimating(true);
-
-    setTimeout(() => {
-      if (viewMonth === 11) {
-        setViewMonth(0);
-        setViewYear(viewYear + 1);
-      } else {
-        setViewMonth(viewMonth + 1);
-      }
-      setIsAnimating(false);
-      setSlideDirection(null);
-    }, 150);
-  };
-
-  // Handle day selection
-  const handleDayClick = (day: number) => {
-    const newDate = new Date(viewYear, viewMonth, day);
-    if (newDate >= minDate && newDate <= maxDate) {
-      setSelectedDate(newDate);
-      onChange(newDate);
-      onClose();
+    if (viewMonth === 11) {
+      setViewMonth(0);
+      setViewYear(viewYear + 1);
+    } else {
+      setViewMonth(viewMonth + 1);
     }
   };
 
-  // Generate calendar grid
+  // Handle day selection
+  const handleDayClick = (day: number, monthOffset: number = 0) => {
+    let targetMonth = viewMonth + monthOffset;
+    let targetYear = viewYear;
+
+    if (targetMonth < 0) {
+      targetMonth = 11;
+      targetYear--;
+    } else if (targetMonth > 11) {
+      targetMonth = 0;
+      targetYear++;
+    }
+
+    const newDate = new Date(targetYear, targetMonth, day);
+    if (newDate >= minDate && newDate <= maxDate) {
+      setSelectedDate(newDate);
+    }
+  };
+
+  // Handle year selection
+  const handleYearSelect = (year: number) => {
+    setViewYear(year);
+    setShowYearSelector(false);
+  };
+
+  // Generate calendar grid (5 rows = 35 cells)
   const generateCalendarDays = () => {
     const daysInMonth = getDaysInMonth(viewYear, viewMonth);
     const firstDay = getFirstDayOfMonth(viewYear, viewMonth);
@@ -154,37 +161,59 @@ export function MaterialDatePicker({
       viewMonth === 0 ? 11 : viewMonth - 1
     );
 
-    const days: Array<{ day: number; isCurrentMonth: boolean; date: Date }> = [];
+    const days: Array<{ day: number; monthOffset: number; date: Date }> = [];
 
     // Previous month days
     for (let i = firstDay - 1; i >= 0; i--) {
       const day = daysInPrevMonth - i;
       const month = viewMonth === 0 ? 11 : viewMonth - 1;
       const year = viewMonth === 0 ? viewYear - 1 : viewYear;
-      days.push({ day, isCurrentMonth: false, date: new Date(year, month, day) });
+      days.push({ day, monthOffset: -1, date: new Date(year, month, day) });
     }
 
     // Current month days
     for (let day = 1; day <= daysInMonth; day++) {
-      days.push({ day, isCurrentMonth: true, date: new Date(viewYear, viewMonth, day) });
+      days.push({ day, monthOffset: 0, date: new Date(viewYear, viewMonth, day) });
     }
 
-    // Next month days (fill remaining cells to complete 6 rows)
-    const remainingCells = 42 - days.length; // 6 rows × 7 days = 42
+    // Next month days (fill remaining cells to complete 5 rows = 35 cells)
+    const remainingCells = 35 - days.length;
     for (let day = 1; day <= remainingCells; day++) {
       const month = viewMonth === 11 ? 0 : viewMonth + 1;
       const year = viewMonth === 11 ? viewYear + 1 : viewYear;
-      days.push({ day, isCurrentMonth: false, date: new Date(year, month, day) });
+      days.push({ day, monthOffset: 1, date: new Date(year, month, day) });
     }
 
-    return days;
+    return days.slice(0, 35); // Ensure exactly 35 cells
+  };
+
+  // Generate years for selector
+  const generateYears = () => {
+    const minYear = minDate.getFullYear();
+    const maxYear = maxDate.getFullYear();
+    const years: number[] = [];
+
+    for (let year = minYear; year <= maxYear; year++) {
+      years.push(year);
+    }
+
+    return years;
   };
 
   const calendarDays = generateCalendarDays();
+  const years = generateYears();
 
   // Check if date is disabled
   const isDisabled = (date: Date): boolean => {
     return date < minDate || date > maxDate;
+  };
+
+  // Handle OK
+  const handleOk = () => {
+    if (selectedDate) {
+      onChange(selectedDate);
+    }
+    onClose();
   };
 
   return (
@@ -208,7 +237,7 @@ export function MaterialDatePicker({
         onClick={onClose}
       />
 
-      {/* Dialog - centered */}
+      {/* Dialog */}
       <div
         ref={dialogRef}
         style={{
@@ -231,21 +260,19 @@ export function MaterialDatePicker({
             padding: `0 ${Insets.m}px`,
           }}
         >
-          {/* Previous month button */}
+          {/* Month/Year dropdown button */}
           <button
             type="button"
-            onClick={goToPrevMonth}
+            onClick={() => setShowYearSelector(!showYearSelector)}
             style={{
-              width: 40,
-              height: 40,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              gap: 4,
               backgroundColor: 'transparent',
               border: 'none',
-              borderRadius: 20,
               cursor: 'pointer',
-              color: Colors.accentTxt,
+              padding: `${Insets.xs}px ${Insets.sm}px`,
+              borderRadius: 4,
               transition: `background-color ${Animations.button.duration}`,
             }}
             onMouseEnter={(e) => {
@@ -255,9 +282,30 @@ export function MaterialDatePicker({
               e.currentTarget.style.backgroundColor = 'transparent';
             }}
           >
-            <svg width={24} height={24} viewBox="0 0 24 24" fill="none">
+            <span
+              style={{
+                fontFamily: "'Quicksand', sans-serif",
+                fontSize: 16,
+                fontWeight: 700,
+                letterSpacing: 0.7,
+                color: Colors.accentTxt,
+              }}
+            >
+              {MONTHS_IT[viewMonth]} {viewYear}
+            </span>
+            <svg
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              style={{
+                color: Colors.accentTxt,
+                transform: showYearSelector ? 'rotate(180deg)' : 'rotate(0deg)',
+                transition: `transform ${Animations.button.duration}`,
+              }}
+            >
               <path
-                d="M15 18L9 12L15 6"
+                d="M6 9L12 15L18 9"
                 stroke="currentColor"
                 strokeWidth={2}
                 strokeLinecap="round"
@@ -266,148 +314,225 @@ export function MaterialDatePicker({
             </svg>
           </button>
 
-          {/* Month/Year display */}
-          <div
-            style={{
-              fontFamily: "'Quicksand', sans-serif",
-              fontSize: 16,
-              fontWeight: 700,
-              letterSpacing: 0.7,
-              color: Colors.accentTxt,
-              textTransform: 'capitalize',
-            }}
-          >
-            {MONTHS_IT[viewMonth]} {viewYear}
+          {/* Navigation arrows (both on right) */}
+          <div style={{ display: 'flex', gap: 0 }}>
+            <button
+              type="button"
+              onClick={goToPrevMonth}
+              style={{
+                width: 40,
+                height: 40,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'transparent',
+                border: 'none',
+                borderRadius: 20,
+                cursor: 'pointer',
+                color: Colors.accentTxt,
+                transition: `background-color ${Animations.button.duration}`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              <svg width={24} height={24} viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={goToNextMonth}
+              style={{
+                width: 40,
+                height: 40,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'transparent',
+                border: 'none',
+                borderRadius: 20,
+                cursor: 'pointer',
+                color: Colors.accentTxt,
+                transition: `background-color ${Animations.button.duration}`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              <svg width={24} height={24} viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
-
-          {/* Next month button */}
-          <button
-            type="button"
-            onClick={goToNextMonth}
-            style={{
-              width: 40,
-              height: 40,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: 'transparent',
-              border: 'none',
-              borderRadius: 20,
-              cursor: 'pointer',
-              color: Colors.accentTxt,
-              transition: `background-color ${Animations.button.duration}`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-            }}
-          >
-            <svg width={24} height={24} viewBox="0 0 24 24" fill="none">
-              <path
-                d="M9 18L15 12L9 6"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
         </div>
 
-        {/* Calendar content */}
-        <div style={{ padding: `${Insets.m}px ${Insets.sm}px` }}>
-          {/* Weekday headers */}
+        {/* Calendar or Year selector content */}
+        {showYearSelector ? (
+          /* Year selector grid */
           <div
+            ref={yearListRef}
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(7, 1fr)',
-              marginBottom: 8,
+              padding: `${Insets.m}px`,
+              height: 280,
+              overflowY: 'auto',
             }}
           >
-            {WEEKDAYS_IT.map((day) => (
-              <div
-                key={day}
-                style={{
-                  height: 32,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  ...TextStyles.body2,
-                  color: Colors.grey,
-                  fontWeight: 400,
-                }}
-              >
-                {day}
-              </div>
-            ))}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: Insets.sm,
+              }}
+            >
+              {years.map((year) => {
+                const isSelected = year === viewYear;
+                const isHovered = hoveredYear === year;
+                const isCurrentYear = year === today.getFullYear();
+
+                return (
+                  <button
+                    key={year}
+                    type="button"
+                    data-year={year}
+                    onClick={() => handleYearSelect(year)}
+                    onMouseEnter={() => setHoveredYear(year)}
+                    onMouseLeave={() => setHoveredYear(null)}
+                    style={{
+                      height: 40,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      backgroundColor: isSelected
+                        ? Colors.accent1
+                        : isHovered
+                          ? Colors.bg1
+                          : 'transparent',
+                      border: 'none',
+                      borderRadius: 20,
+                      cursor: 'pointer',
+                      fontFamily: "'Lato', sans-serif",
+                      fontSize: 14,
+                      fontWeight: isSelected || isCurrentYear ? 600 : 400,
+                      color: isSelected
+                        ? Colors.accentTxt
+                        : isCurrentYear
+                          ? Colors.accent1
+                          : Colors.greyStrong,
+                      transition: `background-color ${Animations.button.duration}`,
+                    }}
+                  >
+                    {year}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-
-          {/* Days grid */}
-          <div
-            ref={calendarRef}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(7, 1fr)',
-              opacity: isAnimating ? 0.5 : 1,
-              transform: slideDirection === 'left'
-                ? 'translateX(-10px)'
-                : slideDirection === 'right'
-                  ? 'translateX(10px)'
-                  : 'translateX(0)',
-              transition: `opacity 150ms ease-out, transform 150ms ease-out`,
-            }}
-          >
-            {calendarDays.map((dayInfo, index) => {
-              const isSelected = selectedDate && isSameDay(dayInfo.date, selectedDate);
-              const isTodayDate = isToday(dayInfo.date);
-              const disabled = !dayInfo.isCurrentMonth || isDisabled(dayInfo.date);
-              const isHovered = hoveredDay === index && !disabled;
-
-              return (
-                <button
+        ) : (
+          /* Calendar grid */
+          <div style={{ padding: `${Insets.m}px ${Insets.sm}px` }}>
+            {/* Weekday headers */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(7, 1fr)',
+                marginBottom: 8,
+              }}
+            >
+              {WEEKDAYS_IT.map((day, index) => (
+                <div
                   key={index}
-                  type="button"
-                  onClick={() => !disabled && handleDayClick(dayInfo.day)}
-                  onMouseEnter={() => !disabled && setHoveredDay(index)}
-                  onMouseLeave={() => setHoveredDay(null)}
-                  disabled={disabled}
                   style={{
-                    width: 40,
-                    height: 40,
-                    margin: '2px auto',
+                    height: 32,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: isTodayDate && !isSelected
-                      ? `2px solid ${Colors.accent1}`
-                      : 'none',
-                    borderRadius: 20,
-                    backgroundColor: isSelected
-                      ? Colors.accent1
-                      : isHovered
-                        ? Colors.bg1
-                        : 'transparent',
-                    cursor: disabled ? 'default' : 'pointer',
-                    transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
-                    ...TextStyles.body1,
-                    color: isSelected
-                      ? Colors.accentTxt
-                      : disabled
-                        ? Colors.greyWeak
-                        : isTodayDate
-                          ? Colors.accent1
-                          : Colors.greyStrong,
-                    fontWeight: isTodayDate || isSelected ? 600 : 400,
+                    ...TextStyles.body2,
+                    color: Colors.grey,
+                    fontWeight: 400,
                   }}
                 >
-                  {dayInfo.day}
-                </button>
-              );
-            })}
+                  {day}
+                </div>
+              ))}
+            </div>
+
+            {/* Days grid (5 rows) */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(7, 1fr)',
+              }}
+            >
+              {calendarDays.map((dayInfo, index) => {
+                const isSelected = selectedDate && isSameDay(dayInfo.date, selectedDate);
+                const isTodayDate = isToday(dayInfo.date);
+                const isCurrentMonth = dayInfo.monthOffset === 0;
+                const disabled = !isCurrentMonth || isDisabled(dayInfo.date);
+                const isHovered = hoveredDay === index && !disabled;
+
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => !disabled && handleDayClick(dayInfo.day, dayInfo.monthOffset)}
+                    onMouseEnter={() => !disabled && setHoveredDay(index)}
+                    onMouseLeave={() => setHoveredDay(null)}
+                    disabled={disabled}
+                    style={{
+                      width: 40,
+                      height: 40,
+                      margin: '2px auto',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      border: isTodayDate && !isSelected && isCurrentMonth
+                        ? `2px solid ${Colors.accent1}`
+                        : 'none',
+                      borderRadius: 20,
+                      backgroundColor: isSelected
+                        ? Colors.accent1
+                        : isHovered
+                          ? Colors.bg1
+                          : 'transparent',
+                      cursor: disabled ? 'default' : 'pointer',
+                      transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
+                      ...TextStyles.body1,
+                      color: isSelected
+                        ? Colors.accentTxt
+                        : disabled
+                          ? Colors.greyWeak
+                          : isTodayDate
+                            ? Colors.accent1
+                            : Colors.greyStrong,
+                      fontWeight: isTodayDate || isSelected ? 600 : 400,
+                    }}
+                  >
+                    {dayInfo.day}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Action buttons */}
         <div
@@ -447,12 +572,7 @@ export function MaterialDatePicker({
           </button>
           <button
             type="button"
-            onClick={() => {
-              if (selectedDate) {
-                onChange(selectedDate);
-              }
-              onClose();
-            }}
+            onClick={handleOk}
             style={{
               fontFamily: "'Quicksand', sans-serif",
               fontSize: 14,
