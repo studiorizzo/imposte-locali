@@ -320,11 +320,12 @@ function NameField({
   const handleFieldBlur = () => {
     setFocusedField(null);
     // Use timeout to check if focus moved to another field within container
+    // 750ms matches Flokk's expanding_miniform_container.dart
     closeTimeoutRef.current = setTimeout(() => {
       if (!hasContent) {
         setIsOpen(false);
       }
-    }, 100);
+    }, 750);
   };
 
   // Clean up timeout on unmount
