@@ -21,8 +21,8 @@ interface MaterialDatePickerProps {
   maxDate?: Date;
 }
 
-// Italian weekday abbreviations (starting Sunday like Material)
-const WEEKDAYS_IT = ['D', 'L', 'M', 'M', 'G', 'V', 'S'];
+// Italian weekday abbreviations (starting Monday)
+const WEEKDAYS_IT = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
 // Italian month names
 const MONTHS_IT = [
@@ -35,9 +35,10 @@ function getDaysInMonth(year: number, month: number): number {
   return new Date(year, month + 1, 0).getDate();
 }
 
-// Helper to get first day of month (0 = Sunday)
+// Helper to get first day of month (0 = Monday, 6 = Sunday)
 function getFirstDayOfMonth(year: number, month: number): number {
-  return new Date(year, month, 1).getDay();
+  const day = new Date(year, month, 1).getDay();
+  return (day + 6) % 7; // Convert Sunday=0 to Sunday=6, Monday=1 to Monday=0
 }
 
 // Helper to check if two dates are the same day
@@ -446,7 +447,7 @@ export function MaterialDatePicker({
                           ? Colors.bg1
                           : 'transparent',
                       border: 'none',
-                      borderRadius: 20,
+                      borderRadius: Sizes.radiusLg,
                       cursor: 'pointer',
                       fontFamily: "'Lato', sans-serif",
                       fontSize: 14,
