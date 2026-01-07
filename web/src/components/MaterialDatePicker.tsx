@@ -415,7 +415,8 @@ export function MaterialDatePicker({
               ref={yearListRef}
               style={{
                 padding: `${Insets.m}px`,
-                height: 304,
+                height: 336,
+                boxSizing: 'border-box',
                 overflowY: 'auto',
                 backgroundColor: Colors.bg1,
               }}
@@ -532,7 +533,7 @@ export function MaterialDatePicker({
           </>
         ) : (
           /* Calendar grid */
-          <div style={{ padding: `${Insets.m}px ${Insets.sm}px`, backgroundColor: Colors.bg1 }}>
+          <div style={{ padding: `${Insets.m}px ${Insets.sm}px`, height: 336, boxSizing: 'border-box', backgroundColor: Colors.bg1 }}>
             {/* Weekday headers */}
             <div
               style={{
