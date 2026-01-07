@@ -483,7 +483,7 @@ export function MaterialDatePicker({
                         backgroundColor: isSelected
                           ? Colors.accent1
                           : isHovered
-                            ? Colors.bg2
+                            ? 'rgba(241, 247, 240, 0.5)'
                             : 'transparent',
                         border: 'none',
                         borderRadius: dimensions.cellBorderRadius,
@@ -531,7 +531,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = Colors.bg2;
+                  e.currentTarget.style.backgroundColor = 'rgba(241, 247, 240, 0.5)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
@@ -610,7 +610,7 @@ export function MaterialDatePicker({
                       backgroundColor: isSelected
                         ? Colors.accent1
                         : isHovered
-                          ? Colors.bg2
+                          ? 'rgba(241, 247, 240, 0.5)'
                           : 'transparent',
                       cursor: disabled ? 'default' : 'pointer',
                       transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
@@ -661,7 +661,7 @@ export function MaterialDatePicker({
                 transition: `background-color ${Animations.button.duration}`,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = Colors.bg2;
+                e.currentTarget.style.backgroundColor = 'rgba(241, 247, 240, 0.5)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
@@ -689,7 +689,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = Colors.bg2;
+                  e.currentTarget.style.backgroundColor = 'rgba(241, 247, 240, 0.5)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
@@ -715,7 +715,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = Colors.bg2;
+                  e.currentTarget.style.backgroundColor = 'rgba(241, 247, 240, 0.5)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
