@@ -322,9 +322,10 @@ export function MaterialDatePicker({
             </svg>
           </button>
 
-          {/* Navigation arrows (both on right) */}
-          <div style={{ display: 'flex', gap: 0 }}>
-            <button
+          {/* Navigation arrows (both on right) - hidden in year selector */}
+          {!showYearSelector && (
+            <div style={{ display: 'flex', gap: 0 }}>
+              <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
@@ -397,8 +398,9 @@ export function MaterialDatePicker({
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
-          </div>
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Calendar or Year selector content */}
@@ -410,6 +412,7 @@ export function MaterialDatePicker({
               padding: `${Insets.m}px`,
               height: 280,
               overflowY: 'auto',
+              backgroundColor: Colors.bg1,
             }}
           >
             <div
@@ -447,7 +450,7 @@ export function MaterialDatePicker({
                           ? Colors.bg1
                           : 'transparent',
                       border: 'none',
-                      borderRadius: Sizes.radiusLg,
+                      borderRadius: 20,
                       cursor: 'pointer',
                       fontFamily: "'Lato', sans-serif",
                       fontSize: 14,
@@ -468,7 +471,7 @@ export function MaterialDatePicker({
           </div>
         ) : (
           /* Calendar grid */
-          <div style={{ padding: `${Insets.m}px ${Insets.sm}px` }}>
+          <div style={{ padding: `${Insets.m}px ${Insets.sm}px`, backgroundColor: Colors.bg1 }}>
             {/* Weekday headers */}
             <div
               style={{
@@ -558,69 +561,96 @@ export function MaterialDatePicker({
           </div>
         )}
 
-        {/* Action buttons */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            gap: Insets.sm,
-            padding: `${Insets.m}px ${Insets.l}px`,
-            borderTop: `1px solid ${Colors.bg2}`,
-          }}
-        >
-          <button
-            type="button"
-            onClick={onClose}
+        {/* Action buttons - hidden in year selector */}
+        {!showYearSelector && (
+          <div
             style={{
-              fontFamily: "'Quicksand', sans-serif",
-              fontSize: 14,
-              fontWeight: 700,
-              letterSpacing: 1.75,
-              textTransform: 'uppercase',
-              color: Colors.grey,
-              backgroundColor: 'transparent',
-              border: 'none',
-              borderRadius: 5,
-              padding: `${Insets.sm}px ${Insets.m}px`,
-              cursor: 'pointer',
-              transition: `background-color ${Animations.button.duration}`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = Colors.bg1;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: `${Insets.m}px ${Insets.l}px`,
             }}
           >
-            Annulla
-          </button>
-          <button
-            type="button"
-            onClick={handleOk}
-            style={{
-              fontFamily: "'Quicksand', sans-serif",
-              fontSize: 14,
-              fontWeight: 700,
-              letterSpacing: 1.75,
-              textTransform: 'uppercase',
-              color: Colors.accent1,
-              backgroundColor: 'transparent',
-              border: 'none',
-              borderRadius: 5,
-              padding: `${Insets.sm}px ${Insets.m}px`,
-              cursor: 'pointer',
-              transition: `background-color ${Animations.button.duration}`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = Colors.bg1;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-            }}
-          >
-            OK
-          </button>
-        </div>
+            {/* Pencil icon for manual entry */}
+            <svg
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              style={{ color: Colors.accent1 }}
+            >
+              <path
+                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {/* Buttons */}
+            <div style={{ display: 'flex', gap: Insets.sm }}>
+              <button
+                type="button"
+                onClick={onClose}
+                style={{
+                  fontFamily: "'Quicksand', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  letterSpacing: 1.75,
+                  textTransform: 'uppercase',
+                  color: Colors.grey,
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  borderRadius: 5,
+                  padding: `${Insets.sm}px ${Insets.m}px`,
+                  cursor: 'pointer',
+                  transition: `background-color ${Animations.button.duration}`,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = Colors.bg1;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                Annulla
+              </button>
+              <button
+                type="button"
+                onClick={handleOk}
+                style={{
+                  fontFamily: "'Quicksand', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  letterSpacing: 1.75,
+                  textTransform: 'uppercase',
+                  color: Colors.accent1,
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  borderRadius: 5,
+                  padding: `${Insets.sm}px ${Insets.m}px`,
+                  cursor: 'pointer',
+                  transition: `background-color ${Animations.button.duration}`,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = Colors.bg1;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
