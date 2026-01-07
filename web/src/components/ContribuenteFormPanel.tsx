@@ -856,8 +856,9 @@ function DateLocationField({
           ) : (
             // Open state - show all fields
             <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.sm * 0.5 }}>
-              {/* Data di nascita field with calendar button */}
-              <div style={{ position: 'relative' }}>
+              {/* Data di nascita + calendar button row (like Nome + Sesso) */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: Insets.m }}>
+                {/* Data input - flex-1 */}
                 <input
                   type="text"
                   placeholder="Data di nascita"
@@ -866,72 +867,71 @@ function DateLocationField({
                   onFocus={() => handleFieldFocus('data')}
                   onBlur={handleFieldBlur}
                   autoFocus
-                  className="w-full bg-transparent outline-none"
+                  className="bg-transparent outline-none"
                   style={{
+                    flex: 1,
+                    minWidth: 0,
                     ...TextStyles.body1,
                     color: Colors.greyStrong,
                     paddingTop: 4,
                     paddingBottom: Insets.sm,
-                    paddingRight: 36, // Space for calendar button
                     borderBottom: `2px solid ${focusedField === 'data' ? Colors.accent1 : Colors.greyWeak}`,
                     transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
                     caretColor: Colors.accent1,
                   }}
                 />
-                {/* Hidden date input for native picker */}
-                <input
-                  ref={dateInputRef}
-                  type="date"
-                  value={getInputDateValue()}
-                  onChange={handleDateChange}
-                  style={{
-                    position: 'absolute',
-                    opacity: 0,
-                    width: 0,
-                    height: 0,
-                    pointerEvents: 'none',
-                  }}
-                  min="1900-01-01"
-                  max="2100-12-31"
-                />
-                {/* Calendar button - Flokk style: SecondaryBtn positioned right: 0, bottom: 3 */}
-                <button
-                  type="button"
-                  onClick={handleCalendarClick}
-                  style={{
-                    position: 'absolute',
-                    right: 0,
-                    bottom: 3,
-                    minWidth: 24,
-                    minHeight: 20,
-                    padding: Insets.sm - 2,
-                    backgroundColor: Colors.surface,
-                    border: `1px solid ${Colors.grey}59`,
-                    borderRadius: 5,
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: `border-color ${Animations.button.duration}`,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = Colors.accent1;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = `${Colors.grey}59`;
-                  }}
-                >
-                  {/* Calendar icon */}
-                  <svg width={14} height={14} viewBox="0 0 24 24" fill="none" style={{ color: Colors.accent1 }}>
-                    <path
-                      d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z"
-                      stroke="currentColor"
-                      strokeWidth={1.5}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
+                {/* Calendar button wrapper - aligned like Sesso dropdown */}
+                <div style={{ transform: 'translateY(3px)' }}>
+                  {/* Hidden date input for native picker */}
+                  <input
+                    ref={dateInputRef}
+                    type="date"
+                    value={getInputDateValue()}
+                    onChange={handleDateChange}
+                    style={{
+                      position: 'absolute',
+                      opacity: 0,
+                      width: 0,
+                      height: 0,
+                      pointerEvents: 'none',
+                    }}
+                    min="1900-01-01"
+                    max="2100-12-31"
+                  />
+                  {/* Calendar button - chip-like height (padding Insets.sm) */}
+                  <button
+                    type="button"
+                    onClick={handleCalendarClick}
+                    style={{
+                      padding: Insets.sm, // Same padding as chips (6px all sides)
+                      backgroundColor: Colors.surface,
+                      border: `1px solid ${Colors.grey}59`,
+                      borderRadius: 5,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: `border-color ${Animations.button.duration}`,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = Colors.accent1;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = `${Colors.grey}59`;
+                    }}
+                  >
+                    {/* Calendar icon */}
+                    <svg width={14} height={14} viewBox="0 0 24 24" fill="none" style={{ color: Colors.accent1 }}>
+                      <path
+                        d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
               {/* Comune + Prov. row (like Nome + Sesso) */}
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: Insets.m }}>
