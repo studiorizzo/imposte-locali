@@ -223,14 +223,13 @@ function FormField({
 
   return (
     <div
-      className="flex items-start"
+      className="flex items-center"
       style={{ gap: Insets.l }}
     >
-      {/* Icon with vertical offset like Flokk */}
+      {/* Icon centered with text */}
       <div
         style={{
           color: Colors.grey,
-          transform: `translateY(${Sizes.formIconOffset}px)`,
           flexShrink: 0,
         }}
       >
@@ -565,15 +564,15 @@ function NameField({
 
   return (
     <div
-      className="flex items-start"
-      style={{ gap: Insets.l }}
+      className="flex"
+      style={{ gap: Insets.l, alignItems: isOpen ? 'flex-start' : 'center' }}
     >
-      {/* Icon with vertical offset like Flokk */}
+      {/* Icon - centered when closed, top-aligned when open */}
       <div
         style={{
           color: Colors.grey,
-          transform: `translateY(${Sizes.formIconOffset}px)`,
           flexShrink: 0,
+          ...(isOpen ? { transform: `translateY(${Sizes.formIconOffset}px)` } : {}),
         }}
       >
         {icon}
@@ -814,15 +813,15 @@ function DateLocationField({
 
   return (
     <div
-      className="flex items-start"
-      style={{ gap: Insets.l }}
+      className="flex"
+      style={{ gap: Insets.l, alignItems: isOpen ? 'flex-start' : 'center' }}
     >
-      {/* Icon with vertical offset like Flokk */}
+      {/* Icon - centered when closed, top-aligned when open */}
       <div
         style={{
           color: Colors.grey,
-          transform: `translateY(${Sizes.formIconOffset}px)`,
           flexShrink: 0,
+          ...(isOpen ? { transform: `translateY(${Sizes.formIconOffset}px)` } : {}),
         }}
       >
         {icon}
@@ -1106,15 +1105,15 @@ function LabelField({
 
   return (
     <div
-      className="flex items-start"
-      style={{ gap: Insets.l }}
+      className="flex"
+      style={{ gap: Insets.l, alignItems: isOpen ? 'flex-start' : 'center' }}
     >
-      {/* Icon with vertical offset like Flokk */}
+      {/* Icon - centered when closed, top-aligned when open */}
       <div
         style={{
           color: Colors.grey,
-          transform: `translateY(${Sizes.formIconOffset}px)`,
           flexShrink: 0,
+          ...(isOpen ? { transform: `translateY(${Sizes.formIconOffset}px)` } : {}),
         }}
       >
         {icon}
