@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Colors, Sizes, Insets, TextStyles, Animations } from '../theme';
+import { MaterialDatePicker } from './MaterialDatePicker';
 import LabelIcon from '../assets/Label_form.svg';
 import UserFormIcon from '../assets/User_2_form.svg';
 import DateFormIcon from '../assets/Date_form.svg';
@@ -733,8 +734,9 @@ function DateLocationField({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const dateInputRef = useRef<HTMLInputElement>(null);
+  const calendarButtonRef = useRef<HTMLButtonElement>(null);
 
   // Check if there's any content
   const hasContent = dataNascita || comuneNascita || provinciaNascita;
@@ -785,31 +787,32 @@ function DateLocationField({
     };
   }, []);
 
-  // Handle calendar button click - open native date picker
+  // Handle calendar button click - open custom date picker
   const handleCalendarClick = () => {
-    dateInputRef.current?.showPicker();
+    setShowDatePicker(true);
   };
 
-  // Handle date input change
-  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const date = e.target.value;
-    if (date) {
-      // Convert from YYYY-MM-DD to DD/MM/YYYY for display
-      const [year, month, day] = date.split('-');
-      onChangeDataNascita(`${day}/${month}/${year}`);
-    } else {
-      onChangeDataNascita('');
-    }
+  // Handle date selection from picker
+  const handleDateSelect = (date: Date) => {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    onChangeDataNascita(`${day}/${month}/${year}`);
   };
 
-  // Convert display date (DD/MM/YYYY) to input format (YYYY-MM-DD)
-  const getInputDateValue = () => {
-    if (!dataNascita) return '';
+  // Parse display date (DD/MM/YYYY) to Date object
+  const parseDisplayDate = (): Date | undefined => {
+    if (!dataNascita) return undefined;
     const parts = dataNascita.split('/');
     if (parts.length === 3) {
-      return `${parts[2]}-${parts[1]}-${parts[0]}`;
+      const day = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10) - 1;
+      const year = parseInt(parts[2], 10);
+      if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+        return new Date(year, month, day);
+      }
     }
-    return '';
+    return undefined;
   };
 
   return (
@@ -875,24 +878,9 @@ function DateLocationField({
                     caretColor: Colors.accent1,
                   }}
                 />
-                {/* Hidden date input for native picker */}
-                <input
-                  ref={dateInputRef}
-                  type="date"
-                  value={getInputDateValue()}
-                  onChange={handleDateChange}
-                  style={{
-                    position: 'absolute',
-                    opacity: 0,
-                    width: 0,
-                    height: 0,
-                    pointerEvents: 'none',
-                  }}
-                  min="1900-01-01"
-                  max="2100-12-31"
-                />
                 {/* Calendar button - chip-like height, aligned to bottom */}
                 <button
+                  ref={calendarButtonRef}
                   type="button"
                   onClick={handleCalendarClick}
                   onMouseDown={(e) => {
@@ -929,6 +917,18 @@ function DateLocationField({
                     />
                   </svg>
                 </button>
+
+                {/* Material Date Picker */}
+                {showDatePicker && (
+                  <MaterialDatePicker
+                    value={parseDisplayDate()}
+                    onChange={handleDateSelect}
+                    onClose={() => setShowDatePicker(false)}
+                    anchorEl={calendarButtonRef.current}
+                    minDate={new Date(1900, 0, 1)}
+                    maxDate={new Date()}
+                  />
+                )}
               </div>
               {/* Comune + Prov. row */}
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: Insets.m }}>
