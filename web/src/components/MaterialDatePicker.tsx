@@ -10,15 +10,17 @@ import { Colors, Insets, Sizes, TextStyles, Animations } from '../theme';
  * - Month navigation arrows on right
  */
 
-// Default to 100 years ago for birth dates
-const DEFAULT_MIN_YEAR = new Date().getFullYear() - 100;
-
 interface MaterialDatePickerProps {
   value?: Date;
   onChange: (date: Date) => void;
   onClose: () => void;
   minDate?: Date;
   maxDate?: Date;
+}
+
+// Calculate default min year (100 years ago) - function to ensure runtime evaluation
+function getDefaultMinDate(): Date {
+  return new Date(new Date().getFullYear() - 100, 0, 1);
 }
 
 // Italian weekday abbreviations (starting Monday)
@@ -57,9 +59,11 @@ export function MaterialDatePicker({
   value,
   onChange,
   onClose,
-  minDate = new Date(DEFAULT_MIN_YEAR, 0, 1),
+  minDate,
   maxDate = new Date(2100, 11, 31),
 }: MaterialDatePickerProps) {
+  // Use provided minDate or calculate default (100 years ago)
+  const effectiveMinDate = minDate ?? getDefaultMinDate();
   const today = new Date();
   const initialDate = value || today;
 
@@ -145,7 +149,7 @@ export function MaterialDatePicker({
     }
 
     const newDate = new Date(targetYear, targetMonth, day);
-    if (newDate >= minDate && newDate <= maxDate) {
+    if (newDate >= effectiveMinDate && newDate <= maxDate) {
       setSelectedDate(newDate);
     }
   };
@@ -193,7 +197,7 @@ export function MaterialDatePicker({
 
   // Generate years for selector
   const generateYears = () => {
-    const minYear = minDate.getFullYear();
+    const minYear = effectiveMinDate.getFullYear();
     const maxYear = maxDate.getFullYear();
     const years: number[] = [];
 
@@ -209,7 +213,7 @@ export function MaterialDatePicker({
 
   // Check if date is disabled
   const isDisabled = (date: Date): boolean => {
-    return date < minDate || date > maxDate;
+    return date < effectiveMinDate || date > maxDate;
   };
 
   // Handle OK
@@ -448,7 +452,7 @@ export function MaterialDatePicker({
                         backgroundColor: isSelected
                           ? Colors.accent1
                           : isHovered
-                            ? Colors.surface
+                            ? 'rgba(255, 255, 255, 0.1)'
                             : 'transparent',
                         border: 'none',
                         borderRadius: 20,
@@ -470,13 +474,13 @@ export function MaterialDatePicker({
                 })}
               </div>
             </div>
-            {/* Pencil icon area for year selector - same height as action buttons */}
+            {/* Pencil icon area for year selector - same position as calendar */}
             <div
               style={{
                 display: 'flex',
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                padding: `24px ${Insets.l}px`,
+                padding: `${Insets.m}px ${Insets.l}px`,
                 backgroundColor: Colors.bg1,
               }}
             >
@@ -496,7 +500,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = Colors.surface;
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
@@ -595,7 +599,7 @@ export function MaterialDatePicker({
                       backgroundColor: isSelected
                         ? Colors.accent1
                         : isHovered
-                          ? Colors.surface
+                          ? 'rgba(255, 255, 255, 0.1)'
                           : 'transparent',
                       cursor: disabled ? 'default' : 'pointer',
                       transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
@@ -646,7 +650,7 @@ export function MaterialDatePicker({
                 transition: `background-color ${Animations.button.duration}`,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = Colors.surface;
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
@@ -694,7 +698,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = Colors.surface;
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
@@ -720,7 +724,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = Colors.surface;
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
