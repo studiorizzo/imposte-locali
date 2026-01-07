@@ -901,7 +901,7 @@ function DateLocationField({
                     handleFieldFocus('calendar');
                   }}
                   style={{
-                    padding: Insets.sm - 1, // Account for 2px border
+                    padding: 4, // 32px total: 2 (border) + 4 (padding) + 20 (icon) + 4 (padding) + 2 (border)
                     backgroundColor: Colors.surface,
                     border: `2px solid ${Colors.grey}59`,
                     borderRadius: 5,
@@ -918,8 +918,8 @@ function DateLocationField({
                     e.currentTarget.style.borderColor = `${Colors.grey}59`;
                   }}
                 >
-                  {/* Calendar icon - larger with thicker stroke */}
-                  <svg width={18} height={18} viewBox="0 0 24 24" fill="none" style={{ color: Colors.accent1 }}>
+                  {/* Calendar icon - 20px with thicker stroke */}
+                  <svg width={20} height={20} viewBox="0 0 24 24" fill="none" style={{ color: Colors.accent1 }}>
                     <path
                       d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z"
                       stroke="currentColor"
