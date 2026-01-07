@@ -406,69 +406,104 @@ export function MaterialDatePicker({
         {/* Calendar or Year selector content */}
         {showYearSelector ? (
           /* Year selector grid */
-          <div
-            ref={yearListRef}
-            style={{
-              padding: `${Insets.m}px`,
-              height: 280,
-              overflowY: 'auto',
-              backgroundColor: Colors.bg1,
-            }}
-          >
+          <>
             <div
+              ref={yearListRef}
               style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: Insets.sm,
+                padding: `${Insets.m}px`,
+                height: 304,
+                overflowY: 'auto',
+                backgroundColor: Colors.bg1,
               }}
             >
-              {years.map((year) => {
-                const isSelected = year === viewYear;
-                const isHovered = hoveredYear === year;
-                const isCurrentYear = year === today.getFullYear();
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: Insets.sm,
+                }}
+              >
+                {years.map((year) => {
+                  const isSelected = year === viewYear;
+                  const isHovered = hoveredYear === year;
+                  const isCurrentYear = year === today.getFullYear();
 
-                return (
-                  <button
-                    key={year}
-                    type="button"
-                    data-year={year}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleYearSelect(year);
-                    }}
-                    onMouseDown={(e) => e.stopPropagation()}
-                    onMouseEnter={() => setHoveredYear(year)}
-                    onMouseLeave={() => setHoveredYear(null)}
-                    style={{
-                      height: 40,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      backgroundColor: isSelected
-                        ? Colors.accent1
-                        : isHovered
-                          ? Colors.bg1
-                          : 'transparent',
-                      border: 'none',
-                      borderRadius: 20,
-                      cursor: 'pointer',
-                      fontFamily: "'Lato', sans-serif",
-                      fontSize: 14,
-                      fontWeight: isSelected || isCurrentYear ? 600 : 400,
-                      color: isSelected
-                        ? Colors.accentTxt
-                        : isCurrentYear
+                  return (
+                    <button
+                      key={year}
+                      type="button"
+                      data-year={year}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleYearSelect(year);
+                      }}
+                      onMouseDown={(e) => e.stopPropagation()}
+                      onMouseEnter={() => setHoveredYear(year)}
+                      onMouseLeave={() => setHoveredYear(null)}
+                      style={{
+                        height: 40,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: isSelected
                           ? Colors.accent1
-                          : Colors.greyStrong,
-                      transition: `background-color ${Animations.button.duration}`,
-                    }}
-                  >
-                    {year}
-                  </button>
-                );
-              })}
+                          : isHovered
+                            ? Colors.bg2
+                            : 'transparent',
+                        border: 'none',
+                        borderRadius: 20,
+                        cursor: 'pointer',
+                        fontFamily: "'Lato', sans-serif",
+                        fontSize: 14,
+                        fontWeight: isSelected || isCurrentYear ? 600 : 400,
+                        color: isSelected
+                          ? Colors.accentTxt
+                          : isCurrentYear
+                            ? Colors.accent1
+                            : Colors.greyStrong,
+                        transition: `background-color ${Animations.button.duration}`,
+                      }}
+                    >
+                      {year}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+            {/* Pencil icon area for year selector */}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                padding: `${Insets.m}px ${Insets.l}px`,
+                backgroundColor: Colors.bg1,
+              }}
+            >
+              <svg
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                style={{ color: Colors.accent1 }}
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </>
         ) : (
           /* Calendar grid */
           <div style={{ padding: `${Insets.m}px ${Insets.sm}px`, backgroundColor: Colors.bg1 }}>
@@ -569,6 +604,7 @@ export function MaterialDatePicker({
               justifyContent: 'space-between',
               alignItems: 'center',
               padding: `${Insets.m}px ${Insets.l}px`,
+              backgroundColor: Colors.bg1,
             }}
           >
             {/* Pencil icon for manual entry */}
