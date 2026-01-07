@@ -379,20 +379,20 @@ function StyledDropdown({
         {value || placeholder}
       </div>
 
-      {/* Arrow icon - positioned like Flokk: right: 4, top: 4, size 12 */}
+      {/* Arrow icon - centered vertically with text */}
       <div
         onClick={handleToggle}
         style={{
           position: 'absolute',
           right: 4,
-          top: 4,
+          top: '50%',
           width: 12,
           height: 12,
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          transform: `rotate(${isOpen ? 0 : 180}deg)`,
+          transform: `translateY(-50%) rotate(${isOpen ? 0 : 180}deg)`,
           transition: `transform ${Animations.button.duration} ${Animations.button.easing}`,
         }}
       >
