@@ -414,15 +414,14 @@ function StyledDropdown({
         </svg>
       </div>
 
-      {/* Dropdown overlay - Flokk: rowHeight 40, surface bg, shadow
-          Position below the underline: paddingTop(4) + lineHeight(~18) + paddingBottom(6) + border(2) = 30
-          maxHeight for 9 items with scrollbar */}
+      {/* Dropdown overlay - position below the underline
+          Height: paddingTop(4) + text(~20) + paddingBottom(6) + border(2) = 32px */}
       {isOpen && (
         <div
           ref={dropdownRef}
           style={{
             position: 'absolute',
-            top: 30,
+            top: 32,
             left: 0,
             minWidth: '100%',
             maxHeight: 40 * 9, // 9 items × 40px rowHeight = 360px
