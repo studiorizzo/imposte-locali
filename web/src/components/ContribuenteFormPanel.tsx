@@ -415,13 +415,13 @@ function StyledDropdown({
       </div>
 
       {/* Dropdown overlay - position below the underline
-          Height: paddingTop(4) + text(~20) + paddingBottom(6) + border(2) = 32px */}
+          Height: paddingTop(4) + text(~20) + paddingBottom(6) + border(2) + gap(2) = 34px */}
       {isOpen && (
         <div
           ref={dropdownRef}
           style={{
             position: 'absolute',
-            top: 32,
+            top: 34,
             left: 0,
             minWidth: '100%',
             maxHeight: 40 * 9, // 9 items × 40px rowHeight = 360px
