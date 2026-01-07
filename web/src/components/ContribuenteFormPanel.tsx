@@ -895,6 +895,11 @@ function DateLocationField({
                 <button
                   type="button"
                   onClick={handleCalendarClick}
+                  onMouseDown={(e) => {
+                    // Prevent blur on date input, keep field open
+                    e.preventDefault();
+                    handleFieldFocus('calendar');
+                  }}
                   style={{
                     padding: Insets.sm, // Same padding as chips (6px all sides)
                     backgroundColor: Colors.surface,
@@ -904,13 +909,15 @@ function DateLocationField({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transition: `border-color ${Animations.button.duration}`,
+                    transition: `border ${Animations.button.duration}`,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = Colors.accent1;
+                    e.currentTarget.style.border = `2px solid ${Colors.accent1}`;
+                    e.currentTarget.style.padding = `${Insets.sm - 1}px`; // Compensate for thicker border
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = `${Colors.grey}59`;
+                    e.currentTarget.style.border = `1px solid ${Colors.grey}59`;
+                    e.currentTarget.style.padding = `${Insets.sm}px`;
                   }}
                 >
                   {/* Calendar icon - larger with thicker stroke */}
