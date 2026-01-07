@@ -362,7 +362,7 @@ function StyledDropdown({
       <div
         onClick={handleToggle}
         style={{
-          ...TextStyles.body2,
+          ...TextStyles.body1, // Same font as input fields (14px Lato)
           color: value ? Colors.greyStrong : Colors.greyWeak,
           paddingTop: 4,
           paddingBottom: Insets.sm,
