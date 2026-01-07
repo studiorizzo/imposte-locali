@@ -594,7 +594,11 @@ function NameField({
                 value={cognomeDenominazione}
                 onChange={(e) => onChangeCognomeDenominazione(e.target.value)}
                 onFocus={() => handleFieldFocus('cognome')}
-                onBlur={handleFieldBlur}
+                onBlur={(e) => {
+                  // Scroll to beginning to show start of long text
+                  e.target.scrollLeft = 0;
+                  handleFieldBlur();
+                }}
                 autoFocus
                 className="w-full bg-transparent outline-none"
                 style={{
@@ -618,7 +622,11 @@ function NameField({
                     value={nome}
                     onChange={(e) => onChangeNome(e.target.value)}
                     onFocus={() => handleFieldFocus('nome')}
-                    onBlur={handleFieldBlur}
+                    onBlur={(e) => {
+                      // Scroll to beginning to show start of long text
+                      e.target.scrollLeft = 0;
+                      handleFieldBlur();
+                    }}
                     className="bg-transparent outline-none"
                     style={{
                       flex: 1,
