@@ -808,7 +808,9 @@ function DateLocationField({
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
-    onChangeDataNascita(`${day}/${month}/${year}`);
+    const dateStr = `${day}/${month}/${year}`;
+    hasContentRef.current = dateStr; // Update ref immediately since we're adding content
+    onChangeDataNascita(dateStr);
   };
 
   // Parse display date (DD/MM/YYYY) to Date object
