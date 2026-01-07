@@ -448,7 +448,7 @@ export function MaterialDatePicker({
                         backgroundColor: isSelected
                           ? Colors.accent1
                           : isHovered
-                            ? Colors.bg2
+                            ? Colors.surface
                             : 'transparent',
                         border: 'none',
                         borderRadius: 20,
@@ -573,7 +573,7 @@ export function MaterialDatePicker({
                       backgroundColor: isSelected
                         ? Colors.accent1
                         : isHovered
-                          ? Colors.bg1
+                          ? Colors.surface
                           : 'transparent',
                       cursor: disabled ? 'default' : 'pointer',
                       transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
