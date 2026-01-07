@@ -902,7 +902,7 @@ function DateLocationField({
                     handleFieldFocus('calendar');
                   }}
                   style={{
-                    padding: 4, // 36px total: 2 (border) + 4 (padding) + 24 (icon) + 4 (padding) + 2 (border)
+                    padding: 3, // 32px total: 2 (border) + 3 (padding) + 22 (icon) + 3 (padding) + 2 (border)
                     backgroundColor: Colors.surface,
                     border: `2px solid ${Colors.grey}59`,
                     borderRadius: 5,
@@ -919,8 +919,8 @@ function DateLocationField({
                     e.currentTarget.style.borderColor = `${Colors.grey}59`;
                   }}
                 >
-                  {/* Calendar icon - 24px */}
-                  <img src={ButtonCalendarIcon} alt="Calendario" width={24} height={24} />
+                  {/* Calendar icon - 22px */}
+                  <img src={ButtonCalendarIcon} alt="Calendario" width={22} height={22} />
                 </button>
 
                 {/* Material Date Picker */}
