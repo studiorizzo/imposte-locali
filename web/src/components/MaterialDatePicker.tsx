@@ -483,7 +483,7 @@ export function MaterialDatePicker({
                         backgroundColor: isSelected
                           ? Colors.accent1
                           : isHovered
-                            ? '#f1f7f5'
+                            ? '#ffffff'
                             : 'transparent',
                         border: 'none',
                         borderRadius: dimensions.cellBorderRadius,
@@ -531,13 +531,13 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f1f7f5';
+                  e.currentTarget.style.backgroundColor = '#ffffff';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
-                <img src={SwitchToInputIcon} alt="Input manuale" width={20} height={20} />
+                <img src={SwitchToInputIcon} alt="Input manuale" width={24} height={24} />
               </button>
             </div>
           </>
@@ -610,7 +610,7 @@ export function MaterialDatePicker({
                       backgroundColor: isSelected
                         ? Colors.accent1
                         : isHovered
-                          ? '#f1f7f5'
+                          ? '#ffffff'
                           : 'transparent',
                       cursor: disabled ? 'default' : 'pointer',
                       transition: `background-color ${Animations.button.duration} ${Animations.button.easing}`,
@@ -661,13 +661,13 @@ export function MaterialDatePicker({
                 transition: `background-color ${Animations.button.duration}`,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f1f7f5';
+                e.currentTarget.style.backgroundColor = '#ffffff';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
               }}
             >
-              <img src={SwitchToInputIcon} alt="Input manuale" width={20} height={20} />
+              <img src={SwitchToInputIcon} alt="Input manuale" width={24} height={24} />
             </button>
             {/* Buttons */}
             <div style={{ display: 'flex', gap: Insets.sm }}>
@@ -689,7 +689,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f1f7f5';
+                  e.currentTarget.style.backgroundColor = '#ffffff';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
@@ -715,7 +715,7 @@ export function MaterialDatePicker({
                   transition: `background-color ${Animations.button.duration}`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f1f7f5';
+                  e.currentTarget.style.backgroundColor = '#ffffff';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
