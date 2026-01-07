@@ -223,14 +223,15 @@ function FormField({
 
   return (
     <div
-      className="flex items-center"
+      className="flex items-start"
       style={{ gap: Insets.l }}
     >
-      {/* Icon centered with text */}
+      {/* Icon - aligned with first line of text */}
       <div
         style={{
           color: Colors.grey,
           flexShrink: 0,
+          marginTop: 4, // Align with text paddingTop
         }}
       >
         {icon}
@@ -564,15 +565,15 @@ function NameField({
 
   return (
     <div
-      className="flex"
-      style={{ gap: Insets.l, alignItems: isOpen ? 'flex-start' : 'center' }}
+      className="flex items-start"
+      style={{ gap: Insets.l }}
     >
-      {/* Icon - centered when closed, top-aligned when open */}
+      {/* Icon - aligned with first line of text */}
       <div
         style={{
           color: Colors.grey,
           flexShrink: 0,
-          ...(isOpen ? { transform: `translateY(${Sizes.formIconOffset}px)` } : {}),
+          marginTop: 4, // Align with text paddingTop
         }}
       >
         {icon}
@@ -813,15 +814,15 @@ function DateLocationField({
 
   return (
     <div
-      className="flex"
-      style={{ gap: Insets.l, alignItems: isOpen ? 'flex-start' : 'center' }}
+      className="flex items-start"
+      style={{ gap: Insets.l }}
     >
-      {/* Icon - centered when closed, top-aligned when open */}
+      {/* Icon - aligned with first line of text */}
       <div
         style={{
           color: Colors.grey,
           flexShrink: 0,
-          ...(isOpen ? { transform: `translateY(${Sizes.formIconOffset}px)` } : {}),
+          marginTop: 4, // Align with text paddingTop
         }}
       >
         {icon}
@@ -1105,15 +1106,15 @@ function LabelField({
 
   return (
     <div
-      className="flex"
-      style={{ gap: Insets.l, alignItems: isOpen ? 'flex-start' : 'center' }}
+      className="flex items-start"
+      style={{ gap: Insets.l }}
     >
-      {/* Icon - centered when closed, top-aligned when open */}
+      {/* Icon - aligned with first line of text */}
       <div
         style={{
           color: Colors.grey,
           flexShrink: 0,
-          ...(isOpen ? { transform: `translateY(${Sizes.formIconOffset}px)` } : {}),
+          marginTop: 4, // Align with text paddingTop
         }}
       >
         {icon}
