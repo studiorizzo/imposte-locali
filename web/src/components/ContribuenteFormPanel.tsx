@@ -415,7 +415,8 @@ function StyledDropdown({
       </div>
 
       {/* Dropdown overlay - Flokk: rowHeight 40, surface bg, shadow
-          Position below the underline: paddingTop(4) + lineHeight(~18) + paddingBottom(6) + border(2) = 30 */}
+          Position below the underline: paddingTop(4) + lineHeight(~18) + paddingBottom(6) + border(2) = 30
+          maxHeight for 9 items with scrollbar */}
       {isOpen && (
         <div
           ref={dropdownRef}
@@ -424,10 +425,11 @@ function StyledDropdown({
             top: 30,
             left: 0,
             minWidth: '100%',
+            maxHeight: 40 * 9, // 9 items × 40px rowHeight = 360px
+            overflowY: 'auto',
             backgroundColor: Colors.surface,
             boxShadow: `0 4px 12px -2px ${Colors.accent1}40`,
             zIndex: 1000,
-            overflow: 'hidden',
           }}
         >
           {options.map((option) => (
@@ -441,7 +443,7 @@ function StyledDropdown({
                 height: 40, // Flokk rowHeight
                 paddingLeft: Insets.m,
                 paddingRight: Insets.m,
-                ...TextStyles.caption,
+                ...TextStyles.body1, // Same font as input fields (14px Lato)
                 color: Colors.greyWeak,
                 textTransform: 'uppercase',
                 textAlign: 'left',
