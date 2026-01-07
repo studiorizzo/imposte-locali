@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Colors, Sizes, Shadows, Insets, TextStyles, Animations } from '../theme';
 import LabelIcon from '../assets/Label_form.svg';
 import UserFormIcon from '../assets/User_2_form.svg';
+import DateFormIcon from '../assets/Date_form.svg';
 
 interface ContribuenteFormPanelProps {
   onClose: () => void;
@@ -14,6 +15,9 @@ export interface ContribuenteFormData {
   cognomeDenominazione: string;  // Cognome o Denominazione/Ragione sociale
   nome: string;
   sesso: string;  // 'F' or 'M' - only for persona fisica
+  dataNascita: string;  // Data di nascita
+  comuneNascita: string;  // Comune (o Stato estero) di nascita
+  provinciaNascita: string;  // Provincia di nascita
   codiceFiscale: string;
   email: string;
   telefono: string;
@@ -28,6 +32,9 @@ const initialFormData: ContribuenteFormData = {
   cognomeDenominazione: '',
   nome: '',
   sesso: '',
+  dataNascita: '',
+  comuneNascita: '',
+  provinciaNascita: '',
   codiceFiscale: '',
   email: '',
   telefono: '',
@@ -179,6 +186,15 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             onChangeNome={(v) => handleChange('nome', v)}
             onChangeSesso={(v) => handleChange('sesso', v)}
             onChangeCodiceFiscale={(v) => handleChange('codiceFiscale', v)}
+          />
+          <DateLocationField
+            icon={<img src={DateFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
+            dataNascita={formData.dataNascita}
+            comuneNascita={formData.comuneNascita}
+            provinciaNascita={formData.provinciaNascita}
+            onChangeDataNascita={(v) => handleChange('dataNascita', v)}
+            onChangeComuneNascita={(v) => handleChange('comuneNascita', v)}
+            onChangeProvinciaNascita={(v) => handleChange('provinciaNascita', v)}
           />
         </div>
       </div>
@@ -674,6 +690,287 @@ function NameField({
                   caretColor: Colors.accent1,
                 }}
               />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Italian province codes
+const PROVINCE_OPTIONS = [
+  'AG', 'AL', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AT', 'AV', 'BA',
+  'BG', 'BI', 'BL', 'BN', 'BO', 'BR', 'BS', 'BT', 'BZ', 'CA',
+  'CB', 'CE', 'CH', 'CL', 'CN', 'CO', 'CR', 'CS', 'CT', 'CZ',
+  'EN', 'FC', 'FE', 'FG', 'FI', 'FM', 'FR', 'GE', 'GO', 'GR',
+  'IM', 'IS', 'KR', 'LC', 'LE', 'LI', 'LO', 'LT', 'LU', 'MB',
+  'MC', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NA', 'NO', 'NU',
+  'OR', 'PA', 'PC', 'PD', 'PE', 'PG', 'PI', 'PN', 'PO', 'PR',
+  'PT', 'PU', 'PV', 'PZ', 'RA', 'RC', 'RE', 'RG', 'RI', 'RM',
+  'RN', 'RO', 'SA', 'SI', 'SO', 'SP', 'SR', 'SS', 'SU', 'SV',
+  'TA', 'TE', 'TN', 'TO', 'TP', 'TR', 'TS', 'TV', 'UD', 'VA',
+  'VB', 'VC', 'VE', 'VI', 'VR', 'VT', 'VV', 'EE',  // EE = Stato estero
+];
+
+/**
+ * DateLocationField - for date and place of birth
+ * Expands to show: Data di nascita, Comune (o Stato estero) di nascita, Prov.
+ */
+function DateLocationField({
+  icon,
+  dataNascita,
+  comuneNascita,
+  provinciaNascita,
+  onChangeDataNascita,
+  onChangeComuneNascita,
+  onChangeProvinciaNascita,
+}: {
+  icon: React.ReactNode;
+  dataNascita: string;
+  comuneNascita: string;
+  provinciaNascita: string;
+  onChangeDataNascita: (value: string) => void;
+  onChangeComuneNascita: (value: string) => void;
+  onChangeProvinciaNascita: (value: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dateInputRef = useRef<HTMLInputElement>(null);
+
+  // Check if there's any content
+  const hasContent = dataNascita || comuneNascita || provinciaNascita;
+
+  // Use ref to track hasContent for timeout callbacks (avoids stale closure)
+  const hasContentRef = useRef(hasContent);
+  hasContentRef.current = hasContent;
+
+  // Build display text for closed state
+  const getDisplayText = () => {
+    if (!hasContent) return '';
+    const parts = [];
+    if (dataNascita) parts.push(dataNascita);
+    if (comuneNascita) parts.push(comuneNascita);
+    if (provinciaNascita) parts.push(`(${provinciaNascita})`);
+    return parts.join(' ');
+  };
+
+  const handlePromptClick = () => {
+    setIsOpen(true);
+  };
+
+  // Handle focus on a field
+  const handleFieldFocus = (field: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setFocusedField(field);
+  };
+
+  // Handle blur - close if no content and focus leaves the container
+  const handleFieldBlur = () => {
+    setFocusedField(null);
+    closeTimeoutRef.current = setTimeout(() => {
+      if (!hasContentRef.current) {
+        setIsOpen(false);
+      }
+    }, 750);
+  };
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Handle calendar button click - open native date picker
+  const handleCalendarClick = () => {
+    dateInputRef.current?.showPicker();
+  };
+
+  // Handle date input change
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const date = e.target.value;
+    if (date) {
+      // Convert from YYYY-MM-DD to DD/MM/YYYY for display
+      const [year, month, day] = date.split('-');
+      onChangeDataNascita(`${day}/${month}/${year}`);
+    } else {
+      onChangeDataNascita('');
+    }
+  };
+
+  // Convert display date (DD/MM/YYYY) to input format (YYYY-MM-DD)
+  const getInputDateValue = () => {
+    if (!dataNascita) return '';
+    const parts = dataNascita.split('/');
+    if (parts.length === 3) {
+      return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    }
+    return '';
+  };
+
+  return (
+    <div
+      className="flex items-start"
+      style={{ gap: Insets.l }}
+    >
+      {/* Icon with vertical offset like Flokk */}
+      <div
+        style={{
+          color: Colors.grey,
+          transform: `translateY(${Sizes.formIconOffset}px)`,
+          flexShrink: 0,
+        }}
+      >
+        {icon}
+      </div>
+      {/* Content wrapper */}
+      <div
+        className="flex-1"
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
+      >
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          {!isOpen ? (
+            // Closed state - show prompt or summary
+            <div
+              onClick={handlePromptClick}
+              style={{
+                ...TextStyles.body1,
+                color: hasContent ? Colors.greyStrong : Colors.greyWeak,
+                paddingTop: 4,
+                paddingBottom: Insets.sm,
+                borderBottom: `2px solid ${Colors.greyWeak}`,
+                cursor: 'pointer',
+              }}
+            >
+              {hasContent ? getDisplayText() : 'Aggiungi data e luogo di nascita'}
+            </div>
+          ) : (
+            // Open state - show all fields
+            <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.sm * 0.5 }}>
+              {/* Data di nascita field with calendar button */}
+              <div style={{ position: 'relative' }}>
+                <input
+                  type="text"
+                  placeholder="Data di nascita"
+                  value={dataNascita}
+                  onChange={(e) => onChangeDataNascita(e.target.value)}
+                  onFocus={() => handleFieldFocus('data')}
+                  onBlur={handleFieldBlur}
+                  autoFocus
+                  className="w-full bg-transparent outline-none"
+                  style={{
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    paddingTop: 4,
+                    paddingBottom: Insets.sm,
+                    paddingRight: 36, // Space for calendar button
+                    borderBottom: `2px solid ${focusedField === 'data' ? Colors.accent1 : Colors.greyWeak}`,
+                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                    caretColor: Colors.accent1,
+                  }}
+                />
+                {/* Hidden date input for native picker */}
+                <input
+                  ref={dateInputRef}
+                  type="date"
+                  value={getInputDateValue()}
+                  onChange={handleDateChange}
+                  style={{
+                    position: 'absolute',
+                    opacity: 0,
+                    width: 0,
+                    height: 0,
+                    pointerEvents: 'none',
+                  }}
+                  min="1900-01-01"
+                  max="2100-12-31"
+                />
+                {/* Calendar button - Flokk style: SecondaryBtn positioned right: 0, bottom: 3 */}
+                <button
+                  type="button"
+                  onClick={handleCalendarClick}
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    bottom: 3,
+                    minWidth: 24,
+                    minHeight: 20,
+                    padding: Insets.sm - 2,
+                    backgroundColor: Colors.surface,
+                    border: `1px solid ${Colors.grey}59`,
+                    borderRadius: 5,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: `border-color ${Animations.button.duration}`,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = Colors.accent1;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = `${Colors.grey}59`;
+                  }}
+                >
+                  {/* Calendar icon */}
+                  <svg width={14} height={14} viewBox="0 0 24 24" fill="none" style={{ color: Colors.accent1 }}>
+                    <path
+                      d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              {/* Comune + Prov. row (like Nome + Sesso) */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: Insets.m }}>
+                {/* Comune input - flex-1 */}
+                <input
+                  type="text"
+                  placeholder="Comune (o Stato estero) di nascita"
+                  value={comuneNascita}
+                  onChange={(e) => onChangeComuneNascita(e.target.value)}
+                  onFocus={() => handleFieldFocus('comune')}
+                  onBlur={(e) => {
+                    e.target.scrollLeft = 0;
+                    handleFieldBlur();
+                  }}
+                  className="bg-transparent outline-none"
+                  style={{
+                    flex: 1,
+                    minWidth: 0,
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    paddingTop: 4,
+                    paddingBottom: Insets.sm,
+                    borderBottom: `2px solid ${focusedField === 'comune' ? Colors.accent1 : Colors.greyWeak}`,
+                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                    caretColor: Colors.accent1,
+                  }}
+                />
+                {/* Prov. dropdown - fixed width, translateY(3) per Flokk */}
+                <div style={{ transform: 'translateY(3px)' }}>
+                  <StyledDropdown
+                    value={provinciaNascita}
+                    onChange={onChangeProvinciaNascita}
+                    options={PROVINCE_OPTIONS}
+                    placeholder="Prov."
+                    width={60}
+                    onFocus={() => handleFieldFocus('provincia')}
+                    onBlur={handleFieldBlur}
+                    isFocused={focusedField === 'provincia'}
+                  />
+                </div>
+              </div>
             </div>
           )}
         </div>
