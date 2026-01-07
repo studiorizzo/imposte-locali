@@ -474,13 +474,13 @@ export function MaterialDatePicker({
                 })}
               </div>
             </div>
-            {/* Pencil icon area for year selector - same height as action buttons */}
+            {/* Pencil icon area for year selector - same position as calendar */}
             <div
               style={{
                 display: 'flex',
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                padding: `24px ${Insets.l}px`,
+                padding: `${Insets.m}px ${Insets.l}px`,
                 backgroundColor: Colors.bg1,
               }}
             >
