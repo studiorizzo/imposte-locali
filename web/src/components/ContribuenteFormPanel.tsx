@@ -398,13 +398,14 @@ function StyledDropdown({
         </svg>
       </div>
 
-      {/* Dropdown overlay - Flokk: rowHeight 40, top 26, surface bg, shadow */}
+      {/* Dropdown overlay - Flokk: rowHeight 40, surface bg, shadow
+          Position below the underline: paddingTop(4) + lineHeight(~18) + paddingBottom(6) + border(2) = 30 */}
       {isOpen && (
         <div
           ref={dropdownRef}
           style={{
             position: 'absolute',
-            top: 26,
+            top: 30,
             left: 0,
             minWidth: '100%',
             backgroundColor: Colors.surface,
@@ -498,6 +499,10 @@ function NameField({
   // Check if there's any content
   const hasContent = cognomeDenominazione || nome || sesso || codiceFiscale;
 
+  // Use ref to track hasContent for timeout callbacks (avoids stale closure)
+  const hasContentRef = useRef(hasContent);
+  hasContentRef.current = hasContent;
+
   // Build display text for closed state
   const getDisplayText = () => {
     if (!hasContent) return '';
@@ -527,7 +532,8 @@ function NameField({
     // Use timeout to check if focus moved to another field within container
     // 750ms matches Flokk's expanding_miniform_container.dart
     closeTimeoutRef.current = setTimeout(() => {
-      if (!hasContent) {
+      // Use ref to get current hasContent value (not stale closure)
+      if (!hasContentRef.current) {
         setIsOpen(false);
       }
     }, 750);
