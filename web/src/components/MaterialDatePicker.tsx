@@ -1,14 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
-import { Colors, Insets, TextStyles, Animations } from '../theme';
+import { Colors, Insets, Sizes, TextStyles, Animations } from '../theme';
 
 /**
  * MaterialDatePicker - Custom date picker inspired by Material Design
  *
  * Features:
- * - 5-row calendar grid
- * - Year selector dropdown
+ * - 6-row calendar grid
+ * - Year selector dropdown (100 years back)
  * - Month navigation arrows on right
  */
+
+// Default to 100 years ago for birth dates
+const DEFAULT_MIN_YEAR = new Date().getFullYear() - 100;
 
 interface MaterialDatePickerProps {
   value?: Date;
@@ -53,7 +56,7 @@ export function MaterialDatePicker({
   value,
   onChange,
   onClose,
-  minDate = new Date(1900, 0, 1),
+  minDate = new Date(DEFAULT_MIN_YEAR, 0, 1),
   maxDate = new Date(2100, 11, 31),
 }: MaterialDatePickerProps) {
   const today = new Date();
@@ -152,7 +155,7 @@ export function MaterialDatePicker({
     setShowYearSelector(false);
   };
 
-  // Generate calendar grid (5 rows = 35 cells)
+  // Generate calendar grid (6 rows = 42 cells)
   const generateCalendarDays = () => {
     const daysInMonth = getDaysInMonth(viewYear, viewMonth);
     const firstDay = getFirstDayOfMonth(viewYear, viewMonth);
@@ -176,15 +179,15 @@ export function MaterialDatePicker({
       days.push({ day, monthOffset: 0, date: new Date(viewYear, viewMonth, day) });
     }
 
-    // Next month days (fill remaining cells to complete 5 rows = 35 cells)
-    const remainingCells = 35 - days.length;
+    // Next month days (fill remaining cells to complete 6 rows = 42 cells)
+    const remainingCells = 42 - days.length;
     for (let day = 1; day <= remainingCells; day++) {
       const month = viewMonth === 11 ? 0 : viewMonth + 1;
       const year = viewMonth === 11 ? viewYear + 1 : viewYear;
       days.push({ day, monthOffset: 1, date: new Date(year, month, day) });
     }
 
-    return days.slice(0, 35); // Ensure exactly 35 cells
+    return days.slice(0, 42); // Ensure exactly 42 cells
   };
 
   // Generate years for selector
@@ -244,7 +247,7 @@ export function MaterialDatePicker({
           position: 'relative',
           width: 360,
           backgroundColor: Colors.surface,
-          borderRadius: 28,
+          borderRadius: Sizes.radiusLg,
           boxShadow: '0 24px 48px rgba(0, 0, 0, 0.2)',
           overflow: 'hidden',
         }}
