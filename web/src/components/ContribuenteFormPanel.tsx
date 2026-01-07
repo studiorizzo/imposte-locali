@@ -250,7 +250,7 @@ function FormField({
 
 /**
  * NameField - like Flokk's NameMiniForm, expands to show name fields
- * Shows "Aggiungi Nome" when closed, expands to show fields based on tipologia
+ * Shows "Aggiungi contribuente" when closed, expands to show fields based on tipologia
  */
 function NameField({
   icon,
@@ -273,6 +273,8 @@ function NameField({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Determine field labels based on tipologia
   const isPersonaFisica = tippiologie.includes('PERSONA FISICA');
@@ -303,6 +305,36 @@ function NameField({
   const handlePromptClick = () => {
     setIsOpen(true);
   };
+
+  // Handle focus on a field
+  const handleFieldFocus = (field: string) => {
+    // Cancel any pending close
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setFocusedField(field);
+  };
+
+  // Handle blur - close if no content and focus leaves the container
+  const handleFieldBlur = () => {
+    setFocusedField(null);
+    // Use timeout to check if focus moved to another field within container
+    closeTimeoutRef.current = setTimeout(() => {
+      if (!hasContent) {
+        setIsOpen(false);
+      }
+    }, 100);
+  };
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div
@@ -338,7 +370,7 @@ function NameField({
                 cursor: 'pointer',
               }}
             >
-              {hasContent ? getDisplayText() : 'Aggiungi Nome'}
+              {hasContent ? getDisplayText() : 'Aggiungi contribuente'}
             </div>
           ) : (
             // Open state - show all fields
@@ -349,8 +381,8 @@ function NameField({
                 placeholder={getCognomeDenominazioneLabel()}
                 value={cognomeDenominazione}
                 onChange={(e) => onChangeCognomeDenominazione(e.target.value)}
-                onFocus={() => setFocusedField('cognome')}
-                onBlur={() => setFocusedField(null)}
+                onFocus={() => handleFieldFocus('cognome')}
+                onBlur={handleFieldBlur}
                 autoFocus
                 className="w-full bg-transparent outline-none"
                 style={{
@@ -370,8 +402,8 @@ function NameField({
                   placeholder="Nome"
                   value={nome}
                   onChange={(e) => onChangeNome(e.target.value)}
-                  onFocus={() => setFocusedField('nome')}
-                  onBlur={() => setFocusedField(null)}
+                  onFocus={() => handleFieldFocus('nome')}
+                  onBlur={handleFieldBlur}
                   className="w-full bg-transparent outline-none"
                   style={{
                     ...TextStyles.body1,
@@ -390,8 +422,8 @@ function NameField({
                 placeholder="Codice Fiscale"
                 value={codiceFiscale}
                 onChange={(e) => onChangeCodiceFiscale(e.target.value.toUpperCase())}
-                onFocus={() => setFocusedField('cf')}
-                onBlur={() => setFocusedField(null)}
+                onFocus={() => handleFieldFocus('cf')}
+                onBlur={handleFieldBlur}
                 className="w-full bg-transparent outline-none"
                 style={{
                   ...TextStyles.body1,
