@@ -736,7 +736,6 @@ function DateLocationField({
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const calendarButtonRef = useRef<HTMLButtonElement>(null);
 
   // Check if there's any content
   const hasContent = dataNascita || comuneNascita || provinciaNascita;
@@ -880,7 +879,6 @@ function DateLocationField({
                 />
                 {/* Calendar button - chip-like height, aligned to bottom */}
                 <button
-                  ref={calendarButtonRef}
                   type="button"
                   onClick={handleCalendarClick}
                   onMouseDown={(e) => {
@@ -924,7 +922,6 @@ function DateLocationField({
                     value={parseDisplayDate()}
                     onChange={handleDateSelect}
                     onClose={() => setShowDatePicker(false)}
-                    anchorEl={calendarButtonRef.current}
                     minDate={new Date(1900, 0, 1)}
                     maxDate={new Date()}
                   />

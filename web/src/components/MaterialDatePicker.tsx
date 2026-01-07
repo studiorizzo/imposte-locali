@@ -20,7 +20,6 @@ interface MaterialDatePickerProps {
   onClose: () => void;
   minDate?: Date;
   maxDate?: Date;
-  anchorEl?: HTMLElement | null;
 }
 
 // Italian weekday abbreviations (starting Monday)
@@ -62,7 +61,6 @@ export function MaterialDatePicker({
   onClose,
   minDate = new Date(1900, 0, 1),
   maxDate = new Date(2100, 11, 31),
-  anchorEl,
 }: MaterialDatePickerProps) {
   const today = new Date();
   const initialDate = value || today;
@@ -189,34 +187,6 @@ export function MaterialDatePicker({
     return date < minDate || date > maxDate;
   };
 
-  // Position dialog relative to anchor
-  const getDialogPosition = () => {
-    if (!anchorEl) {
-      return { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' };
-    }
-
-    const rect = anchorEl.getBoundingClientRect();
-    const dialogWidth = 360;
-    const dialogHeight = 400; // Approximate
-
-    let top = rect.bottom + 8;
-    let left = rect.left;
-
-    // Adjust if goes off right edge
-    if (left + dialogWidth > window.innerWidth - 16) {
-      left = window.innerWidth - dialogWidth - 16;
-    }
-
-    // Adjust if goes off bottom edge
-    if (top + dialogHeight > window.innerHeight - 16) {
-      top = rect.top - dialogHeight - 8;
-    }
-
-    return { top: `${top}px`, left: `${left}px` };
-  };
-
-  const position = getDialogPosition();
-
   return (
     <div
       style={{
@@ -224,8 +194,8 @@ export function MaterialDatePicker({
         inset: 0,
         zIndex: 9999,
         display: 'flex',
-        alignItems: anchorEl ? 'flex-start' : 'center',
-        justifyContent: anchorEl ? 'flex-start' : 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       {/* Backdrop */}
@@ -238,18 +208,16 @@ export function MaterialDatePicker({
         onClick={onClose}
       />
 
-      {/* Dialog */}
+      {/* Dialog - centered */}
       <div
         ref={dialogRef}
         style={{
-          position: anchorEl ? 'absolute' : 'relative',
-          ...position,
+          position: 'relative',
           width: 360,
           backgroundColor: Colors.surface,
           borderRadius: 28,
           boxShadow: '0 24px 48px rgba(0, 0, 0, 0.2)',
           overflow: 'hidden',
-          animation: `fadeIn ${Animations.button.duration} ${Animations.button.easing}`,
         }}
       >
         {/* Header */}
@@ -510,22 +478,6 @@ export function MaterialDatePicker({
           </button>
         </div>
       </div>
-
-      {/* Keyframes for fade in animation */}
-      <style>
-        {`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: ${anchorEl ? 'translateY(-10px)' : 'translate(-50%, -50%) scale(0.95)'};
-            }
-            to {
-              opacity: 1;
-              transform: ${anchorEl ? 'translateY(0)' : 'translate(-50%, -50%) scale(1)'};
-            }
-          }
-        `}
-      </style>
     </div>
   );
 }
