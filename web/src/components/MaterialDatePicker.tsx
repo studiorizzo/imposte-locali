@@ -1,5 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
-import { Colors, Insets, Sizes, TextStyles, Animations } from '../theme';
+import { Colors, Insets, Sizes, TextStyles, Animations, PageBreaks } from '../theme';
+
+// Hook to detect mobile mode
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < PageBreaks.TabletPortrait);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile;
+}
 
 /**
  * MaterialDatePicker - Custom date picker inspired by Material Design
@@ -66,6 +82,18 @@ export function MaterialDatePicker({
   const effectiveMinDate = minDate ?? getDefaultMinDate();
   const today = new Date();
   const initialDate = value || today;
+  const isMobile = useIsMobile();
+
+  // Responsive dimensions
+  const dimensions = {
+    dialogWidth: isMobile ? 'calc(100vw - 32px)' : 360,
+    dialogMaxWidth: 360,
+    cellSize: isMobile ? 36 : 40,
+    cellBorderRadius: isMobile ? 18 : 20,
+    headerHeight: isMobile ? 48 : 56,
+    contentPadding: isMobile ? Insets.sm : Insets.m,
+    contentHeight: isMobile ? 304 : 336,
+  };
 
   const [viewYear, setViewYear] = useState(initialDate.getFullYear());
   const [viewMonth, setViewMonth] = useState(initialDate.getMonth());
@@ -250,7 +278,8 @@ export function MaterialDatePicker({
         ref={dialogRef}
         style={{
           position: 'relative',
-          width: 360,
+          width: dimensions.dialogWidth,
+          maxWidth: dimensions.dialogMaxWidth,
           backgroundColor: Colors.surface,
           borderRadius: Sizes.radiusLg,
           boxShadow: '0 24px 48px rgba(0, 0, 0, 0.2)',
@@ -260,7 +289,7 @@ export function MaterialDatePicker({
         {/* Header */}
         <div
           style={{
-            height: 56,
+            height: dimensions.headerHeight,
             backgroundColor: Colors.accent1,
             display: 'flex',
             alignItems: 'center',
@@ -337,14 +366,14 @@ export function MaterialDatePicker({
               }}
               onMouseDown={(e) => e.stopPropagation()}
               style={{
-                width: 40,
-                height: 40,
+                width: dimensions.cellSize,
+                height: dimensions.cellSize,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: 'transparent',
                 border: 'none',
-                borderRadius: 20,
+                borderRadius: dimensions.cellBorderRadius,
                 cursor: 'pointer',
                 color: Colors.accentTxt,
                 transition: `background-color ${Animations.button.duration}`,
@@ -374,14 +403,14 @@ export function MaterialDatePicker({
               }}
               onMouseDown={(e) => e.stopPropagation()}
               style={{
-                width: 40,
-                height: 40,
+                width: dimensions.cellSize,
+                height: dimensions.cellSize,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: 'transparent',
                 border: 'none',
-                borderRadius: 20,
+                borderRadius: dimensions.cellBorderRadius,
                 cursor: 'pointer',
                 color: Colors.accentTxt,
                 transition: `background-color ${Animations.button.duration}`,
@@ -414,8 +443,8 @@ export function MaterialDatePicker({
             <div
               ref={yearListRef}
               style={{
-                padding: `${Insets.m}px`,
-                height: 336,
+                padding: `${dimensions.contentPadding}px`,
+                height: dimensions.contentHeight,
                 boxSizing: 'border-box',
                 overflowY: 'auto',
                 backgroundColor: Colors.bg1,
@@ -446,7 +475,7 @@ export function MaterialDatePicker({
                       onMouseEnter={() => setHoveredYear(year)}
                       onMouseLeave={() => setHoveredYear(null)}
                       style={{
-                        height: 40,
+                        height: dimensions.cellSize,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -456,7 +485,7 @@ export function MaterialDatePicker({
                             ? Colors.bg2
                             : 'transparent',
                         border: 'none',
-                        borderRadius: 20,
+                        borderRadius: dimensions.cellBorderRadius,
                         cursor: 'pointer',
                         fontFamily: "'Lato', sans-serif",
                         fontSize: 14,
@@ -481,7 +510,7 @@ export function MaterialDatePicker({
                 display: 'flex',
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                padding: `${Insets.m}px ${Insets.l}px`,
+                padding: `${dimensions.contentPadding}px ${Insets.l}px`,
                 backgroundColor: Colors.bg1,
               }}
             >
@@ -491,11 +520,11 @@ export function MaterialDatePicker({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  width: 40,
-                  height: 40,
+                  width: dimensions.cellSize,
+                  height: dimensions.cellSize,
                   backgroundColor: 'transparent',
                   border: 'none',
-                  borderRadius: 20,
+                  borderRadius: dimensions.cellBorderRadius,
                   cursor: 'pointer',
                   color: Colors.accent1,
                   transition: `background-color ${Animations.button.duration}`,
@@ -533,7 +562,7 @@ export function MaterialDatePicker({
           </>
         ) : (
           /* Calendar grid */
-          <div style={{ padding: `${Insets.m}px ${Insets.sm}px`, height: 336, boxSizing: 'border-box', backgroundColor: Colors.bg1 }}>
+          <div style={{ padding: `${dimensions.contentPadding}px ${Insets.sm}px`, height: dimensions.contentHeight, boxSizing: 'border-box', backgroundColor: Colors.bg1 }}>
             {/* Weekday headers */}
             <div
               style={{
@@ -587,8 +616,8 @@ export function MaterialDatePicker({
                     onMouseLeave={() => setHoveredDay(null)}
                     disabled={disabled}
                     style={{
-                      width: 40,
-                      height: 40,
+                      width: dimensions.cellSize,
+                      height: dimensions.cellSize,
                       margin: '2px auto',
                       display: 'flex',
                       alignItems: 'center',
@@ -596,7 +625,7 @@ export function MaterialDatePicker({
                       border: isTodayDate && !isSelected && isCurrentMonth
                         ? `2px solid ${Colors.accent1}`
                         : 'none',
-                      borderRadius: 20,
+                      borderRadius: dimensions.cellBorderRadius,
                       backgroundColor: isSelected
                         ? Colors.accent1
                         : isHovered
@@ -630,7 +659,7 @@ export function MaterialDatePicker({
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              padding: `${Insets.m}px ${Insets.l}px`,
+              padding: `${dimensions.contentPadding}px ${Insets.l}px`,
               backgroundColor: Colors.bg1,
             }}
           >
@@ -641,11 +670,11 @@ export function MaterialDatePicker({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: 40,
-                height: 40,
+                width: dimensions.cellSize,
+                height: dimensions.cellSize,
                 backgroundColor: 'transparent',
                 border: 'none',
-                borderRadius: 20,
+                borderRadius: dimensions.cellBorderRadius,
                 cursor: 'pointer',
                 color: Colors.accent1,
                 transition: `background-color ${Animations.button.duration}`,
