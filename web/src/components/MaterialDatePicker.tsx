@@ -447,7 +447,7 @@ export function MaterialDatePicker({
                           ? Colors.bg1
                           : 'transparent',
                       border: 'none',
-                      borderRadius: 20,
+                      borderRadius: Sizes.radiusLg,
                       cursor: 'pointer',
                       fontFamily: "'Lato', sans-serif",
                       fontSize: 14,
