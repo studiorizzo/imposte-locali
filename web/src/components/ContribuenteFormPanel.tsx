@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Colors, Sizes, Shadows, Insets, TextStyles, Animations } from '../theme';
+import { Colors, Sizes, Insets, TextStyles, Animations } from '../theme';
 import LabelIcon from '../assets/Label_form.svg';
 import UserFormIcon from '../assets/User_2_form.svg';
 import DateFormIcon from '../assets/Date_form.svg';
@@ -77,7 +77,6 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
         backgroundColor: Colors.surface,
         borderTopLeftRadius: Sizes.radiusMd,
         borderBottomLeftRadius: Sizes.radiusMd,
-        boxShadow: Shadows.panel,
       }}
     >
       {/* Header - from Flokk contact_edit_panel_view:
@@ -343,11 +342,11 @@ function StyledDropdown({
     }, 50);
   };
 
-  // Flokk styling:
+  // Flokk styling (flat design, no shadows):
   // - Input: contentPadding right: 22, bottom: Insets.sm (6px)
-  // - TextStyles.Body2 (12px Lato)
-  // - Arrow: right: 4, top: 4, size 12px
-  // - Dropdown: rowHeight 40, top: 26, surface bg, shadow
+  // - TextStyles.body1 (14px Lato)
+  // - Arrow: centered vertically, size 12px
+  // - Dropdown: rowHeight 40, surface bg
 
   return (
     <div
@@ -427,7 +426,6 @@ function StyledDropdown({
             maxHeight: 40 * 9, // 9 items × 40px rowHeight = 360px
             overflowY: 'auto',
             backgroundColor: Colors.surface,
-            boxShadow: `0 4px 12px -2px ${Colors.accent1}40`,
             zIndex: 1000,
           }}
         >
