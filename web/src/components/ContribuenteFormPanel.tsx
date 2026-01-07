@@ -901,23 +901,21 @@ function DateLocationField({
                     handleFieldFocus('calendar');
                   }}
                   style={{
-                    padding: Insets.sm, // Same padding as chips (6px all sides)
+                    padding: Insets.sm - 1, // Account for 2px border
                     backgroundColor: Colors.surface,
-                    border: `1px solid ${Colors.grey}59`,
+                    border: `2px solid ${Colors.grey}59`,
                     borderRadius: 5,
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transition: `border ${Animations.button.duration}`,
+                    transition: `border-color ${Animations.button.duration}`,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.border = `2px solid ${Colors.accent1}`;
-                    e.currentTarget.style.padding = `${Insets.sm - 1}px`; // Compensate for thicker border
+                    e.currentTarget.style.borderColor = Colors.accent1;
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.border = `1px solid ${Colors.grey}59`;
-                    e.currentTarget.style.padding = `${Insets.sm}px`;
+                    e.currentTarget.style.borderColor = `${Colors.grey}59`;
                   }}
                 >
                   {/* Calendar icon - larger with thicker stroke */}
