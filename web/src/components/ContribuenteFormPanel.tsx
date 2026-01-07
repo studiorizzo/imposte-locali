@@ -744,6 +744,10 @@ function DateLocationField({
   const hasContentRef = useRef(hasContent);
   hasContentRef.current = hasContent;
 
+  // Use ref to track showDatePicker for timeout callbacks
+  const showDatePickerRef = useRef(showDatePicker);
+  showDatePickerRef.current = showDatePicker;
+
   // Build display text for closed state
   const getDisplayText = () => {
     if (!hasContent) return '';
@@ -768,10 +772,11 @@ function DateLocationField({
   };
 
   // Handle blur - close if no content and focus leaves the container
+  // Don't close if date picker is open
   const handleFieldBlur = () => {
     setFocusedField(null);
     closeTimeoutRef.current = setTimeout(() => {
-      if (!hasContentRef.current) {
+      if (!hasContentRef.current && !showDatePickerRef.current) {
         setIsOpen(false);
       }
     }, 750);
@@ -788,7 +793,14 @@ function DateLocationField({
 
   // Handle calendar button click - open custom date picker
   const handleCalendarClick = () => {
+    showDatePickerRef.current = true; // Update ref immediately
     setShowDatePicker(true);
+  };
+
+  // Handle date picker close
+  const handleDatePickerClose = () => {
+    showDatePickerRef.current = false;
+    setShowDatePicker(false);
   };
 
   // Handle date selection from picker
@@ -796,7 +808,9 @@ function DateLocationField({
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
-    onChangeDataNascita(`${day}/${month}/${year}`);
+    const dateStr = `${day}/${month}/${year}`;
+    hasContentRef.current = dateStr; // Update ref immediately since we're adding content
+    onChangeDataNascita(dateStr);
   };
 
   // Parse display date (DD/MM/YYYY) to Date object
@@ -921,7 +935,7 @@ function DateLocationField({
                   <MaterialDatePicker
                     value={parseDisplayDate()}
                     onChange={handleDateSelect}
-                    onClose={() => setShowDatePicker(false)}
+                    onClose={handleDatePickerClose}
                     minDate={new Date(1900, 0, 1)}
                     maxDate={new Date()}
                   />
