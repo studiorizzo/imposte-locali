@@ -902,7 +902,7 @@ function DateLocationField({
                     handleFieldFocus('calendar');
                   }}
                   style={{
-                    padding: '3px 5px', // 34x32px: width 2+5+22+5+2=36, height 2+3+22+3+2=32
+                    padding: '3px 4px', // 34x32px: width 2+4+22+4+2=34, height 2+3+22+3+2=32
                     backgroundColor: Colors.surface,
                     border: `2px solid ${Colors.grey}59`,
                     borderRadius: 5,
