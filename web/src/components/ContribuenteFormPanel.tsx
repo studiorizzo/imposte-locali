@@ -13,6 +13,7 @@ export interface ContribuenteFormData {
   tippiologie: string[];
   cognomeDenominazione: string;  // Cognome o Denominazione/Ragione sociale
   nome: string;
+  sesso: string;  // 'F' or 'M' - only for persona fisica
   codiceFiscale: string;
   email: string;
   telefono: string;
@@ -26,6 +27,7 @@ const initialFormData: ContribuenteFormData = {
   tippiologie: [],
   cognomeDenominazione: '',
   nome: '',
+  sesso: '',
   codiceFiscale: '',
   email: '',
   telefono: '',
@@ -171,9 +173,11 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             tippiologie={formData.tippiologie}
             cognomeDenominazione={formData.cognomeDenominazione}
             nome={formData.nome}
+            sesso={formData.sesso}
             codiceFiscale={formData.codiceFiscale}
             onChangeCognomeDenominazione={(v) => handleChange('cognomeDenominazione', v)}
             onChangeNome={(v) => handleChange('nome', v)}
+            onChangeSesso={(v) => handleChange('sesso', v)}
             onChangeCodiceFiscale={(v) => handleChange('codiceFiscale', v)}
           />
         </div>
@@ -249,6 +253,203 @@ function FormField({
 }
 
 /**
+ * StyledDropdown - faithful to Flokk's StyledAutoCompleteDropdown
+ * Custom dropdown with input-like appearance and overlay
+ */
+function StyledDropdown({
+  value,
+  onChange,
+  options,
+  placeholder,
+  width = 60,
+  onFocus,
+  onBlur,
+  isFocused: externalFocused,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  options: string[];
+  placeholder: string;
+  width?: number;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  isFocused?: boolean;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [internalFocused, setInternalFocused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isFocused = externalFocused !== undefined ? externalFocused : internalFocused;
+
+  // Handle click outside to close
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node) &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        setInternalFocused(false);
+        onBlur?.();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onBlur]);
+
+  const handleToggle = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+      setInternalFocused(true);
+      onFocus?.();
+    } else {
+      setIsOpen(false);
+      setInternalFocused(false);
+      onBlur?.();
+    }
+  };
+
+  const handleSelect = (option: string) => {
+    onChange(option);
+    setIsOpen(false);
+    // Keep focus state for a moment to allow parent's blur timeout to work
+    setTimeout(() => {
+      setInternalFocused(false);
+      onBlur?.();
+    }, 50);
+  };
+
+  // Flokk styling:
+  // - Input: contentPadding right: 22, bottom: Insets.sm (6px)
+  // - TextStyles.Body2 (12px Lato)
+  // - Arrow: right: 4, top: 4, size 12px
+  // - Dropdown: rowHeight 40, top: 26, surface bg, shadow
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        position: 'relative',
+        width,
+        flexShrink: 0,
+      }}
+    >
+      {/* Input-like display */}
+      <div
+        onClick={handleToggle}
+        style={{
+          ...TextStyles.body2,
+          color: value ? Colors.greyStrong : Colors.greyWeak,
+          paddingTop: 4,
+          paddingBottom: Insets.sm,
+          paddingRight: 22, // Space for arrow
+          borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+          transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+          cursor: 'pointer',
+          userSelect: 'none',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        }}
+      >
+        {value || placeholder}
+      </div>
+
+      {/* Arrow icon - positioned like Flokk: right: 4, top: 4, size 12 */}
+      <div
+        onClick={handleToggle}
+        style={{
+          position: 'absolute',
+          right: 4,
+          top: 4,
+          width: 12,
+          height: 12,
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transform: `rotate(${isOpen ? 0 : 180}deg)`,
+          transition: `transform ${Animations.button.duration} ${Animations.button.easing}`,
+        }}
+      >
+        {/* Dropdown arrow - chevron pointing up when open, down when closed */}
+        <svg
+          width={12}
+          height={12}
+          viewBox="0 0 12 12"
+          fill="none"
+          style={{ color: Colors.greyStrong }}
+        >
+          <path
+            d="M2.5 7.5L6 4L9.5 7.5"
+            stroke="currentColor"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      {/* Dropdown overlay - Flokk: rowHeight 40, top 26, surface bg, shadow */}
+      {isOpen && (
+        <div
+          ref={dropdownRef}
+          style={{
+            position: 'absolute',
+            top: 26,
+            left: 0,
+            minWidth: '100%',
+            backgroundColor: Colors.surface,
+            boxShadow: `0 4px 12px -2px ${Colors.accent1}40`,
+            zIndex: 1000,
+            overflow: 'hidden',
+          }}
+        >
+          {options.map((option) => (
+            <button
+              key={option}
+              onClick={() => handleSelect(option)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                width: '100%',
+                height: 40, // Flokk rowHeight
+                paddingLeft: Insets.m,
+                paddingRight: Insets.m,
+                ...TextStyles.caption,
+                color: Colors.greyWeak,
+                textTransform: 'uppercase',
+                textAlign: 'left',
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                transition: `background-color ${Animations.button.duration}`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = Colors.bg1;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
  * NameField - like Flokk's NameMiniForm, expands to show name fields
  * Shows "Aggiungi contribuente" when closed, expands to show fields based on tipologia
  */
@@ -257,18 +458,22 @@ function NameField({
   tippiologie,
   cognomeDenominazione,
   nome,
+  sesso,
   codiceFiscale,
   onChangeCognomeDenominazione,
   onChangeNome,
+  onChangeSesso,
   onChangeCodiceFiscale,
 }: {
   icon: React.ReactNode;
   tippiologie: string[];
   cognomeDenominazione: string;
   nome: string;
+  sesso: string;
   codiceFiscale: string;
   onChangeCognomeDenominazione: (value: string) => void;
   onChangeNome: (value: string) => void;
+  onChangeSesso: (value: string) => void;
   onChangeCodiceFiscale: (value: string) => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -291,7 +496,7 @@ function NameField({
   const showNomeField = isPersonaFisica || (!isPersonaFisica && !isPersonaGiuridica);
 
   // Check if there's any content
-  const hasContent = cognomeDenominazione || nome || codiceFiscale;
+  const hasContent = cognomeDenominazione || nome || sesso || codiceFiscale;
 
   // Build display text for closed state
   const getDisplayText = () => {
@@ -396,26 +601,45 @@ function NameField({
                   caretColor: Colors.accent1,
                 }}
               />
-              {/* Nome field - only if persona fisica or no selection */}
+              {/* Nome + Sesso row - only if persona fisica or no selection */}
+              {/* Layout from Flokk buildTextWithDropdown: Row [ input.flexible(), HSpace(12), dropdown.translate(0,3) ] */}
               {showNomeField && (
-                <input
-                  type="text"
-                  placeholder="Nome"
-                  value={nome}
-                  onChange={(e) => onChangeNome(e.target.value)}
-                  onFocus={() => handleFieldFocus('nome')}
-                  onBlur={handleFieldBlur}
-                  className="w-full bg-transparent outline-none"
-                  style={{
-                    ...TextStyles.body1,
-                    color: Colors.greyStrong,
-                    paddingTop: 4,
-                    paddingBottom: Insets.sm,
-                    borderBottom: `2px solid ${focusedField === 'nome' ? Colors.accent1 : Colors.greyWeak}`,
-                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-                    caretColor: Colors.accent1,
-                  }}
-                />
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: Insets.m }}>
+                  {/* Nome input - flex-1 */}
+                  <input
+                    type="text"
+                    placeholder="Nome"
+                    value={nome}
+                    onChange={(e) => onChangeNome(e.target.value)}
+                    onFocus={() => handleFieldFocus('nome')}
+                    onBlur={handleFieldBlur}
+                    className="bg-transparent outline-none"
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      ...TextStyles.body1,
+                      color: Colors.greyStrong,
+                      paddingTop: 4,
+                      paddingBottom: Insets.sm,
+                      borderBottom: `2px solid ${focusedField === 'nome' ? Colors.accent1 : Colors.greyWeak}`,
+                      transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                      caretColor: Colors.accent1,
+                    }}
+                  />
+                  {/* Sesso dropdown - fixed width, translateY(3) per Flokk */}
+                  <div style={{ transform: 'translateY(3px)' }}>
+                    <StyledDropdown
+                      value={sesso}
+                      onChange={onChangeSesso}
+                      options={['F', 'M']}
+                      placeholder="Sesso"
+                      width={60}
+                      onFocus={() => handleFieldFocus('sesso')}
+                      onBlur={handleFieldBlur}
+                      isFocused={focusedField === 'sesso'}
+                    />
+                  </div>
+                </div>
               )}
               {/* Codice Fiscale field */}
               <input
