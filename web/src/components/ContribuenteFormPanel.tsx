@@ -8,6 +8,8 @@ import AddressFormIcon from '../assets/Adress_form.svg';
 import MailFormIcon from '../assets/Mail_form.svg';
 import PhoneFormIcon from '../assets/Phone_form.svg';
 import ButtonCalendarIcon from '../assets/button_calendar.svg';
+import NoteFormIcon from '../assets/note_form.svg';
+import LinkFormIcon from '../assets/link_form.svg';
 
 interface ContribuenteFormPanelProps {
   onClose: () => void;
@@ -31,6 +33,8 @@ export interface ContribuenteFormData {
   comune: string;
   cap: string;
   provincia: string;
+  note: string;
+  relazioni: string;
 }
 
 const initialFormData: ContribuenteFormData = {
@@ -49,6 +53,8 @@ const initialFormData: ContribuenteFormData = {
   comune: '',
   cap: '',
   provincia: '',
+  note: '',
+  relazioni: '',
 };
 
 // Tipologia suggestions - primary options
@@ -226,6 +232,20 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             inputPlaceholder="Telefono"
             value={formData.telefono}
             onChange={(v) => handleChange('telefono', v)}
+          />
+          <ExpandableTextField
+            icon={<img src={NoteFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
+            placeholder="Aggiungi note"
+            inputPlaceholder="Note"
+            value={formData.note}
+            onChange={(v) => handleChange('note', v)}
+          />
+          <ExpandableTextField
+            icon={<img src={LinkFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
+            placeholder="Aggiungi relazioni"
+            inputPlaceholder="Relazioni"
+            value={formData.relazioni}
+            onChange={(v) => handleChange('relazioni', v)}
           />
         </div>
       </div>
