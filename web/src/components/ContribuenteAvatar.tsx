@@ -1,12 +1,14 @@
-import { AvatarThemes, Fonts } from '../theme';
+import { AvatarThemes, AvatarSizes, Fonts } from '../theme';
+
+type AvatarSizeKey = keyof typeof AvatarSizes;
 
 interface ContribuenteAvatarProps {
   /** Cognome for persona fisica, or denominazione for persona giuridica */
   cognomeDenominazione: string;
   /** Nome (first name) - empty string for persona giuridica */
   nome: string;
-  /** Avatar size in pixels */
-  size?: number;
+  /** Avatar size - use AvatarSizes keys (xs, sm, md, default, lg, xl) or a number */
+  size?: AvatarSizeKey | number;
   /** Optional ID or unique identifier for deterministic theme selection */
   id?: string;
 }
@@ -86,7 +88,7 @@ function getInitials(cognomeDenominazione: string, nome: string): [string, strin
 export function ContribuenteAvatar({
   cognomeDenominazione,
   nome,
-  size = 50,
+  size = 'default',
   id,
 }: ContribuenteAvatarProps) {
   // Get initials
@@ -97,14 +99,17 @@ export function ContribuenteAvatar({
   const themeIndex = hashCode(hashSource) % AvatarThemes.length;
   const theme = AvatarThemes[themeIndex];
 
+  // Resolve size: accept both AvatarSizes key or raw number
+  const pixelSize = typeof size === 'number' ? size : AvatarSizes[size];
+
   // Calculate font size (approximately 40% of avatar size)
-  const fontSize = Math.round(size * 0.4);
+  const fontSize = Math.round(pixelSize * 0.4);
 
   return (
     <div
       style={{
-        width: size,
-        height: size,
+        width: pixelSize,
+        height: pixelSize,
         borderRadius: '50%',
         backgroundColor: theme.background,
         display: 'flex',

@@ -283,3 +283,16 @@ export const AvatarThemes = [
   // 9: Woodpecker - red + orange on orchid
   { background: '#B933D9', letter1: '#D94B4B', letter2: '#E87D3E' },
 ] as const;
+
+/**
+ * Avatar sizes from Flokk's StyledUserAvatar usage.
+ * Each size corresponds to a specific UI context.
+ */
+export const AvatarSizes = {
+  xs: 36,      // Search results (search_query_results.dart)
+  sm: 40,      // Important dates card (important_date_card.dart)
+  md: 42,      // Contact/Contribuente list row (contacts_list_row.dart)
+  default: 50, // Fallback (styled_user_avatar.dart)
+  lg: 60,      // Dashboard small card (small_contact_card.dart)
+  xl: 110,     // Detail/Edit panel header (contact_info_header_card.dart, contact_edit_panel_view.dart)
+} as const;
