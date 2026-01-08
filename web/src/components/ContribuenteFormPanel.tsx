@@ -29,7 +29,7 @@ export interface ContribuenteFormData {
   provinciaNascita: string;  // Provincia di nascita
   codiceFiscale: string;
   emails: string[];  // Multiple email addresses
-  telefono: string;
+  telefoni: string[];  // Multiple phone numbers
   indirizzo: string;
   civico: string;  // Numero civico
   comune: string;
@@ -49,7 +49,7 @@ const initialFormData: ContribuenteFormData = {
   provinciaNascita: '',
   codiceFiscale: '',
   emails: [],
-  telefono: '',
+  telefoni: [],
   indirizzo: '',
   civico: '',
   comune: '',
@@ -229,12 +229,13 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             values={formData.emails}
             onChange={(emails) => setFormData(prev => ({ ...prev, emails }))}
           />
-          <ExpandableTextField
+          <MultiValueTextField
             icon={<img src={PhoneFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
             placeholder="Aggiungi telefono"
             inputPlaceholder="Telefono"
-            value={formData.telefono}
-            onChange={(v) => handleChange('telefono', v)}
+            addButtonLabel="Aggiungi telefono"
+            values={formData.telefoni}
+            onChange={(telefoni) => setFormData(prev => ({ ...prev, telefoni }))}
           />
           <ExpandableTextField
             icon={<img src={NoteFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
