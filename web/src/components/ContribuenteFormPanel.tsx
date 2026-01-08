@@ -10,6 +10,8 @@ import PhoneFormIcon from '../assets/Phone_form.svg';
 import ButtonCalendarIcon from '../assets/button_calendar.svg';
 import NoteFormIcon from '../assets/note_form.svg';
 import LinkFormIcon from '../assets/link_form.svg';
+import CancelRingIcon from '../assets/cancel_ring_form.svg';
+import AddRingIcon from '../assets/Add_ring_form.svg';
 
 interface ContribuenteFormPanelProps {
   onClose: () => void;
@@ -26,7 +28,7 @@ export interface ContribuenteFormData {
   comuneNascita: string;  // Comune (o Stato estero) di nascita
   provinciaNascita: string;  // Provincia di nascita
   codiceFiscale: string;
-  email: string;
+  emails: string[];  // Multiple email addresses
   telefono: string;
   indirizzo: string;
   civico: string;  // Numero civico
@@ -46,7 +48,7 @@ const initialFormData: ContribuenteFormData = {
   comuneNascita: '',
   provinciaNascita: '',
   codiceFiscale: '',
-  email: '',
+  emails: [],
   telefono: '',
   indirizzo: '',
   civico: '',
@@ -219,12 +221,13 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             onChangeComune={(v) => handleChange('comune', v)}
             onChangeProvincia={(v) => handleChange('provincia', v)}
           />
-          <ExpandableTextField
+          <MultiValueTextField
             icon={<img src={MailFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
             placeholder="Aggiungi email"
             inputPlaceholder="Email"
-            value={formData.email}
-            onChange={(v) => handleChange('email', v)}
+            addButtonLabel="Aggiungi email"
+            values={formData.emails}
+            onChange={(emails) => setFormData(prev => ({ ...prev, emails }))}
           />
           <ExpandableTextField
             icon={<img src={PhoneFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
@@ -1356,6 +1359,241 @@ function ExpandableTextField({
                 caretColor: Colors.accent1,
               }}
             />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * MultiValueTextField - expandable field for multiple values (like Flokk's email/phone fields)
+ * Shows placeholder when closed, expands to show multiple inputs with add/delete functionality
+ * - Delete button appears on the right when a field has content
+ * - Add button appears below the last field when it has content
+ * - Max 8 items
+ */
+function MultiValueTextField({
+  icon,
+  placeholder,
+  inputPlaceholder,
+  addButtonLabel,
+  values,
+  onChange,
+}: {
+  icon: React.ReactNode;
+  placeholder: string;
+  inputPlaceholder: string;
+  addButtonLabel: string;
+  values: string[];
+  onChange: (values: string[]) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [deleteHovered, setDeleteHovered] = useState<number | null>(null);
+  const [addHovered, setAddHovered] = useState(false);
+
+  // Use ref to track values for timeout callbacks
+  const valuesRef = useRef(values);
+  valuesRef.current = values;
+
+  const hasContent = values.length > 0 && values.some(v => v.trim() !== '');
+
+  // Build display text for closed state
+  const getDisplayText = () => {
+    const nonEmpty = values.filter(v => v.trim() !== '');
+    return nonEmpty.join(', ');
+  };
+
+  const handlePromptClick = () => {
+    // Initialize with one empty value if needed
+    if (values.length === 0) {
+      onChange(['']);
+    }
+    setIsOpen(true);
+  };
+
+  const handleFocus = (index: number) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setFocusedIndex(index);
+  };
+
+  const handleBlur = () => {
+    setFocusedIndex(null);
+    closeTimeoutRef.current = setTimeout(() => {
+      // Close if all values are empty
+      const hasAnyContent = valuesRef.current.some(v => v.trim() !== '');
+      if (!hasAnyContent) {
+        onChange([]);
+        setIsOpen(false);
+      }
+    }, 750);
+  };
+
+  const handleValueChange = (index: number, value: string) => {
+    const newValues = [...values];
+    newValues[index] = value;
+    onChange(newValues);
+  };
+
+  const handleDelete = (index: number) => {
+    const newValues = values.filter((_, i) => i !== index);
+    // If deleted the last one, close the field
+    if (newValues.length === 0) {
+      onChange([]);
+      setIsOpen(false);
+    } else {
+      onChange(newValues);
+    }
+  };
+
+  const handleAdd = () => {
+    if (values.length < 8) {
+      onChange([...values, '']);
+    }
+  };
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Check if should show add button (last item has content and not at max)
+  const lastValue = values[values.length - 1] || '';
+  const showAddButton = values.length > 0 && lastValue.trim() !== '' && values.length < 8;
+
+  return (
+    <div
+      className="flex items-start"
+      style={{ gap: Insets.l }}
+    >
+      {/* Icon */}
+      <div
+        style={{
+          color: Colors.grey,
+          flexShrink: 0,
+          marginTop: 4,
+        }}
+      >
+        {icon}
+      </div>
+      {/* Content wrapper */}
+      <div
+        className="flex-1"
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
+      >
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          {!isOpen ? (
+            // Closed state
+            <div
+              onClick={handlePromptClick}
+              style={{
+                ...TextStyles.body1,
+                color: hasContent ? Colors.greyStrong : Colors.greyWeak,
+                paddingTop: 4,
+                paddingBottom: Insets.sm,
+                borderBottom: `2px solid ${Colors.greyWeak}`,
+                cursor: 'pointer',
+              }}
+            >
+              {hasContent ? getDisplayText() : placeholder}
+            </div>
+          ) : (
+            // Open state - show all values
+            <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.sm * 0.5 }}>
+              {values.map((value, index) => (
+                <div key={index} style={{ display: 'flex', alignItems: 'flex-end', gap: Insets.sm }}>
+                  {/* Input field */}
+                  <input
+                    type="text"
+                    placeholder={inputPlaceholder}
+                    value={value}
+                    onChange={(e) => handleValueChange(index, e.target.value)}
+                    onFocus={() => handleFocus(index)}
+                    onBlur={(e) => {
+                      e.target.scrollLeft = 0;
+                      handleBlur();
+                    }}
+                    autoFocus={index === values.length - 1}
+                    className="bg-transparent outline-none"
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      ...TextStyles.body1,
+                      color: Colors.greyStrong,
+                      paddingTop: 4,
+                      paddingBottom: Insets.sm,
+                      borderBottom: `2px solid ${focusedIndex === index ? Colors.accent1 : Colors.greyWeak}`,
+                      transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                      caretColor: Colors.accent1,
+                    }}
+                  />
+                  {/* Delete button - only show when this field has content */}
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(index)}
+                    onMouseEnter={() => setDeleteHovered(index)}
+                    onMouseLeave={() => setDeleteHovered(null)}
+                    style={{
+                      padding: Insets.sm,
+                      backgroundColor: 'transparent',
+                      border: 'none',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      opacity: value.trim() !== '' ? 1 : 0,
+                      pointerEvents: value.trim() !== '' ? 'auto' : 'none',
+                      transition: `opacity ${Animations.button.duration}`,
+                      filter: deleteHovered === index ? 'brightness(0.7)' : 'none',
+                    }}
+                  >
+                    <img src={CancelRingIcon} alt="Elimina" width={20} height={20} />
+                  </button>
+                </div>
+              ))}
+              {/* Add button - show when last item has content */}
+              {showAddButton && (
+                <button
+                  type="button"
+                  onClick={handleAdd}
+                  onMouseEnter={() => setAddHovered(true)}
+                  onMouseLeave={() => setAddHovered(false)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: Insets.sm,
+                    padding: `${Insets.sm}px`,
+                    marginTop: Insets.sm * 0.5,
+                    marginLeft: -4, // Flokk translate offset
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    borderRadius: 5,
+                    transition: `background-color ${Animations.button.duration}`,
+                  }}
+                  onMouseDown={(e) => e.preventDefault()} // Prevent blur
+                >
+                  <img src={AddRingIcon} alt="" width={16} height={16} />
+                  <span
+                    style={{
+                      ...TextStyles.body1,
+                      color: Colors.greyWeak,
+                    }}
+                  >
+                    {addButtonLabel}
+                  </span>
+                </button>
+              )}
+            </div>
           )}
         </div>
       </div>
