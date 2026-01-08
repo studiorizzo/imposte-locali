@@ -64,30 +64,25 @@ export function ContribuentiListWithHeaders({
   const { starred, notStarred, all } = getSortedContribuenti();
   const favCount = starred.length;
 
-  // Header text style
-  const headerStyle: React.CSSProperties = {
+  // Section header style (from Flokk: TextStyles.T1, accent1Dark, bottomLeft, marginBottom: Insets.l + 4)
+  const sectionHeaderStyle: React.CSSProperties = {
     ...TextStyles.t1,
     color: Colors.accent1Dark,
-    padding: `${Insets.m}px ${Insets.m}px ${Insets.sm}px`,
+    display: 'flex',
+    alignItems: 'flex-end',  // bottomLeft alignment
+    height: 48,              // Give header height for bottomLeft to work
+    marginBottom: Insets.l + 4,  // 28px from Flokk
+    paddingLeft: Insets.m,
   };
 
-  // Build list items with headers
-  const renderItems = () => {
+  // Build list items (section headers + rows, but NOT column header)
+  const renderListItems = () => {
     const items: React.ReactNode[] = [];
-
-    // Column header row (Name, Status, Phone, Email)
-    items.push(
-      <ContribuentiListRow
-        key="header"
-        contribuente={null}
-        parentWidth={containerWidth}
-      />
-    );
 
     if (searchMode) {
       // Search mode: single header "RISULTATI RICERCA (n)"
       items.push(
-        <div key="search-header" style={headerStyle}>
+        <div key="search-header" style={sectionHeaderStyle}>
           RISULTATI RICERCA ({all.length})
         </div>
       );
@@ -113,7 +108,7 @@ export function ContribuentiListWithHeaders({
       // Favorites section (only if there are favorites)
       if (favCount > 0) {
         items.push(
-          <div key="fav-header" style={headerStyle}>
+          <div key="fav-header" style={sectionHeaderStyle}>
             PREFERITI ({favCount})
           </div>
         );
@@ -134,19 +129,19 @@ export function ContribuentiListWithHeaders({
         });
       }
 
-      // Others section (only if there are non-favorites AND some favorites exist)
+      // Others section (only if there are non-favorites)
       if (notStarred.length > 0) {
         // Only show "ALTRI CONTRIBUENTI" header if we also have favorites
         if (favCount > 0) {
           items.push(
-            <div key="other-header" style={headerStyle}>
+            <div key="other-header" style={sectionHeaderStyle}>
               ALTRI CONTRIBUENTI ({notStarred.length})
             </div>
           );
         } else {
           // No favorites: show "TUTTI I CONTRIBUENTI"
           items.push(
-            <div key="all-header" style={headerStyle}>
+            <div key="all-header" style={sectionHeaderStyle}>
               TUTTI I CONTRIBUENTI ({notStarred.length})
             </div>
           );
@@ -177,11 +172,28 @@ export function ContribuentiListWithHeaders({
       ref={containerRef}
       style={{
         flex: 1,
-        overflow: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
         backgroundColor: Colors.surface,
       }}
     >
-      {renderItems()}
+      {/* Column header row - OUTSIDE scrollable list (from Flokk) */}
+      <div style={{ paddingRight: Insets.lGutter - Insets.sm }}>
+        <ContribuentiListRow
+          contribuente={null}
+          parentWidth={containerWidth}
+        />
+      </div>
+
+      {/* Scrollable list with section headers */}
+      <div
+        style={{
+          flex: 1,
+          overflow: 'auto',
+        }}
+      >
+        {renderListItems()}
+      </div>
     </div>
   );
 }
