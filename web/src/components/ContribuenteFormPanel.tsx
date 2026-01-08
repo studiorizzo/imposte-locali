@@ -1491,20 +1491,21 @@ function MultiValueTextField({
         style={{ paddingRight: Insets.m, minWidth: 0 }}
       >
         {!isOpen ? (
-          // Closed state - has additional paddingRight: 34px like Flokk prompt
-          <div
-            onClick={handlePromptClick}
-            style={{
-              ...TextStyles.body1,
-              color: hasContent ? Colors.greyStrong : Colors.greyWeak,
-              paddingTop: 4,
-              paddingBottom: Insets.sm,
-              paddingRight: Insets.l * 1.5 - 2, // 34px - only for prompt
-              borderBottom: `2px solid ${Colors.greyWeak}`,
-              cursor: 'pointer',
-            }}
-          >
-            {hasContent ? getDisplayText() : placeholder}
+          // Closed state - wrapper with paddingRight: 34px like Flokk prompt
+          <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+            <div
+              onClick={handlePromptClick}
+              style={{
+                ...TextStyles.body1,
+                color: hasContent ? Colors.greyStrong : Colors.greyWeak,
+                paddingTop: 4,
+                paddingBottom: Insets.sm,
+                borderBottom: `2px solid ${Colors.greyWeak}`,
+                cursor: 'pointer',
+              }}
+            >
+              {hasContent ? getDisplayText() : placeholder}
+            </div>
           </div>
         ) : (
           // Open state - NO additional padding, delete button at edge
