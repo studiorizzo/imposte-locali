@@ -8,7 +8,8 @@ import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
-import { Colors, Sizes, Insets, PageBreaks, Animations, Durations } from './theme';
+import { Colors } from './theme';
+import { Sizes, Insets, PageBreaks, Animations, Durations } from './styles';
 import imuendoLogo from './assets/imuendo-logo-animated.svg';
 import './index.css';
 

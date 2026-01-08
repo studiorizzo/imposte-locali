@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Colors, Insets, Sizes, TextStyles, Animations, PageBreaks } from '../theme';
+import { Colors } from '../theme';
+import { Insets, Sizes, TextStyles, Animations, PageBreaks } from '../styles';
 import SwitchToInputIcon from '../assets/switch_to_input.svg';
 
 // Hook to detect mobile mode

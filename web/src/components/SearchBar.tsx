@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { Colors, Sizes, Insets, Animations, Durations, Fonts } from '../theme';
+import { Colors } from '../theme';
+import { Sizes, Insets, Animations, Durations, Fonts } from '../styles';
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;

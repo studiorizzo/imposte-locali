@@ -1,4 +1,5 @@
-import { Colors, Sizes, Fonts } from '../../theme';
+import { Colors } from '../../theme';
+import { Sizes, Fonts } from '../../styles';
 
 export function Header() {
   return (

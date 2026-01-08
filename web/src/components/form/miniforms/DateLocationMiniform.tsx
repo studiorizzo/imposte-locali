@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { Colors, Insets, TextStyles, Animations } from '../../../theme';
+import { Colors } from '../../../theme';
+import { Insets, TextStyles, Animations } from '../../../styles';
 import { StyledDropdown } from '../StyledDropdown';
 import { PROVINCE_OPTIONS } from '../constants';
 import { MaterialDatePicker } from '../../MaterialDatePicker';

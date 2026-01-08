@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { Colors, Insets, TextStyles, Animations } from '../../theme';
+import { Colors } from '../../theme';
+import { Insets, TextStyles, Animations } from '../../styles';
 import CancelRingIcon from '../../assets/cancel_ring_form.svg';
 import AddRingIcon from '../../assets/Add_ring_form.svg';
 

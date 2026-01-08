@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, forwardRef } from 'react';
-import { Colors, Sizes, Animations, Insets, PageBreaks, TextStyles, Fonts } from '../theme';
+import { Colors } from '../theme';
+import { Sizes, Animations, Insets, PageBreaks, TextStyles, Fonts } from '../styles';
 import imuendoLogo from '../assets/imuendo-logo-animated.svg';
 import userAddIcon from '../assets/User_add_alt.svg';
 import contribuentiIcon from '../assets/Group_contribuenti.svg';

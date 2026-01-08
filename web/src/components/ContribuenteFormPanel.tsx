@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Colors, Sizes, Insets, TextStyles } from '../theme';
+import { Colors } from '../theme';
+import { Sizes, Insets, TextStyles } from '../styles';
 
 // Form components
 import {
