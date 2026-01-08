@@ -1550,8 +1550,9 @@ function MultiValueTextField({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    opacity: value.trim() !== '' ? 1 : 0,
-                    pointerEvents: value.trim() !== '' ? 'auto' : 'none',
+                    // First row: show only when has content; other rows: always show
+                    opacity: (index === 0 ? value.trim() !== '' : true) ? 1 : 0,
+                    pointerEvents: (index === 0 ? value.trim() !== '' : true) ? 'auto' : 'none',
                     transition: `opacity ${Animations.button.duration}`,
                     filter: deleteHovered === index ? 'brightness(0.7)' : 'none',
                   }}
@@ -1582,7 +1583,7 @@ function MultiValueTextField({
                   }}
                   onMouseDown={(e) => e.preventDefault()} // Prevent blur
                 >
-                  <img src={AddRingIcon} alt="" width={16} height={16} />
+                  <img src={AddRingIcon} alt="" width={20} height={20} />
                   <span
                     style={{
                       ...TextStyles.body1,
