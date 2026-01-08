@@ -4,6 +4,7 @@ import { MaterialDatePicker } from './MaterialDatePicker';
 import LabelIcon from '../assets/Label_form.svg';
 import UserFormIcon from '../assets/User_2_form.svg';
 import DateFormIcon from '../assets/Date_form.svg';
+import AddressFormIcon from '../assets/Adress_form.svg';
 import ButtonCalendarIcon from '../assets/button_calendar.svg';
 
 interface ContribuenteFormPanelProps {
@@ -24,6 +25,7 @@ export interface ContribuenteFormData {
   email: string;
   telefono: string;
   indirizzo: string;
+  civico: string;  // Numero civico
   comune: string;
   cap: string;
   provincia: string;
@@ -41,6 +43,7 @@ const initialFormData: ContribuenteFormData = {
   email: '',
   telefono: '',
   indirizzo: '',
+  civico: '',
   comune: '',
   cap: '',
   provincia: '',
@@ -196,6 +199,17 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             onChangeDataNascita={(v) => handleChange('dataNascita', v)}
             onChangeComuneNascita={(v) => handleChange('comuneNascita', v)}
             onChangeProvinciaNascita={(v) => handleChange('provinciaNascita', v)}
+          />
+          <DomicilioFiscaleField
+            icon={<img src={AddressFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
+            indirizzo={formData.indirizzo}
+            civico={formData.civico}
+            comune={formData.comune}
+            provincia={formData.provincia}
+            onChangeIndirizzo={(v) => handleChange('indirizzo', v)}
+            onChangeCivico={(v) => handleChange('civico', v)}
+            onChangeComune={(v) => handleChange('comune', v)}
+            onChangeProvincia={(v) => handleChange('provincia', v)}
           />
         </div>
       </div>
@@ -963,6 +977,218 @@ function DateLocationField({
                 <StyledDropdown
                   value={provinciaNascita}
                   onChange={onChangeProvinciaNascita}
+                  options={PROVINCE_OPTIONS}
+                  placeholder="Prov."
+                  width={60}
+                  onFocus={() => handleFieldFocus('provincia')}
+                  onBlur={handleFieldBlur}
+                  isFocused={focusedField === 'provincia'}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * DomicilioFiscaleField - expandable field for fiscal domicile address
+ * Shows "Aggiungi domicilio fiscale" when closed, expands to show address fields
+ */
+function DomicilioFiscaleField({
+  icon,
+  indirizzo,
+  civico,
+  comune,
+  provincia,
+  onChangeIndirizzo,
+  onChangeCivico,
+  onChangeComune,
+  onChangeProvincia,
+}: {
+  icon: React.ReactNode;
+  indirizzo: string;
+  civico: string;
+  comune: string;
+  provincia: string;
+  onChangeIndirizzo: (value: string) => void;
+  onChangeCivico: (value: string) => void;
+  onChangeComune: (value: string) => void;
+  onChangeProvincia: (value: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Check if there's any content
+  const hasContent = indirizzo || civico || comune || provincia;
+
+  // Use ref to track hasContent for timeout callbacks
+  const hasContentRef = useRef(hasContent);
+  hasContentRef.current = hasContent;
+
+  // Build display text for closed state
+  const getDisplayText = () => {
+    if (!hasContent) return '';
+    const parts = [];
+    if (indirizzo) parts.push(indirizzo);
+    if (civico) parts.push(civico);
+    if (comune) parts.push(comune);
+    if (provincia) parts.push(`(${provincia})`);
+    return parts.join(' ');
+  };
+
+  const handlePromptClick = () => {
+    setIsOpen(true);
+  };
+
+  // Handle focus on a field
+  const handleFieldFocus = (field: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setFocusedField(field);
+  };
+
+  // Handle blur - close if no content and focus leaves the container
+  const handleFieldBlur = () => {
+    setFocusedField(null);
+    closeTimeoutRef.current = setTimeout(() => {
+      if (!hasContentRef.current) {
+        setIsOpen(false);
+      }
+    }, 750);
+  };
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      className="flex items-start"
+      style={{ gap: Insets.l }}
+    >
+      {/* Icon - aligned with first line of text */}
+      <div
+        style={{
+          color: Colors.grey,
+          flexShrink: 0,
+          marginTop: 4,
+        }}
+      >
+        {icon}
+      </div>
+      {/* Content wrapper */}
+      <div
+        className="flex-1"
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
+      >
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          {!isOpen ? (
+            // Closed state - show prompt or summary
+            <div
+              onClick={handlePromptClick}
+              style={{
+                ...TextStyles.body1,
+                color: hasContent ? Colors.greyStrong : Colors.greyWeak,
+                paddingTop: 4,
+                paddingBottom: Insets.sm,
+                borderBottom: `2px solid ${Colors.greyWeak}`,
+                cursor: 'pointer',
+              }}
+            >
+              {hasContent ? getDisplayText() : 'Aggiungi domicilio fiscale'}
+            </div>
+          ) : (
+            // Open state - show all fields
+            <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.sm * 0.5 }}>
+              {/* Indirizzo + Civico row */}
+              <div style={{ display: 'flex', alignItems: 'flex-end', gap: Insets.m }}>
+                {/* Indirizzo input - flex-1 */}
+                <input
+                  type="text"
+                  placeholder="Indirizzo"
+                  value={indirizzo}
+                  onChange={(e) => onChangeIndirizzo(e.target.value)}
+                  onFocus={() => handleFieldFocus('indirizzo')}
+                  onBlur={(e) => {
+                    e.target.scrollLeft = 0;
+                    handleFieldBlur();
+                  }}
+                  autoFocus
+                  className="bg-transparent outline-none"
+                  style={{
+                    flex: 1,
+                    minWidth: 0,
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    paddingTop: 4,
+                    paddingBottom: Insets.sm,
+                    borderBottom: `2px solid ${focusedField === 'indirizzo' ? Colors.accent1 : Colors.greyWeak}`,
+                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                    caretColor: Colors.accent1,
+                  }}
+                />
+                {/* Civico input - fixed width */}
+                <input
+                  type="text"
+                  placeholder="Civico"
+                  value={civico}
+                  onChange={(e) => onChangeCivico(e.target.value)}
+                  onFocus={() => handleFieldFocus('civico')}
+                  onBlur={handleFieldBlur}
+                  className="bg-transparent outline-none"
+                  style={{
+                    width: 60,
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    paddingTop: 4,
+                    paddingBottom: Insets.sm,
+                    borderBottom: `2px solid ${focusedField === 'civico' ? Colors.accent1 : Colors.greyWeak}`,
+                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                    caretColor: Colors.accent1,
+                  }}
+                />
+              </div>
+              {/* Comune + Prov. row */}
+              <div style={{ display: 'flex', alignItems: 'flex-end', gap: Insets.m }}>
+                {/* Comune input - flex-1 */}
+                <input
+                  type="text"
+                  placeholder="Comune"
+                  value={comune}
+                  onChange={(e) => onChangeComune(e.target.value)}
+                  onFocus={() => handleFieldFocus('comune')}
+                  onBlur={(e) => {
+                    e.target.scrollLeft = 0;
+                    handleFieldBlur();
+                  }}
+                  className="bg-transparent outline-none"
+                  style={{
+                    flex: 1,
+                    minWidth: 0,
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    paddingTop: 4,
+                    paddingBottom: Insets.sm,
+                    borderBottom: `2px solid ${focusedField === 'comune' ? Colors.accent1 : Colors.greyWeak}`,
+                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                    caretColor: Colors.accent1,
+                  }}
+                />
+                {/* Prov. dropdown */}
+                <StyledDropdown
+                  value={provincia}
+                  onChange={onChangeProvincia}
                   options={PROVINCE_OPTIONS}
                   placeholder="Prov."
                   width={60}
