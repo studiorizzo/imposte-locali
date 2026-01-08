@@ -75,7 +75,7 @@ export const Sizes = {
   singleColumnThreshold: 10,  // Use single column below 10 inches
 
   // Border radius (from Flokk Corners)
-  radiusBtn: 8,    // Corners.s8 - button radius
+  radiusBtn: 5,    // Corners.btn = Corners.s5
   radiusSm: 6,     // SearchBar radius
   radiusMd: 10,
   radiusLg: 12,
@@ -84,7 +84,7 @@ export const Sizes = {
   iconSizeDashboard: 24,    // Dashboard icon
   iconSizeContribuenti: 32, // Contribuenti icon (Group_contribuenti.svg)
   iconSizeCreate: 30,       // Create button icon (User_add_alt.svg)
-  iconSizeMed: 22,          // Sizes.iconMed from Flokk
+  iconSizeMed: 20,          // Sizes.iconMed from Flokk
   iconPadding: 2,           // EdgeInsets.all(2.0)
 
   // Form icons (from Flokk ExpandingMiniformContainer)
@@ -118,20 +118,21 @@ export const Insets = {
 // =============================================================================
 
 export const Durations = {
-  // In milliseconds
-  fastest: 100,
-  fast: 200,
-  medium: 300,
-  slow: 350,
-  slower: 500,
+  // In milliseconds (from Flokk styles.dart)
+  fastest: 150,
+  fast: 250,
+  medium: 350,
+  slow: 700,
+  // Custom (not in Flokk)
+  slower: 500,  // Indicator animation
 } as const;
 
 // CSS duration strings
 export const DurationCSS = {
-  fastest: '100ms',
-  fast: '200ms',
-  medium: '300ms',
-  slow: '350ms',
+  fastest: '150ms',
+  fast: '250ms',
+  medium: '350ms',
+  slow: '700ms',
   slower: '500ms',
 } as const;
 
