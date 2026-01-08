@@ -6,6 +6,7 @@ import { Sidebar, MobileDrawer } from './components/Sidebar';
 import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
+import { ContribuentiPage } from './components/contribuenti';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
 import { Colors } from './theme';
@@ -219,14 +220,12 @@ function App() {
         ) : null;
       case 'contribuenti':
         return (
-          <div className="space-y-4">
-            {contribuenti.map((c, i) => (
-              <div key={i} className="bg-white p-4 rounded-lg shadow border">
-                <p className="font-semibold">{c.cognomeDenominazione} {c.nome}</p>
-                <p className="text-sm text-gray-500">{c.codiceFiscale}</p>
-              </div>
-            ))}
-          </div>
+          <ContribuentiPage
+            onContribuenteSelect={(c) => {
+              console.log('Selected contribuente:', c);
+              // TODO: Open contribuente detail panel
+            }}
+          />
         );
       default:
         return null;
