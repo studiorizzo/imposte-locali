@@ -1485,81 +1485,81 @@ function MultiValueTextField({
       >
         {icon}
       </div>
-      {/* Content wrapper */}
+      {/* Content wrapper - paddingRight: 12px from Flokk */}
       <div
         className="flex-1"
         style={{ paddingRight: Insets.m, minWidth: 0 }}
       >
-        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
-          {!isOpen ? (
-            // Closed state
-            <div
-              onClick={handlePromptClick}
-              style={{
-                ...TextStyles.body1,
-                color: hasContent ? Colors.greyStrong : Colors.greyWeak,
-                paddingTop: 4,
-                paddingBottom: Insets.sm,
-                borderBottom: `2px solid ${Colors.greyWeak}`,
-                cursor: 'pointer',
-              }}
-            >
-              {hasContent ? getDisplayText() : placeholder}
-            </div>
-          ) : (
-            // Open state - show all values
-            <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.sm * 0.5 }}>
-              {values.map((value, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'flex-end', gap: Insets.sm }}>
-                  {/* Input field */}
-                  <input
-                    type="text"
-                    placeholder={inputPlaceholder}
-                    value={value}
-                    onChange={(e) => handleValueChange(index, e.target.value)}
-                    onFocus={() => handleFocus(index)}
-                    onBlur={(e) => {
-                      e.target.scrollLeft = 0;
-                      handleBlur();
-                    }}
-                    autoFocus={index === values.length - 1}
-                    className="bg-transparent outline-none"
-                    style={{
-                      flex: 1,
-                      minWidth: 0,
-                      ...TextStyles.body1,
-                      color: Colors.greyStrong,
-                      paddingTop: 4,
-                      paddingBottom: Insets.sm,
-                      borderBottom: `2px solid ${focusedIndex === index ? Colors.accent1 : Colors.greyWeak}`,
-                      transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
-                      caretColor: Colors.accent1,
-                    }}
-                  />
-                  {/* Delete button - only show when this field has content */}
-                  <button
-                    type="button"
-                    onClick={() => handleDelete(index)}
-                    onMouseEnter={() => setDeleteHovered(index)}
-                    onMouseLeave={() => setDeleteHovered(null)}
-                    style={{
-                      padding: Insets.sm,
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      opacity: value.trim() !== '' ? 1 : 0,
-                      pointerEvents: value.trim() !== '' ? 'auto' : 'none',
-                      transition: `opacity ${Animations.button.duration}`,
-                      filter: deleteHovered === index ? 'brightness(0.7)' : 'none',
-                    }}
-                  >
-                    <img src={CancelRingIcon} alt="Elimina" width={20} height={20} />
-                  </button>
-                </div>
-              ))}
+        {!isOpen ? (
+          // Closed state - has additional paddingRight: 34px like Flokk prompt
+          <div
+            onClick={handlePromptClick}
+            style={{
+              ...TextStyles.body1,
+              color: hasContent ? Colors.greyStrong : Colors.greyWeak,
+              paddingTop: 4,
+              paddingBottom: Insets.sm,
+              paddingRight: Insets.l * 1.5 - 2, // 34px - only for prompt
+              borderBottom: `2px solid ${Colors.greyWeak}`,
+              cursor: 'pointer',
+            }}
+          >
+            {hasContent ? getDisplayText() : placeholder}
+          </div>
+        ) : (
+          // Open state - NO additional padding, delete button at edge
+          <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.sm * 0.5 }}>
+            {values.map((value, index) => (
+              <div key={index} style={{ display: 'flex', alignItems: 'flex-end' }}>
+                {/* Input field - flexible, takes remaining space */}
+                <input
+                  type="text"
+                  placeholder={inputPlaceholder}
+                  value={value}
+                  onChange={(e) => handleValueChange(index, e.target.value)}
+                  onFocus={() => handleFocus(index)}
+                  onBlur={(e) => {
+                    e.target.scrollLeft = 0;
+                    handleBlur();
+                  }}
+                  autoFocus={index === values.length - 1}
+                  className="bg-transparent outline-none"
+                  style={{
+                    flex: 1,
+                    minWidth: 0,
+                    ...TextStyles.body1,
+                    color: Colors.greyStrong,
+                    paddingTop: 4,
+                    paddingBottom: Insets.sm,
+                    borderBottom: `2px solid ${focusedIndex === index ? Colors.accent1 : Colors.greyWeak}`,
+                    transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                    caretColor: Colors.accent1,
+                  }}
+                />
+                {/* Delete button - at end of row, opacity animated */}
+                <button
+                  type="button"
+                  onClick={() => handleDelete(index)}
+                  onMouseEnter={() => setDeleteHovered(index)}
+                  onMouseLeave={() => setDeleteHovered(null)}
+                  style={{
+                    padding: Insets.sm,
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    opacity: value.trim() !== '' ? 1 : 0,
+                    pointerEvents: value.trim() !== '' ? 'auto' : 'none',
+                    transition: `opacity ${Animations.button.duration}`,
+                    filter: deleteHovered === index ? 'brightness(0.7)' : 'none',
+                  }}
+                >
+                  <img src={CancelRingIcon} alt="Elimina" width={20} height={20} />
+                </button>
+              </div>
+            ))}
               {/* Add button - show when last item has content */}
               {showAddButton && (
                 <button
@@ -1595,7 +1595,6 @@ function MultiValueTextField({
               )}
             </div>
           )}
-        </div>
       </div>
     </div>
   );
