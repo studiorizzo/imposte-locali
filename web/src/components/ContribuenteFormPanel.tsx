@@ -5,6 +5,8 @@ import LabelIcon from '../assets/Label_form.svg';
 import UserFormIcon from '../assets/User_2_form.svg';
 import DateFormIcon from '../assets/Date_form.svg';
 import AddressFormIcon from '../assets/Adress_form.svg';
+import MailFormIcon from '../assets/Mail_form.svg';
+import PhoneFormIcon from '../assets/Phone_form.svg';
 import ButtonCalendarIcon from '../assets/button_calendar.svg';
 
 interface ContribuenteFormPanelProps {
@@ -210,6 +212,20 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             onChangeCivico={(v) => handleChange('civico', v)}
             onChangeComune={(v) => handleChange('comune', v)}
             onChangeProvincia={(v) => handleChange('provincia', v)}
+          />
+          <ExpandableTextField
+            icon={<img src={MailFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
+            placeholder="Aggiungi email"
+            inputPlaceholder="Email"
+            value={formData.email}
+            onChange={(v) => handleChange('email', v)}
+          />
+          <ExpandableTextField
+            icon={<img src={PhoneFormIcon} width={Sizes.formIconSize} height={Sizes.formIconSize} alt="" />}
+            placeholder="Aggiungi telefono"
+            inputPlaceholder="Telefono"
+            value={formData.telefono}
+            onChange={(v) => handleChange('telefono', v)}
           />
         </div>
       </div>
@@ -1198,6 +1214,128 @@ function DomicilioFiscaleField({
                 />
               </div>
             </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * ExpandableTextField - simple expandable field for single input
+ * Shows placeholder text when closed, expands to show input field
+ */
+function ExpandableTextField({
+  icon,
+  placeholder,
+  inputPlaceholder,
+  value,
+  onChange,
+}: {
+  icon: React.ReactNode;
+  placeholder: string;
+  inputPlaceholder: string;
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Use ref to track value for timeout callbacks
+  const valueRef = useRef(value);
+  valueRef.current = value;
+
+  const handlePromptClick = () => {
+    setIsOpen(true);
+  };
+
+  const handleFocus = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+    closeTimeoutRef.current = setTimeout(() => {
+      if (!valueRef.current) {
+        setIsOpen(false);
+      }
+    }, 750);
+  };
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      className="flex items-start"
+      style={{ gap: Insets.l }}
+    >
+      {/* Icon */}
+      <div
+        style={{
+          color: Colors.grey,
+          flexShrink: 0,
+          marginTop: 4,
+        }}
+      >
+        {icon}
+      </div>
+      {/* Content wrapper */}
+      <div
+        className="flex-1"
+        style={{ paddingRight: Insets.m, minWidth: 0 }}
+      >
+        <div style={{ paddingRight: Insets.l * 1.5 - 2 }}>
+          {!isOpen ? (
+            // Closed state
+            <div
+              onClick={handlePromptClick}
+              style={{
+                ...TextStyles.body1,
+                color: value ? Colors.greyStrong : Colors.greyWeak,
+                paddingTop: 4,
+                paddingBottom: Insets.sm,
+                borderBottom: `2px solid ${Colors.greyWeak}`,
+                cursor: 'pointer',
+              }}
+            >
+              {value || placeholder}
+            </div>
+          ) : (
+            // Open state
+            <input
+              type="text"
+              placeholder={inputPlaceholder}
+              value={value}
+              onChange={(e) => onChange(e.target.value)}
+              onFocus={handleFocus}
+              onBlur={(e) => {
+                e.target.scrollLeft = 0;
+                handleBlur();
+              }}
+              autoFocus
+              className="w-full bg-transparent outline-none"
+              style={{
+                ...TextStyles.body1,
+                color: Colors.greyStrong,
+                paddingTop: 4,
+                paddingBottom: Insets.sm,
+                borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
+                transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
+                caretColor: Colors.accent1,
+              }}
+            />
           )}
         </div>
       </div>
