@@ -1,4 +1,5 @@
-import { AvatarThemes, AvatarSizes, Fonts } from '../theme';
+import { AvatarThemes } from '../theme';
+import { AvatarSizes, AvatarConfig, Fonts } from '../styles';
 
 type AvatarSizeKey = keyof typeof AvatarSizes;
 
@@ -102,8 +103,8 @@ export function ContribuenteAvatar({
   // Resolve size: accept both AvatarSizes key or raw number
   const pixelSize = typeof size === 'number' ? size : AvatarSizes[size];
 
-  // Calculate font size (approximately 40% of avatar size)
-  const fontSize = Math.round(pixelSize * 0.4);
+  // Calculate font size using configurable ratio
+  const fontSize = Math.round(pixelSize * AvatarConfig.fontRatio);
 
   return (
     <div
@@ -117,8 +118,8 @@ export function ContribuenteAvatar({
         justifyContent: 'center',
         fontFamily: Fonts.heading,
         fontSize: `${fontSize}px`,
-        fontWeight: 700,
-        letterSpacing: '1px',
+        fontWeight: AvatarConfig.fontWeight,
+        letterSpacing: `${AvatarConfig.letterSpacing}px`,
         flexShrink: 0,
       }}
     >

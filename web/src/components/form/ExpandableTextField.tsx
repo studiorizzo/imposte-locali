@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { Colors, Insets, TextStyles, Animations } from '../../theme';
+import { Colors } from '../../theme';
+import { Insets, TextStyles, Animations } from '../../styles';
 
 export interface ExpandableTextFieldProps {
   icon: React.ReactNode;
