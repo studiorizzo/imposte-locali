@@ -151,9 +151,9 @@ export const Animations = {
     duration: DurationCSS.slower,
     easing: Curves.easeOutBack,
   },
-  // Panel slide (0.35s easeOut)
+  // Panel slide (0.35s easeOut) - matches Flokk AnimatedPanel duration
   panel: {
-    duration: DurationCSS.slow,
+    duration: DurationCSS.medium,
     easing: Curves.easeOut,
   },
   // Button hover (0.3s easeOut)
