@@ -78,96 +78,56 @@ export function ContribuentiListWithHeaders({
     boxSizing: 'border-box',
   };
 
-  // Build list items (section headers + rows, but NOT column header)
-  const renderListItems = () => {
-    const items: React.ReactNode[] = [];
+  // Calculate item count - from Flokk contacts_list_with_headers.dart
+  // itemCount = contacts.length + 1 (one header)
+  // If not searchMode and has both favorites and non-favorites: add another header
+  let itemCount = all.length + 1;
+  if (!searchMode && favCount !== 0 && favCount !== all.length) {
+    itemCount += 1;
+  }
 
-    if (searchMode) {
-      // Search mode: single header "RISULTATI RICERCA (n)"
-      items.push(
-        <div key="search-header" style={sectionHeaderStyle}>
-          RISULTATI RICERCA ({all.length})
+  // itemBuilder - from Flokk contacts_list_with_headers.dart
+  const itemBuilder = (i: number): React.ReactNode => {
+    // Inject 1 or 2 header rows into the results
+    const isFirstHeader = i === 0;
+    const isSecondHeader = i === favCount + 1 && favCount !== 0;
+
+    if (isFirstHeader || (isSecondHeader && !searchMode)) {
+      let headerText = 'RISULTATI RICERCA';
+      let count = all.length;
+
+      if (!searchMode) {
+        const isFavorite = i === 0 && favCount > 0;
+        headerText = isFavorite ? 'PREFERITI' : 'ALTRI CONTRIBUENTI';
+        count = isFavorite ? favCount : all.length - favCount;
+      }
+
+      // Header text - from Flokk
+      return (
+        <div style={sectionHeaderStyle}>
+          {headerText} ({count})
         </div>
       );
-
-      // All results
-      all.forEach((contribuente) => {
-        items.push(
-          <ContribuentiListRow
-            key={contribuente.id}
-            contribuente={contribuente}
-            parentWidth={containerWidth}
-            isSelected={selectedId === contribuente.id}
-            isChecked={checkedIds.has(contribuente.id)}
-            onSelect={() => onSelect(contribuente)}
-            onCheckedChange={(checked) => onCheckedChange(contribuente.id, checked)}
-            onStarToggle={() => onStarToggle(contribuente.id)}
-          />
-        );
-      });
-    } else {
-      // Normal mode: separate headers for favorites and others
-
-      // Favorites section (only if there are favorites)
-      if (favCount > 0) {
-        items.push(
-          <div key="fav-header" style={sectionHeaderStyle}>
-            PREFERITI ({favCount})
-          </div>
-        );
-
-        starred.forEach((contribuente) => {
-          items.push(
-            <ContribuentiListRow
-              key={contribuente.id}
-              contribuente={contribuente}
-              parentWidth={containerWidth}
-              isSelected={selectedId === contribuente.id}
-              isChecked={checkedIds.has(contribuente.id)}
-              onSelect={() => onSelect(contribuente)}
-              onCheckedChange={(checked) => onCheckedChange(contribuente.id, checked)}
-              onStarToggle={() => onStarToggle(contribuente.id)}
-            />
-          );
-        });
-      }
-
-      // Others section (only if there are non-favorites)
-      if (notStarred.length > 0) {
-        // Only show "ALTRI CONTRIBUENTI" header if we also have favorites
-        if (favCount > 0) {
-          items.push(
-            <div key="other-header" style={sectionHeaderStyle}>
-              ALTRI CONTRIBUENTI ({notStarred.length})
-            </div>
-          );
-        } else {
-          // No favorites: show "TUTTI I CONTRIBUENTI"
-          items.push(
-            <div key="all-header" style={sectionHeaderStyle}>
-              TUTTI I CONTRIBUENTI ({notStarred.length})
-            </div>
-          );
-        }
-
-        notStarred.forEach((contribuente) => {
-          items.push(
-            <ContribuentiListRow
-              key={contribuente.id}
-              contribuente={contribuente}
-              parentWidth={containerWidth}
-              isSelected={selectedId === contribuente.id}
-              isChecked={checkedIds.has(contribuente.id)}
-              onSelect={() => onSelect(contribuente)}
-              onCheckedChange={(checked) => onCheckedChange(contribuente.id, checked)}
-              onStarToggle={() => onStarToggle(contribuente.id)}
-            />
-          );
-        });
-      }
     }
 
-    return items;
+    // Regular Row - from Flokk
+    let offset = 1;
+    if (!searchMode && i > favCount && favCount !== 0) {
+      offset++;
+    }
+    const contribuente = all[i - offset];
+
+    return (
+      <ContribuentiListRow
+        contribuente={contribuente}
+        parentWidth={containerWidth}
+        isSelected={selectedId === contribuente.id}
+        isChecked={checkedIds.has(contribuente.id)}
+        onSelect={() => onSelect(contribuente)}
+        onCheckedChange={(checked) => onCheckedChange(contribuente.id, checked)}
+        onStarToggle={() => onStarToggle(contribuente.id)}
+      />
+    );
   };
 
   return (
@@ -190,10 +150,12 @@ export function ContribuentiListWithHeaders({
         />
       </div>
 
-      {/* Scrollable list with section headers - using StyledListView for custom scrollbar */}
-      <StyledListView>
-        {renderListItems()}
-      </StyledListView>
+      {/* Scrollable list with section headers - from Flokk: StyledListView.expanded() */}
+      <StyledListView
+        itemExtent={78}
+        itemCount={itemCount}
+        itemBuilder={itemBuilder}
+      />
     </div>
   );
 }

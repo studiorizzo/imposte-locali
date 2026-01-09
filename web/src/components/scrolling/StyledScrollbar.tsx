@@ -1,146 +1,196 @@
 /**
  * StyledScrollbar - Custom scrollbar component
- * Simplified version that works reliably
+ * Exact copy from Flokk's styled_scrollbar.dart
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Colors } from '../../theme';
+import { Sizes } from '../../styles';
 
 interface StyledScrollbarProps {
-  /** Reference to the scrollable element */
+  size: number;
+  axis: 'vertical' | 'horizontal';
   scrollRef: React.RefObject<HTMLElement | null>;
-  /** Size of the scrollbar */
-  size?: number;
+  onDrag?: (delta: number) => void;
+  showTrack?: boolean;
+  handleColor?: string;
+  trackColor?: string;
+  contentSize?: number;
 }
 
 export function StyledScrollbar({
+  size,
+  axis,
   scrollRef,
-  size = 12,
+  onDrag,
+  showTrack = false,
+  handleColor,
+  trackColor,
+  contentSize,
 }: StyledScrollbarProps) {
-  const [scrollInfo, setScrollInfo] = useState({
-    scrollTop: 0,
-    scrollHeight: 0,
-    clientHeight: 0,
-  });
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStartY, setDragStartY] = useState(0);
-  const [dragStartScrollTop, setDragStartScrollTop] = useState(0);
+  const [viewExtent, setViewExtent] = useState(100);
+  const [scrollOffset, setScrollOffset] = useState(0);
+  const [maxScrollExtent, setMaxScrollExtent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Sync with scroll element
+  // Sync with scroll element - equivalent to initState + addListener
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
+    const element = scrollRef.current;
+    if (!element) return;
 
-    const update = () => {
-      setScrollInfo({
-        scrollTop: el.scrollTop,
-        scrollHeight: el.scrollHeight,
-        clientHeight: el.clientHeight,
-      });
+    const updateState = () => {
+      const isVertical = axis === 'vertical';
+      setViewExtent(isVertical ? element.clientHeight : element.clientWidth);
+      setScrollOffset(isVertical ? element.scrollTop : element.scrollLeft);
+      setMaxScrollExtent(
+        isVertical
+          ? element.scrollHeight - element.clientHeight
+          : element.scrollWidth - element.clientWidth
+      );
     };
 
-    update();
-    el.addEventListener('scroll', update);
+    updateState();
+    element.addEventListener('scroll', updateState);
 
-    const observer = new ResizeObserver(update);
-    observer.observe(el);
-
-    // Also observe content changes
-    const mutationObserver = new MutationObserver(update);
-    mutationObserver.observe(el, { childList: true, subtree: true });
+    const resizeObserver = new ResizeObserver(updateState);
+    resizeObserver.observe(element);
 
     return () => {
-      el.removeEventListener('scroll', update);
-      observer.disconnect();
-      mutationObserver.disconnect();
+      element.removeEventListener('scroll', updateState);
+      resizeObserver.disconnect();
     };
-  }, [scrollRef]);
+  }, [scrollRef, axis]);
 
-  const { scrollTop, scrollHeight, clientHeight } = scrollInfo;
-  const maxScroll = scrollHeight - clientHeight;
-  const canScroll = maxScroll > 0;
+  // Calculate maxExtent - from Flokk build() method
+  const maxExtent = (contentSize != null && contentSize > 0)
+    ? contentSize - viewExtent
+    : maxScrollExtent;
 
-  // Calculate handle size and position
-  const trackHeight = clientHeight;
-  const handleHeight = canScroll
-    ? Math.max(40, (clientHeight / scrollHeight) * trackHeight)
-    : trackHeight;
-  const handleTop = canScroll
-    ? (scrollTop / maxScroll) * (trackHeight - handleHeight)
-    : 0;
+  // contentExtent = maxExtent + viewExtent
+  const contentExtent = maxExtent + viewExtent;
 
-  // Handle drag
+  // handleAlignment from [0,1] to [-1,1] - from Flokk
+  let handleAlignment = maxExtent === 0 ? 0 : scrollOffset / maxExtent;
+  handleAlignment *= 2.0;
+  handleAlignment -= 1.0;
+
+  // handleExtent - from Flokk: max(60, viewExtent * viewExtent / contentExtent)
+  let handleExtent = viewExtent;
+  if (contentExtent > viewExtent) {
+    handleExtent = Math.max(60, (viewExtent * viewExtent) / contentExtent);
+  }
+
+  // showHandle - from Flokk
+  const showHandle = contentExtent > viewExtent && contentExtent > 0;
+
+  // Colors - from Flokk theme
+  const finalHandleColor = handleColor ?? Colors.greyWeak;
+  const finalTrackColor = trackColor ?? `${Colors.greyWeak}4D`; // 30% opacity
+
+  // Drag handlers - exact copy from Flokk _handleVerticalDrag / _handleHorizontalDrag
+  const handleDrag = useCallback((e: MouseEvent, startY: number, startX: number, startOffset: number) => {
+    const element = scrollRef.current;
+    if (!element) return;
+
+    const isVertical = axis === 'vertical';
+    const delta = isVertical ? e.clientY - startY : e.clientX - startX;
+
+    // pxRatio = (maxScrollExtent + viewExtent) / viewExtent - from Flokk
+    const currentMaxExtent = isVertical
+      ? element.scrollHeight - element.clientHeight
+      : element.scrollWidth - element.clientWidth;
+    const currentViewExtent = isVertical ? element.clientHeight : element.clientWidth;
+    const pxRatio = (currentMaxExtent + currentViewExtent) / currentViewExtent;
+
+    // jumpTo((pos + delta * pxRatio).clamp(0, maxScrollExtent)) - from Flokk
+    const newScroll = Math.max(0, Math.min(currentMaxExtent, startOffset + delta * pxRatio));
+
+    if (isVertical) {
+      element.scrollTop = newScroll;
+    } else {
+      element.scrollLeft = newScroll;
+    }
+
+    onDrag?.(delta);
+  }, [axis, scrollRef, onDrag]);
+
   const onMouseDown = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
-    setIsDragging(true);
-    setDragStartY(e.clientY);
-    setDragStartScrollTop(scrollRef.current?.scrollTop || 0);
-  }, [scrollRef]);
+    const startY = e.clientY;
+    const startX = e.clientX;
+    const startOffset = axis === 'vertical'
+      ? scrollRef.current?.scrollTop ?? 0
+      : scrollRef.current?.scrollLeft ?? 0;
 
-  useEffect(() => {
-    if (!isDragging) return;
-
-    const onMouseMove = (e: MouseEvent) => {
-      const el = scrollRef.current;
-      if (!el) return;
-
-      const deltaY = e.clientY - dragStartY;
-      const scrollRatio = maxScroll / (trackHeight - handleHeight);
-      el.scrollTop = Math.max(0, Math.min(maxScroll, dragStartScrollTop + deltaY * scrollRatio));
+    const onMouseMove = (moveEvent: MouseEvent) => {
+      handleDrag(moveEvent, startY, startX, startOffset);
     };
 
-    const onMouseUp = () => setIsDragging(false);
-
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-    return () => {
+    const onMouseUp = () => {
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
     };
-  }, [isDragging, dragStartY, dragStartScrollTop, maxScroll, trackHeight, handleHeight, scrollRef]);
 
-  // Track click
-  const onTrackClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target !== e.currentTarget) return; // Only track clicks, not handle
-    const el = scrollRef.current;
-    if (!el) return;
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  }, [axis, scrollRef, handleDrag]);
 
-    const rect = e.currentTarget.getBoundingClientRect();
-    const clickY = e.clientY - rect.top;
-    const targetScroll = (clickY / trackHeight) * scrollHeight - clientHeight / 2;
-    el.scrollTop = Math.max(0, Math.min(maxScroll, targetScroll));
-  }, [scrollRef, trackHeight, scrollHeight, clientHeight, maxScroll]);
+  const isVertical = axis === 'vertical';
 
-  // Always render the track, hide handle if not scrollable
+  // Convert handleAlignment [-1, 1] to top position
+  // In Flutter Alignment, -1 is top, 1 is bottom
+  // Position = ((alignment + 1) / 2) * (viewExtent - handleExtent)
+  const handlePosition = ((handleAlignment + 1) / 2) * (viewExtent - handleExtent);
+
   return (
     <div
-      onClick={onTrackClick}
+      ref={containerRef}
       style={{
         position: 'absolute',
         top: 0,
         right: 0,
         bottom: 0,
-        width: size,
-        backgroundColor: `${Colors.greyWeak}4D`,
-        cursor: 'pointer',
+        left: isVertical ? 'auto' : 0,
+        width: isVertical ? size : '100%',
+        height: isVertical ? '100%' : size,
+        opacity: showHandle ? 1 : 0,
+        pointerEvents: showHandle ? 'auto' : 'none',
       }}
     >
-      {canScroll && (
+      {/* TRACK - from Flokk: Align(alignment: Alignment(1, 1), Container...) */}
+      {showTrack && (
         <div
-          onMouseDown={onMouseDown}
           style={{
             position: 'absolute',
-            top: handleTop,
-            left: 0,
+            top: 0,
             right: 0,
-            height: handleHeight,
-            backgroundColor: Colors.greyWeak,
-            borderRadius: 3,
-            cursor: 'grab',
-            opacity: isDragging ? 1 : 0.85,
+            bottom: 0,
+            left: isVertical ? 'auto' : 0,
+            width: isVertical ? size : '100%',
+            height: isVertical ? '100%' : size,
+            backgroundColor: finalTrackColor,
           }}
         />
       )}
+
+      {/* HANDLE - from Flokk: Align + GestureDetector + MouseHoverBuilder + Container */}
+      <div
+        onMouseDown={onMouseDown}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{
+          position: 'absolute',
+          [isVertical ? 'top' : 'left']: handlePosition,
+          [isVertical ? 'right' : 'bottom']: 0,
+          width: isVertical ? size : handleExtent,
+          height: isVertical ? handleExtent : size,
+          backgroundColor: finalHandleColor,
+          opacity: isHovered ? 1 : 0.85,
+          borderRadius: Sizes.radiusSm, // Corners.s3Border = 3px
+          cursor: 'pointer',
+        }}
+      />
     </div>
   );
 }
