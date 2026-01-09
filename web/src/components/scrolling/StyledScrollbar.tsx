@@ -113,14 +113,11 @@ export function StyledScrollbar({
     onScroll(newScrollTop);
   }, [viewExtent, maxScrollExtent, onScroll]);
 
-  if (!showHandle) {
-    return null;
-  }
-
+  // Always show track, only show handle when content is scrollable
   return (
     <div
       ref={trackRef}
-      onClick={handleTrackClick}
+      onClick={showHandle ? handleTrackClick : undefined}
       style={{
         position: 'absolute',
         top: 0,
@@ -129,28 +126,30 @@ export function StyledScrollbar({
         width: axis === 'vertical' ? size : '100%',
         height: axis === 'horizontal' ? size : '100%',
         backgroundColor: showTrack ? finalTrackColor : 'transparent',
-        cursor: 'pointer',
+        cursor: showHandle ? 'pointer' : 'default',
       }}
     >
-      {/* Handle */}
-      <div
-        onMouseDown={handleMouseDown}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{
-          position: 'absolute',
-          top: axis === 'vertical' ? handleOffset : 0,
-          left: axis === 'horizontal' ? handleOffset : 0,
-          width: axis === 'vertical' ? size : handleExtent,
-          height: axis === 'vertical' ? handleExtent : size,
-          backgroundColor: finalHandleColor,
-          opacity: isHovered || isDragging ? 1 : 0.85,
-          borderRadius: 3,
-          cursor: isDragging ? 'grabbing' : 'grab',
-          transition: isDragging ? 'none' : 'opacity 0.15s ease',
-        }}
-        onClick={(e) => e.stopPropagation()}
-      />
+      {/* Handle - only when scrollable */}
+      {showHandle && (
+        <div
+          onMouseDown={handleMouseDown}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          style={{
+            position: 'absolute',
+            top: axis === 'vertical' ? handleOffset : 0,
+            left: axis === 'horizontal' ? handleOffset : 0,
+            width: axis === 'vertical' ? size : handleExtent,
+            height: axis === 'vertical' ? handleExtent : size,
+            backgroundColor: finalHandleColor,
+            opacity: isHovered || isDragging ? 1 : 0.85,
+            borderRadius: 3,
+            cursor: isDragging ? 'grabbing' : 'grab',
+            transition: isDragging ? 'none' : 'opacity 0.15s ease',
+          }}
+          onClick={(e) => e.stopPropagation()}
+        />
+      )}
     </div>
   );
 }
