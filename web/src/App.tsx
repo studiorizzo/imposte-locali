@@ -330,6 +330,8 @@ function App() {
         <main
           className={`flex-1 ${currentView !== 'contribuenti' ? 'overflow-auto' : 'overflow-hidden'}`}
           style={{
+            display: currentView === 'contribuenti' ? 'flex' : undefined,
+            flexDirection: currentView === 'contribuenti' ? 'column' : undefined,
             minHeight: 0,  // Critical for flex scroll - allows shrinking below content height
             paddingLeft: currentView !== 'contribuenti' ? (isMobile ? Insets.mGutter : Insets.lGutter) : 0,
             paddingRight: currentView !== 'contribuenti' ? Insets.mGutter : 0,
