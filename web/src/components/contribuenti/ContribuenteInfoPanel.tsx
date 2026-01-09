@@ -1,11 +1,12 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
-import { Colors, Shadows } from '../../theme';
-import { Sizes, Insets, TextStyles, Durations } from '../../styles';
+import { useState, useRef, useCallback } from 'react';
+import { Colors } from '../../theme';
+import { Sizes, Insets, TextStyles } from '../../styles';
 import { ContribuenteAvatar } from '../ContribuenteAvatar';
 import { StyledScrollbar } from '../scrolling';
 import type { ContribuenteListData } from './ContribuentiListRow';
 
 // Icons - same as ContribuenteFormPanel
+import LabelIcon from '../../assets/Label_form.svg';
 import UserFormIcon from '../../assets/User_2_form.svg';
 import DateFormIcon from '../../assets/Date_form.svg';
 import AddressFormIcon from '../../assets/Adress_form.svg';
@@ -13,7 +14,6 @@ import MailFormIcon from '../../assets/Mail_form.svg';
 import PhoneFormIcon from '../../assets/Phone_form.svg';
 import NoteFormIcon from '../../assets/note_form.svg';
 import LinkFormIcon from '../../assets/link_form.svg';
-import CancelIcon from '../../assets/Cancel_form.svg';
 import starFilledIcon from '../../assets/Star_fill.svg';
 import starEmptyIcon from '../../assets/Star.svg';
 
@@ -34,6 +34,7 @@ export interface ContribuenteFullData extends ContribuenteListData {
   provincia?: string;
   note?: string;
   relazioni?: string;
+  // Immobili associated with this contribuente
   immobili?: Array<{
     id: string;
     tipo: string;
@@ -49,55 +50,8 @@ interface ContribuenteInfoPanelProps {
   onStarToggle?: () => void;
 }
 
+// Tab type
 type TabType = 'dettagli' | 'immobili';
-
-// Edit icon SVG inline (from Flokk StyledIcons.edit)
-function EditIcon({ size = 22, color }: { size?: number; color: string }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-    </svg>
-  );
-}
-
-// ColorShiftIconBtn - icon button with hover color shift (from Flokk)
-function ColorShiftIconBtn({
-  icon,
-  size: _size = 16,
-  color: _color,
-  onPressed,
-}: {
-  icon: React.ReactNode;
-  size?: number;
-  color: string;
-  onPressed?: () => void;
-}) {
-  void _size;
-  void _color;
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <button
-      onClick={onPressed}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        background: 'none',
-        border: 'none',
-        padding: Insets.sm,
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        opacity: isHovered ? 0.7 : 1,
-        transition: 'opacity 150ms ease-out',
-      }}
-    >
-      {icon}
-    </button>
-  );
-}
 
 // Info row component - displays a single field with icon
 function InfoRow({
@@ -153,7 +107,7 @@ function InfoRow({
   );
 }
 
-// Tab bar component (from Flokk StyledTabBar)
+// Tab bar component
 function TabBar({
   activeTab,
   onTabChange,
@@ -218,13 +172,7 @@ function DetailsTabContent({ contribuente }: { contribuente: ContribuenteFullDat
     .join(' - ');
 
   return (
-    // Flokk: .padding(top: Insets.m * 1.5, bottom: 50)
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      paddingTop: Insets.m * 1.5,
-      paddingBottom: 50,
-    }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <InfoRow
         icon={UserFormIcon}
         label="Codice Fiscale"
@@ -329,122 +277,7 @@ function ImmobiliTabContent({ contribuente }: { contribuente: ContribuenteFullDa
   );
 }
 
-// Header card component (from Flokk contact_info_header_card.dart)
-function ContribuenteInfoHeaderCard({
-  contribuente,
-  onStarToggle,
-}: {
-  contribuente: ContribuenteFullData;
-  onStarToggle?: () => void;
-}) {
-  const fullName = contribuente.nome
-    ? `${contribuente.cognomeDenominazione} ${contribuente.nome}`
-    : contribuente.cognomeDenominazione;
-
-  // Flokk: SeparatedColumn with separatorBuilder: () => SizedBox(height: Insets.m * .5)
-  const separatorHeight = Insets.m * 0.5;
-
-  return (
-    // Flokk: .translate(offset: Offset(0, -Insets.m))
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        transform: `translateY(${-Insets.m}px)`,
-      }}
-    >
-      {/* VSpace(Insets.sm - 1) */}
-      <div style={{ height: Insets.sm - 1 }} />
-
-      {/* Avatar - size: 110 */}
-      <ContribuenteAvatar
-        cognomeDenominazione={contribuente.cognomeDenominazione}
-        nome={contribuente.nome}
-        size="xl"
-        id={contribuente.id}
-      />
-
-      {/* Separator */}
-      <div style={{ height: separatorHeight }} />
-
-      {/* Name + Star Row */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: Insets.sm * 0.5,
-        }}
-      >
-        {/* OneLineText with H1 style */}
-        <span
-          style={{
-            ...TextStyles.h1,
-            color: Colors.txt,
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          {fullName}
-        </span>
-        {onStarToggle && (
-          <ColorShiftIconBtn
-            icon={
-              <img
-                src={contribuente.isStarred ? starFilledIcon : starEmptyIcon}
-                alt=""
-                style={{
-                  width: 20,
-                  height: 20,
-                  filter: contribuente.isStarred
-                    ? 'none'
-                    : 'grayscale(100%)',
-                }}
-              />
-            }
-            color={contribuente.isStarred ? Colors.accent1 : Colors.grey}
-            onPressed={onStarToggle}
-          />
-        )}
-      </div>
-
-      {/* Separator */}
-      <div style={{ height: separatorHeight }} />
-
-      {/* Labels/Tipologie (Wrap) */}
-      {contribuente.tippiologie && contribuente.tippiologie.length > 0 && (
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: Insets.sm * 0.5,
-            justifyContent: 'center',
-          }}
-        >
-          {contribuente.tippiologie.map((tip) => (
-            <span
-              key={tip}
-              style={{
-                ...TextStyles.caption,
-                color: Colors.accent1Dark,
-                backgroundColor: `${Colors.accent1}20`,
-                padding: `${Insets.xs}px ${Insets.sm}px`,
-                borderRadius: Sizes.radiusBtn,
-                textTransform: 'uppercase',
-              }}
-            >
-              {tip}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// Main component (from Flokk contact_info_panel.dart + contact_panel.dart)
+// Copied from ContribuenteFormPanel structure
 export function ContribuenteInfoPanel({
   contribuente,
   onClose,
@@ -456,20 +289,6 @@ export function ContribuenteInfoPanel({
   const [scrollTop, setScrollTop] = useState(0);
   const [scrollHeight, setScrollHeight] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
-
-  // Fade animation state (from Flokk)
-  const [contentOpacity, setContentOpacity] = useState(0);
-  const prevContactIdRef = useRef<string | null>(null);
-
-  // Fade in when contact changes (from Flokk startFadeIfContactsHaveChanged)
-  useEffect(() => {
-    if (contribuente.id !== prevContactIdRef.current) {
-      setContentOpacity(0);
-      // Use microtask to trigger animation
-      queueMicrotask(() => setContentOpacity(1));
-      prevContactIdRef.current = contribuente.id;
-    }
-  }, [contribuente.id]);
 
   // Handle scroll events for custom scrollbar
   const handleScroll = useCallback(() => {
@@ -502,53 +321,86 @@ export function ContribuenteInfoPanel({
     }
   }, []);
 
+  // Full name
+  const fullName = contribuente.nome
+    ? `${contribuente.cognomeDenominazione} ${contribuente.nome}`
+    : contribuente.cognomeDenominazione;
+
   return (
-    // Container with shadow (from Flokk contact_panel.dart StyledContainer)
+    // Same container as ContribuenteFormPanel
     <div
       className="h-full flex flex-col"
       style={{
         backgroundColor: Colors.surface,
         borderTopLeftRadius: Sizes.radiusMd,
         borderBottomLeftRadius: Sizes.radiusMd,
-        boxShadow: Shadows.panel, // FIX #1: Added shadow
-        paddingTop: Insets.l * 0.75, // FIX: padding from contact_panel.dart
       }}
     >
-      {/* Top Icon Row (from Flokk contact_info_panel.dart lines 57-63) */}
-      {/* FIX #2: Icons instead of text */}
+      {/* Header - same structure as ContribuenteFormPanel */}
       <div
+        className="flex items-center justify-between"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
+          paddingTop: Insets.l * 0.75 + Insets.sm,
+          paddingBottom: Insets.m,
           paddingLeft: Insets.l,
           paddingRight: Insets.l,
         }}
       >
-        <ColorShiftIconBtn
-          icon={<img src={CancelIcon} alt="Chiudi" style={{ width: 16, height: 16 }} />}
-          size={16}
-          color={Colors.grey}
-          onPressed={onClose}
-        />
-        <ColorShiftIconBtn
-          icon={<EditIcon size={22} color={Colors.accent1Dark} />}
-          size={22}
-          color={Colors.accent1Dark}
-          onPressed={onEdit}
-        />
+        <button
+          onClick={onClose}
+          className="uppercase transition-all"
+          style={{
+            ...TextStyles.body1,
+            color: Colors.grey,
+            padding: `${Insets.sm}px ${Insets.sm}px`,
+            lineHeight: 1,
+            minWidth: 30,
+            minHeight: 30,
+            borderRadius: 5,
+            transform: `translateX(${-Insets.sm}px)`,
+            backgroundColor: 'transparent',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = Colors.bg1;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+          }}
+        >
+          Chiudi
+        </button>
+        <button
+          onClick={onEdit}
+          className="uppercase transition-all"
+          style={{
+            ...TextStyles.body1,
+            color: Colors.accent1,
+            padding: `${Insets.sm}px ${Insets.sm}px`,
+            lineHeight: 1,
+            minWidth: 30,
+            minHeight: 30,
+            borderRadius: 5,
+            transform: `translateX(${Insets.sm}px)`,
+            backgroundColor: 'transparent',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = Colors.bg1;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+          }}
+        >
+          Modifica
+        </button>
       </div>
 
-      {/* Content with fade animation (from Flokk lines 67-91) */}
-      {/* FIX #3: Fade animation */}
+      {/* Content - same structure as ContribuenteFormPanel but with custom scrollbar */}
       <div
         style={{
           flex: 1,
           display: 'flex',
           minHeight: 0,
           position: 'relative',
-          opacity: contentOpacity,
-          transition: contentOpacity === 0 ? 'none' : `opacity ${Durations.medium}ms ease-out`,
         }}
       >
         <div
@@ -558,31 +410,110 @@ export function ContribuenteInfoPanel({
           style={{
             flex: 1,
             overflowY: 'scroll',
+            paddingTop: Insets.sm,
             paddingLeft: Insets.l,
-            paddingRight: Insets.l + 12 + Insets.sm,
+            paddingRight: Insets.l + 12 + Insets.sm, // Space for scrollbar (barSize + Insets.sm)
+            paddingBottom: Insets.m + 30,
           }}
         >
-          {/* VSpace(2) */}
-          <div style={{ height: 2 }} />
+          {/* Header card: Avatar + Name + Star + Labels */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              paddingTop: Insets.m,
+              paddingBottom: Insets.l,
+            }}
+          >
+            {/* Avatar */}
+            <ContribuenteAvatar
+              cognomeDenominazione={contribuente.cognomeDenominazione}
+              nome={contribuente.nome}
+              size="xl"
+              id={contribuente.id}
+            />
 
-          {/* Header Card (FIX #4, #5, #6: translate offset, H1 style, separators) */}
-          <ContribuenteInfoHeaderCard
-            contribuente={contribuente}
-            onStarToggle={onStarToggle}
-          />
+            {/* Name + Star */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: Insets.sm,
+                marginTop: Insets.m,
+              }}
+            >
+              <h1
+                style={{
+                  ...TextStyles.t1,
+                  fontSize: '18px',
+                  color: Colors.txt,
+                  margin: 0,
+                  textAlign: 'center',
+                }}
+              >
+                {fullName}
+              </h1>
+              {onStarToggle && (
+                <button
+                  onClick={onStarToggle}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: Insets.xs,
+                    cursor: 'pointer',
+                    display: 'flex',
+                  }}
+                >
+                  <img
+                    src={contribuente.isStarred ? starFilledIcon : starEmptyIcon}
+                    alt={contribuente.isStarred ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'}
+                    style={{ width: 20, height: 20 }}
+                  />
+                </button>
+              )}
+            </div>
 
-          {/* VSpace(Insets.l) */}
-          <div style={{ height: Insets.l }} />
+            {/* Labels/Tipologie */}
+            {contribuente.tippiologie && contribuente.tippiologie.length > 0 && (
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: Insets.xs,
+                  marginTop: Insets.m,
+                  justifyContent: 'center',
+                }}
+              >
+                {contribuente.tippiologie.map((tip) => (
+                  <span
+                    key={tip}
+                    style={{
+                      ...TextStyles.caption,
+                      color: Colors.accent1Dark,
+                      backgroundColor: `${Colors.accent1}20`,
+                      padding: `${Insets.xs}px ${Insets.sm}px`,
+                      borderRadius: Sizes.radiusBtn,
+                    }}
+                  >
+                    {tip}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Tab bar */}
           <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
 
-          {/* Tab content (FIX #7: correct padding in details) */}
-          {activeTab === 'dettagli' ? (
-            <DetailsTabContent contribuente={contribuente} />
-          ) : (
-            <ImmobiliTabContent contribuente={contribuente} />
-          )}
+          {/* Tab content - same fields structure as ContribuenteFormPanel */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.m }}>
+            {activeTab === 'dettagli' ? (
+              <DetailsTabContent contribuente={contribuente} />
+            ) : (
+              <ImmobiliTabContent contribuente={contribuente} />
+            )}
+          </div>
         </div>
 
         {/* Custom scrollbar overlay */}
