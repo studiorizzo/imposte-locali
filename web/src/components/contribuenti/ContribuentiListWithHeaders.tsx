@@ -147,34 +147,30 @@ export function ContribuentiListWithHeaders({
         flexDirection: 'column',
         minHeight: 0,
         overflow: 'hidden',  // Force height constraint
-        backgroundColor: Colors.bg1,
       }}
     >
-      {/* LIST / HEADER COLUMN - from Flokk */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, overflow: 'hidden' }}>
-        {/* Column header row - height: 48, from Flokk */}
-        <div style={{ height: 48, paddingRight: Insets.lGutter - Insets.sm }}>
-          <ContribuentiListRow
-            contribuente={null}
-            parentWidth={containerWidth}
-          />
-        </div>
+      {/* Column header row - height: 48, from Flokk */}
+      <div style={{ height: 48, paddingRight: Insets.lGutter - Insets.sm }}>
+        <ContribuentiListRow
+          contribuente={null}
+          parentWidth={containerWidth}
+        />
+      </div>
 
-        {/* Scrollable list with native browser scrollbar */}
-        <div
-          style={{
-            flex: 1,
-            minHeight: 0,
-            overflow: 'auto',
-            paddingRight: Insets.lGutter - Insets.sm,
-          }}
-        >
-          {Array.from({ length: itemCount }, (_, index) => (
-            <div key={index} style={{ height: 78 }}>
-              {itemBuilder(index)}
-            </div>
-          ))}
-        </div>
+      {/* Scrollable list with native browser scrollbar */}
+      <div
+        style={{
+          flex: 1,
+          minHeight: 0,
+          overflow: 'auto',
+          paddingRight: Insets.lGutter - Insets.sm,
+        }}
+      >
+        {Array.from({ length: itemCount }, (_, index) => (
+          <div key={index} style={{ height: 78 }}>
+            {itemBuilder(index)}
+          </div>
+        ))}
       </div>
 
       {/* BULK CONTROLS - from Flokk: overlay with opacity animation */}
