@@ -233,7 +233,7 @@ export function ContribuentiListRow({
         <div
           style={{
             flex: 2000,
-            minWidth: 200,
+            minWidth: 300,  // Flokk: .constrained(minWidth: 300)
             display: 'flex',
             alignItems: 'center',
             gap: Insets.m,
