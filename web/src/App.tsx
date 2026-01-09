@@ -225,15 +225,20 @@ function App() {
         return (
           <ContribuentiPage
             onContribuenteSelect={(c) => {
-              // Convert ContribuenteListData to ContribuenteFullData
-              const fullData: ContribuenteFullData = {
-                ...c,
-                emails: c.email ? [c.email] : [],
-                telefoni: c.telefono ? [c.telefono] : [],
-              };
-              setSelectedContribuente(fullData);
-              setIsEditingContribuente(false);
-              setIsContribuentePanelOpen(true);
+              if (c === null) {
+                // Deselecting - close the panel
+                setIsContribuentePanelOpen(false);
+              } else {
+                // Convert ContribuenteListData to ContribuenteFullData
+                const fullData: ContribuenteFullData = {
+                  ...c,
+                  emails: c.email ? [c.email] : [],
+                  telefoni: c.telefono ? [c.telefono] : [],
+                };
+                setSelectedContribuente(fullData);
+                setIsEditingContribuente(false);
+                setIsContribuentePanelOpen(true);
+              }
             }}
           />
         );
