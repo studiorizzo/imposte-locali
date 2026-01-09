@@ -238,7 +238,7 @@ function CreateButton({ onClick }: CreateButtonProps) {
       <img
         src={userAddIcon}
         alt="Nuovo contribuente"
-        style={{ width: Sizes.iconSizeCreate, height: Sizes.iconSizeCreate }}
+        style={{ width: Sizes.iconSizeLg, height: Sizes.iconSizeLg }}
       />
     </button>
   );
@@ -307,7 +307,7 @@ const DashboardIcon = () => (
   <img
     src={dashboardIcon}
     alt="Dashboard"
-    style={{ width: Sizes.iconSizeDashboard, height: Sizes.iconSizeDashboard }}
+    style={{ width: Sizes.iconSizeSm, height: Sizes.iconSizeSm }}
   />
 );
 
@@ -315,7 +315,7 @@ const ContribuentiIcon = () => (
   <img
     src={contribuentiIcon}
     alt="Contribuenti"
-    style={{ width: Sizes.iconSizeContribuenti, height: Sizes.iconSizeContribuenti }}
+    style={{ width: Sizes.iconSizeXl, height: Sizes.iconSizeXl }}
   />
 );
 

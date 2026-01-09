@@ -53,15 +53,16 @@ export const Sizes = {
   radiusMd: 10,
   radiusLg: 12,
 
-  // Sidebar button icons
-  iconSizeDashboard: 24,    // Dashboard icon
-  iconSizeContribuenti: 32, // Contribuenti icon (Group_contribuenti.svg)
-  iconSizeCreate: 30,       // Create button icon (User_add_alt.svg)
-  iconSizeMed: 20,          // Sizes.iconMed from Flokk
+  // Icon sizes (scale: xs/sm/md/lg/xl)
+  iconSizeXs: 20,
+  iconSizeSm: 24,
+  iconSizeMd: 28,
+  iconSizeLg: 30,
+  iconSizeXl: 32,
   iconPadding: 2,           // EdgeInsets.all(2.0)
 
   // Form icons (from Flokk ExpandingMiniformContainer)
-  formIconSize: 24,         // Icon size in form rows (24px to match Flokk visual density)
+  formIconSize: 24,         // Icon size in form rows (= iconSizeSm)
   formIconOffset: 8,        // Icon vertical offset (translateY)
 } as const;
 
