@@ -3,7 +3,6 @@ import { Colors } from '../../theme';
 import { TextStyles, Insets } from '../../styles';
 import { ContribuentiListRow } from './ContribuentiListRow';
 import type { ContribuenteListData } from './ContribuentiListRow';
-import { StyledListView } from '../scrolling';
 import { BulkContribuenteEditBar } from './BulkContribuenteEditBar';
 
 interface ContribuentiListWithHeadersProps {
@@ -160,12 +159,21 @@ export function ContribuentiListWithHeaders({
           />
         </div>
 
-        {/* Scrollable list - from Flokk: StyledListView.expanded() */}
-        <StyledListView
-          itemExtent={78}
-          itemCount={itemCount}
-          itemBuilder={itemBuilder}
-        />
+        {/* Scrollable list with native browser scrollbar */}
+        <div
+          style={{
+            flex: 1,
+            minHeight: 0,
+            overflow: 'auto',
+            paddingRight: Insets.lGutter - Insets.sm,
+          }}
+        >
+          {Array.from({ length: itemCount }, (_, index) => (
+            <div key={index} style={{ height: 78 }}>
+              {itemBuilder(index)}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* BULK CONTROLS - from Flokk: overlay with opacity animation */}
