@@ -326,13 +326,14 @@ function App() {
         </div>
 
         {/* Main Content - with top padding for spacing after SearchBar */}
+        {/* For 'contribuenti' view: no overflow here, ContribuentiPage handles its own scroll */}
         <main
-          className="flex-1 overflow-auto"
+          className={`flex-1 ${currentView !== 'contribuenti' ? 'overflow-auto' : 'overflow-hidden'}`}
           style={{
-            paddingLeft: isMobile ? Insets.mGutter : Insets.lGutter,
-            paddingRight: Insets.mGutter,
-            paddingTop: Insets.l,
-            paddingBottom: Insets.l,
+            paddingLeft: currentView !== 'contribuenti' ? (isMobile ? Insets.mGutter : Insets.lGutter) : 0,
+            paddingRight: currentView !== 'contribuenti' ? Insets.mGutter : 0,
+            paddingTop: currentView !== 'contribuenti' ? Insets.l : 0,
+            paddingBottom: currentView !== 'contribuenti' ? Insets.l : 0,
           }}
         >
           {renderContent()}
