@@ -191,10 +191,7 @@ export function ContribuentiListWithHeaders({
       </div>
 
       {/* Scrollable list with section headers - using StyledListView for custom scrollbar */}
-      <StyledListView
-        itemExtent={78}  // Flokk: 78px per row
-        itemCount={all.length + (searchMode ? 1 : (favCount > 0 && notStarred.length > 0 ? 2 : 1))}
-      >
+      <StyledListView>
         {renderListItems()}
       </StyledListView>
     </div>
