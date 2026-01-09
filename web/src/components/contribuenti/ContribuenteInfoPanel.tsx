@@ -347,7 +347,7 @@ export function ContribuenteInfoPanel({
           paddingRight: Insets.l,
         }}
       >
-        {/* Close button - size 16, color grey, padding Insets.sm */}
+        {/* Close button - iconSizeSm, padding Insets.sm */}
         <button
           onClick={onClose}
           className="transition-opacity"
@@ -368,9 +368,9 @@ export function ContribuenteInfoPanel({
             e.currentTarget.style.opacity = '1';
           }}
         >
-          <img src={CancelIcon} alt="Chiudi" width={16} height={16} style={{ display: 'block' }} />
+          <img src={CancelIcon} alt="Chiudi" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
         </button>
-        {/* Edit button - size 22, color accent1Dark, padding Insets.sm */}
+        {/* Edit button - iconSizeSm, padding Insets.sm */}
         <button
           onClick={onEdit}
           className="transition-opacity"
@@ -391,7 +391,7 @@ export function ContribuenteInfoPanel({
             e.currentTarget.style.opacity = '1';
           }}
         >
-          <img src={EditIcon} alt="Modifica" width={22} height={22} style={{ display: 'block' }} />
+          <img src={EditIcon} alt="Modifica" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
         </button>
       </div>
 

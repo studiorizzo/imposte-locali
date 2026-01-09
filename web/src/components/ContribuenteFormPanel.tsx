@@ -24,6 +24,8 @@ import MailFormIcon from '../assets/Mail_form.svg';
 import PhoneFormIcon from '../assets/Phone_form.svg';
 import NoteFormIcon from '../assets/note_form.svg';
 import LinkFormIcon from '../assets/link_form.svg';
+import CancelIcon from '../assets/Cancel_form.svg';
+import SaveIcon from '../assets/Save_fill.svg';
 
 interface ContribuenteFormPanelProps {
   onClose: () => void;
@@ -132,61 +134,61 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
         borderBottomLeftRadius: Sizes.radiusMd,
       }}
     >
-      {/* Header */}
+      {/* Header - icon buttons like ContribuenteInfoPanel */}
       <div
         className="flex items-center justify-between"
         style={{
-          paddingTop: Insets.l * 0.75 + Insets.sm,
+          paddingTop: Insets.l * 0.75,
           paddingBottom: Insets.m,
           paddingLeft: Insets.l,
           paddingRight: Insets.l,
         }}
       >
+        {/* Delete/Close button - iconSizeSm, padding Insets.sm */}
         <button
           onClick={onDelete || handleClose}
-          className="uppercase transition-all"
+          className="transition-opacity"
           style={{
-            ...TextStyles.body1,
-            color: Colors.grey,
-            padding: `${Insets.sm}px ${Insets.sm}px`,
-            lineHeight: 1,
-            minWidth: 30,
-            minHeight: 30,
-            borderRadius: 5,
+            background: 'none',
+            border: 'none',
+            padding: Insets.sm,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             transform: `translateX(${-Insets.sm}px)`,
-            backgroundColor: 'transparent',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = Colors.bg1;
+            e.currentTarget.style.opacity = '0.7';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.opacity = '1';
           }}
         >
-          Elimina
+          <img src={CancelIcon} alt="Elimina" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
         </button>
+        {/* Save button - iconSizeSm, padding Insets.sm */}
         <button
           onClick={handleSave}
-          className="uppercase transition-all"
+          className="transition-opacity"
           style={{
-            ...TextStyles.body1,
-            color: Colors.accent1,
-            padding: `${Insets.sm}px ${Insets.sm}px`,
-            lineHeight: 1,
-            minWidth: 30,
-            minHeight: 30,
-            borderRadius: 5,
+            background: 'none',
+            border: 'none',
+            padding: Insets.sm,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             transform: `translateX(${Insets.sm}px)`,
-            backgroundColor: 'transparent',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = Colors.bg1;
+            e.currentTarget.style.opacity = '0.7';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.opacity = '1';
           }}
         >
-          Salva
+          <img src={SaveIcon} alt="Salva" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
         </button>
       </div>
 

@@ -187,7 +187,7 @@ export function SearchBar({
                 }}
                 tabIndex={-1}
               >
-                <SearchIcon size={Sizes.iconSizeMed} />
+                <SearchIcon size={Sizes.iconSizeXs} />
               </button>
               <div style={{ width: Insets.m }} />
             </>
@@ -245,7 +245,7 @@ export function SearchBar({
               }}
               tabIndex={-1}
             >
-              <SearchIcon size={Sizes.iconSizeMed} />
+              <SearchIcon size={Sizes.iconSizeXs} />
             </button>
           )}
         </div>
