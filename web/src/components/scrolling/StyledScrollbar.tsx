@@ -87,6 +87,10 @@ export function StyledScrollbar({
   // contentExtent = maxExtent + viewExtent
   const contentExtent = maxExtent + viewExtent;
 
+  // showHandle - use maxScrollExtent from DOM as it's more reliable
+  // maxScrollExtent > 0 means there's content to scroll
+  const showHandle = maxScrollExtent > 0 || (contentSize != null && contentSize > viewExtent && viewExtent > 0);
+
   // handleAlignment from [0,1] to [-1,1] - from Flokk
   let handleAlignment = maxExtent === 0 ? 0 : scrollOffset / maxExtent;
   handleAlignment *= 2.0;
@@ -97,9 +101,6 @@ export function StyledScrollbar({
   if (contentExtent > viewExtent) {
     handleExtent = Math.max(60, (viewExtent * viewExtent) / contentExtent);
   }
-
-  // showHandle - from Flokk
-  const showHandle = contentExtent > viewExtent && contentExtent > 0;
 
   // Colors - from Flokk theme
   const finalHandleColor = handleColor ?? Colors.greyWeak;
