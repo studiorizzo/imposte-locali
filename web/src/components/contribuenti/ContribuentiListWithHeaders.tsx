@@ -174,6 +174,7 @@ export function ContribuentiListWithHeaders({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        minHeight: 0,  // Critical for flex scroll - allows shrinking below content height
         backgroundColor: Colors.bg1,  // Light green background like Flokk
       }}
     >
@@ -190,6 +191,7 @@ export function ContribuentiListWithHeaders({
       <div
         style={{
           flex: 1,
+          minHeight: 0,  // Critical for flex scroll
           overflow: 'auto',
         }}
       >

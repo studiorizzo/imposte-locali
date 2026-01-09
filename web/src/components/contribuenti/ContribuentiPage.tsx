@@ -180,6 +180,7 @@ export function ContribuentiPage({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        minHeight: 0,  // Critical for flex scroll - allows shrinking below content height
         backgroundColor: Colors.bg1,  // Light green background like Flokk
         position: 'relative',
         // Flokk ContactsPage: .padding(left: Insets.lGutter, right: Insets.mGutter)
