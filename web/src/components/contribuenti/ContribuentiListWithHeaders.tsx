@@ -3,6 +3,7 @@ import { Colors } from '../../theme';
 import { TextStyles, Insets } from '../../styles';
 import { ContribuentiListRow } from './ContribuentiListRow';
 import type { ContribuenteListData } from './ContribuentiListRow';
+import { StyledListView } from '../scrolling';
 
 interface ContribuentiListWithHeadersProps {
   contribuenti: ContribuenteListData[];
@@ -187,16 +188,13 @@ export function ContribuentiListWithHeaders({
         />
       </div>
 
-      {/* Scrollable list with section headers */}
-      <div
-        style={{
-          flex: 1,
-          minHeight: 0,  // Critical for flex scroll
-          overflow: 'auto',
-        }}
+      {/* Scrollable list with section headers - using StyledListView for custom scrollbar */}
+      <StyledListView
+        itemExtent={78}  // Flokk: 78px per row
+        itemCount={all.length + (searchMode ? 1 : (favCount > 0 && notStarred.length > 0 ? 2 : 1))}
       >
         {renderListItems()}
-      </div>
+      </StyledListView>
     </div>
   );
 }
