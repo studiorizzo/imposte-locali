@@ -66,6 +66,7 @@ export function ScrollbarListStack({
         minHeight: 0,
         minWidth: 0,
         position: 'relative',
+        overflow: 'hidden',  // Critical: prevents content from growing container
         ...contentPadding,
       }}
     >
@@ -126,6 +127,7 @@ export function ManagedScrollbarListStack({
         minHeight: 0,
         minWidth: 0,
         position: 'relative',
+        overflow: 'hidden',  // Critical: prevents content from growing container
         ...contentPadding,
       }}
     >
