@@ -1,11 +1,11 @@
 import { useState, useRef, useCallback } from 'react';
 import { Colors } from '../../theme';
-import { Sizes, Insets, TextStyles, AvatarSizes } from '../../styles';
+import { Sizes, Insets, TextStyles } from '../../styles';
 import { ContribuenteAvatar } from '../ContribuenteAvatar';
 import { StyledScrollbar } from '../scrolling';
 import type { ContribuenteListData } from './ContribuentiListRow';
 
-// Icons
+// Icons - same as ContribuenteFormPanel
 import LabelIcon from '../../assets/Label_form.svg';
 import UserFormIcon from '../../assets/User_2_form.svg';
 import DateFormIcon from '../../assets/Date_form.svg';
@@ -53,7 +53,7 @@ interface ContribuenteInfoPanelProps {
 // Tab type
 type TabType = 'dettagli' | 'immobili';
 
-// Info row component for displaying data
+// Info row component - displays a single field with icon
 function InfoRow({
   icon,
   label,
@@ -151,9 +151,8 @@ function TabBar({
   );
 }
 
-// Details tab content
+// Details tab content - same fields as ContribuenteFormPanel but read-only
 function DetailsTabContent({ contribuente }: { contribuente: ContribuenteFullData }) {
-  // Build full address if available
   const fullAddress = [
     contribuente.indirizzo,
     contribuente.civico,
@@ -164,7 +163,6 @@ function DetailsTabContent({ contribuente }: { contribuente: ContribuenteFullDat
     .filter(Boolean)
     .join(', ');
 
-  // Build birth info
   const birthInfo = [
     contribuente.dataNascita,
     contribuente.comuneNascita,
@@ -279,6 +277,7 @@ function ImmobiliTabContent({ contribuente }: { contribuente: ContribuenteFullDa
   );
 }
 
+// Copied from ContribuenteFormPanel structure
 export function ContribuenteInfoPanel({
   contribuente,
   onClose,
@@ -328,16 +327,16 @@ export function ContribuenteInfoPanel({
     : contribuente.cognomeDenominazione;
 
   return (
+    // Same container as ContribuenteFormPanel
     <div
       className="h-full flex flex-col"
       style={{
         backgroundColor: Colors.surface,
         borderTopLeftRadius: Sizes.radiusMd,
         borderBottomLeftRadius: Sizes.radiusMd,
-        position: 'relative',
       }}
     >
-      {/* Header buttons */}
+      {/* Header - same structure as ContribuenteFormPanel */}
       <div
         className="flex items-center justify-between"
         style={{
@@ -360,8 +359,6 @@ export function ContribuenteInfoPanel({
             borderRadius: 5,
             transform: `translateX(${-Insets.sm}px)`,
             backgroundColor: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = Colors.bg1;
@@ -385,8 +382,6 @@ export function ContribuenteInfoPanel({
             borderRadius: 5,
             transform: `translateX(${Insets.sm}px)`,
             backgroundColor: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = Colors.bg1;
@@ -399,19 +394,26 @@ export function ContribuenteInfoPanel({
         </button>
       </div>
 
-      {/* Scrollable content area with custom scrollbar */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, position: 'relative' }}>
+      {/* Content - same structure as ContribuenteFormPanel but with custom scrollbar */}
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          minHeight: 0,
+          position: 'relative',
+        }}
+      >
         <div
           ref={handleRef}
           onScroll={handleScroll}
           className="styled-listview-scroll"
           style={{
             flex: 1,
-            minHeight: 0,
             overflowY: 'scroll',
+            paddingTop: Insets.sm,
             paddingLeft: Insets.l,
-            paddingRight: Insets.l + 12 + Insets.sm, // Space for scrollbar
-            paddingBottom: Insets.l,
+            paddingRight: Insets.l + 12 + Insets.sm, // Space for scrollbar (barSize + Insets.sm)
+            paddingBottom: Insets.m + 30,
           }}
         >
           {/* Header card: Avatar + Name + Star + Labels */}
@@ -504,12 +506,14 @@ export function ContribuenteInfoPanel({
           {/* Tab bar */}
           <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
 
-          {/* Tab content */}
-          {activeTab === 'dettagli' ? (
-            <DetailsTabContent contribuente={contribuente} />
-          ) : (
-            <ImmobiliTabContent contribuente={contribuente} />
-          )}
+          {/* Tab content - same fields structure as ContribuenteFormPanel */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: Insets.m }}>
+            {activeTab === 'dettagli' ? (
+              <DetailsTabContent contribuente={contribuente} />
+            ) : (
+              <ImmobiliTabContent contribuente={contribuente} />
+            )}
+          </div>
         </div>
 
         {/* Custom scrollbar overlay */}
