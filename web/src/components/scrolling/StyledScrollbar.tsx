@@ -103,9 +103,7 @@ export function StyledScrollbar({
 
   // Colors - from Flokk theme
   const finalHandleColor = handleColor ?? Colors.greyWeak;
-  // DEBUG: Using bright red to see if track renders - change back to greyWeak after
-  const finalTrackColor = trackColor ?? '#ff000050'; // DEBUG: red at 30% opacity
-  // const finalTrackColor = trackColor ?? `${Colors.greyWeak}4D`; // 30% opacity
+  const finalTrackColor = trackColor ?? `${Colors.greyWeak}4D`; // 30% opacity
 
   // Drag handlers - exact copy from Flokk _handleVerticalDrag / _handleHorizontalDrag
   const handleDrag = useCallback((e: MouseEvent, startY: number, startX: number, startOffset: number) => {
@@ -173,12 +171,9 @@ export function StyledScrollbar({
         left: isVertical ? 'auto' : 0,
         width: isVertical ? size : '100%',
         height: isVertical ? '100%' : size,
-        // DEBUG: Always show scrollbar to debug visibility issues
-        opacity: 1, // showHandle ? 1 : 0,
+        opacity: showHandle ? 1 : 0,
         pointerEvents: showHandle ? 'auto' : 'none',
         zIndex: 10, // Ensure scrollbar is above content
-        // DEBUG: Add background to see container bounds
-        backgroundColor: 'rgba(0, 255, 0, 0.1)', // light green
       }}
     >
       {/* TRACK - from Flokk: Align(alignment: Alignment(1, 1), Container...) */}
