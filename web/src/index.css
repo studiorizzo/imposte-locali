@@ -11,18 +11,20 @@
     @apply bg-gray-50 text-gray-900;
   }
 
-  /* Prevent text/image selection on UI elements (like Flokk) */
-  img,
-  button,
-  a,
-  nav,
-  aside,
-  [role="button"],
-  [role="navigation"] {
+  /* Prevent text/image selection globally (like Flokk) */
+  * {
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none; /* iOS: prevent callout on long press */
     -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
+
+  /* Re-enable selection for input fields */
+  input,
+  textarea,
+  [contenteditable="true"] {
+    user-select: text;
+    -webkit-user-select: text;
   }
 
   /* Prevent image dragging */
