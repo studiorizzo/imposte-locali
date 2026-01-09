@@ -169,7 +169,8 @@ export function ContribuentiListWithHeaders({
       </div>
 
       {/* BULK CONTROLS - from Flokk: overlay with opacity animation */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0 }}>
+      {/* Same paddingRight as header row container to align divider lines */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: Insets.lGutter - Insets.sm }}>
         <BulkContribuenteEditBar
           checkedCount={checkedIds.size}
           totalCount={all.length}
