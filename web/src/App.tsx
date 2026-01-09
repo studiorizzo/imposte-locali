@@ -251,7 +251,7 @@ function App() {
   const contentRightOffset = showPanel && !useSingleColumn ? panelWidth : 0;
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: Colors.bg1 }}>
+    <div className="h-screen relative overflow-hidden" style={{ backgroundColor: Colors.bg1 }}>
       {/* Sidebar - full height with header area inside (hidden on mobile) */}
       <div className="absolute top-0 bottom-0 left-0">
         <Sidebar
