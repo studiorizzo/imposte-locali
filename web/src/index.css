@@ -63,4 +63,9 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  /* Hide native scrollbar for StyledListView - Chrome/Safari */
+  .styled-listview-scroll::-webkit-scrollbar {
+    display: none;
+  }
 }
