@@ -142,9 +142,9 @@ export function ContribuentiListRow({
     bgColor = `${Colors.greyWeak}59`; // 0.35 opacity
   }
 
-  // Text styles - Flokk: headerMode = H2 + greyStrong, dataMode = Body1.size(15) + txt
+  // Text styles - Flokk: headerMode = H2 + grey, dataMode = Body1.size(15)
   const textStyle: React.CSSProperties = headerMode
-    ? { ...TextStyles.h2, color: Colors.greyStrong }
+    ? { ...TextStyles.h2, color: Colors.grey }
     : { ...TextStyles.body1, fontSize: '15px', color: Colors.txt };
 
   const showCheckbox = isHovering || isChecked;
