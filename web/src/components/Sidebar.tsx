@@ -108,6 +108,7 @@ export function Sidebar({ currentView, onNavigate, onCreateContribuente }: Sideb
         <img
           src={imuendoLogo}
           alt="imuendo"
+          draggable={false}
           style={{
             width: isCompact ? 140 : 200,
             height: 'auto',
@@ -403,6 +404,7 @@ export function MobileDrawer({
           <img
             src={imuendoLogo}
             alt="imuendo"
+            draggable={false}
             style={{
               width: 200,
               height: 'auto',
