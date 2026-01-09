@@ -207,6 +207,12 @@ export const TextStyles = {
     fontSize: '11px',
     fontWeight: 400,
   },
+  // H2: Lato, 12px, bold (column headers in lists)
+  h2: {
+    fontFamily: Fonts.primary,
+    fontSize: '12px',
+    fontWeight: 700,
+  },
 } as const;
 
 // =============================================================================

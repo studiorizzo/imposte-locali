@@ -142,9 +142,9 @@ export function ContribuentiListRow({
     bgColor = `${Colors.greyWeak}59`; // 0.35 opacity
   }
 
-  // Text styles
+  // Text styles - Flokk: headerMode = H2 + greyStrong, dataMode = Body1.size(15) + txt
   const textStyle: React.CSSProperties = headerMode
-    ? { ...TextStyles.body2, fontWeight: 700, color: Colors.greyStrong }
+    ? { ...TextStyles.h2, color: Colors.greyStrong }
     : { ...TextStyles.body1, fontSize: '15px', color: Colors.txt };
 
   const showCheckbox = isHovering || isChecked;
@@ -186,10 +186,11 @@ export function ContribuentiListRow({
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        // Header: content at top (like Flokk Stack), Data rows: centered
+        justifyContent: headerMode ? 'flex-start' : 'center',
       }}
     >
-      {/* Top divider */}
+      {/* Top divider for data rows */}
       {!headerMode && showDividers && (
         <div
           style={{
@@ -203,7 +204,7 @@ export function ContribuentiListRow({
         />
       )}
 
-      {/* Header bottom divider */}
+      {/* Header bottom divider - Flokk: Align(bottomLeft), 1px, grey 60% */}
       {headerMode && (
         <div
           style={{
@@ -212,12 +213,12 @@ export function ContribuentiListRow({
             left: 0,
             right: 0,
             height: 1,
-            backgroundColor: `${Colors.grey}99`, // 0.6 opacity
+            backgroundColor: `${Colors.grey}99`, // grey #515d5a at 60% opacity
           }}
         />
       )}
 
-      {/* Row content */}
+      {/* Row content - Flokk: padding(left: headerMode ? 0 : Insets.m, right: Insets.m * 1.5, vertical: Insets.sm) */}
       <div
         style={{
           display: 'flex',
