@@ -6,7 +6,6 @@ import { StyledScrollbar } from '../scrolling';
 import type { ContribuenteListData } from './ContribuentiListRow';
 
 // Icons - same as ContribuenteFormPanel
-import LabelIcon from '../../assets/Label_form.svg';
 import UserFormIcon from '../../assets/User_2_form.svg';
 import DateFormIcon from '../../assets/Date_form.svg';
 import AddressFormIcon from '../../assets/Adress_form.svg';
@@ -16,6 +15,8 @@ import NoteFormIcon from '../../assets/note_form.svg';
 import LinkFormIcon from '../../assets/link_form.svg';
 import starFilledIcon from '../../assets/Star_fill.svg';
 import starEmptyIcon from '../../assets/Star.svg';
+import CancelIcon from '../../assets/Cancel_form.svg';
+import EditIcon from '../../assets/switch_to_input.svg';
 
 // Extended data for full contribuente info (matches ContribuenteFormData)
 export interface ContribuenteFullData extends ContribuenteListData {
@@ -336,61 +337,61 @@ export function ContribuenteInfoPanel({
         borderBottomLeftRadius: Sizes.radiusMd,
       }}
     >
-      {/* Header - same structure as ContribuenteFormPanel */}
+      {/* Header - icon buttons like Flokk contact_info_panel */}
       <div
         className="flex items-center justify-between"
         style={{
-          paddingTop: Insets.l * 0.75 + Insets.sm,
+          paddingTop: Insets.l * 0.75,
           paddingBottom: Insets.m,
           paddingLeft: Insets.l,
           paddingRight: Insets.l,
         }}
       >
+        {/* Close button - size 16, color grey, padding Insets.sm */}
         <button
           onClick={onClose}
-          className="uppercase transition-all"
+          className="transition-opacity"
           style={{
-            ...TextStyles.body1,
-            color: Colors.grey,
-            padding: `${Insets.sm}px ${Insets.sm}px`,
-            lineHeight: 1,
-            minWidth: 30,
-            minHeight: 30,
-            borderRadius: 5,
+            background: 'none',
+            border: 'none',
+            padding: Insets.sm,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             transform: `translateX(${-Insets.sm}px)`,
-            backgroundColor: 'transparent',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = Colors.bg1;
+            e.currentTarget.style.opacity = '0.7';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.opacity = '1';
           }}
         >
-          Chiudi
+          <img src={CancelIcon} alt="Chiudi" width={16} height={16} style={{ display: 'block' }} />
         </button>
+        {/* Edit button - size 22, color accent1Dark, padding Insets.sm */}
         <button
           onClick={onEdit}
-          className="uppercase transition-all"
+          className="transition-opacity"
           style={{
-            ...TextStyles.body1,
-            color: Colors.accent1,
-            padding: `${Insets.sm}px ${Insets.sm}px`,
-            lineHeight: 1,
-            minWidth: 30,
-            minHeight: 30,
-            borderRadius: 5,
+            background: 'none',
+            border: 'none',
+            padding: Insets.sm,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             transform: `translateX(${Insets.sm}px)`,
-            backgroundColor: 'transparent',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = Colors.bg1;
+            e.currentTarget.style.opacity = '0.7';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.opacity = '1';
           }}
         >
-          Modifica
+          <img src={EditIcon} alt="Modifica" width={22} height={22} style={{ display: 'block' }} />
         </button>
       </div>
 
