@@ -59,30 +59,20 @@ export function ScrollbarListStack({
   return (
     <div
       style={{
-        // Container fills available space
+        // Must be column to properly constrain height
         display: 'flex',
+        flexDirection: 'column',
         flex: 1,
         minHeight: 0,
         minWidth: 0,
-        // Position relative for absolute scrollbar positioning
         position: 'relative',
+        ...contentPadding,
       }}
     >
-      {/* CONTENT - from Flokk: child.padding(...) */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1,
-          minHeight: 0,
-          minWidth: 0,
-          ...contentPadding,
-        }}
-      >
-        {children}
-      </div>
+      {/* CONTENT - direct children */}
+      {children}
 
-      {/* SCROLLBAR - from Flokk: StyledScrollbar with showTrack: true */}
+      {/* SCROLLBAR */}
       <StyledScrollbar
         size={barSize}
         axis={axis}
@@ -129,26 +119,18 @@ export function ManagedScrollbarListStack({
   return (
     <div
       style={{
+        // Must be column to properly constrain height
         display: 'flex',
+        flexDirection: 'column',
         flex: 1,
         minHeight: 0,
         minWidth: 0,
         position: 'relative',
+        ...contentPadding,
       }}
     >
-      {/* CONTENT */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1,
-          minHeight: 0,
-          minWidth: 0,
-          ...contentPadding,
-        }}
-      >
-        {children(scrollRef)}
-      </div>
+      {/* CONTENT - direct children, no extra wrapper needed */}
+      {children(scrollRef)}
 
       {/* SCROLLBAR */}
       <StyledScrollbar
