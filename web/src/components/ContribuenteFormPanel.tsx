@@ -144,10 +144,10 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
           paddingRight: Insets.l,
         }}
       >
-        {/* Delete/Close button - iconSizeSm, padding Insets.sm */}
+        {/* Delete/Close button - iconSizeMd, padding Insets.sm */}
         <button
           onClick={onDelete || handleClose}
-          className="transition-opacity"
+          className="transition-all"
           style={{
             background: 'none',
             border: 'none',
@@ -159,18 +159,18 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             transform: `translateX(${-Insets.sm}px)`,
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.opacity = '0.7';
+            e.currentTarget.style.filter = 'brightness(0.7)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.opacity = '1';
+            e.currentTarget.style.filter = 'none';
           }}
         >
-          <img src={CancelIcon} alt="Elimina" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
+          <img src={CancelIcon} alt="Elimina" width={Sizes.iconSizeMd} height={Sizes.iconSizeMd} style={{ display: 'block' }} />
         </button>
-        {/* Save button - iconSizeSm, padding Insets.sm */}
+        {/* Save button - iconSizeMd, padding Insets.sm */}
         <button
           onClick={handleSave}
-          className="transition-opacity"
+          className="transition-all"
           style={{
             background: 'none',
             border: 'none',
@@ -182,13 +182,13 @@ export function ContribuenteFormPanel({ onClose, onSave, onDelete }: Contribuent
             transform: `translateX(${Insets.sm}px)`,
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.opacity = '0.7';
+            e.currentTarget.style.filter = 'brightness(0.7)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.opacity = '1';
+            e.currentTarget.style.filter = 'none';
           }}
         >
-          <img src={SaveIcon} alt="Salva" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
+          <img src={SaveIcon} alt="Salva" width={Sizes.iconSizeMd} height={Sizes.iconSizeMd} style={{ display: 'block' }} />
         </button>
       </div>
 
