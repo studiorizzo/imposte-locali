@@ -6,7 +6,7 @@ import type { ContribuenteListData } from './ContribuentiListRow';
 
 interface ContribuentiPageProps {
   searchQuery?: string;
-  onContribuenteSelect?: (contribuente: ContribuenteListData) => void;
+  onContribuenteSelect?: (contribuente: ContribuenteListData | null) => void;
 }
 
 // Empty state placeholder
@@ -182,8 +182,9 @@ export function ContribuentiPage({
 
   // Handlers
   const handleSelect = (contribuente: ContribuenteListData) => {
-    setSelectedId(selectedId === contribuente.id ? null : contribuente.id);
-    onContribuenteSelect?.(contribuente);
+    const isDeselecting = selectedId === contribuente.id;
+    setSelectedId(isDeselecting ? null : contribuente.id);
+    onContribuenteSelect?.(isDeselecting ? null : contribuente);
   };
 
   const handleCheckedChange = (id: string, checked: boolean) => {
