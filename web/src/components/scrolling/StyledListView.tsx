@@ -1,91 +1,52 @@
 /**
- * StyledListView - Core list view with custom scrollbar
- * Based on Flokk's StyledListView in styled_listview.dart
- *
- * Wraps a scrollable container with ScrollbarListStack
+ * StyledListView - Scrollable list with custom scrollbar
+ * Simplified version
  */
 
 import { useRef } from 'react';
 import type { ReactNode } from 'react';
-import { ScrollbarListStack } from './ScrollbarListStack';
+import { StyledScrollbar } from './StyledScrollbar';
+import { Insets } from '../../styles';
 
 interface StyledListViewProps {
-  /** Children to render inside the scrollable area */
   children: ReactNode;
-  /** Fixed height for each item (for calculating content size) */
-  itemExtent?: number;
-  /** Total number of items (for calculating content size) */
-  itemCount?: number;
-  /** Scroll axis */
-  axis?: 'vertical' | 'horizontal';
-  /** Padding inside the scrollable area */
-  padding?: {
-    top?: number;
-    right?: number;
-    bottom?: number;
-    left?: number;
-  };
-  /** Padding around the scrollbar */
-  scrollbarPadding?: {
-    top?: number;
-    right?: number;
-    bottom?: number;
-    left?: number;
-  };
-  /** Size of the scrollbar */
   barSize?: number;
-  /** Handle color override */
-  handleColor?: string;
-  /** Track color override */
-  trackColor?: string;
 }
 
 export function StyledListView({
   children,
-  itemExtent,
-  itemCount,
-  axis = 'vertical',
-  padding = {},
-  scrollbarPadding = {},
   barSize = 12,
-  handleColor,
-  trackColor,
 }: StyledListViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Calculate content size from itemCount * itemExtent (like Flokk)
-  const contentSize = itemExtent && itemCount
-    ? itemCount * itemExtent
-    : undefined;
-
   return (
-    <ScrollbarListStack
-      barSize={barSize}
-      axis={axis}
-      scrollRef={scrollRef}
-      contentSize={contentSize}
-      scrollbarPadding={scrollbarPadding}
-      handleColor={handleColor}
-      trackColor={trackColor}
+    <div
+      style={{
+        position: 'relative',
+        flex: 1,
+        display: 'flex',
+        minHeight: 0,
+      }}
     >
+      {/* Scrollable content with padding for scrollbar */}
       <div
         ref={scrollRef}
         className="styled-listview-scroll"
         style={{
           flex: 1,
-          minHeight: 0,  // Critical for flex scroll
+          minHeight: 0,
           overflow: 'auto',
-          paddingTop: padding.top,
-          paddingRight: padding.right,
-          paddingBottom: padding.bottom,
-          paddingLeft: padding.left,
-          // Hide native scrollbar - cross-browser
-          scrollbarWidth: 'none',  // Firefox
-          msOverflowStyle: 'none', // IE/Edge
+          paddingRight: barSize + Insets.sm, // Space for scrollbar
+          // Hide native scrollbar
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
         }}
       >
         {children}
       </div>
-    </ScrollbarListStack>
+
+      {/* Custom scrollbar */}
+      <StyledScrollbar scrollRef={scrollRef} size={barSize} />
+    </div>
   );
 }

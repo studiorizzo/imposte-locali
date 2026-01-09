@@ -1,215 +1,146 @@
 /**
  * StyledScrollbar - Custom scrollbar component
- * Based on Flokk's styled_scrollbar.dart
+ * Simplified version that works reliably
  */
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Colors } from '../../theme';
-import { Sizes } from '../../styles';
 
 interface StyledScrollbarProps {
-  /** Width/height of the scrollbar */
-  size?: number;
-  /** Scroll axis */
-  axis?: 'vertical' | 'horizontal';
   /** Reference to the scrollable element */
   scrollRef: React.RefObject<HTMLElement | null>;
-  /** Total content size (for calculating handle size) */
-  contentSize?: number;
-  /** Show the track background */
-  showTrack?: boolean;
-  /** Handle color override */
-  handleColor?: string;
-  /** Track color override */
-  trackColor?: string;
+  /** Size of the scrollbar */
+  size?: number;
 }
 
 export function StyledScrollbar({
-  size = 12,
-  axis = 'vertical',
   scrollRef,
-  contentSize,
-  showTrack = true,
-  handleColor,
-  trackColor,
+  size = 12,
 }: StyledScrollbarProps) {
-  const [scrollState, setScrollState] = useState({
-    scrollOffset: 0,
-    scrollMax: 0,
-    viewExtent: 0,
+  const [scrollInfo, setScrollInfo] = useState({
+    scrollTop: 0,
+    scrollHeight: 0,
+    clientHeight: 0,
   });
-  const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const dragStartRef = useRef({ y: 0, x: 0, scrollOffset: 0 });
+  const [dragStartY, setDragStartY] = useState(0);
+  const [dragStartScrollTop, setDragStartScrollTop] = useState(0);
 
-  // Update scroll state when scrollable element scrolls
+  // Sync with scroll element
   useEffect(() => {
-    const element = scrollRef.current;
-    if (!element) return;
+    const el = scrollRef.current;
+    if (!el) return;
 
-    const updateScrollState = () => {
-      const isVertical = axis === 'vertical';
-      setScrollState({
-        scrollOffset: isVertical ? element.scrollTop : element.scrollLeft,
-        scrollMax: isVertical
-          ? element.scrollHeight - element.clientHeight
-          : element.scrollWidth - element.clientWidth,
-        viewExtent: isVertical ? element.clientHeight : element.clientWidth,
+    const update = () => {
+      setScrollInfo({
+        scrollTop: el.scrollTop,
+        scrollHeight: el.scrollHeight,
+        clientHeight: el.clientHeight,
       });
     };
 
-    updateScrollState();
-    element.addEventListener('scroll', updateScrollState);
+    update();
+    el.addEventListener('scroll', update);
 
-    // Also update on resize
-    const resizeObserver = new ResizeObserver(updateScrollState);
-    resizeObserver.observe(element);
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+
+    // Also observe content changes
+    const mutationObserver = new MutationObserver(update);
+    mutationObserver.observe(el, { childList: true, subtree: true });
 
     return () => {
-      element.removeEventListener('scroll', updateScrollState);
-      resizeObserver.disconnect();
+      el.removeEventListener('scroll', update);
+      observer.disconnect();
+      mutationObserver.disconnect();
     };
-  }, [scrollRef, axis]);
+  }, [scrollRef]);
+
+  const { scrollTop, scrollHeight, clientHeight } = scrollInfo;
+  const maxScroll = scrollHeight - clientHeight;
+  const canScroll = maxScroll > 0;
 
   // Calculate handle size and position
-  const { scrollOffset, scrollMax, viewExtent } = scrollState;
-  const totalContent = contentSize || (scrollMax + viewExtent);
-
-  // Handle extent: proportional to viewport/content ratio, min 60px
-  let handleExtent = viewExtent;
-  if (totalContent > viewExtent) {
-    handleExtent = Math.max(60, (viewExtent * viewExtent) / totalContent);
-  }
-
-  // Handle position: 0 to (viewExtent - handleExtent)
-  const handlePosition = scrollMax > 0
-    ? (scrollOffset / scrollMax) * (viewExtent - handleExtent)
+  const trackHeight = clientHeight;
+  const handleHeight = canScroll
+    ? Math.max(40, (clientHeight / scrollHeight) * trackHeight)
+    : trackHeight;
+  const handleTop = canScroll
+    ? (scrollTop / maxScroll) * (trackHeight - handleHeight)
     : 0;
 
-  // Hide scrollbar if content fits in viewport
-  const showHandle = totalContent > viewExtent && totalContent > 0;
-
-  // Colors from Flokk theme
-  const finalHandleColor = handleColor || Colors.greyWeak;
-  const finalTrackColor = trackColor || `${Colors.greyWeak}4D`; // 30% opacity
-
-  // Drag handling
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+  // Handle drag
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     setIsDragging(true);
-    dragStartRef.current = {
-      y: e.clientY,
-      x: e.clientX,
-      scrollOffset: axis === 'vertical'
-        ? scrollRef.current?.scrollTop || 0
-        : scrollRef.current?.scrollLeft || 0,
-    };
-  }, [axis, scrollRef]);
+    setDragStartY(e.clientY);
+    setDragStartScrollTop(scrollRef.current?.scrollTop || 0);
+  }, [scrollRef]);
 
   useEffect(() => {
     if (!isDragging) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const element = scrollRef.current;
-      if (!element) return;
+    const onMouseMove = (e: MouseEvent) => {
+      const el = scrollRef.current;
+      if (!el) return;
 
-      const delta = axis === 'vertical'
-        ? e.clientY - dragStartRef.current.y
-        : e.clientX - dragStartRef.current.x;
-
-      // Convert pixel delta to scroll delta
-      const scrollableRange = viewExtent - handleExtent;
-      const scrollRatio = scrollMax / scrollableRange;
-      const newScroll = dragStartRef.current.scrollOffset + delta * scrollRatio;
-
-      if (axis === 'vertical') {
-        element.scrollTop = Math.max(0, Math.min(scrollMax, newScroll));
-      } else {
-        element.scrollLeft = Math.max(0, Math.min(scrollMax, newScroll));
-      }
+      const deltaY = e.clientY - dragStartY;
+      const scrollRatio = maxScroll / (trackHeight - handleHeight);
+      el.scrollTop = Math.max(0, Math.min(maxScroll, dragStartScrollTop + deltaY * scrollRatio));
     };
 
-    const handleMouseUp = () => {
-      setIsDragging(false);
-    };
+    const onMouseUp = () => setIsDragging(false);
 
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
     };
-  }, [isDragging, axis, scrollRef, scrollMax, viewExtent, handleExtent]);
+  }, [isDragging, dragStartY, dragStartScrollTop, maxScroll, trackHeight, handleHeight, scrollRef]);
 
-  // Track click to jump to position
-  const handleTrackClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const element = scrollRef.current;
-    if (!element) return;
+  // Track click
+  const onTrackClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target !== e.currentTarget) return; // Only track clicks, not handle
+    const el = scrollRef.current;
+    if (!el) return;
 
     const rect = e.currentTarget.getBoundingClientRect();
-    const clickPos = axis === 'vertical'
-      ? e.clientY - rect.top
-      : e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+    const targetScroll = (clickY / trackHeight) * scrollHeight - clientHeight / 2;
+    el.scrollTop = Math.max(0, Math.min(maxScroll, targetScroll));
+  }, [scrollRef, trackHeight, scrollHeight, clientHeight, maxScroll]);
 
-    // Calculate target scroll position (center handle on click)
-    const targetHandlePos = clickPos - handleExtent / 2;
-    const scrollableRange = viewExtent - handleExtent;
-    const scrollRatio = targetHandlePos / scrollableRange;
-    const newScroll = scrollRatio * scrollMax;
-
-    if (axis === 'vertical') {
-      element.scrollTop = Math.max(0, Math.min(scrollMax, newScroll));
-    } else {
-      element.scrollLeft = Math.max(0, Math.min(scrollMax, newScroll));
-    }
-  }, [axis, scrollRef, scrollMax, viewExtent, handleExtent]);
-
-  const isVertical = axis === 'vertical';
-
+  // Always render the track, hide handle if not scrollable
   return (
     <div
+      onClick={onTrackClick}
       style={{
         position: 'absolute',
-        [isVertical ? 'right' : 'bottom']: 0,
-        [isVertical ? 'top' : 'left']: 0,
-        [isVertical ? 'bottom' : 'right']: 0,
-        [isVertical ? 'width' : 'height']: size,
-        opacity: showHandle ? 1 : 0,
-        transition: 'opacity 150ms ease-out',
-        pointerEvents: showHandle ? 'auto' : 'none',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        width: size,
+        backgroundColor: `${Colors.greyWeak}4D`,
+        cursor: 'pointer',
       }}
-      onClick={handleTrackClick}
     >
-      {/* Track */}
-      {showTrack && (
+      {canScroll && (
         <div
+          onMouseDown={onMouseDown}
           style={{
             position: 'absolute',
-            inset: 0,
-            backgroundColor: finalTrackColor,
+            top: handleTop,
+            left: 0,
+            right: 0,
+            height: handleHeight,
+            backgroundColor: Colors.greyWeak,
+            borderRadius: 3,
+            cursor: 'grab',
+            opacity: isDragging ? 1 : 0.85,
           }}
         />
       )}
-
-      {/* Handle */}
-      <div
-        onMouseDown={handleMouseDown}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{
-          position: 'absolute',
-          [isVertical ? 'top' : 'left']: handlePosition,
-          [isVertical ? 'left' : 'top']: 0,
-          [isVertical ? 'right' : 'bottom']: 0,
-          [isVertical ? 'height' : 'width']: handleExtent,
-          backgroundColor: finalHandleColor,
-          opacity: isHovered || isDragging ? 1 : 0.85,
-          borderRadius: Sizes.radiusSm / 2, // Corners.s3 = 3px
-          cursor: 'pointer',
-          transition: 'opacity 150ms ease-out',
-        }}
-      />
     </div>
   );
 }
