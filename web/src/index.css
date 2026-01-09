@@ -63,9 +63,16 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+  }
 
-  /* Hide native scrollbar for StyledListView - Chrome/Safari */
+  /* Hide native scrollbar for StyledListView - all browsers */
   .styled-listview-scroll::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome/Safari/Edge */
+  }
+  .styled-listview-scroll {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge legacy */
   }
 }
