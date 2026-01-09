@@ -347,10 +347,10 @@ export function ContribuenteInfoPanel({
           paddingRight: Insets.l,
         }}
       >
-        {/* Close button - iconSizeSm, padding Insets.sm */}
+        {/* Close button - iconSizeMd, padding Insets.sm */}
         <button
           onClick={onClose}
-          className="transition-opacity"
+          className="transition-all"
           style={{
             background: 'none',
             border: 'none',
@@ -362,18 +362,18 @@ export function ContribuenteInfoPanel({
             transform: `translateX(${-Insets.sm}px)`,
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.opacity = '0.7';
+            e.currentTarget.style.filter = 'brightness(0.7)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.opacity = '1';
+            e.currentTarget.style.filter = 'none';
           }}
         >
-          <img src={CancelIcon} alt="Chiudi" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
+          <img src={CancelIcon} alt="Chiudi" width={Sizes.iconSizeMd} height={Sizes.iconSizeMd} style={{ display: 'block' }} />
         </button>
-        {/* Edit button - iconSizeSm, padding Insets.sm */}
+        {/* Edit button - iconSizeMd, padding Insets.sm */}
         <button
           onClick={onEdit}
-          className="transition-opacity"
+          className="transition-all"
           style={{
             background: 'none',
             border: 'none',
@@ -385,13 +385,13 @@ export function ContribuenteInfoPanel({
             transform: `translateX(${Insets.sm}px)`,
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.opacity = '0.7';
+            e.currentTarget.style.filter = 'brightness(0.7)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.opacity = '1';
+            e.currentTarget.style.filter = 'none';
           }}
         >
-          <img src={EditIcon} alt="Modifica" width={Sizes.iconSizeSm} height={Sizes.iconSizeSm} style={{ display: 'block' }} />
+          <img src={EditIcon} alt="Modifica" width={Sizes.iconSizeMd} height={Sizes.iconSizeMd} style={{ display: 'block' }} />
         </button>
       </div>
 
