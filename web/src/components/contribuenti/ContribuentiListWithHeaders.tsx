@@ -174,10 +174,11 @@ export function ContribuentiListWithHeaders({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: Colors.surface,
+        backgroundColor: Colors.bg1,  // Light green background like Flokk
       }}
     >
       {/* Column header row - OUTSIDE scrollable list (from Flokk) */}
+      {/* Transparent bg on bg1 = grey text on light green */}
       <div style={{ paddingRight: Insets.lGutter - Insets.sm }}>
         <ContribuentiListRow
           contribuente={null}

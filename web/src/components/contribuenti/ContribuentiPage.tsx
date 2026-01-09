@@ -180,7 +180,7 @@ export function ContribuentiPage({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: Colors.surface,
+        backgroundColor: Colors.bg1,  // Light green background like Flokk
         position: 'relative',
       }}
     >
