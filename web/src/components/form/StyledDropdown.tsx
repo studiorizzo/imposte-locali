@@ -106,7 +106,6 @@ export function StyledDropdown({
           borderBottom: `2px solid ${isFocused ? Colors.accent1 : Colors.greyWeak}`,
           transition: `border-color ${Animations.button.duration} ${Animations.button.easing}`,
           cursor: 'pointer',
-          userSelect: 'none',
           whiteSpace: 'nowrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
