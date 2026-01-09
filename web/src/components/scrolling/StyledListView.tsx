@@ -1,23 +1,30 @@
 /**
  * StyledListView - Core ListView with custom scrollbar
- * Exact copy from Flokk's styled_listview.dart
+ * Rewritten from scratch based on Flokk's styled_listview.dart
+ *
+ * Uses ManagedScrollbarListStack for automatic scroll element management.
  */
 
-import { useRef } from 'react';
 import type { ReactNode } from 'react';
-import { ScrollbarListStack } from './ScrollbarListStack';
+import { ManagedScrollbarListStack } from './ScrollbarListStack';
 
 interface StyledListViewProps {
+  /** Fixed height per item (optional, used for scrollbar size calculation) */
   itemExtent?: number;
+  /** Number of items in the list */
   itemCount: number;
+  /** Scroll direction */
   axis?: 'vertical' | 'horizontal';
+  /** Padding inside the scroll container */
   padding?: {
     top?: number;
     right?: number;
     bottom?: number;
     left?: number;
   };
+  /** Size of the scrollbar */
   barSize?: number;
+  /** Render function for each item */
   itemBuilder: (index: number) => ReactNode;
 }
 
@@ -29,42 +36,37 @@ export function StyledListView({
   barSize = 12,
   itemBuilder,
 }: StyledListViewProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   // From Flokk: contentSize = itemCount * (itemExtent ?? 0.0)
-  const contentSize = itemCount * (itemExtent ?? 0);
+  const contentSize = itemExtent ? itemCount * itemExtent : undefined;
 
   return (
-    <ScrollbarListStack
-      contentSize={contentSize}
-      axis={axis}
-      scrollRef={scrollRef}
+    <ManagedScrollbarListStack
       barSize={barSize}
+      axis={axis}
+      contentSize={contentSize}
     >
-      {/* ListView.builder equivalent */}
-      <div
-        ref={scrollRef}
-        className="styled-listview-scroll"
-        style={{
-          flex: 1,
-          minHeight: 0,
-          overflow: 'auto',
-          paddingTop: padding?.top,
-          paddingRight: padding?.right,
-          paddingBottom: padding?.bottom,
-          paddingLeft: padding?.left,
-          // Hide native scrollbar
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        }}
-      >
-        {/* Render items - equivalent to ListView.builder itemBuilder */}
-        {Array.from({ length: itemCount }, (_, index) => (
-          <div key={index} style={itemExtent ? { height: itemExtent } : undefined}>
-            {itemBuilder(index)}
-          </div>
-        ))}
-      </div>
-    </ScrollbarListStack>
+      {(scrollRef) => (
+        <div
+          ref={scrollRef}
+          className="styled-listview-scroll"
+          style={{
+            flex: 1,
+            minHeight: 0,
+            overflow: 'auto',
+            paddingTop: padding?.top,
+            paddingRight: padding?.right,
+            paddingBottom: padding?.bottom,
+            paddingLeft: padding?.left,
+          }}
+        >
+          {/* Render items - equivalent to ListView.builder itemBuilder */}
+          {Array.from({ length: itemCount }, (_, index) => (
+            <div key={index} style={itemExtent ? { height: itemExtent } : undefined}>
+              {itemBuilder(index)}
+            </div>
+          ))}
+        </div>
+      )}
+    </ManagedScrollbarListStack>
   );
 }
