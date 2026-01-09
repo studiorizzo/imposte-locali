@@ -115,8 +115,20 @@ export function BulkContribuenteEditBar({
         transform: isVisible ? 'scale(1)' : 'scale(0.98)',
         transition: `opacity ${Animations.button.duration} ${Animations.button.easing}, transform ${Animations.button.duration} ${Animations.button.easing}`,
         pointerEvents: isVisible ? 'auto' : 'none',
+        position: 'relative',
       }}
     >
+      {/* Bottom divider line - like Flokk header divider */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: 1,
+          backgroundColor: 'rgba(81, 93, 90, 0.6)', // grey #515d5a at 60% opacity
+        }}
+      />
       {/* Left side: checkbox, select text, all/none buttons, delete */}
       <div style={{ display: 'flex', alignItems: 'center', gap: Insets.m }}>
         <MasterCheckbox
