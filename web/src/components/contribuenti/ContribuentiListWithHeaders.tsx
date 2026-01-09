@@ -4,6 +4,7 @@ import { TextStyles, Insets } from '../../styles';
 import { ContribuentiListRow } from './ContribuentiListRow';
 import type { ContribuenteListData } from './ContribuentiListRow';
 import { BulkContribuenteEditBar } from './BulkContribuenteEditBar';
+import { StyledListView } from '../scrolling';
 
 interface ContribuentiListWithHeadersProps {
   contribuenti: ContribuenteListData[];
@@ -150,6 +151,7 @@ export function ContribuentiListWithHeaders({
       }}
     >
       {/* Column header row - height: 48, from Flokk */}
+      {/* paddingRight: lGutter - sm aligns with BulkEditBar overlay */}
       <div style={{ height: 48, paddingRight: Insets.lGutter - Insets.sm }}>
         <ContribuentiListRow
           contribuente={null}
@@ -157,21 +159,13 @@ export function ContribuentiListWithHeaders({
         />
       </div>
 
-      {/* Scrollable list with native browser scrollbar */}
-      <div
-        style={{
-          flex: 1,
-          minHeight: 0,
-          overflow: 'auto',
-          paddingRight: Insets.lGutter - Insets.sm,
-        }}
-      >
-        {Array.from({ length: itemCount }, (_, index) => (
-          <div key={index} style={{ height: 78 }}>
-            {itemBuilder(index)}
-          </div>
-        ))}
-      </div>
+      {/* Scrollable list with custom Flokk scrollbar */}
+      <StyledListView
+        itemExtent={78}
+        itemCount={itemCount}
+        itemBuilder={itemBuilder}
+        barSize={12}
+      />
 
       {/* BULK CONTROLS - from Flokk: overlay with opacity animation */}
       {/* Same paddingRight as header row container to align divider lines */}

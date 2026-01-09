@@ -66,4 +66,13 @@
   .hide-scrollbar {
     scrollbar-width: none; /* Firefox */
   }
+
+  /* StyledListView - hide native scrollbar, use custom scrollbar overlay */
+  .styled-listview-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .styled-listview-scroll {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
 }
