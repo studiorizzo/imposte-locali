@@ -182,6 +182,11 @@ export function ContribuentiPage({
         flexDirection: 'column',
         backgroundColor: Colors.bg1,  // Light green background like Flokk
         position: 'relative',
+        // Flokk ContactsPage: .padding(left: Insets.lGutter, right: Insets.mGutter)
+        paddingLeft: Insets.lGutter,
+        paddingRight: Insets.mGutter,
+        // Flokk ContactsPage: VSpace(Insets.sm) at top
+        paddingTop: Insets.sm,
       }}
     >
       {/* Bulk edit bar (floating at top) */}
