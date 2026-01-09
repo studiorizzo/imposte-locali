@@ -70,6 +70,7 @@ export function StyledListView({
     >
       <div
         ref={scrollRef}
+        className="styled-listview-scroll"
         style={{
           flex: 1,
           minHeight: 0,  // Critical for flex scroll
@@ -78,6 +79,9 @@ export function StyledListView({
           paddingRight: padding.right,
           paddingBottom: padding.bottom,
           paddingLeft: padding.left,
+          // Hide native scrollbar - cross-browser
+          scrollbarWidth: 'none',  // Firefox
+          msOverflowStyle: 'none', // IE/Edge
         }}
       >
         {children}

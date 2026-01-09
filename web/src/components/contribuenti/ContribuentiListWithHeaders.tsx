@@ -65,15 +65,17 @@ export function ContribuentiListWithHeaders({
   const { starred, notStarred, all } = getSortedContribuenti();
   const favCount = starred.length;
 
-  // Section header style (from Flokk: TextStyles.T1, accent1Dark, bottomLeft, marginBottom: Insets.l + 4)
+  // Section header style (from Flokk: TextStyles.T1, accent1Dark, bottomLeft, margin bottom inside 78px box)
+  // In Flokk, itemExtent=78 constrains all items. marginBottom is inside the box, text aligned bottom-left.
   const sectionHeaderStyle: React.CSSProperties = {
     ...TextStyles.t1,
     color: Colors.accent1Dark,
     display: 'flex',
     alignItems: 'flex-end',  // bottomLeft alignment
-    height: 48,              // Give header height for bottomLeft to work
-    marginBottom: Insets.l + 4,  // 28px from Flokk
+    height: 78,              // Match itemExtent for proper scroll calculation
+    paddingBottom: Insets.l + 4,  // 28px padding at bottom (was margin in Flokk)
     paddingLeft: Insets.m,
+    boxSizing: 'border-box',
   };
 
   // Build list items (section headers + rows, but NOT column header)
