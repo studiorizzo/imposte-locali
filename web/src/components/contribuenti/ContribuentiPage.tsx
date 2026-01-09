@@ -239,8 +239,8 @@ export function ContribuentiPage({
         // Flokk ContactsPage: .padding(left: Insets.lGutter, right: Insets.mGutter)
         paddingLeft: Insets.lGutter,
         paddingRight: Insets.mGutter,
-        // Allinea con bordo sidebar: sidebar header (106px) - topBar end (84px) = 22px
-        paddingTop: 22,
+        // Flokk ContactsPage: VSpace(Insets.sm) at top
+        paddingTop: Insets.sm,
       }}
     >
       {/* Content */}

@@ -186,8 +186,8 @@ export function ContribuentiListRow({
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        // Header: content at top (like Flokk Stack), Data rows: centered
-        justifyContent: headerMode ? 'flex-start' : 'center',
+        // Flokk: content centered in both header and data rows
+        justifyContent: 'center',
       }}
     >
       {/* Top divider for data rows */}
