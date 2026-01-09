@@ -13,12 +13,6 @@ interface ScrollbarListStackProps {
   children: ReactNode;
   scrollRef: React.RefObject<HTMLElement | null>;
   contentSize?: number;
-  scrollbarPadding?: {
-    top?: number;
-    right?: number;
-    bottom?: number;
-    left?: number;
-  };
   handleColor?: string;
   trackColor?: string;
 }
@@ -29,7 +23,6 @@ export function ScrollbarListStack({
   children,
   scrollRef,
   contentSize,
-  scrollbarPadding = {},
   handleColor,
   trackColor,
 }: ScrollbarListStackProps) {
@@ -48,25 +41,15 @@ export function ScrollbarListStack({
       </div>
 
       {/* SCROLLBAR - from Flokk: Padding + StyledScrollbar */}
-      <div
-        style={{
-          position: 'absolute',
-          top: scrollbarPadding.top ?? 0,
-          right: scrollbarPadding.right ?? 0,
-          bottom: scrollbarPadding.bottom ?? 0,
-          left: scrollbarPadding.left ?? 0,
-        }}
-      >
-        <StyledScrollbar
-          size={barSize}
-          axis={axis}
-          scrollRef={scrollRef}
-          contentSize={contentSize}
-          trackColor={trackColor}
-          handleColor={handleColor}
-          showTrack={true}
-        />
-      </div>
+      <StyledScrollbar
+        size={barSize}
+        axis={axis}
+        scrollRef={scrollRef}
+        contentSize={contentSize}
+        trackColor={trackColor}
+        handleColor={handleColor}
+        showTrack={true}
+      />
     </div>
   );
 }

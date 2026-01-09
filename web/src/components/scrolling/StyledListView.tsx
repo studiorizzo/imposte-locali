@@ -17,12 +17,6 @@ interface StyledListViewProps {
     bottom?: number;
     left?: number;
   };
-  scrollbarPadding?: {
-    top?: number;
-    right?: number;
-    bottom?: number;
-    left?: number;
-  };
   barSize?: number;
   itemBuilder: (index: number) => ReactNode;
 }
@@ -32,7 +26,6 @@ export function StyledListView({
   itemCount,
   axis = 'vertical',
   padding,
-  scrollbarPadding,
   barSize = 12,
   itemBuilder,
 }: StyledListViewProps) {
@@ -47,7 +40,6 @@ export function StyledListView({
       axis={axis}
       scrollRef={scrollRef}
       barSize={barSize}
-      scrollbarPadding={scrollbarPadding}
     >
       {/* ListView.builder equivalent */}
       <div
