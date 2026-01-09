@@ -103,6 +103,7 @@ function App() {
   const [isPanelAnimating, setIsPanelAnimating] = useState(false);
   const [contribuenti, setContribuenti] = useState<ContribuenteFormData[]>([]);
   const [selectedContribuente, setSelectedContribuente] = useState<ContribuenteFullData | null>(null);
+  const [selectedContribuenteId, setSelectedContribuenteId] = useState<string | null>(null);
   const [isEditingContribuente, setIsEditingContribuente] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -225,9 +226,11 @@ function App() {
       case 'contribuenti':
         return (
           <ContribuentiPage
+            selectedId={selectedContribuenteId}
             onContribuenteSelect={(c) => {
               if (c === null) {
                 // Deselecting - close the panel
+                setSelectedContribuenteId(null);
                 setIsContribuentePanelOpen(false);
               } else {
                 // Convert ContribuenteListData to ContribuenteFullData
@@ -236,6 +239,7 @@ function App() {
                   emails: c.email ? [c.email] : [],
                   telefoni: c.telefono ? [c.telefono] : [],
                 };
+                setSelectedContribuenteId(c.id);
                 setSelectedContribuente(fullData);
                 setIsEditingContribuente(false);
                 setIsContribuentePanelOpen(true);
@@ -391,6 +395,7 @@ function App() {
               <ContribuenteInfoPanel
                 contribuente={selectedContribuente}
                 onClose={() => {
+                  setSelectedContribuenteId(null);
                   setIsContribuentePanelOpen(false);
                   setSelectedContribuente(null);
                 }}
@@ -426,6 +431,7 @@ function App() {
               <ContribuenteInfoPanel
                 contribuente={selectedContribuente}
                 onClose={() => {
+                  setSelectedContribuenteId(null);
                   setIsContribuentePanelOpen(false);
                   setSelectedContribuente(null);
                 }}
