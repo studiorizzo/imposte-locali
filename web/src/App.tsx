@@ -166,7 +166,8 @@ function App() {
 
   const handleSaveContribuente = (data: ContribuenteFormData) => {
     setContribuenti(prev => [...prev, data]);
-    setIsContribuentePanelOpen(false);
+    // Return to info panel after save (like Flokk)
+    setIsEditingContribuente(false);
   };
 
   const renderContent = () => {
@@ -403,8 +404,7 @@ function App() {
             ) : (
               <ContribuenteFormPanel
                 onClose={() => {
-                  setIsContribuentePanelOpen(false);
-                  setSelectedContribuente(null);
+                  // Return to info panel (like Flokk)
                   setIsEditingContribuente(false);
                 }}
                 onSave={handleSaveContribuente}
@@ -439,8 +439,7 @@ function App() {
             ) : (
               <ContribuenteFormPanel
                 onClose={() => {
-                  setIsContribuentePanelOpen(false);
-                  setSelectedContribuente(null);
+                  // Return to info panel (like Flokk)
                   setIsEditingContribuente(false);
                 }}
                 onSave={handleSaveContribuente}
