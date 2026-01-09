@@ -6,7 +6,8 @@ import { Sidebar, MobileDrawer } from './components/Sidebar';
 import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
-import { ContribuentiPage } from './components/contribuenti';
+import { ContribuentiPage, ContribuenteInfoPanel } from './components/contribuenti';
+import type { ContribuenteFullData } from './components/contribuenti';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
 import { Colors } from './theme';
@@ -101,6 +102,8 @@ function App() {
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const [isPanelAnimating, setIsPanelAnimating] = useState(false);
   const [contribuenti, setContribuenti] = useState<ContribuenteFormData[]>([]);
+  const [selectedContribuente, setSelectedContribuente] = useState<ContribuenteFullData | null>(null);
+  const [isEditingContribuente, setIsEditingContribuente] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
   const isMobile = useIsMobile();
@@ -222,8 +225,15 @@ function App() {
         return (
           <ContribuentiPage
             onContribuenteSelect={(c) => {
-              console.log('Selected contribuente:', c);
-              // TODO: Open contribuente detail panel
+              // Convert ContribuenteListData to ContribuenteFullData
+              const fullData: ContribuenteFullData = {
+                ...c,
+                emails: c.email ? [c.email] : [],
+                telefoni: c.telefono ? [c.telefono] : [],
+              };
+              setSelectedContribuente(fullData);
+              setIsEditingContribuente(false);
+              setIsContribuentePanelOpen(true);
             }}
           />
         );
@@ -358,7 +368,7 @@ function App() {
         }}
       />
 
-      {/* Contribuente Form Panel - Positioned like Flokk */}
+      {/* Contribuente Panel - Info or Form depending on state */}
       {isPanelVisible && (
         useSingleColumn ? (
           // Single column mode: panel fills width minus left menu
@@ -371,10 +381,30 @@ function App() {
               transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
             }}
           >
-            <ContribuenteFormPanel
-              onClose={() => setIsContribuentePanelOpen(false)}
-              onSave={handleSaveContribuente}
-            />
+            {selectedContribuente && !isEditingContribuente ? (
+              <ContribuenteInfoPanel
+                contribuente={selectedContribuente}
+                onClose={() => {
+                  setIsContribuentePanelOpen(false);
+                  setSelectedContribuente(null);
+                }}
+                onEdit={() => setIsEditingContribuente(true)}
+                onStarToggle={() => {
+                  setSelectedContribuente(prev =>
+                    prev ? { ...prev, isStarred: !prev.isStarred } : null
+                  );
+                }}
+              />
+            ) : (
+              <ContribuenteFormPanel
+                onClose={() => {
+                  setIsContribuentePanelOpen(false);
+                  setSelectedContribuente(null);
+                  setIsEditingContribuente(false);
+                }}
+                onSave={handleSaveContribuente}
+              />
+            )}
           </div>
         ) : (
           // Dual column mode: panel has fixed width on the right
@@ -387,10 +417,30 @@ function App() {
               transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
             }}
           >
-            <ContribuenteFormPanel
-              onClose={() => setIsContribuentePanelOpen(false)}
-              onSave={handleSaveContribuente}
-            />
+            {selectedContribuente && !isEditingContribuente ? (
+              <ContribuenteInfoPanel
+                contribuente={selectedContribuente}
+                onClose={() => {
+                  setIsContribuentePanelOpen(false);
+                  setSelectedContribuente(null);
+                }}
+                onEdit={() => setIsEditingContribuente(true)}
+                onStarToggle={() => {
+                  setSelectedContribuente(prev =>
+                    prev ? { ...prev, isStarred: !prev.isStarred } : null
+                  );
+                }}
+              />
+            ) : (
+              <ContribuenteFormPanel
+                onClose={() => {
+                  setIsContribuentePanelOpen(false);
+                  setSelectedContribuente(null);
+                  setIsEditingContribuente(false);
+                }}
+                onSave={handleSaveContribuente}
+              />
+            )}
           </div>
         )
       )}
