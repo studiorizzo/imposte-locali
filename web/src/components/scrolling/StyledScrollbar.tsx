@@ -28,20 +28,36 @@ export function StyledScrollbar({
   trackColor,
   contentSize,
 }: StyledScrollbarProps) {
-  const [viewExtent, setViewExtent] = useState(100);
+  const [viewExtent, setViewExtent] = useState(0);
   const [scrollOffset, setScrollOffset] = useState(0);
   const [maxScrollExtent, setMaxScrollExtent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Sync with scroll element - equivalent to initState + addListener
+  // Get viewExtent from scrollbar container - like Flokk's LayoutBuilder
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateContainerSize = () => {
+      const isVertical = axis === 'vertical';
+      setViewExtent(isVertical ? container.clientHeight : container.clientWidth);
+    };
+
+    updateContainerSize();
+    const resizeObserver = new ResizeObserver(updateContainerSize);
+    resizeObserver.observe(container);
+
+    return () => resizeObserver.disconnect();
+  }, [axis]);
+
+  // Sync scroll position with scroll element
   useEffect(() => {
     const element = scrollRef.current;
     if (!element) return;
 
-    const updateState = () => {
+    const updateScrollState = () => {
       const isVertical = axis === 'vertical';
-      setViewExtent(isVertical ? element.clientHeight : element.clientWidth);
       setScrollOffset(isVertical ? element.scrollTop : element.scrollLeft);
       setMaxScrollExtent(
         isVertical
@@ -50,14 +66,15 @@ export function StyledScrollbar({
       );
     };
 
-    updateState();
-    element.addEventListener('scroll', updateState);
+    updateScrollState();
+    element.addEventListener('scroll', updateScrollState);
 
-    const resizeObserver = new ResizeObserver(updateState);
+    // Also observe scroll element for content changes
+    const resizeObserver = new ResizeObserver(updateScrollState);
     resizeObserver.observe(element);
 
     return () => {
-      element.removeEventListener('scroll', updateState);
+      element.removeEventListener('scroll', updateScrollState);
       resizeObserver.disconnect();
     };
   }, [scrollRef, axis]);
@@ -156,6 +173,7 @@ export function StyledScrollbar({
         height: isVertical ? '100%' : size,
         opacity: showHandle ? 1 : 0,
         pointerEvents: showHandle ? 'auto' : 'none',
+        zIndex: 10, // Ensure scrollbar is above content
       }}
     >
       {/* TRACK - from Flokk: Align(alignment: Alignment(1, 1), Container...) */}
