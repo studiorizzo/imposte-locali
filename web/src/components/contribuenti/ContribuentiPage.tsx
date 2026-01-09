@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { Colors } from '../../theme';
 import { Insets, TextStyles } from '../../styles';
 import { ContribuentiListWithHeaders } from './ContribuentiListWithHeaders';
-import { BulkContribuenteEditBar } from './BulkContribuenteEditBar';
 import type { ContribuenteListData } from './ContribuentiListRow';
 
 interface ContribuentiPageProps {
@@ -235,9 +234,8 @@ export function ContribuentiPage({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        minHeight: 0,  // Critical for flex scroll - allows shrinking below content height
-        backgroundColor: Colors.bg1,  // Light green background like Flokk
-        position: 'relative',
+        minHeight: 0,
+        backgroundColor: Colors.bg1,
         // Flokk ContactsPage: .padding(left: Insets.lGutter, right: Insets.mGutter)
         paddingLeft: Insets.lGutter,
         paddingRight: Insets.mGutter,
@@ -245,15 +243,6 @@ export function ContribuentiPage({
         paddingTop: Insets.sm,
       }}
     >
-      {/* Bulk edit bar (floating at top) */}
-      <BulkContribuenteEditBar
-        checkedCount={checkedIds.size}
-        totalCount={filteredContribuenti.length}
-        onSelectAll={handleSelectAll}
-        onSelectNone={handleSelectNone}
-        onDelete={handleDelete}
-      />
-
       {/* Content */}
       {isEmpty ? (
         <EmptyState isSearching={searchMode} />
@@ -266,6 +255,9 @@ export function ContribuentiPage({
           onSelect={handleSelect}
           onCheckedChange={handleCheckedChange}
           onStarToggle={handleStarToggle}
+          onSelectAll={handleSelectAll}
+          onSelectNone={handleSelectNone}
+          onDelete={handleDelete}
         />
       )}
     </div>

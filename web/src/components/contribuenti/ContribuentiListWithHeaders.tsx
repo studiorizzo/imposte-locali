@@ -4,6 +4,7 @@ import { TextStyles, Insets } from '../../styles';
 import { ContribuentiListRow } from './ContribuentiListRow';
 import type { ContribuenteListData } from './ContribuentiListRow';
 import { StyledListView } from '../scrolling';
+import { BulkContribuenteEditBar } from './BulkContribuenteEditBar';
 
 interface ContribuentiListWithHeadersProps {
   contribuenti: ContribuenteListData[];
@@ -13,6 +14,9 @@ interface ContribuentiListWithHeadersProps {
   onSelect: (contribuente: ContribuenteListData) => void;
   onCheckedChange: (id: string, checked: boolean) => void;
   onStarToggle: (id: string) => void;
+  onSelectAll: () => void;
+  onSelectNone: () => void;
+  onDelete: () => void;
 }
 
 export function ContribuentiListWithHeaders({
@@ -23,6 +27,9 @@ export function ContribuentiListWithHeaders({
   onSelect,
   onCheckedChange,
   onStarToggle,
+  onSelectAll,
+  onSelectNone,
+  onDelete,
 }: ContribuentiListWithHeadersProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -130,32 +137,47 @@ export function ContribuentiListWithHeaders({
     );
   };
 
+  // From Flokk: Stack with Column + BulkContactEditBar overlay
   return (
     <div
       ref={containerRef}
       style={{
+        position: 'relative',  // Stack container
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        minHeight: 0,  // Critical for flex scroll - allows shrinking below content height
-        backgroundColor: Colors.bg1,  // Light green background like Flokk
+        minHeight: 0,
+        backgroundColor: Colors.bg1,
       }}
     >
-      {/* Column header row - OUTSIDE scrollable list (from Flokk) */}
-      {/* Transparent bg on bg1 = grey text on light green */}
-      <div style={{ paddingRight: Insets.lGutter - Insets.sm }}>
-        <ContribuentiListRow
-          contribuente={null}
-          parentWidth={containerWidth}
+      {/* LIST / HEADER COLUMN - from Flokk */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+        {/* Column header row - height: 48, from Flokk */}
+        <div style={{ height: 48, paddingRight: Insets.lGutter - Insets.sm }}>
+          <ContribuentiListRow
+            contribuente={null}
+            parentWidth={containerWidth}
+          />
+        </div>
+
+        {/* Scrollable list - from Flokk: StyledListView.expanded() */}
+        <StyledListView
+          itemExtent={78}
+          itemCount={itemCount}
+          itemBuilder={itemBuilder}
         />
       </div>
 
-      {/* Scrollable list with section headers - from Flokk: StyledListView.expanded() */}
-      <StyledListView
-        itemExtent={78}
-        itemCount={itemCount}
-        itemBuilder={itemBuilder}
-      />
+      {/* BULK CONTROLS - from Flokk: overlay with opacity animation */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0 }}>
+        <BulkContribuenteEditBar
+          checkedCount={checkedIds.size}
+          totalCount={all.length}
+          onSelectAll={onSelectAll}
+          onSelectNone={onSelectNone}
+          onDelete={onDelete}
+        />
+      </div>
     </div>
   );
 }
