@@ -146,11 +146,12 @@ export function ContribuentiListWithHeaders({
         display: 'flex',
         flexDirection: 'column',
         minHeight: 0,
+        overflow: 'hidden',  // Force height constraint
         backgroundColor: Colors.bg1,
       }}
     >
       {/* LIST / HEADER COLUMN - from Flokk */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, overflow: 'hidden' }}>
         {/* Column header row - height: 48, from Flokk */}
         <div style={{ height: 48, paddingRight: Insets.lGutter - Insets.sm }}>
           <ContribuentiListRow

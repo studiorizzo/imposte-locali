@@ -235,6 +235,7 @@ export function ContribuentiPage({
         display: 'flex',
         flexDirection: 'column',
         minHeight: 0,
+        overflow: 'hidden',  // Force height constraint
         backgroundColor: Colors.bg1,
         // Flokk ContactsPage: .padding(left: Insets.lGutter, right: Insets.mGutter)
         paddingLeft: Insets.lGutter,
