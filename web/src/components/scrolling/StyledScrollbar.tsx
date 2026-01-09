@@ -115,6 +115,9 @@ export function StyledScrollbar({
   // showHandle - from Flokk: contentExtent > viewExtent && contentExtent > 0
   const showHandle = contentExtent > viewExtent && contentExtent > 0;
 
+  // DEBUG: Remove after fixing
+  console.log('StyledScrollbar DEBUG:', { viewExtent, contentExtent, maxExtent, maxScrollExtent, contentSize, showHandle });
+
   // handleAlignment: convert scroll position from [0,1] to [-1,1] range
   // From Flokk: handleAlignment = (offset / maxExtent) * 2 - 1
   let handleAlignment = maxExtent === 0 ? 0 : scrollOffset / maxExtent;
