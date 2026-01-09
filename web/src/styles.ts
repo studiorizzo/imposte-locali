@@ -161,6 +161,13 @@ export const FontSizes = {
 
 // Text styles from Flokk
 export const TextStyles = {
+  // H1: Quicksand, 22px, bold (panel header names)
+  h1: {
+    fontFamily: Fonts.heading,
+    fontSize: '22px',
+    fontWeight: 700,
+    letterSpacing: '0.5px',
+  },
   // Btn: Quicksand, 14px, bold, letterSpacing 1.75
   btn: {
     fontFamily: Fonts.heading,
