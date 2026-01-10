@@ -167,8 +167,13 @@ function App() {
 
   const handleSaveContribuente = (data: ContribuenteFormData) => {
     setContribuenti(prev => [...prev, data]);
-    // Return to info panel after save (like Flokk)
-    setIsEditingContribuente(false);
+    if (selectedContribuente) {
+      // Editing existing - return to info panel (like Flokk)
+      setIsEditingContribuente(false);
+    } else {
+      // Creating new - close panel entirely
+      setIsContribuentePanelOpen(false);
+    }
   };
 
   const renderContent = () => {
@@ -409,8 +414,13 @@ function App() {
             ) : (
               <ContribuenteFormPanel
                 onClose={() => {
-                  // Return to info panel (like Flokk)
-                  setIsEditingContribuente(false);
+                  if (selectedContribuente) {
+                    // Return to info panel (like Flokk)
+                    setIsEditingContribuente(false);
+                  } else {
+                    // Creating new - close panel entirely
+                    setIsContribuentePanelOpen(false);
+                  }
                 }}
                 onSave={handleSaveContribuente}
               />
@@ -445,8 +455,13 @@ function App() {
             ) : (
               <ContribuenteFormPanel
                 onClose={() => {
-                  // Return to info panel (like Flokk)
-                  setIsEditingContribuente(false);
+                  if (selectedContribuente) {
+                    // Return to info panel (like Flokk)
+                    setIsEditingContribuente(false);
+                  } else {
+                    // Creating new - close panel entirely
+                    setIsContribuentePanelOpen(false);
+                  }
                 }}
                 onSave={handleSaveContribuente}
               />
