@@ -6,6 +6,7 @@ import type { ContribuenteListData } from './ContribuentiListRow';
 
 interface ContribuentiPageProps {
   searchQuery?: string;
+  selectedId?: string | null;
   onContribuenteSelect?: (contribuente: ContribuenteListData | null) => void;
 }
 
@@ -40,6 +41,7 @@ function EmptyState({ isSearching }: { isSearching: boolean }) {
 
 export function ContribuentiPage({
   searchQuery = '',
+  selectedId: controlledSelectedId,
   onContribuenteSelect,
 }: ContribuentiPageProps) {
   // Mock data for now - this would come from a real data source
@@ -155,8 +157,11 @@ export function ContribuentiPage({
     },
   ]);
 
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [internalSelectedId, setInternalSelectedId] = useState<string | null>(null);
   const [checkedIds, setCheckedIds] = useState<Set<string>>(new Set());
+
+  // Use controlled value if provided, otherwise use internal state
+  const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId;
 
   // Filter by search query
   const filteredContribuenti = useMemo(() => {
@@ -183,7 +188,10 @@ export function ContribuentiPage({
   // Handlers
   const handleSelect = (contribuente: ContribuenteListData) => {
     const isDeselecting = selectedId === contribuente.id;
-    setSelectedId(isDeselecting ? null : contribuente.id);
+    // Update internal state only if not controlled
+    if (controlledSelectedId === undefined) {
+      setInternalSelectedId(isDeselecting ? null : contribuente.id);
+    }
     onContribuenteSelect?.(isDeselecting ? null : contribuente);
   };
 
