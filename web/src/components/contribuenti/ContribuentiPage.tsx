@@ -232,7 +232,11 @@ export function ContribuentiPage({
       setContribuenti((prev) => prev.filter((c) => !checkedIds.has(c.id)));
       setCheckedIds(new Set());
       if (selectedId && checkedIds.has(selectedId)) {
-        setSelectedId(null);
+        // Clear selection if deleted item was selected
+        if (controlledSelectedId === undefined) {
+          setInternalSelectedId(null);
+        }
+        onContribuenteSelect?.(null);
       }
     }
   };
