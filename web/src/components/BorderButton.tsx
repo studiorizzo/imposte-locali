@@ -42,81 +42,143 @@ export function BorderButton({
   const k = 0.5523;
 
   // Generate the combined SVG path (shape + raccords as ONE element)
+  // NEW DESIGN: Rectangular shape with:
+  // - r=10 convex raccords at screen edge corners (create bg1 space)
+  // - R=40 concave raccords at internal corners (round the rectangle)
   const getPath = () => {
-    const r = raccordRadius;
+    const r = raccordRadius;  // 10
     const kr = r * k;
-    const R = innerRadius;
+    const R = innerRadius;    // 40
     const kR = R * k;
-    const L = lengthAlongEdge;
-    const D = depth;
-    const centerY = L / 2; // Center of the rounded end
+    const L = lengthAlongEdge; // 100
+    const D = depth;          // 80 or 100
+
+    // Calculate if right edge exists (when r+R < L/2)
+    const rightEdgeLength = L - 2 * r - 2 * R; // With r=10, R=40, L=100: 100-20-80=0
 
     if (position === 'left') {
-      // Shape extends from x=0 (screen edge) to x=D
-      // Height is L (100px), centered vertically
-      // Rounded end is on the RIGHT side (x=D)
-      return `
-        M0 0
-        C0 ${kr} ${r - kr} ${r} ${r} ${r}
-        L${D - R} ${r}
-        C${D - R + kR} ${r} ${D} ${centerY - R + r - kR} ${D} ${centerY - R + r}
-        L${D} ${centerY + R - r}
-        C${D} ${centerY + R - r + kR} ${D - R + kR} ${L - r} ${D - R} ${L - r}
-        L${r} ${L - r}
-        C${r - kr} ${L - r} 0 ${L - kr} 0 ${L}
-        Z
-      `;
+      // Rectangle from (0,0) to (D, L)
+      // Screen edge (left): convex raccords at corners
+      // Internal edge (right): concave raccords (rounded corners)
+
+      if (rightEdgeLength > 0) {
+        // There's a straight right edge
+        return `
+          M0 0
+          C0 ${kr} ${r - kr} ${r} ${r} ${r}
+          L${D - R} ${r}
+          C${D - R + kR} ${r} ${D} ${r + R - kR} ${D} ${r + R}
+          L${D} ${L - r - R}
+          C${D} ${L - r - R + kR} ${D - R + kR} ${L - r} ${D - R} ${L - r}
+          L${r} ${L - r}
+          C${r - kr} ${L - r} 0 ${L - kr} 0 ${L}
+          Z
+        `;
+      } else {
+        // Internal corners meet at center (no straight right edge)
+        const midY = L / 2;
+        return `
+          M0 0
+          C0 ${kr} ${r - kr} ${r} ${r} ${r}
+          L${D - R} ${r}
+          C${D - R + kR} ${r} ${D} ${midY - kR} ${D} ${midY}
+          C${D} ${midY + kR} ${D - R + kR} ${L - r} ${D - R} ${L - r}
+          L${r} ${L - r}
+          C${r - kr} ${L - r} 0 ${L - kr} 0 ${L}
+          Z
+        `;
+      }
     }
 
     if (position === 'right') {
-      // Mirror of left: extends from x=D to x=0 (screen edge at x=D in local coords)
-      // Rounded end is on the LEFT side (x=0 in local coords)
-      return `
-        M${D} 0
-        C${D} ${kr} ${D - r + kr} ${r} ${D - r} ${r}
-        L${R} ${r}
-        C${R - kR} ${r} 0 ${centerY - R + r - kR} 0 ${centerY - R + r}
-        L0 ${centerY + R - r}
-        C0 ${centerY + R - r + kR} ${R - kR} ${L - r} ${R} ${L - r}
-        L${D - r} ${L - r}
-        C${D - r + kr} ${L - r} ${D} ${L - kr} ${D} ${L}
-        Z
-      `;
+      // Mirror of left
+      if (rightEdgeLength > 0) {
+        return `
+          M${D} 0
+          C${D} ${kr} ${D - r + kr} ${r} ${D - r} ${r}
+          L${R} ${r}
+          C${R - kR} ${r} 0 ${r + R - kR} 0 ${r + R}
+          L0 ${L - r - R}
+          C0 ${L - r - R + kR} ${R - kR} ${L - r} ${R} ${L - r}
+          L${D - r} ${L - r}
+          C${D - r + kr} ${L - r} ${D} ${L - kr} ${D} ${L}
+          Z
+        `;
+      } else {
+        const midY = L / 2;
+        return `
+          M${D} 0
+          C${D} ${kr} ${D - r + kr} ${r} ${D - r} ${r}
+          L${R} ${r}
+          C${R - kR} ${r} 0 ${midY - kR} 0 ${midY}
+          C0 ${midY + kR} ${R - kR} ${L - r} ${R} ${L - r}
+          L${D - r} ${L - r}
+          C${D - r + kr} ${L - r} ${D} ${L - kr} ${D} ${L}
+          Z
+        `;
+      }
     }
 
     if (position === 'top') {
-      // Shape extends from y=0 (screen edge) to y=D
-      // Width is L (100px)
-      // Rounded end is on the BOTTOM side (y=D)
-      const centerX = L / 2;
-      return `
-        M0 0
-        C${kr} 0 ${r} ${r - kr} ${r} ${r}
-        L${r} ${D - R}
-        C${r} ${D - R + kR} ${centerX - R + r - kR} ${D} ${centerX - R + r} ${D}
-        L${centerX + R - r} ${D}
-        C${centerX + R - r + kR} ${D} ${L - r} ${D - R + kR} ${L - r} ${D - R}
-        L${L - r} ${r}
-        C${L - r} ${r - kr} ${L - kr} 0 ${L} 0
-        Z
-      `;
+      // Rectangle from (0,0) to (L, D)
+      const bottomEdgeLength = L - 2 * r - 2 * R;
+
+      if (bottomEdgeLength > 0) {
+        return `
+          M0 0
+          C${kr} 0 ${r} ${r - kr} ${r} ${r}
+          L${r} ${D - R}
+          C${r} ${D - R + kR} ${r + R - kR} ${D} ${r + R} ${D}
+          L${L - r - R} ${D}
+          C${L - r - R + kR} ${D} ${L - r} ${D - R + kR} ${L - r} ${D - R}
+          L${L - r} ${r}
+          C${L - r} ${r - kr} ${L - kr} 0 ${L} 0
+          Z
+        `;
+      } else {
+        const midX = L / 2;
+        return `
+          M0 0
+          C${kr} 0 ${r} ${r - kr} ${r} ${r}
+          L${r} ${D - R}
+          C${r} ${D - R + kR} ${midX - kR} ${D} ${midX} ${D}
+          C${midX + kR} ${D} ${L - r} ${D - R + kR} ${L - r} ${D - R}
+          L${L - r} ${r}
+          C${L - r} ${r - kr} ${L - kr} 0 ${L} 0
+          Z
+        `;
+      }
     }
 
     if (position === 'bottom') {
-      // Mirror of top: screen edge at y=D (in local coords)
-      // Rounded end is on the TOP side (y=0 in local coords)
-      const centerX = L / 2;
-      return `
-        M0 ${D}
-        C${kr} ${D} ${r} ${D - r + kr} ${r} ${D - r}
-        L${r} ${R}
-        C${r} ${R - kR} ${centerX - R + r - kR} 0 ${centerX - R + r} 0
-        L${centerX + R - r} 0
-        C${centerX + R - r + kR} 0 ${L - r} ${R - kR} ${L - r} ${R}
-        L${L - r} ${D - r}
-        C${L - r} ${D - r + kr} ${L - kr} ${D} ${L} ${D}
-        Z
-      `;
+      // Mirror of top
+      const topEdgeLength = L - 2 * r - 2 * R;
+
+      if (topEdgeLength > 0) {
+        return `
+          M0 ${D}
+          C${kr} ${D} ${r} ${D - r + kr} ${r} ${D - r}
+          L${r} ${R}
+          C${r} ${R - kR} ${r + R - kR} 0 ${r + R} 0
+          L${L - r - R} 0
+          C${L - r - R + kR} 0 ${L - r} ${R - kR} ${L - r} ${R}
+          L${L - r} ${D - r}
+          C${L - r} ${D - r + kr} ${L - kr} ${D} ${L} ${D}
+          Z
+        `;
+      } else {
+        const midX = L / 2;
+        return `
+          M0 ${D}
+          C${kr} ${D} ${r} ${D - r + kr} ${r} ${D - r}
+          L${r} ${R}
+          C${r} ${R - kR} ${midX - kR} 0 ${midX} 0
+          C${midX + kR} 0 ${L - r} ${R - kR} ${L - r} ${R}
+          L${L - r} ${D - r}
+          C${L - r} ${D - r + kr} ${L - kr} ${D} ${L} ${D}
+          Z
+        `;
+      }
     }
 
     return '';
