@@ -6,6 +6,9 @@ import { Sizes } from '../styles';
 import signInIcon from '../assets/new/sign_in.svg';
 import dashboardIcon from '../assets/new/dashboard.svg';
 import userIcon from '../assets/new/user.svg';
+import viewIcon from '../assets/new/view.svg';
+import comuniIcon from '../assets/new/comuni.svg';
+import settingIcon from '../assets/new/setting.svg';
 
 interface SidebarNewProps {
   currentView: string;
@@ -79,8 +82,20 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
 
         <BorderButton
           position="left"
-          icon={null}
-          title="Coming soon"
+          icon={<img src={viewIcon} alt="View" style={{ width: 60, height: 60 }} />}
+          title="View"
+        />
+
+        <BorderButton
+          position="left"
+          icon={<img src={comuniIcon} alt="Comuni" style={{ width: 60, height: 60 }} />}
+          title="Comuni"
+        />
+
+        <BorderButton
+          position="left"
+          icon={<img src={settingIcon} alt="Settings" style={{ width: 60, height: 60 }} />}
+          title="Settings"
         />
       </div>
     </aside>
