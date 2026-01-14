@@ -24,8 +24,6 @@ interface SidebarNewProps {
  * - BorderButton left: dashboard, contribuenti, empty
  */
 export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProps) {
-  const stripWidth = 20; // Width of the green connector strip on the left
-
   return (
     <aside
       className="h-full relative"
@@ -34,17 +32,6 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
         backgroundColor: Colors.bg1,
       }}
     >
-      {/* Green connector strip on the left edge (from header to bottom) */}
-      <div
-        style={{
-          position: 'absolute',
-          left: 0,
-          top: Sizes.headerHeight,
-          bottom: 0,
-          width: stripWidth,
-          backgroundColor: Colors.accent1,
-        }}
-      />
 
       {/* Header area - BorderButton top positioned at bottom of header */}
       <div
