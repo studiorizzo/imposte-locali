@@ -30,14 +30,15 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
       style={{
         width: Sizes.sideBarCompact,
         backgroundColor: Colors.bg1,
+        borderRight: '1px solid black', // TEMPORARY - debug border
       }}
     >
 
-      {/* Header area - BorderButton top positioned at bottom of header */}
+      {/* Header area - BorderButton top at screen edge */}
       <div
         style={{
           position: 'absolute',
-          top: Sizes.headerHeight - 80, // Position so button bottom aligns with header bottom
+          top: 0, // Flush with screen edge
           left: (Sizes.sideBarCompact - 100) / 2, // Center horizontally (100 = button width)
         }}
       >
