@@ -27,15 +27,24 @@ export const PageBreaks = {
 // =============================================================================
 
 export const Sizes = {
-  // Sidebar (from Flokk styles.dart)
-  sideBarSm: 150,   // TabletPortrait (768-1023px) - skinnyMode
-  sideBarMed: 200,  // TabletLandscape (1024-1439px)
-  sideBarLg: 290,   // Desktop (≥1440px)
+  // Sidebar (new compact design - 120px for all breakpoints)
+  sideBarCompact: 120,  // Compact mode (all breakpoints)
+  sideBarExpanded: 290, // Expanded mode (all breakpoints)
+  // Legacy values (to be removed after migration)
+  sideBarSm: 120,
+  sideBarMed: 120,
+  sideBarLg: 120,
 
   // Fixed heights
-  headerHeight: 106,
-  topBarHeight: 60,  // Content area top bar (from Flokk main_scaffold_view.dart)
+  headerHeight: 100,    // Updated from 106 to 100
+  topBarHeight: 60,     // Content area top bar (from Flokk main_scaffold_view.dart)
   buttonHeight: 60,
+
+  // Border button dimensions (new design)
+  borderButtonSize: 100,      // Width/height of green protrusion area
+  borderButtonDepth: 80,      // Depth into sidebar/header
+  borderButtonRadius: 40,     // Inner rounded corners
+  borderButtonEdgeRadius: 20, // Edge raccord radius
 
   // Indicator
   indicatorWidth: 6,
