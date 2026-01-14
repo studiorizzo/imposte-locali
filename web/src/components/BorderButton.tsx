@@ -1,5 +1,4 @@
 import { Colors } from '../theme';
-import { Sizes } from '../styles';
 
 type BorderPosition = 'top' | 'left' | 'right' | 'bottom';
 
@@ -12,291 +11,199 @@ interface BorderButtonProps {
 }
 
 /**
- * BorderButton - Button that sits on the border of sidebar/header
+ * BorderButton - Modular button component for sidebar/header borders
  *
- * Based on the Figma mockup (desktop.svg):
- * - Green (#00A086) protrusion: 100x80 with rounded inner corners (radius 40)
- * - Edge raccords: small convex curves (radius 10) connecting to screen edge
- * - Circular button: 60x60, F1F7F0 background, centered in the green area
+ * Structure (single SVG path combining shape + raccords):
+ * - Green shape (#00A086): 80x80 with rounded corners (radius 40) toward interior
+ * - Convex raccords: radius 10 at screen edge corners
+ * - Total size: 100x80 (rest) or 100x100 (selected)
+ * - Circular button: 60x60, #F1F7F0 background
  * - Icon: #116D5C
+ *
+ * The 100px dimension is along the screen edge.
+ * The 80px (or 100px when selected) is the depth into the sidebar/header.
  */
-export function BorderButton({ position, icon, onClick, isSelected: _isSelected, title }: BorderButtonProps) {
-  const buttonSize = Sizes.buttonHeight; // 60
+export function BorderButton({
+  position,
+  icon,
+  onClick,
+  isSelected = false,
+  title,
+}: BorderButtonProps) {
+  const buttonSize = 60;
+  const lengthAlongEdge = 100; // Fixed: 100px along the screen edge
+  const depthRest = 80;        // Rest state depth
+  const depthSelected = 100;   // Selected state depth
+  const depth = isSelected ? depthSelected : depthRest;
+  const innerRadius = 40;      // Radius of rounded inner corners
+  const raccordRadius = 10;    // Radius of edge raccords
 
-  // LEFT position - sidebar buttons (Dashboard, Contacts, etc.)
-  if (position === 'left') {
-    // Total slot: 100px height, green shape 80px wide
-    // Edge raccords: 10px at top and bottom
-    return (
-      <div
+  // Bezier control point offset for quarter circle approximation
+  const k = 0.5523;
+
+  // Generate the combined SVG path (shape + raccords as ONE element)
+  const getPath = () => {
+    const r = raccordRadius;
+    const kr = r * k;
+    const R = innerRadius;
+    const kR = R * k;
+    const L = lengthAlongEdge;
+    const D = depth;
+    const centerY = L / 2; // Center of the rounded end
+
+    if (position === 'left') {
+      // Shape extends from x=0 (screen edge) to x=D
+      // Height is L (100px), centered vertically
+      // Rounded end is on the RIGHT side (x=D)
+      return `
+        M0 0
+        C0 ${kr} ${r - kr} ${r} ${r} ${r}
+        L${D - R} ${r}
+        C${D - R + kR} ${r} ${D} ${centerY - R + r - kR} ${D} ${centerY - R + r}
+        L${D} ${centerY + R - r}
+        C${D} ${centerY + R - r + kR} ${D - R + kR} ${L - r} ${D - R} ${L - r}
+        L${r} ${L - r}
+        C${r - kr} ${L - r} 0 ${L - kr} 0 ${L}
+        Z
+      `;
+    }
+
+    if (position === 'right') {
+      // Mirror of left: extends from x=D to x=0 (screen edge at x=D in local coords)
+      // Rounded end is on the LEFT side (x=0 in local coords)
+      return `
+        M${D} 0
+        C${D} ${kr} ${D - r + kr} ${r} ${D - r} ${r}
+        L${R} ${r}
+        C${R - kR} ${r} 0 ${centerY - R + r - kR} 0 ${centerY - R + r}
+        L0 ${centerY + R - r}
+        C0 ${centerY + R - r + kR} ${R - kR} ${L - r} ${R} ${L - r}
+        L${D - r} ${L - r}
+        C${D - r + kr} ${L - r} ${D} ${L - kr} ${D} ${L}
+        Z
+      `;
+    }
+
+    if (position === 'top') {
+      // Shape extends from y=0 (screen edge) to y=D
+      // Width is L (100px)
+      // Rounded end is on the BOTTOM side (y=D)
+      const centerX = L / 2;
+      return `
+        M0 0
+        C${kr} 0 ${r} ${r - kr} ${r} ${r}
+        L${r} ${D - R}
+        C${r} ${D - R + kR} ${centerX - R + r - kR} ${D} ${centerX - R + r} ${D}
+        L${centerX + R - r} ${D}
+        C${centerX + R - r + kR} ${D} ${L - r} ${D - R + kR} ${L - r} ${D - R}
+        L${L - r} ${r}
+        C${L - r} ${r - kr} ${L - kr} 0 ${L} 0
+        Z
+      `;
+    }
+
+    if (position === 'bottom') {
+      // Mirror of top: screen edge at y=D (in local coords)
+      // Rounded end is on the TOP side (y=0 in local coords)
+      const centerX = L / 2;
+      return `
+        M0 ${D}
+        C${kr} ${D} ${r} ${D - r + kr} ${r} ${D - r}
+        L${r} ${R}
+        C${r} ${R - kR} ${centerX - R + r - kR} 0 ${centerX - R + r} 0
+        L${centerX + R - r} 0
+        C${centerX + R - r + kR} 0 ${L - r} ${R - kR} ${L - r} ${R}
+        L${L - r} ${D - r}
+        C${L - r} ${D - r + kr} ${L - kr} ${D} ${L} ${D}
+        Z
+      `;
+    }
+
+    return '';
+  };
+
+  // Calculate button center position
+  const getButtonCenter = () => {
+    const centerAlongEdge = lengthAlongEdge / 2; // 50
+    const centerDepth = depth / 2;               // 40 or 50
+
+    if (position === 'left') {
+      return { x: centerDepth, y: centerAlongEdge };
+    }
+    if (position === 'right') {
+      return { x: centerDepth, y: centerAlongEdge };
+    }
+    if (position === 'top') {
+      return { x: centerAlongEdge, y: centerDepth };
+    }
+    if (position === 'bottom') {
+      return { x: centerAlongEdge, y: centerDepth };
+    }
+    return { x: 0, y: 0 };
+  };
+
+  // Get container dimensions based on position
+  const getContainerSize = () => {
+    if (position === 'left' || position === 'right') {
+      return { width: depth, height: lengthAlongEdge };
+    }
+    return { width: lengthAlongEdge, height: depth };
+  };
+
+  const containerSize = getContainerSize();
+  const buttonCenter = getButtonCenter();
+
+  return (
+    <div
+      style={{
+        position: 'relative',
+        width: containerSize.width,
+        height: containerSize.height,
+        flexShrink: 0,
+      }}
+    >
+      {/* Green shape with integrated raccords - single SVG path */}
+      <svg
+        width={containerSize.width}
+        height={containerSize.height}
+        viewBox={`0 0 ${containerSize.width} ${containerSize.height}`}
+        style={{ position: 'absolute', top: 0, left: 0 }}
+      >
+        <path
+          d={getPath()}
+          fill={Colors.accent1}
+        />
+      </svg>
+
+      {/* Circular button */}
+      <button
+        onClick={onClick}
+        title={title}
         style={{
-          position: 'relative',
-          width: 100,
-          height: 100,
-          flexShrink: 0,
+          position: 'absolute',
+          left: buttonCenter.x - buttonSize / 2,
+          top: buttonCenter.y - buttonSize / 2,
+          width: buttonSize,
+          height: buttonSize,
+          borderRadius: '50%',
+          backgroundColor: Colors.bg1,
+          border: 'none',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#116D5C',
+          transition: 'filter 0.15s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.filter = 'brightness(0.95)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.filter = 'none';
         }}
       >
-        <svg
-          width={100}
-          height={100}
-          viewBox="0 0 100 100"
-          fill="none"
-          style={{ position: 'absolute', top: 0, left: 0 }}
-        >
-          {/* Top edge raccord - convex curve */}
-          <path
-            d="M0 0C0 5.523 4.477 10 10 10H0V0Z"
-            fill={Colors.accent1}
-          />
-          {/* Main green shape - 80x80 with right side rounded (radius 40) */}
-          <path
-            d="M0 10H40C62.091 10 80 27.909 80 50C80 72.091 62.091 90 40 90H0V10Z"
-            fill={Colors.accent1}
-          />
-          {/* Bottom edge raccord - convex curve */}
-          <path
-            d="M10 90C4.477 90 0 94.477 0 100V90H10Z"
-            fill={Colors.accent1}
-          />
-        </svg>
-
-        {/* Circular button - centered at (40, 50) */}
-        <button
-          onClick={onClick}
-          title={title}
-          style={{
-            position: 'absolute',
-            left: 40 - buttonSize / 2,
-            top: 50 - buttonSize / 2,
-            width: buttonSize,
-            height: buttonSize,
-            borderRadius: '50%',
-            backgroundColor: Colors.bg1,
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#116D5C',
-            transition: 'filter 0.15s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.filter = 'brightness(0.95)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.filter = 'none';
-          }}
-        >
-          {icon}
-        </button>
-      </div>
-    );
-  }
-
-  // TOP position - hamburger menu button
-  if (position === 'top') {
-    // Total slot: 100px width, green shape 80px tall
-    return (
-      <div
-        style={{
-          position: 'relative',
-          width: 100,
-          height: 100,
-          flexShrink: 0,
-        }}
-      >
-        <svg
-          width={100}
-          height={100}
-          viewBox="0 0 100 100"
-          fill="none"
-          style={{ position: 'absolute', top: 0, left: 0 }}
-        >
-          {/* Left edge raccord */}
-          <path
-            d="M0 0C5.523 0 10 4.477 10 10H0V0Z"
-            fill={Colors.accent1}
-          />
-          {/* Main green shape - 80x80 with bottom rounded */}
-          <path
-            d="M10 0V40C10 62.091 27.909 80 50 80C72.091 80 90 62.091 90 40V0H10Z"
-            fill={Colors.accent1}
-          />
-          {/* Right edge raccord */}
-          <path
-            d="M100 0C94.477 0 90 4.477 90 10H100V0Z"
-            fill={Colors.accent1}
-          />
-        </svg>
-
-        {/* Circular button - centered at (50, 40) */}
-        <button
-          onClick={onClick}
-          title={title}
-          style={{
-            position: 'absolute',
-            left: 50 - buttonSize / 2,
-            top: 40 - buttonSize / 2,
-            width: buttonSize,
-            height: buttonSize,
-            borderRadius: '50%',
-            backgroundColor: Colors.bg1,
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#116D5C',
-            transition: 'filter 0.15s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.filter = 'brightness(0.95)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.filter = 'none';
-          }}
-        >
-          {icon}
-        </button>
-      </div>
-    );
-  }
-
-  // BOTTOM position - logout button
-  if (position === 'bottom') {
-    return (
-      <div
-        style={{
-          position: 'relative',
-          width: 100,
-          height: 100,
-          flexShrink: 0,
-        }}
-      >
-        <svg
-          width={100}
-          height={100}
-          viewBox="0 0 100 100"
-          fill="none"
-          style={{ position: 'absolute', top: 0, left: 0 }}
-        >
-          {/* Left edge raccord */}
-          <path
-            d="M0 100C5.523 100 10 95.523 10 90H0V100Z"
-            fill={Colors.accent1}
-          />
-          {/* Main green shape - with top rounded */}
-          <path
-            d="M10 100V60C10 37.909 27.909 20 50 20C72.091 20 90 37.909 90 60V100H10Z"
-            fill={Colors.accent1}
-          />
-          {/* Right edge raccord */}
-          <path
-            d="M100 100C94.477 100 90 95.523 90 90H100V100Z"
-            fill={Colors.accent1}
-          />
-        </svg>
-
-        {/* Circular button - centered at (50, 60) */}
-        <button
-          onClick={onClick}
-          title={title}
-          style={{
-            position: 'absolute',
-            left: 50 - buttonSize / 2,
-            top: 60 - buttonSize / 2,
-            width: buttonSize,
-            height: buttonSize,
-            borderRadius: '50%',
-            backgroundColor: Colors.bg1,
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#116D5C',
-            transition: 'filter 0.15s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.filter = 'brightness(0.95)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.filter = 'none';
-          }}
-        >
-          {icon}
-        </button>
-      </div>
-    );
-  }
-
-  // RIGHT position - header buttons
-  if (position === 'right') {
-    return (
-      <div
-        style={{
-          position: 'relative',
-          width: 100,
-          height: 100,
-          flexShrink: 0,
-        }}
-      >
-        <svg
-          width={100}
-          height={100}
-          viewBox="0 0 100 100"
-          fill="none"
-          style={{ position: 'absolute', top: 0, left: 0 }}
-        >
-          {/* Top edge raccord */}
-          <path
-            d="M100 0C100 5.523 95.523 10 90 10V0H100Z"
-            fill={Colors.accent1}
-          />
-          {/* Main green shape - with left side rounded */}
-          <path
-            d="M100 10H60C37.909 10 20 27.909 20 50C20 72.091 37.909 90 60 90H100V10Z"
-            fill={Colors.accent1}
-          />
-          {/* Bottom edge raccord */}
-          <path
-            d="M90 90C95.523 90 100 94.477 100 100V90H90Z"
-            fill={Colors.accent1}
-          />
-        </svg>
-
-        {/* Circular button - centered at (60, 50) */}
-        <button
-          onClick={onClick}
-          title={title}
-          style={{
-            position: 'absolute',
-            left: 60 - buttonSize / 2,
-            top: 50 - buttonSize / 2,
-            width: buttonSize,
-            height: buttonSize,
-            borderRadius: '50%',
-            backgroundColor: Colors.bg1,
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#116D5C',
-            transition: 'filter 0.15s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.filter = 'brightness(0.95)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.filter = 'none';
-          }}
-        >
-          {icon}
-        </button>
-      </div>
-    );
-  }
-
-  return null;
+        {icon}
+      </button>
+    </div>
+  );
 }

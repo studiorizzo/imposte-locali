@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { ImmobiliStep } from './components/forms';
 import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
-import { MobileDrawer } from './components/Sidebar';
-import { SidebarNew } from './components/SidebarNew';
+import { Sidebar, MobileDrawer } from './components/Sidebar';
 import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
@@ -280,7 +279,7 @@ function App() {
     <div className="h-screen relative overflow-hidden" style={{ backgroundColor: Colors.bg1 }}>
       {/* Sidebar - full height with header area inside (hidden on mobile) */}
       <div className="absolute top-0 bottom-0 left-0">
-        <SidebarNew
+        <Sidebar
           currentView={currentView}
           onNavigate={(view) => setCurrentView(view as ViewType)}
           onCreateContribuente={() => setIsContribuentePanelOpen(true)}
