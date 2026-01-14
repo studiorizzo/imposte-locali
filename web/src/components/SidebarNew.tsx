@@ -16,28 +16,44 @@ interface SidebarNewProps {
 /**
  * New Sidebar component for desktop/tablet
  *
- * Structure:
- * - Width: 120px (compact mode for all breakpoints)
- * - Header: 100px height with BorderButton top (sign_in)
- * - Menu: flex-1 with 3 BorderButton left (dashboard, contribuenti, empty)
+ * Structure (matching Figma design):
+ * - Width: 120px
+ * - Background: bg1 (light)
+ * - Green strip on left edge (20px) connecting buttons
+ * - BorderButton top: sign_in at top edge
+ * - BorderButton left: dashboard, contribuenti, empty
  */
 export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProps) {
+  const stripWidth = 20; // Width of the green connector strip on the left
+
   return (
     <aside
-      className="h-full flex flex-col"
+      className="h-full relative"
       style={{
         width: Sizes.sideBarCompact,
+        backgroundColor: Colors.bg1,
       }}
     >
-      {/* Header section - 100px height, bg1 background */}
+      {/* Green connector strip on the left edge (from header to bottom) */}
       <div
-        className="flex items-end justify-center"
         style={{
-          height: Sizes.headerHeight,
-          backgroundColor: Colors.bg1,
+          position: 'absolute',
+          left: 0,
+          top: Sizes.headerHeight,
+          bottom: 0,
+          width: stripWidth,
+          backgroundColor: Colors.accent1,
+        }}
+      />
+
+      {/* Header area - BorderButton top positioned at bottom of header */}
+      <div
+        style={{
+          position: 'absolute',
+          top: Sizes.headerHeight - 80, // Position so button bottom aligns with header bottom
+          left: (Sizes.sideBarCompact - 100) / 2, // Center horizontally (100 = button width)
         }}
       >
-        {/* BorderButton top - sign_in */}
         <BorderButton
           position="top"
           icon={<img src={signInIcon} alt="Sign In" style={{ width: 60, height: 60 }} />}
@@ -46,16 +62,17 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
         />
       </div>
 
-      {/* Menu section - accent1 background, rounded top-right */}
+      {/* Menu buttons - positioned on left edge */}
       <div
-        className="flex-1 flex flex-col"
         style={{
-          backgroundColor: Colors.accent1,
-          borderTopRightRadius: Sizes.radiusMd,
-          paddingTop: 20, // Space before first button
+          position: 'absolute',
+          top: Sizes.headerHeight + 20, // Gap after header
+          left: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 0, // No gap - buttons stack directly
         }}
       >
-        {/* BorderButton left - Dashboard */}
         <BorderButton
           position="left"
           icon={<img src={dashboardIcon} alt="Dashboard" style={{ width: 60, height: 60 }} />}
@@ -64,7 +81,6 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
           title="Dashboard"
         />
 
-        {/* BorderButton left - Contribuenti */}
         <BorderButton
           position="left"
           icon={<img src={userIcon} alt="Contribuenti" style={{ width: 60, height: 60 }} />}
@@ -73,7 +89,6 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
           title="Contribuenti"
         />
 
-        {/* BorderButton left - Empty (placeholder for future) */}
         <BorderButton
           position="left"
           icon={null}
