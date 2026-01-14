@@ -185,21 +185,23 @@ export function BorderButton({
   };
 
   // Calculate button center position
+  // Button must be centered in the virtual 80x80 circle (R=40) at the internal corner
+  // This means: center at (D - R, L/2) for left position
   const getButtonCenter = () => {
     const centerAlongEdge = lengthAlongEdge / 2; // 50
-    const centerDepth = depth / 2;               // 40 or 50
+    const centerDepth = depth - innerRadius;     // 80-40=40 or 100-40=60
 
     if (position === 'left') {
       return { x: centerDepth, y: centerAlongEdge };
     }
     if (position === 'right') {
-      return { x: centerDepth, y: centerAlongEdge };
+      return { x: innerRadius, y: centerAlongEdge }; // Mirror: R from left edge
     }
     if (position === 'top') {
       return { x: centerAlongEdge, y: centerDepth };
     }
     if (position === 'bottom') {
-      return { x: centerAlongEdge, y: centerDepth };
+      return { x: centerAlongEdge, y: innerRadius }; // Mirror: R from top edge
     }
     return { x: 0, y: 0 };
   };
