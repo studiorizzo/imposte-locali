@@ -4,7 +4,7 @@ type BorderPosition = 'top' | 'left' | 'right' | 'bottom';
 
 interface BorderButtonProps {
   position: BorderPosition;
-  icon: React.ReactNode;
+  icon: React.ReactNode | null;
   onClick?: () => void;
   isSelected?: boolean;
   title?: string;
