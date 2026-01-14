@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ImmobiliStep } from './components/forms';
 import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
-import { Sidebar, MobileDrawer } from './components/Sidebar';
+// Old Sidebar removed - will be replaced with new design
 import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
@@ -12,7 +12,7 @@ import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
 import { Colors } from './theme';
 import { Sizes, Insets, PageBreaks, Animations, Durations } from './styles';
-import imuendoLogo from './assets/imuendo-logo-animated.svg';
+// Old logo removed - will be replaced with new design
 import './index.css';
 
 type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
@@ -105,7 +105,6 @@ function App() {
   const [selectedContribuente, setSelectedContribuente] = useState<ContribuenteFullData | null>(null);
   const [selectedContribuenteId, setSelectedContribuenteId] = useState<string | null>(null);
   const [isEditingContribuente, setIsEditingContribuente] = useState(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
   const isMobile = useIsMobile();
   const { panelWidth, useSingleColumn, leftMenuWidth, showLeftMenu } = usePanelLayout();
@@ -263,28 +262,13 @@ function App() {
     // TODO: Implement actual search functionality
   };
 
-  // Close drawer on resize to non-mobile
-  useEffect(() => {
-    if (!isMobile && isDrawerOpen) {
-      setIsDrawerOpen(false);
-    }
-  }, [isMobile, isDrawerOpen]);
-
   // Calculate if content should be hidden (single column + panel open)
   const showPanel = isPanelVisible;
   const hideContent = showPanel && useSingleColumn;
-  const contentRightOffset = showPanel && !useSingleColumn ? panelWidth : 0;
 
   return (
     <div className="h-screen relative overflow-hidden" style={{ backgroundColor: Colors.bg1 }}>
-      {/* Sidebar - full height with header area inside (hidden on mobile) */}
-      <div className="absolute top-0 bottom-0 left-0">
-        <Sidebar
-          currentView={currentView}
-          onNavigate={(view) => setCurrentView(view as ViewType)}
-          onCreateContribuente={() => setIsContribuentePanelOpen(true)}
-        />
-      </div>
+      {/* Sidebar placeholder - will be implemented with new design */}
 
       {/* Content Area Stack - positioned like Flokk */}
       <div
@@ -307,40 +291,6 @@ function App() {
             marginTop: Insets.l,
           }}
         >
-          {/* Hamburger button on mobile - same color as imuendo (headerTitle) */}
-          {isMobile && (
-            <button
-              onClick={() => setIsDrawerOpen(true)}
-              className="flex items-center justify-center mr-3"
-              style={{
-                width: 40,
-                height: 40,
-                color: Colors.headerTitle,
-                transition: `color ${Animations.button.duration} ${Animations.button.easing}`,
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = Colors.accent1Dark}
-              onMouseLeave={(e) => e.currentTarget.style.color = Colors.headerTitle}
-            >
-              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          )}
-
-          {/* Centered logo on mobile - width 200px */}
-          {isMobile && !isSearchActive && (
-            <img
-              src={imuendoLogo}
-              alt="imuendo"
-              className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
-              style={{
-                width: 200,
-                height: 'auto',
-                zIndex: 10,
-              }}
-            />
-          )}
-
           {/* SearchBar */}
           <SearchBar
             onSearch={handleSearch}
@@ -368,20 +318,7 @@ function App() {
         </main>
       </div>
 
-      {/* Mobile Drawer */}
-      <MobileDrawer
-        isOpen={isDrawerOpen}
-        onClose={() => setIsDrawerOpen(false)}
-        currentView={currentView}
-        onNavigate={(view) => {
-          setCurrentView(view as ViewType);
-          setIsDrawerOpen(false);
-        }}
-        onCreateContribuente={() => {
-          setIsContribuentePanelOpen(true);
-          setIsDrawerOpen(false);
-        }}
-      />
+      {/* Mobile drawer removed - will implement new mobile layout */}
 
       {/* Contribuente Panel - Info or Form depending on state */}
       {isPanelVisible && (
