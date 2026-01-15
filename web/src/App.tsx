@@ -201,9 +201,9 @@ function App() {
     setIsSearchSelected(false);
   };
 
-  // Search toggle handler - deselects current view when search is selected
+  // Search select handler - only selects, doesn't toggle (consistent with navigation buttons)
   const handleSearchToggle = () => {
-    setIsSearchSelected(!isSearchSelected);
+    setIsSearchSelected(true);
   };
 
   const renderContent = () => {
