@@ -15,6 +15,9 @@ interface HeaderProps {
   onSearchToggle?: () => void;
   onSearchCancel?: () => void;
   onClosingComplete?: () => void;  // Called when search closing animation finishes
+  isUserAddSelected?: boolean;
+  isAutomateSelected?: boolean;
+  panelWidth?: number;  // For shifting buttons left when panel opens
 }
 
 // Generate SVG path for expanding search shape (same logic as BorderButton)
@@ -57,7 +60,7 @@ function getExpandingPath(width: number, depth: number) {
   }
 }
 
-export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle, onSearchCancel, onClosingComplete }: HeaderProps) {
+export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle, onSearchCancel, onClosingComplete, isUserAddSelected, isAutomateSelected, panelWidth = 0 }: HeaderProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -352,26 +355,29 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         </div>
       )}
 
-      {/* Right side BorderButtons */}
+      {/* Right side BorderButtons - shift left when panel opens */}
       <div
         ref={rightButtonsRef}
         className="absolute flex"
         style={{
-          right: 0,
+          right: panelWidth,
           top: 0,
           gap: 0,
+          transition: `right ${Durations.medium}ms ease-out`,
         }}
       >
         <BorderButton
           position="top"
           icon={<img src={userAddIcon} alt="Nuovo contribuente" style={{ width: 60, height: 60 }} />}
           onClick={onCreateContribuente}
+          isSelected={isUserAddSelected}
           title="Nuovo contribuente"
         />
         <BorderButton
           position="top"
           icon={<img src={automateIcon} alt="Automate" style={{ width: 60, height: 60 }} />}
           onClick={onOpenImmobileForm}
+          isSelected={isAutomateSelected}
           title="Automate"
         />
       </div>
