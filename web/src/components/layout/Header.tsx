@@ -108,17 +108,17 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
     if (isSearchSelected) {
       const timer = setTimeout(() => {
         setIsExpanded(true);
-      }, Durations.medium);  // 350ms - wait for BorderButton extension
+      }, Durations.fastest);  // 150ms - quick delay before expansion
       return () => clearTimeout(timer);
     }
   }, [isSearchSelected]);
 
-  // Track when fully expanded (850ms after selection)
+  // Track when fully expanded (150ms + 500ms = 650ms after selection)
   useEffect(() => {
     if (isSearchSelected) {
       const timer = setTimeout(() => {
         hasFullyExpandedRef.current = true;
-      }, Durations.medium + Durations.mediumSlow);  // 350ms + 500ms = 850ms
+      }, Durations.fastest + Durations.mediumSlow);  // 150ms + 500ms = 650ms
       return () => {
         clearTimeout(timer);
       };
