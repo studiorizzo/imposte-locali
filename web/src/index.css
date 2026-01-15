@@ -40,7 +40,7 @@
   /* Header SearchBar placeholder - same color as text */
   .header-search-input::placeholder {
     color: #101D1B;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
   .btn {
