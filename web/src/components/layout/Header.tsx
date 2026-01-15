@@ -1,5 +1,6 @@
 import { Colors } from '../../theme';
-import { Sizes, Fonts } from '../../styles';
+import { Sizes, Insets } from '../../styles';
+import imuendoLogo from '../../assets/logos/imuendo_h60.svg';
 
 export function Header() {
   return (
@@ -8,19 +9,19 @@ export function Header() {
       style={{
         backgroundColor: Colors.bg1,
         height: Sizes.headerHeight,
+        paddingLeft: Insets.l,
+        borderBottom: '1px solid black', // TEMPORARY - debug border
       }}
     >
-      <div className="w-full px-4">
-        <h1
-          className="text-2xl font-bold"
-          style={{
-            fontFamily: Fonts.heading,
-            color: Colors.headerTitle,
-          }}
-        >
-          imuendo
-        </h1>
-      </div>
+      <img
+        src={imuendoLogo}
+        alt="imuendo"
+        draggable={false}
+        style={{
+          height: 60,
+          width: 'auto',
+        }}
+      />
     </header>
   );
 }
