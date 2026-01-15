@@ -3,12 +3,12 @@ import { Colors } from '../theme';
 import { Sizes } from '../styles';
 
 // Import icons
-import signInIcon from '../assets/new/sign_in.svg';
-import dashboardIcon from '../assets/new/dashboard.svg';
-import userIcon from '../assets/new/user.svg';
-import viewIcon from '../assets/new/view.svg';
-import comuniIcon from '../assets/new/comuni.svg';
-import settingIcon from '../assets/new/setting.svg';
+import signInIcon from '../assets/buttons/sign_in.svg';
+import dashboardIcon from '../assets/buttons/dashboard.svg';
+import userIcon from '../assets/buttons/user.svg';
+import viewIcon from '../assets/buttons/view.svg';
+import comuniIcon from '../assets/buttons/comuni.svg';
+import settingIcon from '../assets/buttons/setting.svg';
 
 interface SidebarNewProps {
   currentView: string;

@@ -3,6 +3,7 @@ import { ImmobiliStep } from './components/forms';
 import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
 import { SidebarNew } from './components/SidebarNew';
+import { Header } from './components/layout/Header';
 import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
@@ -278,10 +279,26 @@ function App() {
         </div>
       )}
 
-      {/* Content Area Stack - positioned like Flokk */}
+      {/* Header - positioned above content area */}
+      {!isMobile && (
+        <div
+          className="absolute"
+          style={{
+            top: 0,
+            left: leftMenuWidth,
+            right: 0,
+            height: Sizes.headerHeight,
+          }}
+        >
+          <Header />
+        </div>
+      )}
+
+      {/* Content Area Stack - positioned below header */}
       <div
-        className="absolute top-0 bottom-0 flex flex-col"
+        className="absolute bottom-0 flex flex-col"
         style={{
+          top: isMobile ? 0 : Sizes.headerHeight,
           left: leftMenuWidth,
           right: isPanelAnimating && !useSingleColumn ? panelWidth : 0,
           opacity: hideContent ? 0 : 1,
