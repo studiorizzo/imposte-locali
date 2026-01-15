@@ -13,7 +13,6 @@ import settingIcon from '../assets/buttons/setting.svg';
 interface SidebarNewProps {
   currentView: string;
   onNavigate: (view: string) => void;
-  onSignIn?: () => void;
 }
 
 /**
@@ -26,7 +25,7 @@ interface SidebarNewProps {
  * - BorderButton top: sign_in at top edge
  * - BorderButton left: dashboard, contribuenti, empty
  */
-export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProps) {
+export function SidebarNew({ currentView, onNavigate }: SidebarNewProps) {
   return (
     <aside
       className="h-full relative"
@@ -48,7 +47,8 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
         <BorderButton
           position="top"
           icon={<img src={signInIcon} alt="Sign In" style={{ width: 60, height: 60 }} />}
-          onClick={onSignIn}
+          onClick={() => onNavigate('login')}
+          isSelected={currentView === 'login'}
           title="Accedi"
         />
       </div>
@@ -82,20 +82,26 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
 
         <BorderButton
           position="left"
-          icon={<img src={viewIcon} alt="View" style={{ width: 60, height: 60 }} />}
-          title="View"
+          icon={<img src={viewIcon} alt="Accertamento" style={{ width: 60, height: 60 }} />}
+          onClick={() => onNavigate('accertamento')}
+          isSelected={currentView === 'accertamento'}
+          title="Accertamento"
         />
 
         <BorderButton
           position="left"
-          icon={<img src={comuniIcon} alt="Comuni" style={{ width: 60, height: 60 }} />}
-          title="Comuni"
+          icon={<img src={comuniIcon} alt="Aliquote" style={{ width: 60, height: 60 }} />}
+          onClick={() => onNavigate('aliquote')}
+          isSelected={currentView === 'aliquote'}
+          title="Aliquote"
         />
 
         <BorderButton
           position="left"
-          icon={<img src={settingIcon} alt="Settings" style={{ width: 60, height: 60 }} />}
-          title="Settings"
+          icon={<img src={settingIcon} alt="Impostazioni" style={{ width: 60, height: 60 }} />}
+          onClick={() => onNavigate('impostazioni')}
+          isSelected={currentView === 'impostazioni'}
+          title="Impostazioni"
         />
       </div>
     </aside>

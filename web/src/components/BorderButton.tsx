@@ -235,7 +235,7 @@ export function BorderButton({
       >
         <path
           d={getPath()}
-          fill={Colors.accent1}
+          fill={isSelected ? Colors.accent1Selected : Colors.accent1}
         />
       </svg>
 
