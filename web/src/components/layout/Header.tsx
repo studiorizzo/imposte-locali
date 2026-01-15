@@ -188,10 +188,18 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
   // Show search elements when selected OR during closing animation
   const showSearchElements = isSearchSelected || isClosing;
 
+  // Simple check: shape is open when left padding is 0
+  const isShapeOpen = expandedLeft === 0;
+
   // SearchBar position: center at 40px from bottom = center at y=60 from top
   // SearchBar height = 60, so top = 60 - 30 = 30 from top of shape
   const searchBarTop = 30;
   const searchBarHeight = 60;
+
+  // SearchBar width: explicit values for CSS animation
+  // When open (expandedLeft === 0): shape width - 40px padding
+  // When closed: 60px circle
+  const searchBarWidth = isShapeOpen ? (rightButtonsLeft - 40) : 60;
 
   return (
     <header
@@ -212,7 +220,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         style={{
           height: 50,
           width: 'auto',
-          opacity: (isExpanded && !isClosing) ? 0 : 1,
+          opacity: isShapeOpen ? 0 : 1,
           transition: `opacity ${Durations.medium}ms ease-out`,
         }}
       />
@@ -223,10 +231,10 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         style={{
           marginLeft: 10,
           alignSelf: 'flex-start',
-          // Hidden when expanded (not closing), visible otherwise
-          opacity: (isExpanded && !isClosing) ? 0 : 1,
+          // Hidden when shape is open, visible otherwise
+          opacity: isShapeOpen ? 0 : 1,
           transition: `opacity ${Durations.fast}ms ease-out`,
-          pointerEvents: (isExpanded && !isClosing) ? 'none' : 'auto',
+          pointerEvents: isShapeOpen ? 'none' : 'auto',
         }}
       >
         <BorderButton
@@ -247,7 +255,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             left: expandedLeft,
             width: expandedWidth,
             height: depth,
-            pointerEvents: (isExpanded && !isClosing) ? 'auto' : 'none',
+            pointerEvents: isShapeOpen ? 'auto' : 'none',
             // Use mediumSlow (500ms) for both opening and closing (for testing)
             transition: `left ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out`,
           }}
@@ -271,21 +279,19 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             style={{
               position: 'absolute',
               top: searchBarTop,
-              // When expanded (not closing): full width with padding
-              // When not expanded or closing: 60px circle centered in shape
-              left: (isExpanded && !isClosing) ? 20 : 20,
-              right: (isExpanded && !isClosing) ? 20 : undefined,
-              width: (isExpanded && !isClosing) ? undefined : 60,
+              left: 20,
+              // Use explicit width for CSS animation (can't transition from auto to fixed)
+              width: searchBarWidth,
               height: searchBarHeight,
               backgroundColor: '#F1F7F0',
               borderRadius: 30,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: (isExpanded && !isClosing) ? 'flex-start' : 'center',
+              justifyContent: isShapeOpen ? 'flex-start' : 'center',
               // paddingLeft: 10 keeps Cancel button centered in left semicircle (center at x=30)
-              paddingLeft: (isExpanded && !isClosing) ? 10 : 0,
-              paddingRight: (isExpanded && !isClosing) ? 20 : 0,
-              transition: `left ${Durations.mediumSlow}ms ease-out, right ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out, padding ${Durations.mediumSlow}ms ease-out`,
+              paddingLeft: isShapeOpen ? 10 : 0,
+              paddingRight: isShapeOpen ? 20 : 0,
+              transition: `width ${Durations.mediumSlow}ms ease-out, padding ${Durations.mediumSlow}ms ease-out`,
             }}
           >
             {/* Cancel button - always visible, red color */}
@@ -315,8 +321,8 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
               />
             </button>
 
-            {/* Input field - only visible when expanded and not closing */}
-            {(isExpanded && !isClosing) && (
+            {/* Input field - only visible when shape is open */}
+            {isShapeOpen && (
               <input
                 ref={searchInputRef}
                 type="text"
