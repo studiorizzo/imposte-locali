@@ -109,6 +109,7 @@ function App() {
   const [selectedContribuenteId, setSelectedContribuenteId] = useState<string | null>(null);
   const [isEditingContribuente, setIsEditingContribuente] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isSearchSelected, setIsSearchSelected] = useState(false);
   const isMobile = useIsMobile();
   const { panelWidth, useSingleColumn, leftMenuWidth, showLeftMenu } = usePanelLayout();
 
@@ -192,6 +193,17 @@ function App() {
 
   const handleCloseImmobileForm = () => {
     setIsImmobilePanelOpen(false);
+  };
+
+  // Navigation handler - deselects search when navigating
+  const handleNavigate = (view: string) => {
+    setCurrentView(view as ViewType);
+    setIsSearchSelected(false);
+  };
+
+  // Search toggle handler - deselects current view when search is selected
+  const handleSearchToggle = () => {
+    setIsSearchSelected(!isSearchSelected);
   };
 
   const renderContent = () => {
@@ -299,8 +311,8 @@ function App() {
       {!isMobile && (
         <div className="absolute top-0 bottom-0 left-0">
           <SidebarNew
-            currentView={currentView}
-            onNavigate={(view) => setCurrentView(view as ViewType)}
+            currentView={isSearchSelected ? '' : currentView}
+            onNavigate={handleNavigate}
           />
         </div>
       )}
@@ -316,7 +328,12 @@ function App() {
             height: Sizes.headerHeight,
           }}
         >
-          <Header onCreateContribuente={handleCreateContribuente} onOpenImmobileForm={handleOpenImmobileForm} />
+          <Header
+            onCreateContribuente={handleCreateContribuente}
+            onOpenImmobileForm={handleOpenImmobileForm}
+            isSearchSelected={isSearchSelected}
+            onSearchToggle={handleSearchToggle}
+          />
         </div>
       )}
 

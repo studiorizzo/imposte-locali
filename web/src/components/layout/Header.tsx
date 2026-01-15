@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { Colors } from '../../theme';
-import { Sizes, Insets } from '../../styles';
+import { Sizes } from '../../styles';
 import { BorderButton } from '../BorderButton';
 import imuendoLogo from '../../assets/logos/imuendo_h60.svg';
 import searchIcon from '../../assets/buttons/search.svg';
@@ -10,11 +9,11 @@ import automateIcon from '../../assets/buttons/automate.svg';
 interface HeaderProps {
   onCreateContribuente?: () => void;
   onOpenImmobileForm?: () => void;
+  isSearchSelected?: boolean;
+  onSearchToggle?: () => void;
 }
 
-export function Header({ onCreateContribuente, onOpenImmobileForm }: HeaderProps) {
-  const [isSearchSelected, setIsSearchSelected] = useState(false);
-
+export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle }: HeaderProps) {
   return (
     <header
       className="flex items-center relative"
@@ -41,7 +40,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm }: HeaderProps
         <BorderButton
           position="top"
           icon={<img src={searchIcon} alt="Search" style={{ width: 60, height: 60 }} />}
-          onClick={() => setIsSearchSelected(!isSearchSelected)}
+          onClick={onSearchToggle}
           isSelected={isSearchSelected}
           title="Cerca"
         />
