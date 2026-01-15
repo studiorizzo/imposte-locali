@@ -149,7 +149,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
           setSearchQuery('');
           closingTimerRef.current = null;
           onClosingComplete?.();  // Notify parent that closing is complete
-        }, Durations.mediumSlow);  // 500ms - just the CSS transition duration
+        }, Durations.medium);  // 350ms - faster closing
       } else {
         // Not fully expanded, close immediately
         setIsExpanded(false);
@@ -259,8 +259,8 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             width: expandedWidth,
             height: depth,
             pointerEvents: isShapeOpen ? 'auto' : 'none',
-            // Use mediumSlow (500ms) for both opening and closing (for testing)
-            transition: `left ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out`,
+            // Use mediumSlow (500ms) for opening, medium (350ms) for closing
+            transition: `left ${isClosing ? Durations.medium : Durations.mediumSlow}ms ease-out, width ${isClosing ? Durations.medium : Durations.mediumSlow}ms ease-out`,
           }}
         >
           {/* SVG shape with raccords */}
@@ -294,7 +294,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
               // paddingLeft: 10 keeps Cancel button centered in left semicircle (center at x=30)
               paddingLeft: isShapeOpen ? 10 : 0,
               paddingRight: isShapeOpen ? 20 : 0,
-              transition: `width ${Durations.mediumSlow}ms ease-out, padding ${Durations.mediumSlow}ms ease-out`,
+              transition: `width ${isClosing ? Durations.medium : Durations.mediumSlow}ms ease-out, padding ${isClosing ? Durations.medium : Durations.mediumSlow}ms ease-out`,
             }}
           >
             {/* Cancel button - always visible, red color */}
