@@ -6,7 +6,11 @@ import searchIcon from '../../assets/buttons/search.svg';
 import userAddIcon from '../../assets/buttons/user_add.svg';
 import automateIcon from '../../assets/buttons/automate.svg';
 
-export function Header() {
+interface HeaderProps {
+  onCreateContribuente?: () => void;
+}
+
+export function Header({ onCreateContribuente }: HeaderProps) {
   return (
     <header
       className="flex items-center relative"
@@ -49,6 +53,7 @@ export function Header() {
         <BorderButton
           position="top"
           icon={<img src={userAddIcon} alt="Nuovo contribuente" style={{ width: 60, height: 60 }} />}
+          onClick={onCreateContribuente}
           title="Nuovo contribuente"
         />
         <BorderButton

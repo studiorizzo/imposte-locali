@@ -176,6 +176,13 @@ function App() {
     }
   };
 
+  const handleCreateContribuente = () => {
+    setSelectedContribuente(null);
+    setSelectedContribuenteId(null);
+    setIsEditingContribuente(false);
+    setIsContribuentePanelOpen(true);
+  };
+
   const renderContent = () => {
     switch (currentView) {
       case 'dashboard':
@@ -290,7 +297,7 @@ function App() {
             height: Sizes.headerHeight,
           }}
         >
-          <Header />
+          <Header onCreateContribuente={handleCreateContribuente} />
         </div>
       )}
 
