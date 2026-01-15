@@ -14,33 +14,91 @@ interface HeaderProps {
   onSearchToggle?: () => void;
 }
 
+// Generate SVG path for expanding search shape (same logic as BorderButton)
+function getExpandingPath(width: number, depth: number) {
+  const r = 10;  // Edge raccord radius
+  const R = 40;  // Internal corner radius
+  const k = 0.5523; // Bezier control point for quarter circle
+  const kr = r * k;
+  const kR = R * k;
+  const L = width;
+  const D = depth;
+
+  // Same path as BorderButton position="top" but with dynamic width
+  const bottomEdgeLength = L - 2 * r - 2 * R;
+
+  if (bottomEdgeLength > 0) {
+    return `
+      M0 0
+      C${kr} 0 ${r} ${r - kr} ${r} ${r}
+      L${r} ${D - R}
+      C${r} ${D - R + kR} ${r + R - kR} ${D} ${r + R} ${D}
+      L${L - r - R} ${D}
+      C${L - r - R + kR} ${D} ${L - r} ${D - R + kR} ${L - r} ${D - R}
+      L${L - r} ${r}
+      C${L - r} ${r - kr} ${L - kr} 0 ${L} 0
+      Z
+    `;
+  } else {
+    const midX = L / 2;
+    return `
+      M0 0
+      C${kr} 0 ${r} ${r - kr} ${r} ${r}
+      L${r} ${D - R}
+      C${r} ${D - R + kR} ${midX - kR} ${D} ${midX} ${D}
+      C${midX + kR} ${D} ${L - r} ${D - R + kR} ${L - r} ${D - R}
+      L${L - r} ${r}
+      C${L - r} ${r - kr} ${L - kr} 0 ${L} 0
+      Z
+    `;
+  }
+}
+
 export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle }: HeaderProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const searchButtonRef = useRef<HTMLDivElement>(null);
   const rightButtonsRef = useRef<HTMLDivElement>(null);
-  const [rightButtonsLeft, setRightButtonsLeft] = useState(0);
+  const logoRef = useRef<HTMLImageElement>(null);
 
-  // Measure right buttons position
+  // Positions for animation
+  const [searchButtonLeft, setSearchButtonLeft] = useState(0);
+  const [rightButtonsLeft, setRightButtonsLeft] = useState(0);
+  const [logoWidth, setLogoWidth] = useState(0);
+
+  // Measure positions
   useEffect(() => {
-    const updatePosition = () => {
+    const updatePositions = () => {
+      const headerEl = searchButtonRef.current?.closest('header');
+      if (!headerEl) return;
+      const headerRect = headerEl.getBoundingClientRect();
+
+      if (searchButtonRef.current) {
+        const rect = searchButtonRef.current.getBoundingClientRect();
+        setSearchButtonLeft(rect.left - headerRect.left);
+      }
       if (rightButtonsRef.current) {
         const rect = rightButtonsRef.current.getBoundingClientRect();
-        const headerRect = rightButtonsRef.current.parentElement?.getBoundingClientRect();
-        if (headerRect) {
-          setRightButtonsLeft(rect.left - headerRect.left);
-        }
+        setRightButtonsLeft(rect.left - headerRect.left);
+      }
+      if (logoRef.current) {
+        setLogoWidth(logoRef.current.offsetWidth);
       }
     };
-    updatePosition();
-    window.addEventListener('resize', updatePosition);
-    return () => window.removeEventListener('resize', updatePosition);
+
+    // Initial measurement after render
+    const timer = setTimeout(updatePositions, 50);
+    window.addEventListener('resize', updatePositions);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updatePositions);
+    };
   }, []);
 
   // Phase 2: Expand after BorderButton extends
   useEffect(() => {
     if (isSearchSelected) {
-      // Wait for BorderButton extension animation (300ms) then expand
       const timer = setTimeout(() => {
         setIsExpanded(true);
       }, Durations.slow);
@@ -56,16 +114,23 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
     if (isExpanded) {
       const timer = setTimeout(() => {
         searchInputRef.current?.focus();
-      }, 50);
+      }, Durations.slow);
       return () => clearTimeout(timer);
     }
   }, [isExpanded]);
 
-  // Calculate positions
-  // Logo: paddingLeft 10px, logo ~100px wide
-  // Search button starts at: 10 + logoWidth + 10 = ~120px
-  const searchButtonLeft = 120; // approximate initial position
-  const expandedRight = rightButtonsLeft > 0 ? rightButtonsLeft : 200; // where user_add starts
+  // Animation values
+  const depth = 100; // Selected BorderButton depth
+  const buttonWidth = 100; // Original BorderButton width
+
+  // Expanded shape dimensions
+  const expandedLeft = isExpanded ? 0 : searchButtonLeft;
+  const expandedWidth = isExpanded ? rightButtonsLeft : buttonWidth;
+
+  // SearchBar position: center at 40px from bottom = center at y=60 from top
+  // SearchBar height = 60, so top = 60 - 30 = 30 from top of shape
+  const searchBarTop = 30;
+  const searchBarHeight = 60;
 
   return (
     <header
@@ -74,10 +139,12 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         backgroundColor: Colors.bg1,
         height: Sizes.headerHeight,
         paddingLeft: 10,
+        borderBottom: '1px solid black', // TEMPORARY - debug border
       }}
     >
-      {/* Logo - fades out when search expands */}
+      {/* Logo - fades out when search expands past it */}
       <img
+        ref={logoRef}
         src={imuendoLogo}
         alt="imuendo"
         draggable={false}
@@ -89,8 +156,9 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         }}
       />
 
-      {/* Search BorderButton - visible when not expanded */}
+      {/* Search BorderButton container */}
       <div
+        ref={searchButtonRef}
         style={{
           marginLeft: 10,
           alignSelf: 'flex-start',
@@ -108,110 +176,74 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         />
       </div>
 
-      {/* Expanded Search Bar - appears after BorderButton extends */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          height: Sizes.headerHeight,
-          display: 'flex',
-          alignItems: 'center',
-          paddingLeft: 20,
-          paddingRight: 20,
-          // Animate width expansion
-          width: isExpanded ? expandedRight : 100,
-          opacity: isSearchSelected ? 1 : 0,
-          pointerEvents: isExpanded ? 'auto' : 'none',
-          overflow: 'hidden',
-          transition: `width ${Durations.slow}ms ease-out, opacity ${Durations.fast}ms ease-out`,
-        }}
-      >
-        {/* Search input container - pill shape */}
+      {/* Expanding search shape - appears when selected, expands in phase 2 */}
+      {isSearchSelected && (
         <div
           style={{
-            width: '100%',
-            height: 60,
-            backgroundColor: Colors.accent1,
-            borderRadius: 30,
-            display: 'flex',
-            alignItems: 'center',
-            paddingLeft: 20,
-            paddingRight: 20,
-            opacity: isExpanded ? 1 : 0,
-            transform: isExpanded ? 'scale(1)' : 'scale(0.95)',
-            transition: `opacity ${Durations.medium}ms ease-out, transform ${Durations.medium}ms ease-out`,
+            position: 'absolute',
+            top: 0,
+            left: expandedLeft,
+            width: expandedWidth,
+            height: depth,
+            pointerEvents: isExpanded ? 'auto' : 'none',
+            transition: `left ${Durations.slow}ms ease-out, width ${Durations.slow}ms ease-out`,
           }}
         >
-          {/* Search icon */}
+          {/* SVG shape with raccords */}
           <svg
-            width={24}
-            height={24}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={Colors.surface}
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{ flexShrink: 0 }}
+            width="100%"
+            height={depth}
+            viewBox={`0 0 ${expandedWidth} ${depth}`}
+            preserveAspectRatio="none"
+            style={{ position: 'absolute', top: 0, left: 0 }}
           >
-            <circle cx="11" cy="11" r="8" />
-            <path d="M21 21l-4.35-4.35" />
+            <path
+              d={getExpandingPath(expandedWidth, depth)}
+              fill={Colors.accent1Selected}
+            />
           </svg>
 
-          {/* Input field */}
-          <input
-            ref={searchInputRef}
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Cerca contribuenti..."
+          {/* SearchBar inside the expanded shape */}
+          <div
             style={{
-              flex: 1,
-              height: '100%',
-              marginLeft: 12,
-              backgroundColor: 'transparent',
-              border: 'none',
-              outline: 'none',
-              fontFamily: Fonts.primary,
-              fontSize: 16,
-              color: Colors.surface,
+              position: 'absolute',
+              top: searchBarTop,
+              left: 20,
+              right: 20,
+              height: searchBarHeight,
+              backgroundColor: '#F1F7F0',
+              borderRadius: 30,
+              display: 'flex',
+              alignItems: 'center',
+              paddingLeft: 20,
+              paddingRight: 20,
+              opacity: isExpanded ? 1 : 0,
+              transition: `opacity ${Durations.medium}ms ease-out`,
             }}
-          />
-
-          {/* Clear button */}
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
+          >
+            {/* Input field */}
+            <input
+              ref={searchInputRef}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Cerca..."
               style={{
-                background: 'none',
+                flex: 1,
+                height: '100%',
+                backgroundColor: 'transparent',
                 border: 'none',
-                cursor: 'pointer',
-                padding: 4,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                outline: 'none',
+                fontFamily: Fonts.primary,
+                fontSize: 16,
+                color: Colors.txt,
               }}
-            >
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke={Colors.surface}
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
-          )}
+            />
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* Right side BorderButtons - positioned absolute */}
+      {/* Right side BorderButtons */}
       <div
         ref={rightButtonsRef}
         className="absolute flex"
