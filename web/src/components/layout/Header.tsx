@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { Colors } from '../../theme';
-import { Sizes, Durations, Fonts } from '../../styles';
+import { Sizes, Durations, Fonts, Curves } from '../../styles';
 import { BorderButton } from '../BorderButton';
 import imuendoLogo from '../../assets/logos/imuendo_h60.svg';
 import searchIcon from '../../assets/buttons/search.svg';
@@ -363,7 +363,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
           right: panelWidth,
           top: 0,
           gap: 0,
-          transition: `right ${Durations.medium}ms ease-out`,
+          transition: `right ${Durations.medium}ms ${Curves.easeOut}`,
         }}
       >
         <BorderButton
