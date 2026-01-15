@@ -110,7 +110,10 @@ function App() {
   const [isSearchSelected, setIsSearchSelected] = useState(false);
   const [isSearchClosing, setIsSearchClosing] = useState(false);
   const [pendingView, setPendingView] = useState<ViewType | null>(null);
-  const [pendingHeaderAction, setPendingHeaderAction] = useState<'userAdd' | 'automate' | null>(null);
+  const [pendingShapeSelection, setPendingShapeSelection] = useState<'userAdd' | 'automate' | null>(null);
+  // Shape selection is separate from panel open - shape waits for search to close
+  const [userAddShapeSelected, setUserAddShapeSelected] = useState(false);
+  const [automateShapeSelected, setAutomateShapeSelected] = useState(false);
   const isMobile = useIsMobile();
   const { panelWidth, useSingleColumn, leftMenuWidth, showLeftMenu } = usePanelLayout();
 
@@ -178,46 +181,54 @@ function App() {
     } else {
       // Creating new - close panel entirely
       setIsContribuentePanelOpen(false);
+      setUserAddShapeSelected(false);
     }
   };
 
   const handleCreateContribuente = () => {
-    if (isSearchSelected) {
-      // Search is open - close it first and queue the action
-      setPendingHeaderAction('userAdd');
-      setIsSearchClosing(true);
-      setIsSearchSelected(false);
-    } else if (isSearchClosing) {
-      // Already closing - just update the pending action
-      setPendingHeaderAction('userAdd');
+    // Always open panel immediately (for shift animation and panel opening)
+    setSelectedContribuente(null);
+    setSelectedContribuenteId(null);
+    setIsEditingContribuente(false);
+    setIsContribuentePanelOpen(true);
+    setIsImmobilePanelOpen(false);  // Close other panel
+    setAutomateShapeSelected(false);  // Deselect other shape
+
+    if (isSearchSelected || isSearchClosing) {
+      // Search is open/closing - defer shape selection until search closes
+      setPendingShapeSelection('userAdd');
+      if (isSearchSelected) {
+        setIsSearchClosing(true);
+        setIsSearchSelected(false);
+      }
     } else {
-      // No search animation - open panel immediately
-      setSelectedContribuente(null);
-      setSelectedContribuenteId(null);
-      setIsEditingContribuente(false);
-      setIsContribuentePanelOpen(true);
-      setIsImmobilePanelOpen(false);  // Close other panel
+      // No search animation - activate shape immediately
+      setUserAddShapeSelected(true);
     }
   };
 
   const handleOpenImmobileForm = () => {
-    if (isSearchSelected) {
-      // Search is open - close it first and queue the action
-      setPendingHeaderAction('automate');
-      setIsSearchClosing(true);
-      setIsSearchSelected(false);
-    } else if (isSearchClosing) {
-      // Already closing - just update the pending action
-      setPendingHeaderAction('automate');
+    // Always open panel immediately (for shift animation and panel opening)
+    setIsImmobilePanelOpen(true);
+    setIsContribuentePanelOpen(false);  // Close other panel
+    setUserAddShapeSelected(false);  // Deselect other shape
+
+    if (isSearchSelected || isSearchClosing) {
+      // Search is open/closing - defer shape selection until search closes
+      setPendingShapeSelection('automate');
+      if (isSearchSelected) {
+        setIsSearchClosing(true);
+        setIsSearchSelected(false);
+      }
     } else {
-      // No search animation - open panel immediately
-      setIsImmobilePanelOpen(true);
-      setIsContribuentePanelOpen(false);  // Close other panel
+      // No search animation - activate shape immediately
+      setAutomateShapeSelected(true);
     }
   };
 
   const handleCloseImmobileForm = () => {
     setIsImmobilePanelOpen(false);
+    setAutomateShapeSelected(false);
   };
 
   // Navigation handler - deselects search when navigating
@@ -256,18 +267,13 @@ function App() {
       setCurrentView(pendingView);
       setPendingView(null);
     }
-    // If there's a pending header action, execute it now
-    if (pendingHeaderAction === 'userAdd') {
-      setSelectedContribuente(null);
-      setSelectedContribuenteId(null);
-      setIsEditingContribuente(false);
-      setIsContribuentePanelOpen(true);
-      setIsImmobilePanelOpen(false);
-      setPendingHeaderAction(null);
-    } else if (pendingHeaderAction === 'automate') {
-      setIsImmobilePanelOpen(true);
-      setIsContribuentePanelOpen(false);
-      setPendingHeaderAction(null);
+    // If there's a pending shape selection, activate it now
+    if (pendingShapeSelection === 'userAdd') {
+      setUserAddShapeSelected(true);
+      setPendingShapeSelection(null);
+    } else if (pendingShapeSelection === 'automate') {
+      setAutomateShapeSelected(true);
+      setPendingShapeSelection(null);
     }
   };
 
@@ -394,8 +400,8 @@ function App() {
             onSearchToggle={handleSearchToggle}
             onSearchCancel={handleSearchCancel}
             onClosingComplete={handleSearchClosingComplete}
-            isUserAddSelected={isContribuentePanelOpen}
-            isAutomateSelected={isImmobilePanelOpen}
+            isUserAddSelected={userAddShapeSelected}
+            isAutomateSelected={automateShapeSelected}
             panelWidth={isPanelAnimating ? panelWidth : 0}
           />
         </div>
