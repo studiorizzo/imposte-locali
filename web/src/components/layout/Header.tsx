@@ -103,7 +103,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
     if (isSearchSelected) {
       const timer = setTimeout(() => {
         setIsExpanded(true);
-      }, Durations.slow);
+      }, Durations.slower);  // 500ms - wait for BorderButton extension
       return () => clearTimeout(timer);
     } else {
       setIsExpanded(false);
