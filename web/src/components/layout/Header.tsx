@@ -85,7 +85,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
           height: 50,
           width: 'auto',
           opacity: isExpanded ? 0 : 1,
-          transition: `opacity ${Durations.med}ms ease-out`,
+          transition: `opacity ${Durations.medium}ms ease-out`,
         }}
       />
 
@@ -140,7 +140,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             paddingRight: 20,
             opacity: isExpanded ? 1 : 0,
             transform: isExpanded ? 'scale(1)' : 'scale(0.95)',
-            transition: `opacity ${Durations.med}ms ease-out, transform ${Durations.med}ms ease-out`,
+            transition: `opacity ${Durations.medium}ms ease-out, transform ${Durations.medium}ms ease-out`,
           }}
         >
           {/* Search icon */}
