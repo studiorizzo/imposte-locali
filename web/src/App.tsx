@@ -4,7 +4,6 @@ import { Dashboard } from './components/Dashboard';
 import { RiepilogoCalcolo } from './components/RiepilogoCalcolo';
 import { SidebarNew } from './components/SidebarNew';
 import { Header } from './components/layout/Header';
-import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
 import { ImmobileFormPanel } from './components/ImmobileFormPanel';
@@ -108,7 +107,6 @@ function App() {
   const [selectedContribuente, setSelectedContribuente] = useState<ContribuenteFullData | null>(null);
   const [selectedContribuenteId, setSelectedContribuenteId] = useState<string | null>(null);
   const [isEditingContribuente, setIsEditingContribuente] = useState(false);
-  const [isSearchActive, setIsSearchActive] = useState(false);
   const [isSearchSelected, setIsSearchSelected] = useState(false);
   const isMobile = useIsMobile();
   const { panelWidth, useSingleColumn, leftMenuWidth, showLeftMenu } = usePanelLayout();
@@ -295,12 +293,6 @@ function App() {
     }
   };
 
-  // Handle search (placeholder - will integrate with actual search later)
-  const handleSearch = (query: string) => {
-    console.log('Searching:', query);
-    // TODO: Implement actual search functionality
-  };
-
   // Calculate if content should be hidden (single column + panel open)
   const showPanel = isPanelVisible;
   const hideContent = showPanel && useSingleColumn;
@@ -349,26 +341,7 @@ function App() {
           minWidth: 400,
         }}
       >
-        {/* TopBar - from Flokk: topBarHeight = 60, padding = Insets.l (Insets.m on mobile) */}
-        <div
-          className="flex items-center relative flex-shrink-0"
-          style={{
-            height: Sizes.topBarHeight,
-            paddingLeft: isMobile ? Insets.mGutter : Insets.lGutter,
-            paddingRight: isMobile ? Insets.mGutter : Insets.lGutter,
-            marginTop: Insets.l,
-          }}
-        >
-          {/* SearchBar */}
-          <SearchBar
-            onSearch={handleSearch}
-            onActiveChange={setIsSearchActive}
-            placeholder="Cerca contribuenti"
-            narrowMode={isMobile}
-          />
-        </div>
-
-        {/* Main Content - with top padding for spacing after SearchBar */}
+        {/* Main Content */}
         {/* For 'contribuenti' view: no overflow here, ContribuentiPage handles its own scroll */}
         <main
           className={`flex-1 ${currentView !== 'contribuenti' ? 'overflow-auto' : 'overflow-hidden'}`}
