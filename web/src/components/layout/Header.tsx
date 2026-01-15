@@ -149,7 +149,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
           setSearchQuery('');
           closingTimerRef.current = null;
           onClosingComplete?.();  // Notify parent that closing is complete
-        }, Durations.medium + Durations.mediumSlow);  // 850ms reverse animation (same as opening for testing)
+        }, Durations.mediumSlow);  // 500ms - just the CSS transition duration
       } else {
         // Not fully expanded, close immediately
         setIsExpanded(false);
