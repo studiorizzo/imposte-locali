@@ -234,6 +234,12 @@ function App() {
   // Navigation handler - deselects search when navigating
   // If search is open and fully expanded, queue the navigation until closing animation completes
   const handleNavigate = (view: string) => {
+    // Close any open form panel
+    setIsContribuentePanelOpen(false);
+    setIsImmobilePanelOpen(false);
+    setUserAddShapeSelected(false);
+    setAutomateShapeSelected(false);
+
     if (isSearchSelected) {
       // Search is open - close it and queue the navigation
       setPendingView(view as ViewType);
@@ -250,6 +256,12 @@ function App() {
 
   // Search select handler - only selects, doesn't toggle (consistent with navigation buttons)
   const handleSearchToggle = () => {
+    // Close any open form panel
+    setIsContribuentePanelOpen(false);
+    setIsImmobilePanelOpen(false);
+    setUserAddShapeSelected(false);
+    setAutomateShapeSelected(false);
+
     setIsSearchSelected(true);
   };
 
