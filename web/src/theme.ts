@@ -28,6 +28,7 @@ export const Colors = {
   accent1: '#00a086',
   accent1Dark: '#00856f',
   accent1Darker: '#006b5a',
+  accent1Selected: '#116d5c',  // BorderButton selected state
   accent2: '#f09433',
   accent3: '#5bc91a',
 

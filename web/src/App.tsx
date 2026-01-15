@@ -7,16 +7,17 @@ import { Header } from './components/layout/Header';
 import { SearchBar } from './components/SearchBar';
 import { ContribuenteFormPanel } from './components/ContribuenteFormPanel';
 import type { ContribuenteFormData } from './components/ContribuenteFormPanel';
+import { ImmobileFormPanel } from './components/ImmobileFormPanel';
 import { ContribuentiPage, ContribuenteInfoPanel } from './components/contribuenti';
 import type { ContribuenteFullData } from './components/contribuenti';
+import { AliquotePage, AccertamentoPage, ImpostazioniPage, LoginPage } from './components/pages';
 import { calcolaRiepilogoIMU, ANNO_RIFERIMENTO } from '@lib';
 import type { DatiImmobile, RiepilogoIMU } from '@lib';
 import { Colors } from './theme';
 import { Sizes, Insets, PageBreaks, Animations, Durations } from './styles';
-// Old logo removed - will be replaced with new design
 import './index.css';
 
-type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti';
+type ViewType = 'dashboard' | 'form' | 'riepilogo' | 'contribuenti' | 'aliquote' | 'accertamento' | 'impostazioni' | 'login';
 
 // Convert pixels to inches (assuming 96 DPI standard)
 const pxToInches = (px: number) => px / 96;
@@ -100,6 +101,7 @@ function App() {
   const [immobili, setImmobili] = useState<DatiImmobile[]>([]);
   const [riepilogo, setRiepilogo] = useState<RiepilogoIMU | null>(null);
   const [isContribuentePanelOpen, setIsContribuentePanelOpen] = useState(false);
+  const [isImmobilePanelOpen, setIsImmobilePanelOpen] = useState(false);
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const [isPanelAnimating, setIsPanelAnimating] = useState(false);
   const [contribuenti, setContribuenti] = useState<ContribuenteFormData[]>([]);
@@ -111,8 +113,9 @@ function App() {
   const { panelWidth, useSingleColumn, leftMenuWidth, showLeftMenu } = usePanelLayout();
 
   // Handle panel open/close animations (like Flokk)
+  const anyPanelOpen = isContribuentePanelOpen || isImmobilePanelOpen;
   useEffect(() => {
-    if (isContribuentePanelOpen) {
+    if (anyPanelOpen) {
       setIsPanelVisible(true);
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -126,7 +129,7 @@ function App() {
       }, Durations.slow);
       return () => clearTimeout(timer);
     }
-  }, [isContribuentePanelOpen]);
+  }, [anyPanelOpen]);
 
   // Scroll to top quando cambia la vista
   useEffect(() => {
@@ -181,6 +184,14 @@ function App() {
     setSelectedContribuenteId(null);
     setIsEditingContribuente(false);
     setIsContribuentePanelOpen(true);
+  };
+
+  const handleOpenImmobileForm = () => {
+    setIsImmobilePanelOpen(true);
+  };
+
+  const handleCloseImmobileForm = () => {
+    setIsImmobilePanelOpen(false);
   };
 
   const renderContent = () => {
@@ -259,6 +270,14 @@ function App() {
             }}
           />
         );
+      case 'aliquote':
+        return <AliquotePage />;
+      case 'accertamento':
+        return <AccertamentoPage />;
+      case 'impostazioni':
+        return <ImpostazioniPage />;
+      case 'login':
+        return <LoginPage />;
       default:
         return null;
     }
@@ -297,7 +316,7 @@ function App() {
             height: Sizes.headerHeight,
           }}
         >
-          <Header onCreateContribuente={handleCreateContribuente} />
+          <Header onCreateContribuente={handleCreateContribuente} onOpenImmobileForm={handleOpenImmobileForm} />
         </div>
       )}
 
@@ -352,7 +371,7 @@ function App() {
 
       {/* Mobile drawer removed - will implement new mobile layout */}
 
-      {/* Contribuente Panel - Info or Form depending on state */}
+      {/* Side Panel - Immobile or Contribuente */}
       {isPanelVisible && (
         useSingleColumn ? (
           // Single column mode: panel fills width minus left menu
@@ -365,7 +384,12 @@ function App() {
               transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
             }}
           >
-            {selectedContribuente && !isEditingContribuente ? (
+            {isImmobilePanelOpen ? (
+              <ImmobileFormPanel
+                onClose={handleCloseImmobileForm}
+                onSave={handleCloseImmobileForm}
+              />
+            ) : selectedContribuente && !isEditingContribuente ? (
               <ContribuenteInfoPanel
                 contribuente={selectedContribuente}
                 onClose={() => {
@@ -406,7 +430,12 @@ function App() {
               transition: `transform ${Animations.panel.duration} ${Animations.panel.easing}`,
             }}
           >
-            {selectedContribuente && !isEditingContribuente ? (
+            {isImmobilePanelOpen ? (
+              <ImmobileFormPanel
+                onClose={handleCloseImmobileForm}
+                onSave={handleCloseImmobileForm}
+              />
+            ) : selectedContribuente && !isEditingContribuente ? (
               <ContribuenteInfoPanel
                 contribuente={selectedContribuente}
                 onClose={() => {

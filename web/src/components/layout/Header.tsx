@@ -8,9 +8,10 @@ import automateIcon from '../../assets/buttons/automate.svg';
 
 interface HeaderProps {
   onCreateContribuente?: () => void;
+  onOpenImmobileForm?: () => void;
 }
 
-export function Header({ onCreateContribuente }: HeaderProps) {
+export function Header({ onCreateContribuente, onOpenImmobileForm }: HeaderProps) {
   return (
     <header
       className="flex items-center relative"
@@ -59,6 +60,7 @@ export function Header({ onCreateContribuente }: HeaderProps) {
         <BorderButton
           position="top"
           icon={<img src={automateIcon} alt="Automate" style={{ width: 60, height: 60 }} />}
+          onClick={onOpenImmobileForm}
           title="Automate"
         />
       </div>
