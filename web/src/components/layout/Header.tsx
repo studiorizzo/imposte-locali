@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Colors } from '../../theme';
 import { Sizes, Insets } from '../../styles';
 import { BorderButton } from '../BorderButton';
@@ -12,13 +13,15 @@ interface HeaderProps {
 }
 
 export function Header({ onCreateContribuente, onOpenImmobileForm }: HeaderProps) {
+  const [isSearchSelected, setIsSearchSelected] = useState(false);
+
   return (
     <header
       className="flex items-center relative"
       style={{
         backgroundColor: Colors.bg1,
         height: Sizes.headerHeight,
-        paddingLeft: Insets.l,
+        paddingLeft: 10,
         borderBottom: '1px solid black', // TEMPORARY - debug border
       }}
     >
@@ -33,11 +36,13 @@ export function Header({ onCreateContribuente, onOpenImmobileForm }: HeaderProps
         }}
       />
 
-      {/* Search BorderButton - 20px after logo, aligned to top */}
-      <div style={{ marginLeft: 20, alignSelf: 'flex-start' }}>
+      {/* Search BorderButton - 10px after logo, aligned to top */}
+      <div style={{ marginLeft: 10, alignSelf: 'flex-start' }}>
         <BorderButton
           position="top"
           icon={<img src={searchIcon} alt="Search" style={{ width: 60, height: 60 }} />}
+          onClick={() => setIsSearchSelected(!isSearchSelected)}
+          isSelected={isSearchSelected}
           title="Cerca"
         />
       </div>
