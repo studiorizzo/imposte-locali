@@ -188,7 +188,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             width: expandedWidth,
             height: depth,
             pointerEvents: isExpanded ? 'auto' : 'none',
-            transition: `left ${Durations.slow}ms ease-out, width ${Durations.slow}ms ease-out`,
+            transition: `left ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out`,
           }}
         >
           {/* SVG shape with raccords */}
@@ -224,7 +224,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
               // paddingLeft: 10 keeps Cancel button centered in left semicircle (center at x=30)
               paddingLeft: isExpanded ? 10 : 0,
               paddingRight: isExpanded ? 20 : 0,
-              transition: `left ${Durations.slow}ms ease-out, right ${Durations.slow}ms ease-out, width ${Durations.slow}ms ease-out, padding ${Durations.slow}ms ease-out`,
+              transition: `left ${Durations.mediumSlow}ms ease-out, right ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out, padding ${Durations.mediumSlow}ms ease-out`,
             }}
           >
             {/* Cancel button - always visible, red color */}

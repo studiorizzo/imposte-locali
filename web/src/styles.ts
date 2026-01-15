@@ -105,9 +105,8 @@ export const Durations = {
   fastest: 150,
   fast: 250,
   medium: 350,
+  mediumSlow: 500,  // Indicator animation, search expansion
   slow: 700,
-  // Custom (not in Flokk)
-  slower: 500,  // Indicator animation
 } as const;
 
 // CSS duration strings
@@ -115,8 +114,8 @@ export const DurationCSS = {
   fastest: '150ms',
   fast: '250ms',
   medium: '350ms',
+  mediumSlow: '500ms',
   slow: '700ms',
-  slower: '500ms',
 } as const;
 
 // Easing functions
@@ -131,7 +130,7 @@ export const Curves = {
 export const Animations = {
   // Indicator movement (0.5s easeOutBack)
   indicator: {
-    duration: DurationCSS.slower,
+    duration: DurationCSS.mediumSlow,
     easing: Curves.easeOutBack,
   },
   // Panel slide (0.35s easeOut) - matches Flokk AnimatedPanel duration
