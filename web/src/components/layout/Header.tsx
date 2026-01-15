@@ -32,8 +32,8 @@ export function Header({ onCreateContribuente }: HeaderProps) {
         }}
       />
 
-      {/* Search BorderButton - 20px after logo */}
-      <div style={{ marginLeft: 20 }}>
+      {/* Search BorderButton - 20px after logo, aligned to top */}
+      <div style={{ marginLeft: 20, alignSelf: 'flex-start' }}>
         <BorderButton
           position="top"
           icon={<img src={searchIcon} alt="Search" style={{ width: 60, height: 60 }} />}
