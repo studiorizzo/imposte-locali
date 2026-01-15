@@ -27,13 +27,13 @@ export const PageBreaks = {
 // =============================================================================
 
 export const Sizes = {
-  // Sidebar (new compact design - 120px for all breakpoints)
-  sideBarCompact: 120,  // Compact mode (all breakpoints)
+  // Sidebar (new compact design - 100px for all breakpoints)
+  sideBarCompact: 100,  // Compact mode (all breakpoints)
   sideBarExpanded: 290, // Expanded mode (all breakpoints)
   // Legacy values (to be removed after migration)
-  sideBarSm: 120,
-  sideBarMed: 120,
-  sideBarLg: 120,
+  sideBarSm: 100,
+  sideBarMed: 100,
+  sideBarLg: 100,
 
   // Fixed heights
   headerHeight: 100,    // Updated from 106 to 100

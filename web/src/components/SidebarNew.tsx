@@ -42,7 +42,7 @@ export function SidebarNew({ currentView, onNavigate, onSignIn }: SidebarNewProp
         style={{
           position: 'absolute',
           top: 0, // Flush with screen edge
-          left: (Sizes.sideBarCompact - 100) / 2, // Center horizontally (100 = button width)
+          left: 0, // Flush with left edge
         }}
       >
         <BorderButton
