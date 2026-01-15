@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { Colors } from '../../theme';
 import { Sizes, Durations, Fonts } from '../../styles';
 import { BorderButton } from '../BorderButton';
@@ -126,8 +126,8 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
     // and reset there after the animation completes.
   }, [isSearchSelected]);
 
-  // Detect close and trigger reverse animation
-  useEffect(() => {
+  // Detect close and trigger reverse animation - useLayoutEffect to set isClosing BEFORE paint
+  useLayoutEffect(() => {
     // Detect transition from selected to not selected
     if (prevIsSearchSelected.current && !isSearchSelected) {
       // Clear any existing closing timer
