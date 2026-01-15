@@ -221,13 +221,14 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
               transition: `opacity ${Durations.medium}ms ease-out`,
             }}
           >
-            {/* Input field */}
+            {/* Input field - same typography as content SearchBar */}
             <input
               ref={searchInputRef}
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cerca..."
+              placeholder="Cerca in imuendo"
+              className="header-search-input"
               style={{
                 flex: 1,
                 height: '100%',
@@ -235,8 +236,10 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
                 border: 'none',
                 outline: 'none',
                 fontFamily: Fonts.primary,
-                fontSize: 16,
-                color: Colors.txt,
+                fontSize: 14,
+                fontWeight: 400,
+                letterSpacing: 0,
+                color: Colors.txtDark,
               }}
             />
           </div>
