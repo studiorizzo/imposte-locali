@@ -121,9 +121,9 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
       return () => {
         clearTimeout(timer);
       };
-    } else {
-      hasFullyExpandedRef.current = false;
     }
+    // NOTE: Don't reset hasFullyExpandedRef here! It's checked by the closing useEffect
+    // and reset there after the animation completes.
   }, [isSearchSelected]);
 
   // Detect close and trigger reverse animation
@@ -135,7 +135,10 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         clearTimeout(closingTimerRef.current);
       }
 
-      if (hasFullyExpandedRef.current) {
+      const wasFullyExpanded = hasFullyExpandedRef.current;
+      hasFullyExpandedRef.current = false;  // Reset here
+
+      if (wasFullyExpanded) {
         // Start closing animation
         setIsClosing(true);
         // After animation, reset states
