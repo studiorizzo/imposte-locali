@@ -185,8 +185,9 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
   const expandedLeft = (isExpanded && !isClosing) ? 0 : searchButtonLeft;
   const expandedWidth = (isExpanded && !isClosing) ? rightButtonsLeft : buttonWidth;
 
-  // Show search elements when selected OR during closing animation
-  const showSearchElements = isSearchSelected || isClosing;
+  // Show search elements when selected OR during closing animation OR still expanded
+  // isExpanded keeps element in DOM during first render after X click (before isClosing is set)
+  const showSearchElements = isSearchSelected || isClosing || isExpanded;
 
   // Simple check: shape is open when left padding is 0
   const isShapeOpen = expandedLeft === 0;
