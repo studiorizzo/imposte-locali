@@ -17,6 +17,7 @@
 export const Colors = {
   // Text
   txt: '#000000',
+  txtDark: '#101D1B',  // Header search bar text
   accentTxt: '#ffffff',
 
   // Backgrounds
