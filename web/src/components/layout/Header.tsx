@@ -58,11 +58,14 @@ function getExpandingPath(width: number, depth: number) {
 
 export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle, onSearchCancel }: HeaderProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+  const [hasFullyExpanded, setHasFullyExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchButtonRef = useRef<HTMLDivElement>(null);
   const rightButtonsRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
+  const prevIsSearchSelected = useRef(isSearchSelected);
 
   // Positions for animation
   const [searchButtonLeft, setSearchButtonLeft] = useState(0);
@@ -105,29 +108,65 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         setIsExpanded(true);
       }, Durations.medium);  // 350ms - wait for BorderButton extension
       return () => clearTimeout(timer);
-    } else {
-      setIsExpanded(false);
-      setSearchQuery('');
     }
   }, [isSearchSelected]);
 
+  // Track when fully expanded (850ms after selection)
+  useEffect(() => {
+    if (isSearchSelected) {
+      const timer = setTimeout(() => {
+        setHasFullyExpanded(true);
+      }, Durations.medium + Durations.mediumSlow);  // 350ms + 500ms = 850ms
+      return () => clearTimeout(timer);
+    } else {
+      setHasFullyExpanded(false);
+    }
+  }, [isSearchSelected]);
+
+  // Detect close and trigger reverse animation
+  useEffect(() => {
+    // Detect transition from selected to not selected
+    if (prevIsSearchSelected.current && !isSearchSelected) {
+      if (hasFullyExpanded) {
+        // Start closing animation
+        setIsClosing(true);
+        // After animation, reset states
+        const timer = setTimeout(() => {
+          setIsClosing(false);
+          setIsExpanded(false);
+          setSearchQuery('');
+        }, Durations.medium);  // 350ms reverse animation
+        return () => clearTimeout(timer);
+      } else {
+        // Not fully expanded, close immediately
+        setIsExpanded(false);
+        setSearchQuery('');
+      }
+    }
+    prevIsSearchSelected.current = isSearchSelected;
+  }, [isSearchSelected, hasFullyExpanded]);
+
   // Focus input when expanded
   useEffect(() => {
-    if (isExpanded) {
+    if (isExpanded && !isClosing) {
       const timer = setTimeout(() => {
         searchInputRef.current?.focus();
       }, Durations.mediumSlow);  // 500ms - sync with expansion animation
       return () => clearTimeout(timer);
     }
-  }, [isExpanded]);
+  }, [isExpanded, isClosing]);
 
   // Animation values
   const depth = 100; // Selected BorderButton depth
   const buttonWidth = 100; // Original BorderButton width
 
   // Expanded shape dimensions
-  const expandedLeft = isExpanded ? 0 : searchButtonLeft;
-  const expandedWidth = isExpanded ? rightButtonsLeft : buttonWidth;
+  // When closing, animate back to original position
+  const expandedLeft = (isExpanded && !isClosing) ? 0 : searchButtonLeft;
+  const expandedWidth = (isExpanded && !isClosing) ? rightButtonsLeft : buttonWidth;
+
+  // Show search elements when selected OR during closing animation
+  const showSearchElements = isSearchSelected || isClosing;
 
   // SearchBar position: center at 40px from bottom = center at y=60 from top
   // SearchBar height = 60, so top = 60 - 30 = 30 from top of shape
@@ -144,7 +183,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         borderBottom: '1px solid black', // TEMPORARY - debug border
       }}
     >
-      {/* Logo - fades out when search expands past it */}
+      {/* Logo - fades out when search expands, fades in when closing */}
       <img
         ref={logoRef}
         src={imuendoLogo}
@@ -153,7 +192,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         style={{
           height: 50,
           width: 'auto',
-          opacity: isExpanded ? 0 : 1,
+          opacity: (isExpanded && !isClosing) ? 0 : 1,
           transition: `opacity ${Durations.medium}ms ease-out`,
         }}
       />
@@ -164,9 +203,10 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         style={{
           marginLeft: 10,
           alignSelf: 'flex-start',
-          opacity: isExpanded ? 0 : 1,
+          // Hidden when expanded (not closing), visible otherwise
+          opacity: (isExpanded && !isClosing) ? 0 : 1,
           transition: `opacity ${Durations.fast}ms ease-out`,
-          pointerEvents: isExpanded ? 'none' : 'auto',
+          pointerEvents: (isExpanded && !isClosing) ? 'none' : 'auto',
         }}
       >
         <BorderButton
@@ -178,8 +218,8 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         />
       </div>
 
-      {/* Expanding search shape - appears when selected, expands in phase 2 */}
-      {isSearchSelected && (
+      {/* Expanding search shape - appears when selected, contracts when closing */}
+      {showSearchElements && (
         <div
           style={{
             position: 'absolute',
@@ -187,8 +227,9 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             left: expandedLeft,
             width: expandedWidth,
             height: depth,
-            pointerEvents: isExpanded ? 'auto' : 'none',
-            transition: `left ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out`,
+            pointerEvents: (isExpanded && !isClosing) ? 'auto' : 'none',
+            // Use mediumSlow (500ms) for opening, medium (350ms) for closing
+            transition: `left ${isClosing ? Durations.medium : Durations.mediumSlow}ms ease-out, width ${isClosing ? Durations.medium : Durations.mediumSlow}ms ease-out`,
           }}
         >
           {/* SVG shape with raccords */}
@@ -205,26 +246,26 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             />
           </svg>
 
-          {/* SearchBar inside the expanded shape - starts as circle, expands to pill */}
+          {/* SearchBar inside the expanded shape - starts as circle, expands to pill, contracts when closing */}
           <div
             style={{
               position: 'absolute',
               top: searchBarTop,
-              // When not expanded: center the 60px circle at button position (50px from left edge of shape)
-              // When expanded: full width with padding
-              left: isExpanded ? 20 : 20,
-              right: isExpanded ? 20 : undefined,
-              width: isExpanded ? undefined : 60,
+              // When expanded (not closing): full width with padding
+              // When not expanded or closing: 60px circle centered in shape
+              left: (isExpanded && !isClosing) ? 20 : 20,
+              right: (isExpanded && !isClosing) ? 20 : undefined,
+              width: (isExpanded && !isClosing) ? undefined : 60,
               height: searchBarHeight,
               backgroundColor: '#F1F7F0',
               borderRadius: 30,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: isExpanded ? 'flex-start' : 'center',
+              justifyContent: (isExpanded && !isClosing) ? 'flex-start' : 'center',
               // paddingLeft: 10 keeps Cancel button centered in left semicircle (center at x=30)
-              paddingLeft: isExpanded ? 10 : 0,
-              paddingRight: isExpanded ? 20 : 0,
-              transition: `left ${Durations.mediumSlow}ms ease-out, right ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out, padding ${Durations.mediumSlow}ms ease-out`,
+              paddingLeft: (isExpanded && !isClosing) ? 10 : 0,
+              paddingRight: (isExpanded && !isClosing) ? 20 : 0,
+              transition: `left ${Durations.medium}ms ease-out, right ${Durations.medium}ms ease-out, width ${Durations.medium}ms ease-out, padding ${Durations.medium}ms ease-out`,
             }}
           >
             {/* Cancel button - always visible, red color */}
@@ -254,8 +295,8 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
               />
             </button>
 
-            {/* Input field - only visible when expanded */}
-            {isExpanded && (
+            {/* Input field - only visible when expanded and not closing */}
+            {(isExpanded && !isClosing) && (
               <input
                 ref={searchInputRef}
                 type="text"
