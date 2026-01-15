@@ -221,7 +221,8 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
               display: 'flex',
               alignItems: 'center',
               justifyContent: isExpanded ? 'flex-start' : 'center',
-              paddingLeft: isExpanded ? 20 : 0,
+              // paddingLeft: 10 keeps Cancel button centered in left semicircle (center at x=30)
+              paddingLeft: isExpanded ? 10 : 0,
               paddingRight: isExpanded ? 20 : 0,
               transition: `left ${Durations.slow}ms ease-out, right ${Durations.slow}ms ease-out, width ${Durations.slow}ms ease-out, padding ${Durations.slow}ms ease-out`,
             }}
