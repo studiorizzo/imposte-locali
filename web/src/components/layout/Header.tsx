@@ -266,7 +266,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
                 style={{
                   flex: 1,
                   height: '100%',
-                  marginLeft: 10,  // Placeholder starts at 60px from left (semicircle end)
+                  marginLeft: 10,  // Placeholder starts 30px from semicircle center
                   backgroundColor: 'transparent',
                   border: 'none',
                   outline: 'none',
