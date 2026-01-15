@@ -14,6 +14,7 @@ interface HeaderProps {
   isSearchSelected?: boolean;
   onSearchToggle?: () => void;
   onSearchCancel?: () => void;
+  onClosingComplete?: () => void;  // Called when search closing animation finishes
 }
 
 // Generate SVG path for expanding search shape (same logic as BorderButton)
@@ -56,7 +57,7 @@ function getExpandingPath(width: number, depth: number) {
   }
 }
 
-export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle, onSearchCancel }: HeaderProps) {
+export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle, onSearchCancel, onClosingComplete }: HeaderProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -141,12 +142,13 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
       if (wasFullyExpanded) {
         // Start closing animation
         setIsClosing(true);
-        // After animation, reset states
+        // After animation, reset states and notify parent
         closingTimerRef.current = setTimeout(() => {
           setIsClosing(false);
           setIsExpanded(false);
           setSearchQuery('');
           closingTimerRef.current = null;
+          onClosingComplete?.();  // Notify parent that closing is complete
         }, Durations.medium + Durations.mediumSlow);  // 850ms reverse animation (same as opening for testing)
       } else {
         // Not fully expanded, close immediately

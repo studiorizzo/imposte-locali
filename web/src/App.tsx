@@ -108,6 +108,8 @@ function App() {
   const [selectedContribuenteId, setSelectedContribuenteId] = useState<string | null>(null);
   const [isEditingContribuente, setIsEditingContribuente] = useState(false);
   const [isSearchSelected, setIsSearchSelected] = useState(false);
+  const [isSearchClosing, setIsSearchClosing] = useState(false);
+  const [pendingView, setPendingView] = useState<ViewType | null>(null);
   const isMobile = useIsMobile();
   const { panelWidth, useSingleColumn, leftMenuWidth, showLeftMenu } = usePanelLayout();
 
@@ -194,9 +196,20 @@ function App() {
   };
 
   // Navigation handler - deselects search when navigating
+  // If search is open and fully expanded, queue the navigation until closing animation completes
   const handleNavigate = (view: string) => {
-    setCurrentView(view as ViewType);
-    setIsSearchSelected(false);
+    if (isSearchSelected) {
+      // Search is open - close it and queue the navigation
+      setPendingView(view as ViewType);
+      setIsSearchClosing(true);
+      setIsSearchSelected(false);
+    } else if (isSearchClosing) {
+      // Already closing - just update the pending view
+      setPendingView(view as ViewType);
+    } else {
+      // No search animation in progress - navigate immediately
+      setCurrentView(view as ViewType);
+    }
   };
 
   // Search select handler - only selects, doesn't toggle (consistent with navigation buttons)
@@ -206,7 +219,18 @@ function App() {
 
   // Search cancel handler - closes the search
   const handleSearchCancel = () => {
+    setIsSearchClosing(true);
     setIsSearchSelected(false);
+  };
+
+  // Called when search closing animation completes
+  const handleSearchClosingComplete = () => {
+    setIsSearchClosing(false);
+    // If there's a pending view, navigate to it now
+    if (pendingView) {
+      setCurrentView(pendingView);
+      setPendingView(null);
+    }
   };
 
   const renderContent = () => {
@@ -308,7 +332,7 @@ function App() {
       {!isMobile && (
         <div className="absolute top-0 bottom-0 left-0">
           <SidebarNew
-            currentView={isSearchSelected ? '' : currentView}
+            currentView={(isSearchSelected || isSearchClosing) ? '' : currentView}
             onNavigate={handleNavigate}
           />
         </div>
@@ -331,6 +355,7 @@ function App() {
             isSearchSelected={isSearchSelected}
             onSearchToggle={handleSearchToggle}
             onSearchCancel={handleSearchCancel}
+            onClosingComplete={handleSearchClosingComplete}
           />
         </div>
       )}
