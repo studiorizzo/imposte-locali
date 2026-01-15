@@ -136,6 +136,19 @@ function App() {
     }
   }, [anyPanelOpen]);
 
+  // Deselect header button shapes when their panels close
+  useEffect(() => {
+    if (!isContribuentePanelOpen) {
+      setUserAddShapeSelected(false);
+    }
+  }, [isContribuentePanelOpen]);
+
+  useEffect(() => {
+    if (!isImmobilePanelOpen) {
+      setAutomateShapeSelected(false);
+    }
+  }, [isImmobilePanelOpen]);
+
   // Scroll to top quando cambia la vista
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -388,7 +401,7 @@ function App() {
       {!isMobile && (
         <div className="absolute top-0 bottom-0 left-0">
           <SidebarNew
-            currentView={(isSearchSelected || isSearchClosing) ? '' : currentView}
+            currentView={(isSearchSelected || isSearchClosing || isContribuentePanelOpen || isImmobilePanelOpen) ? '' : currentView}
             onNavigate={handleNavigate}
           />
         </div>
