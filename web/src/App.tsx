@@ -204,6 +204,11 @@ function App() {
     setIsSearchSelected(true);
   };
 
+  // Search cancel handler - closes the search
+  const handleSearchCancel = () => {
+    setIsSearchSelected(false);
+  };
+
   const renderContent = () => {
     switch (currentView) {
       case 'dashboard':
@@ -325,6 +330,7 @@ function App() {
             onOpenImmobileForm={handleOpenImmobileForm}
             isSearchSelected={isSearchSelected}
             onSearchToggle={handleSearchToggle}
+            onSearchCancel={handleSearchCancel}
           />
         </div>
       )}

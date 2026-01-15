@@ -6,12 +6,14 @@ import imuendoLogo from '../../assets/logos/imuendo_h60.svg';
 import searchIcon from '../../assets/buttons/search.svg';
 import userAddIcon from '../../assets/buttons/user_add.svg';
 import automateIcon from '../../assets/buttons/automate.svg';
+import cancelIcon from '../../assets/Cancel_form.svg';
 
 interface HeaderProps {
   onCreateContribuente?: () => void;
   onOpenImmobileForm?: () => void;
   isSearchSelected?: boolean;
   onSearchToggle?: () => void;
+  onSearchCancel?: () => void;
 }
 
 // Generate SVG path for expanding search shape (same logic as BorderButton)
@@ -54,7 +56,7 @@ function getExpandingPath(width: number, depth: number) {
   }
 }
 
-export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle }: HeaderProps) {
+export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle, onSearchCancel }: HeaderProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -203,45 +205,78 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             />
           </svg>
 
-          {/* SearchBar inside the expanded shape */}
+          {/* SearchBar inside the expanded shape - starts as circle, expands to pill */}
           <div
             style={{
               position: 'absolute',
               top: searchBarTop,
-              left: 20,
-              right: 20,
+              // When not expanded: center the 60px circle at button position (50px from left edge of shape)
+              // When expanded: full width with padding
+              left: isExpanded ? 20 : 20,
+              right: isExpanded ? 20 : undefined,
+              width: isExpanded ? undefined : 60,
               height: searchBarHeight,
               backgroundColor: '#F1F7F0',
               borderRadius: 30,
               display: 'flex',
               alignItems: 'center',
-              paddingLeft: 20,
-              paddingRight: 20,
-              opacity: isExpanded ? 1 : 0,
-              transition: `opacity ${Durations.medium}ms ease-out`,
+              justifyContent: isExpanded ? 'flex-start' : 'center',
+              paddingLeft: isExpanded ? 20 : 0,
+              paddingRight: isExpanded ? 20 : 0,
+              transition: `left ${Durations.slow}ms ease-out, right ${Durations.slow}ms ease-out, width ${Durations.slow}ms ease-out, padding ${Durations.slow}ms ease-out`,
             }}
           >
-            {/* Input field - same typography as content SearchBar */}
-            <input
-              ref={searchInputRef}
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cerca in imuendo"
-              className="header-search-input"
+            {/* Cancel button - always visible, red color */}
+            <button
+              onClick={onSearchCancel}
               style={{
-                flex: 1,
-                height: '100%',
-                backgroundColor: 'transparent',
+                width: 40,
+                height: 40,
+                padding: 0,
                 border: 'none',
-                outline: 'none',
-                fontFamily: Fonts.primary,
-                fontSize: 14,
-                fontWeight: 400,
-                letterSpacing: 0,
-                color: Colors.txtDark,
+                background: 'transparent',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
               }}
-            />
+            >
+              <img
+                src={cancelIcon}
+                alt="Cancel"
+                style={{
+                  width: 24,
+                  height: 24,
+                  filter: 'invert(16%) sepia(95%) saturate(3000%) hue-rotate(350deg) brightness(70%) contrast(100%)',
+                }}
+              />
+            </button>
+
+            {/* Input field - only visible when expanded */}
+            {isExpanded && (
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Cerca in imuendo"
+                className="header-search-input"
+                style={{
+                  flex: 1,
+                  height: '100%',
+                  marginLeft: 12,
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  outline: 'none',
+                  fontFamily: Fonts.primary,
+                  fontSize: 14,
+                  fontWeight: 400,
+                  letterSpacing: 0,
+                  color: Colors.txtDark,
+                }}
+              />
+            )}
           </div>
         </div>
       )}
