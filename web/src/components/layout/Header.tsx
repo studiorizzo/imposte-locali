@@ -118,9 +118,8 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         setHasFullyExpanded(true);
       }, Durations.medium + Durations.mediumSlow);  // 350ms + 500ms = 850ms
       return () => clearTimeout(timer);
-    } else {
-      setHasFullyExpanded(false);
     }
+    // Don't reset hasFullyExpanded here - it's reset in the closing animation useEffect
   }, [isSearchSelected]);
 
   // Detect close and trigger reverse animation
@@ -134,12 +133,14 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
         const timer = setTimeout(() => {
           setIsClosing(false);
           setIsExpanded(false);
+          setHasFullyExpanded(false);  // Reset here after animation
           setSearchQuery('');
         }, Durations.medium);  // 350ms reverse animation
         return () => clearTimeout(timer);
       } else {
         // Not fully expanded, close immediately
         setIsExpanded(false);
+        setHasFullyExpanded(false);
         setSearchQuery('');
       }
     }
