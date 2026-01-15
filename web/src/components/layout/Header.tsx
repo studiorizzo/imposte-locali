@@ -193,6 +193,13 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
   const searchBarTop = 30;
   const searchBarHeight = 60;
 
+  // SearchBar width: explicit values for CSS animation
+  // When expanded: shape width - 40px (20px left + 20px right padding)
+  // When contracted: 60px circle
+  const searchBarExpandedWidth = rightButtonsLeft - 40;
+  const searchBarContractedWidth = 60;
+  const searchBarWidth = (isExpanded && !isClosing) ? searchBarExpandedWidth : searchBarContractedWidth;
+
   return (
     <header
       className="flex items-center relative"
@@ -271,11 +278,9 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
             style={{
               position: 'absolute',
               top: searchBarTop,
-              // When expanded (not closing): full width with padding
-              // When not expanded or closing: 60px circle centered in shape
-              left: (isExpanded && !isClosing) ? 20 : 20,
-              right: (isExpanded && !isClosing) ? 20 : undefined,
-              width: (isExpanded && !isClosing) ? undefined : 60,
+              left: 20,
+              // Use explicit width for CSS animation (can't transition from auto to fixed)
+              width: searchBarWidth,
               height: searchBarHeight,
               backgroundColor: '#F1F7F0',
               borderRadius: 30,
@@ -285,7 +290,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
               // paddingLeft: 10 keeps Cancel button centered in left semicircle (center at x=30)
               paddingLeft: (isExpanded && !isClosing) ? 10 : 0,
               paddingRight: (isExpanded && !isClosing) ? 20 : 0,
-              transition: `left ${Durations.mediumSlow}ms ease-out, right ${Durations.mediumSlow}ms ease-out, width ${Durations.mediumSlow}ms ease-out, padding ${Durations.mediumSlow}ms ease-out`,
+              transition: `width ${Durations.mediumSlow}ms ease-out, padding ${Durations.mediumSlow}ms ease-out`,
             }}
           >
             {/* Cancel button - always visible, red color */}
