@@ -116,7 +116,7 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
     if (isExpanded) {
       const timer = setTimeout(() => {
         searchInputRef.current?.focus();
-      }, Durations.slow);
+      }, Durations.mediumSlow);  // 500ms - sync with expansion animation
       return () => clearTimeout(timer);
     }
   }, [isExpanded]);
