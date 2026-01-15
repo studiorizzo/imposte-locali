@@ -1,11 +1,15 @@
 import { Colors } from '../../theme';
 import { Sizes, Insets } from '../../styles';
+import { BorderButton } from '../BorderButton';
 import imuendoLogo from '../../assets/logos/imuendo_h60.svg';
+import searchIcon from '../../assets/buttons/search.svg';
+import userAddIcon from '../../assets/buttons/user_add.svg';
+import automateIcon from '../../assets/buttons/automate.svg';
 
 export function Header() {
   return (
     <header
-      className="flex items-center"
+      className="flex items-center relative"
       style={{
         backgroundColor: Colors.bg1,
         height: Sizes.headerHeight,
@@ -13,15 +17,46 @@ export function Header() {
         borderBottom: '1px solid black', // TEMPORARY - debug border
       }}
     >
+      {/* Logo */}
       <img
         src={imuendoLogo}
         alt="imuendo"
         draggable={false}
         style={{
-          height: 60,
+          height: 50,
           width: 'auto',
         }}
       />
+
+      {/* Search BorderButton - 20px after logo */}
+      <div style={{ marginLeft: 20 }}>
+        <BorderButton
+          position="top"
+          icon={<img src={searchIcon} alt="Search" style={{ width: 60, height: 60 }} />}
+          title="Cerca"
+        />
+      </div>
+
+      {/* Right side BorderButtons - positioned absolute */}
+      <div
+        className="absolute flex"
+        style={{
+          right: 0,
+          top: 0,
+          gap: 0,
+        }}
+      >
+        <BorderButton
+          position="top"
+          icon={<img src={userAddIcon} alt="Nuovo contribuente" style={{ width: 60, height: 60 }} />}
+          title="Nuovo contribuente"
+        />
+        <BorderButton
+          position="top"
+          icon={<img src={automateIcon} alt="Automate" style={{ width: 60, height: 60 }} />}
+          title="Automate"
+        />
+      </div>
     </header>
   );
 }
