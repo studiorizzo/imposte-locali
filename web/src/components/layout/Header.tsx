@@ -59,13 +59,14 @@ function getExpandingPath(width: number, depth: number) {
 export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelected, onSearchToggle, onSearchCancel }: HeaderProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const [hasFullyExpanded, setHasFullyExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchButtonRef = useRef<HTMLDivElement>(null);
   const rightButtonsRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
   const prevIsSearchSelected = useRef(isSearchSelected);
+  const hasFullyExpandedRef = useRef(false);
+  const closingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Positions for animation
   const [searchButtonLeft, setSearchButtonLeft] = useState(0);
@@ -115,37 +116,52 @@ export function Header({ onCreateContribuente, onOpenImmobileForm, isSearchSelec
   useEffect(() => {
     if (isSearchSelected) {
       const timer = setTimeout(() => {
-        setHasFullyExpanded(true);
+        hasFullyExpandedRef.current = true;
       }, Durations.medium + Durations.mediumSlow);  // 350ms + 500ms = 850ms
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+      };
+    } else {
+      hasFullyExpandedRef.current = false;
     }
-    // Don't reset hasFullyExpanded here - it's reset in the closing animation useEffect
   }, [isSearchSelected]);
 
   // Detect close and trigger reverse animation
   useEffect(() => {
     // Detect transition from selected to not selected
     if (prevIsSearchSelected.current && !isSearchSelected) {
-      if (hasFullyExpanded) {
+      // Clear any existing closing timer
+      if (closingTimerRef.current) {
+        clearTimeout(closingTimerRef.current);
+      }
+
+      if (hasFullyExpandedRef.current) {
         // Start closing animation
         setIsClosing(true);
         // After animation, reset states
-        const timer = setTimeout(() => {
+        closingTimerRef.current = setTimeout(() => {
           setIsClosing(false);
           setIsExpanded(false);
-          setHasFullyExpanded(false);  // Reset here after animation
           setSearchQuery('');
+          closingTimerRef.current = null;
         }, Durations.medium);  // 350ms reverse animation
-        return () => clearTimeout(timer);
       } else {
         // Not fully expanded, close immediately
         setIsExpanded(false);
-        setHasFullyExpanded(false);
         setSearchQuery('');
       }
     }
     prevIsSearchSelected.current = isSearchSelected;
-  }, [isSearchSelected, hasFullyExpanded]);
+  }, [isSearchSelected]);
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (closingTimerRef.current) {
+        clearTimeout(closingTimerRef.current);
+      }
+    };
+  }, []);
 
   // Focus input when expanded
   useEffect(() => {
