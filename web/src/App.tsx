@@ -244,8 +244,7 @@ function App() {
     setAutomateShapeSelected(false);
   };
 
-  // Navigation handler - deselects search when navigating
-  // If search is open and fully expanded, queue the navigation until closing animation completes
+  // Navigation handler - navigates immediately, shape selection deferred while search closes
   const handleNavigate = (view: string) => {
     // Close any open form panel
     setIsContribuentePanelOpen(false);
@@ -253,18 +252,16 @@ function App() {
     setUserAddShapeSelected(false);
     setAutomateShapeSelected(false);
 
+    // Always navigate immediately - content page changes right away
+    setCurrentView(view as ViewType);
+
     if (isSearchSelected) {
-      // Search is open - close it and queue the navigation
-      setPendingView(view as ViewType);
+      // Search is open - close it (shape selection is deferred by isSearchClosing check in Sidebar)
       setIsSearchClosing(true);
       setIsSearchSelected(false);
-    } else if (isSearchClosing) {
-      // Already closing - just update the pending view
-      setPendingView(view as ViewType);
-    } else {
-      // No search animation in progress - navigate immediately
-      setCurrentView(view as ViewType);
     }
+    // Note: Sidebar shape is hidden while isSearchClosing is true,
+    // so shape appears after search fully closes
   };
 
   // Search select handler - only selects, doesn't toggle (consistent with navigation buttons)
